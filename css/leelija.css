@@ -256,6 +256,7 @@ p {
 
 .nav-item {
     padding: 0 0.3rem;
+    width: max-content;
 }
 
 .dropdown ul {
@@ -445,7 +446,7 @@ p {
 }
 
 .nav-link:focus {
-    color: var(--custom-blue);
+    color:black;
 }
 
 
@@ -462,7 +463,6 @@ p {
 .navbar .active:focus,
 .navbar li:hover>.myservicecss {
     box-shadow: inset 0 -3px 0 #fda33b;
-    /* color: #fda33b; */
     color: black !important;
 }
 
@@ -802,3 +802,37 @@ body #home {
 .display-table {
     margin-bottom: 4rem !important;
 }
+
+.nav-drop-sortup:before {
+    vertical-align: middle; 
+}
+.nav-drop-sortdown:before {
+    /* vertical-align: sub; z*/
+}
+@media (min-width:992px){
+    .myiconupdown i{
+        display: none;
+    }
+}
+
+/* change icons on hover */
+@media (max-width:991px){
+    .nav-drop-sortup{
+        display: flex;
+        align-items: flex-end;
+        padding-top: 10px;
+    }
+    .myiconupdown i:nth-child(2) {
+        display: none; 
+      }
+      
+      .myiconupdown:hover i:nth-child(1) {
+        display: none;
+      }
+      
+      .myiconupdown:hover i:nth-child(2) {
+        display: block;
+      }
+}
+  
+  

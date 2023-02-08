@@ -58,13 +58,15 @@
                 <li class="nav-item ">
                     <a class="nav-link  li-style" aria-current="page" href="<?php echo URL;?>">Home</a>
                 </li>
-              
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown li-style myservicecss" href="#">
-                        Services <i class="bi bi-chevron-down"></i>
+
+                <li class="nav-item dropdown myiconupdown">
+                    <a class="nav-link dropdown d-flex li-style myservicecss" href="#">
+                        Services
+                        <i class=" ps-1  fa-solid fa-sort-down nav-drop-sortdown" style="padding-top: 1px;"></i>
+                        <i class="ps-1 fa-solid fa-sort-up nav-drop-sortup"></i>
                     </a>
-                    <ul class="dropdown-menu producting-menues">
+                    <ul class="dropdown-menu producting-menues mydropdownmenu">
 
                         <div class="row producting-divs-main-row">
 
@@ -155,3 +157,4 @@
     </div>
 </nav>
 <!-- </header> -->
+<script src="js/jquery-2.2.3.min.js"></script>
