@@ -306,6 +306,81 @@ function orderPlaced(){
         }
 
     }
+    .tables-fr-cdetails{
+        width: 100%;
+        text-align: left;
+    }
+        .tables-fr-cdetails td{
+            width: 50%;
+        }
+        .tables-fr-cdetails th{
+            padding: 1rem 0;
+            width: 50%;
+        }
+        .tables-fr-cdetails tr{
+            word-break: break-all;
+            display: flex;
+        }
+
+
+        .order-dtail-table-main{
+            word-break: break-word;
+            padding: 0 6rem;
+        }
+    .order-details-headline{
+    display: flex;
+    width: 100%;
+    word-break: break-word;
+   }
+   .order-details-headline-div{
+    width: 50%;
+   }
+   .order-details-main-div{
+    display: flex;
+    width: 100%;
+   }
+   .order-details-sub-div{
+    width: 50%;
+   }
+   @media(max-width:600px){
+    .order-dtail-table-main {
+        padding: 0 1rem;
+    }
+   }
+
+   @media(max-width:320px){
+    .order-details-headline{
+        display: block;
+        width: 100%;
+        word-break: break-word;
+       }
+       .order-details-headline-div{
+        width: 100%;
+       }
+       .order-details-main-div{
+        display: block;
+        width: 100%;
+       }
+       .order-details-sub-div{
+        width: 100%;
+       }
+       .extra-space{
+        padding-left: 6px;
+    }
+    .extra-font{
+        font-weight: 600;
+    }
+    .order-placed-header {
+        padding: 15px 8px;
+    }
+    .right-icon span {
+        font-size: 13px;
+    }
+    .right-icon img {
+        width: 22px;
+    }
+   }
+.
     </style>
 </head>
 
@@ -338,45 +413,47 @@ function orderPlaced(){
                                     cumque ex, voluptatum cum ab dolorum magnam suscipit.</p>
                             </td>
                         </tr>
+                    
                         <tr>
-                            <td class="ts-td4-img-section">
-                            <div class="col-lge">
-                            <h4>Order Details</h4>
+                        <td>
+                    
+                            <div class="order-dtail-table-main">
+                                <h4 class="order-details-headline">
+                                    <div class="order-details-headline-div"> Order Details :</div>
+                                    <div class="order-details-headline-div  "> #JBHUYTG786G</div>
+                                </h4>
+                    
+                                <div class="order-details-main-div">
+                                <div class="order-details-sub-div extra-font"> Site Name :</div>
+                                <div class="order-details-sub-div extra-space"> dipakmajumdar.com</div>
+                                </div>
+                    
+                                <div class="order-details-main-div">
+                                <div class="order-details-sub-div extra-font"> Order date :</div>
+                                <div class="order-details-p-div extra-space"> 12/12/2022</div>
+                                </div>
+                    
+                                <div class="order-details-main-div">
+                                <div class="order-details-sub-div extra-font"> Helen :</div>
+                                <div class="order-details-sub-div extra-space"> UKrains</div>
+                                </div>
+                    
+                                <div class="order-details-main-div">
+                                <div class="order-details-sub-div extra-font"> Giovanni :</div>
+                                <div class="order-details-sub-div extra-space"> Italiansss</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                                     
 
-                            <table>
-                            <tr>
-                              <td>Site Name : </td>
-                              <td>dipakmajumdar.com</td>
-                            </tr>
-                            <tr>
-                              <td>Order date : </td>
-                              <td>12/12/2022</td>
-                            </tr>
-                            <tr>
-                              <td>Order Id : #JBHUYTG786G</td>
-                              <td>Austria</td>
-                            </tr>
-                            <tr>
-                              <td>Helen Bennett</td>
-                              <td>UK</td>
-                            </tr>
-                            <tr>
-                              <td>Yoshi Tannamuri</td>
-                              <td>Canada</td>
-                            </tr>
-                            <tr>
-                              <td>Giovanni Rovelli</td>
-                              <td>Italy</td>
-                            </tr>
-                          </table>
-                            </td>
-                        </tr>
+
                         <tr>
                             <td class="ts-td4-img-section">
                                 <div class="col-lge">
                                     <p class="col-lge-p1">Nullam mollis sapien vel cursus
                                         fermentum. Integer porttitor augue id ligula facilisis pharetra. In eu ex et
-                                        elit ultricies ornare nec ac ex. Mauris sapien massa, placerat non venenatis et,
+                               elit ultricies ornare nec ac ex. Mauris sapien massa, placerat non venenatis et,
                                         tincidunt eget leo.</p>
                                     <p class="col-lge-p2" style="">Nam non ante risus. Vestibulum vitae
                                         eleifend nisl, quis vehicula justo. Integer viverra efficitur pharetra. Nullam
