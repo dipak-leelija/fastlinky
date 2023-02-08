@@ -1,0 +1,88 @@
+.account-block {
+    padding: 0;
+    /* background-image: url('../images/login-page.jpg'); */
+    /* background-image: linear-gradient(120deg, #FDA33B 0%, #FA8273 100%); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+}
+.account-block .overlay {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.account-block .account-testimonial {
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    margin: 0 auto;
+    padding: 0 1.75rem;
+    bottom: 3rem;
+    left: 0;
+    right: 0;
+}
+.login-div-below-card{
+    padding: 1.3rem 2.5rem;
+}
+@media(max-width:991px){
+    .submit-divclass{
+        text-align: center;
+
+    }
+}
+.my-buttons-hover {
+    width: 140px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    height: 45px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.my-buttons-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.my-buttons-hover:focus {
+    outline: none;
+}
+
+.my-buttons-hover.bn21 {
+    background-image: linear-gradient(to right,
+            #fc6076,
+            #ff9a44,
+            #ef9d43,
+            #e75516);
+    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+}
+@media(max-width:390px) {
+    .login-div-below-card{
+        padding: 1rem 1rem;
+    }
+    .my-buttons-hover {
+        width: 130px !important;
+        height: 40px !important;
+
+    }
+}

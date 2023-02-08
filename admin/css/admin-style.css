@@ -1,0 +1,154 @@
+
+/* ............................................................................................................................................................................................................................ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+.my-container-styles{
+  position: relative;
+}
+.admin-dashboard{
+  padding: 2rem 17rem;
+}
+@media(max-width:1300px){
+  .admin-dashboard{
+    padding: 2rem 9rem;
+  }
+}
+@media(max-width:992px){
+  .admin-dashboard{
+    padding: 2rem;
+  }
+}
+@media(max-width:767px){
+  .admin-dashboard{
+    padding: 0rem;
+  }
+}
+.admin-dashboard h1 {
+  font: normal 40px HelveticaNeue, Helvetica, Arial, "Arial Narrow", sans-serif;
+  margin: 25px 0 56px 0;
+  padding: 0;
+  text-align: center;
+  color: darkblue;
+}
+.my-container-styles .maincard{
+  position: relative;
+  width: 230px;
+  height: 250px;
+  background: #eee;
+  /* background: #e67e22; */
+  border-radius: 20px;
+  overflow: hidden;
+  margin:1rem auto;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  border: 1px solid #6c757d30;
+}
+
+.my-container-styles .maincard:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #99999914;
+  /* background: palegoldenrod; */
+    clip-path: circle(110px at 66% 6%);
+  transition: 0.5s ease-in-out;
+}
+
+.my-container-styles .maincard:hover:before{
+  background: #00ccff;
+  clip-path: circle(220px at 54% 25%);
+}
+
+.my-container-styles .maincard .imgBx{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* z-index: 10000; */
+  width: 100%;
+  height: 220px;
+  transition: 0.3s;
+}
+
+.my-container-styles .maincard:hover .imgBx{
+  top: 0%;
+  transform: translateY(0%);
+    visibility: hidden;
+}
+
+.my-container-styles .maincard .imgBx img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-139%, -121%) ;
+  width: 70px;
+}
+
+.my-container-styles .maincard .contentBx{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  transition: 1s;
+  z-index: 10;
+}
+
+.my-container-styles .maincard:hover .contentBx{
+  height: 240px;
+}
+
+.my-container-styles .maincard .contentBx h2{
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  /* color: #fff; */
+  color: #999;
+  margin: 0;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.my-container-styles .maincard .contentBx .dashboard-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  transition: 0.5s;opacity: 0;
+  visibility: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.my-container-styles .maincard:hover .contentBx .dashboard-list{
+  opacity: 1;
+  visibility: visible;
+  /* transition-delay: 0.5s; */
+}
+.dashboard-list ul li{
+  list-style: none;
+}
+.dashboard-list ul{
+  margin-top: 1.5rem;
+  padding-left: 0rem !important;
+} 
+.dashboard-list ul li a{
+  color: #fff !important;
+  font-size: .9rem;
+}
+.my-container-styles .maincard:hover .contentBx h2{
+  visibility: hidden;
+}
+/* ...................................................................................................................................... */
+ /* footer */
+ .footer {
+  background-color: aliceblue !important;
+}
+
+/* navbars */

@@ -1,0 +1,80 @@
+.register-section{
+    margin-top: 2.9rem
+}
+.reg-div-below-card{
+    padding: 1.3rem 2.5rem;
+}
+.reg-heading{
+    font-size: 2rem;
+    text-align: center;
+    color: coral;
+}
+#txtProfession,
+#txtProfession option {
+    font-weight: 400 !important;
+}
+@media(max-width:991px){
+    .submit-divclass{
+        text-align: center;
+
+    }
+}
+.my-buttons-hover {
+    width: 140px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    height: 45px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.my-buttons-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.my-buttons-hover:focus {
+    outline: none;
+}
+
+.my-buttons-hover.bn21 {
+    background-image: linear-gradient(to right,
+            #fc6076,
+            #ff9a44,
+            #ef9d43,
+            #e75516);
+    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+}
+@media(max-width:390px) {
+    .reg-div-below-card{
+        padding: 1rem 1rem;
+    }
+    .my-buttons-hover {
+        width: 130px !important;
+        height: 40px !important;
+
+    }
+    .reg-heading{
+        font-size: 1.5rem;
+    }
+}
+
+.success-message {
+    color: green !important;
+}
+
+.error-message {
+    color: red !important;
+}

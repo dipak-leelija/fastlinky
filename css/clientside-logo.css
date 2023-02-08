@@ -1,0 +1,93 @@
+.clientsides-item {
+    padding: 4rem 0rem 4rem;
+    background-image: url(../images/dummy-img/blogger-outreach-bg-main.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.clientsides-item h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #383a50;
+    font-family: "Poppins", Poppins;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.clientsides-item strong {
+    color: #FDA33B;
+    font-weight: 400 !important;
+}
+
+.clientside-logo-row {
+    width: 75%;
+    margin: auto;
+}
+
+#clientslogo .clientsides-logo-wrap:hover .clientsides-logo-wrap-span {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#clientslogo-item h2 {
+    font-size: 28px;
+    margin-top: 0;
+}
+
+#clientslogo-item img {
+    background-color: #FFFFFF;
+    border: 3px solid #999999;
+    padding: 7px;
+}
+
+.clientsides-logo-wrap {
+    position: relative;
+    padding: 0;
+    border: 1px solid;
+    border-color: #f3f3f3;
+}
+
+.clientsides-logo-wrap .clientsides-logo-wrap-span {
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    border: 1px solid;
+    border-color: #f3f3f3;
+}
+
+.img-responsive {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(12%);
+}
+
+.clientsides-logo-wrap:hover .clientsides-logo-wrap-span {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+
+@media (min-width:250px) and (max-width:451px) {
+
+    .clientside-logo-row {
+        width: 90% !important;
+    }
+}
+
+@media (max-width:600px) {
+
+    .clientsides-item h2 {
+        font-size: 1.6rem !important;
+    }
+}
+
+@media (max-width:575px) {
+    .clientsides-logo-wrap {
+        padding: 4px 0 !important;
+    }
+}

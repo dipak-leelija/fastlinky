@@ -1,0 +1,157 @@
+/* This FILE IS ONLY FOR ABOUT US PAGE */
+
+.about_us .about_us_header {
+    background: url(../images/about.jpg);
+    background-repeat: repeat;
+    padding: 55px 0;
+}
+
+.our_passion {
+    padding: 46px 0 50px 0;
+}
+
+.our_passion h3 {
+    margin-bottom: 15px;
+}
+
+.our_passion a:hover {
+    padding-left: 5px;
+}
+
+.our_goals_img {
+    float: left;
+}
+
+.br {
+    display: block;
+    margin-bottom: -5px;
+}
+
+.side_img img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.about-ttilte {
+    font-size: 2.4rem;
+}
+
+
+/* ========================================================================================================================= */
+
+
+/* MEDIA QUERY STARTED  */
+
+
+/* ========================================================================================================================= */
+
+@media (max-width: 360px) {
+    .team_details {
+        border-radius: 2rem;
+        height: 100%;
+        width: 100%;
+        padding: 2rem;
+    }
+    .team_details h3 {
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+    .team_details p {
+        font-size: 0.9rem;
+    }
+    .team_emp p {
+        font-size: 15px !important;
+        margin-bottom: 2px;
+    }
+    .team_emp span {
+        font-size: 12px !important;
+    }
+    .about-ttilte {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 576px) {
+    .team_details {
+        border-radius: 2rem;
+        height: 100%;
+        width: 100%;
+        padding: 2rem;
+    }
+    .team_details h3 {
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .team_details {
+        border-radius: 2rem;
+        height: 100%;
+        width: 100%;
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1280px) {
+    .team_details {
+        text-align: center;
+        height: 500px;
+        width: 500px;
+        padding: 4rem;
+    }
+    .staffmemsection {
+        align-items: center;
+        margin: auto;
+    }
+    .c_col {
+        width: 30%;
+    }
+}
+
+@media (min-width: 200px) {
+    .about-ttilte {
+        font-size: 1.4rem;
+    }
+    .staffmemsection {
+        align-items: center;
+        margin: auto;
+    }
+}
+
+@media (min-width: 285px) {
+    .about-ttilte {
+        font-size: 1.7rem;
+    }
+}
+
+@media (min-width: 540px) {
+    .about-ttilte {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 300px) {
+    .team_thumnail {
+        cursor: pointer;
+        object-fit: cover;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        /* box-shadow: rgb(17 12 46 / 15%) 0px 48px 100px 0px; */
+        box-shadow: rgb(0 0 0 / 10%) 0px 10px 50px;
+        /* transition: 1s; */
+    }
+    .bbdm {
+        padding: 7px;
+    }
+    .row>* {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        /* padding-right: calc(var(--bs-gutter-x) * 0.5); */
+        /* padding-left: calc(var(--bs-gutter-x) * 0.5); */
+        margin-top: var(--bs-gutter-y);
+    }
+}

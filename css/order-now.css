@@ -1,0 +1,35 @@
+.box-payment-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: aliceblue;
+    padding: 2rem 2rem;
+}
+
+.bx_width_40 {
+    max-width: 40%;
+    background: lightblue;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.cardBtn,
+.payLaterBtn,
+.paypalBtn {
+    border: 0px solid #00f;
+    border-radius: 1rem;
+    padding: 0.4rem 2.2rem;
+    font-size: 18px;
+    width: 100%;
+}
+
+.payLaterBtn img,
+.paypalBtn img {
+    object-fit: cover;
+    width: 25px;
+}
+
+.status_card {
+    height: 26rem;
+    overflow: auto;
+}
