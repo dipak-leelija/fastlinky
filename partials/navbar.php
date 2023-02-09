@@ -59,6 +59,9 @@
                     <a class="nav-link  li-style" aria-current="page" href="<?php echo URL;?>">Home</a>
                 </li>
 
+                <li class="nav-item ">
+                    <a class="nav-link  li-style"  href="<?php echo URL.'/blog';?>">Blog</a>
+                </li>
 
                 <li class="nav-item dropdown myiconupdown">
                     <a class="nav-link dropdown d-flex li-style myservicecss" href="#">
