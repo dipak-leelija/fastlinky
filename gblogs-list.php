@@ -82,7 +82,13 @@ $blogDtls		= $blogMst->ShowUserBlogData($cusDtl[0][2]);
 
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-
+    <style>
+    @media (min-width: 768px) {
+        .client_profile_dashboard_right {
+            padding-right: 2rem !important;
+        }
+    }
+    </style>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -94,62 +100,81 @@ $blogDtls		= $blogMst->ShowUserBlogData($cusDtl[0][2]);
 
         <!-- //header -->
         <!-- banner -->
-        <div class="lists_of_blogs  montserrat-font py-4 mb-5" >
-            <div class="container-fluid">
-                <?php include('breadcrumb.inc.php') ?>
-            </div>
-            <div class="container-fluid">
-                <div class="container-fluid display-table">
+        <div class="edit_profile" style="overflow: hidden;">
+            <div class="container-fluid1">
+                <div class=" display-table">
                     <div class="row ">
                         <!--Row start-->
-                        <div class="col-md-12 col-sm-11  display-table-cell v-align px-2">
-                            <!--Content sec start-->
-                            <div class="features your_blog_lists" id="features">
-                                <!--Features Content start-->
-                                <div class="wrap">
-                                    <!--Wrap start-->
-                                    <h2 class="title color-blue font-weight-bold text-center text-uppercase pt-4 pb-0">
-                                        Your Blogs List</h2>
+                        <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
 
-                                    <div class="features_grids table-responsive">
-                                        <table class="table table-striped table-hover datatable">
-                                            <thead>
-                                                <tr>
-                                                    <th>Sl. No.</th>
-                                                    <th>Domain</th>
-                                                    <th>Niche</th>
-                                                    <th class="dataTable_numeric">DA</th>
-                                                    <th class="dataTable_numeric">PA</th>
-                                                    <th class="dataTable_numeric">CF</th>
-                                                    <th class="dataTable_numeric">TF</th>
-                                                    <th>Link Type</th>
-                                                    <th>Publish Time</th>
-                                                    <th>Charge($)</th>
-                                                    <th>Status</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
+                            <div class="client_profile_dashboard_left">
+                                <?php include("dashboard-inc.php");?>
+                                <hr>
+                            </div>
 
-                                            <tbody>
-                                                <?php
+                        </div>
+                        <div class="col-md-9 mt-0 pl-0 display-table-cell v-align client_profile_dashboard_right">
+                            <div class="lists_of_blogs  montserrat-font ">
+
+                                <div class="container-fluid p-md-0">
+                                    <div class="container-fluid display-table">
+                                        <div class="row ">
+                                            <!--Row start-->
+                                            <div class="col-md-12 col-sm-12  display-table-cell v-align px-2">
+                                                <!--Content sec start-->
+                                                <div class="features your_blog_lists" id="features">
+                                                    <!--Features Content start-->
+                                                    <div class="wrap">
+                                                        <!--Wrap start-->
+                                                        <h2
+                                                            class="title color-blue font-weight-bold text-center text-uppercase pb-3">
+                                                            Your Blogs List</h2>
+
+                                                        <div class="features_grids table-responsive">
+                                                            <table class="table table-striped table-hover datatable">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Sl. No.</th>
+                                                                        <th>Domain</th>
+                                                                        <th>Niche</th>
+                                                                        <th class="dataTable_numeric">DA</th>
+                                                                        <th class="dataTable_numeric">PA</th>
+                                                                        <th class="dataTable_numeric">CF</th>
+                                                                        <th class="dataTable_numeric">TF</th>
+                                                                        <th>Link Type</th>
+                                                                        <th>Publish Time</th>
+                                                                        <th>Charge($)</th>
+                                                                        <th>Status</th>
+                                                                        <th>Action</th>
+                                                                    </tr>
+                                                                </thead>
+
+                                                                <tbody>
+                                                                    <?php
 											    if(count($blogDtls) !=0){
 											    $sl = 1;
 												foreach($blogDtls as $eachRecord){
 										    ?>
-                                                <tr>
-                                                <td><?php echo $sl; ?></td>
-                                                    <td style="width: 100px;font-weight:500;">
-                                                        <?php echo $eachRecord['domain'];?></td>
-                                                    <td><?php echo $eachRecord['niche'];?></td>
-                                                    <td class="text-center"><?php echo round($eachRecord['da']);?></td>
-                                                    <td class="text-center"><?php echo round($eachRecord['pa']);?></td>
-                                                    <td class="text-center"><?php echo $eachRecord['cf'];?></td>
-                                                    <td class="text-center"><?php echo round($eachRecord['tf']);?></td>
-                                                    <td><?php echo $eachRecord['follow']; ?></td>
-                                                    <td><?php echo round($eachRecord['deliver_time']);?>Hours</td>
+                                                                    <tr>
+                                                                        <td><?php echo $sl; ?></td>
+                                                                        <td
+                                                                            style="width: 80px;font-weight:500; word-break: normal;">
+                                                                            <?php echo $eachRecord['domain'];?></td>
+                                                                        <td><?php echo $eachRecord['niche'];?></td>
+                                                                        <td class="text-center">
+                                                                            <?php echo round($eachRecord['da']);?></td>
+                                                                        <td class="text-center">
+                                                                            <?php echo round($eachRecord['pa']);?></td>
+                                                                        <td class="text-center">
+                                                                            <?php echo $eachRecord['cf'];?></td>
+                                                                        <td class="text-center">
+                                                                            <?php echo round($eachRecord['tf']);?></td>
+                                                                        <td><?php echo $eachRecord['follow']; ?></td>
+                                                                        <td><?php echo round($eachRecord['deliver_time']);?>Hours
+                                                                        </td>
 
-                                                    <td class="text-center">
-                                                        <?php
+                                                                        <td class="text-center">
+                                                                            <?php
 																if($eachRecord['cost'] == 0){
 																	echo "Free";
 																}
@@ -157,9 +182,9 @@ $blogDtls		= $blogMst->ShowUserBlogData($cusDtl[0][2]);
 																	echo $eachRecord['cost'];
 																}
 														?>
-                                                    </td>
-                                                    <td>
-                                                        <?php if($eachRecord['approved']=="No"){
+                                                                        </td>
+                                                                        <td>
+                                                                            <?php if($eachRecord['approved']=="No"){
 															echo "Pending";
 														}
 														else{
@@ -168,13 +193,16 @@ $blogDtls		= $blogMst->ShowUserBlogData($cusDtl[0][2]);
 
 
 														?>
-                                                    </td>
-                                                    <td>
-                                                        <a href="edit-my-blog.php?action=EditBlog&blog_id=<?php echo $eachRecord['blog_id']; ?>" title="Edit"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
-                                                    </td>
-                                                </tr>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="edit-my-blog.php?action=EditBlog&blog_id=<?php echo $eachRecord['blog_id']; ?>"
+                                                                                title="Edit"><i
+                                                                                    class="fa-solid fa-pen-to-square"></i>
+                                                                                Edit</a>
+                                                                        </td>
+                                                                    </tr>
 
-                                                <?php
+                                                                    <?php
 
                                                     $sl++;
                                                     }
@@ -183,31 +211,35 @@ $blogDtls		= $blogMst->ShowUserBlogData($cusDtl[0][2]);
 
                                                 }
                                                 ?>
-                                            </tbody>
-                                        </table>
+                                                                </tbody>
+                                                            </table>
 
+                                                        </div>
+                                                        <!--end features grid and responsive table-->
+                                                    </div>
+                                                    <!--Wrap End-->
+                                                </div>
+                                                <!--Features Content end-->
+                                            </div>
+                                            <!--Content end start-->
+                                        </div>
+                                        <!--Row end-->
                                     </div>
-                                    <!--end features grid and responsive table-->
-                                </div>
-                                <!--Wrap End-->
-                            </div>
-                            <!--Features Content end-->
-                        </div>
-                        <!--Content end start-->
-                    </div>
-                    <!--Row end-->
-                </div>
 
+                                </div>
+                            </div>
+                            <!-- //end container sec -->
+
+                            <!-- Footer -->
+
+                            <!-- /Footer -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- //end container sec -->
 
-        <!-- Footer -->
-
-        <!-- /Footer -->
     </div>
-
-
     <script src="plugins/jquery-3.6.0.min.js"></script>
 
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>

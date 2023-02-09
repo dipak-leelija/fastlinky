@@ -139,7 +139,16 @@ if(isset($_POST['btnAddDomain']))
 
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-
+    <style>
+        input::placeholder {
+    font-size: 1rem !important;
+}
+    @media (min-width: 768px) {
+        .client_profile_dashboard_right {
+            padding-right: 2rem !important;
+        }
+    }
+    </style>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -154,216 +163,266 @@ if(isset($_POST['btnAddDomain']))
         </div>
         <!-- //banner -->
         <!-- Main Content -->
-        <div class="client_add_blog mt-4">
-            <div class="container">
-                <?php include('breadcrumb.inc.php') ?>
-            </div>
-            <section class="py-5 branches position-relative" id="explore">
-                <div class="container py-md-2 container-fluid text-center">
-                    <h2 class="stat-title color-blue font-weight-bold text-center text-uppercase pb-lg-5">Add Your Blog
-                        for Guest Posting
-                    </h2>
-                    <div class="row">
-                        <div class="bfrom">
-                            <!--start from div-->
-                            <form class="form-horizontal" role="form" action="<?php echo $_SERVER['PHP_SELF'] ?>"
-                                name="formContactform" method="post" enctype="multipart/form-data" autocomplete="off">
-                                <b
-                                    style="color: red;"><?php $uMesg->dispMessage($typeM, '../images/icon/', 'blackLarge');?></b>
-                                <div class="form-group">
-                                    <div class="row align-items-center">
-                                        <label class="control-label col-md-2" for="txtDomain">Blog Url:<span
-                                                class="orangeLetter"> </label>
-                                        <div class="col-md-10">
-                                            <input type="text" placeholder="https://example.com/" class="form-control"
-                                                id="txtDomain" name="txtDomain"
-                                                value="<?php $utility->printSess2('txtDomain',''); ?>" required />
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="edit_profile" style="overflow: hidden;">
+            <div class="container-fluid1">
+                <div class=" display-table">
+                    <div class="row ">
+                        <!--Row start-->
+                        <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
 
-                                <div class="form-group mb-3">
-                                    <div class="row align-items-center">
-                                        <label class="control-label col-md-2" for="txtNicheId">Niche</label>
-                                        <div class="col-md-10">
-                                            <select id="txtNicheId" class="form-control" name="txtNicheId" required>
-                                                <option value="" selected="selected">Select</option>
-                                                <?php
+                            <div class="client_profile_dashboard_left">
+                                <?php include("dashboard-inc.php");?>
+                                <hr>
+                            </div>
+
+                        </div>
+                        <div class="col-md-9 mt-0 pl-0 display-table-cell v-align client_profile_dashboard_right">
+                            <div class="client_add_blog mt-0">
+                                <section class="py-0 branches position-relative" id="explore">
+                                    <div class="container py-md-2 container-fluid text-center">
+                                        <h2
+                                            class="stat-title color-blue font-weight-bold text-center text-uppercase pb-lg-4">
+                                            Add Your Blog
+                                            for Guest Posting
+                                        </h2>
+                                        <div class="row">
+                                            <div class="bfrom">
+                                                <!--start from div-->
+                                                <form class="form-horizontal" role="form"
+                                                    action="<?php echo $_SERVER['PHP_SELF'] ?>" name="formContactform"
+                                                    method="post" enctype="multipart/form-data" autocomplete="off">
+                                                    <b
+                                                        style="color: red;"><?php $uMesg->dispMessage($typeM, '../images/icon/', 'blackLarge');?></b>
+                                                    <div class="form-group">
+                                                        <div class="row align-items-center">
+                                                            <label class="control-label col-md-2" for="txtDomain">Blog
+                                                                Url:<span class="orangeLetter"> </label>
+                                                            <div class="col-md-10">
+                                                                <input type="text" placeholder="https://example.com/"
+                                                                    class="form-control" id="txtDomain" name="txtDomain"
+                                                                    value="<?php $utility->printSess2('txtDomain',''); ?>"
+                                                                    required />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group mb-3">
+                                                        <div class="row align-items-center">
+                                                            <label class="control-label col-md-2"
+                                                                for="txtNicheId">Niche</label>
+                                                            <div class="col-md-10">
+                                                                <select id="txtNicheId" class="form-control"
+                                                                    name="txtNicheId" required>
+                                                                    <option value="" selected="selected">Select</option>
+                                                                    <?php
 															$BlogMst  = $blogMst->ShowBlogNichMast();
 															foreach($BlogMst as $eachRecord)
 																{
 																	echo '<option value="'.$eachRecord['niche_name'].'">'.$eachRecord['niche_name'].'</option>';
 																}
 														?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row align-items-center">
-                                        <!-- begion row -->
-                                        <div class="col-md-6">
-                                            <div class="row align-items-center">
-                                                <label class="control-label col-md-4" for="txtDa">DA:</label>
-                                                <div class="col-md-8">
-                                                    <input type="text" class="form-control" id="txtDa" name="txtDa"
-                                                        placeholder="Domain Authority"
-                                                        value="<?php $utility->printSess2('txtDa',''); ?>" required />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="row align-items-center">
-                                                <label class="control-label col-md-2" for="txtPa">PA:</label>
-                                                <div class="col-md-10">
-                                                    <input type="text" class="form-control" id="txtPa" name="txtPa"
-                                                        placeholder="Page Authority"
-                                                        value="<?php $utility->printSess2('txtPa',''); ?>" required />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row align-items-center">
-                                        <!-- begion row -->
-                                        <div class="col-md-6">
-                                            <div class="row">
-                                                <label class="control-label col-md-4" for="txtCf">CF:</label>
-                                                <div class="col-md-8">
-                                                    <input type="text" class="form-control" id="txtCf" name="txtCf"
-                                                        placeholder="Citation Flow"
-                                                        value="<?php $utility->printSess2('txtCf',''); ?>" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="row align-items-center">
-                                                <label class="control-label col-md-2" for="txtTf">TF:</label>
-                                                <div class="col-md-10">
-                                                    <input type="text" class="form-control" id="txtTf" name="txtTf"
-                                                        placeholder="Trust Flow"
-                                                        value="<?php $utility->printSess2('txtTf',''); ?>" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row align-items-center">
-                                        <label class="control-label col-md-2" for="txtAlxTraffic">Alexa Rank:<span
-                                                class="orangeLetter"> </label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="txtAlxTraffic"
-                                                name="txtAlxTraffic"
-                                                value="<?php $utility->printSess2('txtAlxTraffic',''); ?>" required />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row align-items-center">
-                                        <label class="control-label col-md-2" for="txtOrgTraffic">Organic Traffic:<span
-                                                class="orangeLetter"> </label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="txtOrgTraffic"
-                                                name="txtOrgTraffic"
-                                                value="<?php $utility->printSess2('txtOrgTraffic',''); ?>" required />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row align-items-center">
-                                        <label class="control-label col-md-2" for="txtMozRank">Moz Rank:<span
-                                                class="orangeLetter"> </label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="txtMozRank" name="txtMozRank"
-                                                value="<?php $utility->printSess2('txtMozRank',''); ?>" required />
-                                        </div>
-                                    </div>
-                                </div>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row align-items-center">
+                                                            <!-- begion row -->
+                                                            <div class="col-md-6">
+                                                                <div class="row align-items-center">
+                                                                    <label class="control-label col-md-4"
+                                                                        for="txtDa">DA:</label>
+                                                                    <div class="col-md-8">
+                                                                        <input type="text" class="form-control"
+                                                                            id="txtDa" name="txtDa"
+                                                                            placeholder="Domain Authority"
+                                                                            value="<?php $utility->printSess2('txtDa',''); ?>"
+                                                                            required />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="row align-items-center">
+                                                                    <label class="control-label col-md-2"
+                                                                        for="txtPa">PA:</label>
+                                                                    <div class="col-md-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="txtPa" name="txtPa"
+                                                                            placeholder="Page Authority"
+                                                                            value="<?php $utility->printSess2('txtPa',''); ?>"
+                                                                            required />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row align-items-center">
+                                                            <!-- begion row -->
+                                                            <div class="col-md-6">
+                                                                <div class="row">
+                                                                    <label class="control-label col-md-4"
+                                                                        for="txtCf">CF:</label>
+                                                                    <div class="col-md-8">
+                                                                        <input type="text" class="form-control"
+                                                                            id="txtCf" name="txtCf"
+                                                                            placeholder="Citation Flow"
+                                                                            value="<?php $utility->printSess2('txtCf',''); ?>" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="row align-items-center">
+                                                                    <label class="control-label col-md-2"
+                                                                        for="txtTf">TF:</label>
+                                                                    <div class="col-md-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="txtTf" name="txtTf"
+                                                                            placeholder="Trust Flow"
+                                                                            value="<?php $utility->printSess2('txtTf',''); ?>" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row align-items-center">
+                                                            <label class="control-label col-md-2"
+                                                                for="txtAlxTraffic">Alexa Rank:<span
+                                                                    class="orangeLetter"> </label>
+                                                            <div class="col-md-10">
+                                                                <input type="text" class="form-control"
+                                                                    id="txtAlxTraffic" name="txtAlxTraffic"
+                                                                    value="<?php $utility->printSess2('txtAlxTraffic',''); ?>"
+                                                                    required />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row align-items-center">
+                                                            <label class="control-label col-md-2"
+                                                                for="txtOrgTraffic">Organic Traffic:<span
+                                                                    class="orangeLetter"> </label>
+                                                            <div class="col-md-10">
+                                                                <input type="text" class="form-control"
+                                                                    id="txtOrgTraffic" name="txtOrgTraffic"
+                                                                    value="<?php $utility->printSess2('txtOrgTraffic',''); ?>"
+                                                                    required />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row align-items-center">
+                                                            <label class="control-label col-md-2" for="txtMozRank">Moz
+                                                                Rank:<span class="orangeLetter"> </label>
+                                                            <div class="col-md-10">
+                                                                <input type="text" class="form-control" id="txtMozRank"
+                                                                    name="txtMozRank"
+                                                                    value="<?php $utility->printSess2('txtMozRank',''); ?>"
+                                                                    required />
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                                <div class="form-group">
-                                    <div class="row align-items-center">
-                                        <!-- begion row -->
-                                        <div class="col-md-6">
-                                            <div class="row align-items-center">
-                                                <label class="control-label col-md-4" for="txtFollow">Link Type</label>
-                                                <div class="col-md-8">
-                                                    <select id="txtFollow" class="form-control" name="txtFollow"
-                                                        required>
-                                                        <option value="DoFollow">DoFollow</option>
-                                                        <option value="NoFollow">NoFollow</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="row align-items-center">
-                                                <label class="control-label col-md-2" for="txtDelTime">Publishing
-                                                    Time:</label>
-                                                <div class="col-md-10">
-                                                    <input type="text" class="form-control w-75 m-auto" id="txtDelTime"
-                                                        name="txtDelTime" placeholder="(In Hours)"
-                                                        value="<?php $utility->printSess2('txtDelTime',''); ?>"
-                                                        required />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group my-3">
-                                    <div class="row align-items-center">
-                                        <label class="control-label col-md-2" for="txtExtUrl">Example Url:<span
-                                                class="orangeLetter"> </label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="txtExtUrl"
-                                                placeholder="https://example.com/article" name="txtExtUrl"
-                                                value="<?php $utility->printSess2('txtExtUrl',''); ?>" required />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row align-items-center">
-                                        <label class="control-label col-md-2" for="txtPrice">Price($):<span
-                                                class="orangeLetter"> </label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="txtPrice" name="txtPrice"
-                                                value="<?php $utility->printSess2('txtPrice',''); ?>" required />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row align-items-center">
-                                        <label class="control-label col-md-2" for="txtDomComments">Remarks:<span
-                                                class="orangeLetter"> </label>
-                                        <div class="col-md-10">
-                                            <textarea type="text" class="form-control" id="txtDomComments"
-                                                name="txtDomComments" rows="5"
-                                                value="<?php $utility->printSess2('txtDomComments',''); ?>"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
+                                                    <div class="form-group">
+                                                        <div class="row align-items-center">
+                                                            <!-- begion row -->
+                                                            <div class="col-md-6">
+                                                                <div class="row align-items-center">
+                                                                    <label class="control-label col-md-4"
+                                                                        for="txtFollow">Link Type</label>
+                                                                    <div class="col-md-8">
+                                                                        <select id="txtFollow" class="form-control"
+                                                                            name="txtFollow" required>
+                                                                            <option value="DoFollow">DoFollow</option>
+                                                                            <option value="NoFollow">NoFollow</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="row align-items-center">
+                                                                    <label class="control-label col-md-2"
+                                                                        for="txtDelTime">Publishing
+                                                                        Time:</label>
+                                                                    <div class="col-md-10">
+                                                                        <input type="text"
+                                                                            class="form-control w-75 m-auto"
+                                                                            id="txtDelTime" name="txtDelTime"
+                                                                            placeholder="(In Hours)"
+                                                                            value="<?php $utility->printSess2('txtDelTime',''); ?>"
+                                                                            required />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group my-3">
+                                                        <div class="row align-items-center">
+                                                            <label class="control-label col-md-2"
+                                                                for="txtExtUrl">Example Url:<span class="orangeLetter">
+                                                            </label>
+                                                            <div class="col-md-10">
+                                                                <input type="text" class="form-control" id="txtExtUrl"
+                                                                    placeholder="https://example.com/article"
+                                                                    name="txtExtUrl"
+                                                                    value="<?php $utility->printSess2('txtExtUrl',''); ?>"
+                                                                    required />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row align-items-center">
+                                                            <label class="control-label col-md-2"
+                                                                for="txtPrice">Price($):<span class="orangeLetter">
+                                                            </label>
+                                                            <div class="col-md-10">
+                                                                <input type="text" class="form-control" id="txtPrice"
+                                                                    name="txtPrice"
+                                                                    value="<?php $utility->printSess2('txtPrice',''); ?>"
+                                                                    required />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row align-items-center">
+                                                            <label class="control-label col-md-2"
+                                                                for="txtDomComments">Remarks:<span class="orangeLetter">
+                                                            </label>
+                                                            <div class="col-md-10">
+                                                                <textarea type="text" class="form-control"
+                                                                    id="txtDomComments" name="txtDomComments" rows="5"
+                                                                    value="<?php $utility->printSess2('txtDomComments',''); ?>"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                                <div class="d-flex justify-content-evenly ">
-                                    <a href="account.php" class="btn btn-danger" id="btn_start_test" >Cancel</a>
+                                                    <div class="d-flex justify-content-evenly ">
+                                                        <a href="account.php" class="btn btn-danger"
+                                                            id="btn_start_test">Cancel</a>
 
-                                    <!--<input type="submit" name="btnAddDomain" class="btn btn-success " id="btn_start_test" value="Add New Record" />-->
-                                    <button type="submit" name="btnAddDomain" class="btn btn-primary">Add For
-                                        Sell</button>
-                                </div>
-                            </form>
+                                                        <!--<input type="submit" name="btnAddDomain" class="btn btn-success " id="btn_start_test" value="Add New Record" />-->
+                                                        <button type="submit" name="btnAddDomain"
+                                                            class="btn btn-primary">Add For
+                                                            Sell</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!--end from div-->
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- //Main content -->
+
+                                <!-- contact top -->
+
+                            </div>
+                            <!-- //contact top -->
                         </div>
-                        <!--end from div-->
                     </div>
                 </div>
-            </section>
-            <!-- //Main content -->
-
-            <!-- contact top -->
-
+            </div>
         </div>
-        <!-- //contact top -->
-
     </div>
     <!-- js-->
     <script src="js/jquery-2.2.3.min.js"></script>
@@ -402,7 +461,9 @@ if(isset($_POST['btnAddDomain']))
             var addto = "#field" + next;
             var addRemove = "#field" + (next);
             next = next + 1;
-            var newIn = '<input autocomplete="off" class="input form-control" id="field' + next +
+            var newIn =
+                '<input autocomplete="off" class="input form-control" id="field' +
+                next +
                 '" name="txtFeatured[]' + next + '" type="text">';
             var newInput = $(newIn);
             var removeBtn = '<button id="remove' + (next - 1) +
