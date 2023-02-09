@@ -80,7 +80,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 
         </li>
 
-        <li class="<?= ($activePage == 'gblogs-list') ? 'active-styling':''; ?>">
+        <li class="<?= ($activePage == 'gblogs-list') ? 'active-styling':''; if($activePage =='edit-my-blog'){echo 'active-styling';}?> ?>">
             <a href="gblogs-list.php" class="dboard-li-atag"><i class="fa fa-tasks pe-2" aria-hidden="true"></i><span
                     class="hidden-xs hidden-sm">Guest posting Blogs</span></a>
         </li>

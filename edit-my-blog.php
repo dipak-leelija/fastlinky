@@ -1,7 +1,4 @@
-<!--
-Author: Safikul Islam
-Author URL: http://webtechhelp.org
--->
+
 <?php
 session_start();
 //include_once('checkSession.php');
@@ -101,258 +98,338 @@ if(isset($_POST['btnEditDomain']))
 <html lang="zxx">
 
 <head>
-	<title>Domain name with website or blogs ready for you | Domains :: w3layouts</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="utf-8">
-	<meta name="keywords" content="Precedence Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+    <title>Domain name with website or blogs ready for you | Domains :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Precedence Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-	<script>
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
+    <script>
+    addEventListener("load", function() {
+        setTimeout(hideURLbar, 0);
+    }, false);
 
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    }
+    </script>
 
-	<!-- Bootstrap Core CSS -->
-	<!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-	<link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-	<link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
+    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
 
-	<!-- Custom CSS -->
-	<link href="css/style.css" rel='stylesheet' type='text/css' />
-	<link href="css/leelija.css" rel='stylesheet' type='text/css' />
-	<link href="css/form.css" rel='stylesheet' type='text/css' />
-	<link href="css/custom.css" rel='stylesheet' type='text/css' />
-	<!-- font-awesome icons -->
-	<!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
-	<!-- //Custom Theme files -->
-	<!--webfonts-->
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
+    <link href="css/form.css" rel='stylesheet' type='text/css' />
+    <link href="css/custom.css" rel='stylesheet' type='text/css' />
+	<link href="css/dashboard.css" rel='stylesheet' type='text/css' />
+    <!-- font-awesome icons -->
+    <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
+    <!-- //Custom Theme files -->
+    <!--webfonts-->
 
-	<!--//webfonts-->
-	<link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-	<link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
+    <!--//webfonts-->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-	<div id="home">
-		<!-- header -->
-		<?php require_once 'partials/navbar.php'; ?>
-		<!-- //header -->
-		<!-- banner -->
-		<div class="banner1">
+    <div id="home">
+        <!-- header -->
+        <?php require_once 'partials/navbar.php'; ?>
+        <!-- //header -->
+        <!-- banner -->
+        <div class="banner1">
 
-		</div>
-		<!-- //banner -->
-		<!-- Main Content -->
-		<div class="client_add_blog mt-4">
+        </div>
+        <!-- //banner -->
+        <!-- Main Content -->
 
-		<section class="py-5 branches position-relative" id="explore">
-			<div class="container py-md-5 container-fluid text-center">
-			<?php
-				if( (isset($_GET['action'])) && ($_GET['action'] == 'EditBlog') )
-				{
-					$blogDtls		= $blogMst->showBlog($blog_id);
+        <div class="edit_profile" style="overflow: hidden;">
+            <div class="container-fluid1">
+                <div class=" display-table">
+                    <div class="row ">
+                        <!--Row start-->
+                        <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
 
-			?>
-				<div class="row">
-					<div class="col-sm-12">
-						<h2 class="stat-title text-center pb-lg-5">Add Your Guest Posting Blogs
-						</h2>
-						<div class="bfrom">	<!--start from div-->
-							<form class="form-horizontal" role="form" action="<?php $_SERVER['PHP_SELF']."?action=edit_blog&blog_id=".$blog_id; ?>" name="formContactform" method="post" enctype="multipart/form-data" autocomplete="off">
-								<b style="color: red;"><?php $uMesg->dispMessage($typeM, '../images/icon/', 'blackLarge');?></b>
-								<div class="form-group">
-									<div class="row align-items-center">
-										<label class="control-label col-md-2" for="txtDomain">Blog Url:<span class="orangeLetter"> </label>
-										<div class="col-md-10">
-											<input type="text" class="form-control" id="txtDomain" name="txtDomain"
-											value="<?php echo $blogDtls[0]; ?>" required />
-										</div>
-									</div>
-								</div>
+                            <div class="client_profile_dashboard_left">
+                                <?php include("dashboard-inc.php");?>
+                                <hr>
+                            </div>
 
-								<div class="form-group" >
-									<div class="row align-items-center">
-										<label class="control-label col-md-2" for="txtNicheId">Niche</label>
-											<div class="col-md-10">
-												<select id="txtNicheId" class="form-control" name="txtNicheId" required>
-													<option value="<?php echo $blogDtls[23]; ?>" selected="selected"><?php echo $blogDtls[23]; ?></option>
-														<?php
+                        </div>
+                        <div class="col-md-9 mt-0 pl-0 display-table-cell v-align client_profile_dashboard_right">
+
+                            <div class="client_add_blog mt-4">
+
+                                <section class="py-0 branches position-relative" id="explore">
+                                    <div class="container py-md-0 container-fluid text-center">
+                                        <?php
+				                          if( (isset($_GET['action'])) && ($_GET['action'] == 'EditBlog') )
+			                	          {
+					                       $blogDtls		= $blogMst->showBlog($blog_id);
+			                             ?>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <!-- <h2 class="stat-title text-center pb-lg-4">Add Your Guest Posting Blogs
+                                                </h2> -->
+                                                <div class="bfrom">
+                                                    <!--start from div-->
+                                                    <form class="form-horizontal" role="form"
+                                                        action="<?php $_SERVER['PHP_SELF']."?action=edit_blog&blog_id=".$blog_id; ?>"
+                                                        name="formContactform" method="post"
+                                                        enctype="multipart/form-data" autocomplete="off">
+                                                        <b
+                                                            style="color: red;"><?php $uMesg->dispMessage($typeM, '../images/icon/', 'blackLarge');?></b>
+                                                        <div class="form-group">
+                                                            <div class="row align-items-center">
+                                                                <label class="control-label col-md-2"
+                                                                    for="txtDomain">Blog Url:<span class="orangeLetter">
+                                                                </label>
+                                                                <div class="col-md-10">
+                                                                    <input type="text" class="form-control"
+                                                                        id="txtDomain" name="txtDomain"
+                                                                        value="<?php echo $blogDtls[0]; ?>" required />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="row align-items-center">
+                                                                <label class="control-label col-md-2"
+                                                                    for="txtNicheId">Niche</label>
+                                                                <div class="col-md-10">
+                                                                    <select id="txtNicheId" class="form-control"
+                                                                        name="txtNicheId" required>
+                                                                        <option value="<?php echo $blogDtls[23]; ?>"
+                                                                            selected="selected">
+                                                                            <?php echo $blogDtls[23]; ?></option>
+                                                                        <?php
 															$BlogMst  = $blogMst->ShowBlogNichMast();
 															foreach($BlogMst as $eachRecord)
 																{
 																	echo '<option value="'.$eachRecord['niche_name'].'">'.$eachRecord['niche_name'].'</option>';
 																}
 														?>
-												</select>
-											</div>
-									</div>
-								</div>
-								<div class="form-group" >
-									<div class="row align-items-center" ><!-- begion row -->
-										<div class="col-md-6">
-											<div class="row align-items-center">
-												<label class="control-label col-md-4" for="txtDa">DA:</label>
-												<div class="col-md-8">
-													<input type="text" class="form-control" id="txtDa" name="txtDa"
-														value="<?php echo $blogDtls[1]; ?>" required />
-												</div>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="row align-items-center">
-												<label class="control-label col-md-2" for="txtPa">PA:</label>
-												<div class="col-md-10">
-													<input type="text" class="form-control" id="txtPa" name="txtPa"
-														value="<?php echo $blogDtls[2]; ?>" required />
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="form-group" >
-									<div class="row align-items-center" ><!-- begion row -->
-										<div class="col-md-6">
-											<div class="row">
-												<label class="control-label col-md-4" for="txtCf">CF:</label>
-												<div class="col-md-8">
-													<input type="text" class="form-control" id="txtCf" name="txtCf"
-														value="<?php echo $blogDtls[3]; ?>" />
-												</div>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="row align-items-center">
-												<label class="control-label col-md-2" for="txtTf">TF:</label>
-												<div class="col-md-10">
-													<input type="text" class="form-control" id="txtTf" name="txtTf"
-														value="<?php echo $blogDtls[4]; ?>" />
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="row align-items-center">
-										<label class="control-label col-md-2" for="txtAlxTraffic">Alexa Traffic:<span class="orangeLetter"> </label>
-										<div class="col-md-6">
-											<input type="text" class="form-control" id="txtAlxTraffic" name="txtAlxTraffic"
-											value="<?php echo $blogDtls[25]; ?>" required />
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="row align-items-center">
-										<label class="control-label col-md-2" for="txtOrgTraffic">Organic Traffic:<span class="orangeLetter"> </label>
-										<div class="col-md-6">
-											<input type="text" class="form-control" id="txtOrgTraffic" name="txtOrgTraffic"
-											value="<?php echo $blogDtls[26]; ?>" required />
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="row align-items-center">
-										<label class="control-label col-md-2" for="txtMozRank">Moz Rank:<span class="orangeLetter"> </label>
-										<div class="col-md-6">
-											<input type="text" class="form-control" id="txtMozRank" name="txtMozRank"
-											value="<?php echo $blogDtls[6]; ?>" required />
-										</div>
-									</div>
-								</div>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row align-items-center">
+                                                                <!-- begion row -->
+                                                                <div class="col-md-6">
+                                                                    <div class="row align-items-center">
+                                                                        <label class="control-label col-md-4"
+                                                                            for="txtDa">DA:</label>
+                                                                        <div class="col-md-8">
+                                                                            <input type="text" class="form-control"
+                                                                                id="txtDa" name="txtDa"
+                                                                                value="<?php echo $blogDtls[1]; ?>"
+                                                                                required />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="row align-items-center">
+                                                                        <label class="control-label col-md-2"
+                                                                            for="txtPa">PA:</label>
+                                                                        <div class="col-md-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="txtPa" name="txtPa"
+                                                                                value="<?php echo $blogDtls[2]; ?>"
+                                                                                required />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row align-items-center">
+                                                                <!-- begion row -->
+                                                                <div class="col-md-6">
+                                                                    <div class="row">
+                                                                        <label class="control-label col-md-4"
+                                                                            for="txtCf">CF:</label>
+                                                                        <div class="col-md-8">
+                                                                            <input type="text" class="form-control"
+                                                                                id="txtCf" name="txtCf"
+                                                                                value="<?php echo $blogDtls[3]; ?>" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="row align-items-center">
+                                                                        <label class="control-label col-md-2"
+                                                                            for="txtTf">TF:</label>
+                                                                        <div class="col-md-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="txtTf" name="txtTf"
+                                                                                value="<?php echo $blogDtls[4]; ?>" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row align-items-center">
+                                                                <label class="control-label col-md-2"
+                                                                    for="txtAlxTraffic">Alexa Traffic:<span
+                                                                        class="orangeLetter"> </label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control"
+                                                                        id="txtAlxTraffic" name="txtAlxTraffic"
+                                                                        value="<?php echo $blogDtls[25]; ?>" required />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row align-items-center">
+                                                                <label class="control-label col-md-2"
+                                                                    for="txtOrgTraffic">Organic Traffic:<span
+                                                                        class="orangeLetter"> </label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control"
+                                                                        id="txtOrgTraffic" name="txtOrgTraffic"
+                                                                        value="<?php echo $blogDtls[26]; ?>" required />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row align-items-center">
+                                                                <label class="control-label col-md-2"
+                                                                    for="txtMozRank">Moz Rank:<span
+                                                                        class="orangeLetter"> </label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control"
+                                                                        id="txtMozRank" name="txtMozRank"
+                                                                        value="<?php echo $blogDtls[6]; ?>" required />
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-								<div class="form-group" >
-									<div class="row align-items-center" ><!-- begion row -->
-										<div class="col-md-6">
-											<div class="row align-items-center">
-												<label class="control-label col-md-4" for="txtFollow">Link Type</label>
-												<div class="col-md-8">
-													<select id="txtFollow" class="form-control select2" name="txtFollow" required>
-														<?php if($blogDtls[7] !='DoFollow' && $blogDtls[7] !='NoFollow') {
+                                                        <div class="form-group">
+                                                            <div class="row align-items-center">
+                                                                <!-- begion row -->
+                                                                <div class="col-md-6">
+                                                                    <div class="row align-items-center">
+                                                                        <label class="control-label col-md-4"
+                                                                            for="txtFollow">Link Type</label>
+                                                                        <div class="col-md-8">
+                                                                            <select id="txtFollow"
+                                                                                class="form-control select2"
+                                                                                name="txtFollow" required>
+                                                                                <?php if($blogDtls[7] !='DoFollow' && $blogDtls[7] !='NoFollow') {
 															echo '<option value="'.$blogDtls[7].'" selected>'.$blogDtls[7].'</option>';
 														} 
 														?>
-														<option value="DoFollow" <?php if($blogDtls[7] =='DoFollow') { echo "selected";} ?>>DoFollow</option>
-														<option value="NoFollow" <?php if($blogDtls[7] =='NoFollow') { echo "selected";} ?>>NoFollow</option>
-													</select>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="row align-items-center">
-												<label class="control-label col-md-3" for="txtDelTime">Publishing Time(Hours):</label>
-												<div class="col-md-9">
-													<input type="text" class="form-control float-right" id="txtDelTime" name="txtDelTime"
-														value="<?php echo $blogDtls[27]; ?>" required />
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="row align-items-center">
-										<label class="control-label col-md-2" for="txtExtUrl">Example Url:<span class="orangeLetter"> </label>
-										<div class="col-md-10">
-											<input type="text" class="form-control" id="txtExtUrl" name="txtExtUrl"
-											value="<?php echo $blogDtls[17]; ?>" required />
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="row align-items-center">
-										<label class="control-label col-md-2" for="txtPrice">Price($):<span class="orangeLetter"> </label>
-										<div class="col-md-6">
-											<input type="text" class="form-control" id="txtPrice" name="txtPrice"
-											value="<?php echo $blogDtls[9]; ?>" required />
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="row align-items-center">
-										<label class="control-label col-md-2" for="txtDomComments">Remarks:<span class="orangeLetter"> </label>
-										<div class="col-md-10">
-											<textarea type="text" class="form-control" id="txtDomComments" name="txtDomComments" rows="5"><?php echo $blogDtls[18]; ?></textarea>
-										</div>
-									</div>
-								</div>
+                                                                                <option value="DoFollow"
+                                                                                    <?php if($blogDtls[7] =='DoFollow') { echo "selected";} ?>>
+                                                                                    DoFollow</option>
+                                                                                <option value="NoFollow"
+                                                                                    <?php if($blogDtls[7] =='NoFollow') { echo "selected";} ?>>
+                                                                                    NoFollow</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="row align-items-center">
+                                                                        <label class="control-label col-md-3"
+                                                                            for="txtDelTime">Publishing
+                                                                            Time(Hours):</label>
+                                                                        <div class="col-md-9">
+                                                                            <input type="text"
+                                                                                class="form-control float-right"
+                                                                                id="txtDelTime" name="txtDelTime"
+                                                                                value="<?php echo $blogDtls[27]; ?>"
+                                                                                required />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row align-items-center">
+                                                                <label class="control-label col-md-2"
+                                                                    for="txtExtUrl">Example Url:<span
+                                                                        class="orangeLetter"> </label>
+                                                                <div class="col-md-10">
+                                                                    <input type="text" class="form-control"
+                                                                        id="txtExtUrl" name="txtExtUrl"
+                                                                        value="<?php echo $blogDtls[17]; ?>" required />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row align-items-center">
+                                                                <label class="control-label col-md-2"
+                                                                    for="txtPrice">Price($):<span class="orangeLetter">
+                                                                </label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control"
+                                                                        id="txtPrice" name="txtPrice"
+                                                                        value="<?php echo $blogDtls[9]; ?>" required />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row align-items-center">
+                                                                <label class="control-label col-md-2"
+                                                                    for="txtDomComments">Remarks:<span
+                                                                        class="orangeLetter"> </label>
+                                                                <div class="col-md-10">
+                                                                    <textarea type="text" class="form-control"
+                                                                        id="txtDomComments" name="txtDomComments"
+                                                                        rows="5"><?php echo $blogDtls[18]; ?></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-								<div class="row justify-content-evenly  align-items-center">
-									<div class="col-12 col-md-6 text-center form-group">
-										<!--<input type="submit" name="btnAddDomain" class="btn btn-success " id="btn_start_test" value="Add New Record" />-->
-										<a href="account.php" class="cancel_btn btn-block" id="btn_start_test"  role="button">Cancel</a>
-									</div>
-									<div class="col-12 col-md-6 text-center form-group">
-										<button type="submit" name="btnEditDomain" class="update_btn">Update</button>
-									</div>
-								</div>
-							</form>
-						</div><!--end from div-->
+                                                        <div class="row justify-content-evenly  align-items-center">
+                                                            <div class="col-12 col-md-6 text-center form-group">
+                                                                <!--<input type="submit" name="btnAddDomain" class="btn btn-success " id="btn_start_test" value="Add New Record" />-->
+                                                                <a href="account.php" class="cancel_btn btn-block"
+                                                                    id="btn_start_test" role="button">Cancel</a>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 text-center form-group">
+                                                                <button type="submit" name="btnEditDomain"
+                                                                    class="update_btn">Update</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!--end from div-->
 
-					</div>
-				</div>
-			<?php
-				}
-			?>
-			</div>
-		</section>
-		<!-- //Main content -->
-	<?php //include('more-info.php');?>
-			</div>
-		<!-- //contact top -->
+                                            </div>
+                                        </div>
+                                        <?php
+				                              }
+			                                ?>
+                                    </div>
+                                </section>
+                                <!-- //Main content -->
+                                <?php //include('more-info.php');?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //contact top -->
 
-		<!-- Footer -->
-		<?php require_once 'partials/footer.php'; ?>
-		<!-- /Footer -->
-	</div>
-	<!-- js-->
-	<!-- <script src="js/jquery-2.2.3.min.js"></script> -->
-	<!-- js-->
-	<!-- Scrolling Nav JavaScript -->
-	<!-- <script src="js/scrolling-nav.js"></script> -->
-	<!-- //fixed-scroll-nav-js -->
-	<!-- <script>
+        <!-- Footer -->
+        <?php require_once 'partials/footer.php'; ?>
+        <!-- /Footer -->
+    </div>
+    <!-- js-->
+    <!-- <script src="js/jquery-2.2.3.min.js"></script> -->
+    <!-- js-->
+    <!-- Scrolling Nav JavaScript -->
+    <!-- <script src="js/scrolling-nav.js"></script> -->
+    <!-- //fixed-scroll-nav-js -->
+    <!-- <script>
 		$(window).scroll(function () {
 			if ($(document).scrollTop() > 70) {
 				$('nav.pagescrollfix,nav.RWDpagescrollfix').addClass('shrink');
@@ -362,7 +439,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		});
 	</script> -->
 
-<!-- <script src="js/jquery.uploadPreview.js"></script>
+    <!-- <script src="js/jquery.uploadPreview.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -374,8 +451,8 @@ $(document).ready(function() {
 });
 </script> -->
 
-	<!--Add remove input field-->
-	<!-- <script>
+    <!--Add remove input field-->
+    <!-- <script>
 	$(document).ready(function(){
     var next = 1;
     $(".add-more").click(function(e){
@@ -404,10 +481,10 @@ $(document).ready(function() {
 	});
 
 	</script> -->
-	<!--//Add remove input field-->
+    <!--//Add remove input field-->
 
-	<!-- Banner text Responsiveslides -->
-	<!-- <script src="js/responsiveslides.min.js"></script>
+    <!-- Banner text Responsiveslides -->
+    <!-- <script src="js/responsiveslides.min.js"></script>
 	<script>
 		// You can also use"$(window).load(function() {"
 		$(function () {
@@ -428,9 +505,9 @@ $(document).ready(function() {
 
 		});
 	</script> -->
-	<!-- //Banner text  Responsiveslides -->
-	<!-- start-smooth-scrolling -->
-	<!-- <script src="js/move-top.js"></script>
+    <!-- //Banner text  Responsiveslides -->
+    <!-- start-smooth-scrolling -->
+    <!-- <script src="js/move-top.js"></script>
 	<script src="js/easing.js"></script>
 	<script>
 		jQuery(document).ready(function ($) {
@@ -443,9 +520,9 @@ $(document).ready(function() {
 			});
 		});
 	</script> -->
-	<!-- //end-smooth-scrolling -->
-	<!-- smooth-scrolling-of-move-up -->
-	<!-- <script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <!-- <script>
 		$(document).ready(function () {
 			/*
 			 var defaults = {
@@ -462,7 +539,7 @@ $(document).ready(function() {
 
 		});
 	</script> -->
-<!-- <script>
+    <!-- <script>
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -478,12 +555,12 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 </script> -->
-	<!-- <script src="js/SmoothScroll.min.js"></script> -->
-	<!-- //smooth-scrolling-of-move-up -->
-	<!-- Bootstrap Core JavaScript -->
-	<!-- <script src="js/bootstrap.js"></script> -->
-	<script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-	<!-- //Bootstrap Core JavaScript -->
+    <!-- <script src="js/SmoothScroll.min.js"></script> -->
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap Core JavaScript -->
+    <!-- <script src="js/bootstrap.js"></script> -->
+    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <!-- //Bootstrap Core JavaScript -->
 </body>
 
 </html>
