@@ -350,6 +350,7 @@ function orderPlaced(){
 
    @media(max-width:320px){
     .order-details-headline{
+        margin-bottom: 0.5rem;
         display: block;
         width: 100%;
         word-break: break-word;
