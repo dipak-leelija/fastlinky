@@ -3,11 +3,11 @@ session_start();
 require_once "_config/dbconnect.php";
 require_once "_config/dbconnect.trait.php";
 
-require_once __DIR__."includes/constant.inc.php";
+require_once "includes/constant.inc.php";
 
-require_once __DIR__."classes/customer.class.php";
-require_once __DIR__."classes/utility.class.php";
-require_once __DIR__."classes/wishList.class.php";
+require_once "classes/customer.class.php";
+require_once "classes/utility.class.php";
+require_once "classes/wishList.class.php";
 
 $customer		= new Customer();
 $WishList       = new WishList();
@@ -19,7 +19,7 @@ $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 
 // redirect to dashboard if the user is not a seller 
-require_once __DIR__.'/includes/check-customer.php';
+require_once 'includes/check-customer.php';
 
 
 $wishes = $WishList->countWishlistByUser($cusId);
