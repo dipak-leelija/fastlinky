@@ -109,8 +109,7 @@ function orderPlaced(){
     $mail = 
 
 '<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
-
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -127,6 +126,8 @@ function orderPlaced(){
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
     <style>
     @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+    @import url(\'https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&family=Rubik:wght@300;400&display=swap\');
+
 
     body {
         margin: 0;
@@ -147,12 +148,12 @@ function orderPlaced(){
     }
 
     .table-second {
-        width: 94%;
+        width: 100%;
         max-width: 600px;
         border: 1px solid #c9c6c6;
         border-spacing: 0;
         text-align: left;
-        font-family: Arial, sans-serif;
+        font-family: \'Cabin\', sans-serif;
         font-size: 16px;
         line-height: 22px;
         color: #363636;
@@ -213,7 +214,7 @@ function orderPlaced(){
         line-height: 1.1;
         font-weight: bold;
         letter-spacing: -0.02em;
-        font-family: \'Satoshi-Variable\';
+        font-family: \'Cabin\', sans-serif;
 
     }
 
@@ -232,7 +233,7 @@ function orderPlaced(){
         /* max-width: 395px; */
         vertical-align: top;
         padding-bottom: 20px;
-        font-family: Arial, sans-serif;
+        // font-family: Arial, sans-serif;
         font-size: 16px;
         line-height: 22px;
         color: #363636;
@@ -271,7 +272,7 @@ function orderPlaced(){
 
 
     .order-details-desc-important {
-        padding: 30px;
+        padding: 15px 30px;
         background-color: aliceblue;
     }
 
@@ -280,7 +281,7 @@ function orderPlaced(){
     div,
     h1,
     p {
-        font-family: Arial, sans-serif;
+        font-family: inherit;
     }
 
     @media screen and (max-width: 530px) {
@@ -302,40 +303,45 @@ function orderPlaced(){
         width: 100%;
         text-align: left;
     }
-        .tables-fr-cdetails td{
-            width: 50%;
-        }
-        .tables-fr-cdetails th{
-            padding: 1rem 0;
-            width: 50%;
-        }
-        .tables-fr-cdetails tr{
-            word-break: break-all;
-            display: flex;
-        }
+    .tables-fr-cdetails td{
+        width: 50%;
+    }
+    .tables-fr-cdetails th{
+        padding: 1rem 0;
+        width: 50%;
+    }
+    .tables-fr-cdetails tr{
+        word-break: break-all;
+        display: flex;
+    }
 
 
-        .order-dtail-table-main{
-            word-break: break-word;
-            padding: 0 6rem;
-        }
+    .order-details-table{
+        word-break: break-word;
+        padding: 0 6rem;
+        font-weight: 600;
+        font-family: \'Cabin\', sans-serif;
+    }
+
     .order-details-headline{
-    display: flex;
-    width: 100%;
-    word-break: break-word;
+        display: flex;
+        width: 100%;
+        word-break: break-word;
+        margin: 20px 0px 5px;
    }
+
    .order-details-headline-div{
-    width: 50%;
+        width: 50%;
    }
    .order-details-main-div{
-    display: flex;
-    width: 100%;
+        display: flex;
+        width: 100%;
    }
    .order-details-sub-div{
-    width: 50%;
+        width: 50%;
    }
    @media(max-width:600px){
-    .order-dtail-table-main {
+    .order-details-table {
         padding: 0 1rem;
     }
    }
@@ -401,16 +407,14 @@ function orderPlaced(){
                         <tr>
                             <td class="customer-details-div">
                                 <h1 class="customer-details-div-h1">Hi Dipak, Your order has been place successfully</h1>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste ducimus iure maiores
-                                    explicabo, at doloremque recusandae aperiam illo corporis dolorem tempora labore
-                                    cumque ex, voluptatum cum ab dolorum magnam suscipit.</p>
+                                <p>Thank you very much for placing an order with us! We truly appreciate your trust and look forward to making your experience as enjoyable as possible.</p>
                             </td>
                         </tr>
                     
                         <tr>
                         <td>
                     
-                            <div class="order-dtail-table-main">
+                            <div class="order-details-table">
                                 <h4 class="order-details-headline">
                                     <div class="order-details-headline-div"> Order Details :</div>
                                     <div class="order-details-headline-div  "> #JBHUYTG786G</div>
@@ -451,20 +455,20 @@ function orderPlaced(){
                                     <p class="col-lge-p2" style="">Nam non ante risus. Vestibulum vitae
                                         eleifend nisl, quis vehicula justo. Integer viverra efficitur pharetra. Nullam
                                         eget erat nibh.</p>
-                                    <p class="col-lge-p3">
+                                    <!--<p class="col-lge-p3">
                                         <a href="#" class="col-lge-p3-atag">
                                             <span class="col-lge-p3-span">Track your order</span>
                                         </a>
-                                    </p>
+                                    </p>-->
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td class="order-details-desc-important">
-                                <p style="margin:0;text-align: justify;">Duis sit amet accumsan nibh, varius tincidunt
+                                <small style="margin:0;text-align: justify;">Duis sit amet accumsan nibh, varius tincidunt
                                     lectus. Quisque
                                     commodo, nulla ac feugiat cursus, arcu orci condimentum tellus, vel placerat libero
-                                    sapien et libero. Suspendisse auctor vel orci nec finibus.</p>
+                                    sapien et libero. Suspendisse auctor vel orci nec finibus.</small>
                             </td>
                         </tr>';
                         // <!-- ************************** FOOTER STARTS ************************ -->
