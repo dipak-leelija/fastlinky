@@ -217,21 +217,13 @@ function orderPlaced(){
 
     }
 
-    .ts-td2-a-tag {
-        color: #e50d70;
-        text-decoration: underline;
-    }
-
-    .ts-td4-img-section {
+    .order-details-description {
         text-align: justify;
         padding: 30px 2rem 11px 2rem;
         font-size: 0;
         border-bottom: 1px solid #f0f0f5;
         border-color: rgba(201, 201, 207, .35);
     }
-
-
-
 
 
     .col-lge {
@@ -278,7 +270,7 @@ function orderPlaced(){
     }
 
 
-    .ts-td6-text-div {
+    .order-details-desc-important {
         padding: 30px;
         background-color: aliceblue;
     }
@@ -350,7 +342,7 @@ function orderPlaced(){
 
    @media(max-width:320px){
     .order-details-headline{
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.5rem; 
         display: block;
         width: 100%;
         word-break: break-word;
@@ -450,7 +442,7 @@ function orderPlaced(){
 
 
                         <tr>
-                            <td class="ts-td4-img-section">
+                            <td class="order-details-description">
                                 <div class="col-lge">
                                     <p class="col-lge-p1">Nullam mollis sapien vel cursus
                                         fermentum. Integer porttitor augue id ligula facilisis pharetra. In eu ex et
@@ -468,7 +460,7 @@ function orderPlaced(){
                             </td>
                         </tr>
                         <tr>
-                            <td class="ts-td6-text-div">
+                            <td class="order-details-desc-important">
                                 <p style="margin:0;text-align: justify;">Duis sit amet accumsan nibh, varius tincidunt
                                     lectus. Quisque
                                     commodo, nulla ac feugiat cursus, arcu orci condimentum tellus, vel placerat libero
