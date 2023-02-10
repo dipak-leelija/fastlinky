@@ -2,6 +2,7 @@
 session_start();
 include_once('checkSession.php');
 
+require_once "../includes/constant.inc.php";
 require_once "../_config/dbconnect.php";
 require_once "../_config/dbconnect.trait.php";
 require_once "../classes/adminLogin.class.php"; 
@@ -38,7 +39,7 @@ $blogsDtls	   = $blogMst->ShowBlogData();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
+    <title>Blog List - <?php echo COMPANY_FULL_NAME; ?></title>
     <link rel="shortcut icon" href="images/favicon.png" />
 
     <link rel="stylesheet" href="vendors/feather/feather.css">
@@ -46,6 +47,7 @@ $blogsDtls	   = $blogMst->ShowBlogData();
     <link rel="stylesheet" href="../plugins/data-table/style.css">
     <link rel="stylesheet" href="css/vertical-layout-light/style.css">
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../plugins/sweetalert/sweetalert2.css">
 
 
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
@@ -128,12 +130,7 @@ $blogsDtls	   = $blogMst->ShowBlogData();
     <script src="../plugins/data-table/simple-datatables.js"></script>
     <script src="../plugins/tinymce/tinymce.js"></script>
     <script src="../plugins/main.js"></script>
-
-    <script>
-    function deleteBlog() {
-        return confirm("Are you sure that you want to delete the blog Contents ?")
-    }
-    </script>
+    <script src="../plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -141,7 +138,7 @@ $blogsDtls	   = $blogMst->ShowBlogData();
     $(document).ready(function() {
         function lodetable() {
             $.ajax({
-                url: "blog_masterajax.php",
+                url: "blog_table.ajax.php",
                 type: "GET",
                 success: function(data) {
                     $('#table').html(data);

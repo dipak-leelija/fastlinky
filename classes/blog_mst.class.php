@@ -454,6 +454,23 @@ class BlogMst extends DatabaseConnection
      }
      return $temp_arr;  
      }
+
+	  /**
+	*	This function will delete a Blog Niche details permanently
+	*
+	*	@param
+	*			$blog_niche_id			blog_niche_id 
+	*
+	*	@return null
+	*/
+	function delBlogDtls($blog_id){
+		
+		$delete1 = "DELETE FROM blog_mst WHERE blog_id = '$blog_id'";
+		$res	= $this->conn->query($delete1);
+		return $res;
+		
+	}//eof
+	
 	
 	#####################################################################################################
 	#
@@ -666,24 +683,6 @@ class BlogMst extends DatabaseConnection
      return $temp_arr;  
      }
 	 
-	 /**
-	*	This function will delete a Blog Niche details permanently
-	*
-	*	@param
-	*			$blog_niche_id			blog_niche_id 
-	*
-	*	@return null
-	*/
-	function delBlogDomDtls($blog_niche_id)
-	{
-		
-		//delete from product
-		$delete1 = "DELETE FROM blog_niche_detail WHERE blog_niche_id='$blog_niche_id'";
-		
-		//execute quary
-		$query1	= mysql_query($delete1);
-		
-	}//eof
 	
 	
 	#####################################################################################################
