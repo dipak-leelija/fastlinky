@@ -70,8 +70,8 @@ if(isset($_GET['seo_url']))
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
     <link href="css/blogger-outreach.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/partials.css">
-
+    <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="stylesheet" href="css/clientside-logo.css">
 
     <!-- font-awesome icons -->
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
@@ -95,21 +95,22 @@ if(isset($_GET['seo_url']))
         <section class="blogger_outreach_banner">
             <div class="container bo-main-cntr">
                 <div class="row blog-1main-row">
-                    <div class="col-12 col-lg-7 col-md-7  px-0 px-md-4">
+                    <div class="col-12 col-lg-6 col-md-6  px-0 px-md-2">
                         <div class="bo-wrap">
                             <h1 class="blogout-main-h1">Blogger <span>Outreach</span> Services </h1>
                             <p class=" mt-3 mb-4 py-0 py-md-2 blogout-main-p">White-Hat, Niche Relevant, Editorial <br>
                                 Backlinks For Best And Long Lasting Result
                             </p>
                             <div class=" buttonsinfo ">
-                                <!-- <a href="contact.php" class="btn explore_btn mt-md-3 ms-2">See Pricing</a> -->
-                                <button type="button" class="btn blogger-btn ">See Pricing</button>
+                                <a href="#pricing-cards">
+                                    <button type="button" class="btn blogger-btn ">See Pricing</button>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-5 col-md-5 vid-col">
+                    <div class="col-12 col-lg-6 col-md-6 p-0">
                         <div class="bo-wrap">
-                            <img src="./images/leelija-outreach-team.png " class="w-100" alt="">
+                            <img src="./images/freepik-img/blogger-outreach-banner.png" class="w-100" alt="">
                         </div>
 
                     </div>
@@ -120,14 +121,6 @@ if(isset($_GET['seo_url']))
     </div>
     <!-- end of blogger-outreach main banner -->
     <!-- --------------------------------------------------------------------------------------------- -->
-
-
-    <!--Banner Dividor-->
-    <?php //include ('quote.php') ?>
-    <!--/End of baneer Dividor-->
-
-    <!-- ______________________________________________________________________________________________________ -->
-
     <!-- real-blogger-outreach-section start -->
     <section class="real-bo-section">
         <div class="row  real-bo-row1">
@@ -170,29 +163,28 @@ if(isset($_GET['seo_url']))
                         </div>
 
                         <div class=" buttonsinfo ">
-                            <!-- <a href="contact.php" class="btn explore_btn mt-md-3 ms-2">See Pricing</a> -->
-                            <button type="button" class="btn real-bo-btn ">Get Your Links Now</button>
+                            <a href="#pricing-cards">
+                                <button type="button" class="btn blogger-btn ">Get Your Links Now</button>
+                            </a>
                         </div>
                     </div>
                 </div>
 
             </div>
             <div class="col-lg-6 col-md-6 real-bo-col-second">
-                <div class="">
-                    <div>
-                        <img src="./images/dummy-img/real-bo-img-col2.png" class="w-100  mb-4" alt="">
-                    </div>
-                    <div>
-                        <p class="real-bo-text-p mb-3">Fast Linky works with a lot of influencers for securing
-                            sustainable
-                            and relevant links that easily enhance the client’s search engine rankings and offers
-                            targeted traffic.</p>
-                        <p class="real-bo-text-p mb-3">We valued every business and website for its uniqueness. Our
-                            expert public relation team placement each and every link manually by handpicking.</p>
-                    </div>
+                <div class="text-center">
+                    <img src="./images/freepik-img/blogger-outrech-Link-Building.png" class="w-75 mb-4" alt="">
                 </div>
+
+                <p class="real-bo-text-p mb-3">Fast Linky works with a lot of influencers for securing
+                    sustainable
+                    and relevant links that easily enhance the client’s search engine rankings and offers
+                    targeted traffic.</p>
+                <p class="real-bo-text-p mb-3">We valued every business and website for its uniqueness. Our
+                    expert public relation team placement each and every link manually by handpicking.</p>
             </div>
         </div>
+
     </section>
     <!-- real-blogger-outreach-section end -->
     <!-- _______________________________________________________________________________________________ -->
@@ -202,17 +194,11 @@ if(isset($_GET['seo_url']))
     <section class="real-bo-section">
 
         <div class="row  real-bo-row1">
-            <div class="col-lg-6 col-md-6 real-bo-col-second">
+            <div class="col-lg-6 col-md-6 m-auto real-bo-col-second">
                 <div class="">
                     <div>
-                        <img src="./images/dummy-img/AMAZING-BO-.col-1.png" class="w-100  mb-4 " alt="">
+                        <img src="./images/freepik-img/blogger-outrech-cc.png" class="w-100  mb-4 " alt="">
                     </div>
-                    <!-- <div>
-                            <p class="real-bo-text-p mb-3">We work with influencers to secure relevant, sustainable
-                                links that improve your search engine rankings and drive targeted traffic.</p>
-                            <p class="real-bo-text-p mb-3">We understand that every business and website is unique, our
-                                PR team manually handpicks each and every placement.</p>
-                        </div> -->
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 real-bo-col-first">
@@ -271,9 +257,10 @@ if(isset($_GET['seo_url']))
                         </div>
 
                         <div class=" getyour-linkbtn ">
-                            <!-- <a href="contact.php" class="btn explore_btn mt-md-3 ms-2">See Pricing</a> -->
-                            <button type="button" class="btn blogger-btn d-flex justify-content-right">Get Your
-                                Links Now</button>
+                            <a href="#pricing-cards">
+                                <button type="button" class="btn blogger-btn d-flex justify-content-right">Get Your
+                                    Links Now</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -283,26 +270,20 @@ if(isset($_GET['seo_url']))
 
     </section>
     <!-- AMAZING-blogger-outreach-section end -->
-    <!-- ______________________________________________________________________________________________________ -->
-
-
-    <!-- ========================================= Does-Blogger-Outreach Work For You starts ============================ -->
+    <!-- _________________________________________________________________________________ -->
+    <!-- ==================== Does-Blogger-Outreach Work For You starts ============================ -->
     <section class="works-for-you-bo-section">
         <div class="">
             <div>
                 <h2 class=" text-center mt-4 my-3 works-bo-h2">How does blogger outreach <span> work for your
                         brand?</span></h2>
-                <!-- <p class="text-center mb-3 works-bo-p1">
-                    Our service is a perfect match for all those who are looking for fast <br>
-                    effective and sustainable SEO results.
-                </p> -->
             </div>
             <div class="works-f-u-main-card-div">
                 <div class="row">
                     <div class="col-md-4 col-xl-4 ">
                         <div class="card works-for-u-card">
 
-                            <div class="pb-3 ">
+                            <div class="pb-3 text-center text-sm-left">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
@@ -320,7 +301,7 @@ if(isset($_GET['seo_url']))
                     <div class="col-md-4 col-xl-4">
                         <div class="card works-for-u-card">
 
-                            <div class="pb-3 ">
+                            <div class="pb-3 text-center text-sm-left">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
@@ -338,7 +319,7 @@ if(isset($_GET['seo_url']))
                     <div class="col-md-4 col-xl-4">
                         <div class="card works-for-u-card">
 
-                            <div class=" pb-3">
+                            <div class=" pb-3 text-center text-sm-left">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
@@ -367,7 +348,7 @@ if(isset($_GET['seo_url']))
                         <div class="col-md-4 col-xl-4">
                             <div class="card  how-it-work-f-u-card">
 
-                                <div class="pb-3 ">
+                                <div class="pb-3 text-center text-sm-left">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -385,7 +366,7 @@ if(isset($_GET['seo_url']))
                         <div class="col-md-4 col-xl-4">
                             <div class="card how-it-work-f-u-card">
 
-                                <div class="pb-3 ">
+                                <div class="pb-3 text-center text-sm-left">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -403,7 +384,7 @@ if(isset($_GET['seo_url']))
                         <div class="col-md-4 col-xl-4">
                             <div class="card how-it-work-f-u-card">
 
-                                <div class=" pb-3">
+                                <div class=" pb-3 text-center text-sm-left">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -419,7 +400,7 @@ if(isset($_GET['seo_url']))
                         <div class="col-md-4 col-xl-4">
                             <div class="card how-it-work-f-u-card">
 
-                                <div class="pb-3 ">
+                                <div class="pb-3 text-center text-sm-left">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -437,7 +418,7 @@ if(isset($_GET['seo_url']))
                         <div class="col-md-4 col-xl-4">
                             <div class="card how-it-work-f-u-card">
 
-                                <div class="pb-3 ">
+                                <div class="pb-3 text-center text-sm-left">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -454,7 +435,7 @@ if(isset($_GET['seo_url']))
                         <div class="col-md-4 col-xl-4 ">
                             <div class="card how-it-work-f-u-card">
 
-                                <div class=" pb-3">
+                                <div class=" pb-3 text-center text-sm-left">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -473,191 +454,23 @@ if(isset($_GET['seo_url']))
         </div>
     </section>
     <!-- Does-Blogger-Outreach Work For You ends -->
-    <!-- ____________________________________________________________________________________________________ -->
-
-    <!-- Examples of Blogs We Outreach To-blogger-outreach starts -->
-    <section class="examples-of-blogs-main-div">
-        <!-- <div class="container"> -->
-        <div>
-            <h2 class="text-center">Examples of Blogs <span>We Outreach To?</span> </h2>
-        </div>
-        <div class="pb-5">
-            <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (15).png "
-                        class="examples-img-div-short" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 py-2"> <img src="./images/dummy-img/Screenshot (16).png "
-                        class="examples-img-div-long" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (17).png "
-                        class="examples-img-div-short" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (18).png "
-                        class="examples-img-div-long" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (19).png "
-                        class="examples-img-div-long" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (20).png "
-                        class="examples-img-div-short" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (21).png "
-                        class="examples-img-div-long" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (20).png "
-                        class="examples-img-div-short" alt="">
-                </div>
-
-            </div>
-        </div>
-        <!-- </div> -->
-    </section>
-    <!-- Examples of Blogs We Outreach To-blogger-outreach ends -->
+    <!-- _________________________________________________________________________________________ -->
+    <!-- --------------------------------------------------------------------------------------------- -->
+    <!-- clients-logo -->
+    <?php require_once "partials/clientssides-logos.php"; ?>
+    <!-- clients-logo -->
     <!-- _________________________________________________________________________________________________ -->
-
-    <!--================================= Client Review section Start =================================-->
-
-    <section class="sliderbar  text-center">
-        <h2 class="what-others-say-testimonial  my-3">TESTIMONIAL</h2>
-        <h1 class="what-others-say-bo-slider-h1  my-2">What <span>Our Client</span> Says</h1>
-        <div class="p-3">Client satisfaction is the first priority of our company. We are passionate and committed to
-            surpassing the expectations of good work.
-        </div>
-        <div class="container" style="max-width: 1325px;">
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators ci-blogger-outingreach">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                        aria-label="Slide 4"></button>
-                </div>
-
-                <!-- ======================= Carousel inner Start ======================= -->
-                <div class="carousel-inner">
-
-                    <!-- =============== Review One =============== -->
-                    <div class="carousel-item active slider">
-                        <!-- <h5 class="header">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5><br> -->
-                        <h4 class="what-others-say-bo-ci-h4">"Honestly, they are the best in the digital marketing
-                            world. Very much
-                            committed and punctual towards their delivery. Definitely, we will use the services of
-                            Fast Linky in the upcoming years."</h4>
-                        <div class="containerslider">
-                            <img src="images/icons/male-user.png" class="imageslider" alt="...">
-                            <div class="sliderbox1">
-
-                                <h5 class="paraname">Kishu Setia</h5>
-                                <p class="para1">Experienced Blogger</p>
-                            </div>
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-
-                        </div>
-                    </div>
-                    <!-- =============== Review One End =============== -->
-
-
-
-                    <!-- =============== Review Two =============== -->
-                    <div class="carousel-item slider">
-                        <!-- <h5 class="header">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5><br> -->
-                        <h4 class="what-others-say-bo-ci-h4">"Fast Linky did a fantastic job with our online marketing
-                            strategy.We have to
-                            say they have a great reporting process and are always touched with our manager and
-                            outreach team."</h4>
-                        <div class="containerslider">
-                            <img src="images/icons/female-user.png" class="imageslider" alt="...">
-                            <div class="sliderbox1">
-
-                                <h5 class="paraname">Gemma Bell</h5>
-                                <p class="para1">Marketing Expert</p>
-                            </div>
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-
-                        </div>
-                    </div>
-                    <!-- =============== Review Two End =============== -->
-
-
-
-                    <!-- =============== Review Three =============== -->
-                    <div class="carousel-item slider">
-                        <!-- <h5 class="header">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5><br> -->
-                        <h4 class="what-others-say-bo-ci-h4">"I really appreciate the business relationship we have had
-                            with Fast Linky
-                            Team for the last 1 year. They have helped us in website development and design for our
-                            organic growth."</h4>
-                        <div class="containerslider">
-                            <img src="images/icons/female-user.png" class="imageslider" alt="...">
-                            <div class="sliderbox1">
-
-                                <h5 class="paraname">Stewart</h5>
-                                <p class="para1">Indivisual Blogger</p>
-                            </div>
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-
-                        </div>
-                    </div>
-                    <!-- =============== Review Three End =============== -->
-
-
-                    <!-- =============== Review Four =============== -->
-                    <div class="carousel-item slider">
-                        <!-- <h5 class="header">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5><br> -->
-                        <h4 class="what-others-say-bo-ci-h4">"From a digital marketing point of view, I am highly
-                            impressed with the
-                            hard work of the Fast Linky Team. They are amazing and so has been their support and
-                            contribution."</h4>
-                        <div class="containerslider">
-                            <img src="images/icons/male-user.png" class="imageslider" alt="...">
-                            <div class="sliderbox1">
-
-                                <h5 class="paraname">Louie Arim</h5>
-                                <p class="para1">Marketing Team Lead</p>
-                            </div>
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-
-                        </div>
-                    </div>
-                    <!-- =============== Review Four End =============== -->
-
-                </div>
-                <!-- ======================= Carousel inner End ======================= -->
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"><i
-                            class="fa-solid fa-arrow-left-long iconbutton"></i></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"><i
-                            class="fa-solid fa-arrow-right-long iconbutton"></i></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-        <!-- end -->
-    </section>
-
-    <!------------------------------------ Client Review section End ------------------------------------->
-    <!-- _________________________________________________________________________________________________ -->
-
-    <!--  -->
+    <!-- ___________________________________________________________________________________________ -->
+    <!-- testimonials customers reviews -->
+    <?php require_once "partials/testimonials.php"; ?>
+    <!-- testimonials customers reviews -->
+    <!-- _________________________________________________________________________________________ -->
     <!-- ------------------------------------------------ -->
     <!-- pricing section -->
     <!-- ------------------------------------------- -->
 
     <section class="mt-5">
-        <h1 class="text-center pricing-bo-h1 mb-3 mt-5" >Blogger Outreach Pricing
+        <h1 class="text-center pricing-bo-h1 mb-3 mt-5">Blogger Outreach Pricing
         </h1>
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
             DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
@@ -740,69 +553,22 @@ if(isset($_GET['seo_url']))
     <!-- ================================================================================================= -->
     <!-- Frequently Asked Questions starts -->
     <!-- ================================================================================================ -->
+    <!-- new faq for indexpage -->
 
-    <div class="blogger-faq">
-        <div class="faq-head-section text-center">
-            <h2>Frequently Asked Questions <span>(FAQs)</span> </h2>
-        </div>
+    <?php require_once "partials/faqs-new.php"; ?>
 
-        <div class="container">
-
-            <ul class="faq-body">
-                <?php  
-        $faqsDtl 	= $faqs->getfaqqu('blogger-outreach.php'); 
-
-        foreach ($faqsDtl as $showdata) {
-        $showquestion = $showdata['question'];
-        $showans      = $showdata['ans'];
-        $showpage     = $showdata['page'];
-        $showid       = $showdata['id'];
-
-       echo'
-                <li class="faq-li">
-                <i class="fa-solid fa-circle-plus" id="first_id" style="font-size: 21px;" > <span class="extra-class-faq-title">'.$showquestion.'</span> </i>
-                    <div class="faq-details">
-                        <p>
-                        '.$showans.'</p>
-                    </div>
-                </li>';
-                  } ?>
-            </ul>
-        </div>
-    </div>
-
+    <!-- ================================================================================================= -->
+    <!-- Frequently Asked Questions ends -->
     <!-- ================================================================================================ -->
 
     <div class="mt-4">
         <?php include_once 'partials/seller-action.php'; ?>
     </div>
 
-
-
     <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
-
-    <script src="js/jquery-2.2.3.min.js"></script>
-
-
-
     <!-- /Footer -->
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $(".faq-li").click(function() {
-            var icon = $(this).children("i");
-            var notThis = $(".faq-li").not(this);
-            var include = icon.hasClass("fa-circle-plus");
-            $(this).children("i").toggleClass("fa-circle-plus fa-circle-minus");
-            $(this).children(".faq-details").toggle();
-            notThis.children(".faq-details").css("display", "none");
-            notThis.children("i").addClass("fa-circle-plus").remove("fa-circle-minus");
-        })
-    });
-    </script>
-
-
-
+    <script src="js/jquery-2.2.3.min.js"></script>
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 
 </body>

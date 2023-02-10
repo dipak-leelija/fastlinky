@@ -34,7 +34,7 @@
 
 .mlb-starting-main-h1 {
     font-family: "Poppins", Poppins;
-    font-size: 3.8rem;
+    font-size: 2.8rem;
     font-weight: 600;
     line-height: 1.2em;
     color: #383a50;
@@ -45,7 +45,7 @@
 .mlb-starting-main-p {
     font-weight: 400;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #324A6D;
     line-height: 1.5em;
     font-family: "Poppins", Poppins;
@@ -169,7 +169,18 @@
     display: flex;
     justify-content: right;
 }
-
+.cannabis-cbd-service-h1{
+    font-size: 3.5rem;
+    font-family: "Helvetica", Poppins;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color:#383a50;
+    text-align: center;
+}
+.cannabis-cbd-service-h1 span{
+    color: #FDA33B;
+}
 /* __________________________________________________________________________________________________ */
 /* Collaboration opportunity-cb  ends */
 /*  ________________________________________________________________________________________ */
@@ -189,6 +200,7 @@
 }
 
 .cannabis-clb-rlb-main-div h2 {
+    font-size: 2.5rem;
     text-align: left;
     color: #3F4450;
     font-family: "Helvetica", Poppins;
@@ -210,13 +222,11 @@
 }
 
 .cannabis-clb-rlb-main-div span {
-    color: #407BFF;
+    color: #FDA33B;
     font-size: 26px;
 }
 
-.cannabis-clb-rlb-main-div span :hover {
-    color: #f98b0b85;
-}
+
 
 /* --------------------------------------------------------------------------------------------- */
 /* Cannabis Link Building Or Regular Link Building- ENDS */
@@ -227,9 +237,16 @@
 .cbd-business-main-section {
     padding: 5rem;
 }
-
+.cbd-business-main-section p{
+    text-align: left;
+    color: #3F4450;
+    font-family: "Helvetica", Poppins;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
 .cbd-business-main-section-h1 {
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-family: "Helvetica", Poppins;
     margin-bottom: 2.5rem;
     font-weight: 500;
@@ -239,13 +256,12 @@
 
 .cbd-business-main-section-h1 strong {
     color: #FDA33B;
-    font-size: 2rem;
     font-weight: 500;
 }
 
 .cbd-business-main-section ul {
     font-family: Helvetica, Poppins;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 400;
     color: #3f4450;
     margin-bottom: 2rem;
@@ -442,22 +458,25 @@
 
 @media (max-width:767px) {
     .cbd-business-main-section {
-        padding: 3rem 1rem;
+        padding: 3rem 1rem 0;
     }
-
+    .cannabis-cbd-service-h1 {
+        font-size: 2.5rem;
+    }
     .why-is-lb-important-main {
-        padding: 5rem 1rem;
+        padding: 3rem 1rem;
         text-align: center;
     }
 
     .improve-your-roi-organic-main {
-        padding: 3rem 1rem;
+        padding: 3rem 1rem 0;
         text-align: center;
     }
 
     .cbd-business-main-section-h1 {
         margin-top: 3rem;
         text-align: center;
+        font-size: 1.7rem;
     }
 
     .cannabis-clb-rlb-main-div {
@@ -466,6 +485,7 @@
     }
 
     .cannabis-clb-rlb-main-div h2 {
+        font-size: 1.8rem;
         text-align: center;
         margin-bottom: 2rem;
     }
@@ -531,7 +551,7 @@
         margin-bottom: 2.5rem;
         font-weight: 500;
         line-height: 1.2;
-        margin-top: 4rem;
+        margin-top: 0rem;
     }
 }
 
@@ -591,11 +611,7 @@
 
 }
 
-@media (max-width:363px) {
-    .mlb-starting-main-h1 {
-        font-size: 2.5rem;
-    }
-}
+
 
 @media (min-width:312px) and (max-width:335px) {
 
@@ -607,6 +623,9 @@
 
 @media (min-width:200px) and (max-width:312px) {
 
+    .cbd-business-main-section-h1 {
+        font-size: 1.6rem;
+    }
     .lbs-actually-matters-main-h1 {
         font-size: 1.6rem !important;
     }
@@ -645,7 +664,12 @@
 }
 
 @media (min-width:250px) and (max-width:451px) {
-
+    .cannabis-clb-rlb-main-div h2 {
+        font-size: 1.4rem;
+    }
+    .cannabis-cbd-service-h1 {
+        font-size: 2rem;
+    }
     .tick-check-p {
         font-size: 18px;
     }

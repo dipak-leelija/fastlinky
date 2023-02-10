@@ -28,7 +28,6 @@ if(isset($_POST['btnAddfaqs']))
 	$question		= $_POST['question'];
 	$ans		    = $_POST['ans'];
 	$page	        = $_POST['page'];
-    
 	$addfaq         = $faqs->addFaqs($question, $ans, $page);
 }
 else if(isset($_POST['btnCancel']))

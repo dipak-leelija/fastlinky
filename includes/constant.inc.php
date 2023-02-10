@@ -5,12 +5,11 @@
 	//URLS Details 
 	$protocol = isset($_SERVER['HTTPS']) ? 'https' : 'http';
 
-	define('URL', 				$protocol.'://'.$_SERVER['HTTP_HOST'].'/fastlinky');	 
-	define('PAGE',				$_SERVER['PHP_SELF'].'/fastlinky');
+	define('URL', 				'http://'.$_SERVER['HTTP_HOST'].'/fastlinky');	 
+	define('PAGE',				$_SERVER['PHP_SELF']);
 	define('ADM_PATH',  		URL.'/admin/');
 	define('SELLER_AREA',  		URL."/dashboard.php");
 	define('BUYER_AREA',  		URL."/app.client.php");
-	define('IMG_PATH',  		URL."/images/");
 
 	
 	//company

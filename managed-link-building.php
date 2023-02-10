@@ -70,8 +70,8 @@ if(isset($_GET['seo_url']))
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
     <link href="css/managed-link-building.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/partials.css">
-
+    <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="stylesheet" href="css/clientside-logo.css">
 
     <!-- font-awesome icons -->
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
@@ -116,7 +116,10 @@ if(isset($_GET['seo_url']))
 
                         </div>
                         <div class=" buttonsinfo ">
-                            <button type="button" class="btn managed-link-btn ">See Pricing</button>
+                            <a href="#pricing-cards">
+                                <button type="button" class="btn managed-link-btn ">See
+                                    Pricing</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -129,186 +132,7 @@ if(isset($_GET['seo_url']))
         </div>
     </section>
     <!-- end of managed-link-building main banner -->
-    <!-- --------------------------------------------------------------------------------------------- -->
-    <!-- _____________________________________________________________________________________ -->
-
-
-    <!-- Trusted by top brands & SEO agencies for first page results SLIDER -->
-    <!-- Examples of Blogs We Outreach To-blogger-outreach starts -->
-    <section class="examples-of-blogs-main-div">
-        <div>
-            <h2 class="text-center">Trusted by top brands & SEO agencies <span>for first page results</span>
-                <h2>
-        </div>
-        <div class="pb-5">
-            <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (15).png "
-                        class="examples-img-div-short" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 py-2"> <img src="./images/dummy-img/Screenshot (16).png "
-                        class="examples-img-div-long" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (17).png "
-                        class="examples-img-div-short" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (18).png "
-                        class="examples-img-div-long" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (19).png "
-                        class="examples-img-div-long" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (20).png "
-                        class="examples-img-div-short" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (21).png "
-                        class="examples-img-div-long" alt="">
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6  py-2"> <img src="./images/dummy-img/Screenshot (20).png "
-                        class="examples-img-div-short" alt="">
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Examples of Blogs We Outreach To-blogger-outreach ends -->
-    <!-- Trusted by top brands & SEO agencies for first page results SLIDER -->
-
-    <!-- _________________________________________________________________________________________________ -->
-
-
-    <!--================================= Client Review section Start =================================-->
-
-    <section class="sliderbar  text-center">
-        <h2 class="what-others-say-testimonial  my-3">TESTIMONIAL</h2>
-        <h1 class="what-others-say-bo-slider-h1  my-2">What <span>Our Client</span> Says</h1>
-        <div class="p-3">Client satisfaction is the first priority of our company. We are passionate and committed to
-            surpassing the expectations of good work.
-        </div>
-        <div class="container" style="max-width: 1325px;">
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators ci-blogger-outingreach">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                        aria-label="Slide 4"></button>
-                </div>
-
-                <!-- ======================= Carousel inner Start ======================= -->
-                <div class="carousel-inner">
-
-                    <!-- =============== Review One =============== -->
-                    <div class="carousel-item active slider">
-                        <h4 class="what-others-say-bo-ci-h4">"Honestly, they are the best in the digital marketing
-                            world. Very much
-                            committed and punctual towards their delivery. Definitely, we will use the services of
-                            Leelija in the upcoming years."</h4>
-                        <div class="containerslider">
-                            <img src="images/icons/male-user.png" class="imageslider" alt="...">
-                            <div class="sliderbox1">
-
-                                <h5 class="paraname">Kishu Setia</h5>
-                                <p class="para1">Experienced Blogger</p>
-                            </div>
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-
-                        </div>
-                    </div>
-                    <!-- =============== Review One End =============== -->
-
-
-
-                    <!-- =============== Review Two =============== -->
-                    <div class="carousel-item slider">
-                        <h4 class="what-others-say-bo-ci-h4">"Leelija did a fantastic job with our online marketing
-                            strategy.We have to
-                            say they have a great reporting process and are always touched with our manager and
-                            outreach team."</h4>
-                        <div class="containerslider">
-                            <img src="images/icons/female-user.png" class="imageslider" alt="...">
-                            <div class="sliderbox1">
-
-                                <h5 class="paraname">Gemma Bell</h5>
-                                <p class="para1">Marketing Expert</p>
-                            </div>
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-
-                        </div>
-                    </div>
-                    <!-- =============== Review Two End =============== -->
-
-
-
-                    <!-- =============== Review Three =============== -->
-                    <div class="carousel-item slider">
-                        <h4 class="what-others-say-bo-ci-h4">"I really appreciate the business relationship we have had
-                            with Leelija
-                            Team for the last 1 year. They have helped us in website development and design for our
-                            organic growth."</h4>
-                        <div class="containerslider">
-                            <img src="images/icons/female-user.png" class="imageslider" alt="...">
-                            <div class="sliderbox1">
-
-                                <h5 class="paraname">Stewart</h5>
-                                <p class="para1">Indivisual Blogger</p>
-                            </div>
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-
-                        </div>
-                    </div>
-                    <!-- =============== Review Three End =============== -->
-
-
-                    <!-- =============== Review Four =============== -->
-                    <div class="carousel-item slider">
-                        <h4 class="what-others-say-bo-ci-h4">"From a digital marketing point of view, I am highly
-                            impressed with the
-                            hard work of the Leelija Team. They are amazing and so has been their support and
-                            contribution."</h4>
-                        <div class="containerslider">
-                            <img src="images/icons/male-user.png" class="imageslider" alt="...">
-                            <div class="sliderbox1">
-
-                                <h5 class="paraname">Louie Arim</h5>
-                                <p class="para1">Marketing Team Lead</p>
-                            </div>
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-
-                        </div>
-                    </div>
-                    <!-- =============== Review Four End =============== -->
-
-                </div>
-                <!-- ======================= Carousel inner End ======================= -->
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"><i
-                            class="fa-solid fa-arrow-left-long iconbutton"></i></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"><i
-                            class="fa-solid fa-arrow-right-long iconbutton"></i></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!------------------------------------ Client Review section End ------------------------------------->
-    <!-- ____________________________________________________________________________________________ -->
-
-
+    <!-- ------------------------------------------------------------------------- -->
     <!-- Why does A brand need link buildings start -->
     <section class="a-brand-need-link-section">
         <div class="row  ">
@@ -357,7 +181,9 @@ if(isset($_GET['seo_url']))
                         </div>
 
                         <div class=" buttonsinfo ">
-                            <button type="button" class="btn managed-link-btn ">Get Your Links Now</button>
+                            <a href="#pricing-cards">
+                                <button type="button" class="btn managed-link-btn ">Get Your Links Now</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -399,8 +225,10 @@ if(isset($_GET['seo_url']))
                     </div>
                     <div>
                         <div class=" getyour-linkbtn mt-5 ">
-                            <button type="button" class="btn managed-link-btn d-flex justify-content-right">Get Your
-                                Links Now</button>
+                            <a href="#pricing-cards">
+                                <button type="button" class="btn managed-link-btn d-flex justify-content-right">Get Your
+                                    Links Now</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -409,28 +237,6 @@ if(isset($_GET['seo_url']))
     </section>
     <!-- Why does A brand need link buildings section2 end -->
     <!-- ________________________________________________________________________________________ -->
-
-    <!-- Our clients earned brand mentions from publications like... starts -->
-    <section class="examples-of-blogs-main-div">
-        <div class="plugging-div">
-            <h1 class="plugging-div-main-h1  ">Our clients earned brand mentions from <span class="plugging-div-span">
-                    publications like... </span></h1>
-            <div class="plugging-div-main-img-divv">
-                <div class="f-pic1">
-                    <img src="./images/dummy-img/takingfrommacrons.rozy.jpg" class=" clients-pubb-div-img    mb-5 "
-                        alt="">
-                </div>
-                <div class="f-pic2">
-                    <img src="./images/dummy-img/takingfrommacrons.rozy.jpg" class="clients-pubb-div-img   " alt="">
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- Our clients earned brand mentions from publications like... ends -->
-    <!-- ________________________________________________________________________________________ -->
-
-    <!-- ------------------------------------------------ -->
     <!-- pricing section -->
     <!-- ------------------------------------------- -->
 
@@ -462,7 +268,10 @@ if(isset($_GET['seo_url']))
                                 alt="">
                         </div>
                         <div class="lbp-texting">
-                            <b> Authority Backlinks : </b> <br> We help brands to create diverse link profiles. We
+                            <div class="ibp-centering-b">
+                                <b> Authority Backlinks : </b>
+                            </div>
+                            We help brands to create diverse link profiles. We
                             publish editorial writings on different authoritative domains.
                         </div>
                     </div>
@@ -472,7 +281,10 @@ if(isset($_GET['seo_url']))
                                 alt="">
                         </div>
                         <div class="lbp-texting">
-                            <b> Detailed Vetting Process : </b> <br> Our expert team has done the whole outreach process
+                            <div class="ibp-centering-b">
+                                <b> Detailed Vetting Process : </b>
+                            </div>
+                            Our expert team has done the whole outreach process
                             in properly oriented vetting. They look for unusual places that could be advantageous for
                             your company profile.
                         </div>
@@ -486,7 +298,10 @@ if(isset($_GET['seo_url']))
                                 alt="">
                         </div>
                         <div class="lbp-texting">
-                            <b> Content is the key point : </b> <br> We do not provide content based on links. Moreover,
+                            <div class="ibp-centering-b">
+                                <b> Content is the key point : </b>
+                            </div>
+                            We do not provide content based on links. Moreover,
                             we create beautiful content that everyone loves to read.
                         </div>
                     </div>
@@ -496,13 +311,19 @@ if(isset($_GET['seo_url']))
                                 alt="">
                         </div>
                         <div class="lbp-texting">
-                            <b> Increasing ROI: </b> <br> Our aim is to help the brand to achieve its target by
+                            <div class="ibp-centering-b">
+                                <b> Increasing ROI: </b>
+                            </div>
+                            Our aim is to help the brand to achieve its target by
                             providing organic growth and increased ROI.
                         </div>
                     </div>
                     <div class=" getyour-linkbtn mt-5 ">
-                        <button type="button" class="btn managed-link-btn d-flex justify-content-center w-100 ">Get Your
-                            Links Now</button>
+                        <a href="#pricing-cards">
+                            <button type="button" class="btn managed-link-btn d-flex justify-content-center w-100 ">Get
+                                Your
+                                Links Now</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -512,19 +333,6 @@ if(isset($_GET['seo_url']))
     <!-- Link Building Services that Actually Matters-ends -->
     <!-- ________________________________________________________________________________________ -->
 
-
-    <!-- ================================================================================================ -->
-    <!-- more information link-building start -->
-
-
-    <!-- contact top -->
-    <!-- <?php include('more-info.php');?> -->
-    <!-- //contact top -->
-
-
-
-    <!-- more information link-building ends -->
-    <!-- ================================================================================================ -->
     <!-- ____________________________________________________________________________________________ -->
 
     <!-- our-secret-delivering-main-sec starts -->
@@ -608,12 +416,17 @@ if(isset($_GET['seo_url']))
             </div>
         </div>
     </section>
-
-
     <!-- our-secret-delivering-main-sec ends -->
+
+
+    <!-- --------------------------------------------------------------------------------------------- -->
+    <!-- clients-logo -->
+    <?php require_once "partials/clientssides-logos.php"; ?>
+    <!-- clients-logo -->
+    <!-- _________________________________________________________________________________________________ -->
     <!-- ______________________________________________________________________________________________ -->
 
-    <section class="our-secret-delivering-main-sec pb-2">
+    <section class="our-secret-delivering-main-sec pb-5">
         <div class="">
             <div>
                 <h2 class=" text-center mt-4 my-3 our-secret-d-h2">Our Secret to Delivering Wanted Results <span>To Top
@@ -625,7 +438,7 @@ if(isset($_GET['seo_url']))
                     <div class="col-md-6 col-xl-3">
                         <div class="our-secret-delivering-main-card2">
 
-                            <div class="text-start pb-3 ">
+                            <div class="text-chnging-css pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
@@ -641,7 +454,7 @@ if(isset($_GET['seo_url']))
                     <div class="col-md-6 col-xl-3">
                         <div class="our-secret-delivering-main-card2">
 
-                            <div class="text-start pb-3 ">
+                            <div class="text-chnging-css pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
@@ -657,7 +470,7 @@ if(isset($_GET['seo_url']))
                     <div class="col-md-6 col-xl-3">
                         <div class="our-secret-delivering-main-card2">
 
-                            <div class="text-start pb-3">
+                            <div class="text-chnging-css pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
@@ -672,7 +485,7 @@ if(isset($_GET['seo_url']))
                     <div class="col-md-6 col-xl-3">
                         <div class="our-secret-delivering-main-card2">
 
-                            <div class="text-start pb-3">
+                            <div class="text-chnging-css pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
@@ -689,10 +502,19 @@ if(isset($_GET['seo_url']))
     </section>
 
     <!-- our secret delivering result ends -->
+    <!-- _________________________________________________________________________________________________ -->
 
+    <!--================================= Client Review section Start =================================-->
+    <!-- ___________________________________________________________________________________________ -->
+    <!-- testimonials customers reviews -->
+    <?php require_once "partials/testimonials.php"; ?>
+    <!-- testimonials customers reviews -->
+    <!-- _________________________________________________________________________________________ -->
+    <!------------------------------------ Client Review section End ------------------------------------->
+    <!-- ____________________________________________________________________________________________ -->
     <!-- _______________________________________________________________________________________________ -->
 
-    <!-- Why Leelija?-section start -->
+    <!-- Why fastlinky?-section start -->
 
     <section class="why-leelija-section-mains">
         <h1 class="why-leelija-h1">Why <?php echo COMPANY_S; ?></span> </h1>
@@ -715,7 +537,7 @@ if(isset($_GET['seo_url']))
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-start ">
+                                <div class="text-chnging-css ">
                                     Leelija is a <b> trustable white-label link-building provider</b> . We provide
                                     relevant backlinks through which you will find the result. Moreover, we customize
                                     services according to customer needs.
@@ -726,7 +548,7 @@ if(isset($_GET['seo_url']))
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-start ">
+                                <div class="text-chnging-css ">
                                     We provide <b>guaranteed customer satisfaction</b> with our work. We will keep in
                                     touch after project delivery.
                                 </div>
@@ -737,7 +559,7 @@ if(isset($_GET['seo_url']))
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-start">We provide a <b>dedicated account manager</b> after placing an
+                                <div class="text-chnging-css">We provide a <b>dedicated account manager</b> after placing an
                                     order as the customer is our top priority.
                                 </div>
                             </div>
@@ -746,7 +568,7 @@ if(isset($_GET['seo_url']))
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-start ">
+                                <div class="text-chnging-css ">
                                     We provide <b>convenient dashboards</b> to check new orders or renew orders or the
                                     status of the order.
                                 </div>
@@ -756,7 +578,7 @@ if(isset($_GET['seo_url']))
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-start ">
+                                <div class="text-chnging-css ">
                                     We create <b>in-house content for better quality</b> . Your topic will be assigned
                                     to those who have experts in niche skills.
                                 </div>
@@ -766,7 +588,7 @@ if(isset($_GET['seo_url']))
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-start ">
+                                <div class="text-chnging-css ">
                                     We have a <b>huge database of authentic influencers</b> . Over the years we work
                                     with a lot of influencers for industry-related blogs.
                                 </div>
@@ -776,7 +598,7 @@ if(isset($_GET['seo_url']))
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-start ">
+                                <div class="text-chnging-css ">
                                     Our expert checks all the aspects before submitting the project. Therefore, there
                                     will be <b>no duplicate links</b> .
                                 </div>
@@ -784,8 +606,11 @@ if(isset($_GET['seo_url']))
                         </div>
 
                         <div class=" getyour-linkbtn mt-5 ">
-                            <button type="button" class="btn managed-link-btn d-flex justify-content-center ">Get Your
-                                Links Now</button>
+                            <a href="#pricing-cards">
+                                <button type="button" class="btn managed-link-btn d-flex justify-content-center ">Get
+                                    Your
+                                    Links Now</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -801,7 +626,6 @@ if(isset($_GET['seo_url']))
     <!--  What Makes Leelija So Special? starts -->
 
     <section class="lbs-actually-matters-main">
-        <!-- style="background-image: linear-gradient(to right, #d4ddd80d, #e3c68582, #f7797d2e);" -->
         <div>
 
             <div class="row">
@@ -860,11 +684,13 @@ if(isset($_GET['seo_url']))
                     </div>
 
                 </div>
-                <div class=" getyour-linkbtn-for-lbs-matter  ">
-                    <button type="button"
-                        class="btn managed-link-btn d-flex justify-content-center external-css-fr-size ">Get Your
-                        Links Now</button>
-                </div>
+                <a href="#pricing-cards">
+                    <div class=" getyour-linkbtn-for-lbs-matter  ">
+                        <button type="button"
+                            class="btn managed-link-btn d-flex justify-content-center external-css-fr-size ">Get Your
+                            Links Now</button>
+                    </div>
+                </a>
             </div>
     </section>
 
@@ -942,38 +768,21 @@ if(isset($_GET['seo_url']))
     <!-- ================================================================================================= -->
     <!-- Frequently Asked Questions starts -->
     <!-- ================================================================================================ -->
+    <!-- new faq for indexpage -->
 
     <?php require_once "partials/faqs-new.php"; ?>
 
+    <!-- ================================================================================================= -->
+    <!-- Frequently Asked Questions ends -->
     <!-- ================================================================================================ -->
 
     <div class="mt-4">
         <?php include('partials/seller-action.php') ?>
     </div>
-
-
-
     <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
-
-    <script src="js/jquery-2.2.3.min.js"></script>
-
-
-
     <!-- /Footer -->
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $(".faq-li").click(function() {
-            var icon = $(this).children("i");
-            var notThis = $(".faq-li").not(this);
-            var include = icon.hasClass("fa-circle-plus");
-            $(this).children("i").toggleClass("fa-circle-plus fa-circle-minus");
-            $(this).children(".faq-details").toggle();
-            notThis.children(".faq-details").css("display", "none");
-            notThis.children("i").addClass("fa-circle-plus").remove("fa-circle-minus");
-        })
-    });
-    </script>
+    <script src="js/jquery-2.2.3.min.js"></script>
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 
 </body>

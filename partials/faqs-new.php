@@ -5,7 +5,7 @@ $pageName = $_SERVER['PHP_SELF'];
 $remove = "/\/fastlinky\//i";
 // $remove = "/\//i";
 $pageName = preg_replace($remove, "", $pageName);
-
+// echo $pageName;
 $allQuestions = $faqs->getfaqqu($pageName);
 
 ?>
@@ -44,10 +44,10 @@ $allQuestions = $faqs->getfaqqu($pageName);
 
                 </div>
             </div>
-            <div class="col-md-5 text-center">
+            <div class="col-md-5 text-center m-auto">
                 <div class="">
                     <div>
-                        <img src="./images/FAQs.png.png" class="mb-4 " alt="FAQs">
+                        <img src="./images/FAQs.png.png" class="" alt="FAQs">
                     </div>
                 </div>
             </div>

@@ -58,7 +58,7 @@ if(isset($_GET['seo_url']))
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <meta name="description"
-        content="LeeLija provided Guest Post Service at reasonable prices on fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement  or more." />
+        content="Fastlinky provided Guest Post Service at reasonable prices on fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement  or more." />
     <meta name="keywords"
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
 
@@ -80,7 +80,113 @@ if(isset($_GET['seo_url']))
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
     <!--//webfonts-->
 
+    <style>
+    .hr-seprator-css {
+        padding: 50px 8rem;
+    }
 
+    .separator {
+        /* margin-top: 25px;
+	 margin-bottom: 80px; */
+        border: 0;
+    }
+
+    .separator--line {
+        border: 0;
+        border-bottom: 3px solid #d3d3d3e0;
+        animation: separator-width 7s ease-out forwards;
+        animation-iteration-count: infinite;
+        width: 0;
+        /* border-bottom: 3px solid #bada55; */
+        /* animation: separator-width 1s ease-out forwards; */
+    }
+
+    @keyframes separator-width {
+        0% {
+            width: 0;
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+
+    .separator--dots {
+        margin: auto;
+        overflow: visible;
+        border: 0;
+        content: "";
+        background-color: #bada55;
+        /* background-color: lightgray; */
+        display: block;
+        height: 7px;
+        width: 7px;
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .separator--dots:before {
+        content: "";
+        /* background-color: lightgray; */
+        background-color: #bada55;
+        display: block;
+        height: 7px;
+        width: 7px;
+        border-radius: 50%;
+        position: absolute;
+        left: -32px;
+        animation: dot-move-left 1s ease-out forwards;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+
+    .separator--dots:after {
+        content: "";
+        /* background-color: lightgray; */
+        background-color: #bada55;
+        display: block;
+        height: 7px;
+        width: 7px;
+        border-radius: 50%;
+        position: absolute;
+        left: 32px;
+        animation: dot-move-right 1s ease-out forwards;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes dot-move-right {
+        0% {
+            left: 0;
+        }
+
+        100% {
+            left: 32px;
+        }
+    }
+
+    @keyframes dot-move-left {
+        0% {
+            left: 0;
+        }
+
+        100% {
+            left: -32px;
+        }
+    }
+
+    @media(max-width:991px) {
+        .hr-seprator-css {
+            padding: 30px 3rem;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .hr-seprator-css {
+            padding: 0px 1rem;
+        }
+    }
+    </style>
 </head>
 
 <body data-scrollbar>
@@ -195,7 +301,7 @@ if(isset($_GET['seo_url']))
             <div class="row">
                 <div class="col-md-6">
                     <div class="build-relationship-text">
-                        <p>Having thousands of databases of real bloggers, Leelija is the ultimate hub for guest
+                        <p>Having thousands of databases of real bloggers, Fastlinky is the ultimate hub for guest
                             posting. Outreaching any type of blog is our duty, owing to the list of blog sites that we
                             have in our database. For the same, we have fifteen outreach specialists who work manually
                             for blog outreach, of any given blog. Our main goal is to build strong relationships with
@@ -208,9 +314,9 @@ if(isset($_GET['seo_url']))
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 text-center m-auto">
 
-                    <img src="images/blogging.png" alt="blogging" class="w-100">
+                    <img src="images/freepik-img/guest-posting-imgs.png" alt="blogging" class="w-75">
 
 
 
@@ -222,11 +328,11 @@ if(isset($_GET['seo_url']))
 
     <!-- ================================================================================================ -->
 
-    <section class="blogger-fourth-section">
+    <section class="blogger-fourth-section py-md-5">
         <div class="container">
             <div class="row align-items-center m-0">
-                <div class="col-lg-6 pl-0">
-                    <img src="images/seo-outreach.png" alt="Blogging Outreach" class="w-100">
+                <div class="col-lg-6 ps-0">
+                    <img src="images/freepik-img/guest-posting-imgs-2.png" alt="Blogging Outreach" class="w-100">
                 </div>
                 <div class="col-lg-6">
                     <div class="right-ul-section">
@@ -252,12 +358,12 @@ if(isset($_GET['seo_url']))
 
     <section class="blogger-fifth-section">
         <div class="container">
-            <h3 class="blogger-fifth-section-main-head">Why to Choose Leelija for Blogger Outreach Service?</h3>
+            <h3 class="blogger-fifth-section-main-head">Why to Choose Fastlinky for Blogger Outreach Service?</h3>
             <div class="row align-items-center m-0">
                 <div class="col-lg-6">
                     <div class="right-ul-section">
                         <ul>
-                            <li> We, at Leelija, have already reached and researched 10,0000 genuine high-authority
+                            <li> We, at Fastlinky, have already reached and researched 10,0000 genuine high-authority
                                 blogs, with different themes. </li>
                             <li> Our outreach specialists are well trained and have immense experience.</li>
                             <li> We render your post promotions through social media remarks and mentions.</li>
@@ -273,8 +379,9 @@ if(isset($_GET['seo_url']))
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6 pl-0">
-                    <img src="images/outreach.png" alt="Blogger Outreach Service" class="w-100">
+                <div class="col-lg-6 pe-0 m-auto text-center">
+                    <img src="images/freepik-img/guest-posting-why-choose.png" alt="Blogger Outreach Service"
+                        class="w-75">
                 </div>
             </div>
         </div>
@@ -290,13 +397,13 @@ if(isset($_GET['seo_url']))
     <section class="native-content-section">
 
         <div class="leelija-gp-service-head">
-            <h3>Why Choose Leelija for Guest Posts Services?</h3>
+            <h3>Why Choose Fastlinky for Guest Posts Services?</h3>
         </div>
         <div class="container">
             <div class="row align-items-center m-0">
 
                 <div class="col-lg-6">
-                    <img src="images/solution.png" alt="Guest Posts Services" class="w-100">
+                    <img src="images/freepik-img/guest-posting-imgs-3.png" alt="Guest Posts Services" class="w-100">
                 </div>
 
                 <div class="col-lg-6">
@@ -316,15 +423,18 @@ if(isset($_GET['seo_url']))
     <!-- ================================================================================================ -->
 
     <section class="native-content-section">
-
+        <!-- line seprator for divisions   -->
+        <section class="hr-seprator-css">
+            <hr class="separator separator--line" />
+            <hr class="separator separator--dots" />
+        </section>
+        <!-- line seprator for divisions   -->
         <div class="leelija-gp-service-head">
         </div>
         <div class="container">
             <div class="row align-items-center m-0">
 
-                <div class="col-lg-6">
-                    <img src="images/Approche.png" alt="guest post approach" class="w-100">
-                </div>
+
 
                 <div class="col-lg-6">
                     <h3 class="native-content">Tried and Tested Result Oriented Approach for Maximum ROI</h3>
@@ -332,7 +442,8 @@ if(isset($_GET['seo_url']))
                         organically. We adhere to the Tried & Tested Result Oriented Approach, which further ensures
                         maximum ROI. We also look after what should be practiced and what should be avoided, in order to
                         enhance your returns on investment. One of the main reasons behind it is the ‘links and guests’,
-                        which we have with us onboard, at Leelija. These things are assured by us, while envisaging the
+                        which we have with us onboard, at Fastlinky. These things are assured by us, while envisaging
+                        the
                         maximum ROI-</p> <br>
 
 
@@ -345,19 +456,29 @@ if(isset($_GET['seo_url']))
                     </ul>
 
                 </div>
-
+                <div class="col-lg-6">
+                    <img src="images/freepik-img/guest-posting-roi.png"
+                        alt="guest post approach" class="w-100">
+                </div>
             </div>
 
         </div>
     </section>
-
+    <!-- line seprator for divisions   -->
+    <section class="hr-seprator-css">
+        <hr class="separator separator--line" />
+        <hr class="separator separator--dots" />
+    </section>
+    <!-- line seprator for divisions   -->
     <!-- ================================================================================================ -->
 
-    <section class="native-content-section">
+    <section class="native-content-section pt-5">
 
         <div class="container">
             <div class="row align-items-center m-0">
-
+                <div class="col-lg-6">
+                    <img src="images/freepik-img/guest-posting-imgs-4.png" alt="Native Content" class="w-100">
+                </div>
                 <div class="col-lg-6">
                     <h3 class="native-content">Native Content</h3>
                     <p class="native-content-p">Our native writers take the baton and come up with top quality content
@@ -365,9 +486,7 @@ if(isset($_GET['seo_url']))
                         two-steps of quality check.</p>
                 </div>
 
-                <div class="col-lg-6">
-                    <img src="images/content.jpg" alt="Native Content" class="w-100">
-                </div>
+
 
             </div>
 
@@ -379,13 +498,17 @@ if(isset($_GET['seo_url']))
     <section class="native-content-section">
 
         <div class="leelija-gp-service-head">
+            <!-- line seprator for divisions   -->
+            <section class="hr-seprator-css">
+                <hr class="separator separator--line" />
+                <hr class="separator separator--dots" />
+            </section>
+            <!-- line seprator for divisions   -->
         </div>
         <div class="container">
             <div class="row align-items-center m-0">
 
-                <div class="col-lg-6">
-                    <img src="images/Solutions.png" alt=" Guest Linking solution" class="w-100">
-                </div>
+
 
                 <div class="col-lg-6">
                     <h3 class="native-content">Your No-Hassle Solution</h3>
@@ -403,12 +526,14 @@ if(isset($_GET['seo_url']))
 
 
 
-                    Considering all these, we, at Leelija, are the ultimate No-Hassle Solution for you, owing to our
+                    Considering all these, we, at Fastlinky, are the ultimate No-Hassle Solution for you, owing to our
                     stream-lined process of Outreaching your services.
                     </p>
                 </div>
 
-
+                <div class="col-lg-6">
+                    <img src="images/freepik-img/guest-posting-imgs8.png" alt=" Guest Linking solution" class="w-100">
+                </div>
 
             </div>
 
@@ -416,24 +541,31 @@ if(isset($_GET['seo_url']))
     </section>
 
     <!-- ================================================================================================ -->
-
-    <section class="native-content-section">
+    <div class="leelija-gp-service-head">
+        <!-- line seprator for divisions   -->
+        <section class="hr-seprator-css">
+            <hr class="separator separator--line" />
+            <hr class="separator separator--dots" />
+        </section>
+        <!-- line seprator for divisions   -->
+    </div>
+    <section class="native-content-section ">
 
         <div class="container">
             <div class="row align-items-center m-0">
+                <div class="col-lg-6">
+                    <img src="images/freepik-img/guest-posting-imgs-7.png " alt="Real Sites" class="w-100">
+                </div>
 
                 <div class="col-lg-6">
                     <h3 class="native-content">Powerful Links From Real Sites</h3>
                     <p class="native-content-p">All the links that are undoubtedly going to be posted on the best sites
                         for blogging, will also be having 100% efficient traffic on their website. This happens at
-                        Leelija, without fail. Secondly, the backlinking will be made in such a manner and will be
+                        Fastlinky, without fail. Secondly, the backlinking will be made in such a manner and will be
                         containing perfectly anchored texts, that your future affiliations will become the strongest. So
-                        at Leelija, you get only Powerful Links from Real Sites.</p>
+                        at Fastlinky, you get only Powerful Links from Real Sites.</p>
                 </div>
 
-                <div class="col-lg-6">
-                    <img src="images/Real-Sites.png" alt="Real Sites" class="w-100">
-                </div>
 
             </div>
 
@@ -442,26 +574,32 @@ if(isset($_GET['seo_url']))
 
     <!-- ================================================================================================ -->
 
-    <section class="native-content-section">
+    <!-- line seprator for divisions   -->
+    <section class="hr-seprator-css">
+        <hr class="separator separator--line" />
+        <hr class="separator separator--dots" />
+    </section>
+    <!-- line seprator for divisions   -->
 
-        <div class="leelija-gp-service-head">
-        </div>
+    <section class="native-content-section">
         <div class="container">
             <div class="row align-items-center m-0">
-                <div class="col-lg-6">
-                    <img src="images/NO.png" alt="PBNs sites" class="w-100">
-                </div>
+
 
                 <div class="col-lg-6">
                     <h3 class="native-content">No PBNs Is Our Motto, And We Stick By It</h3>
                     <p class="native-content-p">
 
-                        You get No PBN or Private Blogging Networks from us at Leelija. A lot of guest posting services
+                        You get No PBN or Private Blogging Networks from us at Fastlinky. A lot of guest posting
+                        services
                         fake their clients on this part. For your kind information, let us make you aware of the fact
-                        that Google policies are strictly against PBN’S. But at Leelija, we swear on the core of each
+                        that Google policies are strictly against PBN’S. But at Fastlinky, we swear on the core of each
                         and every detailed work given by us, to never go through these PBN’s. So be rest assured, as ‘NO
                         PBN’s’ is our primary and ultimate aim.
                     </p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/freepik-img/guest-posting-no-pbns.png" alt="PBNs sites" class="w-100">
                 </div>
             </div>
         </div>
@@ -511,7 +649,7 @@ if(isset($_GET['seo_url']))
                 </div>
                 <div class="col-sm-6">
 
-                    <img src="images/link-buiding.png" alt="link buiding" class="w-100">
+                    <img src="images/freepik-img/guest-posting-imgs-6.png" alt="link buiding" class="w-100">
 
                 </div>
             </div>
@@ -524,7 +662,7 @@ if(isset($_GET['seo_url']))
     <section class="benefits-of-choosing-sec">
 
         <div class="benefits-of-choosing">
-            <h3 class="benefits-of-choosing-head">Benefits of Choosing Leelija</h3>
+            <h3 class="benefits-of-choosing-head">Benefits of Choosing Fastlinky</h3>
             <div class="container">
                 <div class="row">
 
@@ -534,7 +672,8 @@ if(isset($_GET['seo_url']))
                             <p class="affordable-pricing-icon"><i class="far fa-money-bill-alt"></i></p>
                             <h5>Affordable Pricing</h3>
                                 <p class="affordable-pricing-details">
-                                    You get the most affordable guest posting services from us, at Leelija. We give you
+                                    You get the most affordable guest posting services from us, at Fastlinky. We give
+                                    you
                                     a customised package for your own, if the prices seem to be unfit to you. The work
                                     delivered by us will be ensuring all the money you have spent.
                                 </p>
@@ -551,7 +690,7 @@ if(isset($_GET['seo_url']))
                                 Perfectly anchored text, content written by experienced and native writers, well
                                 proofread write-ups, well-researched inputs, and market/trend-friendly work on the
                                 paper, is our prime attribute. Stay assured for the quality of work, that you will be
-                                getting at Leelija.
+                                getting at Fastlinky.
                             </p>
                         </div>
 
@@ -578,7 +717,7 @@ if(isset($_GET['seo_url']))
                             <p class="affordable-pricing-icon"><i class="fas fa-stopwatch"></i></p>
                             <h5>On-Time Delivery</h3>
                                 <p class="affordable-pricing-details">
-                                    The best part about Leelija is the turnaround time. We are efficient and equally
+                                    The best part about Fastlinky is the turnaround time. We are efficient and equally
                                     punctual at rendering our works. You get all your works on time, as we clearly
                                     evaluate the essence of time of our clients.
                                 </p>
@@ -593,8 +732,10 @@ if(isset($_GET['seo_url']))
                             <h5> Trusted by 5000+ </h5>
                             <p class="affordable-pricing-details">
                                 Join us by getting our service, and become satisfied by our service, like 10000+ others.
-                                The impression that leelija leaves is impeccable, as quoted by many of our clients. The
-                                ultimate arrangement and working agenda of our team is so result-oriented, that Leelija
+                                The impression that Fastlinky leaves is impeccable, as quoted by many of our clients.
+                                The
+                                ultimate arrangement and working agenda of our team is so result-oriented, that
+                                Fastlinky
                                 has won the trust of many.
                             </p>
                         </div>
@@ -628,26 +769,19 @@ if(isset($_GET['seo_url']))
         <div class="risk-free">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6">
-
-                        <div class="risk-free-img">
-                            <img src="images/payment.png" alt="Risk-Free SEO Service" class="w-100">
-                        </div>
-
+                    <div class="col-sm-6 m-auto ps-0">
+                        <img src="images/freepik-img/guest-posting-seo-img.png" alt="Risk-Free SEO Service"
+                            class="w-75">
                     </div>
                     <div class="col-sm-6">
-
                         <h4 class="risk-free-head">
-
                             100% Risk-Free SEO Service
-
                         </h4>
-
                         <div class="risk-free-content">
 
                             <p>We make promises to give the best SEO services to our client. Don’t worry, your valuable
                                 money is safe with us until we make you happy.</p>
-                            <p>Buying an SEO service from Leelija, remember you are covered under safe hands. </p>
+                            <p>Buying an SEO service from Fastlinky, remember you are covered under safe hands. </p>
                             <p> If you are not satisfied with our work, no worry we assure 100% money-back guarantee.
                             </p>
                             <p>We understand the value of your hard-earned money.</p>
@@ -657,11 +791,9 @@ if(isset($_GET['seo_url']))
                                 Sincerely,<br>
                                 <span class="cEo">
                                     <span> Safikul Islam </span><br>
-                                    CEO,
-                                    Leelija Web Solution Private Limited
+                                    CEO, Fastlinky.
                                 </span>
                             </p>
-                            .
                         </div>
                     </div>
                 </div>
@@ -688,77 +820,7 @@ if(isset($_GET['seo_url']))
         </div>
     </div>
     <!-- ================================================================================================ -->
-    <!-- <div class="blogger-faq">
-        <div class="faq-head-section text-center">
-            <h3>FAQs on Blogger Outreach Marketing</h3>
-            <p>Submit your requirement or query, We will process it within 24 hours.</p>
-        </div>
-        <div class="container">
 
-            <ul class="faq-body">
-
-                <li class="faq-li">
-                    <i class="fas fa-plus" id="first_id"></i>
-                    <h4 class="faq-title">Is It Offers Moz Domain Authority, Ahrefs and SEMRush?</h4>
-                    <div class="faq-details">
-                        <p>
-                            Yes. Leelija offers Moz domain authority, Ahrefs and SEMRush. The blogger outreach
-                            specialists provide its best service. They help to increase DA, PA, TF, CF and traffic on
-                            your site linking on valuable blogs. For more information you can visit at <a
-                                href="mailto:leelija.com"> info@leelija.com</a>.</p>
-                    </div>
-                </li>
-
-                <li class="faq-li">
-                    <i class="fas fa-plus"></i>
-                    <h4 class="faq-title">Does It Prefer More Regional Blogging Outreach Service?</h4>
-                    <div class="faq-details">
-                        <p>Yes Leelija prefer more religion blog service. Our experts do regional link building for
-                            regional country like Ireland, United Kingdom, Canada, Pakistan, India, Australia, Brazil,
-                            China, France, England, Italy, and Germany. If you have any questions in your mind about it
-                            then ask without thinking. Contact us at <a href="mailto:leelija.com"> info@leelija.com</a>.
-                        </p>
-                    </div>
-                </li>
-
-                <li class="faq-li">
-                    <i class="fas fa-plus"></i>
-                    <h4 class="faq-title">Run Successful Blogger Outreach Campaigns:</h4>
-                    <div class="faq-details">
-                        <p>At Leelija we have worked for numerous blogger outreach campaigns over the few years. The
-                            campaigns run on brand & business, food, sports, finance, fashion, technology, beauty, real
-                            state, digital marketing and more on.</p>
-                    </div>
-                </li>
-
-                <li class="faq-li">
-                    <i class="fas fa-plus"></i>
-                    <h4 class="faq-title">Why Do You Choose Leelija For Outreach?</h4>
-                    <div class="faq-details">
-                        <p>Leelija can give you surety as we are doing manual blog outreach for last few years. We have
-                            trained team and the strong relationship with different high quality bloggers. Our experts
-                            have depth knowledge and skills of this job. Our blogger outreach services gain huge
-                            popularity for its superiority and inexpensive in the market.</p>
-                    </div>
-                </li>
-
-                <li class="faq-li">
-                    <i class="fas fa-plus"></i>
-                    <h4 class="faq-title">How You Will Benefited By Our Blogger Outreach?</h4>
-                    <div class="faq-details">
-                        <p>Primarily our blogger outreach experts will search the suitable blogs for your exact niche
-                            article for link. We have also team of experience blog post writers who can write on any
-                            topics. Writers can write content as per outreach bloggers demand. Outreach experts contact
-                            with real bloggers and make proposal to post your content on their blogs. We always try to
-                            give you established sites and effective natural links. If you want links from fresh sites
-                            then we can also provide. Leelija is always here to give you its best services.</p>
-                    </div>
-                </li>
-
-
-            </ul>
-        </div>
-    </div> -->
     <!-- ================================================================================================= -->
     <!-- Frequently Asked Questions starts -->
     <!-- ================================================================================================ -->
@@ -804,85 +866,6 @@ if(isset($_GET['seo_url']))
         })
     })
     </script>
-
-
-    <!-- /Footer -->
-
-
-
-    <!-- js-->
-    <!-- Scrolling Nav JavaScript -->
-    <!-- <script src="js/scrolling-nav.js"></script> -->
-    <!-- //fixed-scroll-nav-js -->
-    <!-- <script>
-    $(window).scroll(function() {
-        if ($(document).scrollTop() > 70) {
-            $('nav.pagescrollfix,nav.RWDpagescrollfix').addClass('shrink');
-        } else {
-            $('nav.pagescrollfix,nav.RWDpagescrollfix').removeClass('shrink');
-        }
-    });
-    </script> -->
-    <!-- Banner text Responsiveslides -->
-    <!-- <script src="js/responsiveslides.min.js"></script>
-    <script>
-    // You can also use"$(window).load(function() {"
-    $(function() {
-        // Slideshow 4
-        $("#slider3").responsiveSlides({
-            auto: true,
-            pager: true,
-            nav: false,
-            speed: 500,
-            namespace: "callbacks",
-            before: function() {
-                $('.events').append("<li>before event fired.</li>");
-            },
-            after: function() {
-                $('.events').append("<li>after event fired.</li>");
-            }
-        });
-
-    });
-    </script> -->
-    <!-- //Banner text  Responsiveslides -->
-    <!-- start-smooth-scrolling -->
-    <!-- <script src="js/move-top.js"></script>
-    <script src="js/easing.js"></script>
-    <script>
-    jQuery(document).ready(function($) {
-        $(".scroll").click(function(event) {
-            event.preventDefault();
-
-            $('html,body').animate({
-                scrollTop: $(this.hash).offset().top
-            }, 1000);
-        });
-    });
-    </script> -->
-    <!-- //end-smooth-scrolling -->
-    <!-- smooth-scrolling-of-move-up -->
-    <!-- <script>
-    $(document).ready(function() {
-        /*
-         var defaults = {
-        	 containerID: 'toTop', // fading element id
-        	 containerHoverID: 'toTopHover', // fading element hover id
-        	 scrollSpeed: 1200,
-        	 easingType: 'linear'
-         };
-         */
-
-        $().UItoTop({
-            easingType: 'easeOutQuart'
-        });
-
-    });
-    </script> -->
-    <!-- <script src="js/SmoothScroll.min.js"></script> -->
-    <!-- //smooth-scrolling-of-move-up -->
-    <!-- Bootstrap Core JavaScript -->
-    <!-- <script src="js/bootstrap.js"></script> -->
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 
 </body>

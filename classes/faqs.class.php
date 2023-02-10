@@ -4,6 +4,9 @@ class faqs extends DatabaseConnection{
     // addfaqs start
 
     function addFaqs($question, $ans, $page){
+        $question = addslashes(trim($question));
+        $ans      = addslashes(trim($ans));
+        $page     = addslashes(trim($page));
 
         $sql = "INSERT INTO `faqs`
                ( `question`, `ans`, `page`, added_on)
