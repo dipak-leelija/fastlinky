@@ -99,7 +99,7 @@ if(isset($_GET['seo_url']))
                 </div>
                 <div class="col-12 col-lg-7 col-md-7  px-0 px-md-4">
                     <div class="mlb-wrapping">
-                        <h1 class="mlb-starting-main-h1">SEO link-building services for Cannabis & CBD</h1>
+                        <h1 class="mlb-starting-main-h1">Link building services for <span>cannabis & CBD </span> website SEO</h1>
                         <p class=" mt-5 mb-4 py-0 py-md-2 mlb-starting-main-p">Rank top on the SERP, manage certified
                             traffic to your website, get powerful backlinks for cannabis and CBD link-building services,
                             and attention to our website. We promote effective CBD link-building services.
@@ -132,8 +132,8 @@ if(isset($_GET['seo_url']))
         <div class="row">
 
             <div class=" col-xl-6 col-md-6">
-                <h1 class="lbs-actually-matters-main-h1 ">How FastLinky Is Increase
-                    <span>Your Cannabis and CBD Link Building Services</span>
+                <h1 class="lbs-actually-matters-main-h1 ">How does fastlinky increase
+                    <span>your cannabis and CBD link building services?</span>
                 </h1>
                 <p>To know about Cannabis and CBD Link Building Services, first, we should know about CBD meaning, which
                     means cannabidiol, it is a chemical that is found in the Sativa plant, the other name of cannabis
@@ -181,7 +181,7 @@ if(isset($_GET['seo_url']))
             </div>
             <div class=" col-xl-6 col-md-6">
                 <h1 class="cannabis-cbd-service-h1 ">Cannabis & CBD <br>
-                    <span>Link Building Service</span>
+                    <span>link building service</span>
                 </h1>
                 <p class="mb-5">With an enlarged number of hemp businesses and connected products, cannabis is the
                     fastest growing business in highly competitive, all over the world. </p>
@@ -206,7 +206,7 @@ if(isset($_GET['seo_url']))
     <!--========= Cannabis Link Building Or Regular Link Building-  Start =========-->
     <section class="cannabis-clb-rlb-section">
         <div class="cannabis-clb-rlb-main-div ">
-            <h2>Why Choose Cannabis Link-Building From <strong>From All Over The Common Link Building? </strong> </h2>
+            <h2>Why choose cannabis link building from <strong>all over the common link building? </strong> </h2>
 
             <ul>
                 <li> <span><i class="fa-solid fa-circle-check"></i></span> It is a large CBD fund, which is growing
@@ -216,7 +216,7 @@ if(isset($_GET['seo_url']))
                 <li> <span><i class="fa-solid fa-circle-check"></i></span>This is the fastest-growing business among
                     other illegal businesses to rank all over the world. </li>
                 <li> <span><i class="fa-solid fa-circle-check"></i></span> Experienced how to grow the business and
-                    create CBD-relevant audiences.</li>
+                    create CBD relevant audiences.</li>
                 <li> <span><i class="fa-solid fa-circle-check"></i></span> Cannabis link-building improves the ranking
                     of your website. </li>
             </ul>
@@ -244,8 +244,8 @@ if(isset($_GET['seo_url']))
                 </div>
             </div>
             <div class=" col-xl-6 col-md-6">
-                <h1 class="cbd-business-main-section-h1 ">How FastLinky Boosts Your Business
-                    <strong>To The Top</strong>
+                <h1 class="cbd-business-main-section-h1 ">How does fastlinky boosts your business
+                    <strong>to the top?</strong>
                 </h1>
                 <p>
                     If you want to know why FastLinky is one of the best site to know about the CBD Link Building
@@ -285,7 +285,7 @@ if(isset($_GET['seo_url']))
     <!-- ------------------------------------------- -->
 
     <section class="mt-sm-5 mt-0">
-        <h1 class="text-center pricing-bo-h1 mb-3 px-2">Cannabis Backlinks Pricing
+        <h1 class="text-center pricing-bo-h1 mb-3 px-2">Cannabis backlinks pricing
         </h1>
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
             DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
@@ -311,8 +311,8 @@ if(isset($_GET['seo_url']))
                 </div>
             </div>
             <div class=" col-xl-6 col-md-6">
-                <h1 class="why-is-lb-important-main-h1 ">Why FastLinky Is Best For
-                    <span>Cannabis Link-Building Services?</span>
+                <h1 class="why-is-lb-important-main-h1 ">Why is fastlinky best for
+                    <span>cannabis link building services?</span>
                 </h1>
                 <p>
                     To upgrade your opportunity of increasing the traffic to your website, you can achieve the help of
@@ -342,8 +342,8 @@ if(isset($_GET['seo_url']))
         <div class="row ">
 
             <div class=" col-xl-6 col-md-6">
-                <h1 class="why-is-lb-important-main-h1 ">Why Is Link Building Major For
-                    <span> The Cannabis Business?</span>
+                <h1 class="why-is-lb-important-main-h1 ">Why is link building major for
+                    <span> the cannabis business?</span>
                 </h1>
                 <p>
                     Link building is highly effective and a major part of the cannabis industry. Link building is one of
@@ -386,7 +386,7 @@ if(isset($_GET['seo_url']))
             </div>
             <div class=" col-xl-6 col-md-6">
                 <h1 class="cannabis-cbd-service-h1 ">
-                    <span>CBD SEO Company </span>
+                    <span>CBD SEO company </span>
                 </h1>
                 <p class="mb-5">A CBD SEO Company can support you to smash the marketing noise and improve your customer base like Coalition Technologies. It is a vital support service. Coalition Technologies has experts in web design, PPC advertising, digital marketing, development, etc. This is the agency to help to boost the traffic on your website. Further, if you are interested in searching for top cannabis SEO experts in cannabis production, you may not find a site as good as FastLinky. We are experienced and have worked in the cannabis niche for years.</p>
 

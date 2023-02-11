@@ -2,8 +2,8 @@
 <?php
 $pageName = $_SERVER['PHP_SELF'];
 
-$remove = "/\/fastlinky\//i";
-// $remove = "/\//i";
+// $remove = "/\/fastlinky\//i";
+$remove = "/\//i";
 $pageName = preg_replace($remove, "", $pageName);
 // echo $pageName;
 $allQuestions = $faqs->getfaqqu($pageName);
@@ -12,7 +12,7 @@ $allQuestions = $faqs->getfaqqu($pageName);
 
 <section class=" index-faq-section">
         <p class="faq-small-text">FAQs</p>
-        <h1>Frequently Asked Link Building Questions</h1>
+        <h1>Frequently asked link building questions</h1>
         <div class="row">
             <div class="col-md-7">
                 <div class="accordion accordion-flush faq-acc-flush" id="accordionFlushExample">

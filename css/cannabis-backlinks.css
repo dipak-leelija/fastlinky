@@ -34,14 +34,16 @@
 
 .mlb-starting-main-h1 {
     font-family: "Poppins", Poppins;
-    font-size: 2.8rem;
+    font-size: 3.42rem;
     font-weight: 600;
     line-height: 1.2em;
     color: #383a50;
     word-spacing: 0.1em;
     stroke: #000;
 }
-
+.mlb-starting-main-h1 span{
+    color: #FDA33B;
+}
 .mlb-starting-main-p {
     font-weight: 400;
     text-align: left;

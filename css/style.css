@@ -6040,12 +6040,6 @@ font-size: 25px
 
 }
 
-
-
-
-
-
-
-
-
-/* new faqs style for indexpage  */
+h1 , h2,h3 , h4, h5 , span , strong{
+    text-transform: capitalize !important;
+}
