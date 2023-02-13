@@ -2,8 +2,8 @@
 <?php
 $pageName = $_SERVER['PHP_SELF'];
 
-// $remove = "/\/fastlinky\//i";
-$remove = "/\//i";
+$remove = "/\/fastlinky\//i";
+// $remove = "/\//i";
 $pageName = preg_replace($remove, "", $pageName);
 // echo $pageName;
 $allQuestions = $faqs->getfaqqu($pageName);
