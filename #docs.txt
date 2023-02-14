@@ -1,7 +1,0 @@
-FTP Username : fastlinky-ftp@fastlinky.com
-FTP PassWord : m1lCo%mG.i?!
-
-Colors:
-    #383a50
-    #FDA33B
-    #407BFF

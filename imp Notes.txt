@@ -1,0 +1,8 @@
+# js include text.includes() function which is not supportes lower version of explorer 11 or bellow. 
+
+
+
+Colors:
+    #383a50
+    #FDA33B
+    #407BFF

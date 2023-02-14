@@ -55,6 +55,9 @@
     border-radius: 100px 100px 100px 100px;
     padding: 16px 55px 16px 55px;
 }
+.blogger-btn:hover{
+    color: #FDA33B !important;
+}
 
 @media (max-width:1050px) {
     .country-specific-main-banner {
@@ -147,7 +150,7 @@
 
 .why-country-specific-link-card-div h4 {
     margin-bottom: 17px;
-    color: #407BFF;
+    color: #FDA33B;
     font-family: Poppins, Poppins;
     font-size: 23px;
     font-weight: 500;
@@ -222,7 +225,7 @@
 
 .how-itsworks-main-div-casino p {
     font-family: "Poppins", Poppins;
-    text-align: center;
+    text-align: justify;
     color: #3f4450;
     font-weight: 400;
     font-size: 1rem;
@@ -230,7 +233,7 @@
 }
 
 .how-itsworks-main-div-casino h3 {
-    color: #407BFF;
+    color: #3f4450;
     font-family: Roboto, Poppins;
     font-size: 24px;
     font-weight: 400;
@@ -372,7 +375,7 @@
     }
 
     .reach-your-audience-globally-section p {
-        text-align: center;
+        text-align: left;
     }
 
     .img-country-div {
@@ -507,6 +510,7 @@
     }
 
     .actually-card-inn-img-div {
+        text-align: center;
         padding-right: 0rem !important;
         padding-left: 0rem !important;
         padding-bottom: 1rem;

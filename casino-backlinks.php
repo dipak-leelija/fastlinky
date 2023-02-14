@@ -98,7 +98,9 @@ if(isset($_GET['seo_url']))
                 experts.
             </p>
             <div class="casino-btn-div mt-5">
-                <button type="button" class="btn managed-link-btn ">Get Started</button>
+                <a href="#pricing-cards">
+                    <button type="button" class="btn managed-link-btn ">Get Started</button>
+                </a>
             </div>
         </div>
     </section>
@@ -154,12 +156,15 @@ if(isset($_GET['seo_url']))
             <div class="col-lg-6 col-md-6">
                 <div class="">
                     <div>
-                        <img src="./images/dummy-img/real-bo-img-col2.png" class=" w-100  mb-4 " alt="">
+                        <img src="./images/freepik-img/casino-img-2.png" class=" w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
             <div class=" buttonsinfo ">
-                <button type="button" class="btn blogger-btn ">See Pricing</button>
+                <a href="#pricing-cards">
+                    <button type="button" class="btn blogger-btn ">See Pricing</button>
+
+                </a>
             </div>
         </div>
     </section>
@@ -170,9 +175,9 @@ if(isset($_GET['seo_url']))
     <!-- -------------------------------------------------------------------------------- -->
     <section class="challenges-casino-section">
         <div class="row ">
-            <div class="col-lg-6 col-md-6 ">
+            <div class="col-lg-6 col-md-6 m-auto">
                 <div>
-                    <img src="./images/dummy-img/casino-backlinks.png.webp" class=" w-100  mb-4 " alt="">
+                    <img src="./images/freepik-img/casino-img1.png" class=" w-100  mb-4 " alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -204,7 +209,9 @@ if(isset($_GET['seo_url']))
                         backlinks by providing the best strategies.</p>
 
                     <div class=" buttonsinfo mt-5">
-                        <button type="button" class="btn blogger-btn ">Get Started</button>
+                        <a href="#pricing-cards">
+                            <button type="button" class="btn blogger-btn ">Get Started</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -219,7 +226,7 @@ if(isset($_GET['seo_url']))
     <!-- pricing section -->
     <!-- ------------------------------------------- -->
 
-    <section class="mt-5 mb-5">
+    <section class="my-sm-5 my-2 ">
         <h1 class="text-center pricing-bo-h1 mb-3">Casino Backlinks Pricing
         </h1>
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
@@ -258,8 +265,8 @@ if(isset($_GET['seo_url']))
 
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                    <div class=" ">
-                        <img src="./images/dummy-img/casino-one-img.png" class="" alt="">
+                    <div class="text-center text-sm-start ">
+                        <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                     </div>
                     <h3>Manual Outreach</h3>
                     <div class="text-start">
@@ -270,8 +277,8 @@ if(isset($_GET['seo_url']))
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class=" ">
-                        <img src="./images/dummy-img/casino-two-img.png" class="" alt="">
+                    <div class="text-center text-sm-start ">
+                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                     </div>
                     <h3>Content Creation </h3>
                     <div class="text-start">
@@ -283,8 +290,8 @@ if(isset($_GET['seo_url']))
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class=" ">
-                        <img src="./images/dummy-img/casino-three-img.png" class="" alt="">
+                    <div class="text-center text-sm-start ">
+                        <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                     </div>
                     <h3>Monitoring Results</h3>
                     <div class="text-start">
