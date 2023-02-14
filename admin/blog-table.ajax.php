@@ -48,28 +48,6 @@ $blogsDtls	   = $blogMst->ShowBlogData();
     <link rel="stylesheet" href="../plugins/data-table/style.css">
 
     <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
-    <style>
-    .addnewbtncss {
-        margin: auto;
-        display: flex;
-        align-items: center;
-        margin-right: 1rem;
-        margin-top: -2.6rem;
-
-    }
-
-    @media (min-width:150px) and (max-width:390px) {
-        .addnewbtncss {
-            margin: 0rem;
-            display: flex;
-            align-items: center;
-            margin-right: 0rem;
-            margin-top: -1.2rem;
-        }
-    }
-    </style>
 
 </head>
 
@@ -182,71 +160,9 @@ $blogsDtls	   = $blogMst->ShowBlogData();
     </table>
     <!-- content-wrapper ends -->
     
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <script src="../plugins/jquery-3.6.0.min.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
-
-    <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
     <script src="../plugins/data-table/simple-datatables.js"></script>
     <script src="../plugins/tinymce/tinymce.js"></script>
     <script src="../plugins/main.js"></script>
-
-    <script>
-    function disapproved() {
-        return confirm("Are you sure that you want to disapproved the blog Contents ?")
-    };
-
-    function approved() {
-        return confirm("Are you sure that you want to approved the blog Contents ?")
-    };
-
-    const deleteBlog=(elem)=>{
-        let blogId = elem.id;
-        Swal.fire({
-                title: 'Are you sure?',
-                text: "want to Delete this blog?",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, Delete'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $.ajax({
-                        url: "ajax/blog-delete.ajax.php",
-                        type: "POST",
-                        data: {
-                            delBlogId: blogId
-                        },
-                        success: function(response) {
-                            // alert(response);
-                            if (response.includes('true')) {
-                                $(`#${blogId}`).closest("tr").fadeOut();
-                            } else {
-                                // $("success-message").slideUp();
-                                Swal.fire(
-                                    'failed!',
-                                    'Item Can Not Deleted 😥.',
-                                    'error'
-                                )
-                            }
-                        }
-                    });
-                }
-            })
-            return false;
-    }
-    </script>
 
 </body>
 

@@ -47,8 +47,8 @@
             </a>
             <div class="collapse" id="blogs">
                 <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="blog-master.php">Blogs</a></li>
                     <li class="nav-item"> <a class="nav-link" href="blog-niche.php">Niches</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="blog_master.php">Blogs</a></li>
                 </ul>
             </div>
         </li>

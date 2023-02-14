@@ -26,8 +26,6 @@ $keyword		= $utility->returnGetVar('keyword','');
 $type			= $utility->returnGetVar('type','');
 $mode			= $utility->returnGetVar('mode','');
 
-
-
 $blogsDtls	   = $blogMst->ShowBlogData();
 	
 ?>
@@ -52,27 +50,6 @@ $blogsDtls	   = $blogMst->ShowBlogData();
 
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
-    <style>
-    .addnewbtncss {
-        margin: auto;
-        display: flex;
-        align-items: center;
-        margin-right: 1rem;
-        margin-top: -2.6rem;
-
-    }
-
-    @media (min-width:150px) and (max-width:390px) {
-        .addnewbtncss {
-            margin: 0rem;
-            display: flex;
-            align-items: center;
-            margin-right: 0rem;
-            margin-top: -1.2rem;
-        }
-    }
-    </style>
 </head>
 
 <body>
@@ -96,10 +73,13 @@ $blogsDtls	   = $blogMst->ShowBlogData();
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Niche wise Blogs Maintenance</h4>
-                                    <button type="button" class="btn btn-primary .ml-1 addnewbtncss"
-                                        onclick="location.href='blog_add.php?action=addblog';"> Add New Blogs
-                                    </button>
+                                    <div class="border-bottom d-flex justify-content-between pb-1">
+                                        <h4 class="card-title">Niche wise Blogs Maintenance</h4>
+                                        <button type="button" class="btn btn-sm btn-primary"
+                                            onclick="location.href='blog_add.php?action=addblog';">Add New Blog
+                                        </button>
+                                    </div>
+
                                     <div class="table-responsive" id="table">
 
                                     </div>
@@ -116,10 +96,10 @@ $blogsDtls	   = $blogMst->ShowBlogData();
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-    
+
     <script src="vendors/js/vendor.bundle.base.js"></script>
     <script src="../plugins/jquery-3.6.0.min.js"></script>
-    
+
     <script src="js/off-canvas.js"></script>
     <script src="js/hoverable-collapse.js"></script>
     <script src="js/template.js"></script>
@@ -138,7 +118,7 @@ $blogsDtls	   = $blogMst->ShowBlogData();
     $(document).ready(function() {
         function lodetable() {
             $.ajax({
-                url: "blog_table.ajax.php",
+                url: "blog-table.ajax.php",
                 type: "GET",
                 success: function(data) {
                     $('#table').html(data);
@@ -170,6 +150,56 @@ $blogsDtls	   = $blogMst->ShowBlogData();
         });
     });
     </script>
+
+
+    <script>
+    function disapproved() {
+        return confirm("Are you sure that you want to disapproved the blog?")
+    };
+
+    function approved() {
+        return confirm("Are you sure that you want to approved the blog?")
+    };
+
+    const deleteBlog = (elem) => {
+        let blogId = elem.id;
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "want to Delete this blog?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Delete'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "ajax/blog-delete.ajax.php",
+                    type: "POST",
+                    data: {
+                        delBlogId: blogId
+                    },
+                    success: function(response) {
+                        // alert(response);
+                        if (response.includes('true')) {
+                            $(`#${blogId}`).closest("tr").fadeOut();
+                        } else {
+                            // $("success-message").slideUp();
+                            Swal.fire(
+                                'failed!',
+                                'Item Can Not Deleted 😥.',
+                                'error'
+                            )
+                        }
+                    }
+                });
+            }
+        })
+        return false;
+    }
+    </script>
+
+
 </body>
 
 </html>
