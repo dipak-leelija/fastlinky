@@ -208,6 +208,8 @@ if(isset($_POST['btnCancel'])){
                                                                         
                                                                         if (!empty($cusDtl[0][24]) && empty($cusDtl[0][25])) {
                                                                             echo ', ';
+                                                                        }elseif (!empty($cusDtl[0][24]) && !empty($cusDtl[0][25])) {
+                                                                            echo ', ';
                                                                         }
                                                                         
                                                                         if (!empty($cusDtl[0][25])) {
