@@ -201,30 +201,49 @@ if(isset($_POST['btnCancel'])){
                                                                     <td>Address </td>
                                                                     <td>:</td>
                                                                     <td class="text-start">
-                                                                        <?php
-                                                    echo $cusDtl[0][24];
-                                                    if ($cusDtl[0][24] != null) {
-                                                        echo ', ';
-                                                    }
-                                                    echo $cusDtl[0][25];
-                                                    if ($cusDtl[0][25] != null) {
-                                                        echo ', ';
-                                                    }
-                                                    echo $cusDtl[0][26];
-                                                    if ($cusDtl[0][26] != null) {
-                                                        echo ', ';
-                                                    }
-                                                    echo $Location->getCityDataById($cusDtl[0][27])[1];
-                                                    if ($cusDtl[0][27] != null) {
-                                                        echo ', ';
-                                                    }
-                                                    echo $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
-                                                    if ($cusDtl[0][30] != null) {
-                                                        echo ', ';
-                                                    }
+                                                                    <?php
+                                                                        if (!empty($cusDtl[0][24])) {
+                                                                            echo $cusDtl[0][24];
+                                                                        }
+                                                                        
+                                                                        if (!empty($cusDtl[0][24]) && empty($cusDtl[0][25])) {
+                                                                            echo ', ';
+                                                                        }
+                                                                        
+                                                                        if (!empty($cusDtl[0][25])) {
+                                                                            echo $cusDtl[0][25];
+                                                                        }
+                                                                        
+                                                                        if (!empty($cusDtl[0][25]) && empty($cusDtl[0][26])) {
+                                                                            echo ', ';
+                                                                        }
 
-                                                    echo $cusDtl[0][29];
-                                                    ?>
+                                                                        if (!empty($cusDtl[0][26])) {
+                                                                            echo $cusDtl[0][26];
+                                                                        }
+
+                                                                        if (!empty($cusDtl[0][27]) && empty($cusDtl[0][30])) {
+                                                                            echo ', ';
+                                                                        }
+                                                                        
+                                                                        if (!empty($cusDtl[0][27])) {
+                                                                            $city = $Location->getCityDataById($cusDtl[0][27])[1];
+                                                                            // print_r($city[1]);
+                                                                        }
+                                                                        
+                                                                        if (!empty($cusDtl[0][27]) && empty($cusDtl[0][30])) {
+                                                                            echo ', ';
+                                                                        }
+
+                                                                        if (!empty($cusDtl[0][30])) {
+                                                                            echo $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
+                                                                        }
+
+                                                                        if (!empty($cusDtl[0][29])) {
+                                                                            echo ', ';
+                                                                            echo $cusDtl[0][29];
+                                                                        }
+                                                                        ?>
                                                                     </td>
                                                                 </tr>
 
@@ -251,8 +270,15 @@ if(isset($_POST['btnCancel'])){
                                                         <div class="row">
                                                             <div class="col-lg-2 col-md-2 col-sm-2">
                                                                 <div class="circle editing-profile-img">
-                                                                    <img class=" profile-pic rounded editingimg"
-                                                                        src="images/user/<?php echo $cusDtl[0][9] ?>">
+                                                                    <?php
+                                                                        if (!empty($cusDtl[0][9])){
+                                                                            echo '<img class="profile-pic rounded editingimg"
+                                                                        src="images/user/'.$cusDtl[0][9].'">';
+                                                                        }else {
+                                                                            echo '<img class="profile-pic rounded editingimg"
+                                                                        src="images/icons/user.png">';
+                                                                        }
+                                                                        ?>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-10 col-md-10 col-sm-10 m-auto">
