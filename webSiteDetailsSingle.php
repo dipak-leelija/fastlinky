@@ -49,7 +49,7 @@ header("Location: dashboard.php");
 
 //echo $cusId;exit;
 $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
-$domainDtls	= $domain->ShowUserDomainData($cusDtl[0][2]);
+// $domainDtls	= $domain->ShowUserDomainData($cusDtl[0][2]);
 
 ?>
 <!DOCTYPE HTML>

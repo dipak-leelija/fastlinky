@@ -102,7 +102,12 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     $domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
     // print_r($domain);
     $totalDomainCost = $domain[9]+$domain[16]; // cost + ext_cost
+}else {
+    $redirectTo = "../order-now.php?id=".$_POST['blogId'];
+    header('Location: '.$redirectTo);
+    exit;
 }
+
 
 ?>
 
@@ -120,7 +125,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
 
     <!-- main custom-css for this page  -->
-    <link rel="stylesheet" href="../css/paylater-payment-style.css">
+    <link rel="stylesheet" href="../css/payment-summary-style.css">
     <!-- end -->
 </head>
 
@@ -129,7 +134,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
         <!-- logo codes -->
         <div class="logos-section">
             <div class="text-center">
-                <img src="<?php echo LOGO_WITH_PATH; ?>" alt="<?php echo COMPANY_FULL_NAME; ?>" class="w-25">
+                <img src="<?php echo LOGO_WITH_PATH; ?>" alt="<?php echo COMPANY_FULL_NAME; ?>" class="main_logo">
             </div>
         </div>
         <!-- cards for customers details -->
@@ -226,7 +231,10 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
                                         <td>
                                             <div class="row">
                                                 <div class="col-12 text-end">
-                                                    <button class="btn btn-primary">Place Order</button>
+                                                    <button type="submit" class="btn btn-primary rounded-pill w-100 fw-semibold">Place Order</button>
+                                                </div>
+                                                <div class="col-12 text-end">
+                                                    <button type="button" class="btn btn-danger rounded-pill w-100 fw-semibold mt-2" onclick="history.back()">Cancel</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -239,7 +247,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
             </form>
         </div>
     </section>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="../plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>

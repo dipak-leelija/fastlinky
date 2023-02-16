@@ -18,6 +18,9 @@
 	define('COMPANY_L', 		'LL');											//company short name
 	
 	
+	define('SITE_ADMIN_NAME',  					"Fast Linky Admin");
+	define('SITE_ADMIN_EMAIL', 					"admin@fastlinky.com");
+	define('SITE_ADMIN_EMAIL_P', 				"=CnBV7Zu)YV}");
 	
 	define('SITE_BILLING_NAME',  				"Fast Linky");
 	define('SITE_EMAIL', 						"outreach@fastlinky.com");

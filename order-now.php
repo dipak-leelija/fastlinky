@@ -66,6 +66,20 @@ $_SESSION['domainName'] = $wishListsingleData[0];
 $_SESSION['sitePrice']  = $contentPlacementPrice;
 $_SESSION['ConetntCreationPlacementPrice']  = $contetCreationPlacementPrice;
 
+
+// Variable decleared to fetch content from session  
+$SESSclientContent      ='';
+$SESSclientAnchorText   ='';
+$SESSclientTargetUrl    ='';
+$SESSclientRequirement  ='';
+// cheaking session id to fetch content if exists  
+if (isset($_SESSION['order-data'])) {
+    $SESSclientContent      = $_SESSION['order-data']['clientContent'];
+    $SESSclientAnchorText   =  $_SESSION['order-data']['clientAnchorText'];
+    $SESSclientTargetUrl    =  $_SESSION['order-data']['clientTargetUrl'];
+    $SESSclientRequirement  =  $_SESSION['order-data']['clientRequirement'];
+
+}
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
@@ -147,7 +161,7 @@ $_SESSION['ConetntCreationPlacementPrice']  = $contetCreationPlacementPrice;
                             </div>
                         </div>
                     </div>
-                    <!-- placement selection button section start -->
+                    <!-- placement selection button section end -->
 
                     <hr class="border-primary">
 
@@ -164,7 +178,7 @@ $_SESSION['ConetntCreationPlacementPrice']  = $contetCreationPlacementPrice;
                                         any images in your article)</span></label>
                                 <div class="form-group">
                                     <textarea class="form-control" name="clientContent1" id="" rows="9"
-                                        placeholder="Put your content here"></textarea>
+                                        placeholder="Put your content here"><?php echo $SESSclientContent; ?></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -173,7 +187,7 @@ $_SESSION['ConetntCreationPlacementPrice']  = $contetCreationPlacementPrice;
                                     <p>Enter the URL that you have included in your content above</p>
                                 </label>
                                 <input type="text" class="form-control" aria-describedby="Target Url"
-                                    placeholder="Enter Your Target URL" name="clientTargetUrl1">
+                                    placeholder="Enter Your Target URL" name="clientTargetUrl1" value="<?php echo $SESSclientTargetUrl; ?>">
                             </div>
                             <div class="form-group">
                                 <label for="clientAnchorText1">
@@ -181,7 +195,7 @@ $_SESSION['ConetntCreationPlacementPrice']  = $contetCreationPlacementPrice;
                                     <p> Enter the anchor text that you have included in your content above.</p>
                                 </label>
                                 <input type="text" class="form-control" placeholder="Enter Your Anchor Text"
-                                    name="clientAnchorText1">
+                                    name="clientAnchorText1"  value="<?php echo $SESSclientAnchorText; ?>" >
                             </div>
                             <div class="form-group">
                                 <label for="clientRequirement1">
@@ -190,7 +204,7 @@ $_SESSION['ConetntCreationPlacementPrice']  = $contetCreationPlacementPrice;
                                         requirements, Category, deadline, necessity of disclosure, preferences
                                         regarding content placement, etc.</p>
                                 </label>
-                                <textarea class="form-control" rows="6" name="clientRequirement1"></textarea>
+                                <textarea class="form-control" rows="6" name="clientRequirement1"><?php echo $SESSclientRequirement; ?></textarea>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" id="tid" name="tid" value="">
@@ -342,7 +356,8 @@ $_SESSION['ConetntCreationPlacementPrice']  = $contetCreationPlacementPrice;
     const paypalOrder = () => {
 
         document.getElementById("order-name").value = "onlyPlacement";
-        document.getElementById("orderForm").action = "order-details.php";
+        // document.getElementById("orderForm").action = "order-details.php";
+        document.getElementById("orderForm").action = "payments/paypal-order-details.php";
 
         if (validateForm1() != false) {
             document.getElementById("orderForm").submit();
@@ -377,7 +392,8 @@ $_SESSION['ConetntCreationPlacementPrice']  = $contetCreationPlacementPrice;
     const paypalOrder2 = () => {
         document.getElementById("order-name2").value = "placementWithArticle";
         // document.getElementById("orderForm2").action = "order-details-with-creation.php";
-        document.getElementById("orderForm2").action = "order-details.php";
+        // document.getElementById("orderForm2").action = "order-details.php";
+        document.getElementById("orderForm2").action = "payments/paypal-order-details.php";
 
         if (validateForm2() != false) {
             document.getElementById("orderForm2").submit();

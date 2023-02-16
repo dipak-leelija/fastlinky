@@ -269,7 +269,7 @@ if(isset($_SESSION['orderId'])) {
 	$toMail_admin		=	'rahulmajumdar400@gmail.com';
 	$toName_admin		= 	'Leelija Admin';
 
-	// adminOrderPlacedMail($fromMail_admin, $toMail_admin, $toName_admin, $cusDtls_arr, $cusData_arr,  $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
+	adminOrderPlacedMail($fromMail_admin, $toMail_admin, $toName_admin, $cusDtls_arr, $cusData_arr,  $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
 
 
 	// ================================== MAIL SENDED TO ADMIN ================================== 

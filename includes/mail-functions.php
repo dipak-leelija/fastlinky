@@ -465,7 +465,7 @@ function mailFooter(){
 
                                                         style="margin: 0; font-size: 12px; text-align: center; mso-line-height-alt: 18px;">
 
-                                                        <span><a style="text-decoration: none; color: #fff;" href="tel:'.SITE_HELP_LINE_NO.'">'.SITE_HELP_LINE_NO.'</span>
+                                                        <span><a style="text-decoration: none; color: #fff;" href="tel:'.SITE_CONTACT_NO.'">'.SITE_CONTACT_NO.'</span>
 
                                                     </p>
 

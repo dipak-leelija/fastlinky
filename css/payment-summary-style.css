@@ -36,6 +36,11 @@ table>tbody>tr>td {
     vertical-align: middle !important;
 }
 
+.main_logo {
+    width: 16% !important;
+    margin-top: 1rem;
+}
+
 @media(max-width:340px) {
     .detailing-table tr {
         word-break: break-all;

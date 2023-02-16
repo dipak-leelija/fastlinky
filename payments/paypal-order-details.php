@@ -1,19 +1,20 @@
 <?php 
 session_start();
-require_once "_config/dbconnect.php";
-require_once "_config/dbconnect.trait.php";
+require_once "../includes/constant.inc.php";
 
-require_once "includes/constant.inc.php";
-require_once "includes/paypal.inc.php";
+require_once "../_config/dbconnect.php";
+require_once "../_config/dbconnect.trait.php";
 
-require_once "classes/customer.class.php";
-require_once "classes/content-order.class.php";
-require_once "classes/blog_mst.class.php";
-require_once "classes/date.class.php";
-require_once "classes/utility.class.php";
+require_once "../includes/paypal.inc.php";
+
+require_once "../classes/customer.class.php";
+require_once "../classes/content-order.class.php";
+require_once "../classes/blog_mst.class.php";
+require_once "../classes/date.class.php";
+require_once "../classes/utility.class.php";
 
 
-include "Crypto.php";
+include "../Crypto.php";
 
 $ContentOrder       = new ContentOrder();
 $BlogMst            = new BlogMst();
@@ -105,6 +106,10 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
 
     $domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
     $totalDomainCost = $domain[9]+$domain[16]; // cost + ext_cost
+}else {
+    $redirectTo = "../order-now.php?id=".$_POST['blogId'];
+    header('Location: '.$redirectTo);
+    exit;
 }
 
 ?>
@@ -117,11 +122,11 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Summary - <?php echo $clientOrderedSite;?> | <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png"/>
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="css/paylater-payment-style.css">
+    <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/payment-summary-style.css">
 </head>
 
 <body>
@@ -129,7 +134,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
         <!-- logo codes -->
         <div class="logos-section">
             <div class="text-center">
-                <img src="<?php echo LOGO_WITH_PATH; ?>" alt="<?php echo COMPANY_FULL_NAME; ?>" class="w-25">
+                <img src="<?php echo LOGO_WITH_PATH; ?>" alt="<?php echo COMPANY_FULL_NAME; ?>" class="main_logo">
             </div>
         </div>
         <!-- cards for customers details -->
@@ -158,17 +163,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                     </div>
                 </div>
             </div>
-            <!-- invoice div -->
-            <div class=" row invoice-styles">
-                <div class="col-md-6">
-                    <!-- <p> <b>Invoice No' : </b> 57568654</p>
-                    <p> <b>Invoice Date : </b> 1/12/2022</p>
-                </div>
-                <div class="col-md-6">
-                    <p> <b>Due Date : </b> 2/12/2022</p> -->
-                </div>
-            </div>
-            <!-- invoice div end-->
+
             <form action="paylater-order-success.php" method="post">
                 <input type="hidden" name="blogId" id="blogId" value="<?php echo $blogId; ?>">
 
@@ -188,7 +183,8 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                                 <td><b><?php echo $clientOrderedSite; ?></b> </td>
                                 <td><?php echo $clientOrderedSiteNos; ?></td>
                                 <td><?php echo CURRENCY.$totalDomainCost; ?></td>
-                                <td> <?php echo CURRENCY; ?><span id="amount"><?php echo $clientOrderPrice; ?></span></td>
+                                <td> <?php echo CURRENCY; ?><span id="amount"><?php echo $clientOrderPrice; ?></span>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -240,21 +236,24 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                                             <div class="row">
                                                 <div class="col-12 text-end" id="payBtn">
                                                     <div id="paypal-payment-button">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 text-end" id="payBtn">
+                                                   <button type="button" class="btn btn-danger rounded-pill w-100 fw-semibold" onclick="history.back()">Cancel</button>
                                                 </div>
                                             </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        </td>
-                        </tr>
-                        </tbody>
-                        </table>
                     </div>
                 </div>
-        </div>
-        </form>
+            </form>
         </div>
     </section>
 
-    <form action="pay-success.php" method="post" id="send-data" class="d-none">
+    <form action="../pay-success.php" method="post" id="send-data" class="d-none">
         <input type="text" name="data" id="form-inp">
         <input type="text" name="blogId" id="blogId" value="<?php echo $blogId; ?>">
     </form>
@@ -315,7 +314,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
         }
     }).render('#paypal-payment-button');
     </script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="../plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>

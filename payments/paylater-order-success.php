@@ -4,11 +4,12 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
+require_once "../includes/constant.inc.php";
+
 require_once "../_config/dbconnect.php";
 require_once "../_config/dbconnect.trait.php";
 
 
-require_once "../includes/constant.inc.php";
 require_once "../includes/user.inc.php";
 require_once "../includes/email.inc.php";
 require_once "../includes/registration.inc.php";
@@ -261,7 +262,7 @@ if(isset($_SESSION['orderId'])) {
 	$toMail_admin		=	'rahulmajumdar400@gmail.com';
 	$toName_admin		= 	'Leelija Admin';
 
-	// adminOrderPlacedMail($fromMail_admin, $toMail_admin, $toName_admin, $cusDtls_arr, $cusData_arr,  $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
+	adminOrderPlacedMail($fromMail_admin, $toMail_admin, $toName_admin, $cusDtls_arr, $cusData_arr,  $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
 
 
 	// ================================== MAIL SENDED TO ADMIN ================================== 
@@ -276,7 +277,7 @@ if(isset($_SESSION['orderId'])) {
 	$toName         = $orderDetail[0]['clientName'];
 	
 
-	// $mailSended = customerOrderPlacedMail($fromMail, $toMail, $toName, $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
+	$mailSended = customerOrderPlacedMail($fromMail, $toMail, $toName, $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
 
 	// ================================== MAIL SENDED TO CLIENT ================================== 
 	
@@ -291,7 +292,7 @@ if(isset($_SESSION['orderId'])) {
 	$sellerName     = $seller['fname'].' '.$seller['lname'];
 	
 
-	// sellerOrderinformMail($fromMail, $sellerMail, $sellerName, $blogName, $orddtls_arr, $orddata_arr, $addedOn);
+	sellerOrderinformMail($fromMail, $sellerMail, $sellerName, $blogName, $orddtls_arr, $orddata_arr, $addedOn);
 
 	// ================================== MAIL SENDED TO SELLER ================================== 
 	
@@ -305,7 +306,7 @@ if(isset($_SESSION['orderId'])) {
 		
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -330,7 +331,7 @@ if(isset($_SESSION['orderId'])) {
     <!-- Start  container -->
     <div id="container">
 
-        <div class="row flex-column  align-items-center">
+        <div class="row flex-column  align-items-center mt-5">
 
             <!--======= column 1 =======-->
             <div class="col-11 col-md-10">

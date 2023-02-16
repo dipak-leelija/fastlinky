@@ -1,16 +1,4 @@
 <?php 
-	/**
-	*	Constants defined for Advertiser and Administrator and Other users.
-	*
-	*	@author		Himadri Shekhar Roy
-	*	@date		March 10, 2008
-	*	@update		September 24, 2009
-	*	@version	1.0
-	*	@copyright	Analyze System
-	*	@url		http://www.ansysoft.com
-	*	@email		himadri.s.roy@ansysoft.com
-	* 
-	*/
 	
 	/**
 	*	Generic message for registration 
