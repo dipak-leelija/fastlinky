@@ -33,6 +33,20 @@ class AccountAuth {
 			'wp_ajax_nopriv_blc_implement_user_lostpassword',
 			[$this, 'blc_implement_user_lostpassword']
 		);
+
+		add_filter('bm_rgn_is_modal', function ($value) {
+			$render = new \Blocksy_Header_Builder_Render();
+
+			if (
+				$render->contains_item('account')
+				||
+				is_customize_preview()
+			) {
+				return true;
+			}
+
+			return $value;
+		});
 	}
 
 	public function blc_implement_user_lostpassword() {

@@ -1,3 +1,18 @@
+1.8.75: 2023-02-15
+- Improvement: Correctly close handler for overlays
+
+1.8.74: 2023-02-15
+- Improvement: WooCommere 7.4 template updates
+- Improvement: Better compatibility with The Plus Mega Menu plugin
+- Improvement: Option to change the "Post Navigation" module thumbnail size
+
+1.8.73: 2023-02-09
+- Improvement: Automatically prepend `mailto` link in email social elements
+- Improvement: Better output the value of menu dropdown sticky offset option
+- Improvement: Archive cards read more button inherit alignment from "Content Alignment" option
+- Improvement: More consistent integration with bbPress
+- Fix: Default WooCommerce placeholder images do not show up in live results
+
 1.8.72: 2023-02-02
 - Improvement: Smarter infinite scroll selector picking when product categories are displayed on the shop page
 - Improvement: Do not repeat schema.org markup on mobile view for logo element

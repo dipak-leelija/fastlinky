@@ -210,8 +210,8 @@ if(isset($_GET['seo_url']))
     <!--========= Cannabis Link Building Or Regular Link Building-  Start =========-->
     <section class="cannabis-clb-rlb-section">
         <div class="cannabis-clb-rlb-main-div ">
-            <h2>Why choose cannabis link building from <strong>all over the common link building? </strong> </h2>
-
+            <h2>Why Choose “Cannabis Link Building”  <strong> is important for CBD niche ? </strong> </h2>
+            <!-- Why is it important to choose “Cannabis Link Building” for the CBD niche? -->
             <ul>
                 <li> <span><i class="fa-solid fa-circle-check"></i></span> It is a large CBD fund, which is growing
                     repeatedly.</li>

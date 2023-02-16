@@ -210,11 +210,11 @@ class Blocksy_Screen_Manager {
 			||
 			get_query_var('post_type') === 'forum'
 			||
-			bbp_is_single_user_profile()
-			||
 			bbp_is_topic_tag()
 			||
 			bbp_is_topic_tag_edit()
+			||
+			is_bbpress()
 		)) {
 			$actual_prefix = 'bbpress_single';
 		}

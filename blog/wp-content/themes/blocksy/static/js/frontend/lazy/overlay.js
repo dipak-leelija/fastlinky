@@ -23,7 +23,7 @@ const showOffcanvas = (settings) => {
 		trigger.setAttribute('aria-expanded', 'true')
 	})
 
-	if (settings.focus && !isTouchDevice()) {
+	if (settings.focus) {
 		setTimeout(() => {
 			settings.container.querySelector('input') &&
 				settings.container.querySelector('input').focus()

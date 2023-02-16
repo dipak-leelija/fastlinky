@@ -897,6 +897,14 @@ function blocksy_get_social_metadata($args = []) {
 		if (empty(trim($single_metadata['url']))) {
 			$single_metadata['url'] = '#';
 		}
+
+		if (
+			$args['social'] === 'email'
+			&&
+			strpos($single_metadata['url'], 'mailto:') === false
+		) {
+			$single_metadata['url'] = 'mailto:' . $single_metadata['url'];
+		}
 	}
 
 	if ($args['type'] === 'share') {

@@ -379,11 +379,8 @@ if (! function_exists('blocksy_render_archive_card')) {
 					'read_more' => blocksy_html_tag(
 						'a',
 						[
-							'class' => 'entry-button' . (
-								$button_type === 'background' ? ' ct-button' : ''
-							),
+							'class' => 'entry-button' . ($button_type === 'background' ? ' ct-button' : ''),
 							'data-type' => $button_type,
-							'data-alignment' => blocksy_default_akg( 'read_more_alignment', $read_more_settings, 'left' ),
 							'href' => esc_url( get_permalink() )
 						],
 						$read_more_text
