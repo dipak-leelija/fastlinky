@@ -4,20 +4,7 @@
 //include_once("category.class.php");
 
 
-/*
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-THIS CLASS CONTAINS ALL THE COUNTRY INFORMATION
-
-AUTHOR 		: HIMADRI
-DATE   		: JULY 03, 2006
-VERSION		: 1.0
-COPYRIGHT	: ANALYZE SYSTEM
-EMAIL		: HIMADRI.S.ROY@ANSYSOFT.COM
-*/
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-class Countries extends DatabaseConnection
-{
+class Countries extends DatabaseConnection{
 	/*
 		ADD NEW COUNTRY
 		VARIABLE:
@@ -84,7 +71,7 @@ class Countries extends DatabaseConnection
 		$rows 	= $query->num_rows;
 		if($rows > 0)
 		{
-			while($result	= 	$query->fetch_array())
+			while($result	= 	$query->fetch_assoc())
 			{
 				$data	=	array(
 								  $result['country_name'],		//0

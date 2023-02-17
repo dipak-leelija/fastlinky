@@ -6,13 +6,12 @@
             <img src="<?php echo LOGO_WITH_PATH; ?>" alt="logo" class="pe-md-4">
             <div class="text-center emailstyle  m-auto ps-4 ">
                 <?php
-                $cusDtl			= $customer->getCustomerData($cusId); 
-
-                if($cusId != 0){
-                    echo "Hi, ".$cusDtl[0][5];
-                }else {
-                    echo SITE_EMAIL;
-                }
+                    if($cusId != 0){
+                        $cusDtl			= $customer->getCustomerData($cusId);
+                        echo "Hi, ".$cusDtl[0][5];
+                    }else {
+                        echo SITE_EMAIL;
+                    }
                 ?>
             </div>
         </a>

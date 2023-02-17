@@ -23,6 +23,9 @@ require_once "../classes/error.class.php";
 require_once "../classes/date.class.php";
 require_once "../classes/content-order.class.php";
 require_once "../classes/wishList.class.php";
+require_once "../classes/countries.class.php";
+require_once "../classes/location.class.php";
+
 require_once "../classes/utility.class.php"; 
 require_once "../classes/utilityMesg.class.php"; 
 
@@ -34,6 +37,8 @@ $OrderStatus	= new OrderStatus();
 $error			= new MyError();
 $ContentOrder	= new ContentOrder();
 $WishList		= new WishList();
+$Countries		= new Countries();
+$Location		= new Location();
 
 $dateUtil		= new DateUtil();
 $utility		= new Utility();
@@ -162,6 +167,18 @@ if(isset($_SESSION['orderId'])) {
 	// Client Details 
 	$client		= $customer->getCustomerData($orderDetail[0]['clientUserId']);
 
+	//country details
+	$countryDetails = $Countries->showCountry($client[0][30]);
+	$countryName   	= $countryDetails[0];
+
+	//city details
+	$cityDetails 	= $Location->getCityDataById($client[0][27]);
+	$cityName = $cityDetails['city'];
+
+	//state details
+	$stateDetails 	= $Location->getStateData($client[0][28]);
+	$stateName 		= $stateDetails['state_name'];
+
 
 	$domainDetails = $BlogMst->showBlogbyDomain($orderDetail[0]['clientOrderedSite']);
 	$sellerEmail = $domainDetails[19];
@@ -192,8 +209,8 @@ if(isset($_SESSION['orderId'])) {
 						$orderDetail[0]['clientName'], 		//0
 						$orderDetail[0]['clientEmail'],		//1
 						$client[0][12],						//2
-						$client[0][27],						//3
-						$client[0][28],						//4
+						$cityName,							//3
+						$stateName,							//4
 						$client[0][29],						//5
 						$client[0][34],						//6
 						$addedOn							//7
@@ -202,7 +219,7 @@ if(isset($_SESSION['orderId'])) {
 
 
 	
-	// order details 
+	// order details for admin and customer
 	$orddtls_arr = array(
 						'NAME', 		//0
 						'SERVICE',		//1
@@ -220,15 +237,38 @@ if(isset($_SESSION['orderId'])) {
 						$orderDetail[0]['clientName'],	//0 
 						'Guest Posting', 				//1
 						$clientOrderedSite,				//2
-						$client[0][27],		 			//3
+						$cityName,			 			//3
 						$client[0][29], 				//4
-						$client[0][30], 				//5
+						$countryName,	 				//5
 						$client[0][34], 				//6
 						$orderDetail[0]['clientEmail'], //7
 						$statusName,					//8
 						$addedOn
 					);
 	
+
+	// order details for admin and customer
+	$orddtls_arr_seller = array(
+						'NAME', 		//0
+						'SERVICE',		//1
+						'SITE',			//2
+						'CITY', 		//3
+						'ZIP CODE', 	//4
+						'COUNTRY', 		//5
+						'STATUS', 		//6
+						'PLACED ON',	//7
+					);
+
+	$orddata_arr_seller = array(
+						$orderDetail[0]['clientName'],	//0 
+						'Guest Posting', 				//1
+						$clientOrderedSite,				//2
+						$cityName,			 			//3
+						$client[0][29], 				//4
+						$countryName,	 				//5
+						$statusName,					//6
+						$addedOn						//7
+					);
 
 
 
@@ -246,7 +286,7 @@ if(isset($_SESSION['orderId'])) {
 						'#'.$orderDetail[0]['order_id'], 			//0
 						'#'.$orderDetail[0]['clientTransactionId'],	//1
 						'$'.$orderDetail[0]['clientOrderPrice'],	//2
-						'Paypal',									//3
+						'PayLater',									//3
 						$orderDetail[0]['paymentStatus'],			//4
 						$addedOn
 					);
@@ -254,13 +294,9 @@ if(isset($_SESSION['orderId'])) {
 	
 
 
-	// $fromMail_admin 		=	SITE_EMAIL;
-	// $toMail_admin		=	SITE_BILLING_EMAIL;
-	// $toName_admin		= 	SITE_BILLING_NAME;
-
-	$fromMail_admin 	=	SITE_EMAIL;
-	$toMail_admin		=	'rahulmajumdar400@gmail.com';
-	$toName_admin		= 	'Leelija Admin';
+	$fromMail_admin 	=	SITE_ADMIN_EMAIL;
+	$toMail_admin		=	SITE_EMAIL;
+	$toName_admin		= 	SITE_ADMIN_NAME;
 
 	adminOrderPlacedMail($fromMail_admin, $toMail_admin, $toName_admin, $cusDtls_arr, $cusData_arr,  $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
 
@@ -272,7 +308,7 @@ if(isset($_SESSION['orderId'])) {
 	// =========================================		SEND MAIL TO CLIENT		 =========================================
 	// ===================================================================================================================
 
-	$fromMail       = SITE_BILLING_EMAIL;
+	$fromMail       = SITE_EMAIL;
 	$toMail         = $orderDetail[0]['clientEmail'];
 	$toName         = $orderDetail[0]['clientName'];
 	
@@ -286,13 +322,13 @@ if(isset($_SESSION['orderId'])) {
 	// =========================================		SEND MAIL TO SELLER		 =========================================
 	// ===================================================================================================================
 
-	$fromMail       = SITE_BILLING_EMAIL;
+	$fromMail       = SITE_EMAIL;
 	$blogName		= $clientOrderedSite;
 	$sellerMail     = $sellerEmail;
 	$sellerName     = $seller['fname'].' '.$seller['lname'];
 	
 
-	sellerOrderinformMail($fromMail, $sellerMail, $sellerName, $blogName, $orddtls_arr, $orddata_arr, $addedOn);
+	sellerOrderinformMail($fromMail, $sellerMail, $sellerName, $blogName, $orddtls_arr_seller, $orddata_arr_seller, $addedOn);
 
 	// ================================== MAIL SENDED TO SELLER ================================== 
 	
@@ -311,6 +347,10 @@ if(isset($_SESSION['orderId'])) {
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Payment Success - Order Received</title>
+	
+	<link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
+    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
+
     <link rel="stylesheet" href="<?php echo URL ?>style/ansysoft.css" type="text/css" />
     <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="../plugins/fontawesome-6.1.1/css/all.css">

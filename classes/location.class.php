@@ -1,27 +1,4 @@
 <?php 
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**
-*	This class works to manage location which includes province
-*	county and City. Every province will have county and every county 
-*	will have City.
-*	Note: The images related to province, county and City will be uploading and  
-*	deleting separately through utility class.
-*
-*	Update May 22, 2014
-*	Added country id to City
-*	Added country id to county
-*
-*
-*	@author     	Himadri Shekhar Roy
-*	@date   	 	November 20, 2006
-*	@version 		1.0
-*	@copyright 		Analyze System
-*	@email			himadri.s.roy@ansysoft.com
-*
-*/
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 class Location extends DatabaseConnection{
 	/**
 	* 	Create a province
@@ -145,20 +122,15 @@ class Location extends DatabaseConnection{
 	*/
 	function getStateData($id){
 
-		//create the statement
-		$sql	= "SELECT * FROM states WHERE state_id='$id'";
-		
-		$query	= $this->conn->query($sql);
 		$data	= array();
+
+		$sql	= "SELECT * FROM states WHERE state_id='$id'";
+		$query	= $this->conn->query($sql);
 		
 		if($query->num_rows == 1){
 
-			$result = $query->fetch_array();
-			
-			$data = array(
-						 $result['state_name'],		//0
-						 $result['country_id'],		//1
-						 );
+			$result = $query->fetch_assoc();
+			$data = $result;
 						
 		} 
 		return $data;
@@ -427,10 +399,10 @@ class Location extends DatabaseConnection{
 	}//eof
 	
 	/**
-	*	Retrieve all town data and county data
+	*	Retrieve all town data and city data
 	*	@return array
 	*	@param	
-	*			$id		id of the county
+	*			$id		id of the city
 	*
 	*/
 	function getCityDataById($id){
@@ -443,29 +415,9 @@ class Location extends DatabaseConnection{
 		
 		if($query->num_rows == 1)
 		{
-			$result = $query->fetch_array();
+			$result = $query->fetch_assoc();
 			
-			$data = array(
-						
-						 $result['id'],			//0
-						 $result['city'],		//1
-						 $result['state_id']	//2
-
-						 
-						//  $result['countries_id'],		//0 TOWN FIRST
-						//  $result['province_id'],		//1
-						//  $result['county_id'],			//2
-						//  $result['town_name'],			//3
-						//  $result['latitude'],			//4
-						
-						//  $result['longitude'],			//5 
-						//  $result['town_desc'],			//6 
-						//  $result['town_image'],			//7
-						//  $result['added_on'],			//8
-						//  $result['modified_on']			//9
-
-						 );
-						
+			$data = $result;
 		} 
 		return $data;
 	}//eof

@@ -13,6 +13,12 @@
     border-radius: 0.5rem;
 }
 
+@media (max-width: 767.98px) {
+    .bx_width_40 {
+        max-width: 100%;
+    }
+}
+
 .cardBtn,
 .payLaterBtn,
 .paypalBtn {

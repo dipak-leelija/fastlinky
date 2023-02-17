@@ -28,7 +28,7 @@ $cusId		= $Utility->returnSess('userid', 0);
 $cusDtl		= $Customer->getCustomerData($cusId);
 
 if($cusId == 0){
-	header("Location: index.php");
+	header("Location: ".URL);
 }
 
 if($cusDtl[0] == 1){ 
@@ -119,6 +119,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Summary | <?php echo COMPANY_S; ?></title>
+
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png"/>
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
@@ -147,7 +148,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
                             <p><label><?php echo $clientName;?></label></p>
                             <p><label>Anchor Text : <?php echo $clientAnchorText; ?></label></p>
                             <p><label>Target Url : <?php echo $clientTargetUrl;?> </label></p>
-                            <p><label><?php echo $contentLength; ?></label></p>
+                            <span class="badge text-bg-info p-2"><?php echo $contentLength; ?></span>
                         </div>
                     </div>
                 </div>

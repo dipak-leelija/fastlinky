@@ -264,7 +264,7 @@ if (isset($_SESSION['order-data'])) {
                                     <p>Enter The URL That You Have Included In Your Content Above</p>
                                 </label>
                                 <input type="text" class="form-control" aria-describedby="clientTargetUrl2"
-                                    placeholder="Enter Your Target URL" name="clientTargetUrl2">
+                                    placeholder="Enter Your Target URL" name="clientTargetUrl2" value="<?php echo $SESSclientTargetUrl; ?>">
                             </div>
 
 
@@ -274,7 +274,7 @@ if (isset($_SESSION['order-data'])) {
                                     <p> Enter the anchor text that you have included in your content above.</p>
                                 </label>
                                 <input type="text" class="form-control" aria-describedby="clientAnchorText2"
-                                    placeholder="Enter the Anchor text" name="clientAnchorText2">
+                                    placeholder="Enter the Anchor text" name="clientAnchorText2" value="<?php echo $SESSclientAnchorText; ?>">
                             </div>
 
                             <div class="form-group">
@@ -283,7 +283,7 @@ if (isset($_SESSION['order-data'])) {
                                     necessity of disclosure, preferences regarding content placement, etc.
                                 </label>
                                 <textarea class="form-control" rows="4"
-                                    name="clientRequirement2"></textarea>
+                                    name="clientRequirement2"><?php echo $SESSclientRequirement; ?></textarea>
                             </div>
 
                             <div class="form-group">
