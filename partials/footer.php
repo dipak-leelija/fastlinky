@@ -285,12 +285,12 @@ footer .thumb-content ::before {
     margin-left: 5px;
     color: #ffffff;
 }
-@media(max-width:767px){
-    .widget-title{
+
+@media(max-width:767px) {
+    .widget-title {
         color: #FDA33B !important;
     }
 }
-
 </style>
 
 <footer id="footer" class="footer-1">
@@ -316,38 +316,38 @@ footer .thumb-content ::before {
                                         Building</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="blogger-outreach.php">&nbsp;White Label Link
+                                <div class="thumb-content"><a href="white-label-link-building.php">&nbsp;White Label Link
                                         Building</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="blogger-outreach.php">&nbsp;High Authority
+                                <div class="thumb-content"><a href="high-authority-backlinks.php">&nbsp;High Authority
                                         Backlinks</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="blogger-outreach.php">&nbsp;Country Specific
+                                <div class="thumb-content"><a href="country-specific-backlinks.php">&nbsp;Country Specific
                                         Backlinks</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="blogger-outreach.php">&nbsp;Casino Backlinks</a>
+                                <div class="thumb-content"><a href="casino-backlinks.php">&nbsp;Casino Backlinks</a>
                                 </div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="blogger-outreach.php">&nbsp;Link Insertion</a></div>
+                                <div class="thumb-content"><a href="link-insertion-service.php">&nbsp;Link Insertion Service</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="link-insertion-service.php">&nbsp;Blogger
+                                <div class="thumb-content"><a href="blogger-outreach.php">&nbsp;Blogger
                                         Outreach</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="link-insertion-service.php">&nbsp;Cannabis
+                                <div class="thumb-content"><a href="cannabis-backlinks.php">&nbsp;Cannabis
                                         Backlinks</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="link-insertion-service.php">&nbsp;Guest Posting</a>
+                                <div class="thumb-content"><a href="guest-posting.php">&nbsp;Guest Posting</a>
                                 </div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="link-insertion-service.php">&nbsp;Exclusive Guest
+                                <div class="thumb-content"><a href="guest-post-offer.php">&nbsp;Exclusive Guest
                                         Posting</a></div>
                             </li>
                         </ul>
@@ -365,7 +365,8 @@ footer .thumb-content ::before {
                                 <div class="thumb-content"><a href="<?php echo URL; ?>/about.php">&nbsp;About</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="<?php echo URL; ?>/contact.php">&nbsp;Contact</a></div>
+                                <div class="thumb-content"><a href="<?php echo URL; ?>/contact.php">&nbsp;Contact</a>
+                                </div>
                             </li>
                             <li>
                                 <div class="thumb-content"><a href="<?php echo URL; ?>">&nbsp;Privacy Policy</a></div>
@@ -418,8 +419,8 @@ footer .thumb-content ::before {
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <p>Copyright 2022 <i style="text-decoration: underline;"><?php echo COMPANY_FULL_NAME; ?></i> .
-                            All rights reserved.
+                        <p>©All Rights Reserved 2023 - <i
+                                style="text-decoration: underline;"><?php echo COMPANY_FULL_NAME; ?></i> .
                         </p>
                     </div>
                 </div>

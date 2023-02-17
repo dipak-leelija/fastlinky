@@ -7,10 +7,10 @@
  * @package   Blocksy
  */
 
-add_filter('widget_nav_menu_args', function ($nav_menu_args, $nav_menu, $args, $instance) {
+add_filter('widget_nav_menu_args', function ($nav_menu_args) {
 	$nav_menu_args['menu_class'] = 'widget-menu';
 	return $nav_menu_args;
-}, 10, 4);
+}, 10, 1);
 
 add_action(
 	'dynamic_sidebar_before',

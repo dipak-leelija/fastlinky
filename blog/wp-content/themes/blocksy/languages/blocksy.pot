@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-02-02 17:18+0000\n"
+"POT-Creation-Date: 2023-02-15 20:31+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
@@ -225,16 +225,16 @@ msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
 #. translators: post title
-#: inc/template-tags.php:264, build_tmp/build/inc/template-tags.php:264
+#: inc/template-tags.php:268, build_tmp/build/inc/template-tags.php:268
 msgid "Previous %s"
 msgstr ""
 
 #. translators: post title
-#: inc/template-tags.php:289, build_tmp/build/inc/template-tags.php:289
+#: inc/template-tags.php:293, build_tmp/build/inc/template-tags.php:293
 msgid "Next %s"
 msgstr ""
 
-#: inc/template-tags.php:414, build_tmp/build/inc/template-tags.php:414,
+#: inc/template-tags.php:418, build_tmp/build/inc/template-tags.php:418,
 #: inc/options/single-elements/related-posts.php:19,
 #: inc/options/single-elements/related-posts.php:86,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:19,
@@ -344,12 +344,12 @@ msgstr ""
 msgid "Go to top"
 msgstr ""
 
-#: inc/components/breadcrumbs.php:8, inc/components/hero/elements.php:199,
+#: inc/components/breadcrumbs.php:8, inc/components/hero/elements.php:206,
 #: inc/options/general/breadcrumbs.php:101,
 #: inc/options/general/page-title.php:115,
 #: inc/options/general/page-title.php:338,
 #: build_tmp/build/inc/components/breadcrumbs.php:8,
-#: build_tmp/build/inc/components/hero/elements.php:199,
+#: build_tmp/build/inc/components/hero/elements.php:206,
 #: build_tmp/build/inc/options/general/breadcrumbs.php:101,
 #: build_tmp/build/inc/options/general/page-title.php:115,
 #: build_tmp/build/inc/options/general/page-title.php:338
@@ -522,49 +522,49 @@ msgstr ""
 msgid "Share your love"
 msgstr ""
 
-#: inc/components/social-box.php:445, inc/components/social-box.php:1389,
+#: inc/components/social-box.php:445, inc/components/social-box.php:1397,
 #: build_tmp/build/inc/components/social-box.php:445,
-#: build_tmp/build/inc/components/social-box.php:1389
+#: build_tmp/build/inc/components/social-box.php:1397
 msgid "Apple Podcasts"
 msgstr ""
 
-#: inc/components/social-box.php:562, inc/components/social-box.php:1557,
+#: inc/components/social-box.php:562, inc/components/social-box.php:1565,
 #: build_tmp/build/inc/components/social-box.php:562,
-#: build_tmp/build/inc/components/social-box.php:1557
+#: build_tmp/build/inc/components/social-box.php:1565
 msgid "VK"
 msgstr ""
 
-#: inc/components/social-box.php:575, inc/components/social-box.php:1469,
+#: inc/components/social-box.php:575, inc/components/social-box.php:1477,
 #: inc/options/single-elements/post-share-box.php:220,
 #: build_tmp/build/inc/components/social-box.php:575,
-#: build_tmp/build/inc/components/social-box.php:1469,
+#: build_tmp/build/inc/components/social-box.php:1477,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:220
 msgid "Odnoklassniki"
 msgstr ""
 
-#: inc/components/social-box.php:601, inc/components/social-box.php:1425,
+#: inc/components/social-box.php:601, inc/components/social-box.php:1433,
 #: build_tmp/build/inc/components/social-box.php:601,
-#: build_tmp/build/inc/components/social-box.php:1425
+#: build_tmp/build/inc/components/social-box.php:1433
 msgid "Facebook Group"
 msgstr ""
 
-#: inc/components/social-box.php:614, inc/components/social-box.php:1429,
+#: inc/components/social-box.php:614, inc/components/social-box.php:1437,
 #: build_tmp/build/inc/components/social-box.php:614,
-#: build_tmp/build/inc/components/social-box.php:1429
+#: build_tmp/build/inc/components/social-box.php:1437
 msgid "Facebook Messenger"
 msgstr ""
 
-#: inc/components/social-box.php:850, inc/components/social-box.php:1481,
+#: inc/components/social-box.php:850, inc/components/social-box.php:1489,
 #: build_tmp/build/inc/components/social-box.php:850,
-#: build_tmp/build/inc/components/social-box.php:1481
+#: build_tmp/build/inc/components/social-box.php:1489
 msgid "Phone"
 msgstr ""
 
-#: inc/components/social-box.php:863, inc/components/social-box.php:1417,
+#: inc/components/social-box.php:863, inc/components/social-box.php:1425,
 #: inc/single/comments.php:122,
 #: inc/options/single-elements/post-share-box.php:270,
 #: build_tmp/build/inc/components/social-box.php:863,
-#: build_tmp/build/inc/components/social-box.php:1417,
+#: build_tmp/build/inc/components/social-box.php:1425,
 #: build_tmp/build/inc/single/comments.php:122,
 #: inc/components/woocommerce/single/review-form.php:14,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:270,
@@ -720,7 +720,7 @@ msgstr ""
 #: inc/options/general/page-title.php:1276,
 #: inc/options/general/pagination.php:24,
 #: inc/options/general/posts-listing.php:29,
-#: inc/options/general/posts-listing.php:1290,
+#: inc/options/general/posts-listing.php:1272,
 #: inc/options/general/sidebar.php:17,
 #: inc/options/integrations/tutorlms-archive.php:24,
 #: inc/options/integrations/tutorlms-single.php:207,
@@ -770,7 +770,7 @@ msgstr ""
 #: build_tmp/build/inc/options/general/page-title.php:1276,
 #: build_tmp/build/inc/options/general/pagination.php:24,
 #: build_tmp/build/inc/options/general/posts-listing.php:29,
-#: build_tmp/build/inc/options/general/posts-listing.php:1290,
+#: build_tmp/build/inc/options/general/posts-listing.php:1272,
 #: build_tmp/build/inc/options/general/sidebar.php:17,
 #: build_tmp/build/inc/options/integrations/tutorlms-archive.php:24,
 #: build_tmp/build/inc/options/integrations/tutorlms-single.php:207,
@@ -1120,41 +1120,41 @@ msgid "Close cart drawer"
 msgstr ""
 
 #. translators: %s is the number of results
-#: inc/components/hero/elements.php:183, inc/components/hero/elements.php:328,
-#: build_tmp/build/inc/components/hero/elements.php:183,
-#: build_tmp/build/inc/components/hero/elements.php:328
+#: inc/components/hero/elements.php:190, inc/components/hero/elements.php:335,
+#: build_tmp/build/inc/components/hero/elements.php:190,
+#: build_tmp/build/inc/components/hero/elements.php:335
 msgid "<span>Search Results for</span> %s"
 msgstr ""
 
-#: inc/components/hero/elements.php:199,
+#: inc/components/hero/elements.php:206,
 #: inc/panel-builder/header/search/options.php:6,
-#: build_tmp/build/inc/components/hero/elements.php:199,
+#: build_tmp/build/inc/components/hero/elements.php:206,
 #: build_tmp/build/inc/panel-builder/header/search/options.php:6
 msgid "Products"
 msgstr ""
 
 #. translators: %s are the opening and closing of the html tags
-#: inc/components/hero/elements.php:335,
-#: build_tmp/build/inc/components/hero/elements.php:335
+#: inc/components/hero/elements.php:342,
+#: build_tmp/build/inc/components/hero/elements.php:342
 msgid ""
 "%sSorry, but nothing matched your search terms. Please try again with some "
 "different keywords.%s"
 msgstr ""
 
-#: inc/components/hero/elements.php:318,
-#: build_tmp/build/inc/components/hero/elements.php:318
+#: inc/components/hero/elements.php:325,
+#: build_tmp/build/inc/components/hero/elements.php:325
 msgid ""
 "It seems we can't find what you're looking for. Perhaps searching can help."
 msgstr ""
 
-#: inc/components/hero/elements.php:354,
-#: build_tmp/build/inc/components/hero/elements.php:354
+#: inc/components/hero/elements.php:361,
+#: build_tmp/build/inc/components/hero/elements.php:361
 msgid "This is where you can add new products to your store."
 msgstr ""
 
-#: inc/components/woocommerce/general.php:399,
+#: inc/components/woocommerce/general.php:413,
 #: inc/options/posts/woo-single.php:111,
-#: build_tmp/build/inc/components/woocommerce/general.php:399,
+#: build_tmp/build/inc/components/woocommerce/general.php:413,
 #: build_tmp/build/inc/options/posts/woo-single.php:111
 msgid "Product Price"
 msgstr ""
@@ -1401,9 +1401,7 @@ msgid "Side Offset"
 msgstr ""
 
 #: inc/options/general/back-to-top.php:179,
-#: inc/options/general/posts-listing.php:425,
-#: build_tmp/build/inc/options/general/back-to-top.php:179,
-#: build_tmp/build/inc/options/general/posts-listing.php:425
+#: build_tmp/build/inc/options/general/back-to-top.php:179
 msgid "Alignment"
 msgstr ""
 
@@ -1428,9 +1426,9 @@ msgstr ""
 #: inc/options/posts/woo-single.php:250, inc/options/posts/woo-single.php:274,
 #: inc/options/single-elements/author-box.php:193,
 #: inc/options/single-elements/featured-image.php:102,
-#: inc/options/single-elements/post-nav.php:105,
-#: inc/options/single-elements/post-nav.php:125,
-#: inc/options/single-elements/post-nav.php:143,
+#: inc/options/single-elements/post-nav.php:124,
+#: inc/options/single-elements/post-nav.php:144,
+#: inc/options/single-elements/post-nav.php:162,
 #: inc/options/single-elements/post-share-box.php:422,
 #: inc/options/single-elements/related-posts.php:434,
 #: inc/panel-builder/footer/options.php:19,
@@ -1458,9 +1456,9 @@ msgstr ""
 #: build_tmp/build/inc/options/posts/woo-single.php:274,
 #: build_tmp/build/inc/options/single-elements/author-box.php:193,
 #: build_tmp/build/inc/options/single-elements/featured-image.php:102,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:105,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:125,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:143,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:124,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:144,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:162,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:422,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:434,
 #: build_tmp/build/inc/panel-builder/footer/options.php:19,
@@ -1489,9 +1487,9 @@ msgstr ""
 #: inc/options/posts/woo-single.php:251, inc/options/posts/woo-single.php:275,
 #: inc/options/single-elements/author-box.php:194,
 #: inc/options/single-elements/featured-image.php:103,
-#: inc/options/single-elements/post-nav.php:106,
-#: inc/options/single-elements/post-nav.php:126,
-#: inc/options/single-elements/post-nav.php:144,
+#: inc/options/single-elements/post-nav.php:125,
+#: inc/options/single-elements/post-nav.php:145,
+#: inc/options/single-elements/post-nav.php:163,
 #: inc/options/single-elements/post-share-box.php:423,
 #: inc/options/single-elements/related-posts.php:435,
 #: inc/panel-builder/footer/options.php:20,
@@ -1526,9 +1524,9 @@ msgstr ""
 #: build_tmp/build/inc/options/posts/woo-single.php:275,
 #: build_tmp/build/inc/options/single-elements/author-box.php:194,
 #: build_tmp/build/inc/options/single-elements/featured-image.php:103,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:106,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:126,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:144,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:125,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:145,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:163,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:423,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:435,
 #: build_tmp/build/inc/panel-builder/footer/options.php:20,
@@ -1564,9 +1562,9 @@ msgstr ""
 #: inc/options/posts/woo-single.php:252, inc/options/posts/woo-single.php:276,
 #: inc/options/single-elements/author-box.php:195,
 #: inc/options/single-elements/featured-image.php:104,
-#: inc/options/single-elements/post-nav.php:107,
-#: inc/options/single-elements/post-nav.php:127,
-#: inc/options/single-elements/post-nav.php:145,
+#: inc/options/single-elements/post-nav.php:126,
+#: inc/options/single-elements/post-nav.php:146,
+#: inc/options/single-elements/post-nav.php:164,
 #: inc/options/single-elements/post-share-box.php:424,
 #: inc/options/single-elements/related-posts.php:436,
 #: inc/panel-builder/footer/options.php:21,
@@ -1601,9 +1599,9 @@ msgstr ""
 #: build_tmp/build/inc/options/posts/woo-single.php:276,
 #: build_tmp/build/inc/options/single-elements/author-box.php:195,
 #: build_tmp/build/inc/options/single-elements/featured-image.php:104,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:107,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:127,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:145,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:126,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:146,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:164,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:424,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:436,
 #: build_tmp/build/inc/panel-builder/footer/options.php:21,
@@ -1637,8 +1635,8 @@ msgstr ""
 #: inc/options/general/page-title.php:1212,
 #: inc/options/general/page-title.php:1303,
 #: inc/options/general/pagination.php:131,
-#: inc/options/general/posts-listing.php:632,
-#: inc/options/general/posts-listing.php:1471,
+#: inc/options/general/posts-listing.php:614,
+#: inc/options/general/posts-listing.php:1453,
 #: inc/options/general/sidebar.php:266,
 #: inc/options/integrations/tutorlms-archive.php:39,
 #: inc/options/integrations/tutorlms-single.php:219,
@@ -1656,7 +1654,7 @@ msgstr ""
 #: inc/options/posts/woo-product-tabs.php:62,
 #: inc/options/posts/woo-single.php:52,
 #: inc/options/single-elements/author-box.php:203,
-#: inc/options/single-elements/post-nav.php:153,
+#: inc/options/single-elements/post-nav.php:172,
 #: inc/options/single-elements/post-share-box.php:435,
 #: inc/options/single-elements/related-posts.php:444,
 #: inc/panel-builder/footer/copyright/options.php:89,
@@ -1686,8 +1684,8 @@ msgstr ""
 #: build_tmp/build/inc/options/general/page-title.php:1212,
 #: build_tmp/build/inc/options/general/page-title.php:1303,
 #: build_tmp/build/inc/options/general/pagination.php:131,
-#: build_tmp/build/inc/options/general/posts-listing.php:632,
-#: build_tmp/build/inc/options/general/posts-listing.php:1471,
+#: build_tmp/build/inc/options/general/posts-listing.php:614,
+#: build_tmp/build/inc/options/general/posts-listing.php:1453,
 #: build_tmp/build/inc/options/general/sidebar.php:266,
 #: build_tmp/build/inc/options/integrations/tutorlms-archive.php:39,
 #: build_tmp/build/inc/options/integrations/tutorlms-single.php:219,
@@ -1708,7 +1706,7 @@ msgstr ""
 #: build_tmp/build/inc/options/posts/woo-product-tabs.php:62,
 #: build_tmp/build/inc/options/posts/woo-single.php:52,
 #: build_tmp/build/inc/options/single-elements/author-box.php:203,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:153,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:172,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:435,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:444,
 #: build_tmp/build/inc/panel-builder/footer/copyright/options.php:89,
@@ -1793,15 +1791,15 @@ msgstr ""
 #: inc/options/general/page-title.php:1064,
 #: inc/options/general/pagination.php:210,
 #: inc/options/general/pagination.php:240,
-#: inc/options/general/posts-listing.php:674,
-#: inc/options/general/posts-listing.php:746,
-#: inc/options/general/posts-listing.php:793,
-#: inc/options/general/posts-listing.php:829,
-#: inc/options/general/posts-listing.php:860,
-#: inc/options/general/posts-listing.php:905,
-#: inc/options/general/posts-listing.php:951,
-#: inc/options/general/posts-listing.php:997,
-#: inc/options/general/posts-listing.php:1039,
+#: inc/options/general/posts-listing.php:656,
+#: inc/options/general/posts-listing.php:728,
+#: inc/options/general/posts-listing.php:775,
+#: inc/options/general/posts-listing.php:811,
+#: inc/options/general/posts-listing.php:842,
+#: inc/options/general/posts-listing.php:887,
+#: inc/options/general/posts-listing.php:933,
+#: inc/options/general/posts-listing.php:979,
+#: inc/options/general/posts-listing.php:1021,
 #: inc/options/general/sidebar.php:294, inc/options/general/sidebar.php:398,
 #: inc/options/integrations/tutorlms-single.php:30,
 #: inc/options/integrations/tutorlms-single.php:69,
@@ -1857,7 +1855,7 @@ msgstr ""
 #: inc/options/single-elements/author-box.php:334,
 #: inc/options/single-elements/author-box.php:367,
 #: inc/options/single-elements/author-box.php:406,
-#: inc/options/single-elements/post-nav.php:175,
+#: inc/options/single-elements/post-nav.php:192,
 #: inc/options/single-elements/post-share-box.php:466,
 #: inc/options/single-elements/post-share-box.php:525,
 #: inc/options/single-elements/post-share-box.php:554,
@@ -1974,15 +1972,15 @@ msgstr ""
 #: build_tmp/build/inc/options/general/page-title.php:1064,
 #: build_tmp/build/inc/options/general/pagination.php:210,
 #: build_tmp/build/inc/options/general/pagination.php:240,
-#: build_tmp/build/inc/options/general/posts-listing.php:674,
-#: build_tmp/build/inc/options/general/posts-listing.php:746,
-#: build_tmp/build/inc/options/general/posts-listing.php:793,
-#: build_tmp/build/inc/options/general/posts-listing.php:829,
-#: build_tmp/build/inc/options/general/posts-listing.php:860,
-#: build_tmp/build/inc/options/general/posts-listing.php:905,
-#: build_tmp/build/inc/options/general/posts-listing.php:951,
-#: build_tmp/build/inc/options/general/posts-listing.php:997,
-#: build_tmp/build/inc/options/general/posts-listing.php:1039,
+#: build_tmp/build/inc/options/general/posts-listing.php:656,
+#: build_tmp/build/inc/options/general/posts-listing.php:728,
+#: build_tmp/build/inc/options/general/posts-listing.php:775,
+#: build_tmp/build/inc/options/general/posts-listing.php:811,
+#: build_tmp/build/inc/options/general/posts-listing.php:842,
+#: build_tmp/build/inc/options/general/posts-listing.php:887,
+#: build_tmp/build/inc/options/general/posts-listing.php:933,
+#: build_tmp/build/inc/options/general/posts-listing.php:979,
+#: build_tmp/build/inc/options/general/posts-listing.php:1021,
 #: build_tmp/build/inc/options/general/sidebar.php:294,
 #: build_tmp/build/inc/options/general/sidebar.php:398,
 #: build_tmp/build/inc/options/integrations/tutorlms-single.php:30,
@@ -2042,7 +2040,7 @@ msgstr ""
 #: build_tmp/build/inc/options/single-elements/author-box.php:334,
 #: build_tmp/build/inc/options/single-elements/author-box.php:367,
 #: build_tmp/build/inc/options/single-elements/author-box.php:406,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:175,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:192,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:466,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:525,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:554,
@@ -2146,14 +2144,14 @@ msgstr ""
 #: inc/options/general/page-title.php:1008,
 #: inc/options/general/pagination.php:216,
 #: inc/options/general/pagination.php:246,
-#: inc/options/general/posts-listing.php:704,
-#: inc/options/general/posts-listing.php:799,
-#: inc/options/general/posts-listing.php:835,
-#: inc/options/general/posts-listing.php:866,
-#: inc/options/general/posts-listing.php:911,
-#: inc/options/general/posts-listing.php:957,
-#: inc/options/general/posts-listing.php:1003,
-#: inc/options/general/posts-listing.php:1045,
+#: inc/options/general/posts-listing.php:686,
+#: inc/options/general/posts-listing.php:781,
+#: inc/options/general/posts-listing.php:817,
+#: inc/options/general/posts-listing.php:848,
+#: inc/options/general/posts-listing.php:893,
+#: inc/options/general/posts-listing.php:939,
+#: inc/options/general/posts-listing.php:985,
+#: inc/options/general/posts-listing.php:1027,
 #: inc/options/integrations/tutorlms-single.php:75,
 #: inc/options/integrations/tutorlms-single.php:120,
 #: inc/options/posts/woo-add-to-cart.php:58,
@@ -2184,8 +2182,8 @@ msgstr ""
 #: inc/options/posts/woo-product-tabs.php:103,
 #: inc/options/single-elements/author-box.php:340,
 #: inc/options/single-elements/author-box.php:373,
-#: inc/options/single-elements/post-nav.php:180,
-#: inc/options/single-elements/post-nav.php:202,
+#: inc/options/single-elements/post-nav.php:197,
+#: inc/options/single-elements/post-nav.php:217,
 #: inc/options/single-elements/post-share-box.php:472,
 #: inc/options/single-elements/post-share-box.php:530,
 #: inc/options/single-elements/post-share-box.php:559,
@@ -2275,14 +2273,14 @@ msgstr ""
 #: build_tmp/build/inc/options/general/page-title.php:1008,
 #: build_tmp/build/inc/options/general/pagination.php:216,
 #: build_tmp/build/inc/options/general/pagination.php:246,
-#: build_tmp/build/inc/options/general/posts-listing.php:704,
-#: build_tmp/build/inc/options/general/posts-listing.php:799,
-#: build_tmp/build/inc/options/general/posts-listing.php:835,
-#: build_tmp/build/inc/options/general/posts-listing.php:866,
-#: build_tmp/build/inc/options/general/posts-listing.php:911,
-#: build_tmp/build/inc/options/general/posts-listing.php:957,
-#: build_tmp/build/inc/options/general/posts-listing.php:1003,
-#: build_tmp/build/inc/options/general/posts-listing.php:1045,
+#: build_tmp/build/inc/options/general/posts-listing.php:686,
+#: build_tmp/build/inc/options/general/posts-listing.php:781,
+#: build_tmp/build/inc/options/general/posts-listing.php:817,
+#: build_tmp/build/inc/options/general/posts-listing.php:848,
+#: build_tmp/build/inc/options/general/posts-listing.php:893,
+#: build_tmp/build/inc/options/general/posts-listing.php:939,
+#: build_tmp/build/inc/options/general/posts-listing.php:985,
+#: build_tmp/build/inc/options/general/posts-listing.php:1027,
 #: build_tmp/build/inc/options/integrations/tutorlms-single.php:75,
 #: build_tmp/build/inc/options/integrations/tutorlms-single.php:120,
 #: build_tmp/build/inc/options/posts/woo-add-to-cart.php:58,
@@ -2314,8 +2312,8 @@ msgstr ""
 #: build_tmp/build/inc/options/posts/woo-product-tabs.php:103,
 #: build_tmp/build/inc/options/single-elements/author-box.php:340,
 #: build_tmp/build/inc/options/single-elements/author-box.php:373,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:180,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:202,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:197,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:217,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:472,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:530,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:559,
@@ -2601,7 +2599,7 @@ msgstr ""
 #: inc/options/general/pagination.php:194,
 #: inc/options/posts/woo-product-tabs.php:78,
 #: inc/options/posts/woo-single.php:87, inc/options/posts/woo-single.php:126,
-#: inc/options/single-elements/post-nav.php:158,
+#: inc/options/single-elements/post-nav.php:177,
 #: inc/panel-builder/footer/copyright/options.php:105,
 #: inc/panel-builder/footer/menu/options.php:164,
 #: inc/panel-builder/footer/socials/options.php:265,
@@ -2649,7 +2647,7 @@ msgstr ""
 #: build_tmp/build/inc/options/posts/woo-product-tabs.php:78,
 #: build_tmp/build/inc/options/posts/woo-single.php:87,
 #: build_tmp/build/inc/options/posts/woo-single.php:126,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:158,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:177,
 #: build_tmp/build/inc/panel-builder/footer/copyright/options.php:105,
 #: build_tmp/build/inc/panel-builder/footer/menu/options.php:164,
 #: build_tmp/build/inc/panel-builder/footer/socials/options.php:265,
@@ -2759,7 +2757,7 @@ msgstr ""
 #: inc/options/general/buttons.php:145,
 #: inc/options/general/form-elements.php:185,
 #: inc/options/general/pagination.php:279,
-#: inc/options/general/posts-listing.php:1256,
+#: inc/options/general/posts-listing.php:1238,
 #: inc/options/general/sidebar.php:480,
 #: inc/options/single-elements/author-box.php:476,
 #: inc/panel-builder/header/button/options.php:578,
@@ -2771,7 +2769,7 @@ msgstr ""
 #: build_tmp/build/inc/options/general/buttons.php:145,
 #: build_tmp/build/inc/options/general/form-elements.php:185,
 #: build_tmp/build/inc/options/general/pagination.php:279,
-#: build_tmp/build/inc/options/general/posts-listing.php:1256,
+#: build_tmp/build/inc/options/general/posts-listing.php:1238,
 #: build_tmp/build/inc/options/general/sidebar.php:480,
 #: build_tmp/build/inc/options/single-elements/author-box.php:476,
 #: build_tmp/build/inc/panel-builder/header/button/options.php:578,
@@ -3105,9 +3103,9 @@ msgid "Form Elements"
 msgstr ""
 
 #: inc/options/general/form-elements.php:28,
-#: inc/options/general/posts-listing.php:1311,
+#: inc/options/general/posts-listing.php:1293,
 #: build_tmp/build/inc/options/general/form-elements.php:28,
-#: build_tmp/build/inc/options/general/posts-listing.php:1311
+#: build_tmp/build/inc/options/general/posts-listing.php:1293
 msgid "Classic"
 msgstr ""
 
@@ -3429,7 +3427,7 @@ msgstr ""
 
 #: inc/options/general/meta.php:390, inc/options/general/posts-listing.php:66,
 #: inc/options/general/posts-listing.php:394,
-#: inc/options/general/posts-listing.php:1306,
+#: inc/options/general/posts-listing.php:1288,
 #: inc/panel-builder/header/cart/options.php:917,
 #: inc/panel-builder/header/menu/options.php:561,
 #: inc/panel-builder/header/menu/options.php:591,
@@ -3440,7 +3438,7 @@ msgstr ""
 #: build_tmp/build/inc/options/general/meta.php:390,
 #: build_tmp/build/inc/options/general/posts-listing.php:66,
 #: build_tmp/build/inc/options/general/posts-listing.php:394,
-#: build_tmp/build/inc/options/general/posts-listing.php:1306,
+#: build_tmp/build/inc/options/general/posts-listing.php:1288,
 #: build_tmp/build/inc/panel-builder/header/cart/options.php:917,
 #: build_tmp/build/inc/panel-builder/header/menu/options.php:561,
 #: build_tmp/build/inc/panel-builder/header/menu/options.php:591,
@@ -3577,9 +3575,9 @@ msgid "Author Meta"
 msgstr ""
 
 #: inc/options/general/page-title.php:504,
-#: inc/options/general/posts-listing.php:444,
+#: inc/options/general/posts-listing.php:426,
 #: build_tmp/build/inc/options/general/page-title.php:504,
-#: build_tmp/build/inc/options/general/posts-listing.php:444
+#: build_tmp/build/inc/options/general/posts-listing.php:426
 msgid "Post Meta"
 msgstr ""
 
@@ -3637,7 +3635,7 @@ msgid "Container Bottom Spacing"
 msgstr ""
 
 #: inc/options/general/page-title.php:665,
-#: inc/options/general/posts-listing.php:611,
+#: inc/options/general/posts-listing.php:593,
 #: inc/panel-builder/footer/copyright/options.php:47,
 #: inc/panel-builder/footer/menu/options.php:105,
 #: inc/panel-builder/footer/middle-row/options.php:415,
@@ -3648,7 +3646,7 @@ msgstr ""
 #: inc/panel-builder/header/offcanvas/options.php:65,
 #: inc/panel-builder/header/text/options.php:91,
 #: build_tmp/build/inc/options/general/page-title.php:665,
-#: build_tmp/build/inc/options/general/posts-listing.php:611,
+#: build_tmp/build/inc/options/general/posts-listing.php:593,
 #: build_tmp/build/inc/panel-builder/footer/copyright/options.php:47,
 #: build_tmp/build/inc/panel-builder/footer/menu/options.php:105,
 #: build_tmp/build/inc/panel-builder/footer/middle-row/options.php:415,
@@ -3699,10 +3697,12 @@ msgstr ""
 #: inc/options/general/page-title.php:759,
 #: inc/options/posts/woo-gallery.php:106,
 #: inc/options/single-elements/featured-image.php:29,
+#: inc/options/single-elements/post-nav.php:92,
 #: inc/options/single-elements/related-posts.php:231,
 #: build_tmp/build/inc/options/general/page-title.php:759,
 #: build_tmp/build/inc/options/posts/woo-gallery.php:106,
 #: build_tmp/build/inc/options/single-elements/featured-image.php:29,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:92,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:231
 #: static/js/options/options/ct-ratio.js:68
 msgid "Image Size"
@@ -3724,12 +3724,12 @@ msgid "Container Min Height"
 msgstr ""
 
 #: inc/options/general/page-title.php:828,
-#: inc/options/general/posts-listing.php:644,
+#: inc/options/general/posts-listing.php:626,
 #: inc/options/integrations/tutorlms-single.php:8,
 #: inc/options/posts/woo-categories.php:335,
 #: inc/options/posts/woo-categories.php:733,
 #: build_tmp/build/inc/options/general/page-title.php:828,
-#: build_tmp/build/inc/options/general/posts-listing.php:644,
+#: build_tmp/build/inc/options/general/posts-listing.php:626,
 #: build_tmp/build/inc/options/integrations/tutorlms-single.php:8,
 #: build_tmp/build/inc/options/posts/woo-categories.php:335,
 #: build_tmp/build/inc/options/posts/woo-categories.php:733
@@ -3737,46 +3737,46 @@ msgid "Title Font"
 msgstr ""
 
 #: inc/options/general/page-title.php:837,
-#: inc/options/general/posts-listing.php:657,
+#: inc/options/general/posts-listing.php:639,
 #: inc/options/integrations/tutorlms-single.php:17,
 #: build_tmp/build/inc/options/general/page-title.php:837,
-#: build_tmp/build/inc/options/general/posts-listing.php:657,
+#: build_tmp/build/inc/options/general/posts-listing.php:639,
 #: build_tmp/build/inc/options/integrations/tutorlms-single.php:17
 msgid "Title Font Color"
 msgstr ""
 
 #: inc/options/general/page-title.php:905,
-#: inc/options/general/posts-listing.php:762,
+#: inc/options/general/posts-listing.php:744,
 #: build_tmp/build/inc/options/general/page-title.php:905,
-#: build_tmp/build/inc/options/general/posts-listing.php:762
+#: build_tmp/build/inc/options/general/posts-listing.php:744
 msgid "Meta Font"
 msgstr ""
 
 #: inc/options/general/page-title.php:918,
-#: inc/options/general/posts-listing.php:776,
+#: inc/options/general/posts-listing.php:758,
 #: build_tmp/build/inc/options/general/page-title.php:918,
-#: build_tmp/build/inc/options/general/posts-listing.php:776
+#: build_tmp/build/inc/options/general/posts-listing.php:758
 msgid "Meta Font Color"
 msgstr ""
 
 #: inc/options/general/page-title.php:953,
-#: inc/options/general/posts-listing.php:811,
+#: inc/options/general/posts-listing.php:793,
 #: build_tmp/build/inc/options/general/page-title.php:953,
-#: build_tmp/build/inc/options/general/posts-listing.php:811
+#: build_tmp/build/inc/options/general/posts-listing.php:793
 msgid "Meta Button Font"
 msgstr ""
 
 #: inc/options/general/page-title.php:985,
-#: inc/options/general/posts-listing.php:843,
+#: inc/options/general/posts-listing.php:825,
 #: build_tmp/build/inc/options/general/page-title.php:985,
-#: build_tmp/build/inc/options/general/posts-listing.php:843
+#: build_tmp/build/inc/options/general/posts-listing.php:825
 msgid "Meta Button Background"
 msgstr ""
 
 #: inc/options/general/page-title.php:1035,
-#: inc/options/general/posts-listing.php:727,
+#: inc/options/general/posts-listing.php:709,
 #: build_tmp/build/inc/options/general/page-title.php:1035,
-#: build_tmp/build/inc/options/general/posts-listing.php:727
+#: build_tmp/build/inc/options/general/posts-listing.php:709
 msgid "Excerpt Font"
 msgstr ""
 
@@ -3928,13 +3928,13 @@ msgid "Accent"
 msgstr ""
 
 #: inc/options/general/pagination.php:224,
-#: inc/options/general/posts-listing.php:1022,
+#: inc/options/general/posts-listing.php:1004,
 #: inc/panel-builder/header/button/options.php:456,
 #: inc/panel-builder/header/button/options.php:485,
 #: inc/panel-builder/header/button/options.php:515,
 #: inc/panel-builder/header/button/options.php:543,
 #: build_tmp/build/inc/options/general/pagination.php:224,
-#: build_tmp/build/inc/options/general/posts-listing.php:1022,
+#: build_tmp/build/inc/options/general/posts-listing.php:1004,
 #: build_tmp/build/inc/panel-builder/header/button/options.php:456,
 #: build_tmp/build/inc/panel-builder/header/button/options.php:485,
 #: build_tmp/build/inc/panel-builder/header/button/options.php:515,
@@ -3943,10 +3943,10 @@ msgid "Button Color"
 msgstr ""
 
 #: inc/options/general/pagination.php:264,
-#: inc/options/general/posts-listing.php:477,
+#: inc/options/general/posts-listing.php:459,
 #: inc/options/general/sidebar.php:438,
 #: build_tmp/build/inc/options/general/pagination.php:264,
-#: build_tmp/build/inc/options/general/posts-listing.php:477,
+#: build_tmp/build/inc/options/general/posts-listing.php:459,
 #: build_tmp/build/inc/options/general/sidebar.php:438
 msgid "Divider"
 msgstr ""
@@ -4111,29 +4111,29 @@ msgstr ""
 msgid "Show Arrow"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:531,
-#: build_tmp/build/inc/options/general/posts-listing.php:531
+#: inc/options/general/posts-listing.php:513,
+#: build_tmp/build/inc/options/general/posts-listing.php:513
 msgid "Card Min Height"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:544,
+#: inc/options/general/posts-listing.php:526,
 #: inc/options/posts/woo-categories.php:310,
-#: build_tmp/build/inc/options/general/posts-listing.php:544,
+#: build_tmp/build/inc/options/general/posts-listing.php:526,
 #: build_tmp/build/inc/options/posts/woo-categories.php:310
 msgid "Cards Gap"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:554,
-#: build_tmp/build/inc/options/general/posts-listing.php:554
+#: inc/options/general/posts-listing.php:536,
+#: build_tmp/build/inc/options/general/posts-listing.php:536
 msgid "Card Inner Spacing"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:568,
+#: inc/options/general/posts-listing.php:550,
 #: inc/options/posts/woo-categories.php:292,
 #: inc/options/single-elements/post-share-box.php:386,
 #: inc/panel-builder/header/logo/options.php:264,
 #: inc/panel-builder/header/text/options.php:53,
-#: build_tmp/build/inc/options/general/posts-listing.php:568,
+#: build_tmp/build/inc/options/general/posts-listing.php:550,
 #: build_tmp/build/inc/options/posts/woo-categories.php:292,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:386,
 #: build_tmp/build/inc/panel-builder/header/logo/options.php:264,
@@ -4141,22 +4141,22 @@ msgstr ""
 msgid "Content Alignment"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:733,
-#: build_tmp/build/inc/options/general/posts-listing.php:733
+#: inc/options/general/posts-listing.php:715,
+#: build_tmp/build/inc/options/general/posts-listing.php:715
 msgid "Excerpt Color"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:888,
-#: inc/options/general/posts-listing.php:934,
-#: inc/options/general/posts-listing.php:980,
+#: inc/options/general/posts-listing.php:870,
+#: inc/options/general/posts-listing.php:916,
+#: inc/options/general/posts-listing.php:962,
 #: inc/options/posts/woo-add-to-cart.php:130,
 #: inc/options/posts/woo-add-to-cart.php:203,
 #: inc/options/posts/woo-general.php:105,
 #: inc/options/posts/woo-general.php:221,
 #: inc/options/posts/woo-general.php:335,
-#: build_tmp/build/inc/options/general/posts-listing.php:888,
-#: build_tmp/build/inc/options/general/posts-listing.php:934,
-#: build_tmp/build/inc/options/general/posts-listing.php:980,
+#: build_tmp/build/inc/options/general/posts-listing.php:870,
+#: build_tmp/build/inc/options/general/posts-listing.php:916,
+#: build_tmp/build/inc/options/general/posts-listing.php:962,
 #: build_tmp/build/inc/options/posts/woo-add-to-cart.php:130,
 #: build_tmp/build/inc/options/posts/woo-add-to-cart.php:203,
 #: build_tmp/build/inc/options/posts/woo-general.php:105,
@@ -4165,122 +4165,122 @@ msgstr ""
 msgid "Button Font Color"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1068,
-#: build_tmp/build/inc/options/general/posts-listing.php:1068
+#: inc/options/general/posts-listing.php:1050,
+#: build_tmp/build/inc/options/general/posts-listing.php:1050
 msgid "Featured Image Radius"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1078,
-#: build_tmp/build/inc/options/general/posts-listing.php:1078
+#: inc/options/general/posts-listing.php:1060,
+#: build_tmp/build/inc/options/general/posts-listing.php:1060
 msgid "Card bottom divider"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1106,
-#: build_tmp/build/inc/options/general/posts-listing.php:1106
+#: inc/options/general/posts-listing.php:1088,
+#: build_tmp/build/inc/options/general/posts-listing.php:1088
 msgid "Card Divider"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1186,
-#: build_tmp/build/inc/options/general/posts-listing.php:1186
+#: inc/options/general/posts-listing.php:1168,
+#: build_tmp/build/inc/options/general/posts-listing.php:1168
 msgid "Card Overlay Color"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1205,
+#: inc/options/general/posts-listing.php:1187,
 #: inc/options/posts/woo-categories.php:586,
-#: build_tmp/build/inc/options/general/posts-listing.php:1205,
+#: build_tmp/build/inc/options/general/posts-listing.php:1187,
 #: build_tmp/build/inc/options/posts/woo-categories.php:586
 msgid "Card Background Color"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1221,
-#: build_tmp/build/inc/options/general/posts-listing.php:1221
+#: inc/options/general/posts-listing.php:1203,
+#: build_tmp/build/inc/options/general/posts-listing.php:1203
 msgid "Card Border"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1237,
+#: inc/options/general/posts-listing.php:1219,
 #: inc/options/posts/woo-categories.php:608,
-#: build_tmp/build/inc/options/general/posts-listing.php:1237,
+#: build_tmp/build/inc/options/general/posts-listing.php:1219,
 #: build_tmp/build/inc/options/posts/woo-categories.php:608
 msgid "Card Shadow"
 msgstr ""
 
 #. translators: placeholder here means the actual structure title.
-#: inc/options/general/posts-listing.php:1279,
+#: inc/options/general/posts-listing.php:1261,
 #: inc/options/posts/custom-post-type-single.php:34,
-#: build_tmp/build/inc/options/general/posts-listing.php:1279,
+#: build_tmp/build/inc/options/general/posts-listing.php:1261,
 #: build_tmp/build/inc/options/posts/custom-post-type-single.php:34
 msgid "%s Structure"
 msgstr ""
 
 #. translators: placeholder here means the actual structure title.
-#: inc/options/general/posts-listing.php:1284,
-#: build_tmp/build/inc/options/general/posts-listing.php:1284
+#: inc/options/general/posts-listing.php:1266,
+#: build_tmp/build/inc/options/general/posts-listing.php:1266
 msgid "Set the %s entries default structure."
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1316,
-#: build_tmp/build/inc/options/general/posts-listing.php:1316
+#: inc/options/general/posts-listing.php:1298,
+#: build_tmp/build/inc/options/general/posts-listing.php:1298
 msgid "Grid"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1321,
-#: build_tmp/build/inc/options/general/posts-listing.php:1321
+#: inc/options/general/posts-listing.php:1303,
+#: build_tmp/build/inc/options/general/posts-listing.php:1303
 msgid "Enhanced Grid"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1326,
-#: build_tmp/build/inc/options/general/posts-listing.php:1326
+#: inc/options/general/posts-listing.php:1308,
+#: build_tmp/build/inc/options/general/posts-listing.php:1308
 msgid "Gutenberg"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1366,
-#: build_tmp/build/inc/options/general/posts-listing.php:1366
+#: inc/options/general/posts-listing.php:1348,
+#: build_tmp/build/inc/options/general/posts-listing.php:1348
 msgid "Number of Posts"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1407,
+#: inc/options/general/posts-listing.php:1389,
 #: inc/options/single-elements/related-posts.php:141,
-#: build_tmp/build/inc/options/general/posts-listing.php:1407,
+#: build_tmp/build/inc/options/general/posts-listing.php:1389,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:141
 msgid "Columns & Posts"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1414,
+#: inc/options/general/posts-listing.php:1396,
 #: inc/options/single-elements/related-posts.php:159,
-#: build_tmp/build/inc/options/general/posts-listing.php:1414,
+#: build_tmp/build/inc/options/general/posts-listing.php:1396,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:159
 #: static/js/options/options/ct-woocommerce-columns-and-rows.js:49
 msgid "Number of columns"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1433,
+#: inc/options/general/posts-listing.php:1415,
 #: inc/options/single-elements/related-posts.php:174,
-#: build_tmp/build/inc/options/general/posts-listing.php:1433,
+#: build_tmp/build/inc/options/general/posts-listing.php:1415,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:174
 msgid "Number of posts"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1460,
+#: inc/options/general/posts-listing.php:1442,
 #: inc/options/posts/woo-categories.php:97,
-#: build_tmp/build/inc/options/general/posts-listing.php:1460,
+#: build_tmp/build/inc/options/general/posts-listing.php:1442,
 #: build_tmp/build/inc/options/posts/woo-categories.php:97
 msgid "Cards Options"
 msgstr ""
 
-#: inc/options/general/posts-listing.php:1476,
+#: inc/options/general/posts-listing.php:1458,
 #: inc/options/posts/woo-categories.php:882,
 #: inc/options/single-elements/structure-design.php:21,
-#: build_tmp/build/inc/options/general/posts-listing.php:1476,
+#: build_tmp/build/inc/options/general/posts-listing.php:1458,
 #: build_tmp/build/inc/options/posts/woo-categories.php:882,
 #: build_tmp/build/inc/options/single-elements/structure-design.php:21
 msgid "Page Background"
 msgstr ""
 
 #. translators: placeholder here means the actual URL.
-#: inc/options/general/posts-listing.php:1491,
+#: inc/options/general/posts-listing.php:1473,
 #: inc/options/posts/woo-categories.php:897,
 #: inc/options/single-elements/structure-design.php:36,
-#: build_tmp/build/inc/options/general/posts-listing.php:1491,
+#: build_tmp/build/inc/options/general/posts-listing.php:1473,
 #: build_tmp/build/inc/options/posts/woo-categories.php:897,
 #: build_tmp/build/inc/options/single-elements/structure-design.php:36
 msgid ""
@@ -5729,7 +5729,9 @@ msgid "Below Title"
 msgstr ""
 
 #: inc/options/single-elements/featured-image.php:90,
-#: build_tmp/build/inc/options/single-elements/featured-image.php:90
+#: inc/options/single-elements/post-nav.php:111,
+#: build_tmp/build/inc/options/single-elements/featured-image.php:90,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:111
 msgid "Image Visibility"
 msgstr ""
 
@@ -5753,28 +5755,23 @@ msgstr ""
 msgid "Container Spacing"
 msgstr ""
 
-#: inc/options/single-elements/post-nav.php:92,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:92
+#: inc/options/single-elements/post-nav.php:131,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:131
 msgid "Title Visibility"
 msgstr ""
 
-#: inc/options/single-elements/post-nav.php:112,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:112
-msgid "Thumbnail Visibility"
-msgstr ""
-
-#: inc/options/single-elements/post-nav.php:132,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:132
+#: inc/options/single-elements/post-nav.php:151,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:151
 msgid "Module Visibility"
 msgstr ""
 
-#: inc/options/single-elements/post-nav.php:188,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:188
+#: inc/options/single-elements/post-nav.php:205,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:205
 msgid "Thumbnail Overlay Color"
 msgstr ""
 
-#: inc/options/single-elements/post-nav.php:210,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:210
+#: inc/options/single-elements/post-nav.php:225,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:225
 msgid "Thumbnail Border Radius"
 msgstr ""
 

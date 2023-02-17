@@ -176,6 +176,8 @@ function blocksy_post_navigation() {
 		]
 	));
 
+	$thumb_size = get_theme_mod($prefix . '_post_nav_thumb_size', 'medium');
+
 	$thumb_class = '';
 
 	$thumb_class .= ' ' . blocksy_visibility_classes(get_theme_mod(
@@ -217,6 +219,7 @@ function blocksy_post_navigation() {
 					'attachment_id' => get_post_thumbnail_id($next_post),
 					'post_id' => $next_post->ID,
 					'ratio' => '1/1',
+					'size' => $thumb_size,
 					'class' => $thumb_class,
 					'inner_content' => '<svg width="20px" height="15px" viewBox="0 0 20 15"><polygon points="0,7.5 5.5,13 6.4,12.1 2.4,8.1 20,8.1 20,6.9 2.4,6.9 6.4,2.9 5.5,2 "/></svg>',
 					'tag_name' => 'figure'
@@ -236,6 +239,7 @@ function blocksy_post_navigation() {
 					'attachment_id' => get_post_thumbnail_id($previous_post),
 					'post_id' => $previous_post->ID,
 					'ratio' => '1/1',
+					'size' => $thumb_size,
 					'class' => $thumb_class,
 					'inner_content' => '<svg width="20px" height="15px" viewBox="0 0 20 15"><polygon points="14.5,2 13.6,2.9 17.6,6.9 0,6.9 0,8.1 17.6,8.1 13.6,12.1 14.5,13 20,7.5 "/></svg>',
 					'tag_name' => 'figure'

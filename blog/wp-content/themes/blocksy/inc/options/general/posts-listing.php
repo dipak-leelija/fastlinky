@@ -419,24 +419,6 @@ $overridable_card_options = [
 										'id' => $prefix . 'archive_order_button',
 									]
 								],
-
-								'read_more_alignment' => [
-									'type' => 'ct-radio',
-									'label' => __('Alignment', 'blocksy'),
-									'value' => 'left',
-									'view' => 'text',
-									'attr' => ['data-type' => 'alignment'],
-									'design' => 'block',
-									'sync' => [
-										'prefix' => $prefix,
-										'id' => $prefix . 'archive_order_skip',
-									],
-									'choices' => [
-										'left' => '',
-										'center' => '',
-										'right' => '',
-									],
-								],
 							],
 						],
 

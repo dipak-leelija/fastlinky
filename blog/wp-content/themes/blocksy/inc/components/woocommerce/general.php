@@ -308,15 +308,29 @@ add_action('rest_api_init', function () {
 		return;
 	}
 
-	if (
-		isset($_GET['post_type'])
-		&&
+	if ( 
+		!isset($_GET['post_type']) 
+		||
 		(
-			str_contains($_GET['post_type'], 'product')
-			||
-			$_GET['post_type'] === 'ct_forced_any'
+			!str_contains($_GET['post_type'], 'product')
+			&&
+			$_GET['post_type'] !== 'ct_forced_any'
 		)
-		&&
+	) {
+		return;
+	}
+
+	register_rest_field('post', 'placeholder_image', array(
+		'get_callback' => function ($post, $field_name, $request) {
+			if ($post['type'] !== 'product') {
+				return null;
+			}
+
+			return wc_placeholder_img_src('thumbnail');
+		}
+	));
+
+	if (
 		isset($_GET['product_price'])
 		&&
 		$_GET['product_price'] === 'true'
