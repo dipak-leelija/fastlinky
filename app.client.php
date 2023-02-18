@@ -78,7 +78,7 @@ $wishes = $WishList->countWishlistByUser($cusId);
         <!-- //header -->
         <!-- banner -->
         <div class="edit_profile"  style="overflow: hidden;">
-            <div class="container-fluid1">
+            <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
                         <!--Row start-->
@@ -86,12 +86,12 @@ $wishes = $WishList->countWishlistByUser($cusId);
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
-                                <hr>
+                                <hr class="myhrline">
                             </div>
 
                         </div>
-                        <div class="col-md-9 mt-4 pl-0 display-table-cell v-align client_profile_dashboard_right">
-                            <div class="container pl-0">
+                        <div class="col-md-9 mt-4 ps-md-0 display-table-cell v-align ">
+                            <div class="container p-0">
                                 <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
                                 <header>
                                     <div class="add_project_section text-right">

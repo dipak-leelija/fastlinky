@@ -85,7 +85,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
         <!-- //header -->
         <!-- banner -->
         <div class="edit_profile">
-            <div class="container-fluid1">
+            <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
                         <!--Row start-->
@@ -93,19 +93,19 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
-                                <hr>
+                                <hr class="myhrline">
                             </div>
 
                         </div>
-                        <div class="col-md-9 mt-4  display-table-cell v-align client_profile_dashboard_right">
+                        <div class="col-md-9 mt-4 ps-md-0 display-table-cell v-align ">
 
 
 
 
                             <!-- Guest Post Orders  Section-->
-                            <div class="row justify-content-evenly dashorder_row guest_post_orders me-2">
+                            <div class="row justify-content-evenly dashorder_row guest_post_orders ">
 
-                                <div class="bg-light mb-3">
+                                <div class=" mb-3">
                                     <h3 class="fw-bold text-center">Guest Posts:</h3>
                                 </div>
 

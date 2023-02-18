@@ -123,7 +123,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         <!-- //header -->
         <!-- banner -->
         <div class="edit_profile">
-            <div class="container-fluid1">
+            <div class="container-fluid">
                 <div class=" display-table">
                     <!--Row start-->
                     <div class="row ">
@@ -131,11 +131,11 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 
                             <div class="client_profile_dashboard_left">
                             <?php include("dashboard-inc.php");?>
-                                <hr>
+                            <hr class="myhrline">
                             </div>
 
                         </div>
-                        <div class="col-md-9 mt-4 px-4 display-table-cell v-align client_profile_dashboard_right">
+                        <div class="col-md-9 mt-4 ps-md-3 px-md-4 display-table-cell v-align ">
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">

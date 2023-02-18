@@ -119,14 +119,7 @@ if(isset($_POST['btnCancel'])){
 
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <style>
-        @media (min-width: 768px){
-            .client_profile_dashboard_right {
-    padding-right: 2rem !important;
-}
-        }
-
-    </style>
+  
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -139,7 +132,7 @@ if(isset($_POST['btnCancel'])){
         <!-- banner -->
 
         <div class="edit_profile" style="overflow: hidden;">
-            <div class="container-fluid1">
+            <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
                         <!--Row start-->
@@ -147,16 +140,16 @@ if(isset($_POST['btnCancel'])){
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
-                                <hr>
+                                <hr class="myhrline">
                             </div>
 
                         </div>
-                        <div class="col-md-9 mt-0 pl-0 display-table-cell v-align client_profile_dashboard_right">
+                        <div class="col-md-9  ps-md-0 display-table-cell v-align client_profile_dashboard_right">
                             <div class="client_add_blog mt-0">
                                 <section class="py-5 pt-0 branches position-relative" id="explore">
-                                    <div class="container py-md-2 container-fluid text-center">
+                                    <div class="container py-md-2 p-0 text-center">
                                         <h2
-                                            class="stat-title color-blue font-weight-bold text-center text-uppercase pb-3">
+                                            class="stat-title color-blue font-weight-bold text-center text-uppercase pb-3 pt-3 pt-md-0  ">
                                             Edit Your profile
                                         </h2>
                                         <div class="row">

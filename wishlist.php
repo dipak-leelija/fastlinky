@@ -82,10 +82,6 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
     <style>
     @media (min-width:768px) {
-        .client_profile_dashboard_right {
-            padding-right: 2rem !important;
-        }
-
         .table-responsive {
             overflow-x: auto !important;
             -webkit-overflow-scrolling: touch !important;
@@ -101,7 +97,7 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
         <!-- navbar end -->
 
         <div class="edit_profile">
-            <div class="container-fluid1">
+            <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
 
@@ -110,12 +106,12 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
-                                <hr>
+                                <hr class="myhrline">
                             </div>
 
                         </div>
 
-                        <div class="col-md-9 mt-4 display-table-cell v-align client_profile_dashboard_right">
+                        <div class="col-md-9  ps-md-0 display-table-cell v-align ">
                             <?php
                                 $x=1;
                                 if($userWishLists !=null){

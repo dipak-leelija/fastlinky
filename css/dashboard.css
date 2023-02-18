@@ -6,7 +6,7 @@
     /* max-width: 270px; */
     z-index: -1;
     height: -webkit-fill-available;
-    margin: 1rem;
+    margin: 1rem 0;
 }
 
 .edit_profile .navi ul li {
@@ -125,15 +125,30 @@ ul.breadcrumb li a:hover {
         margin: 1rem;
     }
     .client_profile_dashboard_left {
-        padding: 13px 0 15px 20px !important;
+        padding: 13px 10px 15px 10px !important
     }
 }
 
-
+.myhrline{
+    margin: 1rem 0;
+    color: inherit;
+    border: 0;
+    border-top: 1px solid;
+    opacity: 0.25;
+}
 /* .p-image{
         border: none;
     } */
 
 .flduplod {
     border: none;
+}
+.table-responsive::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 8px !important;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #383a50 !important;
+    border-radius: 5px !important;
 }
