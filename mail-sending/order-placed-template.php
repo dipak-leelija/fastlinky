@@ -5,9 +5,6 @@ require_once dirname(__DIR__) . '/includes/constant.inc.php';
 
 
 
-
-
-
 function mailFooter(){
     $body = '
         <style>
@@ -50,6 +47,9 @@ function mailFooter(){
             padding: 4px;
             vertical-align: sub !important;
         }
+        .t-d-none{
+            text-decoration: none;
+        }
     </style>
         <tr>
             <td class="ts-td7-footer-div">
@@ -63,7 +63,7 @@ function mailFooter(){
                             </a>
                         </p>
                         <p style="font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center; color: #fff;">
-                            <a style="text-decoration: none; color: #000;" rel="noopener" href="tel:'.SITE_BILLING_CONTACT_NO.'" target="_blank">
+                            <a class="t-d-none" style=" color: #000;" rel="noopener" href="tel:'.SITE_BILLING_CONTACT_NO.'" target="_blank">
                             '.SITE_BILLING_CONTACT_NO.'
                             </a>
                         </p>
@@ -102,9 +102,7 @@ function mailFooter(){
 }
 
 
-echo orderPlaced();
-
-function orderPlaced(){
+function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
 
     $mail = 
 
@@ -115,8 +113,6 @@ function orderPlaced(){
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="x-apple-disable-message-reformatting">
     <title></title>
-    <link rel="stylesheet" href="order-placed-email.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Pacifico&display=swap"
@@ -124,12 +120,12 @@ function orderPlaced(){
     <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <style>
+    <style type="text/css">
     @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-    @import url(\'https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&family=Rubik:wght@300;400&display=swap\');
+    @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&family=Rubik:wght@300;400&display=swap");
 
 
-    body {
+    body{
         margin: 0;
         padding: 0;
         word-spacing: normal;
@@ -141,19 +137,13 @@ function orderPlaced(){
         -ms-text-size-adjust: 100%;
     }
 
-    .table-first {
-        width: 100%;
-        border: none;
-        border-spacing: 0;
-    }
-
     .table-second {
         width: 100%;
         max-width: 600px;
         border: 1px solid #c9c6c6;
         border-spacing: 0;
         text-align: left;
-        font-family: \'Cabin\', sans-serif;
+        font-family: "Cabin", sans-serif;
         font-size: 16px;
         line-height: 22px;
         color: #363636;
@@ -161,12 +151,12 @@ function orderPlaced(){
 
     .order-placed-header {
         display: flex;
-        justify-content: space-between;
         padding: 15px 30px;
         text-align: center;
         font-size: 24px;
         font-weight: bold;
         background: aliceblue;
+        justify-content: space-between;
     }
 
     .left-icon img {
@@ -189,13 +179,12 @@ function orderPlaced(){
     }
 
     .right-icon img {
-        width: 30px;
+        width: 40px;
         margin-left: 10px;
         max-width: 100%;
-        height: auto;
-        border: none;
         text-decoration: none;
         color: #ffffff;
+        object-fit: contain;
     }
 
     .customer-details-div {
@@ -203,19 +192,19 @@ function orderPlaced(){
         padding: 2rem;
     }
 
-    .customer-details-div p {
-        margin-bottom: 0;
-        text-align: justify;
-    }
-
-    .customer-details-div-h1 {
+    .customer-details-div h1 {
         margin: 0;
         font-size: 22px;
         line-height: 1.1;
         font-weight: bold;
         letter-spacing: -0.02em;
-        font-family: \'Cabin\', sans-serif;
+        font-family: "Cabin", sans-serif;
 
+    }
+
+    .customer-details-div p {
+        margin-bottom: 0;
+        text-align: justify;
     }
 
     .order-details-description {
@@ -230,10 +219,8 @@ function orderPlaced(){
     .col-lge {
         display: inline-block;
         width: 100%;
-        /* max-width: 395px; */
         vertical-align: top;
         padding-bottom: 20px;
-        // font-family: Arial, sans-serif;
         font-size: 16px;
         line-height: 22px;
         color: #363636;
@@ -285,7 +272,7 @@ function orderPlaced(){
     }
 
     @media screen and (max-width: 530px) {
-        .customer-details-div-h1 {
+        .customer-details-div h1 {
             font-size: 20px;
         }
 
@@ -315,12 +302,11 @@ function orderPlaced(){
         display: flex;
     }
 
-
     .order-details-table{
         word-break: break-word;
         padding: 0 6rem;
         font-weight: 600;
-        font-family: \'Cabin\', sans-serif;
+        font-family: "Cabin", sans-serif;
     }
 
     .order-details-headline{
@@ -341,51 +327,50 @@ function orderPlaced(){
         width: 50%;
    }
    @media(max-width:600px){
-    .order-details-table {
-        padding: 0 1rem;
-    }
+        .order-details-table {
+            padding: 0 1rem;
+        }
    }
 
    @media(max-width:320px){
-    .order-details-headline{
-        margin-bottom: 0.5rem; 
-        display: block;
-        width: 100%;
-        word-break: break-word;
-       }
-       .order-details-headline-div{
-        width: 100%;
-       }
-       .order-details-main-div{
-        display: block;
-        width: 100%;
-       }
-       .order-details-sub-div{
-        width: 100%;
-       }
-       .extra-space{
-        padding-left: 6px;
-    }
-    .extra-font{
-        font-weight: 600;
-    }
-    .order-placed-header {
-        padding: 15px 8px;
-    }
-    .right-icon span {
-        font-size: 13px;
-    }
-    .right-icon img {
-        width: 22px;
-    }
+        .order-details-headline{
+            margin-bottom: 0.5rem; 
+            display: block;
+            width: 100%;
+            word-break: break-word;
+        }
+        .order-details-headline-div{
+            width: 100%;
+        }
+        .order-details-main-div{
+            display: block;
+            width: 100%;
+        }
+        .order-details-sub-div{
+            width: 100%;
+        }
+        .extra-space{
+            padding-left: 6px;
+        }
+        .extra-font{
+            font-weight: 600;
+        }
+        .order-placed-header {
+            padding: 15px 8px;
+        }
+        .right-icon span {
+            font-size: 13px;
+        }
+        .right-icon img {
+            width: 22px;
+        }
    }
-.
     </style>
 </head>
 
 <body>
     <div role="article" aria-roledescription="email" lang="en" class="maindivofpage">
-        <table role="presentation" class="table-first">
+        <table role="presentation" style="width: 100%; border: none; border-spacing: 0;">
             <tr>
                 <td align="center" style="padding:0;">
                     <table role="presentation" class="table-second">
@@ -393,12 +378,12 @@ function orderPlaced(){
                         <tr>
                             <td class="order-placed-header">
                                 <div class="left-icon">
-                                    <img src="'.LOGO_WITH_PATH.'" alt="Logo">
+                                    <img src="'.LOGO_WITH_PATH.'" alt="">
                                 </div>
                                 <div class="right-icon">
                                     <span>
                                     Order PLaced 
-                                    <img src="'.IMG_PATH.'icons/success.png" alt="Order Placed">
+                                    <img src="'.IMG_PATH.'/icons/success.png" alt="">
                                     <span>
                                 </div>
                             </td>
@@ -406,7 +391,7 @@ function orderPlaced(){
                         <!-- **************************  LOGO IMAGE HEADER SECTION ENDS ************************ -->
                         <tr>
                             <td class="customer-details-div">
-                                <h1 class="customer-details-div-h1">Hi Dipak, Your order has been place successfully</h1>
+                                <h1>Hi Dipak, Your order has been place successfully</h1>
                                 <p>Thank you very much for placing an order with us! We truly appreciate your trust and look forward to making your experience as enjoyable as possible.</p>
                             </td>
                         </tr>
@@ -416,29 +401,18 @@ function orderPlaced(){
                     
                             <div class="order-details-table">
                                 <h4 class="order-details-headline">
-                                    <div class="order-details-headline-div"> Order Details :</div>
-                                    <div class="order-details-headline-div  "> #JBHUYTG786G</div>
-                                </h4>
-                    
-                                <div class="order-details-main-div">
-                                <div class="order-details-sub-div extra-font"> Site Name :</div>
-                                <div class="order-details-sub-div extra-space"> dipakmajumdar.com</div>
-                                </div>
-                    
-                                <div class="order-details-main-div">
-                                <div class="order-details-sub-div extra-font"> Order date :</div>
-                                <div class="order-details-p-div extra-space"> 12/12/2022</div>
-                                </div>
-                    
-                                <div class="order-details-main-div">
-                                <div class="order-details-sub-div extra-font"> Helen :</div>
-                                <div class="order-details-sub-div extra-space"> UKrains</div>
-                                </div>
-                    
-                                <div class="order-details-main-div">
-                                <div class="order-details-sub-div extra-font"> Giovanni :</div>
-                                <div class="order-details-sub-div extra-space"> Italiansss</div>
-                                </div>
+                                    <div class="order-details-headline-div"> Order ID :</div>
+                                    <div class="order-details-headline-div  "> '.$orderId.'</div>
+                                </h4>';
+                                // $orderDataArray, $orderDetailsArray
+                                for ($i=0; $i<count($orderDataArray); $i++) { 
+                                    $mail .= '<div class="order-details-main-div">
+                                            <div class="order-details-sub-div extra-font">'.$orderDataArray[$i].' :</div>
+                                            <div class="order-details-sub-div extra-space">'.$orderDetailsArray[$i].'</div>
+                                            </div>';
+                                }
+
+                    $mail .= '</div>
                             </div>
                         </td>
                     </tr>
