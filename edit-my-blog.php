@@ -157,7 +157,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
-                                <hr>
+                                <hr class="myhrline">
                             </div>
 
                         </div>

@@ -169,7 +169,7 @@ if(isset($_POST['btnAddDomain']))
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
-                                <hr>
+                                <hr class="myhrline">
                             </div>
 
                         </div>
