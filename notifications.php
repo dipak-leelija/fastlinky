@@ -96,18 +96,18 @@ $mails = $Emails->ShowMailsbyCol('to_email', $_SESSION['USERcontinuecontent_ecom
         <!-- //header -->
         <!-- banner -->
         <div class="edit_profile" style="overflow: hidden;">
-            <div class="container-fluid1">
+            <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
                         <!--Row start-->
                         <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
-
+                                <hr class="myhrline">
                             </div>
 
                         </div>
-                        <div class="col-md-9  display-table-cell v-align client_profile_dashboard_right">
+                        <div class="col-md-9 ps-md-0  display-table-cell v-align ">
                             <div class="toast">
                                 <h2 class="notice-title">Notifications <i class="fa-solid fa-bell fa-shake"></i></h2>
 

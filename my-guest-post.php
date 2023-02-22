@@ -89,10 +89,6 @@ if($cusDtl[0][0] == 1){
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
     <style>
     @media (min-width:768px) {
-        .client_profile_dashboard_right {
-            padding-right: 2rem !important;
-        }
-
         .table-responsive {
             overflow-x: auto !important;
             -webkit-overflow-scrolling: touch !important;
@@ -107,18 +103,19 @@ if($cusDtl[0][0] == 1){
         <!-- //header -->
         <!-- banner -->
         <div class="edit_profile">
-            <div class="container-fluid1">
+            <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
                         <!--Row start-->
                         <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
+                                <hr class="myhrline">
                             </div>
                         </div>
-                        <div class="col-md-9  display-table-cell v-align client_profile_dashboard_right">
+                        <div class="col-md-9 ps-md-0 display-table-cell v-align ">
                             <!-- MY GUEST POST ORDER section starts -->
-                            <div class="lists_of_blogs  montserrat-font py-4">
+                            <div class="lists_of_blogs  montserrat-font ">
 
                                 <!-- <div class=""> -->
                                 <div class=" display-table">

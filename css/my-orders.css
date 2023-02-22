@@ -185,8 +185,10 @@
     background: #fbf9f6;
 }
 
-.client_profile_dashboard_right {
-    padding-right: 3rem;
+/* adding border for div */
+.div-border-css{
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0px 0px 0px 0px rgb(0 0 0 / 12%);
+    padding-bottom: 1rem;
 }
 
 .fa-triangle-exclamation {
@@ -198,10 +200,7 @@
 /* media queries  */
 
 @media (max-width:767px) {
-    .client_profile_dashboard_right {
-        margin: 1rem;
-        padding-left: 1rem;
-    }
+   
     .caution-style {
         font-size: 1.6rem;
         font-weight: 600;

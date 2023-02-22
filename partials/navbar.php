@@ -117,6 +117,7 @@
                                         href="<?php echo URL;?>/guest-post-offer.php">GUEST POST
                                         OFFER</a>
                                 </li>
+                            
                             </div>
                         </div>
 

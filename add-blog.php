@@ -108,7 +108,8 @@ if(isset($_POST['btnAddDomain']))
     <title>Domain name with website or blogs ready for you | Add Blogs ::<?php echo COMPANY_S; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
+    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <script>
     addEventListener("load", function() {
         setTimeout(hideURLbar, 0);
@@ -143,11 +144,7 @@ if(isset($_POST['btnAddDomain']))
         input::placeholder {
     font-size: 1rem !important;
 }
-    @media (min-width: 768px) {
-        .client_profile_dashboard_right {
-            padding-right: 2rem !important;
-        }
-    }
+   
     </style>
 </head>
 
@@ -164,7 +161,7 @@ if(isset($_POST['btnAddDomain']))
         <!-- //banner -->
         <!-- Main Content -->
         <div class="edit_profile" style="overflow: hidden;">
-            <div class="container-fluid1">
+            <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
                         <!--Row start-->
@@ -172,16 +169,16 @@ if(isset($_POST['btnAddDomain']))
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
-                                <hr>
+                                <hr class="myhrline">
                             </div>
 
                         </div>
-                        <div class="col-md-9 mt-0 pl-0 display-table-cell v-align client_profile_dashboard_right">
+                        <div class="col-md-9 ps-md-0 display-table-cell v-align t">
                             <div class="client_add_blog mt-0">
                                 <section class="py-0 branches position-relative" id="explore">
-                                    <div class="container py-md-2 container-fluid text-center">
+                                    <div class="container py-md-2 p-0 container-fluid text-center">
                                         <h2
-                                            class="stat-title color-blue font-weight-bold text-center text-uppercase pb-lg-4">
+                                            class="stat-title color-blue font-weight-bold text-center text-uppercase pb-3 pt-3 pt-md-0">
                                             Add Your Blog
                                             for Guest Posting
                                         </h2>

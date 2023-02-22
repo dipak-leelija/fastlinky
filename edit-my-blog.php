@@ -98,9 +98,11 @@ if(isset($_POST['btnEditDomain']))
 <html lang="zxx">
 
 <head>
-    <title>Domain name with website or blogs ready for you | Domains :: w3layouts</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Domain name with website or blogs ready for you | Domains :: w3layouts</title>
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
+    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <meta name="keywords" content="Precedence Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script>
@@ -147,7 +149,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
         <!-- Main Content -->
 
         <div class="edit_profile" style="overflow: hidden;">
-            <div class="container-fluid1">
+            <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
                         <!--Row start-->
@@ -155,16 +157,16 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
-                                <hr>
+                                <hr class="myhrline">
                             </div>
 
                         </div>
-                        <div class="col-md-9 mt-0 pl-0 display-table-cell v-align client_profile_dashboard_right">
+                        <div class="col-md-9  ps-md-0 display-table-cell v-align ">
 
                             <div class="client_add_blog mt-4">
 
                                 <section class="py-0 branches position-relative" id="explore">
-                                    <div class="container py-md-0 container-fluid text-center">
+                                    <div class="container py-md-0 p-0 container-fluid text-center">
                                         <?php
 				                          if( (isset($_GET['action'])) && ($_GET['action'] == 'EditBlog') )
 			                	          {
