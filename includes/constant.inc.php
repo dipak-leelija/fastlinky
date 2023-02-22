@@ -8,7 +8,7 @@
 	define('URL', 				'http://'.$_SERVER['HTTP_HOST'].'/fastlinky');
 	define('ROOT_DIR', 			dirname(dirname(__FILE__)));
 	define('PAGE',				$_SERVER['PHP_SELF']);
-	define('ADM_PATH',  		URL.'/admin/');
+	define('ADM_PATH',  		URL.'/admin');
 	define('SELLER_AREA',  		URL."/dashboard.php");
 	define('BUYER_AREA',  		URL."/app.client.php");
 	define('IMG_PATH',  		URL."/images");
