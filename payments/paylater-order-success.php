@@ -298,7 +298,7 @@ if(isset($_SESSION['orderId'])) {
 	$toMail_admin		=	SITE_EMAIL;
 	$toName_admin		= 	SITE_ADMIN_NAME;
 
-	adminOrderPlacedMail($fromMail_admin, $toMail_admin, $toName_admin, $cusDtls_arr, $cusData_arr,  $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
+	// adminOrderPlacedMail($fromMail_admin, $toMail_admin, $toName_admin, $cusDtls_arr, $cusData_arr,  $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
 
 
 	// ================================== MAIL SENDED TO ADMIN ================================== 
@@ -313,7 +313,7 @@ if(isset($_SESSION['orderId'])) {
 	$toName         = $orderDetail[0]['clientName'];
 	
 
-	$mailSended = customerOrderPlacedMail($fromMail, $toMail, $toName, $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
+	// $mailSended = customerOrderPlacedMail($fromMail, $toMail, $toName, $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
 
 	// ================================== MAIL SENDED TO CLIENT ================================== 
 	
@@ -328,7 +328,7 @@ if(isset($_SESSION['orderId'])) {
 	$sellerName     = $seller['fname'].' '.$seller['lname'];
 	
 
-	sellerOrderinformMail($fromMail, $sellerMail, $sellerName, $blogName, $orddtls_arr_seller, $orddata_arr_seller, $addedOn);
+	// sellerOrderinformMail($fromMail, $sellerMail, $sellerName, $blogName, $orddtls_arr_seller, $orddata_arr_seller, $addedOn);
 
 	// ================================== MAIL SENDED TO SELLER ================================== 
 	

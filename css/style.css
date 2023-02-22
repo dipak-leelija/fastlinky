@@ -1,5 +1,3 @@
-
-
 :root {
     --pure-white: #ffffff;
 }
@@ -1438,40 +1436,31 @@ h5.blog-title {
     .header-top p {
         font-size: 12px;
     }
-
     .blogger-banner {
         padding: 0 11px !important;
     }
-
     ul.social-iconsv2 li a i.fab {
         margin-right: 5px;
     }
-
     h3.b-w3ltxt {
         font-size: 1.5em;
     }
-
     .carousel-item p {
         width: 80%;
         font-size: 14px;
     }
-
     .carousel-indicators {
         bottom: -40px;
     }
-
     h4.agile-ser_bot {
         font-size: 1.15em;
     }
-
     section#sub-services h3.stat-title {
         font-size: 1.4em;
     }
-
     h3.stat-title {
         font-size: 1.8em;
     }
-
     .testi-pos {
         left: 31%;
     }
@@ -1481,11 +1470,9 @@ h5.blog-title {
     .contact-add {
         padding-left: 2em;
     }
-
     form.contact-wthree label {
         font-size: 0.9em;
     }
-
     .blogger-banner {
         padding: 5px !important;
         padding-top: 30px !important;
@@ -1496,35 +1483,27 @@ h5.blog-title {
     .header-top p {
         font-size: 15px;
     }
-
     .carousel-item p {
         width: 64%;
     }
-
     h4.agile-ser_bot {
         font-size: 1.2em;
     }
-
     p {
         font-size: 1.2em !important;
     }
-
     h3.stat-title {
         font-size: 1.8em;
     }
-
     section#sub-services h3.stat-title {
         font-size: 1.6em;
     }
-
     .testimonials {
         padding: 2em 0 1em;
     }
-
     .pos-date-even {
         top: 80%;
     }
-
     .fv3-contact h6 {
         font-size: 0.95em;
     }
@@ -1534,22 +1513,18 @@ h5.blog-title {
     .carousel-item p {
         font-size: 15px;
     }
-
     section#sub-services h3.stat-title {
         font-size: 1.8em;
     }
-
     .icon i {
         width: 70px;
         height: 70px;
         line-height: 70px;
         font-size: 2em;
     }
-
     .pos-date {
         top: 24%;
     }
-
     .pos-date-even {
         top: 71%;
         right: 39%;
@@ -1560,60 +1535,47 @@ h5.blog-title {
     h3.b-w3ltxt {
         font-size: 1.8em;
     }
-
     .btn-banner {
         font-size: 13px;
         padding: 6px 14px;
     }
-
     .carousel-item p {
         font-size: 15px;
         width: 60%;
     }
-
     h4.agile-ser_bot {
         font-size: 1.3em;
     }
-
     a.serv_link {
         letter-spacing: 0px;
         padding: 6px 22px;
         font-size: 15px;
     }
-
     h3.stat-title {
         font-size: 2em;
     }
-
     .testi-agile p {
         padding: 2em 2em 4em;
     }
-
     .testi-pos {
         left: 38%;
     }
-
     .pos-date {
         top: 51%;
         left: 54%;
     }
-
     .pos-date-even {
         top: 49%;
     }
-
     .date-grid-agile-right {
         padding-left: 1em;
     }
-
     .date-grid-agile-left {
         padding-right: 1em;
     }
-
     .pos-date__inner {
         left: 48%;
     }
-
     .contact-bottom h5,
     .wthree-form-left h5 {
         font-size: 1.3em;
@@ -1624,24 +1586,19 @@ h5.blog-title {
     .blogger-third-section {
         padding: 25px !important;
     }
-
     .abbot-right span {
         border-color: transparent;
     }
-
     .about-text-grid {
         padding-left: 1em;
         margin-top: 3em;
     }
-
     h3.stat-title {
         font-size: 2.3em;
     }
-
     .w-75 {
         width: 100% !important;
     }
-
     .contact-right-w3ls span {
         width: 50px;
         height: 50px;
@@ -1654,7 +1611,6 @@ h5.blog-title {
     .index_quary form {
         display: block !important;
     }
-
     .index_search_box {
         width: 100% !important;
         margin-right: 0 !important;
@@ -1678,20 +1634,16 @@ h5.blog-title {
     .carousel-item p {
         font-size: 16px;
     }
-
     .abbot-right span {
         width: 86%;
         height: 400px;
     }
-
     .about-text-grid {
         margin-top: 4em;
     }
-
     .pos-date {
         top: 55%;
     }
-
     .pos-date-even {
         top: 45%;
     }
@@ -1701,12 +1653,10 @@ h5.blog-title {
     h3.b-w3ltxt {
         font-size: 2.2em;
     }
-
     .abbot-right span {
         width: 76%;
         left: 39px;
     }
-
     .our_focused {
         column-count: 1 !important;
         max-width: 419px;
@@ -1720,16 +1670,13 @@ h5.blog-title {
     h3.b-w3ltxt {
         font-size: 2.5em;
     }
-
     h4.agile-ser_bot {
         font-size: 1.6em;
     }
-
     .w3ls-pricing.card:hover,
     .w3ls-pricing.card.service-active {
         transform: scale(1.05);
     }
-
     .testi-pos {
         left: 41%;
     }
@@ -1745,34 +1692,27 @@ h5.blog-title {
     .features_grids {
         padding: 0 !important
     }
-
     h3.b-w3ltxt {
         font-size: 2.6em;
     }
-
     .abbot-right span {
         width: 86%;
         height: 366px;
     }
-
     .about-text-grid {
         padding-left: 0em;
         margin-top: 2em;
     }
-
     h3.stat-title {
         font-size: 2.5em;
     }
-
     .testi-agile p {
         width: 99%;
     }
-
     .pos-date {
         top: 65%;
         left: 50%;
     }
-
     .pos-date-even {
         top: 35%;
         right: 37.5%;
@@ -1785,7 +1725,6 @@ h5.blog-title {
         height: 377px;
         left: -25px;
     }
-
     .pos-date {
         top: 38%;
     }
@@ -1983,7 +1922,6 @@ textarea {
 .client_add_blog .form-group {
     text-align: left;
 }
-
 
 .client_add_blog .bfrom form {
     max-width: 1050px;
@@ -2963,6 +2901,7 @@ table .btn-explore-banner {
     color: #383a50;
 }
 
+
 /* .blogger-banner p{
 	text-align: justify;
 	padding-left: 230px;
@@ -3074,17 +3013,16 @@ table .btn-explore-banner {
 .price-box-ul li {
     padding: 5px 0;
     list-style: square;
+    text-transform: capitalize;
 }
 
 @media screen and (min-width: 180px) {
     .filter_data {
         padding: 1rem !important;
     }
-
     .nichdiv {
         margin: 1rem;
     }
-
     .ui-widget.ui-widget-content {
         margin: 0 1rem;
     }
@@ -3094,15 +3032,12 @@ table .btn-explore-banner {
     .affordable-pricing-details {
         font-size: 15px !important;
     }
-
     .filter_data {
         padding: 1rem !important;
     }
-
     .nichdiv {
         margin: 1rem;
     }
-
     .ui-widget.ui-widget-content {
         margin: 0 1rem;
     }
@@ -3148,15 +3083,12 @@ table .btn-explore-banner {
     .affordable-pricing-details {
         font-size: 16px !important;
     }
-
     .filter_data {
         padding: .3rem !important;
     }
-
     .ui-widget.ui-widget-content {
         margin: 0rem .3rem;
     }
-
     .nichdiv {
         margin: 0rem;
     }
@@ -3203,6 +3135,7 @@ table .btn-explore-banner {
     color: #407BFF;
     font-weight: 700;
 }
+
 
 /* Why to Choose Leelija for Blogger Outreach Service?  By Samuel Kabir*/
 
@@ -3335,6 +3268,7 @@ table .btn-explore-banner {
     color: darkcyan;
 }
 
+
 /* .fa-handshake {
     color: #919100;
 } */
@@ -3400,7 +3334,6 @@ table .btn-explore-banner {
     border-bottom: none;
 }
 
-
 .faq-body .faq-details {
     display: none;
     transition: 5s;
@@ -3425,13 +3358,13 @@ table .btn-explore-banner {
     font-size: 18px;
     font-family: "Satoshi-Variable" !important;
     font-weight: 500 !important;
-
 }
 
 .faq-head-section h3 {
     color: #383a50;
     font-weight: 600;
 }
+
 
 /*Banner Second Section*/
 
@@ -3819,7 +3752,6 @@ table .btn-explore-banner {
         font-size: 15px;
         color: #407BFF;
     }
-
     .contact_left_row,
     .contact_right_row {
         padding: 10px;
@@ -4433,11 +4365,9 @@ font-size: 25px
         margin: 0;
         font-size: 20px;
     }
-
     .digital_market_point ul li {
         margin: 20px 20px 20px 20px;
     }
-
     .seo_traning_sec_intro p {
         margin: 0;
         font-size: 20px;
@@ -4501,105 +4431,82 @@ font-size: 25px
     body p {
         font-size: 17px !important;
     }
-
     .right-ul-section p {
         text-align: justify;
         padding-top: 17px;
     }
-
     .blogger-fourth-section h2 {
         font-size: 25px;
     }
-
     .blogger-fourth-section h3 {
         font-size: 18px;
         font-weight: 700;
     }
-
     .blogger-fourth-section p {
         font-size: 17px;
     }
-
     .Social_Media_Marketing h2 {
         font-size: 20px;
     }
-
     .native-content {
         font-size: 18px;
         font-weight: bold;
     }
-
     .social-media-point {
         font-size: 17px;
     }
-
     .features-sec-main h2 {
         font-size: 20px;
         padding: 0px 10px 0px 10px;
         margin-top: 20px;
     }
-
     .blogbanner-heading {
         font-size: 25px;
     }
-
     .wd_heading_details_2 p {
         font-size: 17px;
     }
-
     .blogger-banner h2 {
         font-size: 20px;
     }
-
     .blogger-banner p {
         font-size: 15px;
     }
-
     .heading_details_p {
         font-size: 17px;
     }
-
     .leelija-gp-service-head h3 {
         font-size: 18px;
     }
-
     .native-content-section ul li {
         font-size: 15px;
         text-align: justify;
         padding-bottom: 10px;
     }
-
     .fa-check-circle {
         font-size: 20px;
     }
-
     .features-sec-head {
         font-size: 15px;
     }
-
     .blogger-third-section h2 {
         font-size: 20px;
     }
-
     .blogger-third-section p {
         font-size: 17px;
     }
-
     .serv_bottom h4 {
         font-size: 25px;
     }
-
     .blogger-fifth-section ul li {
         padding: 4px 0;
         font-size: 18px;
     }
-
     .native-content-section ul li {
         font-size: 17px;
         text-align: justify;
         padding-bottom: 10px;
     }
-
     .row>* {
         font-size: 17px;
     }
@@ -4609,24 +4516,20 @@ font-size: 25px
     .native-content {
         padding-top: 30px;
     }
-
     .social-media-point {
         font-size: 19px !important;
     }
-
     .heading_details_p {
         text-align: justify;
         margin-left: 30px;
         margin-right: 30px;
     }
-
     .service-heading-details {
         text-align: justify;
         margin-left: 30px;
         margin-right: 30px;
     }
 }
-
 
 
 /* .wisListHeart i {
@@ -4822,7 +4725,6 @@ font-size: 25px
     .srvc_p {
         padding: 13px;
     }
-
     .service_page_banner1 {
         padding: 0px 12px;
     }
@@ -4873,7 +4775,6 @@ font-size: 25px
         display: inline;
         padding-top: 1rem;
     }
-
     .wruwaiting_p {
         margin: auto !important;
         margin-top: 1rem !important;
@@ -4885,11 +4786,9 @@ font-size: 25px
         font-size: 2.68rem;
         color: white;
     }
-
     .service_page_banner h3 {
         font-size: 1.5rem;
     }
-
     .service_page_banner p {
         font-size: 1rem;
     }
@@ -5500,7 +5399,6 @@ font-size: 25px
     .columnconten {
         margin: 0rem 1.7rem;
     }
-
     .divcolumncnt {
         margin: 0rem 3rem;
     }
@@ -5511,7 +5409,6 @@ font-size: 25px
         padding-top: 1rem;
         padding-bottom: 0px;
     }
-
     .apply-button {
         text-align: center;
         vertical-align: middle;
@@ -5536,7 +5433,6 @@ font-size: 25px
     .divcolumncnt {
         margin: 0rem 7rem;
     }
-
     .job-opportunity-skills-details h2 {
         padding-top: 5rem;
         padding-bottom: 0px;
@@ -5547,7 +5443,6 @@ font-size: 25px
     .divcolumncnt {
         margin: 0rem 7rem;
     }
-
     .job-opportunity-skills-details h2 {
         margin-top: -7rem;
         /* padding-top: 0rem; */
@@ -5556,57 +5451,48 @@ font-size: 25px
 }
 
 @media (max-width: 620px) {
-
     .step_line .inner_step .inner_step_content,
     .step_line .inner_step:nth-child(odd) .inner_step_content {
         flex: 0 0 100%;
         max-width: 100%;
         text-align: left !important;
     }
-
     .step_line .inner_step,
     .step_line .inner_step:nth-child(odd) {
         margin-top: 0 !important;
         flex-direction: column-reverse !important;
     }
-
     .step_line:before {
         left: 0;
         margin-left: 0;
     }
-
     .step_line .inner_step .inner_step_content .bt_bb_button,
     .step_line .inner_step .inner_step_content .bt_bb_icon,
     .step_line .inner_step:nth-child(odd) .inner_step_content .bt_bb_button,
     .step_line .inner_step:nth-child(odd) .inner_step_content .bt_bb_icon {
         float: left !important;
     }
-
     .step_line .inner_step .inner_step_content .holder:before,
     .step_line .inner_step:nth-child(odd) .inner_step_content .holder:before {
         width: 3em !important;
         left: 0 !important;
         right: auto !important;
     }
-
     .step_line .inner_step .inner_step_content:before,
     .step_line .inner_step:nth-child(odd) .inner_step_content:before {
         left: -0.5em !important;
         right: auto !important;
     }
-
     .step_line .inner_step .inner_step_content .holder,
     .step_line .inner_step:nth-child(odd) .inner_step_content .holder {
         padding-right: 0 !important;
         padding-left: 3em !important;
         padding-bottom: 1em !important;
     }
-
     .step_line .inner_step .inner_step_content .bt_bb_headline,
     .step_line .inner_step:nth-child(odd) .inner_step_content .bt_bb_headline {
         text-align: inherit !important;
     }
-
     .step_line .inner_step .inner_step_content .step_content,
     .step_line .inner_step:nth-child(odd) .inner_step_content .step_content {
         text-align: left !important;
@@ -5881,15 +5767,12 @@ font-size: 25px
     .service_page_banner_portfolio {
         height: 330px;
     }
-
     .blue_color_class_portfolio {
         font-size: 3.68rem;
     }
-
     .port-img {
         height: 300px;
     }
-
     .portfolio-single-detls {
         /* min-height: 210px; */
     }
@@ -5899,7 +5782,6 @@ font-size: 25px
     .all-port-single {
         padding: 1rem;
     }
-
     .addcartbttn {
         padding: 1rem 0.9rem;
     }
@@ -5928,11 +5810,9 @@ font-size: 25px
         width: fit-content;
         /* margin: auto 67px; */
     }
-
     .continue_atag {
         margin: .5rem 0;
     }
-
     .gp-heading-details-2 p {
         padding: 10px;
     }
@@ -5942,8 +5822,12 @@ font-size: 25px
     overflow: hidden;
 }
 
+
 /* new faqs style for indexpage  */
+
+
 /* index faqs */
+
 .index-faq-section {
     padding: 4rem 6rem 6rem;
 }
@@ -5951,7 +5835,6 @@ font-size: 25px
 .index-faq-section img {
     width: 100%;
 }
-
 
 .faq-small-text {
     text-align: center;
@@ -5968,8 +5851,6 @@ font-size: 25px
     font-weight: 600;
     font-family: Helvetica, Poppins !important;
 }
-
-
 
 .faq-acc-flush {
     /* width: 90%; */
@@ -6006,10 +5887,12 @@ font-size: 25px
     border-radius: 8px !important;
     border: none !important;
 }
+
 .faq-acc-button:not(.collapsed)::after {
     background-image: var(--bs-accordion-btn-active-icon-faq) !important;
     transform: var(--bs-accordion-btn-icon-transform);
 }
+
 .faq-acc-button:focus {
     z-index: 3;
     border-color: #fff !important;
@@ -6023,23 +5906,31 @@ font-size: 25px
     background-color: #FDA33B !important;
     box-shadow: inset 0 calc(var(--bs-accordion-border-width) * -1) 0 var(--bs-accordion-border-color);
 }
+
 @media (max-width:991px) {
     .index-faq-section {
         padding: 4rem;
     }
 }
+
 @media (max-width:767px) {
     .index-faq-section {
         padding: 3rem 1rem;
     }
 }
+
 @media (max-width:575px) {
     .index-faq-section h1 {
         font-size: 1.8rem;
     }
-
 }
 
-h1 , h2,h3 , h4, h5 , span , strong{
+h1,
+h2,
+h3,
+h4,
+h5,
+span,
+strong {
     text-transform: capitalize !important;
 }

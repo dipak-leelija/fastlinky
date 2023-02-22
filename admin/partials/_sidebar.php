@@ -55,15 +55,15 @@
 
 
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#servicemanagement" aria-expanded="false"
-                aria-controls="servicemanagement">
+            <a class="nav-link" data-toggle="collapse" href="#packagemanagement" aria-expanded="false"
+                aria-controls="packagemanagement">
                 <i class="fa-light fa-table-layout menu-icon"></i>
-                <span class="menu-title">Service Management</span>
+                <span class="menu-title">Package Management</span>
                 <i class="fa-regular fa-chevron-right menu-right-arrow"></i>
             </a>
-            <div class="collapse" id="servicemanagement">
+            <div class="collapse" id="packagemanagement">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="#">Services Type</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="packages.php">Packages</a></li>
                     <li class="nav-item"> <a class="nav-link" href="#">Services</a></li>
                     <li class="nav-item"> <a class="nav-link" href="#">Services Featured</a></li>
                 </ul>

@@ -1,38 +1,39 @@
 <?php
 session_start();
 
-require_once("_config/dbconnect.php");
-require_once "_config/dbconnect.trait.php";
+require_once "includes/constant.inc.php";
+require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/_config/dbconnect.trait.php";
 
-require_once("includes/constant.inc.php");
-require_once("classes/date.class.php");
-require_once("classes/error.class.php");
-require_once("classes/search.class.php");
-require_once("classes/customer.class.php");
-require_once("classes/login.class.php");
-require_once("classes/services.class.php");
+require_once ROOT_DIR."/classes/date.class.php";
+require_once ROOT_DIR."/classes/error.class.php";
+require_once ROOT_DIR."/classes/search.class.php";
+require_once ROOT_DIR."/classes/customer.class.php";
+require_once ROOT_DIR."/classes/login.class.php";
+require_once ROOT_DIR."/classes/services.class.php";
 
-//require_once("../classes/front_photo.class.php");
-require_once("classes/blog_mst.class.php");
-require_once("classes/utility.class.php");
-require_once("classes/utilityMesg.class.php");
-require_once("classes/utilityImage.class.php");
-require_once("classes/utilityNum.class.php");
-require_once("classes/gp-order.class.php");
-require_once("classes/faqs.class.php");
+require_once ROOT_DIR."/classes/blog_mst.class.php";
+require_once ROOT_DIR."/classes/gp-package.class.php";
+require_once ROOT_DIR."/classes/utility.class.php";
+require_once ROOT_DIR."/classes/utilityMesg.class.php";
+require_once ROOT_DIR."/classes/utilityImage.class.php";
+require_once ROOT_DIR."/classes/utilityNum.class.php";
+require_once ROOT_DIR."/classes/faqs.class.php";
+
 /* INSTANTIATING CLASSES */
-$dateUtil   = new DateUtil();
-$error 			= new Error();
-$search_obj	= new Search();
+$dateUtil       = new DateUtil();
+
+$GPPackage      = new GuestPostpackage();
+// $error 			= new Error();
+// $search_obj	    = new Search();
 $customer		= new Customer();
-$logIn			= new Login();
-$service		= new Services();
-$blogMst		= new BlogMst();
+// $logIn			= new Login();
+// $service		= new Services();
+// $blogMst		= new BlogMst();
 $utility		= new Utility();
 $uMesg 			= new MesgUtility();
 $uImg 			= new ImageUtility();
 $uNum 			= new NumUtility();
-$gp				= new Gporder();
 $faqs		    = new faqs();
 ######################################################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
@@ -40,11 +41,14 @@ $typeM		= $utility->returnGetVar('typeM','');
 $cusId		= $utility->returnSess('userid', 0);
 
 
-if(isset($_GET['seo_url']))
-	{
-		 $seo_url			  		= $_GET['seo_url'];
-		// $return_url 	= base64_decode($_GET["return_url"]); //get return url
-	}
+// if(isset($_GET['seo_url'])){
+	//  $seo_url			  		= $_GET['seo_url'];
+	// $return_url 	= base64_decode($_GET["return_url"]); //get return url
+// }
+
+$packages = $GPPackage->packDetailsByCat(1);
+// print_r($packages);
+// exit;
 
 ?>
 
@@ -69,7 +73,7 @@ if(isset($_GET['seo_url']))
     <link href="css/leelija.css" rel="stylesheet" />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
-    <link href="css/managed-link-building.css" rel='stylesheet' type='text/css' />
+    <link href="css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/clientside-logo.css">
 
@@ -82,14 +86,23 @@ if(isset($_GET['seo_url']))
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
     <!--//webfonts-->
-
-
-
 </head>
 
 <body data-scrollbar>
-        <?php require_once "partials/navbar.php"; ?>
+    <?php require_once "partials/navbar.php"; ?>
 
+    <section>
+        <div>
+            <div class="row">
+                <div class="col-lg-6">
+
+                </div>
+                <div class="col-lg-6">
+
+                </div>
+            </div>
+    </section>
+    <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
     <!-- /Footer -->
     <script src="js/jquery-2.2.3.min.js"></script>

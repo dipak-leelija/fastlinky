@@ -3,19 +3,22 @@
 	date_default_timezone_set("Asia/Calcutta");   //India time (GMT+5:30)
 
 	//URLS Details 
-	$protocol = isset($_SERVER['HTTPS']) ? 'https' : 'http';
+	$protocol = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
 
-	define('URL', 				'http://'.$_SERVER['HTTP_HOST'].'/fastlinky');	 
+	define('URL', 				$protocol.$_SERVER['HTTP_HOST'].'/fastlinky');
+	define('ROOT_DIR', 			dirname(dirname(__FILE__)));
 	define('PAGE',				$_SERVER['PHP_SELF']);
-	define('ADM_PATH',  		URL.'/admin/');
+	define('ADM_PATH',  		URL.'/admin');
 	define('SELLER_AREA',  		URL."/dashboard.php");
 	define('BUYER_AREA',  		URL."/app.client.php");
+	define('IMG_PATH',  		URL."/images");
+
 
 	
 	//company
-	define('COMPANY_FULL_NAME', 'Fast Linky');						//company full name
-	define('COMPANY_S', 		'Fast Linky');										//company short name
-	define('COMPANY_L', 		'LL');											//company short name
+	define('COMPANY_FULL_NAME', 				'Fast Linky');						//company full name
+	define('COMPANY_S', 						'Fast Linky');						//company short name
+	define('COMPANY_L', 						'LL');								//company short name
 	
 	
 	define('SITE_ADMIN_NAME',  					"Fast Linky Admin");
