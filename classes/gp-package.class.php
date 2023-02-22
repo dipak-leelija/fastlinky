@@ -120,6 +120,18 @@ class GuestPostpackage extends DatabaseConnection{
     }
     return $data;
   }
+
+
+
+  function packDetailsByCat($packCatId){
+    $data = array();
+    $sql  = "SELECT * FROM `gp_package`  where `category_id`= '$packCatId' ORDER BY `price` ASC";
+    $res  = $this->conn->query($sql);
+    while($result = $res->fetch_assoc()){
+      $data[] = $result;
+    }
+    return $data;
+  }
    
   
   
