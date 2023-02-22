@@ -21,12 +21,6 @@
                                     echo '<li>'.$eachFeature['features'].'</li>';
                                 }
                                 ?>
-                                <!-- <li>   Multilingual Content</li>
-                                <li>  600+ Words Content</li>
-                                <li> 1Keyword/Target URL</li>
-                                <li>   Niche Relevant</li>
-                                <li> Manually Outreaching</li>
-                                <li>   20 days Turnaround Time</li> -->
                             </ul>
                             <button type="button" name="package-purchase-btn" id="package-purchase-btn"
                                 class="package-purchase-btn">purchase now</button>
@@ -35,49 +29,6 @@
                     <?php
                     }
                     ?>
-                    <!-- card 2 -->
-                    <!-- <div class="col-md-4 px-0 px-md-1 px-lg-2">
-                        <div class="price-box-content" id="">
-                            <p class="package_type_category">Startup</p>
-                            <div class="packHr"></div>
-                            <p class="price-box-title"><span class="dollar">$</span><span class="main-price">299</span>
-                            </p>
-                            <p class="chooseNiche"></p>
-                            <ul class="price-box-ul">
-                                <li>  Ahrefs DR 40+</li>
-                                <li>  Multilingual Content</li>
-                                <li>  600+ Words Content</li>
-                                <li> 1Keyword/Target URL</li>
-                                <li>  Niche Relevant</li>
-                                <li> Manually Outreaching</li>
-                                <li>   20 days Turnaround Time</li>
-                            </ul>
-                            <button type="button" name="package-purchase-btn" id="package-purchase-btn"
-                                class="package-purchase-btn">purchase now</button>
-                        </div>
-                    </div> -->
-                    <!-- card 3 -->
-                    <!-- <div class="col-md-4 px-0 px-md-1 px-lg-2">
-                        <div class="price-box-content" id="">
-                            <p class="package_type_category">Agency</p>
-                            <div class="packHr"></div>
-                            <p class="price-box-title"><span class="dollar">$</span><span class="main-price">449</span>
-                            </p>
-                            <p class="chooseNiche"></p>
-                            <ul class="price-box-ul">
-                                <li>  Ahrefs DR 40+</li>
-                                <li>  Multilingual Content</li>
-                                <li>  600+ Words Content</li>
-                                <li> 1Keyword/Target URL</li>
-                                <li>  Niche Relevant</li>
-                                <li> Manually Outreaching</li>
-                                <li>  20 days Turnaround Time</li>
-                            </ul>
-                            <button type="button" name="package-purchase-btn" id="package-purchase-btn"
-                                class="package-purchase-btn">purchase now</button>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
         </div>
