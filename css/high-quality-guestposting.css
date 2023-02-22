@@ -1,0 +1,631 @@
+/* --------------------------------------------------------- */
+/* <!-- starting of high quality guestposting main banner --> */
+/* ------------------------------------------------------ */
+.high-quality-gp-banner {
+    background-image: url('../images/dummy-img/blogger-outreach-bg-main1.jpg');
+    /* background-position: center right; */
+    background-position: center 47%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media(max-width:766px) {
+    .high-quality-gp-banner {
+        background-position: inherit;
+    }
+}
+
+.guest-posting-hq-main-row {
+    padding: 5rem 0;
+}
+
+.mlb-main-cntainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+.mlb-wrapping {
+    align-content: center;
+    align-items: center;
+}
+
+.mlb-wrapping span {
+    color: #FDA33B;
+}
+
+.high-quality-gp-heading-main {
+    /* font-family: 'Orienta', sans-serif; */
+    font-family: "Poppins", Poppins;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.2em;
+    color: #383a50;
+    word-spacing: 0.1em;
+    stroke: #000;
+}
+
+.high-quality-gp-main-p {
+    font-weight: 400;
+    text-align: left;
+    font-size: 1.7rem;
+    color: #324A6D;
+    line-height: 1.5em;
+    /* font-family: 'Orienta', sans-serif; */
+    font-family: "Poppins", Poppins;
+}
+
+.high-quality-gp-btn{
+    font-family: "Poppins", Poppins;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-style: normal;
+    text-decoration: none;
+    line-height: 1em;
+    letter-spacing: 0;
+    word-spacing: 0em;
+    fill: #FFF;
+    color: #FFF;
+    background-image: linear-gradient(120deg, #FDA33B 0%, #FA8273 100%);
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #F7A546 !important;
+    border-radius: 50px 50px 50px 50px;
+    padding: 17px 40px 17px 40px;
+}
+
+.high-quality-gp-btn:hover {
+    color: white !important;
+    background-image: linear-gradient(120deg, #FA8273 0%, #FDA33B 100%);
+}
+
+.tick-check {
+    content: "\2714";
+    font-family: Segoe UI Emoji;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 0 22px 0;
+}
+
+.tick-check-p {
+    color: #3F4450;
+    font-family: "Helvetica", Poppins;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 0 22px 0;
+}
+
+@media (min-width:250px) and (max-width:350px) {
+    .tick-check {
+        font-size: 16px !important;
+        margin: 0 0 18px 0;
+    }
+}
+
+/* ________________________________________________________________________________________ */
+/*  high quality guestposting main banner end */
+/* ---------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------- */
+/*  best-blogs-best-result-section  start */
+/* ----------------------------------------------------------------------------------- */
+.best-blogs-best-result-section {
+    margin: 5rem;
+}
+
+.best-blogs-best-result-main-h1 {
+    margin-bottom: 3rem;
+    font-size: 2.48rem;
+    color: #383a50;
+    text-align: start;
+}
+
+.best-blogs-best-result-main-h1 span {
+    color: #FDA33B;
+}
+.best-blogs-best-result-main-p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5em;
+    /* font-family: 'Orienta', sans-serif; */
+    font-family: "Poppins", Poppins;
+    text-align: justify;
+    align-items: center;
+}
+
+@media (min-width:350px) and (max-width:425px) {
+    .best-blogs-best-result-main-h1 {
+        font-size: 1.5rem !important;
+    }
+
+}
+/* ___________________________________________________________________________________ */
+/* best-blogs-best-result-section end */
+/* --------------------------------------------------------------------------- */
+/* We Work To Improve Your Vision starts */
+/* ________________________________________________________________________________________ */
+
+.work-to-improve-vision-main-sec {
+    /* background: aliceblue; */
+    padding: 5rem;
+}
+.work-to-improve-vision-main-sec p{
+    font-family: "Poppins", Poppins;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.work-vision-h1{
+    color: #383a50;
+}
+.work-vision-h1 span {
+    color: #FDA33B;
+    font-weight: 600;
+}
+
+.lbp-texting {
+    text-align: justify;
+    color: #747880;
+    font-family: "Helvetica", Poppins;
+    font-size: 17px;
+    line-height: 1.625em;
+}
+
+.lbp-texting b {
+    color: #383a50;
+}
+
+.actually-card-inn-img-div {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.actually-card-div1 {
+    display: flex;
+    padding: 2.5rem 1.5rem;
+    border-radius: unset;
+    border: none;
+    /* min-height: 200px; */
+    margin: 0.5rem 0;
+    align-items: center;
+}
+
+.actually-card-div1:hover {
+    transition: all .9s ease;
+    background-color: #FFF0;
+    box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
+    background-image: url(../images/dummy-img/card-hover-bg-img-removebg-preview.jpg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.external-css-fr-size {
+    width: 50%;
+}
+/* ------------------------------------- */
+/* We Work To Improve Your Vision ends */
+/*________________________________________________________________________________________  */
+/* _______________________________________________________________________________________________________ */
+/* Pricing cards section start */
+/* ----------------------------- */
+.pricing-bo-h1 {
+    font-size: 3.6rem;
+    font-weight: 600;
+    color: #383a50;
+    font-family: "Poppins", Poppins;
+}
+
+.pricing-bo-p1 {
+    font-family: "Poppins", Poppins;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #383a50b0;
+}
+/* -------------------------------- */
+/* Pricing cards section ends */
+/* _____________________________________________________________________________________________________ */
+/* Who Can Take Advantage Of This Service? starts */
+/* _____________________________________________________________________________________________________ */
+
+.who-can-take-section {
+    padding: 7rem;
+}
+.howdoes-itwork-sec{
+    margin: 7rem 0 0;
+}
+.who-advantages-main-h2 {
+    font-weight: 600;
+    color: #383a50;
+    font-family: "Poppins", Poppins;
+}
+
+.who-advantages-main-h2 span {
+    color: #FDA33B;
+}
+.who-take-card {
+    padding:2.5rem 1.5rem;
+    background: #fff;
+    margin: 13px 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    border: none;
+    min-height: 400px;
+    border-bottom-right-radius: 65px;
+    border-bottom: 2px solid #FDA33B;
+}
+
+.who-take-card:hover {
+    box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
+    -webkit-box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
+}
+
+.who-take-card h4 {
+    text-align: center;
+    color: #171C30;
+    font-family: "Helvetica", Poppins;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.who-take-card p {
+    text-align: justify;
+    color: #747880;
+    font-family: "Helvetica", Poppins;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+/* ----------------------------------------------------------- */
+/*Who Can Take Advantage Of This Service? starts ends */
+/* ---------------------------------------------------------- */
+/* --------------------------------------------- */
+/* Why Should You Choose FastLinky? starts */
+/* ----------------------------------------------- */
+.why-choose-fastlinky-sec{
+    padding: 5rem;
+    background-image: url('../images/dummy-img/blogger-outreach-bg-main.png');
+    /* background-position: center right; */
+    background-position: center 47%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.why-choose-fastlinky-sec h2{
+    margin-bottom: 2rem;
+}
+.why-choose-fastlinky-sec strong{
+    color: #FDA33B;
+}
+.why-choose-fastlinky-sec ul{
+    text-align: left;
+    color: #1c244b;
+    font-family: Poppins, Poppins;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 2em;
+    padding-left: 1rem;
+}
+.why-choose-fastlinky-sec li{
+    margin-bottom: 2rem;
+}
+/* ----------------------------------------------------- */
+/* Some Tips To Get The Best Guest Posting Service starts */
+/* ------------------------------------------------------- */
+.some-tips-section{
+    padding: 5rem;
+}
+.some-tips-section h2{
+    margin-bottom: 2rem;
+}
+.some-tips-section  strong{
+    color: #FDA33B;
+}
+.tipsto-get-best-gps{
+    margin-bottom: 2rem;
+}
+.tipsto-get-best-gps h3{
+    margin-bottom: 1rem;
+}
+.tipsto-get-best-gps p{
+    text-align: start;
+    color: #1c244b;
+    font-family: Poppins, Poppins;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.4;
+}
+/* --------------------------------------------------- */
+/* Some Tips To Get The Best Guest Posting Service ends */
+/* ------------------------------------------------------- */
+/* What Is The Definition Of Guest Posting? starts */
+/* ------------------------------------------ */
+.definition-gp-section{
+    padding: 6rem 5rem;
+}
+.definition-gp-div{
+    margin-bottom: 2rem; 
+}
+.definition-gp-div h2{
+    margin-bottom: 2rem;
+}
+.definition-gp-div  strong{
+    color: #FDA33B;
+}
+
+.definition-gp-div p{
+    text-align: start;
+    color: #1c244b;
+    font-family: Poppins, Poppins;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.4;
+}
+.extraadding-lis ul{
+    text-align: left;
+    color: #1c244b;
+    font-family: Poppins, Poppins;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 2em;
+    padding-left: 1rem;
+}
+.extraadding-lis li{
+    list-style-type: disclosure-closed;
+}
+/* ---------------------------------------- */
+/* What Is The Definition Of Guest Posting? ends */
+/* _____________________________________________________________________________________________________ */
+/* ____________________________________________________ */
+
+/* MEDIA QUERY STARTS  */
+/* ____________________________________________________ */
+
+@media (max-width:1199px) {
+    .work-to-improve-vision-main-sec {
+        padding: 3rem !important;
+    }
+
+    .high-quality-gp-heading-main {
+        font-size: 2.8rem;
+        font-weight: 600;
+    }
+
+    .who-can-take-section {
+        padding: 4rem !important;
+    }
+
+    .best-blogs-best-result-main-h1 {
+        font-size: 2.4rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .pricing-bo-h1 {
+        font-size: 3.2rem !important;
+    }
+}
+
+@media (max-width:991px) {
+
+    .high-quality-gp-heading-main {
+        font-size: 2.3rem;
+        font-weight: 500;
+    }
+    .high-quality-gp-main-p {
+        font-weight: 400;
+        font-size: 1.445rem !important;
+    }
+
+    .best-blogs-best-result-section {
+        margin: 5rem 1rem !important;
+    }
+    .work-vision-h1 {
+        font-size: 1.8rem;
+    }
+
+    .who-can-take-section {
+        padding: 2rem !important;
+    }
+}
+
+@media (max-width:767px) {
+    .external-css-fr-size {
+        width: 100%;
+    }
+    .guest-posting-hq-main-row {
+        padding: 2rem 0;
+    }
+
+    .high-quality-gp-heading-main {
+        text-align: center;
+
+    }
+    .high-quality-gp-main-p {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .high-quality-gp-btn{
+        padding: 11px 34px 9px 34px;
+    }
+
+    .buttonsinfo {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .best-blogs-best-result-main-h1 {
+        text-align: center;
+    }
+
+    .work-vision-h1 {
+        font-size: 2.3rem !important;
+        text-align: center;
+    }
+
+}
+
+@media (min-width:768px) and (max-width:1100px) {
+    .who-take-card {
+        padding: 1rem !important;
+        margin: 20px 0px !important;
+    }
+
+}
+
+@media (max-width:600px) {
+    .definition-gp-div h2 {
+        text-align: center;
+    }
+    .why-choose-fastlinky-sec h2 {
+        text-align: center;
+    }
+    .who-take-card {
+        min-height: 300px;
+    
+    }
+    .some-tips-section h2 {
+        text-align: center;
+    }
+    .why-choose-fastlinky-sec {
+        padding: 3rem 1rem ;
+    }
+    .some-tips-section {
+        padding: 3rem 1rem;
+    }
+    .definition-gp-section {
+        padding: 0rem 1rem;
+    }
+    .high-quality-gp-heading-main {
+        font-size: 2rem;
+    }
+    .mlb-wrapping {
+        padding: 0 1rem;
+        align-content: center;
+        align-items: center;
+    }
+
+    .pricing-bo-p1 {
+        padding: .8rem;
+    }
+    .best-blogs-best-result-section {
+        margin: 2rem 1rem !important;
+    }
+
+    .work-to-improve-vision-main-sec {
+
+        padding: 1rem !important;
+    }
+
+    .who-can-take-section {
+        padding: 1rem !important;
+    }
+}
+
+@media (min-width:536px) and (max-width:767px) {
+
+    .pricing-bo-h1 {
+        font-size: 2.6rem !important;
+    }
+}
+
+@media (min-width:336px) and (max-width:535px) {
+
+    .pricing-bo-h1 {
+        font-size: 2.2rem !important;
+    }
+}
+
+@media (min-width:312px) and (max-width:335px) {
+
+    .pricing-bo-h1 {
+        font-size: 1.9rem !important;
+    }
+}
+
+@media (min-width:200px) and (max-width:320px) {
+    .definition-gp-div h2 {
+        font-size: 1.345rem;
+    }
+    .some-tips-section h2 {
+        font-size: 1.4rem;
+    }
+    .work-vision-h1 {
+        font-size: 1.6rem !important;
+    }
+
+    .high-quality-gp-btn{
+        padding: 11px 19px 11px 25px !important;
+    }
+
+    .best-blogs-best-result-main-h1 {
+        font-size: 1.53rem !important;
+        font-weight: 500;
+    }
+
+    .high-quality-gp-main-p {
+        font-size: 1.2rem !important;
+    }
+
+    .pricing-bo-h1 {
+        font-size: 1.7rem !important;
+    }
+
+    .how-fonts-h4 {
+        font-size: 1.19rem;
+        font-weight: 700 !important;
+    }
+}
+
+@media (min-width:313px) and (max-width:399px) {
+    .high-quality-gp-heading-main {
+        font-size: 1.7rem;
+    }
+
+}
+
+@media (min-width:353px) and (max-width:420px) {
+
+    .high-quality-gp-main-p {
+
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (min-width:250px) and (max-width:451px) {
+    .tick-check-p {
+        font-size: 18px;
+    }
+    .who-can-take-section {
+        padding: 1rem !important;
+    }
+
+    .who-take-card {
+        padding: 1rem !important;
+
+    }
+
+    .work-vision-h1 {
+        font-size: 1.9rem !important;
+        text-align: center;
+    }
+
+    .actually-card-div1 {
+        display: inline-block !important;
+        padding: 1.5rem 1rem !important;
+        border-radius: unset;
+        border: none;
+        min-height: 200px;
+    }
+
+    .actually-card-inn-img-div {
+        padding-right: 0rem !important;
+        padding-left: 0rem !important;
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+}
+

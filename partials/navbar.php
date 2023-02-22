@@ -117,6 +117,10 @@
                                         href="<?php echo URL;?>/guest-post-offer.php">GUEST POST
                                         OFFER</a>
                                 </li>
+                                <li>
+                                    <a class="dropdown-item  producting-menues-lis"
+                                        href="<?php echo URL;?>/high-quality-guestposting.php">HQ GUEST POSTING</a>
+                                </li>
                             </div>
                         </div>
 
