@@ -53,10 +53,10 @@ if(isset($_GET['seo_url']))
 
 <head>
     <link rel="icon" href="images/logo/favicon.png" type="image/png">
-    <title>High Quality Guest Posting Service : <?php echo COMPANY_S; ?></title>
+    <title>Quality White hat guest post & Blogger outreach service - <?php echo COMPANY_S; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-        content="LeeLija provided Guest Post Service at reasonable prices on fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement  or more." />
+        content="Fastlinky enriches your ranking with High Quality White hat guest post & Blogger outreach services from Regular basis updated high authority blog sites list." />
     <meta charset="utf-8">
     <meta name="keywords"
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
@@ -156,12 +156,12 @@ if(isset($_GET['seo_url']))
                         details and this will help you to choose the best options for the best blogs. Invest in
                         Fastlinky which supports your website with the proper authority. We drown our effort and time
                         with high-quality placements which have a selected readership. You can easily choose the best
-                        guest posting sites from FastLinky. </p>
+                        <b>guest posting sites</b> from FastLinky. </p>
                     <p class="best-blogs-best-result-main-p mb-3">
                         We make sure that this placement is permanent and
                         well-established. We take special care to ensure that FastLinky is able to provide you with the
-                        full benefits of guest posting services. A quality white hat link is always built with a strong
-                        guest posting scheme. Our Guest posting SEO always increases a higher search ranking and
+                        full benefits of <b>guest posting services</b>. A quality white hat link is always built with a strong
+                        <b>guest posting</b> scheme. Our <b>Guest posting SEO</b> always increases a higher search ranking and
                         improves your website traffic.
                     </p>
 
@@ -266,7 +266,7 @@ if(isset($_GET['seo_url']))
                             </div>
                             <h4 class="how-fonts-h4  ">Associate Vendors</h4>
                             <p class="">
-                                We know you have already opted for guest posting sites from other platforms but give us
+                                We know you have already opted for <b>guest posting sites</b> from other platforms but give us
                                 this chance, and you will be satisfied. You are not to be disappointed, We guarantee it.
                             </p>
 
@@ -293,7 +293,7 @@ if(isset($_GET['seo_url']))
                     <div class="col-md-4 col-xl-4 ">
                         <div class="who-take-card">
                             <div class="text-center pb-3 ">
-                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
                             <h4 class="how-fonts-h4 ">Place Your Order Details </h4>
                             <p class="">
@@ -306,7 +306,7 @@ if(isset($_GET['seo_url']))
                     <div class="col-md-4 col-xl-4">
                         <div class="who-take-card">
                             <div class="text-center pb-3 ">
-                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                             </div>
                             <h4 class="how-fonts-h4  ">Content Writing </h4>
                             <p class="">
@@ -320,7 +320,7 @@ if(isset($_GET['seo_url']))
                     <div class="col-md-4 col-xl-4">
                         <div class="who-take-card">
                             <div class="text-center pb-3">
-                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
                             <h4 class="how-fonts-h4  ">White Label Link Building</h4>
                             <p class="">
@@ -358,7 +358,7 @@ if(isset($_GET['seo_url']))
                     </p>
                     <div class="actually-card-div1">
                         <div class="  actually-card-inn-img-div">
-                            <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
+                            <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                         </div>
                         <div class="lbp-texting">
                             Here you will see a huge database that is <b>still expanding</b>.
@@ -381,7 +381,7 @@ if(isset($_GET['seo_url']))
                     </div>
                     <div class="actually-card-div1 ">
                         <div class="  actually-card-inn-img-div">
-                            <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
+                            <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                         </div>
                         <div class="lbp-texting">
 
@@ -509,7 +509,7 @@ if(isset($_GET['seo_url']))
         </div>
         <div class="tipsto-get-best-gps">
             <h3>You Should Post only Fresh content</h3>
-            <p>Before posting any guest posts, make sure they are fresh and don't want to publish duplicate content that
+            <p>Before posting any <b>guest posts</b> , make sure they are fresh and don't want to publish duplicate content that
                 can be found on other websites. This is harmful to SEO. </p>
         </div>
 

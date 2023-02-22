@@ -2132,7 +2132,7 @@ button {
 }
 
 .oppertinity_section a {
-    box-shadow: 5px 5px #407BFF;
+    box-shadow: 5px 5px #0000ff;
 }
 
 .oppertinity_section a:hover,
@@ -2141,7 +2141,7 @@ button {
 }
 
 .oppertinity_section a {
-    color: #407BFF;
+    color: #0000ff;
 }
 
 .show-wordpress-blog {

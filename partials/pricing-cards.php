@@ -12,16 +12,18 @@
                             </p>
                             <p class="chooseNiche"></p>
                             <ul class="price-box-ul">
-                                <li>   Ahrefs DR 40+</li>
-                                <li>   Multilingual Content</li>
-                                <li>  600+ Words Content</li>
+                                <li> Ahrefs DR 40+</li>
+                                <li> Multilingual Content</li>
+                                <li> 600+ Words Content</li>
                                 <li> 1Keyword/Target URL</li>
-                                <li>   Niche Relevant</li>
+                                <li> Niche Relevant</li>
                                 <li> Manually Outreaching</li>
-                                <li>   20 days Turnaround Time</li>
+                                <li> 20 days Turnaround Time</li>
                             </ul>
-                            <button type="button" name="package-purchase-btn" id="package-purchase-btn"
-                                class="package-purchase-btn">purchase now</button>
+                            <a href="pricing-mainpage.php">
+                                <button href="" type="button" name="package-purchase-btn" id="package-purchase-btn"
+                                    class="package-purchase-btn">purchase now</button>
+                            </a>
                         </div>
                     </div>
                     <!-- card 2 -->
@@ -33,16 +35,18 @@
                             </p>
                             <p class="chooseNiche"></p>
                             <ul class="price-box-ul">
-                                <li>  Ahrefs DR 40+</li>
-                                <li>  Multilingual Content</li>
-                                <li>  600+ Words Content</li>
+                                <li> Ahrefs DR 40+</li>
+                                <li> Multilingual Content</li>
+                                <li> 600+ Words Content</li>
                                 <li> 1Keyword/Target URL</li>
-                                <li>  Niche Relevant</li>
+                                <li> Niche Relevant</li>
                                 <li> Manually Outreaching</li>
-                                <li>   20 days Turnaround Time</li>
+                                <li> 20 days Turnaround Time</li>
                             </ul>
-                            <button type="button" name="package-purchase-btn" id="package-purchase-btn"
-                                class="package-purchase-btn">purchase now</button>
+                            <a href="pricing-mainpage.php">
+                                <button type="button" name="package-purchase-btn" id="package-purchase-btn"
+                                    class="package-purchase-btn">purchase now</button>
+                            </a>
                         </div>
                     </div>
                     <!-- card 3 -->
@@ -54,27 +58,18 @@
                             </p>
                             <p class="chooseNiche"></p>
                             <ul class="price-box-ul">
-                                <li>  Ahrefs DR 40+</li>
-                                <li>  Multilingual Content</li>
-                                <li>  600+ Words Content</li>
+                                <li> Ahrefs DR 40+</li>
+                                <li> Multilingual Content</li>
+                                <li> 600+ Words Content</li>
                                 <li> 1Keyword/Target URL</li>
-                                <li>  Niche Relevant</li>
+                                <li> Niche Relevant</li>
                                 <li> Manually Outreaching</li>
-                                <li>  20 days Turnaround Time</li>
-
-                                <!-- <li><i class="fas fa-check-square"></i>5 Blog
-                                        Posts </li>
-                                    <li><i class="fas fa-check-square"></i>Real blogs</li>
-                                    <li><i class="fas fa-check-square"></i>Dofollow Link</li>
-                                    <li><i class="fas fa-check-square"></i>Content
-                                        500+ Words</li>
-                                    <li><i class="fas fa-check-square"></i>DA: 20 - 30</li>
-                                    <li><i class="fas fa-check-square"></i>TF : 10 - 20</li>
-                                    <li><i class="fas fa-check-square"></i>CF: 5 - 15</li> -->
-
+                                <li> 20 days Turnaround Time</li>
                             </ul>
-                            <button type="button" name="package-purchase-btn" id="package-purchase-btn"
-                                class="package-purchase-btn">purchase now</button>
+                            <a href="pricing-mainpage.php">
+                                <button type="button" name="package-purchase-btn" id="package-purchase-btn"
+                                    class="package-purchase-btn">purchase now</button>
+                            </a>
                         </div>
                     </div>
 
