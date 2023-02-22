@@ -20,7 +20,6 @@ require_once("classes/utilityImage.class.php");
 require_once("classes/utilityNum.class.php");
 require_once("classes/gp-order.class.php");
 require_once("classes/faqs.class.php");
-
 /* INSTANTIATING CLASSES */
 $dateUtil   = new DateUtil();
 $error 			= new Error();
@@ -48,27 +47,31 @@ if(isset($_GET['seo_url']))
 	}
 
 ?>
+
 <!DOCTYPE HTML>
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
+    <link rel="icon" href="images/logo/favicon.png" type="image/png">
+    <title>High Quality Guest Posting Service : <?php echo COMPANY_S; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Guest Post Service, Blogger Outreach Services - <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <meta name="description"
-        content="Fastlinky provided Guest Post Service at reasonable prices on fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement  or more." />
+        content="LeeLija provided Guest Post Service at reasonable prices on fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement  or more." />
+    <meta charset="utf-8">
     <meta name="keywords"
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
+
 
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <!-- Custom CSS -->
-    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
+    <link href="css/leelija.css" rel="stylesheet" />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-
+    <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
+    <link href="css/guest-posting.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="stylesheet" href="css/clientside-logo.css">
 
     <!-- font-awesome icons -->
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
@@ -80,151 +83,327 @@ if(isset($_GET['seo_url']))
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
     <!--//webfonts-->
 
-    <style>
-    .hr-seprator-css {
-        padding: 50px 8rem;
-    }
 
-    .separator {
-        /* margin-top: 25px;
-	 margin-bottom: 80px; */
-        border: 0;
-    }
 
-    .separator--line {
-        border: 0;
-        border-bottom: 3px solid #d3d3d3e0;
-        animation: separator-width 7s ease-out forwards;
-        animation-iteration-count: infinite;
-        width: 0;
-        /* border-bottom: 3px solid #bada55; */
-        /* animation: separator-width 1s ease-out forwards; */
-    }
-
-    @keyframes separator-width {
-        0% {
-            width: 0;
-        }
-
-        100% {
-            width: 100%;
-        }
-    }
-
-    .separator--dots {
-        margin: auto;
-        overflow: visible;
-        border: 0;
-        content: "";
-        background-color: #bada55;
-        /* background-color: lightgray; */
-        display: block;
-        height: 7px;
-        width: 7px;
-        border-radius: 50%;
-        position: relative;
-    }
-
-    .separator--dots:before {
-        content: "";
-        /* background-color: lightgray; */
-        background-color: #bada55;
-        display: block;
-        height: 7px;
-        width: 7px;
-        border-radius: 50%;
-        position: absolute;
-        left: -32px;
-        animation: dot-move-left 1s ease-out forwards;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-    }
-
-    .separator--dots:after {
-        content: "";
-        /* background-color: lightgray; */
-        background-color: #bada55;
-        display: block;
-        height: 7px;
-        width: 7px;
-        border-radius: 50%;
-        position: absolute;
-        left: 32px;
-        animation: dot-move-right 1s ease-out forwards;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-    }
-
-    @keyframes dot-move-right {
-        0% {
-            left: 0;
-        }
-
-        100% {
-            left: 32px;
-        }
-    }
-
-    @keyframes dot-move-left {
-        0% {
-            left: 0;
-        }
-
-        100% {
-            left: -32px;
-        }
-    }
-
-    @media(max-width:991px) {
-        .hr-seprator-css {
-            padding: 30px 3rem;
-        }
-    }
-
-    @media (max-width: 375px) {
-        .hr-seprator-css {
-            padding: 0px 1rem;
-        }
-    }
-    </style>
 </head>
 
 <body data-scrollbar>
     <?php require_once "partials/navbar.php"; ?>
-    <!-- <div class="blogger-banner  banner">
-        <h1 class="blue_color_class text-uppercase font-weight-bold">Blogger Outreach</h1>
-    </div> -->
+    <!--____________________________________________________________________________________________ -->
+    <!-- starting of high quality guestposting main banner -->
+    <section class="high-quality-gp-banner">
+        <div class="container mlb-main-cntainer">
+            <div class="row guest-posting-hq-main-row">
+                <div class="col-12 col-lg-7 col-md-7  px-0 px-md-4">
+                    <div class="mlb-wrapping">
+                        <h1 class="high-quality-gp-heading-main">High quality <span>guest posting </span> service </h1>
+                        <p class=" mt-3 mb-4 py-0 py-md-2 high-quality-gp-main-p">Effective backlinks and content links
+                            that raise the organic growth of your website.
+                        </p>
+                        <div>
+                            <ul>
+                                <li class="tick-check"> &#10004; <b class="tick-check-p">Appropriate and suitable white
+                                        hat links. </b>
+                                </li>
+                                <li class="tick-check"> &#10004; <b class="tick-check-p">Experienced and skilled
+                                        employees
+                                    </b></li>
+                                <li class="tick-check"> &#10004; <b class="tick-check-p"> Mass discount for agencies
+                                    </b>
+                                </li>
 
-    <div class="blogger-banner  banner">
-        <h1 class="blogbanner-heading">Premium Guest Post & Blogger Outreach Service</h1>
-        <div class="gp-heading-details-2">
-            <p>
-                Manual Blogger outreach service & 10,000+ Regular basis updated sites - Ready for you! <br>
-                You can now buy High DA, Traffic niches oriented Guest Posts from quality sites for <br> USA, UK,
-                CANADA,
-                AUSTRALIA,INDIA and other country.
-            </p>
+
+                            </ul>
+
+                        </div>
+                        <div class=" buttonsinfo mt-md-5">
+                            <a href="#pricing-cards">
+                                <button type="button" class="btn high-quality-gp-btn">See
+                                    Pricing</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 col-md-5 vid-col">
+                    <div class="mlb-wrapping">
+                        <img src="./images/freepik-img/guest-posting-imgs-3.png" class="w-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- -------------------------------------------- -->
+    <!-- end of high quality guestposting main banner -->
+    <!-- ------------------------------------------------------------------------- -->
+    <!-- Best Blogs, Best Results start -->
+    <!-- ---------------------------- -->
+    <section class="best-blogs-best-result-section">
+        <div class="row mb-md-5">
+
+            <div class="col-lg-6 col-md-6">
+                <div class="text-center">
+
+                    <img src="./images/freepik-img/guest-posting-imgs-4.png" class=" w-100  mb-4 " alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 ">
+                <h1 class=" best-blogs-best-result-main-h1 ">Best Blogs, <span>Best Results</span>
+                </h1>
+                <div class="">
+
+                    <p class="best-blogs-best-result-main-p mb-3">
+                        FastLinky will provide you with a write option to select from. We will give you the essential
+                        details and this will help you to choose the best options for the best blogs. Invest in
+                        Fastlinky which supports your website with the proper authority. We drown our effort and time
+                        with high-quality placements which have a selected readership. You can easily choose the best
+                        guest posting sites from FastLinky. </p>
+                    <p class="best-blogs-best-result-main-p mb-3">
+                        We make sure that this placement is permanent and
+                        well-established. We take special care to ensure that FastLinky is able to provide you with the
+                        full benefits of guest posting services. A quality white hat link is always built with a strong
+                        guest posting scheme. Our Guest posting SEO always increases a higher search ranking and
+                        improves your website traffic.
+                    </p>
+
+                    <div class=" buttonsinfo mt-5">
+                        <a href="#pricing-cards">
+                            <button type="button" class="btn high-quality-gp-btn">View Pricing</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
 
         </div>
+    </section>
+    <!-- --------------------- -->
+    <!-- Best Blogs, Best Results end -->
+    <!-- ________________________________________________________________________________________ -->
+    <!-- _________________________________________________________________________________________________ -->
 
-    </div>
+    <!--================================= Client Review section Start =================================-->
+    <!-- ___________________________________________________________________________________________ -->
+    <!-- testimonials customers reviews -->
+    <?php require_once "partials/testimonials.php"; ?>
+    <!-- testimonials customers reviews -->
+    <!-- _________________________________________________________________________________________ -->
+    <!------------------------------------ Client Review section End ------------------------------------->
+    <!-- ____________________________________________________________________________________________ -->
 
-    <!--Banner Dividor-->
-    <?php //include ('quote.php') ?>
-    <!--/End of baneer Dividor-->
 
-
+    <!-- _______________________________________________________________________________________________ -->
     <!-- pricing section -->
-    <h1 class="text-center pricing-bo-h1 mb-3 px-2">Guest Post Placement Pricing
-    </h1>
-    <p class="text-center pricing-bo-p1 mb-3 px-2">We offer blogger outreach links categorised as <br> per DA,
-        DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
+    <!-- ------------------------------------------- -->
 
-    <?php require_once "partials/pricing-cards.php"; ?>
-    <!-- pricing section end -->
-    <!-- ================================================================================================ -->
+    <section class="mt-5">
+        <h1 class="text-center pricing-bo-h1 mb-3 mt-5 px-2">Guest posting pricing
+        </h1>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
+            DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
+
+        <?php require_once "partials/pricing-cards.php"; ?>
+    </section>
+
+    <!-- ------------------------------------------------ -->
+    <!-- pricing section ends -->
+    <!-- ------------------------------------------- -->
+
+    <!-- --------------------------------------------------------------------------------------------- -->
+    <!-- clients-logo -->
+    <?php require_once "partials/clientssides-logos.php"; ?>
+    <!-- clients-logo -->
+    <!-- _________________________________________________________________________________________________ -->
+    <!-- ______________________________________________________________________________________________ -->
+
+    <!-- ____________________________________________________________________________________________ -->
+
+    <!-- Who Can Take Advantage Of This Service? starts -->
+    <!-- ----------------------------------------------- -->
+    <section class="who-can-take-section">
+        <div class="">
+            <div>
+                <h2 class=" text-center mt-4 my-3 who-advantages-main-h2"> <span> Who Can Take Advantage Of This </span>
+                    Service?</h2>
+
+            </div>
+            <div class="who-takes-adv-main mt-5">
+                <div class="row">
+                    <div class="col-md-4 col-xl-4 ">
+                        <div class="who-take-card">
+
+                            <div class="text-center pb-3 ">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4 ">Online Business</h4>
+                            <p class="">
+                                Visibility is the only goal for any business that wants to thrive online. We can help
+                                you to improve your business in the SERP and get you high-quality backlinks. </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 col-xl-4">
+                        <div class="who-take-card">
+
+                            <div class="text-center pb-3 ">
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4  ">SEO Service </h4>
+                            <p class="">
+                                You can get the 100% white-label report that is provided by us. You will get full
+                                support from FastLinky for all your useful information shown in the SERP. </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 col-xl-4">
+                        <div class="who-take-card">
+
+                            <div class="text-center pb-3">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4  ">Associate Vendors</h4>
+                            <p class="">
+                                We know you have already opted for guest posting sites from other platforms but give us
+                                this chance, and you will be satisfied. You are not to be disappointed, We guarantee it.
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Who Can Take Advantage Of This Service? ends -->
+        <!-- _______________________________________________________________ -->
+        <!-- How Does Our FastLinky’s Guest Posting Service Work? starts -->
+        <!-- ------------------------------------------------------------- -->
+        <div class="howdoes-itwork-sec">
+            <div>
+                <h2 class=" text-center mt-4 my-3 who-advantages-main-h2">How Does Our FastLinky’s <span> Guest Posting
+                        Service
+                        Work? </span>
+                </h2>
+
+            </div>
+            <div class="who-takes-adv-main mt-5">
+                <div class="row">
+                    <div class="col-md-4 col-xl-4 ">
+                        <div class="who-take-card">
+                            <div class="text-center pb-3 ">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4 ">Place Your Order Details </h4>
+                            <p class="">
+                                We discuss all the details and then find a suitable placement. You could share the
+                                target URL with instructions. We provide you with a suitable content copy. </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 col-xl-4">
+                        <div class="who-take-card">
+                            <div class="text-center pb-3 ">
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4  ">Content Writing </h4>
+                            <p class="">
+                                Once the placement is decided, our content writers design an effective content copy. We
+                                create content that readers find rich and valuable. </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 col-xl-4">
+                        <div class="who-take-card">
+                            <div class="text-center pb-3">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4  ">White Label Link Building</h4>
+                            <p class="">
+                                White-label report is major for link building. When we see that our post passes the
+                                necessary quality checks then we share it in the form of a white-label report for
+                                review.
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- How Does Our FastLinky’s Guest Posting Service Work? ends -->
+        <!-- --------------------------------------------- -->
+    </section>
+    <!-- who-can-take-section ends -->
+    <!-- ------------------------------------------ -->
+
+    <!-- --------------------------------------------------------------------- -->
+    <!-- We Work To Improve Your Vision -starts -->
+    <!-- ----------------------------------------------- -->
+    <section class="work-to-improve-vision-main-sec">
+        <div>
+            <div class="row">
+                <div class=" col-xl-6 col-md-6">
+                    <h1 class="work-vision-h1 mb-3">
+                        We work to <br> <span>improve your vision </span>
+                    </h1>
+                    <p>
+                        Our website is well known for its digital goodness. Our staff has gone through a lot of trouble
+                        and hard work, and we are hoping that our <b>guest posting services</b> will be invaluable to
+                        you.
+                    </p>
+                    <div class="actually-card-div1">
+                        <div class="  actually-card-inn-img-div">
+                            <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
+                        </div>
+                        <div class="lbp-texting">
+                            Here you will see a huge database that is <b>still expanding</b>.
+                        </div>
+                    </div>
 
 
+                </div>
+                <div class="col-xl-6 col-md-6">
+
+                    <div class="actually-card-div1">
+                        <div class="  actually-card-inn-img-div">
+                            <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
+                        </div>
+                        <div class="lbp-texting">
+
+                            For all your demands and promotions, we deliver you a <b>white-label report</b> . Use it as
+                            you wish!
+                        </div>
+                    </div>
+                    <div class="actually-card-div1 ">
+                        <div class="  actually-card-inn-img-div">
+                            <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
+                        </div>
+                        <div class="lbp-texting">
+
+                            We are constantly trying to <b>improve your concepts</b> .
+                        </div>
+                    </div>
+
+                </div>
+                <a href="#pricing-cards">
+                    <div class="d-flex justify-content-end">
+                        <button type="button"
+                            class="btn high-quality-gp-btn d-flex justify-content-center external-css-fr-size ">Get Your
+                            Links Now</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ---------------------------------------- -->
+    <!--We Work To Improve Your Visions-  ends -->
+    <!-- ________________________________________________________________________________________ -->
+    <!-- ___________________________________________________________________________________________ -->
     <!-- extra details -->
     <div class="features-sec">
         <div class="features">
@@ -289,538 +468,133 @@ if(isset($_GET['seo_url']))
             </div>
         </div>
     </div>
-
     <!-- extra details -->
+    <!-- --------------------------- -->
+    <!-- Why Should You Choose FastLinky? starts -->
 
+    <section class="why-choose-fastlinky-sec">
+        <div>
+            <h2>Why Should You Choose <strong>FastLinky?</strong> </h2>
+            <div>
+                <ul>
+                    <li> ➔ We Always Provide You A Creative Content. We make sure that all of our clients get natural
+                        backlinks that drive real traffic. So that readers find it creative and helpful.</li>
+                    <li>➔ We always try to give fresh content written by our trained writers. You will relax about our
+                        100% satisfied guest posting strategy. </li>
+                    <li>➔ We stay away from irrelevant writers because they don't work properly and don't deliver valid
+                        results. To ensure that your links work well and profit you in every way, we always try our best
+                        to keep your links in fresh content.</li>
+                    <li>➔ We deliver your results with a 100% white-label report and make sure that you get a white link
+                        for your projects. As a result, we work hard but make sure you get credit.</li>
+                    <li>➔ We Help You To Improve Your Rank To the Top On SERP. We avoid black hat links and make sure
+                        you get genuine links which is work perfectly. We know that only white hat links can make a real
+                        difference in your website ranking. To get more instructions you can follow us. </li>
 
-    <!-- ===================================================================================================== -->
-
-    <div class="blogger-third-section">
-        <div class="container ">
-            <h2 class="text-center">Build Relationships With Real Bloggers</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="build-relationship-text">
-                        <p>Having thousands of databases of real bloggers, Fastlinky is the ultimate hub for guest
-                            posting. Outreaching any type of blog is our duty, owing to the list of blog sites that we
-                            have in our database. For the same, we have fifteen outreach specialists who work manually
-                            for blog outreach, of any given blog. Our main goal is to build strong relationships with
-                            the bloggers blog or bloggers websites, by cooperating with each other. The main tasks are
-                            analysing followers and traffics, presence of social media, domain authority analysis, and
-                            metrics of Moz.
-                            Our company works for big brands, top blogs, outreach agencies, partners, and also for
-                            digital media. Our outreach bloggers always stand efficient in pitching, finding, engaging,
-                            and following the relevant bloggers or admins.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 text-center m-auto">
-
-                    <img src="images/freepik-img/guest-posting-imgs.png" alt="blogging" class="w-75">
-
-
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- ================================================================================================ -->
-
-    <section class="blogger-fourth-section py-md-5">
-        <div class="container">
-            <div class="row align-items-center m-0">
-                <div class="col-lg-6 ps-0">
-                    <img src="images/freepik-img/guest-posting-imgs-2.png" alt="Blogging Outreach" class="w-100">
-                </div>
-                <div class="col-lg-6">
-                    <div class="right-ul-section">
-                        <h3>Get Knowledge About Blogging Outreach:</h3>
-                        <p class="mb-5">Blogging outreach is quite a simple business tactic, and sometimes it is called
-                            influencer marketing. Such blog outreach services, as provided by us, help build a strong
-                            connection with the genuine blogs, and other communities. </p>
-
-                        <p>The primary goal of our blogger outreach service is to furnish genuine and quality content.
-                            This further helps to promote any product, brand, blog, website and service. Promoting those
-                            posts or guest blogs via social media gives an extra value. It helps in gaining more
-                            popularity and traffic to your blogging websites.</p>
-
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ================================================================================================ -->
-
-    <section class="blogger-fifth-section">
-        <div class="container">
-            <h3 class="blogger-fifth-section-main-head">Why to Choose Fastlinky for Blogger Outreach Service?</h3>
-            <div class="row align-items-center m-0">
-                <div class="col-lg-6">
-                    <div class="right-ul-section">
-                        <ul>
-                            <li> We, at Fastlinky, have already reached and researched 10,0000 genuine high-authority
-                                blogs, with different themes. </li>
-                            <li> Our outreach specialists are well trained and have immense experience.</li>
-                            <li> We render your post promotions through social media remarks and mentions.</li>
-                            <li> We provide Manual outreach service and daily research available. </li>
-                            <li> We give quality outbound links from high authority websites of your post, that will
-                                further gain credibility.</li>
-                            <li> Our specialists have the ability to provide you with precious links, within viewpoints.
-                            </li>
-                            <li> We have the Online reporting panel accessible. </li>
-                            <li>Online reporting panel accessible.</li>
-                            <li>Our experts examine overall the blogs to give you better links. </li>
-                            <li>We update bloggers database regularly to maintain SEO metrics. </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 pe-0 m-auto text-center">
-                    <img src="images/freepik-img/guest-posting-why-choose.png" alt="Blogger Outreach Service"
-                        class="w-75">
-                </div>
+                </ul>
             </div>
         </div>
     </section>
+    <!-- Why Should You Choose FastLinky? ends -->
+    <!-- ---------------------------------------------------- -->
+    <!-- Some Tips To Get The Best Guest Posting Service -->
 
-    <!-- ================ Regester Now Section Start ================ -->
-    <?php require_once "partials/reg-now.php"; ?>
-    <!------------------- Regester Now Section End ------------------->
+    <section class="some-tips-section">
 
+        <h2>Some Tips To Get The <br> <strong>Best Guest Posting Service</strong> </h2>
 
-    <!-- ================================================================================================ -->
-
-    <section class="native-content-section">
-
-        <div class="leelija-gp-service-head">
-            <h3>Why Choose Fastlinky for Guest Posts Services?</h3>
+        <div class="tipsto-get-best-gps">
+            <h3>You Can Select Different Anchor Texts</h3>
+            <p>You should know that over-optimization of a single anchor text can sometimes be harmful. You can get
+                diversify your brand-oriented anchor texts to get a healthy profile.</p>
         </div>
-        <div class="container">
-            <div class="row align-items-center m-0">
+        <div class="tipsto-get-best-gps">
+            <h3>You Should Post only Fresh content</h3>
+            <p>Before posting any guest posts, make sure they are fresh and don't want to publish duplicate content that
+                can be found on other websites. This is harmful to SEO. </p>
+        </div>
 
-                <div class="col-lg-6">
-                    <img src="images/freepik-img/guest-posting-imgs-3.png" alt="Guest Posts Services" class="w-100">
-                </div>
+        <div class="tipsto-get-best-gps">
+            <h3>Make The Best Link Profile From Different DA </h3>
+            <p>Instead of buying 10 high DA links, you can get 3 links from low DA websites, 4 from medium DA, and 2
+                links from high DA websites and naturally you will get a better result.</p>
+        </div>
 
-                <div class="col-lg-6">
-                    <h3 class="native-content">White Label Guest Post Service</h3>
-                    <p class="native-content-p">If you are an agency, you will get a white-labelled report that includes
-                        the URL of the article used for link placements and the domain metrics will be sent within 15
-                        days. Though we build the links, they remain your property.</p>
-                </div>
-
-
-
-            </div>
-
+        <div class="tipsto-get-best-gps">
+            <h3>Patience is the key in SEO </h3>
+            <p>Link building is a useful method. But tolerance is your greatest quality. Definitely, the results depend
+                on the credibility of your website.</p>
         </div>
     </section>
+    <!-- Some Tips To Get The Best Guest Posting Service -->
+    <!-- ----------------------------------------------------- -->
 
-    <!-- ================================================================================================ -->
 
-    <section class="native-content-section">
-        <!-- line seprator for divisions   -->
-        <section class="hr-seprator-css">
-            <hr class="separator separator--line" />
-            <hr class="separator separator--dots" />
-        </section>
-        <!-- line seprator for divisions   -->
-        <div class="leelija-gp-service-head">
+
+    <!-- ---------------------------------------------------- -->
+    <!-- What Is The Definition Of Guest Posting? -->
+
+    <section class="definition-gp-section">
+
+        <div class="definition-gp-div">
+            <h2>What Is The Definition Of <br> <strong>Guest Posting</strong></h2>
+            <p>Guest posting is the process of writing and publishing one or more articles for another website. It helps
+                in improving search engine ranking to increase domain authority, connect with employees, and drive high
+                traffic to your website. Guest posting is also known as guest blogging. </p>
         </div>
-        <div class="container">
-            <div class="row align-items-center m-0">
-
-
-
-                <div class="col-lg-6">
-                    <h3 class="native-content">Tried and Tested Result Oriented Approach for Maximum ROI</h3>
-                    <p class="native-content-p">Our strategies ensure to give the best result by boosting your reach
-                        organically. We adhere to the Tried & Tested Result Oriented Approach, which further ensures
-                        maximum ROI. We also look after what should be practiced and what should be avoided, in order to
-                        enhance your returns on investment. One of the main reasons behind it is the ‘links and guests’,
-                        which we have with us onboard, at Fastlinky. These things are assured by us, while envisaging
-                        the
-                        maximum ROI-</p> <br>
-
-
-                    <ul>
-                        <li><i class="far fa-check-circle"></i> Relevance of Blogs</li>
-                        <li><i class="far fa-check-circle"></i> Related Niche Websites for Guest posting</li>
-                        <li> <i class="far fa-check-circle"></i>Quality of the content</li>
-                        <li> <i class="far fa-check-circle"></i>Traffic of the website</li>
-                        <li> <i class="far fa-check-circle"></i>Relevant suggestions </li>
-                    </ul>
-
-                </div>
-                <div class="col-lg-6">
-                    <img src="images/freepik-img/guest-posting-roi.png"
-                        alt="guest post approach" class="w-100">
-                </div>
-            </div>
-
+        <div class="definition-gp-div">
+            <h2>What Is The Definition Of <br> <strong>Guest Posting Service?</strong></h2>
+            <p>Generally, <b>guest posting service</b> is known as the white hat SEO technique. A <b>guest posting
+                    service</b> is a platform for bloggers who are looking for content. It Will build relationships with
+                clients in the industries. The <b>guest posting service</b> from FastLinky is a genuine way to get
+                high-quality links. </p>
         </div>
-    </section>
-    <!-- line seprator for divisions   -->
-    <section class="hr-seprator-css">
-        <hr class="separator separator--line" />
-        <hr class="separator separator--dots" />
-    </section>
-    <!-- line seprator for divisions   -->
-    <!-- ================================================================================================ -->
 
-    <section class="native-content-section pt-5">
+        <div class="definition-gp-div">
+            <h2>How Does <br> <strong>Guest Posting Enhance SEO?</strong></h2>
+            <p><b>Guest posts</b> help SEO by exposing your content to new visitors and pointing backlinks to your
+                website to
+                get more links from many other website owners and increase organic traffic to your website.
+                One of FastLiny's best strategies is <b>guest posting</b> , which helps boost your website's SEO through
+                a
+                link-building step.
+                You can enhance your brand and drive traffic to your website by publishing valuable content on other
+                well-known websites. When used perfectly, a <b>guest post</b> by FastLinky can be a strong digital
+                marketing
+                strategy.
+            </p>
+        </div>
 
-        <div class="container">
-            <div class="row align-items-center m-0">
-                <div class="col-lg-6">
-                    <img src="images/freepik-img/guest-posting-imgs-4.png" alt="Native Content" class="w-100">
-                </div>
-                <div class="col-lg-6">
-                    <h3 class="native-content">Native Content</h3>
-                    <p class="native-content-p">Our native writers take the baton and come up with top quality content
-                        with your backlinks weaved naturally into the material. Once written, it passes through
-                        two-steps of quality check.</p>
-                </div>
-
-
-
-            </div>
-
+        <div class="definition-gp-div">
+            <h2>Why Should You Use <br> <strong>Guest Posting Services?</strong></h2>
+            <p><b>Guest posting</b> plays an important role in helping you build relationships with others in your
+                industry. You depend on <b>guest posting services</b> to expose your brand to new guests and drive
+                referral traffic to your website. This also helps to make potential SEO-boosting backlinks to your
+                website. </p>
+        </div>
+        <div class="definition-gp-div extraadding-lis">
+            <h2>Advantages Of Our <br> <strong>Guest Posting Service </strong></h2>
+            <p>If you are thinking of hiring a guest posting service, Check out the benefits below to make the final
+                judgment.</p>
+            <ul class="mt-2">
+                <li> Affordable price</li>
+                <li> High-quality Link building </li>
+                <li> Have quality awareness</li>
+                <li> Quality traffic </li>
+                <li>Enhance your rankings</li>
+                <li> On-time delivery</li>
+                <li> Money-back guarantee.</li>
+            </ul>
+        </div>
+        <div class="definition-gp-div">
+            <h2>We Provide You With <br> <strong>100% Risk-free SEO Service</strong></h2>
+            <p>We always supply the best <b>guest posting</b> SEO services to our clients. Your money will be safe with
+                us until you have profited, it is fully guaranteed. To buy <b>guest posts</b> from Fastlinky means you
+                are in safe hands. We are committed to 100% refunding you if we fail to fulfill our agreement as
+                promised. </p>
         </div>
     </section>
-
-    <!-- ================================================================================================ -->
-
-    <section class="native-content-section">
-
-        <div class="leelija-gp-service-head">
-            <!-- line seprator for divisions   -->
-            <section class="hr-seprator-css">
-                <hr class="separator separator--line" />
-                <hr class="separator separator--dots" />
-            </section>
-            <!-- line seprator for divisions   -->
-        </div>
-        <div class="container">
-            <div class="row align-items-center m-0">
-
-
-
-                <div class="col-lg-6">
-                    <h3 class="native-content">Your No-Hassle Solution</h3>
-                    <p class="native-content-p">The work given to us makes sure to have less burden on your part. You
-                        will technically have least worries regarding your blog outreach, as we put enough importance
-                        on-
-
-                    <ul>
-                        <li> <i class="far fa-check-circle"></i>Superior Quality</li>
-                        <li> <i class="far fa-check-circle"></i> Affordable Service</li>
-                        <li> <i class="far fa-check-circle"></i> Quick Turnaround Time</li>
-                        <li> <i class="far fa-check-circle"></i> Risk-Free SEO</li>
-                        <li><i class="far fa-check-circle"></i>Relevant Guest Linking</li>
-                    </ul><br>
-
-
-
-                    Considering all these, we, at Fastlinky, are the ultimate No-Hassle Solution for you, owing to our
-                    stream-lined process of Outreaching your services.
-                    </p>
-                </div>
-
-                <div class="col-lg-6">
-                    <img src="images/freepik-img/guest-posting-imgs8.png" alt=" Guest Linking solution" class="w-100">
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ================================================================================================ -->
-    <div class="leelija-gp-service-head">
-        <!-- line seprator for divisions   -->
-        <section class="hr-seprator-css">
-            <hr class="separator separator--line" />
-            <hr class="separator separator--dots" />
-        </section>
-        <!-- line seprator for divisions   -->
-    </div>
-    <section class="native-content-section ">
-
-        <div class="container">
-            <div class="row align-items-center m-0">
-                <div class="col-lg-6">
-                    <img src="images/freepik-img/guest-posting-imgs-7.png " alt="Real Sites" class="w-100">
-                </div>
-
-                <div class="col-lg-6">
-                    <h3 class="native-content">Powerful Links From Real Sites</h3>
-                    <p class="native-content-p">All the links that are undoubtedly going to be posted on the best sites
-                        for blogging, will also be having 100% efficient traffic on their website. This happens at
-                        Fastlinky, without fail. Secondly, the backlinking will be made in such a manner and will be
-                        containing perfectly anchored texts, that your future affiliations will become the strongest. So
-                        at Fastlinky, you get only Powerful Links from Real Sites.</p>
-                </div>
-
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ================================================================================================ -->
-
-    <!-- line seprator for divisions   -->
-    <section class="hr-seprator-css">
-        <hr class="separator separator--line" />
-        <hr class="separator separator--dots" />
-    </section>
-    <!-- line seprator for divisions   -->
-
-    <section class="native-content-section">
-        <div class="container">
-            <div class="row align-items-center m-0">
-
-
-                <div class="col-lg-6">
-                    <h3 class="native-content">No PBNs Is Our Motto, And We Stick By It</h3>
-                    <p class="native-content-p">
-
-                        You get No PBN or Private Blogging Networks from us at Fastlinky. A lot of guest posting
-                        services
-                        fake their clients on this part. For your kind information, let us make you aware of the fact
-                        that Google policies are strictly against PBN’S. But at Fastlinky, we swear on the core of each
-                        and every detailed work given by us, to never go through these PBN’s. So be rest assured, as ‘NO
-                        PBN’s’ is our primary and ultimate aim.
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <img src="images/freepik-img/guest-posting-no-pbns.png" alt="PBNs sites" class="w-100">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================================================================================================ -->
-
-    <section class="link-building-strategy-sec">
-
-        <div class="container">
-            <h3 class="link-building-strategy-head">Most Scalable Link Building Strategy</h3>
-            <div class="row">
-
-                <div class="col-sm-6">
-
-                    <!-- <p>The size or requirement of the order doesn’t matter as we can manage your blogger outreach orders effectively with quick and sustainable SEO benefits.</p> -->
-
-                    <div class="link-building-items">
-
-                        <ul>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <p>If you are a business owner, and look up to boost your website ranking high, need not
-                                    to
-                                    worry, we can take up the challenge in your business favour.</p>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-
-                                <p> Don’t worry about your top competitors, we will provide effective solutions to rack
-                                    up
-                                    your oppositions.</p>
-
-                            </li>
-                            <li>
-
-                                <i class="fas fa-check-circle"></i>
-
-                                <p>Guest posts help you to boost your service pages, by doing so one can assists own
-                                    site’s
-                                    pages rank higher in search engine.</p>
-
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="col-sm-6">
-
-                    <img src="images/freepik-img/guest-posting-imgs-6.png" alt="link buiding" class="w-100">
-
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- ================================================================================================ -->
-
-    <section class="benefits-of-choosing-sec">
-
-        <div class="benefits-of-choosing">
-            <h3 class="benefits-of-choosing-head">Benefits of Choosing Fastlinky</h3>
-            <div class="container">
-                <div class="row">
-
-                    <div class=" col-sm-6 col-md-6 col-12 col-lg-4">
-
-                        <div class="affordable-pricing">
-                            <p class="affordable-pricing-icon"><i class="far fa-money-bill-alt"></i></p>
-                            <h5>Affordable Pricing</h3>
-                                <p class="affordable-pricing-details">
-                                    You get the most affordable guest posting services from us, at Fastlinky. We give
-                                    you
-                                    a customised package for your own, if the prices seem to be unfit to you. The work
-                                    delivered by us will be ensuring all the money you have spent.
-                                </p>
-                        </div>
-
-                    </div>
-
-                    <div class=" col-sm-6 col-md-6 col-12 col-lg-4">
-
-                        <div class="affordable-pricing">
-                            <p class="affordable-pricing-icon"><i class="fas fa-certificate"></i></p>
-                            <h5> Superior Quality </h5>
-                            <p class="affordable-pricing-details">
-                                Perfectly anchored text, content written by experienced and native writers, well
-                                proofread write-ups, well-researched inputs, and market/trend-friendly work on the
-                                paper, is our prime attribute. Stay assured for the quality of work, that you will be
-                                getting at Fastlinky.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class=" col-sm-6 col-md-6 col-12 col-lg-4">
-
-                        <div class="affordable-pricing">
-                            <p class="affordable-pricing-icon"><i class="fas fa-cogs"></i></p>
-                            <h5>Seamless Process</h5>
-                            <p class="affordable-pricing-details">
-                                Our venture promises to work on a seamless process, which has ultimately resulted in
-                                bringing happiness amongst thousands of other businesses. Each and every work done is in
-                                a seamless manner; starting from doing the research for the content, till proper linking
-                                of that blog for guest posting.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class=" col-sm-6 col-md-6 col-12 col-lg-4">
-
-                        <div class="affordable-pricing">
-                            <p class="affordable-pricing-icon"><i class="fas fa-stopwatch"></i></p>
-                            <h5>On-Time Delivery</h3>
-                                <p class="affordable-pricing-details">
-                                    The best part about Fastlinky is the turnaround time. We are efficient and equally
-                                    punctual at rendering our works. You get all your works on time, as we clearly
-                                    evaluate the essence of time of our clients.
-                                </p>
-                        </div>
-
-                    </div>
-
-                    <div class=" col-sm-6 col-md-6 col-12 col-lg-4">
-
-                        <div class="affordable-pricing">
-                            <p class="affordable-pricing-icon"><i class="fas fa-check"></i></p>
-                            <h5> Trusted by 5000+ </h5>
-                            <p class="affordable-pricing-details">
-                                Join us by getting our service, and become satisfied by our service, like 10000+ others.
-                                The impression that Fastlinky leaves is impeccable, as quoted by many of our clients.
-                                The
-                                ultimate arrangement and working agenda of our team is so result-oriented, that
-                                Fastlinky
-                                has won the trust of many.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class=" col-sm-6 col-md-6 col-12 col-lg-4">
-
-                        <div class="affordable-pricing">
-                            <p class="affordable-pricing-icon"><i class="far fa-money-bill-alt"></i></p>
-                            <h5>Money-Back Guarantee</h5>
-                            <p class="affordable-pricing-details">
-                                If at all you feel like not being satisfied by our work, we assure you to restore the
-                                amount taken by you. It is because we believe in client satisfaction, and not solely to
-                                do business. So stay rest assured to have your money-back, if you feel like our service
-                                doesn't satisfy you.</p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- ================================================================================================ -->
-
-    <section class="risk-free-sec">
-
-        <div class="risk-free">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 m-auto ps-0">
-                        <img src="images/freepik-img/guest-posting-seo-img.png" alt="Risk-Free SEO Service"
-                            class="w-75">
-                    </div>
-                    <div class="col-sm-6">
-                        <h4 class="risk-free-head">
-                            100% Risk-Free SEO Service
-                        </h4>
-                        <div class="risk-free-content">
-
-                            <p>We make promises to give the best SEO services to our client. Don’t worry, your valuable
-                                money is safe with us until we make you happy.</p>
-                            <p>Buying an SEO service from Fastlinky, remember you are covered under safe hands. </p>
-                            <p> If you are not satisfied with our work, no worry we assure 100% money-back guarantee.
-                            </p>
-                            <p>We understand the value of your hard-earned money.</p>
-                            <p>As a responsible organization, we are committed to give you 100% money-back if we fail to
-                                make our deal fulfill as promised.</p>
-                            <p>
-                                Sincerely,<br>
-                                <span class="cEo">
-                                    <span> Safikul Islam </span><br>
-                                    CEO, Fastlinky.
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- ================================================================================================ -->
-
-
-    <div class="blogger-third-section">
-        <div class="container text-center">
-            <h2>Drive Good Results for Your Website</h2>
-            <div class="row">
-                <div class="col-md-12">
-                    <p>We have experience team of blogging outreach experts who help to get in touch with quality blogs.
-                        And we can strongly say that we provide one of the best services in this line of work. We have
-                        knowledge of work trained team, influential relationship with bloggers and manual blogging
-                        outreach services. </p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- ================================================================================================ -->
-
+    <!-- What Is The Definition Of Guest Posting? -->
+    <!-- ----------------------------------------------------- -->
     <!-- ================================================================================================= -->
     <!-- Frequently Asked Questions starts -->
     <!-- ================================================================================================ -->
@@ -831,41 +605,14 @@ if(isset($_GET['seo_url']))
     <!-- ================================================================================================= -->
     <!-- Frequently Asked Questions ends -->
     <!-- ================================================================================================ -->
-    <!-- ================================================================================================ -->
-    <!-- seller action page -->
+
     <div class="mt-4">
-        <?php include_once 'partials/seller-action.php'; ?>
+        <?php include('partials/seller-action.php') ?>
     </div>
-    <!-- seller action page ends -->
-    <!-- ====================================================================== -->
     <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
-    <!-- Footer -->
+    <!-- /Footer -->
     <script src="js/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $("select").change(function() {
-            var crntSel = $(this).val();
-            var crntSec = $(this).parents().parents().parents().children('.package-purchase-btn').css(
-                'background', '#1E80C0').css('color', 'white');
-        });
-
-        $(".package-purchase-btn").click(function() {
-            var nicheV = $(this).parents().attr('id');
-            var niche = "#" + nicheV + "";
-            var currentNiche = $(niche).children('.price-box-ul').children('li').children(
-                '.select-niche').val();
-
-            if (currentNiche == '' || currentNiche == null) {
-                $(niche).children(".chooseNiche").html("Please Choose a Niche");
-            } else {
-                window.location.href = 'package-order.php?package-type=' + nicheV + '&niche=' +
-                    currentNiche;
-            }
-
-        })
-    })
-    </script>
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 
 </body>
