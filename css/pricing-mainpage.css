@@ -1,0 +1,263 @@
+/* --------------------------- */
+/* main section  */
+/* ------------------------------ */
+
+.main_row{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin: 0;
+    width: 100%;
+}
+.client-details-left{
+    padding: 4rem 1.5rem 2rem 1.5rem;
+}
+label span.multiple {
+    background: #fafafd;
+    border-radius: 0.5rem;
+    color: #6b778c;
+    display: inline-block;
+    font-size: .675rem;
+    font-weight: 500;
+    line-height: 1;
+    margin-left: 0.25rem;
+    padding: 0.1rem 0.3rem;
+    vertical-align: middle;
+}
+label {
+    font-weight: 500;
+}
+.price-card-wrapper label {
+    padding: 1rem;
+}
+.hide-js {
+    display: none;
+}
+.p-card{
+    margin: 0.5rem 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    background-color: #fff;
+    border: 0 solid rgba(0,0,0,.05);
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    position: relative;
+    height: 100%;
+}
+.price-card-wrapper {
+    word-wrap: break-word;
+    color: #6b778c;
+    font-size: .81rem;
+    font-weight: 500;
+    border: 1px solid #dfe1e6;
+    background: #fff;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    transition: border .15s ease-in;
+}
+ input:checked+.price-card-wrapper:before {
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    color: #407BFF;
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 900;
+    position: absolute;
+    right: 8px;
+    top: 5px;
+}
+input:checked+.price-card-wrapper {
+    border-color: #407BFF;
+}
+ .item-details {
+    cursor: pointer;
+    display: block;
+    flex: 1 1 auto;
+    margin: 0;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    /* user-select: none; */
+    width: 100%;
+}
+.flex-column {
+    flex-direction: column!important;
+}
+.pricing-title{
+    font-family: "Satoshi-Variable" ;
+    font-weight: 500;
+    color: #00254d;
+    line-height: 1.5;
+    padding-bottom: 0.5rem;
+}
+.price-card-wrapper ul{
+    margin-bottom: 1rem;
+    text-align: left;
+    font-family: Poppins, Poppins;
+    padding-left: 2rem;
+    min-height: 100px;
+}
+.price-card-wrapper li {
+    list-style-type: disc;
+}
+.item-price{
+    font-family: Poppins, Poppins;
+    /* margin-top: 2rem; */
+
+}
+.default-price{
+    font-weight: 700;
+}
+
+ /* ------------------------- --------------------------*/
+ /*   col-lg-5 order-details-right - payment */
+ /* --------------------------------------------------------- */
+ .order-details-right{
+    padding: 1.5rem 1.5rem 4rem 1.5rem;
+    color: white;
+    background-color: #76a1a1;
+}
+ /* summary part */
+ /* ----------------------------------------------- */
+
+ .invoice-items {
+    border-radius: 0.25rem;
+    font-size: .81rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    position: relative;
+}
+ .cart-contents {
+    transition: opacity .2s ease-in-out;
+}
+.cart-contents hr {
+    border-top: 1px solid hsl(0deg 0% 100% / 78%);;
+}
+.invoice-items h2 {
+    font-size: 1.35rem;
+}
+
+.text-500 {
+    font-family: Poppins, Poppins;
+  font-weight: 500;
+ }
+.text-muted {
+   color: hsla(0,0%,100%,.5)!important;
+ }
+
+
+/* ------------------------------ */
+/* summary payment options */
+/* ---------------------------- */
+ .box-payment-btn {
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: lightblue;
+    /* background: aliceblue; */
+    padding: 2rem 2rem;
+}
+.bx_width_40 {
+    max-width: 100%;
+    background: lightblue;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: auto;
+}
+.cardBtn, .payLaterBtn, .paypalBtn {
+    border: 0px solid #00f;
+    border-radius: 1rem;
+    padding: 0.4rem 2.2rem;
+    font-size: 18px;
+    width: 100%;
+}
+.payLaterBtn img, .paypalBtn img {
+    object-fit: cover;
+    width: 25px;
+}
+.pay {
+    color: #11559d;
+    font-weight: 700;
+}
+.pal {
+    color: #1a9fec;
+    font-weight: 700;
+}
+ .masterCard img {
+    width: 40px;
+    object-fit: cover;
+}
+.visaCard img {
+    width: 40px;
+    object-fit: cover;
+}
+.myformgrp {
+    position: relative;
+    padding-bottom: 10px;
+}
+@media(max-width:575px){
+    .client-details-left{
+        padding: 2rem 1rem 2rem 1rem;
+    }
+    .order-details-right{
+        padding: 0rem; 
+    }
+    .box-payment-btn {
+        border-radius: 0px;
+    }
+ }
+@media(max-width:450px){
+    .cardBtn, .payLaterBtn, .paypalBtn {
+        padding: 0.4rem;
+        font-size: 15px;
+    }
+    .bx_width_40 {
+        padding: 1rem 0.5rem;
+        width: 100%;
+    }
+    .box-payment-btn {
+        padding:1rem;
+        border-radius:0px;
+    }
+ }
+ @media(max-width:375px){
+    .invoice-items {
+        padding: 2rem 1rem;
+    }
+ }
+
+ @media(max-width:319px){
+    .box-payment-btn {
+        background: none;
+        padding: 0;
+    }
+    .cardBtn, .payLaterBtn, .paypalBtn {
+        font-size: 14px;
+    }
+ }
+ @media(max-width:340px){
+    .masterCard img {
+        width: 30px;
+        object-fit: cover;
+    }
+    .visaCard img {
+        width: 25px;
+        object-fit: cover;
+    }
+ }
+ @media(min-width:992px) and (max-width:1199px){
+    .price-card-wrapper ul {
+        padding-left: 1rem;
+    }
+    .price-card-wrapper label {
+        padding: .5rem;
+    }
+ }
