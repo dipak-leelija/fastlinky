@@ -32,40 +32,21 @@ $wishes = $WishList->countWishlistByUser($cusId);
 <html lang="zxx">
 
 <head>
-    <title>User Dashboard | Dashboard :: <?php echo COMPANY_S; ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <script>
-    addEventListener("load", function() {
-        setTimeout(hideURLbar, 0);
-    }, false);
-
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    }
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Dashboard - <?php echo COMPANY_S; ?></title>
 
     <!-- Bootstrap Core CSS -->
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
 	<link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
 	<link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/leelija.css">
-
-    <!-- <link href="css/about.css" rel='stylesheet' type='text/css' /> -->
-    <!-- <link href="css/form.css" rel='stylesheet' type='text/css' /> -->
+    <link href="css/leelija.css" rel="stylesheet" type='text/css' >
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
 
     <link rel="shortcut icon" href="images/logo/favicon.png" type="image/png"/>
     <link rel="apple-touch-icon" href="images/logo/favicon.png" />
-   
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <!--//webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">

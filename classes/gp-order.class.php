@@ -3,25 +3,22 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-class Gporder extends DatabaseConnection{
+class PackageOrder extends DatabaseConnection{
 
 
 
-    function insertOrder($package,$niche,$customerID,$name,$email,$addrs,$zip,$cuntry,$notes,$paymentType,$status){
-        $sql   = "INSERT INTO `gp_package_order`(`package_id`, `niche`,`customer_id`, `name`, `email`, `address`, `zipCode`, `countries_id`, `notes`,`date`,`payment_type`, `status`) VALUES ('$package','$niche','$customerID','$name','$email','$addrs','$zip','$cuntry','$notes',now(), '$paymentType''$status')";
+  function insertPackageOrder($packageId, $niche, $customerID, $name, $email, $paymentType, $transection_id, $status, $orderStatus){
+    $sql ="INSERT INTO `gp_package_order`(`package_id`, `niche`, `customer_id`, `name`,	`email`, `date`,
+                                          `payment_type`,  `transection_id`, `status`, `order_status`	)
+                                  VALUES ('$packageId', '$niche', '$customerID', '$name', '$email', now(),
+                                          '$paymentType', '$transection_id', '$status', '$orderStatus')";
         $data  = $this->conn->query($sql);
-        
         if ($data) {
-          return $this->conn->insert_id();
+          $id = $this->conn->insert_id;
+          return $id;
+        }else {
+          return false;
         }
-    }
-
-    public function insertPackageOrder($packageId,$niche,$customerID,$name,$email,$addrs,$zip,$cuntry,$notes,$paymentType,$transection_id,$cc_ordered_key,$status, $orderStatus){
-        $sql ="INSERT INTO `gp_package_order`(`package_id`, `niche`, `customer_id`, `name`, `email`, `address`, `zipCode`, `countries_id`, `notes`, `date`, `payment_type`,`transection_id`,`cc_ordered_key`, `status`, `order_status`) VALUES ('$packageId','$niche','$customerID','$name','$email','$addrs','$zip','$cuntry','$notes',now(),'$paymentType','$transection_id','$cc_ordered_key','$status', '$orderStatus')";
-        // echo $sql.mysql_error();exit;
-        $data  = $this->conn->query($sql);
-        $count = $this->conn->insert_id;
-        return $count;
         
     }
 
@@ -74,25 +71,11 @@ class Gporder extends DatabaseConnection{
   
 
   function getOrderDetails($userId){
+    $myArr = array();
     $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId'";
     $data = $this->conn->query($sql);
-    $myArr = array();
     while($res = $data->fetch_object()){
-        $myArr[] = array(
-        $res->package_id,     //0
-        $res->niche,          //1
-        $res->name,           //2
-        $res->email,          //3
-        $res->address,        //4
-        $res->zipCode,        //5
-        $res->countries_id,   //6
-        $res->notes,          //7
-        $res->date,           //8
-        $res->transection_id, //9
-        $res->status,         //10
-        $res->order_status,   //11
-        $res->order_id        //12
-      );
+        $myArr[] = $res;
     }
     return $myArr;
   }

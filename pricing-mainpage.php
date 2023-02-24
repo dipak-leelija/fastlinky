@@ -139,7 +139,7 @@ $packages = $GPPackage->packDetailsByCat(1);
                                                         <div class="card p-card" id="">
                                                             <input id="field_2_0" value="120" type="checkbox"
                                                                 name="field_2[0]" required=""
-                                                                class="hide-js cart-input">
+                                                                class="d-none cart-input">
                                                             <div class="price-card-wrapper">
                                                                 <label for="field_2_0"
                                                                     class="item-details d-flex flex-column">
@@ -166,7 +166,7 @@ $packages = $GPPackage->packDetailsByCat(1);
                                                         <div class="card p-card" id="">
                                                             <input id="field_2_1" value="76" type="checkbox"
                                                                 name="field_2[1]" required=""
-                                                                class="hide-js cart-input">
+                                                                class="d-none cart-input">
                                                             <div class="price-card-wrapper">
                                                                 <label for="field_2_1"
                                                                     class="item-details d-flex flex-column">
@@ -193,7 +193,7 @@ $packages = $GPPackage->packDetailsByCat(1);
                                                         <div class="card p-card" id="">
                                                             <input id="field_2_2" value="121" type="checkbox"
                                                                 name="field_2[2]" required=""
-                                                                class="hide-js cart-input">
+                                                                class="d-none cart-input">
                                                             <div class="price-card-wrapper">
                                                                 <label for="field_2_2"
                                                                     class="item-details d-flex flex-column">

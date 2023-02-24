@@ -130,7 +130,17 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     class="hidden-xs hidden-sm">Guest posting Blogs</span></a>
         </li>
 
-
+        <li
+            class="<?= ($activePage == 'customer-packages') ? 'active-styling':'';  if($activePage =='customer-packages.php'){echo 'active-styling';}?>">
+            <a href="customer-packages.php" class="dboard-li-atag"><i class="fa-solid fa-cubes pe-2"></i><span
+                    class="hidden-xs hidden-sm">Packages</span></a>
+        </li>
+       
+        <li
+            class="<?= ($activePage == 'blogs-list') ? 'active-styling':'';  if($activePage =='order-now'){echo 'active-styling';}?>">
+            <a href="blogs-list.php" class="dboard-li-atag"><i class="fa-solid fa-tag pe-2"></i><span
+                    class="hidden-xs hidden-sm">Exclusive guest posting </span></a>
+        </li>
 
 
         <li class="<?= ($activePage == 'notifications') ? 'active-styling':''; ?>">
@@ -142,7 +152,6 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             <a href="edit-profile.php" class="dboard-li-atag"><i class="fa fa-cog pe-2" aria-hidden="true"></i><span
                     class="hidden-xs hidden-sm">Setting</span></a>
         </li>
-        <!-- <div><span class="wisListHeart"><i class="fas fa-heart"></i></span> <span><a href="">Wishlist</a></span></div> -->
         <li class="<?= ($activePage == 'wishlist') ? 'active-styling':''; ?>">
             <a href="wishlist.php" class="wishlistBlog dboard-li-atag"><span class="wisListHeart"><i class="fas fa-heart"></i></span>
                 <span>Wishlist</span></a>

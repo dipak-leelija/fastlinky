@@ -1,28 +1,22 @@
 <?php
 session_start();
-
-require_once("_config/dbconnect.php");
-require_once "_config/dbconnect.trait.php";
-
 require_once "includes/constant.inc.php";
-require_once "classes/encrypt.inc.php";
 
-require_once "classes/customer.class.php";
-require_once "classes/content-order.class.php";
-require_once "classes/gp-order.class.php";
-require_once "classes/orderStatus.class.php";
-// require_once "classes/order.class.php";
-require_once "classes/domain.class.php";
-require_once "classes/blog_mst.class.php";
-require_once "classes/utility.class.php";
+require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/_config/dbconnect.trait.php";
+
+require_once ROOT_DIR."/classes/encrypt.inc.php";
+
+require_once ROOT_DIR."/classes/customer.class.php";
+require_once ROOT_DIR."/classes/content-order.class.php";
+require_once ROOT_DIR."/classes/gp-order.class.php";
+require_once ROOT_DIR."/classes/orderStatus.class.php";
+require_once ROOT_DIR."/classes/utility.class.php";
 
 /* INSTANTIATING CLASSES */
 $customer		= new Customer();
 $ContentOrder   = new ContentOrder();
-$Gporder        = new Gporder();
-// $Order          = new Order();
-$Domain         = new Domain();
-$BlogMst		= new BlogMst();
+$PackageOrder   = new PackageOrder();
 $OrderStatus    = new OrderStatus();
 $utility		= new Utility();
 ######################################################################################################################
@@ -30,8 +24,9 @@ $typeM		= $utility->returnGetVar('typeM','');
 //user id
 $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
+
 if($cusId == 0){
-    header("Location: index.php");
+    header("Location: ".URL);
 }
 
 if($cusDtl[0][0] == 2){

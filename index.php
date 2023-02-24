@@ -8,8 +8,6 @@ require_once "_config/dbconnect.trait.php";
 
 require_once("includes/constant.inc.php");
 require_once("classes/date.class.php");
-require_once("classes/error.class.php");
-require_once("classes/search.class.php");
 require_once("classes/customer.class.php");
 require_once("classes/login.class.php");
 require_once("classes/services.class.php");
@@ -20,14 +18,11 @@ require_once("classes/utility.class.php");
 require_once("classes/utilityMesg.class.php");
 require_once("classes/utilityImage.class.php");
 require_once("classes/utilityNum.class.php");
-require_once("classes/gp-order.class.php");
 require_once("classes/faqs.class.php");
 
 // require_once("classes/gp-package.class.php");
 /* INSTANTIATING CLASSES */
-$dateUtil   = new DateUtil();
-$error 			= new Error();
-$search_obj	= new Search();
+$dateUtil       = new DateUtil();
 $customer		= new Customer();
 $logIn			= new Login();
 $service		= new Services();
@@ -36,7 +31,6 @@ $utility		= new Utility();
 $uMesg 			= new MesgUtility();
 $uImg 			= new ImageUtility();
 $uNum 			= new NumUtility();
-$gp				= new Gporder();
 $faqs		    = new faqs();
 
 // $GPPackage      = new GuestPostpackage();
