@@ -33,7 +33,7 @@ $utility		= new Utility();
 $uMesg 			= new MesgUtility();
 $uImg 			= new ImageUtility();
 $uNum 			= new NumUtility();
-$gp				= new Gporder();
+$gp				= new PackageOrder();
 $faqs		    = new faqs();
 ######################################################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
@@ -94,16 +94,19 @@ if(isset($_GET['seo_url']))
             <div class="row mlb-main-start-row">
                 <div class="col-12 col-lg-6 col-md-6  px-0 px-md-2">
                     <div class="mlb-wrapping">
-                        <h1 class="mlb-starting-main-h1">Link <span>Insertion</span> Services </h1>
-                        <p class=" mt-3 mb-4 py-0 py-md-2 mlb-starting-main-p">Find your website link placed
-                            contextually in suitable blog posts on authentic websites.
+                        <h1 class="mlb-starting-main-h1">Link <span>insertion</span> service</h1>
+                        <p class=" mt-3 mb-4 py-0 py-md-2 mlb-starting-main-p"><b>Link insertion</b> is a unique way to
+                            make a positive impact on your backlink profile and increase your SERP ranking.
                         </p>
                         <div class="add-css-frleft">
                             <ul>
-                                <li class="tick-check"> &#10004; <b class="tick-check-p">100% editorial, niche relevant,
+                                <li class="tick-check"> &#10004; <b class="tick-check-p">Suitable links
                                     </b> </li>
-                                <li class="tick-check"> &#10004; <b class="tick-check-p">outreach-based edits for better
-                                        traffic and better results </b></li>
+                                <li class="tick-check"> &#10004; <b class="tick-check-p">Real blogs, genuine result </b>
+                                </li>
+                                <li class="tick-check"> &#10004; <b class="tick-check-p">100% unique & editorial</b>
+                                </li>
+                                <li class="tick-check"> &#10004; <b class="tick-check-p">No PBNs</b></li>
                             </ul>
                         </div>
                         <div class=" buttonsinfo ">
@@ -116,7 +119,8 @@ if(isset($_GET['seo_url']))
                 <div class="col-12 col-lg-6 col-md-6  p-0">
                     <div class="mlb-wrapping">
                         <img src="./images/freepik-img/link-insertion-banner.png " class="img-fluid"
-                            style="background-image: linear-gradient(120deg, #FDA33B 50%, #FA8273 80%); border-radius: 4rem;" alt="">
+                            style="background-image: linear-gradient(120deg, #FDA33B 50%, #FA8273 80%); border-radius: 4rem;"
+                            alt="">
                     </div>
                 </div>
             </div>
@@ -131,15 +135,15 @@ if(isset($_GET['seo_url']))
         <div class="row">
             <div class=" col-xl-6 col-md-6">
                 <h1 class="lbs-actually-matters-main-h1 mb-3">
-                    <span> Advantages </span> Of Link Insert
+                    <span> Benefits Of </span>Our Link Insertion Service
                 </h1>
                 <div class="actually-card-div1">
                     <div class="  actually-card-inn-img-div">
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        In the content, <b>Editorial Links</b> are inserted naturally, like within the flow of
-                        words.
+                        <strong>Proper Links :</strong> <br>
+                        We always provide you with a natural link that is editorially related to the content.
                     </div>
                 </div>
                 <div class="actually-card-div1">
@@ -147,8 +151,10 @@ if(isset($_GET['seo_url']))
                         <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        The links are placed naturally and published on <b>niche-relevant and authority websites</b>
-                        for High URL Ratings.
+                        <strong>Anchor Text :</strong> <br>
+                        Anchor text is the key to your success but using the same keyword multiple times should harm
+                        your SEO. We use up-to-date articles that bring useful information to your <b>niche edit
+                            service. </b>
                     </div>
                 </div>
                 <div class="actually-card-div1 ">
@@ -156,7 +162,8 @@ if(isset($_GET['seo_url']))
                         <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        <b>Genuine Outreach</b> offers valuable niche relevant edits on authentic websites.
+                        <strong>Relevant Article :</strong> <br>
+                        Always place the backlinks on relevant blog posts with the right page authority.
                     </div>
                 </div>
                 <div class="actually-card-div1">
@@ -164,7 +171,17 @@ if(isset($_GET['seo_url']))
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        Guaranteed <b>Zero Duplication</b> Policy. Every time you got a unique site.
+                        <strong>No Duplicity :</strong> <br>
+                        There are no duplicate link placements here, so you will get 100% unique ones.
+                    </div>
+                </div>
+                <div class="actually-card-div1">
+                    <div class="  actually-card-inn-img-div">
+                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
+                    </div>
+                    <div class="lbp-texting">
+                        <strong>Save Money:</strong> <br>
+                        An efficient way for us to build links for you that are more affordable to buy.
                     </div>
                 </div>
             </div>
@@ -211,7 +228,7 @@ if(isset($_GET['seo_url']))
     <!-- __________________________________________________________________________________________ -->
 
     <section class="how-it-works-main-section">
-        <h1>How It <span> <b>Works?</b> </span></h1>
+        <h1>How Does <span> <b>Our Link Insertion Service Works?</b> </span></h1>
         <div class="text-center py-4">
             <img src="./images/dummy-img/link-inserting-123img.png" class="how-it-works-1st-img" alt="">
         </div>
@@ -223,12 +240,11 @@ if(isset($_GET['seo_url']))
                     <div class=" ">
                         <img src="./images/dummy-img/link-insertion-service-howitwork1.png" class="w-100" alt="">
                     </div>
-                    <h4>Genuine <span>Outreach</span> </h4>
+                    <h4>Real <span>Blog Post</span> </h4>
                     <p>
-                        Just select which anchor text and URL you want to link for your site. Our expert outreach team
-                        will find authentic websites and real blog posts for your specification. Moreover, they will
-                        connect you with the site admins or owners to get perfect contextual link arrangements in their
-                        posts. </p>
+                        Choose anchor text in your <b>niche edit service</b>. At Fastlinky we search for real blog posts
+                        on real websites to connect with site owners to get you suitable link placement on these posts.
+                        Be careful, otherwise, you can get links from low-quality sites that will damage your SEO. </p>
                 </div>
             </div>
             <div class="col-md-4 col-xl-4">
@@ -236,10 +252,10 @@ if(isset($_GET['seo_url']))
                     <div class="">
                         <img src="./images/dummy-img/link-insertion-service-howitwork2.png" class="w-100" alt="">
                     </div>
-                    <h4>Valuable <span>Content</span> </h4>
+                    <h4>Beneficial <span>Content</span> </h4>
                     <p>
-                        We have prominent native writers from UK and US. they value every anchor text. Therefore, they
-                        create niche relevant blog post and the anchor text are placed lawlessly in the content.</p>
+                        Our professional team strives to improve these blog posts perfectly. They ensure that your link
+                        is naturally included in the content.</p>
                 </div>
             </div>
             <div class="col-md-4 col-xl-4">
@@ -247,17 +263,86 @@ if(isset($_GET['seo_url']))
                     <div class="">
                         <img src="./images/dummy-img/link-insertion-service-howitwork3.png" class="w-100" alt="">
                     </div>
-                    <h4>Reliable <span>Reporting</span> </h4>
+                    <h4>Valid <span>Report</span> </h4>
                     <p>
-                        You will get every real-time notification and view of single niche edit. The client can all
-                        these features within your dashboard. Moreover, you will get to know the full DA metrics. Also,
-                        a client can export a non-branded CSV that can be used for White Label reporting. </p>
+                        You can get a valid report of every single <b>niche edit service</b> that we secure for you from
+                        within
+                        your dashboard. </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- How It Works-section ends -->
+    <!--  -->
+    <section class="who-can-take-section">
+        <div class="">
+            <div>
+                <h2 class=" text-center mt-4 my-3 who-advantages-main-h2">Why You Choose FastLinky <span> For Link
+                        Insertion Service? </span>
+                </h2>
+
+            </div>
+            <div class=" mt-5">
+                <div class="row">
+                    <div class="col-md-4 col-xl-3">
+                        <div class="who-take-card">
+                            <div class="text-center pb-3 ">
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4  ">Skilled writers</h4>
+                            <p class="">
+                                We have a team of professional writers. They create quality content that improves the
+                                importance of existing posts. They ensure that the link seems completely natural and the
+                                blog owner also appreciates it. </p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 col-xl-3 ">
+                        <div class="who-take-card">
+                            <div class="text-center pb-3 ">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4 ">Originality</h4>
+                            <p class="">
+                                We will always help you to choose the right opportunity. The reason we achieve more
+                                success is that we always connect with choosy bloggers. </p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                        <div class="who-take-card">
+                            <div class="text-center pb-3">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4  ">SEO Purposes </h4>
+                            <p class="">
+                                We always create links that are valuable for SEO, and we carefully check all sites to
+                                confirm that they just exist to sell links.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                        <div class="who-take-card">
+                            <div class="text-center pb-3">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4  ">Contextual Link Building </h4>
+                            <p class="">
+                                A <b>contextual link</b> is a rich link to your web page content, we serve relevant
+                                links that increase your premium URL power. We can recognize the highest ranking and
+                                most specific blogs to target for link insertion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How Does Our FastLinky’s Guest Posting Service Work? ends -->
+        <!-- --------------------------------------------- -->
+    </section>
     <!-- __________________________________________________________________________________________ -->
     <!-- extra details -->
     <div class="features-sec">
