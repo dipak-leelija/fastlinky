@@ -32,10 +32,6 @@ $utility		= new Utility();
 $uMesg 			= new MesgUtility();
 $uImg 			= new ImageUtility();
 $uNum 			= new NumUtility();
-<<<<<<< HEAD
-$gp				= new PackageOrder();
-=======
->>>>>>> 60353822f52d48c2a69340b7bd81e643a2c6d734
 $faqs		    = new faqs();
 ######################################################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
@@ -141,19 +137,19 @@ if(isset($_GET['seo_url']))
                 </h1>
                 <div class="actually-card-div1">
                     <div class="  actually-card-inn-img-div">
-                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
+                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        <strong>Proper Links :</strong> <br>
+                        <strong>Proper Links </strong> <br>
                         We always provide you with a natural link that is editorially related to the content.
                     </div>
                 </div>
                 <div class="actually-card-div1">
                     <div class="  actually-card-inn-img-div">
-                        <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img" alt="">
+                        <img src="./images/dummy-img/real-bo-ul-li-2.png" class="insertion-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        <strong>Anchor Text :</strong> <br>
+                        <strong>Anchor Text </strong> <br>
                         Anchor text is the key to your success but using the same keyword multiple times should harm
                         your SEO. We use up-to-date articles that bring useful information to your <b>niche edit
                             service. </b>
@@ -161,28 +157,28 @@ if(isset($_GET['seo_url']))
                 </div>
                 <div class="actually-card-div1 ">
                     <div class="  actually-card-inn-img-div">
-                        <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img" alt="">
+                        <img src="./images/dummy-img/real-bo-ul-li-3.png" class="insertion-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        <strong>Relevant Article :</strong> <br>
+                        <strong>Relevant Article </strong> <br>
                         Always place the backlinks on relevant blog posts with the right page authority.
                     </div>
                 </div>
                 <div class="actually-card-div1">
                     <div class="  actually-card-inn-img-div">
-                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
+                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        <strong>No Duplicity :</strong> <br>
+                        <strong>No Duplicity </strong> <br>
                         There are no duplicate link placements here, so you will get 100% unique ones.
                     </div>
                 </div>
                 <div class="actually-card-div1">
                     <div class="  actually-card-inn-img-div">
-                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
+                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        <strong>Save Money:</strong> <br>
+                        <strong>Save Money</strong> <br>
                         An efficient way for us to build links for you that are more affordable to buy.
                     </div>
                 </div>
@@ -190,7 +186,7 @@ if(isset($_GET['seo_url']))
             <div class="col-xl-6 col-md-6 m-auto">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/link-insertion-adv.png" class=" w-100  mb-4 " alt="">
+                        <img src="./images/freepik-img/livecenter-img-front.png" class=" w-100  my-4 " alt="">
                     </div>
                 </div>
             </div>
@@ -219,7 +215,7 @@ if(isset($_GET['seo_url']))
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
             DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
 
-        <?php require_once "partials/pricing-cards.php"; ?>
+        <?php // require_once "partials/pricing-cards.php"; ?>
     </section>
 
     <!-- ------------------------------------------------ -->
@@ -230,7 +226,7 @@ if(isset($_GET['seo_url']))
     <!-- __________________________________________________________________________________________ -->
 
     <section class="how-it-works-main-section">
-        <h1>How Does <span> <b>Our Link Insertion Service Works?</b> </span></h1>
+        <h1>How Does <span> Our Link Insertion Service Works?</span></h1>
         <div class="text-center py-4">
             <img src="./images/dummy-img/link-inserting-123img.png" class="how-it-works-1st-img" alt="">
         </div>
@@ -287,7 +283,7 @@ if(isset($_GET['seo_url']))
             </div>
             <div class=" mt-5">
                 <div class="row">
-                    <div class="col-md-4 col-xl-3">
+                    <div class=" col-sm-6 col-md-6 col-lg-3">
                         <div class="who-take-card">
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
@@ -300,7 +296,7 @@ if(isset($_GET['seo_url']))
                         </div>
 
                     </div>
-                    <div class="col-md-4 col-xl-3 ">
+                    <div class="col-sm-6 col-md-6 col-lg-3 ">
                         <div class="who-take-card">
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
@@ -312,7 +308,7 @@ if(isset($_GET['seo_url']))
                         </div>
 
                     </div>
-                    <div class="col-md-4 col-xl-3">
+                    <div class="col-sm-6 col-md-6 col-lg-3">
                         <div class="who-take-card">
                             <div class="text-center pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
@@ -325,7 +321,7 @@ if(isset($_GET['seo_url']))
                         </div>
 
                     </div>
-                    <div class="col-md-4 col-xl-3">
+                    <div class="col-sm-6 col-md-6 col-lg-3">
                         <div class="who-take-card">
                             <div class="text-center pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
@@ -345,6 +341,38 @@ if(isset($_GET['seo_url']))
         <!-- How Does Our FastLinky’s Guest Posting Service Work? ends -->
         <!-- --------------------------------------------- -->
     </section>
+
+
+        <!-- _______________________________________________________________________________________________ -->
+    <!-- Advantages Of Link Insert start -->
+
+    <section class="lbs-actually-matters-main">
+        <div class="row">
+            <div class=" col-xl-6 col-md-6">
+                <h1 class="lbs-actually-matters-main-h1 mb-3">
+                How Does 
+                    <span> link insertion Boost SEO? </span>
+                </h1>
+               <p>
+               When you add suitable links on your website to existing content on other websites, it is called <b>link insertion</b>. <b>Link insertion </b> is a backlink from another page to your page that helps provide extra knowledge to the reader of the original article. We provide you with an adequate link insertion service. This is also called the <b>Niche edit service</b> . At FastLinky, you can get the best service to insert your link.
+               </p>
+            </div>
+            <div class="col-xl-6 col-md-6 m-auto">
+                <div class="">
+                    <div>
+                        <img src="./images/freepik-img/livecenter-img-front.png" class=" w-100  my-4 " alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" buttonsinfo mt-3">
+            <a href="#pricing-cards">
+                <button type="button" class="btn managed-link-btn ">See Pricing</button>
+            </a>
+        </div>
+    </section>
+    <!-- Advantages Of Link Insert ends -->
+    <!-- _________________________________________________________________________________________________ -->
     <!-- __________________________________________________________________________________________ -->
     <!-- extra details -->
     <div class="features-sec">
