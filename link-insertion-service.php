@@ -18,7 +18,6 @@ require_once("classes/utility.class.php");
 require_once("classes/utilityMesg.class.php");
 require_once("classes/utilityImage.class.php");
 require_once("classes/utilityNum.class.php");
-require_once("classes/gp-order.class.php");
 require_once("classes/faqs.class.php");
 
 /* INSTANTIATING CLASSES */
@@ -33,7 +32,10 @@ $utility		= new Utility();
 $uMesg 			= new MesgUtility();
 $uImg 			= new ImageUtility();
 $uNum 			= new NumUtility();
+<<<<<<< HEAD
 $gp				= new PackageOrder();
+=======
+>>>>>>> 60353822f52d48c2a69340b7bd81e643a2c6d734
 $faqs		    = new faqs();
 ######################################################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
