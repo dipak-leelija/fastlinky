@@ -22,7 +22,7 @@ $typeM		= $utility->returnGetVar('typeM','');
 //user id
 $cusId		= $utility->returnSess('userid', 0);
 
-$packages = $GPPackage->packDetailsByCat(6);
+$packages = $GPPackage->packDetailsByCat(5);
 
 ?>
 <!DOCTYPE HTML>
