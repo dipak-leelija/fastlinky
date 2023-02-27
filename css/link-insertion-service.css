@@ -111,8 +111,11 @@
 /* __________________________________________________________________________________________________ */
 /* Advantages Of Link Insert starts */
 /* __________________________________________________________________________________________________ */
+.insertion-page-second-ul-li-img{
+    width: 70px;
+}
 .lbs-actually-matters-main {
-    background: #f7f7f7;
+    /* background: #f7f7f7; */
     padding: 5rem;
 }
 .lbs-actually-matters-main-h1 {
@@ -122,13 +125,23 @@
     color: #FDA33B;
     font-weight: 600;
 }
-
+.lbs-actually-matters-main p {
+    text-align: left;
+    color: #3F4450;
+    font-family: "Helvetica", Poppins;
+    font-size: 19px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
 .lbp-texting {
+    color: #747880;
     font-family: "Helvetica", Poppins;
     font-size: 17px;
     line-height: 1.625em;
 }
-
+.lbp-texting strong{
+    color: #383a50;
+}
 .actually-card-inn-img-div {
     padding-right: 1rem;
     padding-left: 1rem;
@@ -238,7 +251,7 @@
 
 /* why choose */
 .who-can-take-section {
-    padding: 7rem;
+    padding: 4rem 6rem 2rem;
 }
 .who-advantages-main-h2 {
     font-weight: 600;
@@ -250,25 +263,24 @@
     color: #FDA33B;
 }
 .who-take-card {
-    padding:2.5rem 1.5rem;
+    padding:2.5rem 1.5rem 1rem;
     background: #fff;
     margin: 13px 0;
     border: none;
-    min-height: 520px;
-
-
+    min-height: 470px;
 }
 
 .who-take-card:hover {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-    /* border-bottom-right-radius: 65px;
-    border-bottom: 2px solid #FDA33B; */
-    border-top-right-radius: 65px;
-    border-top: 2px solid #FDA33B;
-    /* min-height: 520px; */
-    /* box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
-    -webkit-box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%); */
+    box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
+    -webkit-box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
+    transition: all .9s ease;
+    background-color: #FFF0;
+    background-image: url(../images/dummy-img/card-hover-bg-img-removebg-preview.jpg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border-top-right-radius: 65px;
+    border-top: 2px solid #FDA33B; */
 }
 
 .who-take-card h4 {
@@ -340,6 +352,9 @@
 }
 
 @media (max-width:991px) {
+    .who-take-card {
+        min-height: 300px;
+    }
     .who-can-take-section {
         padding: 2rem !important;
     }
@@ -452,7 +467,7 @@
     }
 
     .lbs-actually-matters-main {
-        padding: 1rem !important;
+        padding: 3rem 1rem 0rem !important;
     }
 
 }
