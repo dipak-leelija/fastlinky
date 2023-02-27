@@ -12,7 +12,8 @@
                         <div class="price-box-content" id="">
                             <p class="package_type_category"><?php echo $eachPack['package_name']; ?></p>
                             <div class="packHr"></div>
-                            <p class="price-box-title"><span class="dollar"><?php echo CURRENCY; ?></span><span class="main-price"><?php echo $eachPack['price']; ?></span>
+                            <p class="price-box-title"><span class="dollar"><?php echo CURRENCY; ?></span><span
+                                    class="main-price"><?php echo $eachPack['price']; ?></span>
                             </p>
                             <p class="chooseNiche"></p>
                             <ul class="price-box-ul">
@@ -22,8 +23,8 @@
                                 }
                                 ?>
                             </ul>
-                            <button type="button" name="package-purchase-btn" id="package-purchase-btn"
-                                class="package-purchase-btn">purchase now</button>
+                                <button type="button" name="package-purchase-btn" id="package-purchase-btn"
+                                    class="package-purchase-btn">purchase now</button>
                         </div>
                     </div>
                     <?php

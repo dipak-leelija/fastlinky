@@ -125,6 +125,8 @@ $custDtls = $customer->getCustomerData($cusId);
 
                                                         $pack           = $GPPackage->packDetailsById($packId);
                                                         $packCat        = $GPPackage->packCatById($pack['category_id']);
+                                                        $features       = $GPPackage->featureByPackageId($packId);
+
                                                         $packFullName   = $packCat['category_name'].' '.$pack['package_name'];
 
                                                         $selectedPacks[]    = $packFullName;
@@ -134,13 +136,14 @@ $custDtls = $customer->getCustomerData($cusId);
                                                     <div class="col-md-4 px-md-2">
                                                         <div class="card price-card-wrapper" id="">
 
-                                                            <p class="pricing-title"><?php echo $packFullName; ?>
-                                                                (<?php echo $pack['blog_post']; ?> Links)</p>
+                                                            <p class="pricing-title"><?php echo $packFullName; ?></p>
                                                             <ul class="">
-                                                                <li> <strong>5 Links Per Month</strong> </li>
-                                                                <li> DR 20-29: 2 links</li>
-                                                                <li> DR 30-39: 2 links</li>
-                                                                <li> DR 40-49: 1 link</li>
+                                                                <li> <strong><?php echo $pack['blog_post'];?> Blog Post</strong> </li>
+                                                                <?php
+                                                                foreach ($features as $eachfeature) {
+                                                                    echo '<li>'. $eachfeature['features'].'</li>';
+                                                                }
+                                                                ?>
 
                                                             </ul>
                                                             <div class="item-price">

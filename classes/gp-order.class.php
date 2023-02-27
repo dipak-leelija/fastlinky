@@ -1,17 +1,18 @@
 <?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 class PackageOrder extends DatabaseConnection{
 
 
 
-  function insertPackageOrder($packageId, $niche, $customerID, $name, $email, $paymentType, $transection_id, $status, $orderStatus){
-    $sql ="INSERT INTO `gp_package_order`(`package_id`, `niche`, `customer_id`, `name`,	`email`, `date`,
-                                          `payment_type`,  `transection_id`, `status`, `order_status`	)
-                                  VALUES ('$packageId', '$niche', '$customerID', '$name', '$email', now(),
-                                          '$paymentType', '$transection_id', '$status', '$orderStatus')";
+  function addPackageOrder($packageId, $niche, $customerID, $name, $email, $price, $paid_amount, $paymentType, $transection_id, $status, $orderStatus){
+    
+    $sql ="INSERT INTO `gp_package_order`(`package_id`, `niche`, `customer_id`, `name`,	`email`, `price`, `paid_amount`, `payment_type`,
+                                          `transection_id`, `status`, `order_status`, `date`)
+                                  VALUES ('$packageId', '$niche', '$customerID', '$name', '$email', '$price', '$paid_amount', '$paymentType',
+                                          '$transection_id', '$status', '$orderStatus', now())";
         $data  = $this->conn->query($sql);
         if ($data) {
           $id = $this->conn->insert_id;
@@ -36,7 +37,7 @@ class PackageOrder extends DatabaseConnection{
     }
 
 
-    function successPayment($order_id, $transectionId, $paymentMode, $paymentStatus, $order_status){
+    function updatePayment($order_id, $transectionId, $paymentMode, $paymentStatus, $order_status){
       $sql = "UPDATE `gp_package_order` 
               SET 
               `transection_id` = '$transectionId',
@@ -48,9 +49,9 @@ class PackageOrder extends DatabaseConnection{
 
       $data = $this->conn->query($sql);
       if($data){
-        return 1;
+        return true;
       }else {
-        return 0;
+        return false;
       }
       //echo $sql.mysql_error();
     }

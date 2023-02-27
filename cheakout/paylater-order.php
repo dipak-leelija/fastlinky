@@ -7,6 +7,7 @@ require_once ROOT_DIR."/_config/dbconnect.trait.php";
 
 require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/gp-package.class.php";
+require_once ROOT_DIR."/classes/gp-order.class.php";
 require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/location.class.php";
 require_once ROOT_DIR."/classes/countries.class.php";
@@ -17,6 +18,7 @@ require_once ROOT_DIR."/classes/utility.class.php";
 $DateUtil       = new DateUtil();
 
 $GPPackage      = new GuestPostpackage();
+$PackageOrder   = new PackageOrder();
 $customer		= new Customer();
 $Location       = new Location();
 $Countries      = new Countries();
@@ -41,7 +43,12 @@ if (!isset($_SESSION['package'])) {
     exit;   
 }
 
-$custDtls = $customer->getCustomerData($cusId);
+$customerName       = $cusDtl[0][5].' '.$cusDtl[0][6];
+$customerEmail      = $cusDtl[0][3];
+$customerMobile     = $cusDtl[0][34];
+$customerCity       = $Location->getCityDataById($cusDtl[0][27])['city'];
+$customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
+
 
 ?>
 <!DOCTYPE html>
@@ -51,9 +58,9 @@ $custDtls = $customer->getCustomerData($cusId);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Order Summary - <?php echo COMPANY_S; ?></title>
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
-    <title>Package Order Summary - <?php echo $clientOrderedSite;?> | <?php echo COMPANY_S; ?></title>
 
     <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="../css/payment-summary-style.css">
@@ -74,11 +81,11 @@ $custDtls = $customer->getCustomerData($cusId);
                     <div class="customer-details-section">
                         <div class="card customer-d-card">
                             <h5>Customer Details</h5>
-                            <p><label><?php echo $custDtls[0][5].' '.$custDtls[0][6];?></label></p>
-                            <p><label><?php echo $custDtls[0][3];?></label></p>
-                            <p><label><?php echo $custDtls[0][34];?></label></p>
-                            <p><label><?php echo $Location->getCityDataById($custDtls[0][27])['city'];?></label></p>
-                            <p><label><?php echo $Location->getCountyDataByCountyId($custDtls[0][30])[1];?></label></p>
+                            <p><label><?php echo $customerName; ?></label></p>
+                            <p><label><?php echo $customerEmail; ?></label></p>
+                            <p><label><?php echo $customerMobile; ?></label></p>
+                            <p><label><?php echo $customerCity; ?></label></p>
+                            <p><label><?php echo $customerCountry; ?></label></p>
                         </div>
                     </div>
                 </div>
@@ -95,9 +102,7 @@ $custDtls = $customer->getCustomerData($cusId);
                 </div>
             </div>
 
-            <form action="paylater-order-success.php" method="post">
-                <input type="hidden" name="blogId" id="blogId" value="<?php echo $blogId; ?>">
-
+            <form action="order-processing.php" method="post">
                 <div class=" display-table text-center">
                     <!-- <div class="features_grids table-responsive"> -->
                     <table class="table detailing-table">
@@ -119,9 +124,10 @@ $custDtls = $customer->getCustomerData($cusId);
                                 $packCat        = $GPPackage->packCatById($pack['category_id']);
                                 $packFullName   = $packCat['category_name'].' '.$pack['package_name'];
                             
-                                $selectedPacks[]    = $packFullName;
-                                $packsCosts[]       = $pack['price'];
-                                $totalCost          += $pack['price'];
+                                $totalCost      += $pack['price'];
+
+                                
+                                $orderIds[] = $PackageOrder->addPackageOrder($packId, '', $cusId, $customerName, $customerEmail, $pack['price'], $pack['price'], 'PayLater', '', '2', '2');
                             ?>
                             <tr>
                                 <td class="text-start"><b><?php echo $packFullName; ?></b> </td>
@@ -132,6 +138,7 @@ $custDtls = $customer->getCustomerData($cusId);
                             </tr>
                             <?php
                             }
+                            $_SESSION['orderIds']    =    $orderIds;
                             ?>
                         </tbody>
                     </table>
@@ -146,7 +153,6 @@ $custDtls = $customer->getCustomerData($cusId);
                                 <thead class="table-secondary">
                                     <tr>
                                         <th class="text-center" scope="col">Invoice Summary</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -157,7 +163,6 @@ $custDtls = $customer->getCustomerData($cusId);
                                                 <div class="col-6 text-end fw-semibold">
                                                     <?php echo CURRENCY.$totalCost;?></div>
                                             </div>
-
                                         </td>
                                     </tr>
                                     <tr>
@@ -172,7 +177,7 @@ $custDtls = $customer->getCustomerData($cusId);
                                         <td>
                                         <div class="row">
                                                 <div class="col-12 text-end">
-                                                    <button type="submit" class="btn btn-primary rounded-pill w-100 fw-semibold">Place Order</button>
+                                                    <button type="submit" class="btn btn-primary rounded-pill w-100 fw-semibold" name="paylaterForm">Place Order</button>
                                                 </div>
                                                 <div class="col-12 text-end">
                                                     <button type="button" class="btn btn-danger rounded-pill w-100 fw-semibold mt-2" onclick="history.back()">Cancel</button>

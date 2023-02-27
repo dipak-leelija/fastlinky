@@ -235,6 +235,65 @@
 /* --------------------------------------------------------------------------------------------- */
 /* how it works ends */
 /* --------------------------------------------------------------------------------------------- */
+
+/* why choose */
+.who-can-take-section {
+    padding: 7rem;
+}
+.who-advantages-main-h2 {
+    font-weight: 600;
+    color: #383a50;
+    font-family: "Poppins", Poppins;
+}
+
+.who-advantages-main-h2 span {
+    color: #FDA33B;
+}
+.who-take-card {
+    padding:2.5rem 1.5rem;
+    background: #fff;
+    margin: 13px 0;
+    border: none;
+    min-height: 520px;
+
+
+}
+
+.who-take-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    /* border-bottom-right-radius: 65px;
+    border-bottom: 2px solid #FDA33B; */
+    border-top-right-radius: 65px;
+    border-top: 2px solid #FDA33B;
+    /* min-height: 520px; */
+    /* box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
+    -webkit-box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%); */
+}
+
+.who-take-card h4 {
+    text-align: center;
+    color: #171C30;
+    font-family: "Helvetica", Poppins;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.who-take-card p {
+    text-align: justify;
+    color: #747880;
+    font-family: "Helvetica", Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+}
+@media (min-width:768px) and (max-width:1100px) {
+    .who-take-card {
+        padding: 1rem !important;
+        margin: 20px 0px !important;
+    }
+
+}
 /* --------------------------------------------------------------------------------------------- */
 /* Frequently Asked Questions (FAQs) starts */
 /* --------------------------------------------------------------------------------------------- */
@@ -254,6 +313,10 @@
 /* ____________________________________________________ */
 
 @media (max-width:1199px) {
+    
+    .who-can-take-section {
+        padding: 4rem !important;
+    }
     .lbs-actually-matters-main {
         padding: 3rem !important;
     }
@@ -277,7 +340,9 @@
 }
 
 @media (max-width:991px) {
-
+    .who-can-take-section {
+        padding: 2rem !important;
+    }
     .mlb-starting-main-h1 {
         font-size: 2.3rem;
         font-weight: 500;
@@ -358,6 +423,13 @@
 }
 
 @media (max-width:600px) {
+    .who-can-take-section {
+        padding: 1rem !important;
+    }
+    .who-take-card {
+        min-height: 300px;
+    
+    }
     .how-it-works-main-section h1 {
         margin: 0 !important;
     }
@@ -407,6 +479,15 @@
         width: 300px !important;
     }
 }
+
+
+@media (min-width:200px) and (max-width:320px) {
+    .how-fonts-h4 {
+        font-size: 1.19rem;
+        font-weight: 700 !important;
+    }
+}
+
 
 @media (min-width:312px) and (max-width:335px) {
 
@@ -463,6 +544,13 @@
 }
 
 @media (min-width:250px) and (max-width:451px) {
+    .who-can-take-section {
+        padding: 1rem !important;
+    }
+    .who-take-card {
+        padding: 1rem !important;
+
+    }
     .tick-check-p {
         font-size: 18px;
     }

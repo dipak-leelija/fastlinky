@@ -36,6 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['package'])) {
         if (isset($_SESSION['package'])) {
             unset($_SESSION['package']);
+            unset($_SESSION['orderIds']);
+
             $_SESSION['package'] = $_POST['package'];
             if (isset($_SESSION['package'])) {
                 header('Location: packages-summary.php');
@@ -76,7 +78,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- <link href="css/blog-list.css" rel='stylesheet' type='text/css' /> -->
     <link href="css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
 
+    <!--webfonts-->
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
 
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
 
 
     <style>
@@ -109,7 +115,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     /* =========================================== */
-
     </style>
 
 
@@ -163,37 +168,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                             <div>
 
-                                <form class="row m-0 mt-4" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" novalidate>
+                                <form class="row m-0 mt-4" action="<?php echo $_SERVER['PHP_SELF']?>" method="post"
+                                    novalidate>
                                     <!-- card 1 -->
                                     <?php
                                     $allPacks = $GPPackage->allPackages();
                                     foreach ($allPacks as $eachPack) {
                                         // $pack           = $GPPackage->packDetailsById($packId);
                                         $packCat        = $GPPackage->packCatById($eachPack['category_id']);
+                                        $features       = $GPPackage->featureByPackageId($eachPack['id']);
                                         $packFullName   = $packCat['category_name'].' '.$eachPack['package_name'];
-
-                                        // $selectedPacks[]    = $packFullName;
-                                        // $packsCosts[]       = $pack['price'];
-                                        // $totalCost += $pack['price'];
                                     ?>
-                                   
+
 
                                     <div class="col-md-3 px-md-1 h-100">
                                         <div class="card p-card" id="">
-                                            <input id="c-box-<?php echo $eachPack['id']?>" value="<?php echo $eachPack['id']?>" type="checkbox" name="package[]"
+                                            <input id="c-box-<?php echo $eachPack['id']?>"
+                                                value="<?php echo $eachPack['id']?>" type="checkbox" name="package[]"
                                                 required="" class="d-none cart-input">
                                             <div class="price-card-wrapper">
-                                                <label for="c-box-<?php echo $eachPack['id']?>" class="item-details d-flex flex-column">
+                                                <label for="c-box-<?php echo $eachPack['id']?>"
+                                                    class="item-details d-flex flex-column">
                                                     <p class="pricing-title"><?php echo $packFullName;?> (5 Links)</p>
                                                     <ul class="">
-                                                        <li> <strong>5 Links Per Month</strong> </li>
-                                                        <li> DR 20-29: 2 links</li>
-                                                        <li> DR 30-39: 2 links</li>
-                                                        <li> DR 40-49: 1 link</li>
+                                                        <li> <strong><?php echo $eachPack['blog_post'];?> Per Month</strong> </li>
+                                                        <?php
+                                                        foreach ($features as $eachfeature) {
+                                                            echo '<li>'. $eachfeature['features'].'</li>';
+                                                        }
+                                                        ?>
 
                                                     </ul>
                                                     <div class="item-price">
-                                                        <div class="default-price"><?php echo CURRENCY.$eachPack['price']?>/Package</div>
+                                                        <div class="default-price">
+                                                            <?php echo CURRENCY.$eachPack['price']?>/Package</div>
                                                     </div>
                                                 </label>
                                             </div>
