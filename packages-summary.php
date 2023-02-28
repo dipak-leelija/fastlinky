@@ -36,9 +36,7 @@ $typeM		= $utility->returnGetVar('typeM','');
 $cusId		= $utility->returnSess('userid', 0);
 // echo $cusId; exit;
 
-// if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-//        
-// }
+
 if (!isset($_SESSION['package'])) {
     // print_r($_SESSION['package']);
     header('Location: customer-packages.php' );
@@ -221,7 +219,7 @@ $custDtls = $customer->getCustomerData($cusId);
                                                 </button>
                                             </div>
 
-                                            <div class="form-group myformgrp">
+                                            <!-- <div class="form-group myformgrp">
                                                 <button type="submit" class="cardBtn" id="orderNowCcavenue"
                                                     onclick="ccAvenueOrder2()">
                                                     <span class="masterCard"><img
@@ -230,7 +228,7 @@ $custDtls = $customer->getCustomerData($cusId);
                                                             src="images/payments/visaCard.png"></span>
                                                     <span> Credit or Debit Card</span>
                                                 </button>
-                                            </div>
+                                            </div> -->
 
                                             <div class="form-group myformgrp">
                                                 <button type="submit" class="payLaterBtn" onclick="payLaterOrder()">
@@ -266,16 +264,16 @@ $custDtls = $customer->getCustomerData($cusId);
         }
 
     }
-    const ccAvenueOrder = () => {
+    // const ccAvenueOrder = () => {
 
-        document.getElementById("order-name").value = "ccAvOrder";
-        document.getElementById("orderForm").action = "payments/gpwishlistOrder/payment.php";
+    //     document.getElementById("order-name").value = "ccAvOrder";
+    //     document.getElementById("orderForm").action = "payments/gpwishlistOrder/payment.php";
 
-        if (validateForm1() != false) {
-            document.getElementById("orderForm").submit();
-        }
+    //     if (validateForm1() != false) {
+    //         document.getElementById("orderForm").submit();
+    //     }
 
-    }
+    // }
 
     const payLaterOrder = () => {
         document.getElementById("paymentForm").action = "cheakout/paylater-order.php";
