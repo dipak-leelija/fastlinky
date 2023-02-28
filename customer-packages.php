@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             if($failed){
                             ?>
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>oh hoo</strong> Please Select a package!
+                                <strong>oh hoo,</strong> Please Select a package!
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"
                                     aria-label="Close"></button>
                             </div>
@@ -152,9 +152,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             }
                             ?>
                             <div class="w-100">
-                                <label>Select Browser</label>
-                                <input class="form-control" autocomplete="off" role="combobox" list=""
-                                    id="searchDatalist" name="package" placeholder="Select your fav browser"
+                                <label>Select Package Category</label>
+                                <input class="form-control mt-1" autocomplete="off" role="combobox" list=""
+                                    id="searchDatalist" name="package" placeholder="Search here"
                                     onfocusout="hideBlock(this)">
                                 <!-- Its important that you keep list attribute empty to hide the default dropdown icon and the browser's default datalist -->
                                 <datalist id="packageList" role="listbox">

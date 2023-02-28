@@ -39,7 +39,7 @@ if($cusDtl[0][0] == 2){
 }
 if (!isset($_SESSION['package'])) {
     // print_r($_SESSION['package']);
-    header('Location: customer-packages.php' );
+    header('Location: ../customer-packages.php' );
     exit;   
 }
 

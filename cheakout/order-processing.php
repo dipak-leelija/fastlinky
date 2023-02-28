@@ -25,6 +25,58 @@ $Countries      = new Countries();
 $utility		= new Utility();
 
 
+
+if (isset($_POST['paymentdata']) && isset($_POST['pppamn'])) {
+    
+    $requiredAmount = $_POST['pppamn'];
+
+    if (isset($_SESSION['package'])) {
+        unset($_SESSION['package']);
+
+        $details = (array)json_decode($_POST['paymentdata']);
+        // print_r($details);
+        $purchase_units = (array)$purchase_units = (array)$payer = $details['purchase_units'];
+        $payments = (array)$payments = $purchase_units[0];
+        $captures = (array)$captures = (array)$payments['payments'];
+        $captures = (array)$captures = (array)$captures = $captures['captures'];
+        $captures = (array)$captures = $captures[0];
+        // print_r($captures);
+        $amount = (array)$captures['amount'];
+        $paid_amount = $amount['value'];   // paid ammount to paypal
+
+        $trxnId 	= $captures['id'];		//geting the transection id
+
+
+        if ($requiredAmount == $paid_amount) {
+            
+            if (isset($_SESSION['orderIds'])) {
+                foreach ($_SESSION['orderIds'] as $eachOrderId) {
+                    $updated[] = $PackageOrder->updatePayment($eachOrderId, $trxnId, 'Paypal', 5, 4);
+                }
+                
+                $falseExist =  in_array(false, $updated, true);
+                if (!$falseExist) {
+                    $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
+                    unset($_SESSION['orderIds']);
+                    header('Location: ./package-order-successfull.php');
+                    exit;
+                }else {
+                    echo 'Error:=> Failed to update Payment status of order!';
+                }
+            }else {
+                echo 'Error:=> orderids session expired!';
+            }
+        }
+    }else {
+        echo 'Error:=> package session expired!';
+    }
+}
+
+
+
+
+
+
 if (isset($_POST['paylaterForm'])) {
     if (isset($_SESSION['package'])) {
             unset($_SESSION['package']);
@@ -35,17 +87,18 @@ if (isset($_POST['paylaterForm'])) {
 
             $falseExist =  in_array(false, $updated, true);
             if (!$falseExist) {
+                $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
                 unset($_SESSION['orderIds']);
                 header('Location: ./package-order-successfull.php');
                 exit;
             }else {
-                echo 'SomeThing is Wrong';
+                echo 'Error:=> Failed to update Payment status of order!';
             }
         }else {
-            echo 'SomeThing is Wrong';
+            echo 'Error:=> orderids session expired!';
         }
     }else {
-        echo 'SomeThing is Wrong';
+        echo 'Error:=> package session expired!';
     }
 }
 

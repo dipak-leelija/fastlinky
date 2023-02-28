@@ -124,7 +124,7 @@
 }
 
 .bx_width_40 {
-    max-width: 100%;
+    min-width: 100%;
     padding: 1rem;
     border-radius: 0.5rem;
     margin: auto;
