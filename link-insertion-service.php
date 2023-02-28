@@ -51,11 +51,11 @@ if(isset($_GET['seo_url'])){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Link insertion & Buy niche Edits Service - <?php echo COMPANY_S; ?></title>
+    <title>Buy Link Insertion & Niche Edits Service at Very Reasonable Prices - <?php echo COMPANY_S; ?></title>
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <meta name="description"
-        content="Fast Linky provided Guest Post Service at reasonable prices on fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement  or more." />
+        content="We offer best quality link insertion service that also called niche edit. We placed your backlink contextually into relevant blog posts on authority sites. " />
     <meta name="keywords"
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
 
@@ -357,11 +357,9 @@ if(isset($_GET['seo_url'])){
                </p>
             </div>
             <div class="col-xl-6 col-md-6 m-auto">
-                <div class="">
-                    <div>
-                        <img src="./images/freepik-img/livecenter-img-front.png" class=" w-100  my-4 " alt="">
-                    </div>
-                </div>
+
+                        <img src="./images/freepik-img/guest-posting-imgs-3.png" class=" w-100  my-4 " alt="">
+  
             </div>
         </div>
         <div class=" buttonsinfo mt-3">
