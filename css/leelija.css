@@ -30,6 +30,7 @@
     --text-blue: #407BFF;
     --dark-blue: #407BFF;
     --pink: #FF0833;
+    --mustard:#FDA33B;
 }
 
 
@@ -800,7 +801,7 @@ body #home {
 }
 
 .display-table {
-    margin-bottom: 4rem !important;
+    margin-bottom: 1rem !important;
 }
 
 .nav-drop-sortup:before {
