@@ -34,8 +34,10 @@ $faqs		    = new faqs();
 $typeM		= $utility->returnGetVar('typeM','');
 //user id
 $cusId		= $utility->returnSess('userid', 0);
+$custDtls   = $customer->getCustomerData($cusId);
 // echo $cusId; exit;
 
+require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 if (!isset($_SESSION['package'])) {
     // print_r($_SESSION['package']);
@@ -43,7 +45,6 @@ if (!isset($_SESSION['package'])) {
     exit;   
 }
 
-$custDtls = $customer->getCustomerData($cusId);
 ?>
 
 <!DOCTYPE HTML>
