@@ -31,21 +31,22 @@
 /*Main CSS*/
 
 .active-styling {
-    background: #bee9e9 !important;
+    background: var(--mustard) !important;
+    /* background: #bee9e9 !important; */
     font-weight: 700 !important;
     border-radius: 0.5rem !important;
 }
 
 
 .dboard-li-atag {
-    color: #383a50 !important;
+    color: var(--black) !important;
 }
 /*///start breadcrumb*/
 
 ul.breadcrumb {
     padding: 10px 16px;
     list-style: none;
-    background: white;
+    background: var(--pure-white);
     border-radius: 0;
 }
 
@@ -59,22 +60,22 @@ ul.breadcrumb li {
 
 ul.breadcrumb li+li:before {
     padding: 8px;
-    color: white;
+    color: var(--pure-white);
     content: "/\00a0";
 }
 
 ul.breadcrumb li a {
-    border: 1px solid #407BFF;
-    color: #407BFF;
+    border: 1px solid var(--custom-blue);
+    color: var(--custom-blue);
     padding: 10px 25px;
     text-decoration: none;
 }
 
 ul.breadcrumb li a:hover {
     text-decoration: none;
-    background: #407BFF;
+    background: var(--custom-blue);
     color: white;
-    border-color: #407BFF
+    border-color:var(--custom-blue);
 }
 
 
@@ -85,7 +86,7 @@ ul.breadcrumb li a:hover {
 
 .dbox {
     min-height: 120px;
-    background-color: #407BFF;
+    background-color: var(--custom-blue);
     text-align: center;
 }
 
@@ -94,7 +95,7 @@ ul.breadcrumb li a:hover {
 }
 
 .dbox a {
-    color: #ffffff;
+    color: var(--pure-white);
 }
 
 .prof-dash {
@@ -156,7 +157,7 @@ ul.breadcrumb li a:hover {
 }
 
 .table-responsive::-webkit-scrollbar-thumb {
-    background: #383a50 !important;
+    background: var(--black) !important;
     border-radius: 5px !important;
 }
 
