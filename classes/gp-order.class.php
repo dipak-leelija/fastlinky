@@ -82,6 +82,13 @@ class PackageOrder extends DatabaseConnection{
   }
 
 
+  function countPackOrderByUser($userId){
+    
+    $sql  = "SELECT order_id FROM `gp_package_order` WHERE `customer_id`='$userId'";
+    $data = $this->conn->query($sql);
+    $rows = $data->num_rows;
+    return $rows;
+  }
 
 
   

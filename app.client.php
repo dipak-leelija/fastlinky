@@ -1,14 +1,21 @@
 <?php
 session_start();
-require_once("_config/dbconnect.php");
-require_once "_config/dbconnect.trait.php";
+require_once "includes/constant.inc.php";
 
-require_once("includes/constant.inc.php");
-require_once("classes/customer.class.php");
-require_once("classes/utility.class.php");
-require_once "classes/wishList.class.php";
+require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/_config/dbconnect.trait.php";
+
+require_once ROOT_DIR."/classes/customer.class.php";
+require_once ROOT_DIR."/classes/content-order.class.php";
+require_once ROOT_DIR."/classes/gp-order.class.php";
+require_once ROOT_DIR."/classes/orderStatus.class.php";
+require_once ROOT_DIR."/classes/utility.class.php";
+require_once ROOT_DIR."/classes/wishList.class.php";
 
 $customer		= new Customer();
+$ContentOrder   = new ContentOrder();
+$PackageOrder   = new PackageOrder();
+$OrderStatus    = new OrderStatus();
 $WishList       = new WishList();
 $utility		= new Utility();
 ######################################################################################################################
@@ -19,6 +26,10 @@ $cusDtl		= $customer->getCustomerData($cusId);
 $wishes     = $WishList->countWishlistByUser($cusId);
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
+
+$wishes             = $WishList->countWishlistByUser($cusId);
+$myOrders           = $ContentOrder->clientOrders($cusId);
+$packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
 
 
 ?>
@@ -72,7 +83,7 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                             <a href="wishlist.php">
                                                 <div class="dboard-cd-box mt-md-0 ">
                                                     <div class="inner">
-                                                        <h3> 13 </h3>
+                                                        <h3><?php echo $wishes; ?></h3>
                                                         <p> Wishlist</p>
                                                     </div>
                                                     <div class="dboard-icn_font">
@@ -84,7 +95,7 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                         <div class="col-lg-3 col-sm-6">
                                             <div class="dboard-cd-box mt-md-0">
                                                 <div class="inner">
-                                                    <h3> $18538 </h3>
+                                                    <h3> $00.00</h3>
                                                     <p> Balance </p>
                                                 </div>
                                                 <div class="dboard-icn_font">
@@ -97,7 +108,7 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                             <a href="my-orders.php">
                                                 <div class="dboard-cd-box mt-md-0">
                                                     <div class="inner">
-                                                        <h3> 73 </h3>
+                                                        <h3><?php echo $packageOrdersIds + count($myOrders); ?> </h3>
                                                         <p> My Orders</p>
                                                     </div>
                                                     <div class="dboard-icn_font">
@@ -112,10 +123,12 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                                 <div class="dboard-cd-box mt-md-0 ">
                                                     <div class="inner">
                                                         <h3> 13 </h3>
+                                                        <!-- <small>dipakmajumdar.leelija@gmail.com</small> -->
+                                                        <!-- <p>7699753019</p> -->
                                                         <p>Setting</p>
                                                     </div>
                                                     <div class="dboard-icn_font" aria-hidden="true">
-                                                    <i class="fa-solid fa-gears"></i>
+                                                        <i class="fa-solid fa-gears"></i>
                                                     </div>
                                                 </div>
                                             </a>
@@ -133,49 +146,25 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                                     <table class="table  table-hover">
                                                         <thead class="table-light">
                                                             <tr>
-                                                                <th scope="col">#</th>
-                                                                <th scope="col">First</th>
-                                                                <th scope="col">Last</th>
-                                                                <th scope="col">Handle</th>
+                                                                <th scope="col">Order Id</th>
+                                                                <th scope="col">Domain/Service</th>
+                                                                <th scope="col">Status</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr>
-                                                                <th scope="row">1</th>
-                                                                <td>Mark</td>
-                                                                <td>Otto</td>
-                                                                <td>@mdo</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">2</th>
-                                                                <td>Jacob</td>
-                                                                <td>Thornton</td>
-                                                                <td>@fat</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">3</th>
-                                                                <td>Larry</td>
-                                                                <td>the Bird</td>
-                                                                <td>@twitter</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">4</th>
-                                                                <td>Larry</td>
-                                                                <td>the Bird</td>
-                                                                <td>@twitter</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">5</th>
-                                                                <td>Larry</td>
-                                                                <td>the Bird</td>
-                                                                <td>@twitter</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">6</th>
-                                                                <td>jarrt</td>
-                                                                <td>the Bird</td>
-                                                                <td>@twitter</td>
-                                                            </tr>
+                                                            <?php
+                                                             if (count($myOrders) > 0 ) {
+                                                                $showItems = 0;
+                                                                foreach ($myOrders as $order) {
+                                                                    $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);
+                                                                    echo '<tr>
+                                                                        <td>#'.$order["order_id"].'</td>
+                                                                        <td>'.$order['clientOrderedSite'].'</td>
+                                                                        <td> <span class="badge text-bg-primary">'.$status[0]["orders_status_name"].'<span></td>
+                                                                    </tr>'; 
+                                                                }
+                                                            }
+                                                            ?>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -186,14 +175,13 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                     <div class=" col-lg-6">
                                         <a href="notifications.php">
                                             <div class="pt-3 pb-0 p-0">
-                                                <h4 style=" color: black;     ">Recent Notification</h4>
+                                                <h4 class="text-dark">Recent Notification</h4>
                                                 <div class="alert alert-warning alert-dismissible fade show"
                                                     role="alert">
-                                                    <strong>Holy guacamole!</strong> You should check in on some of
+                                                    <strong> No Notifications</strong>
+                                                    <!-- <strong>Holy guacamole!</strong> You should check in on some of
                                                     those
-                                                    fields below.
-                                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                                        aria-label="Close"></button>
+                                                    fields below. -->
                                                 </div>
                                             </div>
                                         </a>

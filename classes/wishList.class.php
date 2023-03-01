@@ -64,10 +64,9 @@ class WishList extends DatabaseConnection{
 
 
     function countWishlistByUser($userId){
-        $sql = "SELECT COUNT(id)FROM wishlist_buyer WHERE userId = $userId";
+        $sql = "SELECT id FROM wishlist_buyer WHERE userId = $userId";
         $res = $this->conn->query($sql);
         $row = $res->num_rows;
-
         return $row;
     }
 
