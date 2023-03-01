@@ -40,15 +40,8 @@ $typeM		= $utility->returnGetVar('typeM','');
 //user id
 $cusId		= $utility->returnSess('userid', 0);
 
-
-// if(isset($_GET['seo_url'])){
-	//  $seo_url			  		= $_GET['seo_url'];
-	// $return_url 	= base64_decode($_GET["return_url"]); //get return url
-// }
-
 $packages = $GPPackage->packDetailsByCat(1);
-// print_r($packages);
-// exit;
+require_once ROOT_DIR."/includes/package-submission.inc.php";
 
 ?>
 
