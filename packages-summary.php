@@ -53,11 +53,9 @@ $custDtls = $customer->getCustomerData($cusId);
     <link rel="icon" href="images/logo/favicon.png" type="image/png">
     <title>Managed Link Building, Blogger Outreach: <?php echo COMPANY_S; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="LeeLija provided Guest Post Service at reasonable prices on fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement  or more." />
+    <meta name="description"content="" />
     <meta charset="utf-8">
-    <meta name="keywords"
-        content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
+    <meta name="keywords" content="" />
 
 
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->

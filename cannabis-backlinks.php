@@ -24,6 +24,7 @@ $cusId		= $utility->returnSess('userid', 0);
 
 
 $packages = $GPPackage->packDetailsByCat(8);
+require_once ROOT_DIR."/includes/package-submission.inc.php";
 
 ?>
 <!DOCTYPE HTML>

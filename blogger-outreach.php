@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("includes/constant.inc.php");
+require_once "includes/constant.inc.php";
 
 require_once ROOT_DIR."/_config/dbconnect.php";
 require_once ROOT_DIR."/_config/dbconnect.trait.php";
@@ -24,6 +24,7 @@ $cusId		= $utility->returnSess('userid', 0);
 
 
 $packages = $GPPackage->packDetailsByCat(7);
+require_once ROOT_DIR."/includes/package-submission.inc.php";
 
 ?>
 <!DOCTYPE HTML>
