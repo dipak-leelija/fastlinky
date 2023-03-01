@@ -45,7 +45,6 @@ $wishes = $WishList->countWishlistByUser($cusId);
     <link href="css/leelija.css" rel="stylesheet" type='text/css'>
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
-    <link href="css/app.client.css" rel='stylesheet' type='text/css' />
     <link rel="shortcut icon" href="images/logo/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="images/logo/favicon.png" />
 </head>
@@ -101,18 +100,6 @@ $wishes = $WishList->countWishlistByUser($cusId);
                                             </div>
                                         </div>
                                         <div class="col-lg-3 col-sm-6">
-                                            <div class="dboard-cd-box mt-md-0">
-                                                <div class="inner">
-                                                    <h3> 64 </h3>
-                                                    <p> My Reward </p>
-                                                </div>
-                                                <div class="dboard-icn_font">
-                                                    <i class="fa-solid fa-medal" aria-hidden="true"></i>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
                                             <a href="my-orders.php">
                                                 <div class="dboard-cd-box mt-md-0">
                                                     <div class="inner">
@@ -123,6 +110,19 @@ $wishes = $WishList->countWishlistByUser($cusId);
                                                         <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
                                                     </div>
 
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <a href="edit-profile.php">
+                                                <div class="dboard-cd-box mt-md-0 ">
+                                                    <div class="inner">
+                                                        <h3> 13 </h3>
+                                                        <p>Setting</p>
+                                                    </div>
+                                                    <div class="dboard-icn_font" aria-hidden="true">
+                                                    <i class="fa-solid fa-gears"></i>
+                                                    </div>
                                                 </div>
                                             </a>
                                         </div>
