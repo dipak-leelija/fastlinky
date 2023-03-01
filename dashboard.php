@@ -83,14 +83,68 @@ $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
                             </div>
 
                         </div>
-                        <div class="col-md-9 mt-4 ps-md-0 display-table-cell v-align client_profile_dashboard_right">
-                            <div class="container p-0">
+                        <div class="col-md-9 mt-0 ps-md-0 display-table-cell v-align client_profile_dashboard_right">
+                            <div class=" p-0">
                                 
                                 <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
                                 <header>
-                                    <div class="add_project_section text-right">
+                                     <!-- dasboard top cards -->
+                                     <div class="row">
+                                       
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="dboard-cd-box mt-md-0">
+                                                <div class="inner">
+                                                    <h3> $18538 </h3>
+                                                    <p> Balance </p>
+                                                </div>
+                                                <div class="dboard-icn_font">
+                                                    <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="dboard-cd-box mt-md-0">
+                                                <div class="inner">
+                                                    <h3> 64 </h3>
+                                                    <p> My Reward </p>
+                                                </div>
+                                                <div class="dboard-icn_font">
+                                                    <i class="fa-solid fa-medal" aria-hidden="true"></i>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <a href="my-guest-post.php">
+                                                <div class="dboard-cd-box mt-md-0">
+                                                    <div class="inner">
+                                                        <h3> 73 </h3>
+                                                        <p> My Orders</p>
+                                                    </div>
+                                                    <div class="dboard-icn_font">
+                                                        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <a href="edit-profile.php">
+                                                <div class="dboard-cd-box mt-md-0 ">
+                                                    <div class="inner">
+                                                        <h3> 13 </h3>
+                                                        <p>Setting</p>
+                                                    </div>
+                                                    <div class="dboard-icn_font" aria-hidden="true">
+                                                    <i class="fa-solid fa-gears"></i>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="add_project_section text-right">
                                         <div class=" display-table">
-                                            <!-- start display-->
                                             <div class="grid_1">
                                                 <div class="row">
                                                     <div class="col-md-4">
@@ -131,11 +185,95 @@ $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- end display //-->
+                                    </div> -->
+                                </header>
+                                <div class="row">
+                                    <div class=" col-lg-6 ">
+                                        <div class=" table-responsive py-3 p-0">
+                                            <h4>Guest Posting Blogs</h4>
+                                            <a href="gblogs-list.php">
+                                                <div class="card table-responsive p-2"
+                                                    style="border-left: 2px solid #FDA33B;">
+                                                    <table class="table  table-hover">
+                                                        <thead class="table-light">
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">First</th>
+                                                                <th scope="col">Last</th>
+                                                                <th scope="col">Handle</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">2</th>
+                                                                <td>Jacob</td>
+                                                                <td>Thornton</td>
+                                                                <td>@fat</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                                <td>@twitter</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">4</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                                <td>@twitter</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">5</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                                <td>@twitter</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">6</th>
+                                                                <td>jarrt</td>
+                                                                <td>the Bird</td>
+                                                                <td>@twitter</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </a>
+                                        </div>
 
                                     </div>
-                                </header>
-
+                                    <div class=" col-lg-6">
+                                        <a href="notifications.php">
+                                            <div class="pt-3 pb-0 p-0">
+                                                <h4 style=" color: black;">Recent Notification</h4>
+                                                <div class="alert alert-warning alert-dismissible fade show"
+                                                    role="alert">
+                                                    <strong>Holy guacamole!</strong> You should check in on some of
+                                                    those
+                                                    fields below.
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="col-lg-12 ">
+                                            <a href="add-blog.php">
+                                                <div class="card package-details-pricing-crd">
+                                                    <h4> Add Blog For Guest Post </h4>
+                                                    <img src="./images/package-pricingcard.png" class="w-100 pkg-img1"
+                                                        alt="">
+                                                    <img src="./images/package-pricingcard2.png" class="w-100 pkg-img2"
+                                                        alt="">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="user-dashboard">
                                     <!-- Dashboard Body Start-->
                                     <div class="bfrom">
