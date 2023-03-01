@@ -154,14 +154,17 @@ $packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
                                                         <tbody>
                                                             <?php
                                                              if (count($myOrders) > 0 ) {
-                                                                $showItems = 0;
+                                                                $showItems = 1;
                                                                 foreach ($myOrders as $order) {
                                                                     $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);
                                                                     echo '<tr>
                                                                         <td>#'.$order["order_id"].'</td>
                                                                         <td>'.$order['clientOrderedSite'].'</td>
                                                                         <td> <span class="badge text-bg-primary">'.$status[0]["orders_status_name"].'<span></td>
-                                                                    </tr>'; 
+                                                                    </tr>';
+                                                                    if ($showItems++ > 8) {
+                                                                        break;
+                                                                    }
                                                                 }
                                                             }
                                                             ?>
