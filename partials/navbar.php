@@ -54,15 +54,15 @@
         <div class="collapse navbar-collapse mt-2 mt-lg-0" style="width: 59%;justify-content: inherit;"
             id="navbarSupportedContent">
             <ul class="navbar-nav   mb-2 mb-lg-0 ">
-                <li class="nav-item ">
+                <li class="nav-item mynav_item">
                     <a class="nav-link  li-style" aria-current="page" href="<?php echo URL;?>">Home</a>
                 </li>
 
-                <li class="nav-item ">
+                <li class="nav-item mynav_item">
                     <a class="nav-link  li-style"  href="<?php echo URL.'/blog';?>">Blog</a>
                 </li>
 
-                <li class="nav-item dropdown myiconupdown">
+                <li class="nav-item mynav_item dropdown myiconupdown">
                     <a class="nav-link dropdown d-flex li-style myservicecss" href="#">
                         Services
                         <i class=" ps-1  fa-solid fa-sort-down nav-drop-sortdown" style="padding-top: 1px;"></i>
@@ -123,10 +123,10 @@
 
                     </ul>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mynav_item">
                     <a class="nav-link li-style" href="<?php echo URL;?>/about.php">About</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mynav_item">
                     <a class="nav-link li-style" href="contact.php">Contact</a>
                 </li>
             </ul>
@@ -141,7 +141,7 @@
             }else {
             ?>
 
-            <li class="nav-item dropdown dashboaard_button desktop-login-btn">
+            <li class="nav-item mynav_item dropdown dashboaard_button desktop-login-btn">
                 <button class=" dropdown  login-btn external-styling ">My Account <i class="bi bi-chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu external-drop-menu">
