@@ -6,7 +6,7 @@
     --black: #383a50;
     --light-grey: #767171;
 }
-@media(min-width:768px){
+/* @media(min-width:768px){
     .special_fixed{
         position: fixed;
     }
@@ -14,7 +14,7 @@
         position: sticky;
         margin-left: auto;
     }
-}
+} */
 
 .badge-mustard {
     color: var(--pure-white);
@@ -24,6 +24,13 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.4;
+}
+.label_design_as_btn {
+    background-color: var(--custom-blue);
+    color: var(--pure-white) !important;
+    border-radius: 7px !important;
+    font-size: 1.06rem;
+    font-weight: 400 !important;
 }
 .my_nav_tab{
     color: var(--black);
@@ -138,11 +145,6 @@ font-size: 1.1rem;
         width: 100%;
         border-radius: .4rem;
     }
-
-    .editingimg {
-        width: 75px;
-        border-radius: 7px
-    }
 }
 
 @media (max-width:575px) {
@@ -153,3 +155,40 @@ font-size: 1.1rem;
 
 }
 
+@media(max-width:767px){
+    .edit_profile .bfrom form {
+        padding: 1rem;
+    }
+    .label_design_as_btn {
+        font-size: .8rem;
+    }
+    .my_nav_tab{
+        padding: 8px 5px;
+    }
+}
+@media(max-width:500px){
+    .overviews-div{
+        padding: 2rem 0rem 0rem;
+    }
+    
+    .chnge_tab_div{
+        padding: 2rem 0rem 0rem;
+    }
+    .profiles_tediting-div {
+        padding: 2rem 0rem 0rem;
+    }
+    .edit_profile .bfrom h4 {
+      font-size: 1.1rem;
+    }
+
+    .nav-tabs .my_nav_tab.active, .nav-tabs .nav-item.show .my_nav_tab {
+        font-weight: 500;
+        font-size: .85rem;
+    }
+    .my_nav_tab{
+        font-size: .85rem;;
+    }
+    .nav-tabs{
+        justify-content: space-evenly;
+    }
+}
