@@ -128,10 +128,11 @@ $packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
                                                         <h3> 13 </h3>
                                                         <!-- <small>dipakmajumdar.leelija@gmail.com</small> -->
                                                         <!-- <p>7699753019</p> -->
-                                                        <p>Setting</p>
+                                                        <p>Pending Order</p>
                                                     </div>
                                                     <div class="dboard-icn_font" aria-hidden="true">
-                                                        <i class="fa-solid fa-gears"></i>
+                                                        <!-- <i class="fa-solid fa-gears"></i> -->
+                                                        <i class="fa-solid fa-hourglass-half"></i>
                                                     </div>
                                                 </div>
                                             </a>
