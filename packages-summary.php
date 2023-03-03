@@ -34,13 +34,12 @@ $faqs		    = new faqs();
 $typeM		= $utility->returnGetVar('typeM','');
 //user id
 $cusId		= $utility->returnSess('userid', 0);
-$custDtls   = $customer->getCustomerData($cusId);
+$cusDtl   = $customer->getCustomerData($cusId);
 // echo $cusId; exit;
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 if (!isset($_SESSION['package'])) {
-    // print_r($_SESSION['package']);
     header('Location: customer-packages.php' );
     exit;   
 }
@@ -48,23 +47,21 @@ if (!isset($_SESSION['package'])) {
 ?>
 
 <!DOCTYPE HTML>
-<html lang="zxx">
+<html lang="en">
 
 <head>
-    <link rel="icon" href="images/logo/favicon.png" type="image/png">
-    <title>Managed Link Building, Blogger Outreach: <?php echo COMPANY_S; ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"content="" />
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
+    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
+    <title>Managed Link Building, Blogger Outreach: <?php echo COMPANY_S; ?></title>
+    <meta name="description"content="" />
     <meta name="keywords" content="" />
 
-
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <!-- Custom CSS -->
     <link href="css/leelija.css" rel="stylesheet" />
-    <!-- <link href="css/style.css" rel='stylesheet' type='text/css' />  -->
     <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
     <link href="css/package-summary.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
@@ -91,7 +88,7 @@ if (!isset($_SESSION['package'])) {
                                         <div class="form-group">
                                             <label class="required-field" for="firstname">First Name</label>
                                             <input type="text" minlength="4" class="form-control" id="firstname"
-                                                name="firstname" value="<?php echo $custDtls[0][5]; ?>" required>
+                                                name="firstname" value="<?php echo $cusDtl[0][5]; ?>" required>
                                         </div>
                                     </div>
 
@@ -99,7 +96,7 @@ if (!isset($_SESSION['package'])) {
                                         <div class="form-group">
                                             <label for="lastName">Last Name</label>
                                             <input type="text" minlength="4" class="form-control" id="lastName"
-                                                name="lastName" value="<?php echo $custDtls[0][6]; ?>" required>
+                                                name="lastName" value="<?php echo $cusDtl[0][6]; ?>" required>
                                         </div>
                                     </div>
 
@@ -107,7 +104,7 @@ if (!isset($_SESSION['package'])) {
                                         <div class="form-group">
                                             <label class="required-field" for="email">Email</label>
                                             <input type="email" class="form-control" id="email" name="email"
-                                                value="<?php echo $custDtls[0][3]; ?>" required>
+                                                value="<?php echo $cusDtl[0][3]; ?>" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 mb-3">

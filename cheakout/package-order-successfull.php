@@ -32,21 +32,23 @@ $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 
 
-if (isset($_SESSION['updatedOrders'])) {
-    print_r($_SESSION['updatedOrders']);
+if (!isset($_SESSION['updatedOrders'])) {
+    header("Location: ".URL."/customer-packages.php");
+    exit;
 }
 ?>
 
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+ 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Success - Order Received | <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png"/>
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
-    
+
     <link rel="stylesheet" href="<?php echo URL; ?>/style/ansysoft.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo URL; ?>/plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/plugins/fontawesome-6.1.1/css/all.css">
@@ -63,7 +65,7 @@ if (isset($_SESSION['updatedOrders'])) {
     <!-- End  Header -->
 
     <!-- Start  container -->
-    <div id="container" class="mt-2">
+    <div id="container" class="mt-5">
 
         <div class="row flex-column  align-items-center">
 
@@ -83,7 +85,7 @@ if (isset($_SESSION['updatedOrders'])) {
             <div class="col-11 col-md-10 mb-3 mb-md-5 p-4 text-center">
                 <p>Your order status will updated to you, Now you can go back.</p>
                 <div class="mt-3">
-					<a class="btn btn-primary" href="<?php echo URL; ?>/app.client.php">My Account</a>
+                    <a class="btn btn-primary" href="<?php echo URL; ?>/app.client.php">My Account</a>
                     <a class="btn btn-primary" href="<?php echo URL; ?>/my-orders.php">My Orders</a>
                 </div>
             </div>
