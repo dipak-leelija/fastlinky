@@ -35,7 +35,8 @@ $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 
 /* PAGE ACTIVE */
-$activePage = basename($_SERVER['PHP_SELF'], ".php");
+$activePage = basename($_SERVER['PHP_SELF']);
+// echo $activePage; exit;
 
 ?>
 <div class="logo text-center">
@@ -113,46 +114,44 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
     <!-- Customer Switch Mode end-->
 
     <ul>
-        <li class="<?= ($activePage == 'app.client') ? 'active-styling':'';?>">
+        <li class="<?= ($activePage == 'app.client.php') ? 'active-styling':''; ?>">
             <a href="app.client.php" class="dboard-li-atag"><i class="fa fa-home pe-2" aria-hidden="true"></i><span
                     class="hidden-xs hidden-sm">Dashboard</span></a>
         </li>
         <li
-            class="<?= ($activePage == 'my-orders') ? 'active-styling':''; if($activePage =='guest-post-article-submit'){echo 'active-styling';}?>">
+            class="<?= ($activePage == 'my-orders.php') ? 'active-styling':''; if($activePage == 'guest-post-article-submit.php'){echo 'active-styling';}  ?>">
             <a href="my-orders.php" class="dboard-li-atag"><i class=" fas fa-handshake pe-2" aria-hidden="true"></i><span
                     class="hidden-xs hidden-sm">My Orders</span></a>
         </li>
 
-
         <li
-            class="<?= ($activePage == 'blogs-list') ? 'active-styling':'';  if($activePage =='order-now'){echo 'active-styling';}?>">
+            class="<?= ($activePage == 'blogs-list.php') ? 'active-styling':''; if($activePage == 'order-now.php'){echo 'active-styling';} ?>">
             <a href="blogs-list.php" class="dboard-li-atag"><i class="fa fa-tasks pe-2" aria-hidden="true"></i><span
                     class="hidden-xs hidden-sm">Guest posting Blogs</span></a>
         </li>
 
         <li
-            class="<?= ($activePage == 'customer-packages') ? 'active-styling':'';  if($activePage =='customer-packages.php'){echo 'active-styling';}?>">
+            class="<?= ($activePage == 'customer-packages.php') ? 'active-styling':''; ?>">
             <a href="customer-packages.php" class="dboard-li-atag"><i class="fa-solid fa-cubes pe-2"></i><span
                     class="hidden-xs hidden-sm">Packages</span></a>
         </li>
-       
         <li
-            class="<?= ($activePage == 'blogs-list') ? 'active-styling':'';  if($activePage =='order-now'){echo 'active-styling';}?>">
-            <a href="blogs-list.php" class="dboard-li-atag"><i class="fa-solid fa-tag pe-2"></i><span
+            class="<?= ($activePage == 'exclusive-guest-post.php') ? 'active-styling':''; ?>">
+            <a href="exclusive-guest-post.php" class="dboard-li-atag"><i class="fa-solid fa-tag pe-2"></i><span
                     class="hidden-xs hidden-sm">Exclusive guest posting </span></a>
         </li>
 
 
-        <li class="<?= ($activePage == 'notifications') ? 'active-styling':''; ?>">
+        <li class="<?= ($activePage == 'notifications.php') ? 'active-styling':''; ?>">
             <a href="notifications.php" class="dboard-li-atag"><i class="fa fa-user pe-2" aria-hidden="true"></i><span
                     class="hidden-xs hidden-sm">Notification</span></a>
         </li>
 
-        <li class="<?= ($activePage == 'edit-profile') ? 'active-styling':''; ?>">
+        <li class="<?= ($activePage == 'edit-profile.php') ? 'active-styling':''; ?>">
             <a href="edit-profile.php" class="dboard-li-atag"><i class="fa fa-cog pe-2" aria-hidden="true"></i><span
                     class="hidden-xs hidden-sm">Setting</span></a>
         </li>
-        <li class="<?= ($activePage == 'wishlist') ? 'active-styling':''; ?>">
+        <li class="<?= ($activePage == 'wishlist.php') ? 'active-styling':''; ?>">
             <a href="wishlist.php" class="wishlistBlog dboard-li-atag"><span class="wisListHeart"><i class="fas fa-heart"></i></span>
                 <span>Wishlist</span></a>
         </li>

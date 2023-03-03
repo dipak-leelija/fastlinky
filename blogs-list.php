@@ -55,7 +55,6 @@ if($cusDtl[0] == 2){
 //echo $cusId;exit;
 $blogDtls		= $blogMst->ShowBlogApprData();
 /* PAGE ACTIVE */
-$activePage = basename($_SERVER['PHP_SELF'], ".php");
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
