@@ -48,21 +48,15 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- Bootstrap Core CSS -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
     <!-- Custom CSS -->
 
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="css/my-orders.css" rel='stylesheet' type='text/css' />
-    <link href="css/order-list.css" rel='stylesheet' type='text/css' />
-
-    <!-- font-awesome icons -->
-    <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
-
-    <!-- Datatable CSS  -->
-    <link rel="stylesheet" href="plugins/data-table/style.css">
+    <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/css/leelija.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/css/my-orders.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/css/order-list.css" rel='stylesheet' type='text/css' />
 
 
     <!--//webfonts-->

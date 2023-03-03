@@ -39,19 +39,22 @@ $packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
+    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <title>User Dashboard - <?php echo COMPANY_S; ?></title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/leelija.css" rel="stylesheet" type='text/css'>
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
-    <link rel="shortcut icon" href="images/logo/favicon.png" type="image/png" />
-    <link rel="apple-touch-icon" href="images/logo/favicon.png" />
+    <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/css/leelija.css" rel="stylesheet" type='text/css'>
+    <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/css/order-list.css" rel='stylesheet' type='text/css' />
+
+
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -140,7 +143,7 @@ $packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
                                     <div class=" col-lg-6 ">
                                         <div class=" table-responsive py-3 p-0">
                                             <h4>Guest Posting Details</h4>
-                                            <a href="blogs-list.php">
+                                            <!-- <a href="blogs-list.php"> -->
                                                 <div class="card table-responsive p-2"
                                                     style="border-left: 2px solid #FDA33B;">
                                                     <table class="table  table-hover">
@@ -157,11 +160,14 @@ $packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
                                                                 $showItems = 1;
                                                                 foreach ($myOrders as $order) {
                                                                     $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);
-                                                                    echo '<tr>
-                                                                        <td>#'.$order["order_id"].'</td>
-                                                                        <td>'.$order['clientOrderedSite'].'</td>
-                                                                        <td> <span class="badge text-bg-primary">'.$status[0]["orders_status_name"].'<span></td>
-                                                                    </tr>';
+                                                                    echo '
+                                                                    
+                                                                    <tr>
+                                                                        <td><a href="guest-post-article-submit.php?order='.base64_encode(urlencode($order["order_id"])).'">#'.$order["order_id"].'</a></td>
+                                                                        <td><a href="guest-post-article-submit.php?order='.base64_encode(urlencode($order["order_id"])).'">'.$order['clientOrderedSite'].'</a></td>
+                                                                        <td><a href="guest-post-article-submit.php?order='.base64_encode(urlencode($order["order_id"])).'"> <span class="badge text-bg-primary '.$status[0]["orders_status_name"].'">'.$status[0]["orders_status_name"].'<span></a></td>
+                                                                    </tr>
+                                                                    ';
                                                                     if ($showItems++ > 8) {
                                                                         break;
                                                                     }
@@ -171,7 +177,7 @@ $packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                            </a>
+                                            <!-- </a> -->
                                         </div>
 
                                     </div>
@@ -188,14 +194,19 @@ $packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
                                                 </div>
                                             </div>
                                         </a>
-                                        <div class="col-lg-12 ">
-                                            <a href="customer-packages.php">
-                                                <div class="card package-details-pricing-crd">
-                                                    <h4> package Details </h4>
-                                                    <img src="./images/package-pricingcard.png" class="w-100 pkg-img1"
+                                        <div class="col-lg-12 mt-5">
+                                            <a href="./exclusive-guest-post.php">
+                                                <div class="card package-details-pricing-crd pb-5">
+                                                    <h4> Exclusive Blogs </h4>
+                                                    <!-- <img src="./images/package-pricingcard.png" class="w-100 pkg-img1"
                                                         alt="">
                                                     <img src="./images/package-pricingcard2.png" class="w-100 pkg-img2"
-                                                        alt="">
+                                                        alt=""> -->
+                                                    <div class="m-auto p-5 bg-primary text-white rounded">
+                                                        <h1>Coming Soon..</h1>
+                                                        <p class="text-light">Some Exclusive Guest Posting Sites are
+                                                            cooming soon!</p>
+                                                    </div>
                                                 </div>
                                             </a>
                                         </div>
@@ -221,10 +232,10 @@ $packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
             </div>
         </div>
         <!-- js-->
-        <script src="plugins/jquery-3.6.0.min.js"></script>
-        <script src="plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
+        <script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
+        <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
         <!-- Switch Customer Type -->
-        <script src="js/customerSwitchMode.js"></script>
+        <script src="<?php echo URL;?>/js/customerSwitchMode.js"></script>
 </body>
 
 </html>
