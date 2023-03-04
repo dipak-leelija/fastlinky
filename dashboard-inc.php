@@ -69,32 +69,32 @@ $activePage = basename($_SERVER['PHP_SELF']);
             Client</label>
     </div>
     <ul>
-        <li class="<?= ($activePage == 'dashboard') ? 'active-styling':''; ?>">
+        <li class="<?= ($activePage == 'dashboard.php') ? 'active-styling':''; ?>">
             <a href="dashboard.php" class="dboard-li-atag"><i class="fa fa-home pe-2" aria-hidden="true"></i><span
                     class="hidden-xs hidden-sm">Dashboard</span></a>
         </li>
 
-        <li class="<?= ($activePage == 'my-guest-post') ? 'active-styling':''; 
+        <li class="<?= ($activePage == 'my-guest-post.php') ? 'active-styling':''; 
             if($activePage =='order-view-update'){echo 'active-styling';}?>">
             <a href="my-guest-post.php" class="dboard-li-atag"><i class="fas fa-cart-arrow-down"></i> <span
                     class="hidden-xs hidden-sm">Order</span></a>
 
         </li>
 
-        <li class="<?= ($activePage == 'gblogs-list') ? 'active-styling':''; if($activePage =='edit-my-blog'){echo 'active-styling';}?> ?>">
+        <li class="<?= ($activePage == 'gblogs-list.php') ? 'active-styling':''; if($activePage =='edit-my-blog.php'){echo 'active-styling';}?> ?>">
             <a href="gblogs-list.php" class="dboard-li-atag"><i class="fa fa-tasks pe-2" aria-hidden="true"></i><span
                     class="hidden-xs hidden-sm">Guest posting Blogs</span></a>
         </li>
-        <li class="<?= ($activePage == 'add-blog') ? 'active-styling':''; ?>">
+        <li class="<?= ($activePage == 'add-blog.php') ? 'active-styling':''; ?>">
             <a href="add-blog.php" class="dboard-li-atag"><i class="fa fa-plus pe-2" aria-hidden="true"></i><span
                     class="hidden-xs hidden-sm">Add Blog for Guest Post</span></a>
         </li>
-        <li class="<?= ($activePage == 'notifications') ? 'active-styling':''; ?>">
+        <li class="<?= ($activePage == 'notifications.php') ? 'active-styling':''; ?>">
             <a href="notifications.php" class="dboard-li-atag"><i class="fa fa-user pe-2" aria-hidden="true"></i><span
                     class="hidden-xs hidden-sm">Notification</span></a>
         </li>
 
-        <li class="<?= ($activePage == 'edit-profile') ? 'active-styling':''; ?>">
+        <li class="<?= ($activePage == 'edit-profile.php') ? 'active-styling':''; ?>">
             <a href="edit-profile.php" class="dboard-li-atag"><i class="fa fa-cog pe-2" aria-hidden="true"></i><span
                     class="hidden-xs hidden-sm">Setting</span></a>
         </li>
