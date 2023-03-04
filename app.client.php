@@ -122,7 +122,7 @@ $packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
                                             </a>
                                         </div>
                                         <div class="col-lg-3 col-sm-6">
-                                            <a href="edit-profile.php">
+                                            <a href="my-orders.php">
                                                 <div class="dboard-cd-box mt-md-0 ">
                                                     <div class="inner">
                                                         <h3> 13 </h3>
