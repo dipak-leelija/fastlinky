@@ -1,17 +1,4 @@
 <?php 
-// require_once "_config/dbconnect.trait.php";
-
-
-/**
-*	This class will validate the user login info at the runtime
-*
-*	@author		Safikul Islam
-*	@date   	Dec 03, 2018
-*	@version	1.0
-*	@copyright	Web Tech Help
-*	@url		http://webtechhelp.org
-*	@email		safikulislamwb@.com
-*/
 
 require_once 'encrypt.inc.php';
 require_once 'utility.class.php'; 
@@ -94,7 +81,10 @@ class Login extends Utility{
 				}else{
 
 					// echo "error";exit;
-					header("Location: "."index.php"."?action=login&msg=Invalid username or password&typeM=ERROR");
+					// header("Location: "."index.php"."?action=login&msg=Invalid username or password&typeM=ERROR");
+					$invalid = urlencode(base64_encode('invalidPassword'));
+					header("Location: ".URL."/login.php?action=".$invalid);
+					exit;
 				}
 
 			}else{

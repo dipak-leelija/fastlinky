@@ -35,18 +35,22 @@ $uNum 			= new NumUtility();
 $typeM			= $utility->returnGetVar('typeM','');
 //user id
 $cusId			= $utility->returnSess('userid', 0);
-$return_url		= "";
+$return_url		= $utility->goToPreviousSessionPage();
 //$cusDtl			= $client->getClientData($cusId);
-if(isset($_GET['return_url'])){
-    //$return_url			  	= $_GET['return_url'];
-    $_SESSION['return_url'] 	= base64_decode($_GET["return_url"]); //get return url
-}
+
+
 
 $invUser    = '';
+$errorMsg   = '';
 if(isset($_GET['action'])){
     $invUser 	= base64_decode(urldecode($_GET['action']));
     if ($invUser == 'invalid') {
         $invUser = 'alert alert-warning show';
+        $errorMsg   = 'invalid email.';
+    }
+    if ($invUser == 'invalidPassword') {
+        $invUser = 'alert alert-warning show';
+        $errorMsg   = 'invalid password.';
     }
 }
 
@@ -59,22 +63,14 @@ if(isset($_POST['btnLogin'])){
         header("Location: ".$_SERVER['PHP_SELF']."?msg=invalid username or password");
 	
     }else{
-
-        if (isset($_SESSION['return_url'])) {
-
-            if($_SESSION['return_url'] == ''){
-                if(isset($_SESSION['orderNow'])){
-                 $_SESSION['return_url'] 	= "blogDetailsShare.php?id=".$_SESSION['orderNowId'];
-                }else{
-                    $_SESSION['return_url'] 	= "dashboard.php"; 
-                }
-            }   
-        }else{
-            $_SESSION['return_url'] 	= "dashboard.php";
+        if($return_url == ''){
+            if(isset($_SESSION['orderNow'])){
+                $return_url 	= "blogDetailsShare.php?id=".$_SESSION['orderNowId'];
+            }else{
+                $return_url 	= "dashboard.php"; 
+            }
         }
-
-        // echo $_SESSION['return_url'];exit;
-        $logIn->validate($login, $password, 'email', 'password', 'customer', $_SESSION['return_url']);
+        $logIn->validate($login, $password, 'email', 'password', 'customer', $return_url);
     }
 }
 
@@ -123,7 +119,7 @@ if(isset($_POST['btnLogin'])){
                                         <div class="login-div-below-card">
                                             <div>
                                                 <div class="alert-dismissible fade <?php echo $invUser;?>" role="alert">
-                                                    <strong>Sorry!</strong> Invalid Credentials.
+                                                    <strong>Sorry!</strong> <?php echo $errorMsg; ?>
                                                     <button type="button" class="btn-close" data-bs-dismiss="alert"
                                                         aria-label="Close"></button>
                                                 </div>
@@ -147,9 +143,6 @@ if(isset($_POST['btnLogin'])){
                                                     <div class="invalid-feedback">
                                                         Please enter your email address!
                                                     </div>
-                                                    <div class="valid-feedback">
-                                                        valid email address!
-                                                    </div>
                                                 </div>
 
                                                 <div class="form-group ">
@@ -158,9 +151,6 @@ if(isset($_POST['btnLogin'])){
                                                         id="txtPass" name="txtPass" class="form-control" required>
                                                     <div class="invalid-feedback">
                                                         Please enter your Password!
-                                                    </div>
-                                                    <div class="valid-feedback">
-                                                        Password Match!
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12 mb-2 submit-divclass  text-center">
