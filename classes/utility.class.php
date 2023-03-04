@@ -53,7 +53,7 @@ class Utility extends DatabaseConnection{
 		   $key .= $pattern[rand(0,35)];
 		}
     return $key;
-   }//eof
+   }//
    
    /**	
 	*	Generating the random key without zero and O' as this might cerate confusion
@@ -1410,10 +1410,8 @@ class Utility extends DatabaseConnection{
 	/**
 	*	Delete session if exist.
 	*/
-	function delSession($sess)
-	{
-		if(isset($_SESSION[$sess]))
-		{
+	function delSession($sess){
+		if(isset($_SESSION[$sess])){
 			$_SESSION[$sess] = '';
 			unset($_SESSION[$sess]);
 		}
@@ -3649,32 +3647,11 @@ class Utility extends DatabaseConnection{
 
 		$url      = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		$validURL = str_replace("&", "&amp;", $url);
+		// $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+		// $escaped_url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' );
 		return $validURL;
 		
 	}
-	
-	/**
-	*	Display correct URL for forwarding
-	*	
-	*	@param
-	*			$url		URL to check and display
-	*
-	*	@return string
-	*/
-	function dispURL($url)
-	{
-		if(!ereg('^http', $url))
-		{
-			$url = 'http://'.$url;
-		}
-		else
-		{
-			$url = $url;
-		}
-		
-		return $url;
-	}//eof
-	
 	
 	
 	/**
@@ -3689,53 +3666,31 @@ class Utility extends DatabaseConnection{
 	*
 	*	@return string
 	*/
-	function forwardPage($pageName, $alt)
-	{
+	function setCurrentPageSession(){
+		
 		//unset the previously set session
 		$this->delSession('goTo');
 		
 		//register with new page
-		$_SESSION['goTo']	= $pageName;
+		// $_SESSION['goTo']	= $pageName;
+		$currentUrl = $this->currentUrl();
+		$_SESSION['goTo']	= $currentUrl;
+
 		
 		//return page name
-		return $pageName;
+		return $currentUrl;
 		
 	}//eof
 	
 	
-	/**
-	*	Build the forward page name
-	*
-	*	@param
-	*			$pageName	Name of the new page
-	*			$alt		If page not found then forward it to alternate page
-	*
-	*	@date	October 5, 2009
-	*
-	*	@return string
-	*/
-	function buildForwardPage($pageName, $ext)
-	{
-		//declare var
-		$pageStr	= '';
-		
-		if($pageName != '')
-		{
-			//create page name
-			$pageStr = $pageName.".".$ext;
+
+	function goToPreviousSessionPage(){
+		if (isset($_SESSION['goTo'])) {
+			return $_SESSION['goTo'];
 		}
-		else
-		{
-			$pageStr	= 'index.php';
-		}
-		
-		//return page name
-		return $pageStr;
-		
-	}//eof
-	
-	
-	
+
+	}
+
 	
 	
 	/**
