@@ -259,7 +259,7 @@ if(isset($_POST['btnCancel'])){
                                                             <label>Gender</label>
                                                         </div>
                                                         <div class="col-md-9">
-                                                            <p><?php echo $cusDtl[0][7]; ?></p>
+                                                            <p class="text-capitalize"><?php echo $cusDtl[0][7]; ?></p>
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -418,7 +418,7 @@ if(isset($_POST['btnCancel'])){
                                                         </div>
                                                         <div class="col-sm-6 ">
                                                             <div class="form-floating mb-3">
-                                                                <select class="form-select" id="floatingSelectGrid"
+                                                                <select class="form-select text-capitalize" id="floatingSelectGrid"
                                                                     aria-label="Floating label select example"
                                                                     name="gender" required="">
                                                                     <option value="<?php echo $cusDtl[0][7];?>"
