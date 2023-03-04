@@ -1,19 +1,24 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
-require_once("_config/dbconnect.php");
-require_once "_config/dbconnect.trait.php";
-
 require_once "includes/constant.inc.php";
-require_once "classes/date.class.php";
-require_once "classes/error.class.php";
-require_once "classes/search.class.php";
-require_once "classes/customer.class.php";
-require_once "classes/location.class.php";
 
-require_once "classes/utility.class.php";
-require_once "classes/utilityMesg.class.php";
-require_once "classes/utilityImage.class.php";
-require_once "classes/utilityNum.class.php";
+require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/_config/dbconnect.trait.php";
+
+require_once ROOT_DIR."/classes/date.class.php";
+require_once ROOT_DIR."/classes/error.class.php";
+require_once ROOT_DIR."/classes/search.class.php";
+require_once ROOT_DIR."/classes/customer.class.php";
+require_once ROOT_DIR."/classes/location.class.php";
+
+require_once ROOT_DIR."/classes/utility.class.php";
+require_once ROOT_DIR."/classes/utilityMesg.class.php";
+require_once ROOT_DIR."/classes/utilityImage.class.php";
+require_once ROOT_DIR."/classes/utilityNum.class.php";
 
 /* INSTANTIATING CLASSES */
 $dateUtil      	= new DateUtil();
@@ -31,10 +36,8 @@ $typeM		= $utility->returnGetVar('typeM','');
 //user id
 $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId); 
-
-if($cusId == 0){
-	header("Location: index.php");
-}
+$currentPage = $utility->setCurrentPageSession();
+require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 //Edit Profile
 if(isset($_POST['btnSubmit'])){
@@ -60,7 +63,6 @@ if(isset($_POST['btnSubmit'])){
 		if($_FILES['fileImg']['name'] != ''){
 			//rename the file
 			$newName = $utility->getNewName4($_FILES['fileImg'], '', $cusId);
-
 			//upload and crop the file
 			$uImg->imgCropResize($_FILES['fileImg'], '', $newName, 'images/user/', 200, 200, $cusId, 'image', 'customer_id','customer');
 		}
@@ -193,10 +195,10 @@ if(isset($_POST['btnCancel'])){
                                                                     style=" visibility: hidden; display: none;"
                                                                     name="fileImg" id="fileImg" accept="image/*">
                                                                 <label class="input-group-text label_design_as_btn"
-                                                                    for="inputGroupFile02"> <i
-                                                                        class="fa fa-fw fa-camera pe-2
-                                                                        "></i> Change
-                                                                    Photo</label>
+                                                                    for="inputGroupFile02">
+                                                                    <i class="fa fa-fw fa-camera pe-2"></i>
+                                                                    Change Photo
+                                                                </label>
                                                             </div>
                                                         </div>
                                                         <div class="text-center text-sm-right order-sm-2 order-1">
@@ -393,7 +395,7 @@ if(isset($_POST['btnCancel'])){
                                                         <div class="col-sm-6">
                                                             <div class="form-floating mb-3">
                                                                 <select class="form-select" id="floatingSelect"
-                                                                    aria-label="Floating label select example">
+                                                                    aria-label="Floating label select example" name="txtProfession">
                                                                     <option value="<?php echo $cusDtl[0][14];?>"
                                                                         selected="selected">
                                                                         <?php echo $cusDtl[0][14];?>
@@ -409,8 +411,6 @@ if(isset($_POST['btnCancel'])){
                                                                     <option value="Marketing Manager">Marketing
                                                                         Manager
                                                                     </option>
-                                                                    <!-- <option value="Web Developer">Web Developer
-                                                                    </option> -->
                                                                     <option value="Others">Others</option>
                                                                 </select>
                                                                 <label for="floatingSelect">Profession</label>
@@ -666,6 +666,7 @@ if(isset($_POST['btnCancel'])){
                     }
 
                     reader.readAsDataURL(input.files[0]);
+                    alert('Go to Edit Profile and Update the Changes');
                 }
             }
 
