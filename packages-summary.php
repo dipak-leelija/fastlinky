@@ -31,13 +31,15 @@ $uImg 			= new ImageUtility();
 $uNum 			= new NumUtility();
 $faqs		    = new faqs();
 ######################################################################################################################
-$typeM		= $utility->returnGetVar('typeM','');
+$typeM		    = $utility->returnGetVar('typeM','');
 //user id
-$cusId		= $utility->returnSess('userid', 0);
-$cusDtl   = $customer->getCustomerData($cusId);
-// echo $cusId; exit;
+$cusId		    = $utility->returnSess('userid', 0);
+$cusDtl         = $customer->getCustomerData($cusId);
+$currentPage    = $utility->setCurrentPageSession();
+
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
+
 
 if (!isset($_SESSION['package'])) {
     header('Location: customer-packages.php' );
