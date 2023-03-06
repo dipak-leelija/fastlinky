@@ -75,47 +75,52 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
             </div>
         </div>
         <!-- cards for customers details -->
-        <div class="second-main-div-for-details">
-            <div class="row">
-                <div class="col-md-6 ">
-                    <div class="customer-details-section">
-                        <div class="card customer-d-card">
-                            <h5>Customer Details</h5>
-                            <p><label><?php echo $customerName; ?></label></p>
-                            <p><label><?php echo $customerEmail; ?></label></p>
-                            <p><label><?php echo $customerMobile; ?></label></p>
-                            <p><label><?php echo $customerCity; ?></label></p>
-                            <p><label><?php echo $customerCountry; ?></label></p>
+        <div class="row my-3 my-md-4">
+            <div class="col">
+                <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-sm d-flex">
+                            <div class="card card-body flex-fill  customer-d-card">
+                                <div>
+                                    <h5>Customer Details</h5>
+                                    <p><label><?php echo $customerName; ?></label></p>
+                                    <p><label><?php echo $customerEmail; ?></label></p>
+                                    <p><label><?php echo $customerMobile; ?></label></p>
+                                    <p><label><?php echo $customerCity; ?></label></p>
+                                    <p><label><?php echo $customerCountry; ?></label></p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="Client-details-section">
-                        <div class="card customer-d-card">
-                            <h5>Bill Details</h5>
-                            <p><label>Invoice Date : <?php echo $DateUtil->todayDate("/"); ?> </label></p>
-                            <p><label>Due Date : <?php echo $DateUtil->todayDate("/"); ?><label></p>
-                            <p><label>Payment Mode : PayLater<label></p>
-                            <p><label>Total Package: <?php echo count($_SESSION['package']); ?></label></p>
+                        <div class="col-sm d-flex">
+                            <div class="card card-body flex-fill customer-d-card">
+                                <h5>Bill Details</h5>
+                                <p><label>Invoice Date : <?php echo $DateUtil->todayDate("/"); ?> </label>
+                                </p>
+                                <p><label>Due Date : <?php echo $DateUtil->todayDate("/"); ?><label></p>
+                                <p><label>Payment Mode : PayLater<label></p>
+                                <p><label>Total Package: <?php echo count($_SESSION['package']); ?></label>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <form action="order-processing.php" method="post">
-                <div class=" display-table text-center">
-                    <!-- <div class="features_grids table-responsive"> -->
-                    <table class="table detailing-table">
-                        <thead class="table-secondary">
-                            <tr>
-                                <th scope="col">Item</th>
-                                <th scope="col">QTY</th>
-                                <th scope="col">Rate</th>
-                                <th scope="col">Subtotal</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
+        <form action="order-processing.php" method="post">
+            <div class=" display-table text-center">
+                <!-- <div class="features_grids table-responsive"> -->
+                <table class="table detailing-table">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">QTY</th>
+                            <th scope="col">Rate</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
                             $totalCost = 00.00;
 
                             foreach ($_SESSION['package'] as $index => $packId) {
@@ -129,72 +134,75 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
                                 
                                 $orderIds[] = $PackageOrder->addPackageOrder($packId, '', $cusId, $customerName, $customerEmail, $pack['price'], $pack['price'], 'PayLater', '', '2', '2');
                             ?>
-                            <tr>
-                                <td class="text-start"><b><?php echo $packFullName; ?></b> </td>
-                                <td><?php echo 1; ?></td>
-                                <td><?php echo CURRENCY.$pack['price']; ?></td>
-                                <td> <?php echo CURRENCY; ?><span id="amount"><?php echo $pack['price']; ?></span>
-                                </td>
-                            </tr>
-                            <?php
+                        <tr>
+                            <td class="text-start fw-semibold"><?php echo $packFullName; ?></td>
+                            <td><?php echo 1; ?></td>
+                            <td><?php echo CURRENCY.$pack['price']; ?></td>
+                            <td> <?php echo CURRENCY; ?><span id="amount"><?php echo $pack['price']; ?></span>
+                            </td>
+                        </tr>
+                        <?php
                             }
                             $_SESSION['orderIds']    =    $orderIds;
                             ?>
-                        </tbody>
-                    </table>
-                    <!-- </div> -->
-                </div>
+                    </tbody>
+                </table>
+                <!-- </div> -->
+            </div>
 
-                <!-- invoice table -->
-                <div class="mt-5">
-                    <div class="row" style="display: flex; justify-content: end;">
-                        <div class="col-md-5  ">
-                            <table class="table table-responsive">
-                                <thead class="table-secondary">
-                                    <tr>
-                                        <th class="text-center" scope="col">Invoice Summary</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-6">Total</div>
-                                                <div class="col-6 text-end fw-semibold">
-                                                    <?php echo CURRENCY.$totalCost;?></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-8"><b> Payment Method </b></div>
-                                                <div class="col-4 text-end"><b>PayLater</b> </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
+            <!-- invoice table -->
+            <div class="second-table-fr-total">
+                <div class="row" style="display: flex; justify-content: end;">
+                    <div class="col-md-5  ">
+                        <table class="table table-responsive">
+                            <thead class="table-secondary">
+                                <tr>
+                                    <th class="text-center" scope="col">Invoice Summary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
                                         <div class="row">
-                                                <div class="col-12 text-end">
-                                                    <button type="submit" class="btn btn-primary rounded-pill w-100 fw-semibold" name="paylaterForm">Place Order</button>
-                                                </div>
-                                                <div class="col-12 text-end">
-                                                    <button type="button" class="btn btn-danger rounded-pill w-100 fw-semibold mt-2" onclick="history.back()">Cancel</button>
-                                                </div>
+                                            <div class="col-6">Total</div>
+                                            <div class="col-6 text-end fw-semibold">
+                                                <?php echo CURRENCY.$totalCost;?></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-8"><b> Payment Method </b></div>
+                                            <div class="col-4 text-end"><b>PayLater</b> </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="row mt-2">
+                                            <div class="col-12 text-end">
+                                                <button type="submit"
+                                                    class="btn btn-primary rounded-pill w-100 fw-semibold"
+                                                    name="paylaterForm">Place Order</button>
                                             </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                                            <div class="col-12 text-end">
+                                                <button type="button"
+                                                    class="btn btn-danger rounded-pill w-100 fw-semibold mt-2"
+                                                    onclick="history.back()">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </section>
 
-   
+
     <script src="../plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
