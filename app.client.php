@@ -29,7 +29,9 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 $wishes             = $WishList->countWishlistByUser($cusId);
 $myOrders           = $ContentOrder->clientOrders($cusId);
-$packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
+$pendingContOrd     = $ContentOrder->pendingOrders($cusId);
+$packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId);
+$pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
 
 
 ?>
@@ -125,13 +127,10 @@ $packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
                                             <a href="my-orders.php">
                                                 <div class="dboard-cd-box mt-md-0 ">
                                                     <div class="inner">
-                                                        <h3> 13 </h3>
-                                                        <!-- <small>dipakmajumdar.leelija@gmail.com</small> -->
-                                                        <!-- <p>7699753019</p> -->
+                                                        <h3><?php echo count($pendingContOrd) +  count($pendingPackOrd); ?></h3>
                                                         <p>Pending Order</p>
                                                     </div>
                                                     <div class="dboard-icn_font" aria-hidden="true">
-                                                        <!-- <i class="fa-solid fa-gears"></i> -->
                                                         <i class="fa-solid fa-hourglass-half"></i>
                                                     </div>
                                                 </div>
@@ -145,8 +144,7 @@ $packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
                                         <div class=" table-responsive py-3 p-0">
                                             <h4>Guest Posting Details</h4>
                                             <!-- <a href="blogs-list.php"> -->
-                                                <div class="card table-responsive p-2"
-                                                    style="border-left: 2px solid #FDA33B;">
+                                                <div class="card table-responsive p-2">
                                                     <table class="table  table-hover">
                                                         <thead class="table-light">
                                                             <tr>
@@ -203,9 +201,9 @@ $packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId)
                                                         alt="">
                                                     <img src="./images/package-pricingcard2.png" class="w-100 pkg-img2"
                                                         alt=""> -->
-                                                    <div class="m-auto p-5 bg-primary text-white rounded">
+                                                    <div class="m-auto p-5 bg-light text-primary rounded">
                                                         <h1>Coming Soon..</h1>
-                                                        <p class="text-light">Some Exclusive Guest Posting Sites are
+                                                        <p class="text-primary">Some Exclusive Guest Posting Sites are
                                                             cooming soon!</p>
                                                     </div>
                                                 </div>

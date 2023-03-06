@@ -93,6 +93,24 @@ class PackageOrder extends DatabaseConnection{
 
   
 
+  function pendingGPOrders($userId){
+
+    $data = array();
+    $sql  = "SELECT * FROM `gp_package_order` WHERE `customer_id` = '$userId' AND `order_status` = 2 OR `order_status` = 'pending' OR `order_status` = 'Pending'";
+    // echo $sql;
+    $res  = $this->conn->query($sql);
+    $rows = $res->num_rows;
+    if ($rows > 0) {
+          while ($result = $res->fetch_assoc()) {
+                $data[] = $result;
+          }
+    }
+    return $data;
+
+}//eof
+
+
+
   function insertPackOrder($orderId,$key,$link,$text){
       $sql ="INSERT INTO `gp_package_order_details`(`pack_order_id`, `anchor_text`, `anchor_link`, `comment`, `added_on`, `modified_on`) VALUES ('$orderId','$key','$link','$text',now(),now())";
       $data = $this->conn->query($sql);

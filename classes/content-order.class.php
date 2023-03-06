@@ -45,6 +45,22 @@ class ContentOrder extends DatabaseConnection{
       }//eof
 
 
+      function pendingOrders($userId){
+
+            $data = array();
+            $sql  = "SELECT * FROM `order_details` WHERE `clientUserId` = '$userId' AND `clientOrderStatus` = 2 OR `clientOrderStatus` = 'pending' OR `clientOrderStatus` = 'Pending'";
+            // echo $sql;
+            $res  = $this->conn->query($sql);
+            $rows = $res->num_rows;
+            if ($rows > 0) {
+                  while ($result = $res->fetch_assoc()) {
+                        $data[] = $result;
+                  }
+            }
+            return $data;
+
+      }//eof
+
 
 
 
