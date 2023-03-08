@@ -16,7 +16,7 @@ require_once ROOT_DIR."/classes/utility.class.php";
 /* INSTANTIATING CLASSES */
 $customer		= new Customer();
 $ContentOrder   = new ContentOrder();
-$blogMst		= new BlogMst();
+$BlogMst		= new BlogMst();
 $OrderStatus    = new OrderStatus();
 $DateUtil       = new DateUtil();
 $utility		= new Utility();
@@ -28,7 +28,7 @@ $cusDtl		= $customer->getCustomerData($cusId);
 
 require_once ROOT_DIR."/includes/check-seller-login.inc.php";
 
-$blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
+$blogsDtls 	= $BlogMst->ShowUserBlogData($cusDtl[0][2]);
 $sellerOrders = $ContentOrder->contentOrdersBySeller($cusDtl[0][2]);
 
 ?>
@@ -233,44 +233,27 @@ $sellerOrders = $ContentOrder->contentOrdersBySeller($cusDtl[0][2]);
                                             <div class="table-responsive py-2 p-1">
                                                 <h4>Most Posting Blogs</h4>
                                                 <div class="card table-responsive db_shadow border-0 p-2">
-                                                    <?php
-                                                    $mostSelling = $ContentOrder->mostSellingBlogs();
-                                                    print_r($mostSelling);
-                                                    ?>
                                                     <table class="table table-hover">
                                                         <thead class="table-light">
                                                             <tr>
-                                                                <th scope="col">#</th>
-                                                                <th scope="col">First</th>
-                                                                <th scope="col">Last</th>
-                                                                <th scope="col">Handle</th>
+                                                                <th scope="col">SL. NO.</th>
+                                                                <th scope="col">Domain</th>
+                                                                <th scope="col">Sold</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                        <?php
+                                                        $mostSelling = $BlogMst->mostSellingBlogs($cusId);
+                                                        $sl = 1;
+                                                        foreach ($mostSelling as $blog) {
+                                                            echo'
                                                             <tr>
-                                                                <th scope="row">1</th>
-                                                                <td>Mark</td>
-                                                                <td>Otto</td>
-                                                                <td>@mdo</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">2</th>
-                                                                <td>Jacob</td>
-                                                                <td>Thornton</td>
-                                                                <td>@fat</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">3</th>
-                                                                <td>Larry</td>
-                                                                <td>the Bird</td>
-                                                                <td>@twitter</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">3</th>
-                                                                <td>Larry</td>
-                                                                <td>the Bird</td>
-                                                                <td>@twitter</td>
-                                                            </tr>
+                                                                <th scope="row">'.$sl++.'</th>
+                                                                <td>'.$blog['domain'].'</td>
+                                                                <td>'.$blog['sold_qty'].'<small> Times</small></td>
+                                                            </tr>';
+                                                        }
+                                                        ?>
                                                         </tbody>
                                                     </table>
                                                 </div>

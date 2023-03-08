@@ -4,28 +4,27 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
-// require_once("_config/connect.php");
-require_once "_config/dbconnect.php";
-require_once "_config/dbconnect.trait.php";
-
-
 require_once "includes/constant.inc.php";
-require_once "includes/user.inc.php";
-require_once "includes/email.inc.php";
-require_once "includes/registration.inc.php";
-require_once "includes/mail-functions.php";
-require_once "includes/paypal.inc.php";
 
-require_once "classes/customer.class.php";
-require_once "classes/domain.class.php";
-require_once "classes/blog_mst.class.php";
-require_once "classes/orderStatus.class.php";
-require_once "classes/error.class.php";
-require_once "classes/date.class.php";
-require_once "classes/content-order.class.php";
-require_once "classes/wishList.class.php";
-require_once "classes/utility.class.php"; 
-require_once "classes/utilityMesg.class.php"; 
+require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/_config/dbconnect.trait.php";
+
+require_once ROOT_DIR."/includes/user.inc.php";
+require_once ROOT_DIR."/includes/email.inc.php";
+require_once ROOT_DIR."/includes/registration.inc.php";
+require_once ROOT_DIR."/includes/mail-functions.php";
+require_once ROOT_DIR."/includes/paypal.inc.php";
+
+require_once ROOT_DIR."/classes/customer.class.php";
+require_once ROOT_DIR."/classes/domain.class.php";
+require_once ROOT_DIR."/classes/blog_mst.class.php";
+require_once ROOT_DIR."/classes/orderStatus.class.php";
+require_once ROOT_DIR."/classes/error.class.php";
+require_once ROOT_DIR."/classes/date.class.php";
+require_once ROOT_DIR."/classes/content-order.class.php";
+require_once ROOT_DIR."/classes/wishList.class.php";
+require_once ROOT_DIR."/classes/utility.class.php"; 
+require_once ROOT_DIR."/classes/utilityMesg.class.php"; 
 
 /* INSTANTIATING CLASSES */
 $customer		= new Customer();
@@ -138,6 +137,7 @@ if (isset($_POST['data']) && isset($_POST['blogId'])) {
 		$ContentOrder->addOrderTransection($_SESSION['orderId'], $_SESSION['trxn_id'], "Paypal", $itemAmount, 0, $paid_amount, $t_date, $clientEmail);
 
 		$ContentOrder->addOrderUpdate($_SESSION['orderId'], 'Order Placed', '', $cusDtl[0][0]);
+		$BlogMst->incrBlogSoldQty($blogId, 1);
 
 
 	}else {

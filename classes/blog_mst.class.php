@@ -1,27 +1,6 @@
 <?php 
-/**
-*	This class is going to work with all Domain associated with a Domain category. 
-*
-*	UPDATE oct 17, 2018:
-*	New function has been added to display product price in different format in runtime. The 
-*	coder or implementor would be able to change the rendering style in runtime.
-*
-*	
-*
-*
-*	@author		Safikul Islam
-*	@date		Oct 17, 2018
-*	@update		
-*	@version	3.0
-*	@copyright	WebTechHelp
-*	@url		https://webtechhelp.org
-*	@email		safikulislamwb@gmail.com
-* 
-*/
 
-
-class BlogMst extends DatabaseConnection
-{
+class BlogMst extends DatabaseConnection{
 
 	#####################################################################################################
 	#
@@ -224,9 +203,8 @@ class BlogMst extends DatabaseConnection
 	
 	
 	//Blog Niche edit
-	function editBlogMstNiche($blog_id, $niche, $updated_by)
-						
-	{
+	function editBlogMstNiche($blog_id, $niche, $updated_by){
+
 		$blog_id							=	addslashes(trim($blog_id));
 		$niche								=	addslashes(trim($niche));
 		$updated_by							=	addslashes(trim($updated_by));
@@ -258,6 +236,7 @@ class BlogMst extends DatabaseConnection
 		return $result;
 	}//eof
 	
+
 	//Status updated
 	function updateStatus($blog_id, $approved, $updated_by){
 
@@ -289,11 +268,14 @@ class BlogMst extends DatabaseConnection
 		//return the result
 		return $result;
 	}//eof
+
+
+
 	/**
 	*	Get the data associated with a product based upon the primary key
 	*
 	*	@param
-	*			$bid		blog id
+	*	$bid		blog id
 	*
 	*	@return array				
 	*/
@@ -343,6 +325,8 @@ class BlogMst extends DatabaseConnection
 	}//eof
 	
 	
+
+
 	/**
 	*	Get the data associated with a product based upon Domain name
 	*
@@ -413,7 +397,7 @@ class BlogMst extends DatabaseConnection
 
 	 //show approved blogs details
 	public function ShowBlogApprData(){
-     $res 	= "SELECT * FROM blog_mst where approved != 'no' order by blog_id desc " or die( $res->$this->conn->error );
+     $res 	= "SELECT * FROM blog_mst where approved != 'no' order by blog_id desc " or die( $res.$this->conn->error );
 	 $query	= $this->conn->query($res);
      $rows= $query->num_rows;
 	 if ($rows > 0 ) {
@@ -429,7 +413,7 @@ class BlogMst extends DatabaseConnection
 	//User wise blogs display
 	public function ShowUserBlogData($created_by){
 		$temp_arr = array();
-		$res = "SELECT * FROM blog_mst where created_by ='$created_by' order by blog_id desc";
+		$res = "SELECT * FROM blog_mst where created_by ='$created_by' order by blog_id ASC";
 		$query = $this->conn->query($res);
    
 		$rows= $query->num_rows;
@@ -443,16 +427,16 @@ class BlogMst extends DatabaseConnection
 	 
 	
 	//  Display 
-	public function ShowBlogUserWiseData($added_by){
-	//echo $added_by;exit;
-     $temp_arr = array();
-     $res = mysql_query("SELECT * FROM blog_mst WHERE  created_by = '$added_by' ORDER BY updated_on ASC ") or die(mysql_error());        
-     $count=mysql_num_rows($res);
-    while($row = mysql_fetch_array($res)) {
-         $temp_arr[] =$row;
-		 
-     }
-     return $temp_arr;  
+	public function incrBlogSoldQty($blogId, $soldQty){
+		$query 	= "UPDATE blog_mst 
+					SET sold_qty = sold_qty + $soldQty
+					WHERE  blog_id = '$blogId'";
+		$res	= $this->conn->query($query);
+		if($res){
+			return true;
+		}else{
+			return false;
+		}
      }
 
 	  /**
@@ -472,6 +456,17 @@ class BlogMst extends DatabaseConnection
 	}//eof
 	
 	
+	function mostSellingBlogs($created_by){
+		$data	= array();
+		$sql = "SELECT blog_id,domain,sold_qty FROM blog_mst WHERE created_by = '$created_by' ORDER BY sold_qty DESC LIMIT 4";
+		$res = $this->conn->query($sql);
+		while ($result = $res->fetch_assoc()) {
+			  $data[] = $result;
+		}
+		return $data;
+  }
+
+  
 	#####################################################################################################
 	#
 	#										BLOG Niches Details
@@ -1173,5 +1168,4 @@ class BlogMst extends DatabaseConnection
 	
 	
 }
-
 ?>

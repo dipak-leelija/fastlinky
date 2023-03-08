@@ -144,16 +144,6 @@ class ContentOrder extends DatabaseConnection{
 
 
 
-      function mostSellingBlogs(){
-            $sql = 'SELECT clientOrderedSite,order_id FROM order_details as od inner join blog_mst as b on od.clientOrderedSite = b.domain';
-            $res = $this->conn->query($sql);
-            while ($result = $res->fetch_assoc()) {
-                  $data[] = $result;
-            }
-            return $data;
-      }
-
-
 
       /**
        * @param $contentsId    = table `id`

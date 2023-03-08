@@ -136,6 +136,7 @@ if ( isset($_POST['blogId'])) {
 		$ContentOrder->addOrderTransection($_SESSION['orderId'], $_SESSION['trxn_id'], "Pay Later", $itemAmount, $clientOrderPrice, $paid_amount, $t_date, $clientEmail);
 
 		$ContentOrder->addOrderUpdate($_SESSION['orderId'], 'Order Placed', '', $cusDtl[0][0]);
+		$BlogMst->incrBlogSoldQty($blogId, 1);
 
 
 	}else {
