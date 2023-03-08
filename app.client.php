@@ -141,10 +141,12 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                 </header>
                                 <div class="row">
                                     <div class=" col-lg-6 ">
-                                        <div class=" table-responsive py-3 p-0">
+                                        <div class=" table-responsive py-3 p-1">
                                             <h4>Guest Posting Details</h4>
-                                            <!-- <a href="blogs-list.php"> -->
-                                                <div class="card table-responsive p-2">
+                                                <div class="card table-responsive db_shadow border-0 p-2">
+                                                    <?php
+                                                    if (count($myOrders) > 0 ) {
+                                                    ?>
                                                     <table class="table  table-hover">
                                                         <thead class="table-light">
                                                             <tr>
@@ -155,7 +157,6 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                                         </thead>
                                                         <tbody>
                                                             <?php
-                                                             if (count($myOrders) > 0 ) {
                                                                 $showItems = 1;
                                                                 foreach ($myOrders as $order) {
                                                                     $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);
@@ -167,16 +168,19 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                                                         <td><a href="guest-post-article-submit.php?order='.base64_encode(urlencode($order["order_id"])).'"> <span class="badge text-bg-primary '.$status[0]["orders_status_name"].'">'.$status[0]["orders_status_name"].'<span></a></td>
                                                                     </tr>
                                                                     ';
-                                                                    if ($showItems++ > 8) {
+                                                                    if ($showItems++ == 8) {
                                                                         break;
                                                                     }
                                                                 }
-                                                            }
                                                             ?>
                                                         </tbody>
                                                     </table>
+                                                    <?php
+                                                    }else {
+                                                        echo 'No Orders';
+                                                    }
+                                                    ?>
                                                 </div>
-                                            <!-- </a> -->
                                         </div>
 
                                     </div>
@@ -184,23 +188,16 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                         <a href="notifications.php">
                                             <div class="pt-3 pb-0 p-0">
                                                 <h4 class="text-dark">Recent Notification</h4>
-                                                <div class="alert alert-warning alert-dismissible fade show"
+                                                <div class="alert alert-warning db_shadow"
                                                     role="alert">
                                                     <strong> No Notifications</strong>
-                                                    <!-- <strong>Holy guacamole!</strong> You should check in on some of
-                                                    those
-                                                    fields below. -->
                                                 </div>
                                             </div>
                                         </a>
                                         <div class="col-lg-12 mt-5">
                                             <a href="./exclusive-guest-post.php">
-                                                <div class="card package-details-pricing-crd pb-5">
+                                                <div class="card package-details-pricing-crd db_shadow pb-5">
                                                     <h4> Exclusive Blogs </h4>
-                                                    <!-- <img src="./images/package-pricingcard.png" class="w-100 pkg-img1"
-                                                        alt="">
-                                                    <img src="./images/package-pricingcard2.png" class="w-100 pkg-img2"
-                                                        alt=""> -->
                                                     <div class="m-auto p-5 bg-light text-primary rounded">
                                                         <h1>Coming Soon..</h1>
                                                         <p class="text-primary">Some Exclusive Guest Posting Sites are
@@ -211,20 +208,10 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                         </div>
                                     </div>
                                 </div>
-
-
-                                <div class="user-dashboard">
-                                    <!-- Dashboard Body Start-->
-                                    <div class="bfrom">
-                                        <!--start from div-->
-
-                                    </div>
-                                </div><!-- Dashboard Body end //-->
                             </div>
                         </div>
                         <!--Row end-->
                     </div>
-
                 </div>
                 <!-- //end display table-->
 

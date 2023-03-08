@@ -121,7 +121,37 @@ class ContentOrder extends DatabaseConnection{
 
 
 
- 
+      function contentOrdersBySeller($userId){
+            $data = array();
+            $activeOrder    = $this->activeOrders();
+            foreach ($activeOrder as $order) {
+                  // $domains = $blogMst->ShowUserBlogData($cusDtl[0][2]);
+                  $res = "SELECT * FROM blog_mst where created_by ='$userId' order by blog_id desc";
+                  $query = $this->conn->query($res);
+      
+                  $rows= $query->num_rows;
+      
+                  while($result = $query->fetch_assoc()) {
+                        if ($order['clientOrderedSite'] == $result['domain']) {
+                              // $data[] = $result;
+                              $data[] = $order;
+                              
+                        }
+                  }    
+            } 
+            return $data; 
+      }
+
+
+
+      function mostSellingBlogs(){
+            $sql = 'SELECT clientOrderedSite,order_id FROM order_details as od inner join blog_mst as b on od.clientOrderedSite = b.domain';
+            $res = $this->conn->query($sql);
+            while ($result = $res->fetch_assoc()) {
+                  $data[] = $result;
+            }
+            return $data;
+      }
 
 
 

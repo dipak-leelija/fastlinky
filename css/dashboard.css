@@ -27,6 +27,9 @@
     cursor: pointer;
 }
 
+.db_shadow{
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
 
 /*Main CSS*/
 
@@ -49,9 +52,6 @@ ul.breadcrumb {
     background: var(--pure-white);
     border-radius: 0;
 }
-
-ul.breadcrumb:hover,
-ul.breadcrumb:hover li a:hover {}
 
 ul.breadcrumb li {
     display: inline;
@@ -108,8 +108,6 @@ ul.breadcrumb li a:hover {
     padding: 2%;
     text-align: center;
 }
-
-.profile-img-box .blod {}
 
 .profile-img-box a img {
     border-radius: 50%;
@@ -214,15 +212,11 @@ ul.breadcrumb li a:hover {
 .alert-warning {
     border: none;
     background: var(--pure-white);
-    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-
 }
 
 .package-details-pricing-crd{
-    /* border-left: 2px solid var(--mustard) !important; */
     background: var(--pure-white);
     padding: 7px;
-    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
     border: none;
 }
 .package-details-pricing-crd h4{

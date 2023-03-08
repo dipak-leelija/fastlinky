@@ -1,24 +1,24 @@
 <?php
 session_start();
-require_once "_config/dbconnect.php";
-require_once "_config/dbconnect.trait.php";
-
 require_once "includes/constant.inc.php";
-require_once "classes/encrypt.inc.php";
-require_once "classes/date.class.php";
-require_once "classes/error.class.php";
-require_once "classes/search.class.php";
-require_once "classes/customer.class.php";
-require_once "classes/login.class.php";
-require_once "classes/domain.class.php";
 
-//require_once("../classes/front_photo.class.php");
-require_once "classes/blog_mst.class.php";
-require_once "classes/utility.class.php";
-require_once "classes/gp-order.class.php";
+require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/_config/dbconnect.trait.php";
 
-require_once "classes/content-order.class.php";
-require_once "classes/orderStatus.class.php";
+require_once ROOT_DIR."/classes/encrypt.inc.php";
+require_once ROOT_DIR."/classes/date.class.php";
+require_once ROOT_DIR."/classes/error.class.php";
+require_once ROOT_DIR."/classes/search.class.php";
+require_once ROOT_DIR."/classes/customer.class.php";
+require_once ROOT_DIR."/classes/login.class.php";
+require_once ROOT_DIR."/classes/domain.class.php";
+
+require_once ROOT_DIR."/classes/blog_mst.class.php";
+require_once ROOT_DIR."/classes/utility.class.php";
+require_once ROOT_DIR."/classes/gp-order.class.php";
+
+require_once ROOT_DIR."/classes/content-order.class.php";
+require_once ROOT_DIR."/classes/orderStatus.class.php";
 
 
 /* INSTANTIATING CLASSES */
@@ -35,10 +35,6 @@ $ContentOrder   = new ContentOrder();
 $OrderStatus    = new OrderStatus();
 
 $utility		= new Utility();
-// $uMesg 			= new MesgUtility();
-// $uImg 			= new ImageUtility();
-// $uNum 			= new NumUtility();
-$gp				  = new Gporder();
 ######################################################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
 //user id
@@ -47,13 +43,8 @@ $cusDtl		= $customer->getCustomerData($cusId);
 
 // print_r($cusDtl);exit;
 
-if($cusId == 0){
-	header("Location: index.php");
-}
+require_once ROOT_DIR."/includes/check-seller-login.inc.php";
 
-if($cusDtl[0][0] == 1){
-	header("Location: app.client.php");
-}
 
 ?>
 <!DOCTYPE HTML>
@@ -172,7 +163,7 @@ if($cusDtl[0][0] == 1){
                                                                     <?php echo $status[0]['orders_status_name']; ?>
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <?php echo date("d.m.Y - h:i a", strtotime($order['added_on']));?>
+                                                                    <?php echo $utility->dateTimeNum($order['added_on'], '.');?>
                                                                 </td>
                                                                 <td>
                                                                     <a href="order-view-update.php?id=<?php echo base64_encode($order['order_id']);?>"
