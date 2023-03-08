@@ -3,28 +3,39 @@
     padding: 0.5rem 10rem;
 }
 
-.second-main-div-for-details {
-    margin: 1rem;
-}
+
 
 .customer-d-card {
+    font-family: Poppins, Poppins;
     margin: 1rem 0;
     padding: 1rem;
     line-height: 1;
     display: block;
+    border: 1px solid #dfe1e6;
+    border-radius: 0.25rem;
+
     /* box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px; */
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
-    border: none;
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    border: none; */
 }
 
 .customer-d-card h5 {
-    color: #0673BA;
+    color: #00254d;
+    /* color: #0673BA; */
+    font-family: Poppins, Poppins;
 }
 
 .customer-d-card p {
+    line-height: 1.6;
+    font-size: .95rem;
+    margin-bottom: 0;
     font-weight: 500;
+    color: #6b778c;
+    font-family: Poppins, Poppins;
 }
-
+.second-table-fr-total{
+    margin-top: 1.5rem;
+}
 .invoice-styles {
     margin: 1rem 0 1rem;
 }
@@ -42,32 +53,51 @@ table>tbody>tr>td {
     margin-top: 1rem;
 }
 
-@media(max-width:340px) {
-    .detailing-table tr {
-        word-break: break-all;
-    }
-}
+
 
 @media(max-width:992px) {
     .paylater-main-section {
         padding: 1rem 5rem;
     }
+    .main_logo {
+        width: 22% !important;
+        margin-top: 1rem;
+    }
 }
 
 @media(max-width:576px) {
+    .customer-d-card {
+        margin: .5rem 0;
+    }
     .paylater-main-section {
-        padding: 1rem 0rem;
+        padding: 1rem;
     }
     .logos-section {
         margin: 0 1rem;
     }
+    .main_logo {
+        width: 32% !important;
+        margin-top: 1rem;
+    }
+}
+@media(max-width:340px) {
+    .detailing-table tr {
+        word-break: break-all;
+    }
+    .main_logo {
+        width: 47% !important;
+        margin-top: 1rem;
+    }
 }
 
 @media (min-width:768px) {
-    .table-responsive {
+    .second-table-fr-total {
+        margin-top: 2.5rem;
+    }
+    /* .table-responsive {
         overflow-x: auto !important;
         -webkit-overflow-scrolling: touch !important;
-    }
+    } */
 }
 
 .scroll {

@@ -63,6 +63,9 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
+
+    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="../css/payment-summary-style.css">
 </head>
@@ -76,37 +79,42 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
             </div>
         </div>
         <!-- cards for customers details -->
-        <div class="second-main-div-for-details">
-            <div class="row">
-                <div class="col-md-6 ">
-                    <div class="customer-details-section">
-                        <div class="card customer-d-card">
-                            <h5>Customer Details</h5>
-                            <p><label><?php echo $customerName; ?></label></p>
-                            <p><label><?php echo $customerEmail; ?></label></p>
-                            <p><label><?php echo $customerMobile; ?></label></p>
-                            <p><label><?php echo $customerCity; ?></label></p>
-                            <p><label><?php echo $customerCountry; ?></label></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="Client-details-section">
-                        <div class="card customer-d-card">
-                            <h5>Bill Details</h5>
-                            <p><label>Invoice Date : <?php echo $DateUtil->todayDate("/"); ?> </label></p>
-                            <p><label>Due Date : <?php echo $DateUtil->todayDate("/"); ?><label></p>
-                            <p><label>Payment Mode : Paypal<label></p>
-                            <p><label>Total Package: <?php echo count($_SESSION['package']); ?></label></p>
+            <div class="row my-3 my-md-4">
+                <div class="col">
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-sm d-flex">
+                                <div class="card card-body flex-fill  customer-d-card">
+                                    <div>
+                                        <h5>Customer Details</h5>
+                                        <p><label><?php echo $customerName; ?></label></p>
+                                        <p><label><?php echo $customerEmail; ?></label></p>
+                                        <p><label><?php echo $customerMobile; ?></label></p>
+                                        <p><label><?php echo $customerCity; ?></label></p>
+                                        <p><label><?php echo $customerCountry; ?></label></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm d-flex">
+                                <div class="card card-body flex-fill customer-d-card">
+                                    <h5>Bill Details</h5>
+                                    <p><label>Invoice Date : <?php echo $DateUtil->todayDate("/"); ?> </label>
+                                    </p>
+                                    <p><label>Due Date : <?php echo $DateUtil->todayDate("/"); ?><label></p>
+                                    <p><label>Payment Mode : Paypal<label></p>
+                                    <p><label>Total Package: <?php echo count($_SESSION['package']); ?></label>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <form action="" method="post">
-                <div class=" display-table text-center">
+                <div class=" display-table text-center ">
                     <!-- <div class="features_grids table-responsive"> -->
-                    <table class="table detailing-table">
+                    <table class="table detailing-table table-responsive">
                         <thead class="table-secondary">
                             <tr>
                                 <th scope="col">Item</th>
@@ -131,7 +139,7 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
                                 $orderIds[] = $PackageOrder->addPackageOrder($packId, '', $cusId, $customerName, $customerEmail, $pack['price'], $pack['price'], 'PayLater', '', '2', '2');
                             ?>
                             <tr>
-                                <td class="text-start"><b><?php echo $packFullName; ?></b> </td>
+                                <td class="text-start fw-semibold"><?php echo $packFullName; ?> </td>
                                 <td><?php echo 1; ?></td>
                                 <td><?php echo CURRENCY.$pack['price']; ?></td>
                                 <td> <?php echo CURRENCY; ?><span id="amount"><?php echo $pack['price']; ?></span>
@@ -147,7 +155,7 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
                 </div>
 
                 <!-- invoice table -->
-                <div class="mt-5">
+                <div class="second-table-fr-total">
                     <div class="row" style="display: flex; justify-content: end;">
                         <div class="col-md-5  ">
                             <table class="table table-responsive">
@@ -176,7 +184,7 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
                                     </tr>
                                     <tr>
                                         <td>
-                                            <div class="row">
+                                            <div class="row mt-2">
                                                 <div class="col-12 text-end" id="payBtn">
                                                     <div id="paypal-payment-button">
                                                     </div>
@@ -195,7 +203,6 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
                     </div>
                 </div>
             </form>
-        </div>
         <form action="order-processing.php" method="post" id="payment-process-form" name="payment-process-form">
             <input type="hidden" id="pppamn" name="pppamn" value="<?php echo $totalCost?>">
             <input type="hidden" id="paymentdata" name="paymentdata" value="">
@@ -238,8 +245,8 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
                 // alert('Done');
                 document.getElementById('payBtn').innerHTML =
                     `<div class="bg-secondary border border-info rounded text-center"><p class="fw-bold py-2 mb-0"><span><img src="images/icons/loading-2.gif" alt="loading"></span> Please Wait..</p></div>`;
-                    paymentdata.value = JSON.stringify(details);
-                    form.submit();
+                paymentdata.value = JSON.stringify(details);
+                form.submit();
 
             });
         },
