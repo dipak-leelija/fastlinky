@@ -99,15 +99,15 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                     $sl = 1;
                                     if (count($packOrders) > 0 ) {
                                         foreach ($packOrders as $eachPackOrder) {
-                                            $ordPack = $GPPackage->packDetailsById($eachPackOrder['package_id']);
-                                            $packCat    =   $GPPackage->packCatById($ordPack['category_id']);
-                                            $status = $OrderStatus->singleOrderStatus($eachPackOrder['order_status']);
-                                            $pStatus = $OrderStatus->singleOrderStatus($eachPackOrder['status']); 
+                                            $ordPack    = $GPPackage->packDetailsById($eachPackOrder['package_id']);
+                                            $packCat    = $GPPackage->packCatById($ordPack['category_id']);
+                                            $status     = $OrderStatus->singleOrderStatus($eachPackOrder['order_status']);
+                                            $pStatus    = $OrderStatus->singleOrderStatus($eachPackOrder['status']); 
                                 ?>
 
                                     <div class="card product_card  position-relative border rounded  mb-3">
                                         <div class="p-textdiv-card">
-                                            <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($eachPackOrder['order_id'])); ?>"
+                                            <a href="package-order-history.php?order=<?php echo base64_encode(urlencode($eachPackOrder['order_id'])); ?>"
                                                 class="text-dark">
                                                 <h3 class="product-title maining-title">
                                                     <?php echo $packCat['category_name'].' '.$ordPack['package_name']; ?>

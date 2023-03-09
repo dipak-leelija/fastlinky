@@ -9,6 +9,8 @@ require_once ROOT_DIR."/_config/dbconnect.trait.php";
 require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/content-order.class.php";
 require_once ROOT_DIR."/classes/orderStatus.class.php";
+require_once ROOT_DIR."/classes/gp-order.class.php";
+require_once ROOT_DIR."/classes/gp-package.class.php";
 require_once ROOT_DIR."/classes/blog_mst.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
 
@@ -16,6 +18,8 @@ require_once ROOT_DIR."/classes/utility.class.php";
 $customer		= new Customer();
 $ContentOrder   = new ContentOrder();
 $BlogMst		= new BlogMst();
+$PackageOrder   = new PackageOrder();
+$GPPackage      = new GuestPostpackage();
 $OrderStatus    = new OrderStatus();
 $utility		= new Utility();
 ######################################################################################################################
@@ -26,6 +30,8 @@ $cusDtl		= $customer->getCustomerData($cusId);
 require_once ROOT_DIR.'/includes/check-customer-login.inc.php';
 
 $myOrders       = $ContentOrder->clientOrders($cusId);
+$packOrders     = $PackageOrder->getPackOrderDetails($cusId, '*');
+
 
 ?>
 <!DOCTYPE HTML>
@@ -82,15 +88,18 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 
                             <?php
                                     $sl = 1;
-                                    if (count($myOrders) > 0 ) {
+                                    if (count($packOrders) > 0 ) {
                                         $showItems = 0;
-                                        foreach ($myOrders as $order) {
-                                            $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);  
+                                        foreach ($packOrders as $eachPackOrd) {
+                                            $ordPack    = $GPPackage->packDetailsById($eachPackOrd['package_id']);
+                                            $packCat    = $GPPackage->packCatById($ordPack['category_id']);
+                                            $status     = $OrderStatus->singleOrderStatus($eachPackOrd['order_status']);
+                                            $pStatus    = $OrderStatus->singleOrderStatus($eachPackOrd['status']);  
                                     ?>
                             <div class="col-lg-10 m-auto">
                                 <div class="card product_card   position-relative border rounded  mb-3">
                                     <div class="p-textdiv-card-history">
-                                        <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($order['order_id'])); ?>"
+                                        <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($eachPackOrd['order_id'])); ?>"
                                             class="text-dark">
                                             <h3 class="product-title-package-history"> Managed Link Building Basic
                                                 <span
@@ -101,7 +110,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                                     <b>
                                                         Transaction
                                                     </b>
-                                                    :<?php echo $order['clientTransactionId'].' || '.$order['added_on'] ?>
+                                                    : <?php echo $eachPackOrd['transection_id'].' || '.$eachPackOrd['date'] ?>
                                                 </small>
                                             </div>
                                             <div>
@@ -109,7 +118,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                                     <b>
                                                         Order Id
                                                     </b>
-                                                    :<?php echo $order['order_id']; ?>
+                                                    : <?php echo $eachPackOrd['order_id']; ?>
                                                 </small>
                                             </div>
                                             <div>
@@ -117,11 +126,9 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                                     <b>
                                                         Price
                                                     </b>
-                                                    :$250/Package
+                                                    : <?php echo $eachPackOrd['price']; ?>/package
                                                 </small>
                                             </div>
-
-
                                         </a>
                                     </div>
                                 </div>
