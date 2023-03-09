@@ -10,14 +10,18 @@ require_once ROOT_DIR."/classes/encrypt.inc.php";
 require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/content-order.class.php";
 require_once ROOT_DIR."/classes/gp-order.class.php";
+require_once ROOT_DIR."/classes/gp-package.class.php";
 require_once ROOT_DIR."/classes/orderStatus.class.php";
+require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
 
 /* INSTANTIATING CLASSES */
 $customer		= new Customer();
 $ContentOrder   = new ContentOrder();
 $PackageOrder   = new PackageOrder();
+$GPPackage      = new GuestPostpackage();
 $OrderStatus    = new OrderStatus();
+$DateUtil       = new DateUtil();
 $utility		= new Utility();
 ######################################################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
@@ -25,14 +29,10 @@ $typeM		= $utility->returnGetVar('typeM','');
 $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 
-if($cusId == 0){
-    header("Location: ".URL);
-}
+require_once ROOT_DIR.'/includes/check-customer-login.inc.php';
 
-if($cusDtl[0][0] == 2){
-    header("Location: dashboard.php");
-}
 $myOrders       = $ContentOrder->clientOrders($cusId);
+$packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
 // $orders         = $Order->getOrdersByCusId($cusId);
 
 
@@ -69,9 +69,8 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
     <div id="home">
         <!-- header -->
         <?php  require_once "partials/navbar.php" ?>
-        <?php //include 'header-user-profile.php'?>
-
         <!-- //header -->
+
         <!-- banner -->
         <div class="edit_profile">
             <div class="container-fluid">
@@ -87,9 +86,98 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 
                         </div>
                         <div class="col-md-9 mt-4 ps-md-0 display-table-cell v-align ">
-                            <!-- Guest Post Orders  Section-->
+                            <!-- row -->
                             <div class="row">
-                                <?php
+
+                                <!-- ========================= -->
+                                <!-- Guest Post Orders  Section-->
+                                <div class="col-md-6">
+                                    <div class=" mb-3">
+                                        <h3 class="fw-bold text-center">Package Order :</h3>
+                                    </div>
+                                    <?php
+                                    $sl = 1;
+                                    if (count($packOrders) > 0 ) {
+                                        $showItems = 0;
+                                        foreach ($packOrders as $eachPackOrder) {
+                                            $ordPack = $GPPackage->packDetailsById($eachPackOrder['package_id']);
+                                            $packCat    =   $GPPackage->packCatById($ordPack['category_id']);
+                                            $status = $OrderStatus->singleOrderStatus($eachPackOrder['order_status']);
+                                            $pStatus = $OrderStatus->singleOrderStatus($eachPackOrder['status']); 
+                                ?>
+
+                                    <div class="card product_card  position-relative border rounded  mb-3">
+                                        <div class="p-textdiv-card">
+                                            <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($eachPackOrder['order_id'])); ?>"
+                                                class="text-dark">
+                                                <h3 class="product-title maining-title">
+                                                    <?php echo $packCat['category_name'].' '.$ordPack['package_name']; ?>
+                                                    <span
+                                                        class="badge fs_p8 <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
+                                                </h3>
+                                                <div>
+                                                    <small>
+                                                        <b>
+                                                            TRANSECTION
+                                                        </b>
+                                                        :<?php echo $eachPackOrder['transection_id'].'<b> || </b>'.$eachPackOrder['date'] ?>
+                                                    </small>
+                                                </div>
+                                                <div>
+                                                    <small>
+                                                        <b>
+                                                            ORDER ID
+                                                        </b>
+                                                        : #<?php echo $eachPackOrder['order_id']; ?>
+                                                    </small>
+                                                </div>
+                                                <div>
+                                                    <small>
+                                                        <b>
+                                                            Price
+                                                        </b>
+                                                        : <?php echo CURRENCY.$ordPack['price']; ?>/Package
+                                                    </small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- ========================= -->
+
+                                    <?php
+                                            $showItems++;
+                                            if ($showItems == 4) {
+                                                break;
+                                            }
+                                        }
+                                        ?>
+                                    <div class="see_all">
+                                        <a href="package-order-list.php">See All</a>
+                                    </div>
+                                    <?php
+                                    }else {
+                                    ?>
+                                    <div
+                                        class="product_card col-lg-5 text-center border border border-danger  border-1 rounded py-4 mb-3">
+                                        <h3 class="product-title text-danger m-auto">No Orders</h3>
+                                        <a href="blogs-list.php" class="btn btn-sm btn-primary  w-25 mt-4">Explore</a>
+                                    </div>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                                <!-- Package Orders Section End-->
+
+
+
+
+                                <!-- ========================= -->
+                                <!-- Guest Post Orders  Section-->
+                                <div class="col-md-6">
+                                    <div class=" mb-3">
+                                        <h3 class="fw-bold text-center">Guest Post Order :</h3>
+                                    </div>
+                                    <?php
                                     $sl = 1;
                                     if (count($myOrders) > 0 ) {
                                         $showItems = 0;
@@ -97,36 +185,21 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                             $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);  
                                 ?>
 
-                                <!-- ========================= -->
-                                <div class="col-md-6">
-                                    <div class=" mb-3">
-                                        <h3 class="fw-bold text-center">Package Order :</h3>
-                                    </div>
                                     <div class="card product_card  position-relative border rounded  mb-3">
-                                        <!-- ============== Order Status start ==============  -->
-                                        <div class="orderStatus  <?php echo $status[0]['orders_status_name'];?>">
-                                            <p><?php echo $status[0]['orders_status_name'];?></p>
-                                        </div>
-                                        <!-- ============== Order Status end ==============  -->
                                         <div class="p-textdiv-card">
                                             <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($order['order_id'])); ?>"
                                                 class="text-dark">
                                                 <h3 class="product-title maining-title">
-                                                    <?php echo $order['clientOrderedSite']; ?></h3>
-                                                <div>
-                                                    <small>
-                                                        <b>
-                                                            TRANSECTION
-                                                        </b>
-                                                        :<?php echo $order['clientTransactionId'].' || '.$order['added_on'] ?>
-                                                    </small>
-                                                </div>
+                                                    <?php echo $order['clientOrderedSite']; ?>
+                                                    <span
+                                                        class="badge fs_p8 <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
+                                                </h3>
                                                 <div>
                                                     <small>
                                                         <b>
                                                             ORDER ID
                                                         </b>
-                                                        :<?php echo $order['order_id']; ?>
+                                                        : #<?php echo $order['order_id'].'<b> || </b>'.$DateUtil->dateTimeNum2($order['added_on'], '-'); ?>
                                                     </small>
                                                 </div>
 
@@ -137,125 +210,39 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                                     <span><i class="fa fa-angle-double-right me-1"></i>Target URL:
                                                         <?php echo $order['clientTargetUrl'];?></span>
                                                 </div>
-                                                <div class="d-flex justify-content-between pt-2">
-                                                    <!-- <div class="col-6 text-end"> -->
-                                                    <?php
-                                                        //============== payment Status start ============== 
-                                                        if($order['paymentStatus'] != ''){
-                                                            if ($order['paymentStatus'] == "Completed") 
-                                                                $payStatus = 'complete-status';
-                                                            else
-                                                                $payStatus = '';
-
-
-                                                            echo '<p class="'.$payStatus.'">Payment : '.$order['paymentStatus'].'</p>';
-                                                        }
-                                                        //============== payment Status end ============== 
-                                                ?>
-                                                </div>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="see_all">
-                                    <a href="package-order-list.php">See All</a>
-                                </div>
-                                </div>
-                               
+                                    <!-- ========================= -->
 
-                                <div class=" col-md-6 ">
-                                    <div class=" mb-3">
-                                        <h3 class="fw-bold text-center">Guest Posts:</h3>
-                                    </div>
-                                    <div class="card product_card  position-relative border rounded  mb-3">
-                                        <!-- ============== Order Status start ==============  -->
-                                        <div class="orderStatus <?php echo $status[0]['orders_status_name'];?>">
-                                            <p><?php echo $status[0]['orders_status_name'];?></p>
-                                        </div>
-                                        <!-- ============== Order Status end ==============  -->
-
-                                        <div class="p-textdiv-card">
-                                            <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($order['order_id'])); ?>"
-                                                class="text-dark">
-
-
-
-                                                <h3 class="product-title maining-title">
-                                                    <?php echo $order['clientOrderedSite']; ?></h3>
-                                                <div>
-                                                    <small>
-                                                        <b>
-                                                            TRANSECTION
-                                                        </b>
-                                                        :<?php echo $order['clientTransactionId'].' || '.$order['added_on'] ?>
-                                                    </small>
-                                                </div>
-                                                <div>
-                                                    <small>
-                                                        <b>
-                                                            ORDER ID
-                                                        </b>
-                                                        :<?php echo $order['order_id']; ?>
-                                                    </small>
-                                                </div>
-
-                                                <div>
-                                                    <span><i class="fa fa-angle-double-right me-1"></i>Ancor Text:
-                                                        <?php echo $order['clientAnchorText'];?></span>
-                                                    <br>
-                                                    <span><i class="fa fa-angle-double-right me-1"></i>Target URL:
-                                                        <?php echo $order['clientTargetUrl'];?></span>
-                                                </div>
-                                                <div class="d-flex justify-content-between pt-2">
-                                                    <!-- <div class="col-6 text-end"> -->
-                                                    <?php
-                                                        //============== payment Status start ============== 
-                                                        if($order['paymentStatus'] != ''){
-                                                            if ($order['paymentStatus'] == "Completed") 
-                                                                $payStatus = 'complete-status';
-                                                            else
-                                                                $payStatus = '';
-
-
-                                                            echo '<p class="'.$payStatus.'">Payment : '.$order['paymentStatus'].'</p>';
-                                                        }
-                                                        //============== payment Status end ============== 
-                                                ?>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="see_all">
-                                    <a href="guest-post-order-list.php">See All</a>
-                                </div>
-                                </div>
-
-
-                                <!-- ========================= -->
-                                <?php
+                                    <?php
                                             $showItems++;
-                                            if ($showItems == 8) {
+                                            if ($showItems == 5) {
                                                 break;
                                             }
                                         }
-                                ?>
-                                <!-- <div class="see_all">
-                                    <a href="guest-post-order-list.php">See All</a>
-                                </div> -->
-                                <?php
+                                        ?>
+                                    <div class="see_all">
+                                        <a href="guest-post-order-list.php">See All</a>
+                                    </div>
+                                    <?php
                                     }else {
-                                ?>
-                                <div
-                                    class="product_card col-lg-5 text-center border border border-danger  border-1 rounded py-4 mb-3">
-                                    <h3 class="product-title text-danger m-auto">No Orders</h3>
-                                    <a href="blogs-list.php" class="btn btn-sm btn-primary  w-25 mt-4">Explore</a>
-                                </div>
-                                <?php
-                                        }
-
                                     ?>
-                                <!-- ////// -->
+                                    <div
+                                        class="product_card col-lg-5 text-center border border border-danger  border-1 rounded py-4 mb-3">
+                                        <h3 class="product-title text-danger m-auto">No Orders</h3>
+                                        <a href="blogs-list.php" class="btn btn-sm btn-primary  w-25 mt-4">Explore</a>
+                                    </div>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                                <!-- Guest Post Orders  Section End-->
+
+
                             </div>
-                            <!-- Guest Post Orders  Section End-->
+                            <!-- row -->
+
 
                         </div>
                         <!--Row end-->
@@ -274,162 +261,6 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
         <!-- //fixed-scroll-nav-js -->
         <!-- <script src="js/pageplugs/fixedNav.js"></script> -->
         <script src="js/customerSwitchMode.js"></script>
-        <script>
-        /* jQuery Pagination */
-
-        (function($) {
-
-            var paginate = {
-                startPos: function(pageNumber, perPage) {
-                    // determine what array position to start from
-                    // based on current page and # per page
-                    return pageNumber * perPage;
-                },
-
-                getPage: function(items, startPos, perPage) {
-                    // declare an empty array to hold our page items
-                    var page = [];
-
-                    // only get items after the starting position
-                    items = items.slice(startPos, items.length);
-
-                    // loop remaining items until max per page
-                    for (var i = 0; i < perPage; i++) {
-                        page.push(items[i]);
-                    }
-
-                    return page;
-                },
-
-                totalPages: function(items, perPage) {
-                    // determine total number of pages
-                    return Math.ceil(items.length / perPage);
-                },
-
-                createBtns: function(totalPages, currentPage) {
-                    // create buttons to manipulate current page
-                    var pagination = $('<div class="pagination" />');
-
-                    // add a "first" button
-                    pagination.append('<span class="pagination-button">&laquo;</span>');
-
-                    // add pages inbetween
-                    for (var i = 1; i <= totalPages; i++) {
-                        // truncate list when too large
-                        if (totalPages > 5 && currentPage !== i) {
-                            // if on first two pages
-                            if (currentPage === 1 || currentPage === 2) {
-                                // show first 5 pages
-                                if (i > 5) continue;
-                                // if on last two pages
-                            } else if (currentPage === totalPages || currentPage === totalPages - 1) {
-                                // show last 5 pages
-                                if (i < totalPages - 4) continue;
-                                // otherwise show 5 pages w/ current in middle
-                            } else {
-                                if (i < currentPage - 2 || i > currentPage + 2) {
-                                    continue;
-                                }
-                            }
-                        }
-
-                        // markup for page button
-                        var pageBtn = $('<span class="pagination-button page-num" />');
-
-                        // add active class for current page
-                        if (i == currentPage) {
-                            pageBtn.addClass('active');
-                        }
-
-                        // set text to the page number
-                        pageBtn.text(i);
-
-                        // add button to the container
-                        pagination.append(pageBtn);
-                    }
-
-                    // add a "last" button
-                    pagination.append($('<span class="pagination-button">&raquo;</span>'));
-
-                    return pagination;
-                },
-
-                createPage: function(items, currentPage, perPage) {
-                    // remove pagination from the page
-                    $('.pagination').remove();
-
-                    // set context for the items
-                    var container = items.parent(),
-                        // detach items from the page and cast as array
-                        items = items.detach().toArray(),
-                        // get start position and select items for page
-                        startPos = this.startPos(currentPage - 1, perPage),
-                        page = this.getPage(items, startPos, perPage);
-
-                    // loop items and readd to page
-                    $.each(page, function() {
-                        // prevent empty items that return as Window
-                        if (this.window === undefined) {
-                            container.append($(this));
-                        }
-                    });
-
-                    // prep pagination buttons and add to page
-                    var totalPages = this.totalPages(items, perPage),
-                        pageButtons = this.createBtns(totalPages, currentPage);
-
-                    container.after(pageButtons);
-                }
-            };
-
-            // stuff it all into a jQuery method!
-            $.fn.paginate = function(perPage) {
-                var items = $(this);
-
-                // default perPage to 5
-                if (isNaN(perPage) || perPage === undefined) {
-                    perPage = 5;
-                }
-
-                // don't fire if fewer items than perPage
-                if (items.length <= perPage) {
-                    return true;
-                }
-
-                // ensure items stay in the same DOM position
-                if (items.length !== items.parent()[0].children.length) {
-                    items.wrapAll('<div class="pagination-items" />');
-                }
-
-                // paginate the items starting at page 1
-                paginate.createPage(items, 1, perPage);
-
-                // handle click events on the buttons
-                $(document).on('click', '.pagination-button', function(e) {
-                    // get current page from active button
-                    var currentPage = parseInt($('.pagination-button.active').text(), 10),
-                        newPage = currentPage,
-                        totalPages = paginate.totalPages(items, perPage),
-                        target = $(e.target);
-
-                    // get numbered page
-                    newPage = parseInt(target.text(), 10);
-                    if (target.text() == '«') newPage = 1;
-                    if (target.text() == '»') newPage = totalPages;
-
-                    // ensure newPage is in available range
-                    if (newPage > 0 && newPage <= totalPages) {
-                        paginate.createPage(items, newPage, perPage);
-                    }
-                });
-            };
-
-        })(jQuery);
-
-        /* This part is just for the demo,
-        not actually part of the plugin */
-        $('.item_order_bx').paginate(2);
-        </script>
 
 </body>
 

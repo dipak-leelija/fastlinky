@@ -41,6 +41,18 @@ class DateUtil extends GeneraicDuration{
 	 * This Function Will printa the date like : 1st of January, 1997
 	 * $date = date as string
 	 */
+	function dateTimeNum2($date, $divider){
+		$date = strtotime($date);
+		$date = date('h:i a d'.$divider.'m'.$divider.'Y', $date);
+
+		return $date;
+	}
+
+
+	/**
+	 * This Function Will printa the date like : 1st of January, 1997
+	 * $date = date as string
+	 */
 	function dateText($date){
 		$date = strtotime($date);
 		$date = date('jS \of F, Y', $date);

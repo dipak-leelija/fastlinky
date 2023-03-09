@@ -71,12 +71,21 @@ class PackageOrder extends DatabaseConnection{
 
   
 
-  function getOrderDetails($userId){
+  function getPackOrderDetails($userId, $limit){
     $myArr = array();
-    $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId'";
-    $data = $this->conn->query($sql);
-    while($res = $data->fetch_object()){
+
+    if ($limit !== '*') {
+      $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId' LIMIT $limit";
+      $data = $this->conn->query($sql);
+      while($res = $data->fetch_assoc()){
         $myArr[] = $res;
+      }
+    }else {
+      $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId'";
+      $data = $this->conn->query($sql);
+      while($res = $data->fetch_assoc()){
+        $myArr[] = $res;
+      }
     }
     return $myArr;
   }

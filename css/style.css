@@ -19,6 +19,12 @@
     background: #EBF4FE
 }
 
+
+/* font sizes  */
+.fs_p8{
+    font-size: 0.8rem !important;
+}
+
 html,
 body {
     /* font-family: 'Montserrat', sans-serif;
@@ -4058,17 +4064,6 @@ form.pack-form textarea {
 }
 
 
-/* .alert {
-    position: fixed;
-    background: #0000008c;
-    height: 100%;
-    width: 100%;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    right: 0;
-} */
-
 .tranee-success {
     color: white;
     position: fixed;
@@ -4085,10 +4080,6 @@ form.pack-form textarea {
     font-weight: 700;
     position: fixed;
     top: 20%
-}
-
-.alert-warning {
-    border-color: #0000008c;
 }
 
 
