@@ -100,26 +100,19 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                         foreach ($myOrders as $order) {
                                             $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);  
                                     ?>
-                                <div class="col-md-6">
+                                <div class="col-lg-10 m-auto">
                                     <div class="card product_card   position-relative border rounded  mb-3">
-
-                                        <!-- ============== Order Status start ==============  -->
-                                        <!-- <div
-                                            class="orderStatus orderStatus-history <?php echo $status[0]['orders_status_name'];?>">
-                                            <p><?php echo $status[0]['orders_status_name'];?></p>
-                                        </div> -->
-                                        <!-- ============== Order Status end ==============  -->
                                         <div class="p-textdiv-card-history">
                                             <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($order['order_id'])); ?>"
                                                 class="text-dark">
                                                 <h3 class="product-title-package-history"> Managed Link Building Basic
                                                     <span
-                                                        class="badge  <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
+                                                        class="badge package-badges <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
                                                 </h3>
                                                 <div>
                                                     <small>
                                                         <b>
-                                                            TRANSECTION
+                                                            Transaction
                                                         </b>
                                                         :<?php echo $order['clientTransactionId'].' || '.$order['added_on'] ?>
                                                     </small>
@@ -127,7 +120,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                                 <div>
                                                     <small>
                                                         <b>
-                                                            ORDER ID
+                                                            Order Id
                                                         </b>
                                                         :<?php echo $order['order_id']; ?>
                                                     </small>
@@ -135,7 +128,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                                 <div>
                                                     <small>
                                                         <b>
-                                                            PRICE
+                                                            Price
                                                         </b>
                                                         :$250/Package
                                                     </small>

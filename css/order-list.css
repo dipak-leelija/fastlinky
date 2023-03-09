@@ -26,7 +26,7 @@
     clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 10% 51%);
 }
 .product-title-package-history{
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin: 0;
 }
@@ -82,6 +82,9 @@
 }
 .p-textdiv-card-history{
     padding: .5rem;
+}
+small, .small {
+    text-transform: uppercase;
 }
 .clipboard.icon {
     position: absolute;
@@ -144,9 +147,14 @@
         font-size: 1rem !important;
         font-weight: 500;
     }
-    .p-textdiv-card-history {
-        padding: 2rem .5rem 1rem;
-    }
+.product-title-package-history{
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+small, .small {
+    text-transform: lowercase;
+}
 }
 
 @media screen and (max-width: 430px) {
@@ -154,8 +162,20 @@
         font-size: .9rem !important;
         font-weight: 500;
     }
+    .p-textdiv-card-history {
+        padding: 1.37rem .5rem 1rem;
+    }
+    .package-badges{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
 }
-
+@media (max-width: 360px){
+    small, .small {
+        font-size: 0.76em;
+    }
+} 
 
 
 /* ==================== copy icon on right side css start ==================== */
