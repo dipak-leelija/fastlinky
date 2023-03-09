@@ -116,7 +116,7 @@ class adminLogin extends Utility
 				// $forwardPage	= $this->buildForwardPage($pageName, 'php');
 
 				//url
-				$url	= 'admin.php.?session_id='.$session_id."&".$id_var."=".$id_var_val;
+				$url	= 'admin.php?session_id='.$session_id."&".$id_var."=".$id_var_val;
 
 
 				//forwarding 
