@@ -1,16 +1,16 @@
 <?php
 session_start();
-
-require_once("_config/dbconnect.php");
-require_once "_config/dbconnect.trait.php";
-
 require_once "includes/constant.inc.php";
 
-require_once "classes/customer.class.php";
-require_once "classes/content-order.class.php";
-require_once "classes/orderStatus.class.php";
-require_once "classes/blog_mst.class.php";
-require_once "classes/utility.class.php";
+require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/_config/dbconnect.trait.php";
+
+
+require_once ROOT_DIR."/classes/customer.class.php";
+require_once ROOT_DIR."/classes/content-order.class.php";
+require_once ROOT_DIR."/classes/orderStatus.class.php";
+require_once ROOT_DIR."/classes/blog_mst.class.php";
+require_once ROOT_DIR."/classes/utility.class.php";
 
 /* INSTANTIATING CLASSES */
 $customer		= new Customer();
@@ -107,7 +107,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                                 class="text-dark">
                                                 <h3 class="product-title-package-history"> Managed Link Building Basic
                                                     <span
-                                                        class="badge package-badges <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
+                                                        class="badge package-badges fs_p8 <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
                                                 </h3>
                                                 <div>
                                                     <small>
