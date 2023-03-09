@@ -282,7 +282,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 
         })(jQuery);
 
-        $('.product_card').paginate(2);
+        $('.product_card').paginate(4);
         </script>
 
 </body>

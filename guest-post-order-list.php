@@ -100,7 +100,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                         foreach ($myOrders as $order) {
                                             $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);  
                                     ?>
-                                <div class="col-md-12">
+                                <div class="col-md-12 m-auto">
                                     <div class="card product_card  item_order_bx position-relative border rounded  mb-3">
 
                                         <!-- ============== Order Status start ==============  -->
@@ -301,7 +301,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 
         /* This part is just for the demo,
         not actually part of the plugin */
-        $('.product_card').paginate(1);
+        $('.product_card').paginate(4);
         </script>
 
 </body>
