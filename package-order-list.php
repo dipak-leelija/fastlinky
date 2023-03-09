@@ -100,71 +100,41 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                         foreach ($myOrders as $order) {
                                             $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);  
                                     ?>
-                                <div class="col-md-12">
+                                <div class="col-lg-10 m-auto">
                                     <div class="card product_card   position-relative border rounded  mb-3">
-
-                                        <!-- ============== Order Status start ==============  -->
-                                        <div
-                                            class="orderStatus orderStatus-history <?php echo $status[0]['orders_status_name'];?>">
-                                            <p><?php echo $status[0]['orders_status_name'];?></p>
-                                        </div>
-                                        <!-- ============== Order Status end ==============  -->
                                         <div class="p-textdiv-card-history">
                                             <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($order['order_id'])); ?>"
                                                 class="text-dark">
-
-
-
-                                                <h3 class="product-title maining-title">
-                                                    <?php echo $order['clientOrderedSite']; ?></h3>
-                                                <small>
-                                                    <b>
-                                                        TRANSECTION
-                                                    </b>
-                                                    :<?php echo $order['clientTransactionId'].' || '.$order['added_on'] ?>
-                                                </small>
-                                                <small>
-                                                    <b>
-                                                        ORDER ID
-                                                    </b>
-                                                    :<?php echo $order['order_id']; ?>
-                                                </small>
+                                                <h3 class="product-title-package-history"> Managed Link Building Basic
+                                                    <span
+                                                        class="badge package-badges <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
+                                                </h3>
                                                 <div>
-                                                    <span><i class="fa fa-angle-double-right me-1"></i>Ancor Text:
-                                                        <?php echo $order['clientAnchorText'];?></span>
-                                                    <!-- <br>
-                                                    <span><i class="fa fa-angle-double-right me-1"></i>Target URL:
-                                                        <?php echo $order['clientTargetUrl'];?></span> -->
+                                                    <small>
+                                                        <b>
+                                                            Transaction
+                                                        </b>
+                                                        :<?php echo $order['clientTransactionId'].' || '.$order['added_on'] ?>
+                                                    </small>
+                                                </div>
+                                                <div>
+                                                    <small>
+                                                        <b>
+                                                            Order Id
+                                                        </b>
+                                                        :<?php echo $order['order_id']; ?>
+                                                    </small>
+                                                </div>
+                                                <div>
+                                                    <small>
+                                                        <b>
+                                                            Price
+                                                        </b>
+                                                        :$250/Package
+                                                    </small>
                                                 </div>
 
-                                                <div class="card package-order-history-list-card">
-                                                    <p class="package-pricing-list-title">Link Building Basic Package
-                                                        (5
-                                                        Links)</p>
-                                                    <ul class="">
-                                                        <li> <strong>5 Links Per Month</strong> </li>
-                                                        <li> DR 20-29: 2 links</li>
-                                                        <li> <strong>$249.00/month</strong></li>
-                                                    </ul>
-                                                
-                                                </div>
 
-                                                <div class="d-flex justify-content-between pt-2">
-                                                    <!-- <div class="col-6 text-end"> -->
-                                                    <?php
-                                                        //============== payment Status start ============== 
-                                                        if($order['paymentStatus'] != ''){
-                                                            if ($order['paymentStatus'] == "Completed") 
-                                                                $payStatus = 'complete-status';
-                                                            else
-                                                                $payStatus = '';
-
-
-                                                            echo '<p class="'.$payStatus.'">Payment : '.$order['paymentStatus'].'</p>';
-                                                        }
-                                                        //============== payment Status end ============== 
-                                                ?>
-                                                </div>
                                             </a>
                                         </div>
                                     </div>
@@ -193,10 +163,6 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                     </div>
                 </div>
                 <!-- //end display table-->
-
-                <!-- Footer -->
-                <?php require_once 'partials/footer.php'; ?>
-                <!-- /Footer -->
             </div>
         </div>
         <script src="plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
@@ -225,148 +191,89 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
         </script>
         <script>
         /* jQuery Pagination */
-
         (function($) {
 
             var paginate = {
                 startPos: function(pageNumber, perPage) {
-                    // determine what array position to start from
-                    // based on current page and # per page
                     return pageNumber * perPage;
                 },
-
                 getPage: function(items, startPos, perPage) {
-                    // declare an empty array to hold our page items
                     var page = [];
-
-                    // only get items after the starting position
                     items = items.slice(startPos, items.length);
-
-                    // loop remaining items until max per page
                     for (var i = 0; i < perPage; i++) {
                         page.push(items[i]);
                     }
-
                     return page;
                 },
 
                 totalPages: function(items, perPage) {
-                    // determine total number of pages
                     return Math.ceil(items.length / perPage);
                 },
-
                 createBtns: function(totalPages, currentPage) {
-                    // create buttons to manipulate current page
                     var pagination = $('<div class="pagination" />');
-
-                    // add a "first" button
                     pagination.append('<span class="pagination-button">&laquo;</span>');
-
-                    // add pages inbetween
                     for (var i = 1; i <= totalPages; i++) {
-                        // truncate list when too large
                         if (totalPages > 5 && currentPage !== i) {
-                            // if on first two pages
                             if (currentPage === 1 || currentPage === 2) {
-                                // show first 5 pages
                                 if (i > 5) continue;
-                                // if on last two pages
                             } else if (currentPage === totalPages || currentPage === totalPages - 1) {
-                                // show last 5 pages
                                 if (i < totalPages - 4) continue;
-                                // otherwise show 5 pages w/ current in middle
                             } else {
                                 if (i < currentPage - 2 || i > currentPage + 2) {
                                     continue;
                                 }
                             }
                         }
-
-                        // markup for page button
                         var pageBtn = $('<span class="pagination-button page-num" />');
-
-                        // add active class for current page
                         if (i == currentPage) {
                             pageBtn.addClass('active');
                         }
-
-                        // set text to the page number
                         pageBtn.text(i);
-
-                        // add button to the container
                         pagination.append(pageBtn);
                     }
-
-                    // add a "last" button
                     pagination.append($('<span class="pagination-button">&raquo;</span>'));
 
                     return pagination;
                 },
 
                 createPage: function(items, currentPage, perPage) {
-                    // remove pagination from the page
                     $('.pagination').remove();
-
-                    // set context for the items
                     var container = items.parent(),
-                        // detach items from the page and cast as array
                         items = items.detach().toArray(),
-                        // get start position and select items for page
                         startPos = this.startPos(currentPage - 1, perPage),
                         page = this.getPage(items, startPos, perPage);
 
-                    // loop items and readd to page
                     $.each(page, function() {
-                        // prevent empty items that return as Window
                         if (this.window === undefined) {
                             container.append($(this));
                         }
                     });
-
-                    // prep pagination buttons and add to page
                     var totalPages = this.totalPages(items, perPage),
                         pageButtons = this.createBtns(totalPages, currentPage);
 
                     container.after(pageButtons);
                 }
             };
-
-            // stuff it all into a jQuery method!
             $.fn.paginate = function(perPage) {
                 var items = $(this);
-
-                // default perPage to 5
                 if (isNaN(perPage) || perPage === undefined) {
                     perPage = 5;
                 }
-
-                // don't fire if fewer items than perPage
                 if (items.length <= perPage) {
                     return true;
                 }
-
-                // ensure items stay in the same DOM position
                 if (items.length !== items.parent()[0].children.length) {
                     items.wrapAll('<div class="pagination-items" />');
                 }
-
-                // paginate the items starting at page 1
                 paginate.createPage(items, 1, perPage);
-
-                // handle click events on the buttons
                 $(document).on('click', '.pagination-button', function(e) {
-                    // get current page from active button
                     var currentPage = parseInt($('.pagination-button.active').text(), 10),
                         newPage = currentPage,
                         totalPages = paginate.totalPages(items, perPage),
                         target = $(e.target);
-
-                    // get numbered page
                     newPage = parseInt(target.text(), 10);
                     if (target.text() == '«') newPage = 1;
                     if (target.text() == '»') newPage = totalPages;
-
-                    // ensure newPage is in available range
                     if (newPage > 0 && newPage <= totalPages) {
                         paginate.createPage(items, newPage, perPage);
                     }
@@ -375,9 +282,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 
         })(jQuery);
 
-        /* This part is just for the demo,
-        not actually part of the plugin */
-        // $('.product_card').paginate(10);
+        $('.product_card').paginate(2);
         </script>
 
 </body>
