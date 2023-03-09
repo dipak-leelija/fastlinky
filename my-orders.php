@@ -98,7 +98,6 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                     <?php
                                     $sl = 1;
                                     if (count($packOrders) > 0 ) {
-                                        $showItems = 0;
                                         foreach ($packOrders as $eachPackOrder) {
                                             $ordPack = $GPPackage->packDetailsById($eachPackOrder['package_id']);
                                             $packCat    =   $GPPackage->packCatById($ordPack['category_id']);
@@ -145,10 +144,6 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                     <!-- ========================= -->
 
                                     <?php
-                                            $showItems++;
-                                            if ($showItems == 4) {
-                                                break;
-                                            }
                                         }
                                         ?>
                                     <div class="see_all">
