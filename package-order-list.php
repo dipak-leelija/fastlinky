@@ -170,10 +170,6 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                     </div>
                 </div>
                 <!-- //end display table-->
-
-                <!-- Footer -->
-                <?php require_once 'partials/footer.php'; ?>
-                <!-- /Footer -->
             </div>
         </div>
         <script src="plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
