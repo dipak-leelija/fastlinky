@@ -87,17 +87,8 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 
                         </div>
                         <div class="col-md-9 mt-4 ps-md-0 display-table-cell v-align ">
-
-
-
-
                             <!-- Guest Post Orders  Section-->
-                            <div class="row justify-content-evenly dashorder_row guest_post_orders ">
-
-                                <div class=" mb-3">
-                                    <h3 class="fw-bold text-center">Guest Posts:</h3>
-                                </div>
-
+                            <div class="row">
                                 <?php
                                     $sl = 1;
                                     if (count($myOrders) > 0 ) {
@@ -107,42 +98,48 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                 ?>
 
                                 <!-- ========================= -->
+                                <div class="col-md-6">
+                                    <div class=" mb-3">
+                                        <h3 class="fw-bold text-center">Package Order :</h3>
+                                    </div>
+                                    <div class="card product_card  position-relative border rounded  mb-3">
+                                        <!-- ============== Order Status start ==============  -->
+                                        <div class="orderStatus  <?php echo $status[0]['orders_status_name'];?>">
+                                            <p><?php echo $status[0]['orders_status_name'];?></p>
+                                        </div>
+                                        <!-- ============== Order Status end ==============  -->
+                                        <div class="p-textdiv-card">
+                                            <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($order['order_id'])); ?>"
+                                                class="text-dark">
+                                                <h3 class="product-title maining-title">
+                                                    <?php echo $order['clientOrderedSite']; ?></h3>
+                                                <div>
+                                                    <small>
+                                                        <b>
+                                                            TRANSECTION
+                                                        </b>
+                                                        :<?php echo $order['clientTransactionId'].' || '.$order['added_on'] ?>
+                                                    </small>
+                                                </div>
+                                                <div>
+                                                    <small>
+                                                        <b>
+                                                            ORDER ID
+                                                        </b>
+                                                        :<?php echo $order['order_id']; ?>
+                                                    </small>
+                                                </div>
 
-                                <div class="card product_card col-xl-10  position-relative border rounded  mb-3">
-                                    <div>
-                                        <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($order['order_id'])); ?>"
-                                            class="text-dark">
-
-                                            <!-- ============== Order Status start ==============  -->
-                                            <div class="orderStatus <?php echo $status[0]['orders_status_name'];?>">
-                                                <p><?php echo $status[0]['orders_status_name'];?></p>
-                                            </div>
-                                            <!-- ============== Order Status end ==============  -->
-
-                                            <h3 class="product-title maining-title">
-                                                <?php echo $order['clientOrderedSite']; ?></h3>
-                                            <small>
-                                                <b>
-                                                    TRANSECTION
-                                                </b>
-                                                :<?php echo $order['clientTransactionId'].' || '.$order['added_on'] ?>
-                                            </small>
-                                            <small>
-                                                <b>
-                                                    ORDER ID
-                                                </b>
-                                                :<?php echo $order['order_id']; ?>
-                                            </small>
-                                            <div>
-                                                <span><i class="fa fa-angle-double-right me-1"></i>Ancor Text:
-                                                    <?php echo $order['clientAnchorText'];?></span>
-                                                <br>
-                                                <span><i class="fa fa-angle-double-right me-1"></i>Target URL:
-                                                    <?php echo $order['clientTargetUrl'];?></span>
-                                            </div>
-                                            <div class="d-flex justify-content-between pt-2">
-                                                <!-- <div class="col-6 text-end"> -->
-                                                <?php
+                                                <div>
+                                                    <span><i class="fa fa-angle-double-right me-1"></i>Ancor Text:
+                                                        <?php echo $order['clientAnchorText'];?></span>
+                                                    <br>
+                                                    <span><i class="fa fa-angle-double-right me-1"></i>Target URL:
+                                                        <?php echo $order['clientTargetUrl'];?></span>
+                                                </div>
+                                                <div class="d-flex justify-content-between pt-2">
+                                                    <!-- <div class="col-6 text-end"> -->
+                                                    <?php
                                                         //============== payment Status start ============== 
                                                         if($order['paymentStatus'] != ''){
                                                             if ($order['paymentStatus'] == "Completed") 
@@ -155,10 +152,83 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                                         }
                                                         //============== payment Status end ============== 
                                                 ?>
-                                            </div>
-                                        </a>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
+                                    <div class="see_all">
+                                    <a href="package-order-list.php">See All</a>
                                 </div>
+                                </div>
+                               
+
+                                <div class=" col-md-6 ">
+                                    <div class=" mb-3">
+                                        <h3 class="fw-bold text-center">Guest Posts:</h3>
+                                    </div>
+                                    <div class="card product_card  position-relative border rounded  mb-3">
+                                        <!-- ============== Order Status start ==============  -->
+                                        <div class="orderStatus <?php echo $status[0]['orders_status_name'];?>">
+                                            <p><?php echo $status[0]['orders_status_name'];?></p>
+                                        </div>
+                                        <!-- ============== Order Status end ==============  -->
+
+                                        <div class="p-textdiv-card">
+                                            <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($order['order_id'])); ?>"
+                                                class="text-dark">
+
+
+
+                                                <h3 class="product-title maining-title">
+                                                    <?php echo $order['clientOrderedSite']; ?></h3>
+                                                <div>
+                                                    <small>
+                                                        <b>
+                                                            TRANSECTION
+                                                        </b>
+                                                        :<?php echo $order['clientTransactionId'].' || '.$order['added_on'] ?>
+                                                    </small>
+                                                </div>
+                                                <div>
+                                                    <small>
+                                                        <b>
+                                                            ORDER ID
+                                                        </b>
+                                                        :<?php echo $order['order_id']; ?>
+                                                    </small>
+                                                </div>
+
+                                                <div>
+                                                    <span><i class="fa fa-angle-double-right me-1"></i>Ancor Text:
+                                                        <?php echo $order['clientAnchorText'];?></span>
+                                                    <br>
+                                                    <span><i class="fa fa-angle-double-right me-1"></i>Target URL:
+                                                        <?php echo $order['clientTargetUrl'];?></span>
+                                                </div>
+                                                <div class="d-flex justify-content-between pt-2">
+                                                    <!-- <div class="col-6 text-end"> -->
+                                                    <?php
+                                                        //============== payment Status start ============== 
+                                                        if($order['paymentStatus'] != ''){
+                                                            if ($order['paymentStatus'] == "Completed") 
+                                                                $payStatus = 'complete-status';
+                                                            else
+                                                                $payStatus = '';
+
+
+                                                            echo '<p class="'.$payStatus.'">Payment : '.$order['paymentStatus'].'</p>';
+                                                        }
+                                                        //============== payment Status end ============== 
+                                                ?>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="see_all">
+                                    <a href="guest-post-order-list.php">See All</a>
+                                </div>
+                                </div>
+
 
                                 <!-- ========================= -->
                                 <?php
@@ -168,9 +238,9 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                             }
                                         }
                                 ?>
-                                <div class="see_all">
+                                <!-- <div class="see_all">
                                     <a href="guest-post-order-list.php">See All</a>
-                                </div>
+                                </div> -->
                                 <?php
                                     }else {
                                 ?>
@@ -183,6 +253,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                         }
 
                                     ?>
+                                <!-- ////// -->
                             </div>
                             <!-- Guest Post Orders  Section End-->
 

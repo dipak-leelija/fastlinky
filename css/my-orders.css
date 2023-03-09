@@ -25,14 +25,20 @@
     color: rgb(255, 255, 255);
     background-color: rgb(78, 136, 252);
 }
-
+.p-textdiv-card{
+    padding: .5rem;
+}
 .product_card {
+    /* padding: 1rem; */
     box-shadow: 0px 15px 10px -15px rgb(30 34 38 / 18%);
     border: 1px solid #D3DBE3;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    /* padding-top: 0.5rem;
+    padding-bottom: 0.5rem; */
+    width: auto;
 }
-
+.product_card span{
+    word-break: break-all;
+}
 .niche_name {
     font-size: 1rem;
     /* background: #383838; */
@@ -107,9 +113,6 @@
     .pagination {
         width: max-content;
         padding: 0;
-    }
-    .product_card {
-        padding-top: 2.3rem;
     }
 }
 

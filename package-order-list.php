@@ -90,7 +90,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                             <!-- Guest Post Orders  Section-->
                             <div class="row">
                                 <div class="mb-3">
-                                    <h3 class="fw-bold text-center py-2">Guest Posts:</h3>
+                                    <h3 class="fw-bold text-center py-2">Package Order:</h3>
                                 </div>
 
                                 <?php
@@ -104,7 +104,8 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                     <div class="card product_card   position-relative border rounded  mb-3">
 
                                         <!-- ============== Order Status start ==============  -->
-                                        <div class="orderStatus orderStatus-history <?php echo $status[0]['orders_status_name'];?>">
+                                        <div
+                                            class="orderStatus orderStatus-history <?php echo $status[0]['orders_status_name'];?>">
                                             <p><?php echo $status[0]['orders_status_name'];?></p>
                                         </div>
                                         <!-- ============== Order Status end ==============  -->
@@ -131,10 +132,23 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                                 <div>
                                                     <span><i class="fa fa-angle-double-right me-1"></i>Ancor Text:
                                                         <?php echo $order['clientAnchorText'];?></span>
-                                                    <br>
+                                                    <!-- <br>
                                                     <span><i class="fa fa-angle-double-right me-1"></i>Target URL:
-                                                        <?php echo $order['clientTargetUrl'];?></span>
+                                                        <?php echo $order['clientTargetUrl'];?></span> -->
                                                 </div>
+
+                                                <div class="card package-order-history-list-card">
+                                                    <p class="package-pricing-list-title">Link Building Basic Package
+                                                        (5
+                                                        Links)</p>
+                                                    <ul class="">
+                                                        <li> <strong>5 Links Per Month</strong> </li>
+                                                        <li> DR 20-29: 2 links</li>
+                                                        <li> <strong>$249.00/month</strong></li>
+                                                    </ul>
+                                                
+                                                </div>
+
                                                 <div class="d-flex justify-content-between pt-2">
                                                     <!-- <div class="col-6 text-end"> -->
                                                     <?php

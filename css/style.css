@@ -3975,17 +3975,22 @@ form.pack-form textarea {
 }
 
 .orderStatus {
-    position: absolute;
+
     background: #1E80C0;
     text-transform: capitalize;
     color: white;
-    right: -1px;
-    top: -1px;
-    clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 10% 51%);
+    clip-path: polygon(100% 0%, 86% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    /* clip-path: polygon(0% 0%, 80% 0%, 100% 50%, 80% 100%, 0% 100%); */
+    width: fit-content;
+    /* position: absolute; */
+     /* right: -1px;
+    top: -1px; */
+    /* clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 10% 51%); */
 }
 
 .orderStatus p {
-    padding: 1px 15px 1px 20px;
+    /* padding: 1px 15px 1px 20px; */
+    padding: 1px 20px 1px 15px;
     color: white;
 }
 
