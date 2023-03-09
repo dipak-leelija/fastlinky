@@ -28,8 +28,10 @@ $cusDtl		= $customer->getCustomerData($cusId);
 
 require_once ROOT_DIR."/includes/check-seller-login.inc.php";
 
-$blogsDtls 	= $BlogMst->ShowUserBlogData($cusDtl[0][2]);
-$sellerOrders = $ContentOrder->contentOrdersBySeller($cusDtl[0][2]);
+$blogsDtls 	    = $BlogMst->ShowUserBlogData($cusDtl[0][2]);
+$sellerOrders   = $ContentOrder->contentOrdersBySeller($cusDtl[0][2]);
+$mostSelling    = $BlogMst->mostSellingBlogs($cusId);
+
 
 ?>
 <!DOCTYPE HTML>
@@ -38,7 +40,7 @@ $sellerOrders = $ContentOrder->contentOrdersBySeller($cusDtl[0][2]);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Seller Dashboard :: <?php echo COMPANY_S; ?></title>
+    <title>Seller Dashboard - <?php echo COMPANY_S; ?></title>
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
@@ -109,12 +111,38 @@ $sellerOrders = $ContentOrder->contentOrdersBySeller($cusDtl[0][2]);
 
                                             </div>
                                         </div>
+
+                                        <div class="col-lg-3 col-sm-6">
+                                            <a href="edit-profile.php">
+                                                <div class="dboard-cd-box mt-md-0 ">
+                                                    <div class="inner">
+                                                        <h3>
+                                                            <?php
+                                                                $newOrders = 0;
+                                                                foreach ($sellerOrders as $eachOrder) {
+                                                                    if ($eachOrder['clientOrderStatus'] == 4) {
+                                                                        $newOrders += 1;
+                                                                    }
+                                                                }
+                                                                echo $newOrders; 
+                                                            ?> 
+                                                         </h3>
+
+                                                        <p>New Orders</p>
+                                                    </div>
+                                                    <div class="dboard-icn_font" aria-hidden="true">
+                                                        <i class="fa-solid fa-cart-plus"></i>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
                                         <div class="col-lg-3 col-sm-6">
                                             <a href="my-guest-post.php">
                                                 <div class="dboard-cd-box mt-md-0">
                                                     <div class="inner">
                                                         <h3><?php echo count($sellerOrders); ?> </h3>
-                                                        <p> My Orders</p>
+                                                        <p> Total Orders</p>
                                                     </div>
                                                     <div class="dboard-icn_font">
                                                         <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
@@ -123,19 +151,7 @@ $sellerOrders = $ContentOrder->contentOrdersBySeller($cusDtl[0][2]);
                                                 </div>
                                             </a>
                                         </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <a href="edit-profile.php">
-                                                <div class="dboard-cd-box mt-md-0 ">
-                                                    <div class="inner">
-                                                        <h3> 13 </h3>
-                                                        <p>Setting</p>
-                                                    </div>
-                                                    <div class="dboard-icn_font" aria-hidden="true">
-                                                        <i class="fa-solid fa-gears"></i>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
+
                                     </div>
                                 </header>
                                 <div class="row">
@@ -157,34 +173,6 @@ $sellerOrders = $ContentOrder->contentOrdersBySeller($cusDtl[0][2]);
                                                         <?php
                                                     $noOrders = false;
                                                     $sl = 0;
-
-                                                    // $activeOrder    = $ContentOrder->activeOrders();
-                                                    // foreach ($activeOrder as $order) {
-                                                    //     $domains = $blogMst->ShowUserBlogData($cusDtl[0][2]);
-                                                    //     // print_r($domains[0]['domain']);
-                                                    //     foreach ($domains as $domain) {
-                                                    //         $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']); 
-                                                    //         if ($order['clientOrderedSite'] == $domain['domain']) {
-                                                    //             $sl++;
-                                                    //             $noOrders = false;
-                                                    //             echo '<tr>
-                                                    //                     <td>#'.$order['order_id'].'</td>
-                                                    //                     <td>'.$order['clientOrderedSite'].'</td>
-                                                    //                     <td>
-                                                    //                         <span class="badge text-bg-primary '.$status[0]["orders_status_name"].'">'.$status[0]["orders_status_name"].'<span>
-                                                    //                     </td>
-                                                    //                     <td class="text-center">'.$DateUtil->dateTimeNum($order['added_on'], '.').'</td>
-                                                    //                 </tr>';
-                                                            
-                                                    //         }else {
-                                                    //             $noOrders = true;
-                                                    //         }
-                                                                            
-                                                    //     }
-                                                    //     if ($sl == 7) {
-                                                    //         break;
-                                                    //     }     
-                                                    // }
 
                                                     if (count($sellerOrders) > 0) {
                                                         foreach ($sellerOrders as $order) {
@@ -242,31 +230,35 @@ $sellerOrders = $ContentOrder->contentOrdersBySeller($cusDtl[0][2]);
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                        <?php
-                                                        $mostSelling = $BlogMst->mostSellingBlogs($cusId);
-                                                        $sl = 1;
-                                                        foreach ($mostSelling as $blog) {
-                                                            echo'
-                                                            <tr>
+                                                            <?php
+                                                        if (count($mostSelling) > 0) {
+                                                            $sl = 1;
+                                                            foreach ($mostSelling as $blog) {
+                                                                echo'
+                                                                <tr>
                                                                 <th scope="row">'.$sl++.'</th>
                                                                 <td>'.$blog['domain'].'</td>
                                                                 <td>'.$blog['sold_qty'].'<small> Times</small></td>
-                                                            </tr>';
+                                                                </tr>';
+                                                            }
+                                                        }else {
+                                                            $sl = 0;
                                                         }
                                                         ?>
                                                         </tbody>
                                                     </table>
+                                                    <?php
+                                                    if ($sl == 0) {
+                                                    }
+                                                    ?>
+                                                    <div class="text-info">
+                                                        No Order yet!
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="user-dashboard">
-                                    <!-- Dashboard Body Start-->
-                                    <div class="bfrom">
-                                        <!--start from div-->
-                                    </div>
-                                </div><!-- Dashboard Body end //-->
                             </div>
                         </div>
                         <!--Row end-->

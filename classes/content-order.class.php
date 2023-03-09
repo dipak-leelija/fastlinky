@@ -63,6 +63,23 @@ class ContentOrder extends DatabaseConnection{
 
 
 
+      function ordersByStatus($userId, $statusId){
+
+            $data = array();
+            $sql  = "SELECT * FROM `order_details` WHERE `clientUserId` = '$userId' AND `clientOrderStatus` = $statusId";
+            // echo $sql;
+            $res  = $this->conn->query($sql);
+            $rows = $res->num_rows;
+            if ($rows > 0) {
+                  while ($result = $res->fetch_assoc()) {
+                        $data[] = $result;
+                  }
+            }
+            return $data;
+
+      }//eof
+
+
 
 
       function showAllOrderdContents(){

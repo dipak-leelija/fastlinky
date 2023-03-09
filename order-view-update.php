@@ -1,25 +1,22 @@
 <?php
 session_start();
-//var_dump($_SESSION);
-//include_once('checkSession.php');
-require_once "_config/dbconnect.php";
-require_once "_config/dbconnect.trait.php";
-
 require_once "includes/constant.inc.php";
-require_once "classes/date.class.php";
-require_once "classes/error.class.php";
-require_once "classes/search.class.php";
-require_once "classes/customer.class.php";
-require_once "classes/login.class.php";
-require_once "classes/domain.class.php";
 
-require_once "classes/blog_mst.class.php";
-require_once "classes/utility.class.php";
-require_once "classes/utilityMesg.class.php";
-require_once "classes/gp-order.class.php";
+require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/_config/dbconnect.trait.php";
 
-require_once "classes/content-order.class.php";
-require_once "classes/orderStatus.class.php";
+require_once ROOT_DIR."/classes/date.class.php";
+require_once ROOT_DIR."/classes/error.class.php";
+require_once ROOT_DIR."/classes/search.class.php";
+require_once ROOT_DIR."/classes/customer.class.php";
+require_once ROOT_DIR."/classes/login.class.php";
+require_once ROOT_DIR."/classes/domain.class.php";
+
+require_once ROOT_DIR."/classes/blog_mst.class.php";
+require_once ROOT_DIR."/classes/utility.class.php";
+require_once ROOT_DIR."/classes/utilityMesg.class.php";
+require_once ROOT_DIR."/classes/content-order.class.php";
+require_once ROOT_DIR."/classes/orderStatus.class.php";
 
 
 /* INSTANTIATING CLASSES */
@@ -36,24 +33,15 @@ $OrderStatus    = new OrderStatus();
 $utility		= new Utility();
 $dateUtil      	= new DateUtil();
 $uMesg 			= new MesgUtility();
-$gp				  = new Gporder();
 ######################################################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
 //user id
 $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 
-// print_r($cusDtl);exit;
+$currentPage    = $utility->setCurrentPageSession();
+require_once ROOT_DIR."/includes/check-seller-login.inc.php";
 
-$currentUrl = $utility->currentUrl();
-
-if($cusId == 0){
-	header("Location: index.php");
-}
-
-if($cusDtl[0][0] == 1){
-	header("Location: app.client.php");
-}
 
 if (!isset($_GET['id'])) {
 	header("Location: dashboard.php");
@@ -71,7 +59,7 @@ if (isset($_POST['reject-order'])) {
 
         $updated = $ContentOrder->addOrderUpdate($_POST['order-id'], 'Rejected', $reason, $cusDtl[0][0]);
         if ($updated) {
-            $uMesg->showSuccessT('success', 0, '', ''.$currentUrl.'', "Order Rejected", 'SUCCESS');
+            $uMesg->showSuccessT('success', 0, '', ''.$currentPage.'', "Order Rejected", 'SUCCESS');
         }
     }
 }
@@ -85,7 +73,7 @@ if (isset($_POST['accept-order'])) {
     if ($accepted) {
         $updated = $ContentOrder->addOrderUpdate($orderId, 'Accepted', 'We are processing the order', $cusDtl[0][0]);
         if ($updated) {
-            $uMesg->showSuccessT('success', 0, '', ''.$currentUrl.'', "Order Accepted", 'SUCCESS');
+            $uMesg->showSuccessT('success', 0, '', ''.$currentPage.'', "Order Accepted", 'SUCCESS');
         }
     }
 }
@@ -99,7 +87,7 @@ if (isset($_POST['delivered'])) {
     if ($delivered) {
         $updated = $ContentOrder->addOrderUpdate($orderId, 'Delivered', 'Article is delivered', $cusDtl[0][0]);
         if ($updated) {
-            $uMesg->showSuccessT('success', 0, '', ''.$currentUrl.'', "Order Delivered", 'SUCCESS');
+            $uMesg->showSuccessT('success', 0, '', ''.$currentPage.'', "Order Delivered", 'SUCCESS');
         }
     }
 }
@@ -182,7 +170,7 @@ $lastUpdateTime = $dateUtil->dateTimeNum($lastUpdate['updated_on'], '/');
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="home">
         <!-- header -->
-        <?php require_once 'partials/navbar.php'; ?>
+        <?php require_once ROOT_DIR.'/partials/navbar.php'; ?>
         <!-- //header -->
         <!-- banner -->
         <div class="edit_profile">
@@ -193,7 +181,7 @@ $lastUpdateTime = $dateUtil->dateTimeNum($lastUpdate['updated_on'], '/');
                         <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
 
                             <div class="client_profile_dashboard_left">
-                                <?php include("dashboard-inc.php");?>
+                                <?php include ROOT_DIR."/dashboard-inc.php";?>
                                 <hr>
                             </div>
 

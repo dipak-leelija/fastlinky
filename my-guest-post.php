@@ -163,7 +163,7 @@ require_once ROOT_DIR."/includes/check-seller-login.inc.php";
                                                                     <?php echo $status[0]['orders_status_name']; ?>
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <?php echo $utility->dateTimeNum($order['added_on'], '.');?>
+                                                                    <?php echo $dateUtil->dateTimeNum($order['added_on'], '.');?>
                                                                 </td>
                                                                 <td>
                                                                     <a href="order-view-update.php?id=<?php echo base64_encode($order['order_id']);?>"
