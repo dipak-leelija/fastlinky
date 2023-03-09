@@ -25,36 +25,10 @@
     top: 0px;
     clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 10% 51%);
 }
-.package-order-history-list-card{
-    margin: .5rem 0;
-    width: fit-content;
-    padding: .5rem;
-    word-wrap: break-word;
-    color: #6b778c;
-    font-size: .81rem;
-    font-weight: 500;
-    border: 1px solid #dfe1e6;
-    background: #fff;
-    border-radius: 0.25rem;
-    transition: border .15s ease-in;
-}
-/* .package-order-history-list-card ul {
-    margin-bottom: 1rem;
-    text-align: left;
-    font-family: Poppins, Poppins;
-    padding-left: 2rem;
-    min-height: 30px;
-} */
-.package-pricing-list-title{
-    font-family: "Satoshi-Variable";
-    font-weight: 500;
-    color: #00254d;
-    line-height: 1.5;
-    padding-bottom: 0.5rem;
-}
-.item-price-package-list {
-    font-family: Poppins, Poppins;
+.product-title-package-history{
+    font-size: 1.1rem;
     font-weight: 600;
+    margin: 0;
 }
 .order_action_bx .dtls_bx {
     width: 75%;
