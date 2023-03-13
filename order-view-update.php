@@ -253,7 +253,7 @@ $lastUpdateTime = $dateUtil->dateTimeNum($lastUpdate['updated_on'], '/');
                                                         <p class="current-status-p"><?php echo $lastUpdateTime; ?></p>
                                                     </div>
                                                 </div>
-                                                <div class="border mt-2 ">
+                                                <div class="d_border mt-2 ">
                                                     Click Here to Track
                                                 </div>
                                             </div>
