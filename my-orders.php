@@ -68,7 +68,7 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="home">
         <!-- header -->
-        <?php  require_once "partials/navbar.php" ?>
+        <?php  require_once ROOT_DIR."/partials/navbar.php" ?>
         <!-- //header -->
 
         <!-- banner -->
@@ -80,7 +80,7 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                         <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
 
                             <div class="client_profile_dashboard_left">
-                                <?php include("dashboard-inc.php");?>
+                                <?php include ROOT_DIR."/dashboard-inc.php";?>
                                 <hr class="myhrline">
                             </div>
 
@@ -98,17 +98,24 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                     <?php
                                     $sl = 1;
                                     if (count($packOrders) > 0 ) {
-                                        $showItems = 0;
                                         foreach ($packOrders as $eachPackOrder) {
+<<<<<<< HEAD
                                             $ordPack = $GPPackage->packDetailsById($eachPackOrder['package_id']);
                                             $packCat    =   $GPPackage->packCatById($ordPack['category_id']);
                                             $status = $OrderStatus->singleOrderStatus($eachPackOrder['order_status']);
                                             $pStatus = $OrderStatus->singleOrderStatus($eachPackOrder['status']); 
                                  ?>
+=======
+                                            $ordPack    = $GPPackage->packDetailsById($eachPackOrder['package_id']);
+                                            $packCat    = $GPPackage->packCatById($ordPack['category_id']);
+                                            $status     = $OrderStatus->singleOrderStatus($eachPackOrder['order_status']);
+                                            $pStatus    = $OrderStatus->singleOrderStatus($eachPackOrder['status']); 
+                                ?>
+>>>>>>> 8e9853ce80af131a01e8f3375c3f7129d92d5a85
 
                                     <div class="card product_card  position-relative border rounded  mb-3">
                                         <div class="p-textdiv-card">
-                                            <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($eachPackOrder['order_id'])); ?>"
+                                            <a href="package-order-history.php?order=<?php echo base64_encode(urlencode($eachPackOrder['order_id'])); ?>"
                                                 class="text-dark">
                                                 <h3 class="product-title maining-title">
                                                     <?php echo $packCat['category_name'].' '.$ordPack['package_name']; ?>
@@ -145,10 +152,6 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                     <!-- ========================= -->
 
                                     <?php
-                                            $showItems++;
-                                            if ($showItems == 4) {
-                                                break;
-                                            }
                                         }
                                         ?>
                                     <div class="see_all">
@@ -251,17 +254,15 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                 <!-- //end display table-->
             </div>
         </div>
-        <script src="plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
-        <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
-        <script src="plugins/data-table/simple-datatables.js"></script>
-        <script src="plugins/tinymce/tinymce.js"></script>
-        <script src="plugins/main.js"></script>
-        <script src="plugins/jquery-3.6.0.min.js"></script>
+        <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
+        <script src="<?php echo URL;?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL;?>/plugins/data-table/simple-datatables.js"></script>
+        <script src="<?php echo URL;?>/plugins/tinymce/tinymce.js"></script>
+        <script src="<?php echo URL;?>/plugins/main.js"></script>
+        <script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
 
         <!-- //fixed-scroll-nav-js -->
-        <!-- <script src="js/pageplugs/fixedNav.js"></script> -->
-        <script src="js/customerSwitchMode.js"></script>
+        <script src="<?php echo URL;?>/js/customerSwitchMode.js"></script>
 
 </body>
-
 </html>

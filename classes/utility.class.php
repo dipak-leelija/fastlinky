@@ -3691,6 +3691,27 @@ class Utility extends DatabaseConnection{
 
 	}
 
+
+	/**
+	 * This function is used to add st,nd,rd,th after the given number
+	 * here $num is the gigen nuber
+	 */
+	function ordinal($num){
+
+		$last = substr($num,-1);
+		if( $last>3  or $last==0 or ( $num >= 11 and $num <= 19 ) ){
+			$ext='th';
+		}else if( $last==3 ){
+			$ext='rd';
+		}else if( $last==2 ){
+			$ext='nd';
+		}else{
+			$ext='st';
+		}
+    return $num.$ext;
+
+  }
+
 	
 	
 	/**

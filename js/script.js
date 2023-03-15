@@ -1,3 +1,16 @@
+
+
+// reload the page 
+const reloadPage = () =>{
+    location.reload();
+}
+
+//delete an html eliment by id
+const deleteElement = (elemId) =>{
+    document.getElementById(elemId).remove();
+}
+
+// email validation 
 function ValidateEmail(mailAddress) {
 
     if (mailAddress == '') {

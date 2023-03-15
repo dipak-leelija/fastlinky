@@ -1,21 +1,25 @@
 <?php
 session_start();
-
-require_once("_config/dbconnect.php");
-require_once "_config/dbconnect.trait.php";
-
 require_once "includes/constant.inc.php";
 
-require_once "classes/customer.class.php";
-require_once "classes/content-order.class.php";
-require_once "classes/orderStatus.class.php";
-require_once "classes/blog_mst.class.php";
-require_once "classes/utility.class.php";
+require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/_config/dbconnect.trait.php";
+
+
+require_once ROOT_DIR."/classes/customer.class.php";
+require_once ROOT_DIR."/classes/content-order.class.php";
+require_once ROOT_DIR."/classes/orderStatus.class.php";
+require_once ROOT_DIR."/classes/gp-order.class.php";
+require_once ROOT_DIR."/classes/gp-package.class.php";
+require_once ROOT_DIR."/classes/blog_mst.class.php";
+require_once ROOT_DIR."/classes/utility.class.php";
 
 /* INSTANTIATING CLASSES */
 $customer		= new Customer();
 $ContentOrder   = new ContentOrder();
 $BlogMst		= new BlogMst();
+$PackageOrder   = new PackageOrder();
+$GPPackage      = new GuestPostpackage();
 $OrderStatus    = new OrderStatus();
 $utility		= new Utility();
 ######################################################################################################################
@@ -23,41 +27,32 @@ $typeM		= $utility->returnGetVar('typeM','');
 //user id
 $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
-if($cusId == 0){
-    header("Location: index.php");
-}
+require_once ROOT_DIR.'/includes/check-customer-login.inc.php';
 
-if($cusDtl[0] == 1){
-    header("Location: dashboard.php");
-}
 $myOrders       = $ContentOrder->clientOrders($cusId);
+$packOrders     = $PackageOrder->getPackOrderDetails($cusId, '*');
+
 
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
 
 <head>
-    <title>My Order :: <?php echo COMPANY_S; ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <link rel="icon" href="images/logo/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
+    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
+    <title>Package order history - <?php echo COMPANY_S; ?></title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/css/leelija.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/my-orders.css" rel='stylesheet' type='text/css' />
-    <link href="css/order-list.css" rel='stylesheet' type='text/css' />
-
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-
-    <!-- Datatable CSS  -->
-    <link rel="stylesheet" href="plugins/data-table/style.css">
-
+    <link href="<?php echo URL;?>/css/order-list.css" rel='stylesheet' type='text/css' />
 
     <!--//webfonts-->
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
@@ -68,127 +63,111 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="home">
         <!-- header -->
-        <?php  require_once "partials/navbar.php" ?>
-        <?php //include 'header-user-profile.php'?>
-
+        <?php  require_once ROOT_DIR."/partials/navbar.php" ?>
         <!-- //header -->
         <!-- banner -->
         <div class="edit_profile">
             <div class="container-fluid">
-                <div class=" display-table">
-                    <div class="row ">
-                        <!--Row start-->
-                        <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
+                <!-- row start  -->
+                <div class="row ">
+                    <!--Row start-->
+                    <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
 
-                            <div class="client_profile_dashboard_left">
-                                <?php include("dashboard-inc.php");?>
-                                <hr>
+                        <div class="client_profile_dashboard_left">
+                            <?php include ROOT_DIR."/dashboard-inc.php";?>
+                            <hr>
+                        </div>
+
+                    </div>
+                    <div class="col-md-9 mt-4 ps-md-0  display-table-cell v-align ">
+                        <!-- Guest Post Orders  Section-->
+                        <div class="row">
+                            <div class="mb-3">
+                                <h3 class="fw-bold text-center py-2">Package Order:</h3>
                             </div>
 
-                        </div>
-                        <div class="col-md-9 mt-4 ps-md-0  display-table-cell v-align ">
-                            <!-- Guest Post Orders  Section-->
-                            <div class="row">
-                                <div class="mb-3">
-                                    <h3 class="fw-bold text-center py-2">Package Order:</h3>
-                                </div>
-
-                                <?php
+                            <?php
                                     $sl = 1;
-                                    if (count($myOrders) > 0 ) {
+                                    if (count($packOrders) > 0 ) {
                                         $showItems = 0;
-                                        foreach ($myOrders as $order) {
-                                            $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);  
+                                        foreach ($packOrders as $eachPackOrd) {
+                                            $ordPack    = $GPPackage->packDetailsById($eachPackOrd['package_id']);
+                                            $packCat    = $GPPackage->packCatById($ordPack['category_id']);
+                                            $status     = $OrderStatus->singleOrderStatus($eachPackOrd['order_status']);
+                                            $pStatus    = $OrderStatus->singleOrderStatus($eachPackOrd['status']);  
                                     ?>
-                                <div class="col-lg-10 m-auto">
-                                    <div class="card product_card   position-relative border rounded  mb-3">
-                                        <div class="p-textdiv-card-history">
-                                            <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($order['order_id'])); ?>"
-                                                class="text-dark">
-                                                <h3 class="product-title-package-history"> Managed Link Building Basic
-                                                    <span
-                                                        class="badge package-badges <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
-                                                </h3>
-                                                <div>
-                                                    <small>
-                                                        <b>
-                                                            Transaction
-                                                        </b>
-                                                        :<?php echo $order['clientTransactionId'].' || '.$order['added_on'] ?>
-                                                    </small>
-                                                </div>
-                                                <div>
-                                                    <small>
-                                                        <b>
-                                                            Order Id
-                                                        </b>
-                                                        :<?php echo $order['order_id']; ?>
-                                                    </small>
-                                                </div>
-                                                <div>
-                                                    <small>
-                                                        <b>
-                                                            Price
-                                                        </b>
-                                                        :$250/Package
-                                                    </small>
-                                                </div>
-
-
-                                            </a>
-                                        </div>
+                            <div class="col-lg-10 m-auto">
+                                <div class="card product_card   position-relative border rounded  mb-3">
+                                    <div class="p-textdiv-card-history">
+                                        <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($eachPackOrd['order_id'])); ?>"
+                                            class="text-dark">
+                                            <h3 class="product-title-package-history"> Managed Link Building Basic
+                                                <span
+                                                    class="badge package-badges fs_p8 <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
+                                            </h3>
+                                            <div>
+                                                <small>
+                                                    <b>
+                                                        Transaction
+                                                    </b>
+                                                    : <?php echo $eachPackOrd['transection_id'].' || '.$eachPackOrd['date'] ?>
+                                                </small>
+                                            </div>
+                                            <div>
+                                                <small>
+                                                    <b>
+                                                        Order Id
+                                                    </b>
+                                                    : <?php echo $eachPackOrd['order_id']; ?>
+                                                </small>
+                                            </div>
+                                            <div>
+                                                <small>
+                                                    <b>
+                                                        Price
+                                                    </b>
+                                                    : <?php echo $eachPackOrd['price']; ?>/package
+                                                </small>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
+                            </div>
 
 
-                                <?php
+                            <?php
                                 $showItems++;
                                             }
                                         }else {
                                         ?>
-                                <div
-                                    class="product_card col-lg-5 text-center border border border-danger  border-1 rounded shadow py-4 mb-3">
-                                    <h3 class="product-title text-danger m-auto">No Orders</h3>
-                                    <a href="blogs-list.php" class="btn btn-sm btn-primary  w-25 mt-4">Explore</a>
-                                </div>
-                                <?php
+                            <div
+                                class="product_card col-lg-5 text-center border border border-danger  border-1 rounded shadow py-4 mb-3">
+                                <h3 class="product-title text-danger m-auto">No Orders</h3>
+                                <a href="blogs-list.php" class="btn btn-sm btn-primary  w-25 mt-4">Explore</a>
+                            </div>
+                            <?php
                                         }
 
                                     ?>
-                            </div>
-                            <!-- Guest Post Orders  Section End-->
-
                         </div>
-                        <!--Row end-->
+                        <!-- Guest Post Orders  Section End-->
+
                     </div>
                 </div>
-                <!-- //end display table-->
+                <!--// Row end-->
             </div>
         </div>
-        <script src="plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
-        <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
-        <script src="plugins/data-table/simple-datatables.js"></script>
-        <script src="plugins/tinymce/tinymce.js"></script>
-        <script src="plugins/main.js"></script>
-        <script src="plugins/jquery-3.6.0.min.js"></script>
+        <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
+        <script src="<?php echo URL;?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL;?>/plugins/data-table/simple-datatables.js"></script>
+        <script src="<?php echo URL;?>/plugins/tinymce/tinymce.js"></script>
+        <script src="<?php echo URL;?>/plugins/main.js"></script>
+        <script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
 
         <!-- //fixed-scroll-nav-js -->
         <!-- <script src="js/pageplugs/fixedNav.js"></script> -->
-        <script src="js/customerSwitchMode.js"></script>
+        <script src="<?php echo URL;?>/js/customerSwitchMode.js"></script>
 
-        <script>
-        // filter_data();
-
-        // function filter_data() {
-        //     $('.package-order-box').html('<div id="loading" style="" ></div>');
-        //     $.ajax({
-        //         url: "partials/package-order-list.php",
-        //         success: function(data) {
-        //             $('.package-order-box').html(data);
-        //         }
-        //     });
-        // }
-        </script>
         <script>
         /* jQuery Pagination */
         (function($) {

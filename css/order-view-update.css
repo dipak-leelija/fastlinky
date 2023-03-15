@@ -162,13 +162,7 @@ padding: 0;
     /* text-align: center; */
     line-height: 1.6 !important;
 }
-.border{
-    border: 1px dashed #00b !important;
-    text-align: center;
-    padding: 0.2rem;
-    font-size: 14px;
-    font-weight: 600;
-}
+
 @media(max-width:390px){
     .current-status-card{
         padding: .5rem !important;

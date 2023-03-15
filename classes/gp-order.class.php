@@ -1,8 +1,4 @@
 <?php 
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
-
 class PackageOrder extends DatabaseConnection{
 
 
@@ -29,8 +25,8 @@ class PackageOrder extends DatabaseConnection{
       $sql = "SELECT * FROM `gp_package_order` WHERE `order_id`= '$orderId'";
       $res = $this->conn->query($sql);
       if ($res->num_rows > 0) {
-        while ($data = $res->fetch_array()) {
-          $order[] = $data;
+        while ($data = $res->fetch_assoc()) {
+          $order = $data;
         }
         return $order;
       }
@@ -116,23 +112,44 @@ class PackageOrder extends DatabaseConnection{
     }
     return $data;
 
-}//eof
+  }//eof
 
 
 
-  function insertPackOrder($orderId,$key,$link,$text){
-      $sql ="INSERT INTO `gp_package_order_details`(`pack_order_id`, `anchor_text`, `anchor_link`, `comment`, `added_on`, `modified_on`) VALUES ('$orderId','$key','$link','$text',now(),now())";
-      $data = $this->conn->query($sql);
-      $count = $this->conn->insert_id();
+  ##############################################################################################################
+  #                                                                                                            #
+  #                                         GP PACKAGE ORDER DETAILS                                           #
+  #                                                                                                            #
+  ##############################################################################################################
+
+
+  function addPackOrderDtls($orderId, $for_post, $anchor, $url, $added_by){
+
+    $anchor = addslashes(trim($anchor));
+    $url    = addslashes(trim($url));
+
+      $query =  "INSERT INTO `gp_package_order_details`(`order_id`, `for_post`, `anchor`, `url`, `added_by`, `added_on`)
+                                              VALUES ('$orderId', '$for_post','$anchor','$url', '$added_by', now())";
+      $res = $this->conn->query($query);
+      // $count = $this->conn->insert_id();
+      return $res;
   }
 
+  function getPackOrdLinks($orderId, $forPost){
+    $data     = array();
+    $query    = "SELECT anchor,url FROM `gp_package_order_details` 
+                WHERE order_id = '$orderId' AND for_post = '$forPost' ORDER BY for_post ASC";
+    $res      = $this->conn->query($query);
+    while ($result = $res->fetch_assoc()) {
+      $data[] = $result;
+    }
+    return $data;
+  }
 
-  function ccavTrackingInsert($orderId, $trackId){
-    $sql = "UPDATE  `gp_package_order` SET `cc_ordered_key` = '$trackId' WHERE `order_id` = '$orderId'";
-    $res = $this->conn->query($sql);
+  function deletePackOrdDtls($orderId, $forPost){
+    $res      = $this->conn->query("DELETE FROM `gp_package_order_details` WHERE order_id = '$orderId' AND for_post = '$forPost'");
     return $res;
   }
-
 }
 
  ?>
