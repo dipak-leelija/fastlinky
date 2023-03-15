@@ -6,6 +6,7 @@
     background-position: center 55%;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 7rem 5rem;
 }
 
 @media(max-width:766px) {
@@ -13,7 +14,15 @@
         background-position: inherit;
     }
 }
-
+.paragraph_texts{
+    padding :0rem 5rem 2rem;
+  }
+  .paragraph_texts p{
+      font-size: 1.2rem;
+      font-weight: 300;
+      font-family: "Poppins", Poppins;
+      text-align: start;
+  }
 .blog-1main-row {
     padding: 5rem 0;
 }
@@ -39,7 +48,7 @@
 
 .blogout-main-h1 {
     font-family: "Poppins", Poppins;
-    font-size: 5rem;
+    font-size: 3.8rem;
     font-weight: 600;
     line-height: 1.2em;
     color: #383a50;
@@ -50,7 +59,7 @@
 .blogout-main-p {
     font-weight: 300;
     text-align: left;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     color: #324A6D;
     line-height: 1.5em;
     /* font-family: 'Orienta', sans-serif; */
@@ -106,6 +115,7 @@
     text-align: center;
     align-items: center;
     padding: .5rem;
+    font-size: 1.15rem;
 }
 
 /* second-half */
@@ -116,12 +126,11 @@
 }
 
 .real-bo-text-p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.5em;
     font-family: "Poppins", Poppins;
     text-align: center;
-    align-items: center;
 }
 
 @media (min-width:350px) and (max-width:425px) {
@@ -182,7 +191,13 @@
 .works-for-you-bo-section {
     padding: 3rem;
 }
-
+.fbos-p{
+    font-family: "Poppins", Poppins;
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 1rem;
+}
 .works-bo-h2 {
     font-weight: 600;
     color: #383a50;
@@ -198,7 +213,7 @@
 }
 
 .works-f-u-main-card-div {
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 
 .works-for-u-card {
@@ -234,6 +249,36 @@
     min-height: 405px;
 }
 
+/* benifits */
+.advantages-of-using-bos-section {
+    padding: 3rem 4rem;
+}
+
+.advantages-of-using-bos-section h3 {
+    color: #383a50;
+    font-family: Poppins, Poppins;
+    font-size: 33px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+.advantages-of-using-bos-section h3 span{
+    color: var(--mustard);
+}
+
+.advantages-of-using-bos-section ul {
+    text-align: left;
+    color: #1c244b;
+    font-family: Poppins, Poppins;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 2em;
+    padding-left: 3rem;
+}
+
+.advantages-of-using-bos-section li {
+    list-style-type: disclosure-closed;
+    color: #000;
+}
 
 /* how it works  blogger outreach starts */
 /* __________________________________________________________________________________________________ */
@@ -265,7 +310,12 @@
 }
 
 @media (max-width:991px) {
-
+    .blogger_outreach_banner{
+        padding: 7rem 1rem;
+    }
+    .paragraph_texts{
+        padding: 1rem ;
+    }
     .blogout-main-h1 {
         font-size: 2.3rem;
         font-weight: 500;
@@ -281,10 +331,16 @@
     .real-bo-section {
         margin: 5rem 1rem !important;
     }
+    .advantages-of-using-bos-section {
+        padding: 0rem 3rem;
+    }
 
 }
 
 @media (max-width:767px) {
+    .blogger_outreach_banner{
+        padding: 4rem 1rem 0rem;
+    }
     .blog-1main-row {
         padding: 2rem 0;
     }
@@ -313,13 +369,22 @@
     .buttonsinfo {
         text-align: center;
         margin-bottom: 3rem;
+        margin-top: 2rem;
     }
-
+    .real-bo-section {
+        margin: 3rem 1rem 1rem !important;
+    }
     .real-bo-text-h1 {
         text-align: center;
     }
 
     .amazing-bo-text-h1 {
+        text-align: center;
+    }
+    .advantages-of-using-bos-section ul {
+        padding-left: 2rem;
+    }
+    .advantages-of-using-bos-section h3 {
         text-align: center;
     }
 }
@@ -360,13 +425,16 @@
     }
 
     .bo-wrap {
-        padding: 0 1rem;
+        padding: 0 .65rem;
         align-content: center;
         align-items: center;
     }
 
     .pricing-bo-p1 {
         padding: .8rem;
+    }
+    .advantages-of-using-bos-section {
+        padding: 0rem 1rem 2rem;
     }
 
 }
@@ -394,7 +462,7 @@
 
 @media (min-width:200px) and (max-width:312px) {
     .blogout-main-h1 {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
     }
 
     .real-bo-text-h1 {
@@ -414,13 +482,18 @@
         font-size: 1.19rem;
         font-weight: 700 !important;
     }
+    .advantages-of-using-bos-section h3 {
+        font-size: 23px;
+    }
 }
 
 @media (min-width:313px) and (max-width:399px) {
     .blogout-main-h1 {
         font-size: 1.7rem;
     }
-
+    .advantages-of-using-bos-section h3 {
+        font-size: 25.5px;
+    }
 }
 
 @media (min-width:250px) and (max-width:450px) {

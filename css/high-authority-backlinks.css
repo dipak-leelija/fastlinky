@@ -1,17 +1,20 @@
+
+:root{
+    --mustard:#FDA33B;
+    --pure-white: #FFFFFF;
+    --custom-blue: #407BFF;
+    --black: #383a50;
+}
 /* --------------------------------------------------------------------------------------------- */
-
-
 /*High Authority Backlinks main banner start */
-
-
 /* --------------------------------------------------------------------------------------------- */
 
 .managed-link-building-main-banner {
     background-image: url('../images/dummy-img/blogger-outreach-bg-main1.jpg');
-    /* background-position: center right; */
-    background-position: center 47%;
+    background-position: center 29%;
     background-repeat: no-repeat;
     background-size: cover;
+    padding:7rem 5rem;
 }
 
 @media(max-width:766px) {
@@ -20,30 +23,13 @@
     }
 }
 
-.mlb-main-start-row {
-    padding: 5rem 0;
-}
-
-.mlb-main-cntainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-}
-
 .mlb-wrapping {
     align-content: center;
     align-items: start;
 }
 
-.mlb-wrapping span {
-    color: #0673ba;
-}
-
 .mlb-wrapping h2 {
-    color: #F7A546;
+    color: var(--mustard);
     font-family: Poppins, Poppins;
     font-weight: 500;
     line-height: 1.2;
@@ -56,7 +42,7 @@
     font-size: 3.3rem;
     font-weight: 600;
     line-height: 1.2em;
-    color: #383a50 ;
+    color: var(--black);
     word-spacing: 0.1em;
     stroke: #000;
 }
@@ -65,9 +51,10 @@
     font-weight: 400;
     text-align: left;
     font-size: 1.5rem;
-    color: #324A6D;
+    color: var(--black);
     line-height: 1.5em;
     font-family: "Poppins", Poppins;
+    margin-top: 2.5rem;
 }
 
 .managed-link-btn {
@@ -75,41 +62,31 @@
     font-size: 16px;
     font-weight: 400;
     text-transform: capitalize;
-    font-style: normal;
-    text-decoration: none;
-    line-height: 1em;
-    letter-spacing: 0;
-    word-spacing: 0em;
-    fill: #FFF;
-    color: #FFF;
-    background-color: #F7A546;
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    border-color: #F7A546 !important;
+    color: var(--pure-white);
+    background-color: var(--mustard);
+    border:1px solid var(--mustard) !important;
     border-radius: 100px 100px 100px 100px;
     padding: 16px 55px 16px 55px;
 }
 
 .managed-link-btn:hover {
-    color: #F7A546 !important;
+    color: var(--mustard) !important;
 }
 
-
+.paragraph_texts{
+    padding :0rem 5rem 2rem;
+  }
+  .paragraph_texts p{
+      font-size: 1.2rem;
+      font-weight: 300;
+      font-family: "Poppins", Poppins;
+      text-align: start;
+  }
 /* ________________________________________________________________________________________ */
-
-
 /* High Authority Backlinks main banner end */
-
-
 /* __________________________________________________________________________________________________ */
-
-
 /* __________________________________________________________________________________________________ */
-
-
 /* Backlinks From High Authority And High Traffic Website starts */
-
-
 /* __________________________________________________________________________________________________ */
 
 .lbs-actually-matters-main {
@@ -122,16 +99,16 @@
     margin-bottom: 2.5rem;
     font-weight: 500;
     line-height: 1.2;
-    color: #383a50 ;
+    color: var(--black) ;
 }
 
 .lbs-actually-matters-main-h1 span {
-    color:#FDA33B ;
+    color:var(--mustard) ;
 }
 
 .lbs-actually-matters-main p {
     text-align: left;
-    color: #3F4450;
+    color: var(--black);
     font-family: "Helvetica", Poppins;
     font-size: 19px;
     font-weight: 400;
@@ -145,20 +122,10 @@
 
 
 /* __________________________________________________________________________________________________ */
-
-
 /* Backlinks From High Authority And High Traffic Website  ends */
-
-
 /*  ________________________________________________________________________________________ */
-
-
 /* --------------------------------------------------------------------------------------------- */
-
-
-/* Cannabis Link Building Or Regular Link Building- STARTS*/
-
-
+/* Guaranteed placement on the site of your choice- STARTS*/
 /* --------------------------------------------------------------------------------------------- */
 
 .high-autority-placement-section {
@@ -177,12 +144,12 @@
     font-family: "Helvetica", Poppins;
     font-weight: 500;
     margin-bottom: 2rem;
-    color: #383a50;
+    color: var(--black);
 }
 
 .high-autority-placement-div strong {
     font-weight: 600;
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .high-autority-placement-div p {
@@ -190,35 +157,18 @@
     font-family: "Helvetica", Poppins;
     font-size: 1.1rem;
     text-align: justify;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
-
-/* .high-autority-placement-div span {
-    color: #407BFF;
-} */
-
-
-/* --------------------------------------------------------------------------------------------- */
-
-
-/* Cannabis Link Building Or Regular Link Building- ENDS */
-
-
-/* --------------------------------------------------------------------------------------------- */
-
-
+/* ----------------------------------- */
+/* Guaranteed placement on the site of your choice- ends */
 /* _______________________________________________________________________________________________________ */
-
-
 /* Pricing blogger outreach section start */
-
-
 /* _____________________________________________________________________________________________________ */
 
 .pricing-bo-h1 {
     font-size: 3.2rem;
     font-weight: 600;
-    color: #383a50;
+    color: var(--black);
     font-family: "Poppins", Poppins;
 }
 
@@ -228,29 +178,13 @@
     font-weight: 300;
 }
 
-
-/* .price-table {
-    background: #F9F9F9;
-    padding: 20px 5rem;
-    margin: 5rem 0;
-} */
-
-
 /* _____________________________________________________________________________________________________ */
-
-
 /* Pricing blogger outreach section ends */
-
-
 /* _____________________________________________________________________________________________________ */
 
 
 /* --------------------------------------------------------------------------------------------- */
-
-
 /* how it works starts */
-
-
 /* --------------------------------------------------------------------------------------------- */
 
 .how-it-works-main-section {
@@ -264,7 +198,7 @@
     font-size: 36px;
     line-height: 48px;
     font-weight: 600;
-    color: #383a50;
+    color: var(--black);
 }
 
 .how-it-works-1st-img {
@@ -278,63 +212,136 @@
 }
 
 .how-it-works-main-card-div h4 {
-    font-size: 1.75rem;
+    font-size: 1.94rem;
     font-weight: 600;
     font-family: "Helvetica", Poppins;
 }
 
 .how-it-works-main-card-div span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .how-it-works-main-card-div p {
     font-family: "Helvetica", Poppins;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.5;
+    text-align: justify;
 }
 
+/*       Benefits Of High Domain Authority Website starts         */
+.advantages-of-using-bos-section {
+    padding: 3rem 4rem;
+    background-image: url('../images/dummy-img/blogger-outreach-bg-main.png');
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.advantages-of-using-bos-section p {
+    font-family: Poppins, Poppins;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.advantages-of-using-bos-section h3 {
+    color:var(--black);
+    font-family: Poppins, Poppins;
+    font-size: 33px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+.advantages-of-using-bos-section h3 span{
+    color: var(--mustard);
+}
+
+.advantages-of-using-bos-section ul {
+    text-align: left;
+    color: var(--black);
+    font-family: Poppins, Poppins;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 2em;
+    padding-left: 3rem;
+}
+
+.advantages-of-using-bos-section li {
+    list-style-type: disclosure-closed;
+    color: #000;
+}
 
 /* --------------------------------------------------------------------------------------------- */
-
-
-/* how it works ends */
-
-
+/* Benefits Of High Domain Authority Website */
 /* --------------------------------------------------------------------------------------------- */
+/*  What Are Our Plans?  starts  */
 
+.works-for-you-bo-section {
+    padding: 5rem;
+}
 
+.works-bo-h2 {
+    font-weight: 600;
+    color: var(--black);
+    font-family: "Poppins", Poppins;
+}
+
+.works-bo-h2 span {
+    color: var(--mustard);
+}
+
+.works-bo-p1 {
+    font-size: 1.1rem;
+}
+
+.works-f-u-main-card-div {
+    margin-top: 4rem;
+}
+
+.works-for-u-card {
+    padding: 1.5rem;
+    border-radius: unset;
+    background: var(--pure-white);
+    margin: 20px;
+    box-shadow: 0 0 10px 0 #ccc;
+    border: none;
+    min-height: 460px;
+}
+
+.works-f-u-main-card-div p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+.how-it-work-f-u-card {
+    box-shadow: 0 0px 6px 0 rgb(12 23 52 / 20%);
+    padding: 1.5rem;
+    border-radius: unset;
+    background: var(--pure-white);
+    border: none;
+    border-bottom-right-radius: 65px;
+    border-bottom: 2px solid var(--mustard);
+    transition: all .5s ease;
+}
+.how-it-work-f-u-card:hover {
+box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
+}
+/*  What Are Our Plans? ends  */
 /* --------------------------------------------------------------------------------------------- */
-
-
 /* Frequently Asked Questions (FAQs) starts */
-
-
 /* --------------------------------------------------------------------------------------------- */
 
 .faq-head-section {
-    color: #383a50;
+    color: var(--black);
 }
 
 .faq-head-section span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 
 /* --------------------------------------------------------------------------------------------- */
-
-
 /*Frequently Asked Questions (FAQs) ends */
-
-
 /* --------------------------------------------------------------------------------------------- */
 
-
 /* ____________________________________________________ */
-
-
 /* MEDIA QUERY STARTS  */
-
-
 /* ____________________________________________________ */
 
 @media (max-width:1199px) {
@@ -342,7 +349,7 @@
         padding: 3rem !important;
     }
     .mlb-starting-main-h1 {
-        font-size: 2.8rem;
+        font-size: 2.7rem;
         font-weight: 600;
     }
     .how-it-works-main-section {
@@ -360,6 +367,9 @@
 }
 
 @media (max-width:991px) {
+    .managed-link-building-main-banner{
+        padding: 7rem 1rem;
+    }
     .mlb-starting-main-h1 {
         font-size: 2.3rem;
         font-weight: 500;
@@ -368,10 +378,16 @@
         font-weight: 400;
         font-size: 1.445rem !important;
     }
-    /* .price-table {
-        padding: 20px 2rem !important;
-        margin: 2rem 0 !important;
-    } */
+    .paragraph_texts{
+        padding: 1rem ;
+    }
+    .works-for-you-bo-section {
+        padding: 1rem;
+    }
+    .advantages-of-using-bos-section {
+        padding:  3rem;
+    }
+
     .lbs-actually-matters-main-h1 {
         font-size: 1.8rem;
     }
@@ -387,6 +403,9 @@
 }
 
 @media (max-width:767px) {
+    .managed-link-building-main-banner{
+        padding: 5rem 1rem 2rem;
+    }
     .how-it-works-main-card-div p {
         text-align: justify;
     }
@@ -398,23 +417,15 @@
         text-align: center;
         margin-bottom: 2rem;
     }
-    .cannabis-for-smallsizing {
-        margin-bottom: 0rem !important;
-    }
     .mlb-wrapping {
         padding: 0 1rem;
-        align-content: center;
-        align-items: center;
-    }
-    .mlb-main-start-row {
-        padding: 2rem 0;
+      text-align: center;
     }
     .a-brand-need-link-main-div {
         margin-top: 0rem !important;
         margin-bottom: 0rem !important;
     }
     .mlb-starting-main-h1 {
-        /* padding-top: 3rem !important; */
         text-align: center;
     }
     .mlb-starting-main-p {
@@ -426,6 +437,7 @@
     }
     .buttonsinfo {
         margin-bottom: 3rem;
+        text-align: center;
     }
     .lbs-actually-matters-main-h1 {
         font-size: 2.3rem !important;
@@ -443,6 +455,12 @@
     .how-it-works-1st-img {
         width: 490px !important;
     }
+    .advantages-of-using-bos-section ul {
+        padding-left: 2rem;
+    }
+    .advantages-of-using-bos-section h3 {
+        text-align: center;
+    }
 }
 
 @media (max-width:600px) {
@@ -456,15 +474,6 @@
     .high-autority-placement-div ul {
         font-size: 20px;
     }
-    /* .price-table {
-        padding: 20px 0rem !important;
-        margin: 2rem 0 !important;
-        
-    } */
-    /* .mlb-starting-main-h1 {
-        font-size: 2rem;
-    } */
-  
     .pricing-bo-p1 {
         padding: .8rem;
     }
@@ -476,6 +485,9 @@
     }
     .how-it-works-main-section {
         padding: 4rem 2rem !important;
+    }
+    .advantages-of-using-bos-section {
+        padding: 2rem 1rem;
     }
 }
 
@@ -531,12 +543,15 @@
     .how-it-works-1st-img {
         width: 253px !important;
     }
+    .advantages-of-using-bos-section h3 {
+        font-size: 23px;
+    }
 }
 
 @media (min-width:313px) and (max-width:399px) {
-    /* .mlb-starting-main-h1 {
-        font-size: 1.7rem;
-    } */
+    .advantages-of-using-bos-section h3 {
+        font-size: 25.5px;
+    }
 }
 
 @media (min-width:353px) and (max-width:420px) {

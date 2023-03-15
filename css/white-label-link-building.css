@@ -4,6 +4,7 @@
     background-position: center 47%;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 4rem 5rem;
 }
 
 @media(max-width:766px) {
@@ -12,37 +13,12 @@
     }
 }
 
-.blog-1main-row {
-    padding: 5rem 0;
-}
-
-.bo-main-cntr {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-}
-
-.bo-wrap {
-    align-content: center;
-    align-items: start;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.bo-wrap span {
-    color: #0673ba;
-}
-
 .blogout-main-h1 {
     font-family: "Poppins", Poppins;
     font-size: 3.8rem;
     font-weight: 600;
     line-height: 1.2em;
-    color: #383a50;
+    color: var(--black);
     word-spacing: 0.1em;
     stroke: #000;
 }
@@ -61,45 +37,45 @@
     font-size: 16px;
     font-weight: 400;
     text-transform: capitalize;
-    font-style: normal;
-    text-decoration: none;
-    line-height: 1em;
-    letter-spacing: 0;
-    word-spacing: 0em;
-    fill: #FFF;
-    color: #FFF;
-    background-color: #F7A546;
+    color: var(--pure-white);
+    background-color: var(--mustard);
     border-style: solid;
+    border: 1px solid var();
     border-width: 1px 1px 1px 1px;
-    border-color: #F7A546 !important;
+    border-color: var(--mustard) !important;
     border-radius: 100px 100px 100px 100px;
     padding: 16px 55px 16px 55px;
 }
 .blogger-btn:hover{
-    color: #FDA33B !important;
+    color: var(--mustard) !important;
 }
 /*      ending of white lebel links building main banner  */
 
 /* ________________________________________________________________________________________ */
 
-
+.paragraph_texts{
+  padding :0rem 5rem 2rem;
+}
+.paragraph_texts p{
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-family: "Poppins", Poppins;
+    text-align: start;
+}
 /* trustworthy-white-lebel-section start */
 
 .trustwhite-section {
     margin: 5rem;
 }
 
-.wp-building1 {
-    margin: 5rem;
-}
 
 .trustworthy-white-lebel-text-h1 {
-    font-size: 2.38rem;
-    color: #383a50;
+    font-size: 2.3rem;
+    color: var(--black);
 }
 
 .trustworthy-white-lebel-text-h1 span {
-    color: #FDA33B ;
+    color: var(--mustard) ;
 }
 
 .real-bo-secondcol-div1 {
@@ -107,38 +83,6 @@
     text-align: start;
     align-items: center;
     padding: .5rem;
-}
-
-.real-bo-ul1 {
-    margin: 2rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.real-bo-li1 {
-    display: flex;
-    text-align: center;
-    align-items: center;
-}
-
-.real-bo-ul1 b {
-    color: palevioletred;
-}
-
-/* second-half */
-.real-bo-second-col-img {
-    width: 585px;
-    height: 356px;
-    object-fit: cover;
-}
-
-.real-bo-text-p {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5em;
-    font-family: "Poppins", Poppins;
-    text-align: center;
-    align-items: center;
 }
 
 @media (min-width:350px) and (max-width:425px) {
@@ -158,12 +102,6 @@
 
 /*  Our Work Procedure-section start */
 
-.amazing-bo-first-col-img {
-    width: 525px;
-    height: 356px;
-    object-fit: cover;
-}
-
 .getyour-linkbtn {
     display: flex;
     justify-content: right;
@@ -173,28 +111,28 @@
     font-family: "Poppins", Poppins;
     text-align: center;
     font-size: 2.7rem;
-    color: #FDA33B ;
-    margin-bottom: 5rem;
+    color: var(--mustard) ;
+    margin-bottom: 4rem;
 }
 /* Our Work Procedure-section  end */
 /* ____________________________________________________________________________________________________________ */
 
 /* _____________________________________________________________________________________________________ */
 
-/*  Why Leelija Can Give You That Top Level starts  */
+/*  Why Can Give You That Top Level starts  */
 
 .works-for-you-bo-section {
-    padding: 3rem;
+    padding: 5rem;
 }
 
 .works-bo-h2 {
     font-weight: 600;
-    color: #383a50;
+    color: var(--black);
     font-family: "Poppins", Poppins;
 }
 
 .works-bo-h2 span {
-    color: #FDA33B ;
+    color: var(--mustard);
 }
 
 .works-bo-p1 {
@@ -208,7 +146,7 @@
 .works-for-u-card {
     padding: 1.5rem;
     border-radius: unset;
-    background: #fff;
+    background: var(--pure-white);
     margin: 20px;
     box-shadow: 0 0 10px 0 #ccc;
     border: none;
@@ -216,31 +154,31 @@
 }
 
 .works-f-u-main-card-div p {
-    font-size: .95rem;
+    font-size: 1rem;
+    font-weight: 400;
 }
-
-/* does bo-works for you ends */
-/* how it works  blogger outreach starts */
-.how-its-wrok-bo-main-div {
-    padding: 1rem;
-}
-
 .how-it-work-f-u-card {
+    box-shadow: 0 0px 6px 0 rgb(12 23 52 / 20%);
     padding: 1.5rem;
     border-radius: unset;
-    background: #fff;
-    margin: 20px 5px;
-    box-shadow: 0 0 10px 0 #ccc;
+    background: var(--pure-white);
+    margin: 20px 15px;
     border: none;
-    min-height: 360px;
+    min-height: 390px;
+    border-bottom-right-radius: 65px;
+    border-bottom: 2px solid var(--mustard);
+    transition: all .5s ease;
+}
+.how-it-work-f-u-card:hover {
+box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
 }
 
-/*  Why Leelija Can Give You That Top Level ends  */
+/*  Why Can Give You That Top Level ends  */
 /* __________________________________________________________________________________________________ */
 .pricing-bo-h1 {
     font-size: 3.1rem;
     font-weight: 600;
-    color: #383a50;
+    color: var(--black);
     font-family: "Poppins", Poppins;
 }
 
@@ -267,6 +205,12 @@
 }
 
 @media (max-width:991px) {
+    .white_lebel_link_banner{
+     padding: 4rem 1rem;
+    }
+    .paragraph_texts {
+        padding: 0rem 1rem;
+    }
     .blogout-main-h1 {
         font-size: 2.3rem;
         font-weight: 500;
@@ -278,27 +222,22 @@
     .trustwhite-section {
         margin: 5rem 1rem !important;
     }
-    .wp-building1 {
-        margin: 5rem 1rem !important;
-    }
 }
 
 @media (max-width:767px) {
-    .bo-wrap {
-        padding: 0 1rem;
-        align-content: center;
-        align-items: center;
+    .bo-wrap{
+        padding: 1rem;
     }
-    .blog-1main-row {
-        padding: 0rem ;
-    }
+    .white_lebel_link_banner{
+        padding: 3rem 1rem 0rem;
+       }
     .getyour-linkbtn {
         display: flex;
         justify-content: center !important;
     }
     .blogout-main-h1 {
         text-align: center;
-        margin-top: 2rem;
+        margin-top: .7rem;
     }
     .white-lebel-main-p {
         text-align: center;
@@ -330,27 +269,14 @@
         padding: 1rem !important;
         margin: 20px 0px !important;
     }
-    .how-its-wrok-bo-main-div {
-        padding: 0rem !important;
-    }
     .works-f-u-main-card-div {
         margin-top: 0rem !important;
     }
-    .examples-of-blogs-main-div {
-        padding: 4rem 1rem !important;
-    }
 }
 
-@media (min-width:706px) and (max-width:767px) {
-    .examples-of-blogs-main-div h2 {
-        font-size: 1.9rem !important;
-    }
-}
+
 
 @media (max-width:600px) {
-    h3.stat-title {
-        font-size: 2em !important;
-    }
     .blogout-main-h1 {
         font-size: 2rem;
     }
@@ -424,15 +350,6 @@
     .work-procedure-white-lebel-text-h1 {
         margin-bottom: 0rem;
     }
-    .examples-of-blogs-main-div {
-        padding: 4rem 1rem !important;
-    }
-    .examples-of-blogs-main-div h2 {
-        font-size: 1.6rem !important;
-    }
-    .how-its-wrok-bo-main-div {
-        padding: 0rem !important;
-    }
     .works-f-u-main-card-div {
         margin-top: 1rem !important;
     }
@@ -451,7 +368,6 @@
         text-align: center;
         align-items: center;
         padding: .5rem;
-        /* border: 1px solid bisque; */
         margin: 1rem 0;
     }
     .trustworthy-img-div {
@@ -460,10 +376,6 @@
     }
     .lbp-texting {
         text-align: justify;
-        /* margin: 0 1rem; */
-    }
-    .wp-building1 {
-        margin: 1rem 1rem !important;
     }
     .wp-building2 {
         margin-bottom: 3rem !important;

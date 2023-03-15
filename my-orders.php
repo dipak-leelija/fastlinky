@@ -91,7 +91,7 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
 
                                 <!-- ========================= -->
                                 <!-- Guest Post Orders  Section-->
-                                <div class="col-md-6">
+                                <div class="col-lg-6">
                                     <div class=" mb-3">
                                         <h3 class="fw-bold text-center">Package Order :</h3>
                                     </div>
@@ -104,7 +104,7 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                             $packCat    =   $GPPackage->packCatById($ordPack['category_id']);
                                             $status = $OrderStatus->singleOrderStatus($eachPackOrder['order_status']);
                                             $pStatus = $OrderStatus->singleOrderStatus($eachPackOrder['status']); 
-                                ?>
+                                 ?>
 
                                     <div class="card product_card  position-relative border rounded  mb-3">
                                         <div class="p-textdiv-card">
@@ -173,7 +173,7 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
 
                                 <!-- ========================= -->
                                 <!-- Guest Post Orders  Section-->
-                                <div class="col-md-6">
+                                <div class="col-lg-6">
                                     <div class=" mb-3">
                                         <h3 class="fw-bold text-center">Guest Post Order :</h3>
                                     </div>
@@ -189,10 +189,10 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                         <div class="p-textdiv-card">
                                             <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($order['order_id'])); ?>"
                                                 class="text-dark">
-                                                <h3 class="product-title maining-title">
-                                                    <?php echo $order['clientOrderedSite']; ?>
+                                                <h3 class="product-title maining-title"> <span class="order-md-1 order-2 "><?php echo $order['clientOrderedSite']; ?></span>
+                                                    
                                                     <span
-                                                        class="badge fs_p8 <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
+                                                        class="badge fs_p8 order-md-2 order-1 <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
                                                 </h3>
                                                 <div>
                                                     <small>
