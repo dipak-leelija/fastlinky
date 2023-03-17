@@ -7,9 +7,8 @@ require_once ROOT_DIR . "/_config/dbconnect.php";
 require_once ROOT_DIR . "/_config/dbconnect.trait.php";
 
 
-require_once ROOT_DIR . "/classes/adminLogin.class.php"; 
-require_once ROOT_DIR . "/classes/date.class.php"; 
- 
+require_once ROOT_DIR . "/classes/gp-order.class.php"; 
+
 require_once ROOT_DIR . "/classes/error.class.php"; 
 require_once ROOT_DIR . "/classes/customer.class.php";
 
@@ -17,6 +16,7 @@ require_once ROOT_DIR . "/classes/content-order.class.php";
 require_once ROOT_DIR . "/classes/search.class.php";
 require_once ROOT_DIR . "/classes/orderStatus.class.php";
 
+require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php"; 
 require_once ROOT_DIR . "/classes/utilityMesg.class.php"; 
 require_once ROOT_DIR . "/classes/utilityImage.class.php";
@@ -24,15 +24,15 @@ require_once ROOT_DIR . "/classes/utilityNum.class.php";
 
 
 /* INSTANTIATING CLASSES */
-$adminLogin 	= new adminLogin();
-$dateUtil      	= new DateUtil();
+// $adminLogin 	= new adminLogin();
 $error 			= new Error();
 $client		    = new Customer();
-$ContentOrder	= new ContentOrder();
+$PackageOrder	= new PackageOrder();
 // $product		= new Product();
 $search_obj		= new Search();
 $OrderStatus    = new OrderStatus();
 
+$DateUtil      	= new DateUtil();
 $utility		= new Utility();
 $uMesg 			= new MesgUtility();
 $uImg 			= new ImageUtility();
@@ -61,8 +61,8 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'search')){
 	}
 
   // echo $user_id.'----'.$status;exit;
-	$allOrders	= $ContentOrder->showAllOrderdContents($user_id, $status);
-  // print_r($allOrders);
+	$allOrders	= $PackageOrder->getAllOrderDetails();
+//   print_r($allOrders);
   // exit;
 	
 }
@@ -156,7 +156,7 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'search')){
                                                         <?php echo '#'.$order['order_id']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $order['clientName']; ?>
+                                                        <?php echo $order['name']; ?>
                                                     </td>
                                                     <td>
                                                         <!-- <div class="progress">
@@ -164,26 +164,26 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'search')){
                                                                 style="width: 25%" aria-valuenow="25" aria-valuemin="0"
                                                                 aria-valuemax="100"></div>
                                                         </div> -->
-                                                        <?php echo $order['clientOrderedSite']; ?>
+                                                        <?php echo $order['package_id']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $order['clientOrderPrice']; ?>
+                                                        <?php echo $order['price']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $order['clientOrderPrice']; ?>
+                                                        <?php echo $order['paid_amount']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php $ordStatus = $OrderStatus->getOrdStatName($order['clientOrderStatus']); ?>
+                                                        <?php $ordStatus = $OrderStatus->getOrdStatName($order['order_status']); ?>
                                                         <label class="badge <?php echo $ordStatus;?>">
                                                             <?php echo $ordStatus;?>
                                                         </label>
                                                     </td>
                                                     <td>
-                                                        <?php echo $dateUtil->dateTimeNumber($order['added_on']); ?>
+                                                        <?php echo $DateUtil->dateTimeNumber($order['date']); ?>
                                                     </td>
                                                     <td>
                                                         <a class="text-decoration-none mx-1"
-                                                            href="order-details.php?ord_id=<?php echo $order['order_id']; ?>">
+                                                            href="package-order-details.php?ord_id=<?php echo $order['order_id']; ?>">
                                                             <i class="fa-regular fa-eye"></i>
                                                         </a>
                                                         <a href="" class="text-decoration-none mx-1">

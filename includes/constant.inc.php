@@ -5,10 +5,15 @@
 	//URLS Details 
 	$protocol = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
 
-	define('URL', 				$protocol.$_SERVER['HTTP_HOST'].'/fastlinky');
-	define('ROOT_DIR', 			dirname(dirname(__FILE__)));
+	define('LOCAL_DIR',			'/fastlinky');
+	define('URL', 				$protocol.$_SERVER['HTTP_HOST'].LOCAL_DIR);
+	// define('ROOT_DIR', 			dirname(dirname(__FILE__)));
+	// define('ADM_DIR', 			dirname(dirname(__FILE__)).'/admin/');
+	define('ROOT_DIR', 			$_SERVER['DOCUMENT_ROOT'].LOCAL_DIR);
+	define('ADM_DIR', 			$_SERVER['DOCUMENT_ROOT'].LOCAL_DIR.'/admin/');
+
 	define('PAGE',				$_SERVER['PHP_SELF']);
-	define('ADM_PATH',  		URL.'/admin');
+	define('ADM_URL',  			URL.'/admin/');
 	define('SELLER_AREA',  		URL."/dashboard.php");
 	define('BUYER_AREA',  		URL."/app.client.php");
 	define('IMG_PATH',  		URL."/images");

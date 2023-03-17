@@ -53,12 +53,45 @@ class PackageOrder extends DatabaseConnection{
     }
 
 
+    function updatePackOrdersStatus($orderId, $statusId, $updatedBy){
+
+      $sql  = "UPDATE `gp_package_order`
+                SET
+                `order_status` = '$statusId',
+                `updated_by`   = '$updatedBy'
+                WHERE `order_id` = '$orderId'";
+      // echo $sql;
+      $res  = $this->conn->query($sql);
+      if($res){
+        return true;
+      }else {
+        return false;
+      }
+  
+    }//eof
+
+
+    function getOrderStatus($orderId){
+      $myArr = '';
+      $sql = "SELECT order_status FROM `gp_package_order` WHERE `order_id` = '$orderId'";
+      $data = $this->conn->query($sql);
+  
+      while($res = $data->fetch_object()){
+        $myArr = $res->order_status;
+      }
+      return $myArr;
+  
+    }
+
+
+
+
   function getAllOrderDetails(){
+    $myArr = array();
     $sql = "SELECT * FROM `gp_package_order`";
     $data = $this->conn->query($sql);
-    $myArr = array();
 
-    while($res = $this->conn->fetch_assoc($data)){
+    while($res = $data->fetch_assoc()){
       $myArr[]= $res;
     }
     return $myArr;
@@ -118,26 +151,28 @@ class PackageOrder extends DatabaseConnection{
 
   ##############################################################################################################
   #                                                                                                            #
-  #                                         GP PACKAGE ORDER DETAILS                                           #
+  #                                         GP PACKAGE ORDER LINKS                                             #
   #                                                                                                            #
   ##############################################################################################################
 
 
-  function addPackOrderDtls($orderId, $for_post, $anchor, $url, $added_by){
+  function addPackOrderLinks($orderId, $for_post, $anchor, $url, $added_by){
 
     $anchor = addslashes(trim($anchor));
     $url    = addslashes(trim($url));
 
-      $query =  "INSERT INTO `gp_package_order_details`(`order_id`, `for_post`, `anchor`, `url`, `added_by`, `added_on`)
+      $query =  "INSERT INTO `gp_package_order_links`(`order_id`, `for_post`, `anchor`, `url`, `added_by`, `added_on`)
                                               VALUES ('$orderId', '$for_post','$anchor','$url', '$added_by', now())";
       $res = $this->conn->query($query);
       // $count = $this->conn->insert_id();
       return $res;
   }
 
+
+
   function getPackOrdLinks($orderId, $forPost){
     $data     = array();
-    $query    = "SELECT anchor,url FROM `gp_package_order_details` 
+    $query    = "SELECT id,anchor,url FROM `gp_package_order_links` 
                 WHERE order_id = '$orderId' AND for_post = '$forPost' ORDER BY for_post ASC";
     $res      = $this->conn->query($query);
     while ($result = $res->fetch_assoc()) {
@@ -146,10 +181,143 @@ class PackageOrder extends DatabaseConnection{
     return $data;
   }
 
-  function deletePackOrdDtls($orderId, $forPost){
-    $res      = $this->conn->query("DELETE FROM `gp_package_order_details` WHERE order_id = '$orderId' AND for_post = '$forPost'");
+
+
+  function deletePackOrdLinks($orderId, $forPost){
+    $res      = $this->conn->query("DELETE FROM `gp_package_order_links` WHERE order_id = '$orderId' AND for_post = '$forPost'");
     return $res;
   }
+
+
+
+
+  
+
+  ##############################################################################################################
+  #                                                                                                            #
+  #                                       GP PACKAGE ORDER LINK STATUS                                         #
+  #                                                                                                            #
+  ##############################################################################################################
+
+
+  function raisePackOrderLinksIssue($linkId, $statusId, $issue, $added_by){
+
+    $issue = addslashes(trim($issue));
+
+      $query =  "INSERT INTO `gp_package_order_link_status`
+                (`link_id`, `status`, `issue`, `added_by`, `added_on`)
+                VALUES
+                ('$linkId', '$statusId', '$issue', '$added_by', now())";
+
+      $res = $this->conn->query($query);
+      // $count = $this->conn->insert_id();
+      return $res;
+  }
+
+
+
+  function getPackOrdLinksIssue($linkId){
+    $data     = array();
+    $query    = "SELECT id,status,issue FROM `gp_package_order_link_status` 
+                WHERE link_id = '$linkId' ORDER BY id ASC";
+    $res      = $this->conn->query($query);
+    while ($result = $res->fetch_assoc()) {
+      $data[] = $result;
+    }
+    return $data;
+  }
+
+  // function deletePackOrdLinks($orderId, $forPost){
+  //   $res      = $this->conn->query("DELETE FROM `gp_package_order_links` WHERE order_id = '$orderId' AND for_post = '$forPost'");
+  //   return $res;
+  // }
+
+
+
+
+
+
+  ##############################################################################################################
+  #                                                                                                            #
+  #                                         GP PACKAGE ORDER DETAILS                                           #
+  #                                                                                                            #
+  ##############################################################################################################
+
+
+  function addPackOrderDtls($orderId, $statusId, $dsc, $added_by, $updator){
+
+    $dsc = addslashes(trim($dsc));
+
+      $query =  "INSERT INTO `gp_package_order_details`(`order_id`, `status`, `dsc`, `added_by`, `updator`, `added_on`)
+                                              VALUES ('$orderId', '$statusId', '$dsc', '$added_by', '$updator', now())";
+      $res = $this->conn->query($query);
+      // $count = $this->conn->insert_id();
+      return $res;
+  }
+
+
+
+
+
+  function getPackOrdUpdates($orderId, $ordrBy){
+
+    $data     = array();
+    $query    = "SELECT * FROM `gp_package_order_details` 
+                WHERE order_id = '$orderId' ORDER BY id $ordrBy";
+    $res      = $this->conn->query($query);
+    while ($result = $res->fetch_assoc()) {
+      $data[] = $result;
+    }
+    return $data;
+
+  }
+
+  // function deletePackOrdDtls($orderId, $forPost){
+  //   $res      = $this->conn->query("DELETE FROM `gp_package_order_details` WHERE order_id = '$orderId' AND for_post = '$forPost'");
+  //   return $res;
+  // }
+
+
+  
+
+  ##############################################################################################################
+  #                                                                                                            #
+  #                                         GP PACKAGE ORDER DETAILS                                           #
+  #                                                                                                            #
+  ##############################################################################################################
+
+
+  function addPackPubLinks($orderId, $for_post, $pubUrl, $added_by){
+
+      $pubUrl = addslashes(trim($pubUrl));
+
+      $query =  "INSERT INTO `package_publish_links`(`order_id`,	`for_post`,	`url`, `added_on`, `added_by`)
+                                              VALUES ('$orderId', '$for_post', '$pubUrl', now(), '$added_by')";
+      $res = $this->conn->query($query);
+      // $count = $this->conn->insert_id();
+      return $res;
+  }
+
+
+
+
+
+  function getPackPubUrl($orderId, $ordrBy){
+
+    $data     = array();
+    $query    = "SELECT * FROM `package_publish_links` 
+                WHERE order_id = '$orderId' ORDER BY id $ordrBy";
+    $res      = $this->conn->query($query);
+    while ($result = $res->fetch_assoc()) {
+      $data[] = $result;
+    }
+    return $data;
+
+  }
+
+  // 
+
+
 }
 
  ?>

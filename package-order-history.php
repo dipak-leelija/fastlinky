@@ -43,6 +43,7 @@ $buyer          = $customer->getCustomerData($order['customer_id']);
 $package        = $GPPackage->packDetailsById($order['package_id']);
 $packageCat     = $GPPackage->packCatById($package['category_id']);
 $packFeatures   = $GPPackage->featureByPackageId($order['package_id']);
+$updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
 
 
 ?>
@@ -79,9 +80,8 @@ $packFeatures   = $GPPackage->featureByPackageId($order['package_id']);
     <div id="home">
         <!-- header -->
         <?php  require_once "partials/navbar.php" ?>
-        <?php //include 'header-user-profile.php'?>
-
         <!-- //header -->
+
         <!-- banner -->
         <div class="edit_profile">
             <div class="container-fluid">
@@ -165,7 +165,7 @@ $packFeatures   = $GPPackage->featureByPackageId($order['package_id']);
                                             <?php
                                             for ($i=1; $i <= $package['blog_post']; $i++) { 
                                                 $links = $PackageOrder->getPackOrdLinks($order['order_id'], $i);
-
+                                                
                                                 $existLinksNo = count($links);
                                                 if ($existLinksNo > 0) 
                                                     $btnIcon = 'fa-regular fa-circle-check px-3 text-primary';
@@ -200,21 +200,47 @@ $packFeatures   = $GPPackage->featureByPackageId($order['package_id']);
                                                                         foreach ($links as $eachLink) {
                                                                         $linkNo ++;
                                                                         ?>
-                                                                    <div class="mb-4" id="linkBox-<?php echo $linkNo; ?>">
-                                                                        <div class="d-flex justify-content-between">
-                                                                            <label for="ancortext"
-                                                                            class="form-label mb-0">Link
+                                                                    <div class="mb-4"
+                                                                        id="linkBox-<?php echo $linkNo; ?>">
+                                                                        <label for="ancortext"
+                                                                            class="form-label fw-bold mb-0">Link
                                                                             <?php echo $linkNo; ?></label>
-                                                                            
-                                                                            <span class="cursor_pointer" onclick="deleteElement('linkBox-<?php echo $linkNo; ?>')"><i class="fa-solid fa-xmark text-danger"></i></span>
+
+                                                                        <div class="text-danger fs-small">
+                                                                            <?php
+                                                                            $border = '';
+                                                                            $issues = $PackageOrder->getPackOrdLinksIssue($eachLink['id']);
+                                                                            if (count($issues) > 0) {
+                                                                                $border = 'border-danger';
+                                                                                foreach ($issues as $eachIssue) {
+                                                                                    echo $eachIssue['issue']; 
+                                                                                }
+                                                                            }
+                                                                            ?>
                                                                         </div>
-                                                                        <input type="text" class="form-control"
+
+                                                                        <input type="text" class="form-control <?php echo $border; ?>"
                                                                             name="ancortext[]" placeholder="Ancor Text"
                                                                             value="<?php
                                                                             echo $eachLink['anchor']; ?>">
-                                                                        <input type="text" class="form-control mt-1"
+                                                                        <input type="text" class="form-control mt-1 <?php echo $border; ?>"
                                                                             name="url[]" placeholder="URL" value="<?php
                                                                             echo $eachLink['url']; ?>">
+
+
+                                                                        <div class="d-flex justify-content-end mt-1">
+
+                                                                            <!-- <span
+                                                                                class="badge rounded-pill text-danger border border-danger ms-2 cursor_pointer">Issues</span> -->
+
+                                                                            <span class=" badge rounded-pill text-danger
+                                                                                border border-danger ms-2
+                                                                                cursor_pointer"
+                                                                                onclick="deleteElement('linkBox-<?php echo $linkNo; ?>')">Delete</span>
+                                                                        </div>
+                                                                        <!-- <span class="cursor_pointer">
+                                                                            <i class="fa-solid fa-xmark text-danger"></i>
+                                                                        </span> -->
                                                                     </div>
                                                                     <?php
                                                                         }
@@ -236,7 +262,8 @@ $packFeatures   = $GPPackage->featureByPackageId($order['package_id']);
                                                                     <input type="hidden" name="for-post"
                                                                         value="<?php echo $i?>">
                                                                     <input type="hidden" name="sectionAdded"
-                                                                        id="sectionAdded-<?php echo $i; ?>" value="<?php echo $linkNo;?>">
+                                                                        id="sectionAdded-<?php echo $i; ?>"
+                                                                        value="<?php echo $linkNo;?>">
                                                                 </div>
                                                                 <div class="text-end">
                                                                     <button type="button" class="btn btn-sm btn-primary"
@@ -260,16 +287,64 @@ $packFeatures   = $GPPackage->featureByPackageId($order['package_id']);
                                             ?>
                                         </div>
                                     </div>
+
+                                    <!-- right col start  -->
                                     <div class="col-12 col-md-6">
-                                        <h5 class="fw-bold">Order Status</h5>
+
+                                        <div class="stretch-card grid-margin mt-4">
+                                            <div class="card status_card rounded-1r border shadow">
+                                                <div class="card-body">
+                                                    <p class="card-title">Updates</p>
+                                                    <ul class="icon-data-list">
+
+                                                        <?php
+                                            foreach ($updates as $ordUpdate) {
+                                            ?>
+
+                                                        <li>
+                                                            <div class="d-flex">
+                                                                <img src="<?php echo URL?>/images/user/default-user-icon.png"
+                                                                    alt="user">
+                                                                <div>
+                                                                    <p class="text-info mb-1">
+                                                                        <?php
+                                                                $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
+                                                                echo $updateShow[0][1];
+                                                                ?>
+                                                                    </p>
+                                                                    <p class="mb-0">
+                                                                        <?php
+                                                                        if ($ordUpdate['dsc'] != null) {
+                                                                            echo $ordUpdate['dsc'] . '<br>';
+                                                                        }
+
+                                                                        if ($ordUpdate['updator'] != null) {
+                                                                            echo '<small>By ' . $ordUpdate['updator'] . '</small>';
+                                                                        }
+                                                                        ?>
+                                                                    </p>
+                                                                    <small><?php echo $ordUpdate['added_on']; ?></small>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <?php
+                                            }
+                                            ?>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     </div>
+                                    <!-- right col end  -->
+
                                 </div>
 
                             </div>
                         </div>
-                        <!--Row end-->
                     </div>
+                    <!--Row end-->
                 </div>
                 <!-- //end display table-->
             </div>
@@ -305,8 +380,6 @@ $packFeatures   = $GPPackage->featureByPackageId($order['package_id']);
             let curentNumSec = nums.value = Number(currentNum) + 1;
             return curentNumSec;
         }
-
-        
         </script>
 
 </body>

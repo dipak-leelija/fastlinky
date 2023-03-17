@@ -29,6 +29,16 @@
 	
 	define('SUSTCON101', ' File has been added successfully');
 	
+
+
+	// Order Messages
+	define('ORDS001', 					' Order Placed successfully');
+	define('ORD_SUC', 					' Article Published Successfully');
+	define('ORD_ACPT', 					' Order Accepted');
+
+
+	define('ERR_LINK', 					' Something is error with the provided link');
+
 	
 	
 	

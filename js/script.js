@@ -1,5 +1,3 @@
-
-
 // reload the page 
 const reloadPage = () =>{
     location.reload();
@@ -46,6 +44,21 @@ function validateUrl(urlString) {
         return true;
     }
 }
+
+
+function checkUrl(urlString) {
+    
+    let url;
+    try {
+        url = new URL(urlString);
+    } catch (_) {
+        alert("Invalid Url Provided")
+        return false;
+    }
+    // return url.protocol === "http:" || url.protocol === "https:";
+    return true;
+}
+
 
 
 // Text Copy to Clipboard 
