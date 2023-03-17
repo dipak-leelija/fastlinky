@@ -91,7 +91,7 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
 
                                 <!-- ========================= -->
                                 <!-- Guest Post Orders  Section-->
-                                <div class="col-md-6">
+                                <div class="col-lg-6">
                                     <div class=" mb-3">
                                         <h3 class="fw-bold text-center">Package Order :</h3>
                                     </div>
@@ -99,11 +99,19 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                     $sl = 1;
                                     if (count($packOrders) > 0 ) {
                                         foreach ($packOrders as $eachPackOrder) {
+<<<<<<< HEAD
+                                            $ordPack = $GPPackage->packDetailsById($eachPackOrder['package_id']);
+                                            $packCat    =   $GPPackage->packCatById($ordPack['category_id']);
+                                            $status = $OrderStatus->singleOrderStatus($eachPackOrder['order_status']);
+                                            $pStatus = $OrderStatus->singleOrderStatus($eachPackOrder['status']); 
+                                 ?>
+=======
                                             $ordPack    = $GPPackage->packDetailsById($eachPackOrder['package_id']);
                                             $packCat    = $GPPackage->packCatById($ordPack['category_id']);
                                             $status     = $OrderStatus->singleOrderStatus($eachPackOrder['order_status']);
                                             $pStatus    = $OrderStatus->singleOrderStatus($eachPackOrder['status']); 
                                 ?>
+>>>>>>> 8e9853ce80af131a01e8f3375c3f7129d92d5a85
 
                                     <div class="card product_card  position-relative border rounded  mb-3">
                                         <div class="p-textdiv-card">
@@ -168,7 +176,7 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
 
                                 <!-- ========================= -->
                                 <!-- Guest Post Orders  Section-->
-                                <div class="col-md-6">
+                                <div class="col-lg-6">
                                     <div class=" mb-3">
                                         <h3 class="fw-bold text-center">Guest Post Order :</h3>
                                     </div>
@@ -184,10 +192,10 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                         <div class="p-textdiv-card">
                                             <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($order['order_id'])); ?>"
                                                 class="text-dark">
-                                                <h3 class="product-title maining-title">
-                                                    <?php echo $order['clientOrderedSite']; ?>
+                                                <h3 class="product-title maining-title"> <span class="order-md-1 order-2 "><?php echo $order['clientOrderedSite']; ?></span>
+                                                    
                                                     <span
-                                                        class="badge fs_p8 <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
+                                                        class="badge fs_p8 order-md-2 order-1 <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
                                                 </h3>
                                                 <div>
                                                     <small>

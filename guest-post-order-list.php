@@ -298,12 +298,9 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
             };
 
         })(jQuery);
-
-        /* This part is just for the demo,
-        not actually part of the plugin */
         $('.product_card').paginate(4);
         </script>
 
 </body>
 
-</html>
+</html> 
