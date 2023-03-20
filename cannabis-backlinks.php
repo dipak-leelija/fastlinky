@@ -94,7 +94,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div> -->
                         <div class=" buttonsinfo mt-5 mb-0">
                             <a href="#pricing-cards">
-                                <button type="button" class="btn managed-link-btn ">See Pricing</button>
+                                <button type="button" class="btn managed-link-btn ">Get Started</button>
                             </a>
                         </div>
                     </div>

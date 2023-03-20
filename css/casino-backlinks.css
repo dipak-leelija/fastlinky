@@ -1,3 +1,4 @@
+
 /* ---------------------------------------------------------- */
 /* starting of Casino Backlinks main banner  */
 /* ------------------------------------------------------------ */
@@ -20,7 +21,7 @@
 }
 
 .casino-sizing-div h1 {
-    color: #383a50;
+    color: var(--black);
     margin: 0 0 14px;
     font-family: Helvetica, Poppins;
     font-size: 4rem;
@@ -29,17 +30,17 @@
 }
 
 .casino-sizing-div span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .casino-sizing-div h1 :hover {
-    color: #383a50 !important;
+    color: var(--black) !important;
     transition: all .6s ease;
     -webkit-transition: .6s;
 }
 
 .casino-sizing-div p {
-    color: #4d515c;
+    color: var(--black);
     font-family: Helvetica, Poppins;
     font-size: 1.25rem;
     font-weight: 400;
@@ -52,23 +53,17 @@
     font-size: 20px;
     font-weight: 400;
     text-transform: capitalize;
-    font-style: normal;
-    text-decoration: none;
-    line-height: 1em;
-    letter-spacing: 0;
-    word-spacing: 0em;
-    fill: #FFF;
-    color: #FFF;
+    color: var(--pure-white);
     background-image: linear-gradient(120deg, #FDA33B 0%, #FA8273 100%);
     border-style: solid;
     border-width: 1px 1px 1px 1px;
-    border-color: #F7A546 !important;
+    border-color: var(--mustard) !important;
     border-radius: 50px 50px 50px 50px;
     padding: 17px 40px 17px 40px;
 }
 
 .managed-link-btn:hover {
-    color: white;
+    color: var(--pure-white);
     background-image: linear-gradient(120deg, #FA8273 0%, #FDA33B 100%);
 }
 
@@ -81,23 +76,17 @@
     font-size: 16px;
     font-weight: 400;
     text-transform: capitalize;
-    font-style: normal;
-    text-decoration: none;
-    line-height: 1em;
-    letter-spacing: 0;
-    word-spacing: 0em;
-    fill: #FFF;
-    color: #FFF;
-    background-color: #F7A546;
+    color: var(--pure-white);
+    background-color: var(--mustard);
     border-style: solid;
     border-width: 1px 1px 1px 1px;
-    border-color: #F7A546 !important;
+    border-color: var(--mustard) !important;
     border-radius: 100px 100px 100px 100px;
     padding: 16px 55px 16px 55px;
 }
 
 .blogger-btn:hover {
-    color: #FDA33B !important;
+    color: var(--mustard) !important;
 }
 
 /* --------------------------------------------------------------------------------------- */
@@ -111,11 +100,11 @@
 
 .challenges-casino-section h1 {
     font-size: 2rem;
-    color: #383a50;
+    color: var(--black);
 }
 
 .challenges-casino-section h1 span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .real-bo-secondcol-div1 {
@@ -139,9 +128,9 @@
 /* ________________________________________________________________________________________________________ */
 .linkbuilding-casino p {
     line-height: 1.8;
-    font-size: 1em;
+    font-size: 1.2rem;
     color: #222244;
-    font-weight: 100;
+    font-weight: 400;
     margin: 0;
 }
 
@@ -154,7 +143,7 @@
 .pricing-bo-h1 {
     font-size: 3.2rem;
     font-weight: 600;
-    color: #383a50;
+    color: var(--black);
     font-family: "Poppins", Poppins;
 }
 
@@ -191,24 +180,24 @@
 .how-itsworks-main-div-casino h1 {
     font-size: 2rem;
     text-align: center;
-    color: #383a50;
+    color: var(--black);
 }
 
 .how-itsworks-main-div-casino strong {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .how-itsworks-main-div-casino p {
     font-family: "Poppins", Poppins;
     text-align: center;
-    color: #3f4450;
+    color: var(--black);
     font-weight: 400;
     font-size: 1rem;
     margin: 1rem 0 3rem;
 }
 
 .how-itsworks-main-div-casino h3 {
-    color: #FDA33B;
+    color: var(--mustard);
     font-family: Roboto, Poppins;
     font-size: 24px;
     font-weight: 400;
@@ -227,25 +216,29 @@
 }
 
 .benifits-online-gaming-casino-section h3 {
-    color: #383a50;
+    color:var(--black);
     font-family: Poppins, Poppins;
-    font-size: 33px;
+    font-size:  1.97rem;
     font-weight: 600;
 }
 
 .benifits-online-gaming-casino-section h4 {
     text-align: left;
-    color: #383a50;
+    color: var(--black);
     font-family: Poppins, Poppins;
-    font-size: 22px;
-    font-weight: 400;
+    font-size: 1.5rem;
+    font-weight: 500;
     line-height: 2em;
     text-decoration: underline;
+    font-style: italic;
+}
+ b {
+font-weight: 600;
 }
 
 .benifits-online-gaming-casino-section p {
     text-align: left;
-    color: #1c244b;
+    color: var(--black);
     font-family: Poppins, Poppins;
     font-size: 18px;
     font-weight: 400;
@@ -260,7 +253,7 @@
 
 .casino-building-services-maindiv h1 {
     text-align: center;
-    color: #383a50;
+    color: var(--black);
     font-size: 2rem;
     font-family: Roboto, Poppins;
     font-weight: 500;
@@ -269,12 +262,12 @@
 
 .casino-building-services-maindiv span {
     font-weight: 600;
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .casino-building-services-maindiv p {
     text-align: center;
-    color: #1c244b;
+    color: var(--black);
     font-family: Poppins, Poppins;
     font-size: 1rem;
     font-weight: 400;
@@ -292,7 +285,7 @@
 }
 
 .why-choose-leelija-casino-section h3 {
-    color: #383a50;
+    color: var(--black);
     font-family: Poppins, Poppins;
     font-size: 33px;
     font-weight: 600;
@@ -301,7 +294,7 @@
 
 .why-choose-leelija-casino-section ul {
     text-align: left;
-    color: #1c244b;
+    color: var(--black);
     font-family: Poppins, Poppins;
     font-size: 17px;
     font-weight: 400;
@@ -345,11 +338,6 @@
         margin: 5rem 1rem !important;
     }
 
-    /* .price-table {
-        padding: 20px 2rem !important;
-        margin: 2rem 0 !important;
-    } */
-
     .how-itsworks-main-div-casino {
         padding: 6rem 4rem;
     }
@@ -371,7 +359,10 @@
     .casino-sizing-div h1 {
         font-size: 3rem;
     }
-
+.benifits-online-gaming-casino-section h4{
+    text-align: center;
+    line-height: 1.5;
+}
     .managed-link-btn {
         padding: 11px 34px 9px 34px;
     }
@@ -411,11 +402,6 @@
     .casino-sizing-div h1 {
         font-size: 2.5rem;
     }
-
-    /* .price-table {
-        padding: 20px 0rem !important;
-        margin: 2rem 0 !important;
-    } */
 
     .pricing-bo-p1 {
         padding: .8rem;
