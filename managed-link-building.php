@@ -50,16 +50,16 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
 <head>
     <link rel="icon" href="images/logo/favicon.png" type="image/png">
-    <title>Managed Link Building, Blogger Outreach: <?php echo COMPANY_S; ?></title>
+    <title>Top Managed Link Building And Guest posting Services In 2023 - <?php echo COMPANY_S; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-        content="LeeLija provided Guest Post Service at reasonable prices on fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement  or more." />
+        content="Fastlinky, the best link-building company promotes your website's rankings through monthly managed link-building service and proper analysis of link management." />
     <meta charset="utf-8">
     <meta name="keywords"
-        content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
+        content="managed link building, monthly link building service, monthly backlink building service, backlink management, link management, link building management, link building packages, whitehat link building services, best link building company," />
 
 
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
+    <!-- <link href=" css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <!-- Custom CSS -->
@@ -93,10 +93,12 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="row mlb-main-start-row">
                 <div class="col-12 col-lg-7 col-md-7  px-0 px-md-4">
                     <div class="mlb-wrapping">
-                        <h1 class="mlb-starting-main-h1">Link <span>Building</span> Services </h1>
-                        <p class=" mt-3 mb-4 py-0 py-md-2 mlb-starting-main-p">We will lead you and your brand <br>
-                            to a
-                            new height.
+                        <h1 class="mlb-starting-main-h1">Managed <span>Link Building</span> Services </h1>
+                        <p class=" mt-3 mb-3 py-0 py-md-2 mlb-starting-main-p">Get high-quality backlinks to boost your
+                            website’s visibility and authority on search results.At FastLinky, our outreach specialists
+                            are very adept at managing link building. Managed link building is useful for increasing
+                            websites’ ranking and organic traffic from Google and other search engines.
+
                         </p>
                         <div>
                             <ul>
@@ -114,8 +116,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
                         <div class=" buttonsinfo ">
                             <a href="#pricing-cards">
-                                <button type="button" class="btn managed-link-btn ">See
-                                    Pricing</button>
+                                <button type="button" class="btn managed-link-btn ">Get Started</button>
                             </a>
                         </div>
                     </div>
@@ -130,11 +131,12 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     </section>
     <!-- end of managed-link-building main banner -->
     <!-- ------------------------------------------------------------------------- -->
-    <!-- Why does A brand need link buildings start -->
-    <section class="a-brand-need-link-section">
+    <!-- Why Does Your Brand Need Link Buildings? start -->
+    <section class="a-brand-need-link-section mt-0">
         <div class="row  ">
             <div class="a-brand-need-link-main-div">
-                <h1 class="text-center a-brand-need-link-main-h1 ">Why does <span>A brand need</span> link buildings?
+                <h1 class="text-center a-brand-need-link-main-h1 ">Why does <span> Your Brand Need </span> link
+                    buildings?
                 </h1>
             </div>
             <div class="col-lg-6 col-md-6 a-brand-need-link-main-col-1">
@@ -144,40 +146,30 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <ul>
                                 <li class="square-box-p"> <span class="sq-pen-css"><i
                                             class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
-
-                                    Google
-                                    has
-                                    complex algorithms to deal with. Therefore, backlinks still is an essential factor
-                                    to determine the keyword for which the site is trending.
+                                    Google uses sophisticated algorithms. Therefore, backlinks are still a key factor in
+                                    identifying the keyword for which website is trending.
                                 </li>
                                 <li class="square-box-p"> <span class="sq-pen-css"><i
                                             class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
-
-                                    Link
-                                    building
-                                    is a vital part of SEO service. Depending on your link it signals to Google that
-                                    your website has quality content resources.
+                                    Link building management is an essential part of SEO services. Depending on your
+                                    link, Google may be informed that your website has resources for high-quality
+                                    content.
                                 </li>
                                 <li class="square-box-p"> <span class="sq-pen-css"><i
                                             class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
-
-                                    Moreover,
-                                    if
-                                    your site has more backlinks, it's a high possibility to get upper rankings.
+                                    Additionally, there is a good chance that your website will rank higher if it has
+                                    more backlinks.
                                 </li>
                                 <li class="square-box-p"> <span class="sq-pen-css"> <i
                                             class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
-
-                                    In fact,
-                                    if
-                                    your site got more backlinks, the value of your site significantly arises. The
-                                    backlinks create an extra impression on google as your site is more trustworthy and
-                                    credible.
+                                    In fact, if your site gained more backlinks, the value of your site will
+                                    automatically increase. The backlinks give Google another sign that your website is
+                                    reputable and reliable.
 
                             </ul>
                         </div>
 
-                        <div class=" buttonsinfo ">
+                        <div class=" buttonsinfo mt-md-5">
                             <a href="#pricing-cards">
                                 <button type="button" class="btn managed-link-btn ">Get Your Links Now</button>
                             </a>
@@ -193,9 +185,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
         </div>
     </section>
-    <!--Why does A brand need link buildings end -->
+    <!-- Why Does Your Brand Need Link Buildings? end -->
     <!-- ________________________________________________________________________________________ -->
-
+    <!-- Result-Driven Approach -->
     <section class="a-brand-need-link-section mt-0 mb-0">
         <div class="row ">
             <div class="col-lg-6 col-md-6">
@@ -207,32 +199,37 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 a-brand-need-link-main-col-1">
-                <div class="">
-                    <div>
-                        <div class="mt-5">
-                            <p class="need-link-text-p mb-3">At Leelija, we are helping a lot of owners with our
-                                high-quality link-building procedure. We will help you with our top-quality
-                                link-building services that might easier your path to go for your big dream. Otherwise,
-                                it might be difficult for you to touch that. We have expert teams that create content
-                                strategies on our behalf of you. Through high-quality backlinks, your website’s profile
-                                will be strengthened organically. </p>
-                            <p class="need-link-text-p mb-3">Keep in touch with us for more details and to boost your
-                                brand. </p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class=" getyour-linkbtn mt-5 ">
-                            <a href="#pricing-cards">
-                                <button type="button" class="btn managed-link-btn d-flex justify-content-right">Get Your
-                                    Links Now</button>
-                            </a>
-                        </div>
+                <div class="a-brand-need-link-main-div">
+                    <h1 class="text-center a-brand-need-link-main-h1 mb-3"> <span> Result-Driven </span>Approach
+                    </h1>
+                </div>
+                <div>
+                    <div class="mt-2">
+                        <p class="need-link-text-p mb-3">To rank in search engines, you need a potential link-building
+                            strategy. We create a high-quality backlink management technique that boosts your brand's
+                            profitability and visibility. </p>
+                        <p class="need-link-text-p mb-3">FastLinky offers whitehat link building services to improve the
+                            SEO ranks, organic traffic, and revenue of your business website. </p>
+                        <p class="need-link-text-p mb-3">We provide a range of editorial link building packages
+                            depending on the client’s demand.
+
+                            Boost your organic ranks as much as possible. Let's collaborate.
+                        </p>
                     </div>
                 </div>
+                <div>
+                    <div class=" getyour-linkbtn mt-3 ">
+                        <a href="#pricing-cards">
+                            <button type="button" class="btn managed-link-btn d-flex justify-content-right">Get Your
+                                Links Now</button>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-    <!-- Why does A brand need link buildings section2 end -->
+    <!-- Result-Driven Approach end -->
     <!-- ________________________________________________________________________________________ -->
     <!-- pricing section -->
     <!-- ------------------------------------------- -->
@@ -250,13 +247,13 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
 
-    <!-- Link Building Services that Actually Matters-starts -->
+    <!-- Service For Link Building That Is Genuinely Important! starts -->
     <section class="lbs-actually-matters-main">
         <div>
             <div class="row">
                 <div class=" col-xl-6 col-md-6">
                     <h1 class="lbs-actually-matters-main-h1 mb-3">
-                        Link Building Services <br> <span>That Actually Matters !</span>
+                        Service For Link Building <br> <span>That Is Genuinely Important! </span>
                     </h1>
 
                     <div class="actually-card-div1">
@@ -266,10 +263,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
                         <div class="lbp-texting">
                             <div class="ibp-centering-b">
-                                <b> Authority Backlinks : </b>
+                                <b> Authoritative Backlinks Through Content Marketing : </b>
                             </div>
-                            We help brands to create diverse link profiles. We
-                            publish editorial writings on different authoritative domains.
+                            We help in creating various link profiles by distributing our editorial content across
+                            reputable domains. s.
                         </div>
                     </div>
                     <div class="actually-card-div1">
@@ -279,11 +276,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
                         <div class="lbp-texting">
                             <div class="ibp-centering-b">
-                                <b> Detailed Vetting Process : </b>
+                                <b> High Standard Service Procedure : </b>
                             </div>
-                            Our expert team has done the whole outreach process
-                            in properly oriented vetting. They look for unusual places that could be advantageous for
-                            your company profile.
+                            Our expert team completed the entire outreach strategy with the appropriate analysis. They
+                            look for unique sites that could be useful for your company profile.
                         </div>
                     </div>
 
@@ -296,10 +292,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
                         <div class="lbp-texting">
                             <div class="ibp-centering-b">
-                                <b> Content is the key point : </b>
+                                <b> Content Is King : </b>
                             </div>
-                            We do not provide content based on links. Moreover,
-                            we create beautiful content that everyone loves to read.
+                            We create editorial and search engine-friendly content that people want to read and engaged
+                            with. We do not believe in creating content only for links.
                         </div>
                     </div>
                     <div class="actually-card-div1">
@@ -309,10 +305,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
                         <div class="lbp-texting">
                             <div class="ibp-centering-b">
-                                <b> Increasing ROI: </b>
+                                <b> Targetted Traffic Results In Higher ROI : </b>
                             </div>
-                            Our aim is to help the brand to achieve its target by
-                            providing organic growth and increased ROI.
+                            Our objective is to help businesses in achieving their goals through organic growth,
+                            improved ROI, and SERP progress.
                         </div>
                     </div>
                     <div class=" getyour-linkbtn mt-5 ">
@@ -327,21 +323,20 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
 
-    <!-- Link Building Services that Actually Matters-ends -->
+    <!-- Service For Link Building That Is Genuinely Important! ends -->
     <!-- ________________________________________________________________________________________ -->
 
     <!-- ____________________________________________________________________________________________ -->
 
-    <!-- our-secret-delivering-main-sec starts -->
-    <section class="our-secret-delivering-main-sec">
+    <!-- We Employ An Efficient And Open Link-Building Strategy -->
+    <section class="our-secret-delivering-main-sec pt-0">
         <div class="">
             <div>
-                <h2 class=" text-center mt-4 my-3 our-secret-d-h2"> <span> Effective and Transparent</span> Link
-                    Building
-                    Process</h2>
+                <h2 class=" text-center mt-4 my-3 our-secret-d-h2"> <span> We Employ An Efficient And </span> Open
+                    Link-Building Strategy</h2>
 
             </div>
-            <div class="our-secrect-delvry-main">
+            <div class="our-secrect-delvry-main pt-4">
                 <div class="row">
                     <div class="col-md-6 col-xl-6 ">
                         <div class="our-secret-delivering-main-card">
@@ -350,11 +345,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 ">Authentic Link</h4>
+                            <h4 class="how-fonts-h4 ">Opportunities For Prospective Links</h4>
                             <p class="">
-                                We have a huge database of industry related websites from authentic bloggers. These real
-                                bloggers already gained trust in the market. After placing the order we reach out to
-                                them for improving your online appearance. </p>
+                                We have a huge collection of authorized bloggers' websites that are directly connected
+                                with us. After placing the order, we get in touch with them to discuss how to improve
+                                your online existence. </p>
 
                         </div>
 
@@ -367,10 +362,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Build Editorial Content</h4>
+                            <h4 class="how-fonts-h4  ">Provide Editorial Content</h4>
                             <p class="">
-                                Our expert professionals research your website to generate unique content for your
-                                brand. This magazine-style content increases the readership and viewership of your
+                                Our skilled employees do research on your website to provide original content for your
+                                brand. Therefore, editorial content helps you increase readers and visitors to your
                                 website. </p>
 
                         </div>
@@ -384,11 +379,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Publication of Content</h4>
+                            <h4 class="how-fonts-h4  ">Publication Of The Content</h4>
                             <p class="">
-                                We communicate with manually outreached bloggers and keep in touch until the content is
-                                published with a do-follow link. Moreover, we stay in the loop with the bloggers for
-                                editing if needed before or after publishing. </p>
+                                We maintain contact with manually approached bloggers and talk to them until the article
+                                is posted with a do-follow link. Also, we keep in touch with the bloggers to make any
+                                necessary edits before or after publication. </p>
 
                         </div>
 
@@ -400,11 +395,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Report & Tracking</h4>
+                            <h4 class="how-fonts-h4  ">Reporting And Tracking</h4>
                             <p class="">
-                                We provide a white label report and a SERP tracking dashboard. In the report you will
-                                find where we created a link for you and the dashboard will help you to check the result
-                                and plan for future campaigning. </p>
+                                We offer a SERP tracking dashboard and whitehat link building services. You can access
+                                the link we published for you in the report, and the dashboard will allow you to assess
+                                the outcome and make campaigning plans for the future. </p>
 
                         </div>
 
@@ -413,7 +408,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
         </div>
     </section>
-    <!-- our-secret-delivering-main-sec ends -->
+    <!-- We Employ An Efficient And Open Link-Building Strategy ends -->
 
 
     <!-- --------------------------------------------------------------------------------------------- -->
@@ -422,13 +417,17 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- clients-logo -->
     <!-- _________________________________________________________________________________________________ -->
     <!-- ______________________________________________________________________________________________ -->
-
+    <!-- Providing Unique Results To Top Brands -->
+    <!-- --------------------------------------- -->
     <section class="our-secret-delivering-main-sec pb-5">
         <div class="">
             <div>
-                <h2 class=" text-center mt-4 my-3 our-secret-d-h2">Our Secret to Delivering Wanted Results <span>To Top
-                        Brands</span> </h2>
-
+                <h2 class=" text-center mt-4 my-3 our-secret-d-h2">Providing Unique Results <span>To Top Brands</span>
+                </h2>
+                <p class="our-secret-d-p py-md-3">
+                    At FastLinky, we offer trustworthy whitehat link building services. We provide relevant backlinks
+                    through which you will find the result.
+                </p>
             </div>
             <div class="our-secrect-delvry-main">
                 <div class="row">
@@ -439,10 +438,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 ">Campaign Customization</h4>
+                            <h4 class="how-fonts-h4 ">Target Market</h4>
                             <p class="">
-                                We arrange, create and cooperate to offer custom link-building campaigns that benefit
-                                the company significantly. </p>
+                                Customer satisfaction is our top goal. After you placed an order, we assigned a
+                                specialized specialist to your account. You'll consequently get responses to your
+                                questions and deliveries quickly.</p>
 
                         </div>
 
@@ -455,10 +455,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Enhance SERP</h4>
+                            <h4 class="how-fonts-h4  ">Increase SERP</h4>
                             <p class="">
-                                Our plan is very clear. Create top-notch do-follow links that cause high traffic to your
-                                website. </p>
+                                Our strategy is fairly obvious. We build high-quality links for increased website
+                                traffic. </p>
 
                         </div>
 
@@ -471,10 +471,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Generate Revenue</h4>
+                            <h4 class="how-fonts-h4  ">Preferred Campaigns</h4>
                             <p class="">
-                                Editorial and niche-relevant backlinks always lead to improving SERP. Generally, that
-                                improves the website traffic. </p>
+                                We plan, design, and work together on specific link-building industries that are highly
+                                valuable to the business. </p>
 
                         </div>
 
@@ -486,19 +486,18 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Target Audience</h4>
+                            <h4 class="how-fonts-h4  ">Get Money</h4>
                             <p class="">
-                                Customer satisfaction is our main motto. At Leelija, we assigned a dedicated expert to
-                                your account after placing an order. Therefore, your queries will be resolved very
-                                quickly and you will get quick delivery. </p>
+                                Backlinks from editorial and industry-relevant websites always increase search engine
+                                rankings to boost website traffic. </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- our secret delivering result ends -->
+    <!-- ----------------------------------------- -->
+    <!-- Providing Unique Results To Top Brands ends -->
     <!-- _________________________________________________________________________________________________ -->
 
     <!--================================= Client Review section Start =================================-->
@@ -513,14 +512,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     <!-- Why fastlinky?-section start -->
 
-    <section class="why-leelija-section-mains">
-        <h1 class="why-leelija-h1">Why <?php echo COMPANY_S; ?></span> </h1>
+    <section class="why-choose-fastlinky-mains mb-0">
+        <h1 class="why-fastlinky-h1">Why Choose Fastlinky?</span> </h1>
         <div class="row  ">
             <div class="col-lg-6 col-md-6  m-auto ">
                 <div class="">
 
                     <div>
-                        <img src="./images/searching-fastlinky-image.png" class="w-75  mb-4 " alt="">
+                        <img src="./images/searching-fastlinky-image.png" class="w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
@@ -529,80 +528,74 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                     <div>
                         <div class="py-4">
-                            <div class="why-leelija-main-for-card">
+                            <div class="why-fastlinky-main-for-card">
                                 <div class="  actually-card-inn-img-div">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-chnging-css ">
-                                    Leelija is a <b> trustable white-label link-building provider</b> . We provide
-                                    relevant backlinks through which you will find the result. Moreover, we customize
-                                    services according to customer needs.
+                                <div class="text-chnging-css "><b>Guarantee Of Satisfaction :</b> <br>
+                                    It is important to us that you are satisfied with the service we offer. And don't
+                                    worry, we'll keep expanding the post even after we complete your task!
                                 </div>
                             </div>
-                            <div class="why-leelija-main-for-card">
+                            <div class="why-fastlinky-main-for-card">
                                 <div class=" actually-card-inn-img-div">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-chnging-css ">
-                                    We provide <b>guaranteed customer satisfaction</b> with our work. We will keep in
-                                    touch after project delivery.
+                                <div class="text-chnging-css "><b>Responsible Account Manager :</b> <br>
+                                    We have a responsible account manager to handle all your inquiries with commitment
+                                    and quick response.
                                 </div>
                             </div>
-                            <div class="why-leelija-main-for-card">
+                            <div class="why-fastlinky-main-for-card">
 
                                 <div class=" actually-card-inn-img-div">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-chnging-css">We provide a <b>dedicated account manager</b> after placing an
-                                    order as the customer is our top priority.
+                                <div class="text-chnging-css"><b>Handy Dashboard :</b> <br>
+                                    Place new orders, renew existing ones, and check the progress of existing orders all
+                                    from one place
                                 </div>
                             </div>
-                            <div class="why-leelija-main-for-card">
+                            <div class="why-fastlinky-main-for-card">
                                 <div class=" actually-card-inn-img-div">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-chnging-css ">
-                                    We provide <b>convenient dashboards</b> to check new orders or renew orders or the
-                                    status of the order.
+                                <div class="text-chnging-css "><b>Creating Content Internally :</b> <br>
+                                    We use unique content that was created internally by skilled writers. Quality is
+                                    thus guaranteed. The content for your business will be created by writers who are
+                                    experts in your field.
                                 </div>
                             </div>
-                            <div class="why-leelija-main-for-card">
+                            <div class="why-fastlinky-main-for-card">
                                 <div class=" actually-card-inn-img-div">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-chnging-css ">
-                                    We create <b>in-house content for better quality</b> . Your topic will be assigned
-                                    to those who have experts in niche skills.
+                                <div class="text-chnging-css "> <b>Huge Database Of Important Websites :</b> <br>
+                                    Working with more than 5000 websites, bloggers, and influencers has allowed us to
+                                    develop numerous commercial links over the years. You may be guaranteed that your
+                                    content will only be published on blogs that are relevant to your industry.
                                 </div>
                             </div>
-                            <div class="why-leelija-main-for-card">
+                            <div class="why-fastlinky-main-for-card">
                                 <div class=" actually-card-inn-img-div">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-chnging-css ">
-                                    We have a <b>huge database of authentic influencers</b> . Over the years we work
-                                    with a lot of influencers for industry-related blogs.
+                                <div class="text-chnging-css "><b>Nothing Duplicate :</b> <br>
+                                    As we begin working on the project, we use the latest techniques to analyze your
+                                    current link profile and make sure that your website doesn't receive duplicate
+                                    backlinks.
                                 </div>
                             </div>
-                            <div class="why-leelija-main-for-card">
-                                <div class=" actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-3.png"
-                                        class="managed-page-second-ul-li-img" alt="">
-                                </div>
-                                <div class="text-chnging-css ">
-                                    Our expert checks all the aspects before submitting the project. Therefore, there
-                                    will be <b>no duplicate links</b> .
-                                </div>
-                            </div>
+
                         </div>
 
-                        <div class=" getyour-linkbtn mt-5 ">
+                        <div class=" getyour-linkbtn ">
                             <a href="#pricing-cards">
                                 <button type="button" class="btn managed-link-btn d-flex justify-content-center ">Get
                                     Your
@@ -620,14 +613,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- Why Leelija?-section end -->
     <!-- ___________________________________________________________________________________________ -->
 
-    <!--  What Makes Leelija So Special? starts -->
+    <!--  What Makes Us A Dependable Supplier? starts -->
 
     <section class="lbs-actually-matters-main">
         <div>
 
             <div class="row">
                 <h1 class="lbs-actually-matters-main-h1 textttting mb-3">
-                    What Makes <span>Leelija So Special?</span>
+                    What Makes Us <span>A Dependable Supplier?</span>
                 </h1>
                 <div class=" col-xl-6 col-md-6">
                     <div class="actually-card-div1 mb-4 mt-5">
@@ -636,9 +629,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 alt="">
                         </div>
                         <div class="lbp-texting">
-                            <b> Outsourcing Partner : </b> <br> Link building is a continuous process. We will keep in
-                            touch with you at every step. We help a lot of owners by giving quality link profiles from
-                            high-traffic websites.
+                            <b> Outsourcing Associate : </b> <br> <strong>Managed link building</strong> service
+                            increases your
+                            search engine ranking. Every step of the way, we'll communicate with you. By providing
+                            high-quality link profiles from popular websites, we assist many proprietors.
                         </div>
                     </div>
                     <div class="actually-card-div1 mb-4">
@@ -647,8 +641,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 alt="">
                         </div>
                         <div class="lbp-texting">
-                            <b> After Delivery Service </b> <br> After completing the whole project and publishing
-                            content on behalf of you, still we will revisit them.
+                            <b>Dashboard Conveniencee </b> <br> We offer end-to-end subscriptions. After you place your
+                            order, we will handle the labor-intensive tasks. Everything will be controlled, from article
+                            production to publishing on popular websites.
                         </div>
                     </div>
 
@@ -662,9 +657,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 alt="">
                         </div>
                         <div class="lbp-texting">
-                            <b> Convenient Dashboard : </b> <br> We provide end-to-end subscriptions. After placing the
-                            order we will do the hard work for you. For instance content creation to publishing it on
-                            high-traffic websites, everything will be managed.
+                            <b> Term Choice : </b> <br>Our team has been engaged in this task for a while. They always
+                            keep an eye out for highly relevant terms. As a result, it will quickly raise the rankings
+                            of your website.
                         </div>
                     </div>
                     <div class="actually-card-div1">
@@ -673,13 +668,23 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 alt="">
                         </div>
                         <div class="lbp-texting">
-                            <b> Keyword Selection : </b> <br> Our team is working in this field for several years. They
-                            always set their eye on high ranked relevant keywords. Therefore, it will easily boost your
-                            website rankings.
+                            <b> Get Your Links No Post-Delivery Service : </b> <br> We will still check in with them
+                            after finishing the entire project and releasing content on your behalf.
                         </div>
 
                     </div>
+                    <div class="actually-card-div1">
+                        <div class="  actually-card-inn-img-div">
+                            <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
+                                alt="">
+                        </div>
+                        <div class="lbp-texting">
+                            <b> Monthly BackLink Building Service : </b> <br> Our monthly outreach link building
+                            packages are scheduled based on your company's budget regardless of how much money you’ve to
+                            spend.
+                        </div>
 
+                    </div>
                 </div>
                 <a href="#pricing-cards">
                     <div class=" getyour-linkbtn-for-lbs-matter  ">
@@ -691,7 +696,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
     </section>
 
-    <!-- What Makes Leelija So Special? ends -->
+    <!-- What Makes Us A Dependable Supplier? ends -->
     <!-- ______________________________________________________________________________________________ -->
 
 

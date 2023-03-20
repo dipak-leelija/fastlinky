@@ -34,7 +34,7 @@
 }
 
 .mlb-wrapping span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .mlb-starting-main-h1 {
@@ -43,7 +43,7 @@
     font-size: 4rem;
     font-weight: 600;
     line-height: 1.2em;
-    color: #383a50;
+    color: var(--black);
     word-spacing: 0.1em;
     stroke: #000;
 }
@@ -51,11 +51,10 @@
 .mlb-starting-main-p {
     font-weight: 400;
     text-align: left;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     color: #324A6D;
     line-height: 1.5em;
-    /* font-family: 'Orienta', sans-serif; */
-    font-family: "Poppins", Poppins;
+    font-family: 'Orienta', sans-serif;
 }
 
 .managed-link-btn {
@@ -63,24 +62,18 @@
     font-size: 20px;
     font-weight: 400;
     text-transform: capitalize;
-    font-style: normal;
-    text-decoration: none;
-    line-height: 1em;
-    letter-spacing: 0;
-    word-spacing: 0em;
-    fill: #FFF;
-    color: #FFF;
-    background-image: linear-gradient(120deg, #FDA33B 0%, #FA8273 100%);
+    color: var(--pure-white);
+    background-image: linear-gradient(120deg, var(--mustard) 0%, #FA8273 100%);
     border-style: solid;
     border-width: 1px 1px 1px 1px;
-    border-color: #F7A546 !important;
+    border-color: var(--mustard) !important;
     border-radius: 50px 50px 50px 50px;
     padding: 17px 40px 17px 40px;
 }
 
 .managed-link-btn:hover {
-    color: white;
-    background-image: linear-gradient(120deg, #FA8273 0%, #FDA33B 100%);
+    color: var(--pure-white);
+    background-image: linear-gradient(120deg, #FA8273 0%, var(--mustard) 100%);
 }
 
 .tick-check {
@@ -93,7 +86,7 @@
 }
 
 .tick-check-p {
-    color: #3F4450;
+    color: var(--black);
     font-family: "Helvetica", Poppins;
     font-size: 21px;
     font-weight: 500;
@@ -120,17 +113,17 @@
 
 .a-brand-need-link-main-div {
     margin-top: 1rem;
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
 }
 
 .a-brand-need-link-main-h1 {
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
     font-size: 2.48rem;
-    color: #383a50;
+    color: var(--black);
 }
 
 .a-brand-need-link-main-h1 span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .square-box-p {
@@ -173,9 +166,7 @@
 
 /* ___________________________________________________________________________________ */
 /* a-brand-need-link-section end */
-/* --------------------------------------------------------------------------- */
-
-/* <!-- Link Building Services that Actually Matters-starts AND WHY LEELIJA?  AND WHAT MAKES LEELIJA SO SPECIAL  COMBINED CSS--> */
+/* --------------------------------------------------------------------------- */ 
 /* <!-- ________________________________________________________________________________________ --> */
 
 .lbs-actually-matters-main {
@@ -183,10 +174,10 @@
     padding: 5rem;
 }
 .lbs-actually-matters-main-h1{
-    color: #383a50;
+    color: var(--black);
 }
 .lbs-actually-matters-main-h1 span {
-    color: #FDA33B;
+    color: var(--mustard);
     font-weight: 600;
 }
 
@@ -203,7 +194,7 @@ text-align: start !important;
 .lbp-texting b {
     margin: 0 0 11px 0;
     padding: 0 0 0 0;
-    color: #383a50;
+    color: var(--black);
     font-family: "Helvetica", Poppins;
     font-size: 20px;
     font-weight: 700;
@@ -249,42 +240,30 @@ text-align: start !important;
 }
 
 /* ___________________________________________________ */
-/* why leelija? */
+/* WHY FASTLINKY */
 /* ---------------------------------------------------------------- */
-.why-leelija-section-mains {
+.why-choose-fastlinky-mains {
     margin: 5rem;
 }
 
-.why-leelija-h1 {
+.why-fastlinky-h1 {
     font-family: "Poppins", Poppins;
     text-align: center;
     font-size: 2.7rem;
-    color: #FDA33B;
-    margin-bottom: 5rem;
+    color: var(--mustard);
+    /* margin-bottom: 5rem; */
 }
 
-.why-leelija-main-for-card {
+.why-fastlinky-main-for-card {
     display: flex;
     text-align: center;
     align-items: start;
     padding: .5rem;
 }
 
-.trustworthy-white-lebel-text-h1 {
-    font-size: 2.38rem;
-    color: #383a50;
-}
-
-
-.trustworthy-white-lebel-text-h1 span {
-    color: #FDA33B;
-}
-
 /* -------------------------------------------- */
-/* WHY LEELIJA ENDS */
+/* WHY FASTLINKY ENDS */
 /* ----------------------------------------------- */
-
-/* <!--  Link Building Services that Actually Matters-starts AND WHY LEELIJA?  AND WHAT MAKES LEELIJA SO SPECIAL  COMBINED CSS --> */
 /* <!-- ________________________________________________________________________________________ --> */
 
 /* _______________________________________________________________________________________________________ */
@@ -292,7 +271,7 @@ text-align: start !important;
 .pricing-bo-h1 {
     font-size: 3.6rem;
     font-weight: 600;
-    color: #383a50;
+    color: var(--black);
     font-family: "Poppins", Poppins;
 }
 
@@ -300,7 +279,7 @@ text-align: start !important;
     font-family: "Poppins", Poppins;
     font-size: 1.1rem;
     font-weight: 300;
-    color: #383a50b0;
+    color: var(--black)b0;
 }
 
 
@@ -308,7 +287,7 @@ text-align: start !important;
 /* Pricing blogger outreach section ends */
 /* _____________________________________________________________________________________________________ */
 
-/* Effective and Transparent Link Building Process starts */
+/* We Employ An Efficient And Open Link-Building Strategy starts */
 /* _____________________________________________________________________________________________________ */
 
 .our-secret-delivering-main-sec {
@@ -317,12 +296,19 @@ text-align: start !important;
 
 .our-secret-d-h2 {
     font-weight: 600;
-    color: #383a50;
+    color: var(--black);
     font-family: "Poppins", Poppins;
 }
 
 .our-secret-d-h2 span {
-    color: #FDA33B;
+    color: var(--mustard);
+}
+.our-secret-d-p{
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #324A6D;
+    line-height: 1.5em;
+    font-family: 'Orienta', sans-serif;
 }
 
 .our-secrect-delvry-main-card {
@@ -412,13 +398,13 @@ text-align: start !important;
 .css-beats{
     --fa-beat-fade-opacity: 0.67 !important;
      --fa-beat-fade-scale: 1.075 !important;
-      color: #FDA33B !important;
+      color: var(--mustard) !important;
 }
 
 .text-chnging-css{
     text-align: start;
 }
-/* Effective and Transparent Link Building Process ends */
+/* We Employ An Efficient And Open Link-Building Strategy ends */
 /* _____________________________________________________________________________________________________ */
 
 /* ____________________________________________________ */
@@ -539,7 +525,7 @@ text-align: start !important;
         text-align: center;
     }
 
-    .why-leelija-section-mains {
+    .why-choose-fastlinky-mains {
         margin: 1rem !important;
     }
 
@@ -613,7 +599,9 @@ text-align: start !important;
 }
 
 @media (min-width:200px) and (max-width:312px) {
-
+    .mlb-starting-main-h1 {
+        font-size: 1.79rem;
+    }
     .lbs-actually-matters-main-h1 {
         font-size: 1.6rem !important;
     }
@@ -640,7 +628,7 @@ text-align: start !important;
         font-weight: 700 !important;
     }
 
-    .why-leelija-h1 {
+    .why-fastlinky-h1 {
         font-size: 2.3rem !important;
     }
 }
@@ -661,6 +649,13 @@ text-align: start !important;
 }
 
 @media (min-width:250px) and (max-width:451px) {
+    .mlb-starting-main-p { 
+        font-size: 1.2rem !important;
+    }
+    .a-brand-need-link-main-h1 {
+        font-size: 1.7rem !important;
+        margin-bottom: 0rem !important;
+    }
     .text-chnging-css{
         text-align: center !important;
     }
@@ -672,7 +667,7 @@ text-align: start !important;
         margin: 0rem 0 !important;
     }
 
-    .why-leelija-main-for-card {
+    .why-fastlinky-main-for-card {
         display: inline-block !important;
         text-align: start !important;
         align-items: start !important;

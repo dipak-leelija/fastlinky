@@ -84,7 +84,7 @@ benefits of high domain authority website, domain authority rank" />
 
                     <div class=" buttonsinfo ">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn managed-link-btn ">View Pricing</button>
+                            <button type="button" class="btn managed-link-btn ">Get Started</button>
                         </a>
                     </div>
                 </div>

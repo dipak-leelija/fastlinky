@@ -15,9 +15,9 @@
     }  
 }
 .country-specific-banner-h1 {
-    color:  #383a50 ;
+    color:  var(--black) ;
     font-family: Helvetica, Poppins;
-    font-size: 46px;
+    font-size: 4rem;
     font-weight: 600;
     line-height: 1.2em;
     word-spacing: 0.1em;
@@ -30,7 +30,7 @@
 .country-specific-banner-p {
     font-weight: 400;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #324A6D;
     line-height: 1.5em;
     font-family: "Poppins", Poppins;
@@ -41,22 +41,14 @@
     font-size: 16px;
     font-weight: 400;
     text-transform: capitalize;
-    font-style: normal;
-    text-decoration: none;
-    line-height: 1em;
-    letter-spacing: 0;
-    word-spacing: 0em;
-    fill: #FFF;
-    color: #FFF;
-    background-color: #F7A546;
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    border-color: #F7A546 !important;
+    color: var(--pure-white);
+    background-color:var(--mustard);
+    border: 1px solid var(--mustard);
     border-radius: 100px 100px 100px 100px;
     padding: 16px 55px 16px 55px;
 }
 .blogger-btn:hover{
-    color: #FDA33B !important;
+    color: var(--mustard) !important;
 }
 
 @media (max-width:1050px) {
@@ -76,30 +68,21 @@
 }
 
 .reach-your-audience-globally-section h1 {
-    color: #383a50;
+    color:  var(--black);
     font-family: Poppins, Poppins;
-    font-size: 24px;
+    font-size: 2.3rem;
     font-weight: 500;
-    line-height: 32px;
-    word-spacing: 0.1em;
-    -webkit-text-stroke-width: 0px;
-    stroke-width: 0;
-    -webkit-text-stroke-color: #000;
-    stroke: #000;
 }
-
+.reach-your-audience-globally-section h1 span{
+    color: var(--mustard);
+}
 .reach-your-audience-globally-section p {
     text-align: left;
-    color: #324a6d;
+    color: var(--black);
     font-family: Poppins, Poppins;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 400;
-    text-transform: none;
-    font-style: normal;
-    text-decoration: none;
     line-height: 1.5em;
-    letter-spacing: 0;
-    word-spacing: 0em;
 }
 
 @media (min-width:350px) and (max-width:425px) {
@@ -120,13 +103,19 @@
 }
 
 .why-country-specific-link-section h2 {
-    color: #FDA33B;
+    color:  var(--mustard);
     font-family: Poppins, Poppins;
     font-weight: 500;
     -webkit-text-stroke-color: #000;
     stroke: #000;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+}
+.why-country-specific-link-section-p{
+    color: #1c244b;
+    font-family: Poppins, Poppins;
+    font-weight: 400;
+    text-align: center;
 }
 
 .why-country-specific-link-card-div {
@@ -150,14 +139,15 @@
 
 .why-country-specific-link-card-div h4 {
     margin-bottom: 17px;
-    color: #FDA33B;
+    color:  var(--mustard);
     font-family: Poppins, Poppins;
     font-size: 23px;
     font-weight: 500;
+    min-height: 70px;
 }
 
 .why-country-specific-link-card-div span {
-    color: #FDA33B;
+    color:  var(--mustard);
 
 }
 
@@ -177,7 +167,7 @@
 .pricing-bo-h1 {
     font-size: 3.2rem;
     font-weight: 600;
-    color: #383a50;
+    color:  var(--black);
     font-family: "Poppins", Poppins;
 }
 
@@ -216,11 +206,11 @@
 .how-itsworks-main-div-casino h1 {
     font-size: 2rem;
     text-align: center;
-    color: #383a50;
+    color:  var(--black);
 }
 
 .how-itsworks-main-div-casino strong {
-    color: #FDA33B;
+    color:  var(--mustard);
 }
 
 .how-itsworks-main-div-casino p {
@@ -233,7 +223,7 @@
 }
 
 .how-itsworks-main-div-casino h3 {
-    color: #3f4450;
+    color: var(--black);
     font-family: Roboto, Poppins;
     font-size: 24px;
     font-weight: 400;
@@ -252,7 +242,7 @@
 }
 
 .country-specific-international-section-h2 span {
-    color: #FDA33B;
+    color:  var(--mustard);
     font-weight: 600;
 }
 
@@ -283,11 +273,11 @@
 /* Frequently Asked Questions (FAQs) starts */
 /* --------------------------------------------------------------------------------------------- */
 .faq-head-section {
-    color: #383a50;
+    color:  var(--black);
 }
 
 .faq-head-section span {
-    color: #FDA33B;
+    color:  var(--mustard);
 }
 
 /* --------------------------------------------------------------------------------------------- */
@@ -417,12 +407,6 @@
     .how-itsworks-main-div-casino {
         padding: 6rem 1rem;
     }
-
-    /* .price-table {
-        padding: 20px 0rem !important;
-        margin: 2rem 0 !important;
-    } */
-
     .country-specific-banner-h1 {
         font-size: 2rem;
     }
