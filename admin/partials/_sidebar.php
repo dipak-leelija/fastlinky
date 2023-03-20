@@ -15,7 +15,8 @@
             </a>
             <div class="collapse" id="order-management">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="orders.php">Orders</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="orders.php">Guest Post Orders</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="package-orders.php">Package Orders</a></li>
                 </ul>
             </div>
         </li>

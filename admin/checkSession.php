@@ -1,5 +1,4 @@
-<?php 
-require_once "../includes/constant.inc.php";
+<?php
 if(!isset($_SESSION[ADM_SESS]))
 {
 	header("Location: index.php");

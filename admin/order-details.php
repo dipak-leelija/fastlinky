@@ -1,23 +1,23 @@
 <?php
-session_start();
-include_once('checkSession.php');
-
-require_once "../_config/dbconnect.php";
-require_once "../_config/dbconnect.trait.php";
-
 require_once "../includes/constant.inc.php";
-require_once "../classes/date.class.php";
-require_once "../classes/error.class.php";
-require_once "../classes/customer.class.php";
-require_once "../classes/countries.class.php";
-require_once "../classes/location.class.php";
+session_start();
+include_once ADM_DIR . 'checkSession.php';
 
-require_once "../classes/blog_mst.class.php";
-require_once "../classes/utility.class.php";
-require_once "../classes/utilityMesg.class.php";
+require_once ROOT_DIR . "/_config/dbconnect.php";
+require_once ROOT_DIR . "/_config/dbconnect.trait.php";
 
-require_once "../classes/content-order.class.php";
-require_once "../classes/orderStatus.class.php";
+require_once ROOT_DIR . "/classes/date.class.php";
+require_once ROOT_DIR . "/classes/error.class.php";
+require_once ROOT_DIR . "/classes/customer.class.php";
+require_once ROOT_DIR . "/classes/countries.class.php";
+require_once ROOT_DIR . "/classes/location.class.php";
+
+require_once ROOT_DIR . "/classes/blog_mst.class.php";
+require_once ROOT_DIR . "/classes/utility.class.php";
+require_once ROOT_DIR . "/classes/utilityMesg.class.php";
+
+require_once ROOT_DIR . "/classes/content-order.class.php";
+require_once ROOT_DIR . "/classes/orderStatus.class.php";
 
 
 /* INSTANTIATING CLASSES */

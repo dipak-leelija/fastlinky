@@ -186,3 +186,24 @@ small, .small {
     margin: 1rem 0;
     font-weight: 500;
 }
+
+/* ============================ */
+
+.icon-data-list {
+    list-style-type: none;
+    padding-left: 0;
+    position: relative;
+    margin-bottom: 0;
+    font-family: "Nunito", sans-serif;
+}
+
+.icon-data-list li {
+    margin-bottom: 1rem;
+}
+
+.icon-data-list li img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 100%;
+}

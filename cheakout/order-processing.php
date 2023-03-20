@@ -2,6 +2,8 @@
 session_start();
 
 require_once dirname(__DIR__)."/includes/constant.inc.php";
+
+require_once ROOT_DIR."/includes/content.inc.php";
 require_once ROOT_DIR."/_config/dbconnect.php";
 require_once ROOT_DIR."/_config/dbconnect.trait.php";
 
@@ -12,7 +14,13 @@ require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/location.class.php";
 require_once ROOT_DIR."/classes/countries.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
+###############################################################################endregion$typeM		    = $utility->returnGetVar('typeM','');
+//user id
+$cusId		    = $utility->returnSess('userid', 0);
+$cusDtl		    = $customer->getCustomerData($cusId);
+$currentPage    = $utility->setCurrentPageSession();
 
+require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 /* INSTANTIATING CLASSES */
 $DateUtil       = new DateUtil();
@@ -56,10 +64,13 @@ if (isset($_POST['paymentdata']) && isset($_POST['pppamn'])) {
                 
                 $falseExist =  in_array(false, $updated, true);
                 if (!$falseExist) {
-                    $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
-                    unset($_SESSION['orderIds']);
-                    header('Location: ./package-order-successfull.php');
-                    exit;
+                    $added = $PackageOrder->addPackOrderDtls($eachOrderId, 4, ORDS001, $cusDtl[0][2], $cusDtl[0][2]);
+                    if ($added) {
+                        $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
+                        unset($_SESSION['orderIds']);
+                        header('Location: ./package-order-successfull.php');
+                        exit;
+                    }
                 }else {
                     echo 'Error:=> Failed to update Payment status of order!';
                 }
@@ -87,10 +98,13 @@ if (isset($_POST['paylaterForm'])) {
 
             $falseExist =  in_array(false, $updated, true);
             if (!$falseExist) {
-                $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
-                unset($_SESSION['orderIds']);
-                header('Location: ./package-order-successfull.php');
-                exit;
+                $added = $PackageOrder->addPackOrderDtls($eachOrderId, 4, ORDS001, $cusDtl[0][2], $cusDtl[0][2]);
+                if ($added) {
+                    $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
+                    unset($_SESSION['orderIds']);
+                    header('Location: ./package-order-successfull.php');
+                    exit;
+                }
             }else {
                 echo 'Error:=> Failed to update Payment status of order!';
             }
