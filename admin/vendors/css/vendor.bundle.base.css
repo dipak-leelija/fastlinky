@@ -1,8 +1,15 @@
+:root {
+  --pure-white: #ffffff;
+  --mustard:#FDA33B;
+}
+
 .d_border{
   border: 1px dashed #00b !important;
   text-align: center;
 }
-
+.bg_mustard{
+  background: var(--mustard) !important;
+}
 /*
  * Container style
  */

@@ -99,19 +99,11 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                     $sl = 1;
                                     if (count($packOrders) > 0 ) {
                                         foreach ($packOrders as $eachPackOrder) {
-<<<<<<< HEAD
-                                            $ordPack = $GPPackage->packDetailsById($eachPackOrder['package_id']);
-                                            $packCat    =   $GPPackage->packCatById($ordPack['category_id']);
-                                            $status = $OrderStatus->singleOrderStatus($eachPackOrder['order_status']);
-                                            $pStatus = $OrderStatus->singleOrderStatus($eachPackOrder['status']); 
-                                 ?>
-=======
                                             $ordPack    = $GPPackage->packDetailsById($eachPackOrder['package_id']);
                                             $packCat    = $GPPackage->packCatById($ordPack['category_id']);
                                             $status     = $OrderStatus->singleOrderStatus($eachPackOrder['order_status']);
                                             $pStatus    = $OrderStatus->singleOrderStatus($eachPackOrder['status']); 
                                 ?>
->>>>>>> 8e9853ce80af131a01e8f3375c3f7129d92d5a85
 
                                     <div class="card product_card  position-relative border rounded  mb-3">
                                         <div class="p-textdiv-card">

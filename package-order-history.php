@@ -165,6 +165,14 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                             <?php
                                             for ($i=1; $i <= $package['blog_post']; $i++) { 
                                                 $links = $PackageOrder->getPackOrdLinks($order['order_id'], $i);
+                                                $publishedStatus = $PackageOrder->getPackPubUrl($order['order_id'], $i);
+                                                $pulished = false;
+                                                $btnBg = '';
+
+                                                if (count($publishedStatus) > 0) {
+                                                    $pulished = true;
+                                                    $btnBg = 'bg_mustard';
+                                                }
                                                 
                                                 $existLinksNo = count($links);
                                                 if ($existLinksNo > 0) 
@@ -173,7 +181,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                     $btnIcon = 'fa-solid fa-circle-exclamation px-3 text-warning';
 
 
-                                                echo "<button class='d-block d_border mt-2 px-5 py-2 w-50' data-bs-toggle='modal' data-bs-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
+                                                echo "<button class='d-block  d_border mt-2 px-5 py-2 w-50 ".$btnBg."' data-bs-toggle='modal' data-bs-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
 
                                             ?>
                                             <!-- Modal -->
@@ -182,6 +190,31 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                 <div class="modal-dialog modal-lg">
                                                     <div class="modal-content px-md-4">
                                                         <form action="ajax/package-order-update.ajax.php" method="POST">
+                                                            <?php
+                                                            if ($pulished) {
+                                                                // echo 'Published';
+                                                                ?>
+                                                            <div class="modal-header">
+                                                                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                                                    <?php echo $utility->ordinal($i); ?> Post Published
+                                                                    Link
+                                                                </h1>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+
+                                                            <div class="modal-body" id="update-modal-body">
+                                                                <input type="text" class="form-control mt-1"
+                                                                    value="<?php echo $publishedStatus['url']; ?>">
+                                                            </div>
+
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                            </div>
+                                                            <?php
+                                                            }else{
+                                                            ?>
                                                             <div class="modal-header">
                                                                 <h1 class="modal-title fs-5" id="exampleModalLabel">
                                                                     Link for <?php echo $utility->ordinal($i); ?> Post
@@ -189,8 +222,6 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
-
-
 
                                                             <div class="modal-body" id="update-modal-body">
                                                                 <div class="mb-3" id="fieldBox-<?php echo $i; ?>">
@@ -219,28 +250,24 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                             ?>
                                                                         </div>
 
-                                                                        <input type="text" class="form-control <?php echo $border; ?>"
+                                                                        <input type="text"
+                                                                            class="form-control <?php echo $border; ?>"
                                                                             name="ancortext[]" placeholder="Ancor Text"
                                                                             value="<?php
                                                                             echo $eachLink['anchor']; ?>">
-                                                                        <input type="text" class="form-control mt-1 <?php echo $border; ?>"
+                                                                        <input type="text"
+                                                                            class="form-control mt-1 <?php echo $border; ?>"
                                                                             name="url[]" placeholder="URL" value="<?php
                                                                             echo $eachLink['url']; ?>">
 
 
                                                                         <div class="d-flex justify-content-end mt-1">
 
-                                                                            <!-- <span
-                                                                                class="badge rounded-pill text-danger border border-danger ms-2 cursor_pointer">Issues</span> -->
-
                                                                             <span class=" badge rounded-pill text-danger
                                                                                 border border-danger ms-2
                                                                                 cursor_pointer"
-                                                                                onclick="deleteElement('linkBox-<?php echo $linkNo; ?>')">Delete</span>
+                                                                                onclick="deleteElement('linkBox-<?php echo $linkNo; ?>')">Remove</span>
                                                                         </div>
-                                                                        <!-- <span class="cursor_pointer">
-                                                                            <i class="fa-solid fa-xmark text-danger"></i>
-                                                                        </span> -->
                                                                     </div>
                                                                     <?php
                                                                         }
@@ -265,11 +292,19 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                         id="sectionAdded-<?php echo $i; ?>"
                                                                         value="<?php echo $linkNo;?>">
                                                                 </div>
-                                                                <div class="text-end">
+                                                                <?php
+                                                                if ($existLinksNo >= 3 ) {
+                                                                    $addBtnDispaly = 'd-none';
+                                                                }else {
+                                                                    $addBtnDispaly = 'd-block';
+                                                                }
+                                                                ?>
+                                                                <div class="text-end <?php echo $addBtnDispaly; ?>">
                                                                     <button type="button" class="btn btn-sm btn-primary"
                                                                         onclick="addField('fieldBox-<?php echo $i; ?>', 'sectionAdded-<?php echo $i; ?>', 3)">Add</button>
                                                                 </div>
                                                             </div>
+
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"
                                                                     data-bs-dismiss="modal"
@@ -278,6 +313,9 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                     id="modal-action-btn">Save
                                                                     changes</button>
                                                             </div>
+                                                            <?php
+                                                            }
+                                                            ?>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -290,11 +328,11 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
 
                                     <!-- right col start  -->
                                     <div class="col-12 col-md-6">
+                                        <div class="stretch-card grid-margin">
+                                            <h5 class="fw-bold">Updates</h5>
 
-                                        <div class="stretch-card grid-margin mt-4">
                                             <div class="card status_card rounded-1r border shadow">
                                                 <div class="card-body">
-                                                    <p class="card-title">Updates</p>
                                                     <ul class="icon-data-list">
 
                                                         <?php

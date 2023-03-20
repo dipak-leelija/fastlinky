@@ -307,6 +307,13 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                         <?php
                                             for ($i=1; $i <= $package['blog_post']; $i++) { 
                                                 $links = $PackageOrder->getPackOrdLinks($showOrder['order_id'], $i);
+                                                $publishedStatus = $PackageOrder->getPackPubUrl($showOrder['order_id'], $i);
+                                                $pulished = false;
+                                                $btnBg = '';
+                                                if (count($publishedStatus) > 0) {
+                                                    $pulished = true;
+                                                    $btnBg = 'bg_mustard';
+                                                }
 
                                                 $existLinksNo = count($links);
                                                 if ($existLinksNo > 0) 
@@ -315,7 +322,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                     $btnIcon = 'fa-solid fa-circle-exclamation px-3 text-warning';
 
 
-                                                echo "<button class='d-block d_border border-primary mt-2 px-5 py-2 w-50' data-toggle='modal' data-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
+                                                echo "<button class='d-block d_border border-primary mt-2 px-5 py-2 w-50 ".$btnBg."' data-toggle='modal' data-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
 
                                             ?>
                                         <!-- Modal start -->
@@ -323,6 +330,39 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-lg modal-dialog-scrollable">
                                                 <div class="modal-content px-md-4">
+
+                                                    <?php
+                                                        if ($pulished) {
+                                                        ?>
+
+                                                    <form action="ajax/package-posting-update.ajax.php" method="POST"
+                                                        name="urlsForm-<?php echo $i; ?>">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title fs-5" id="exampleModalLabel">
+                                                                <?php echo $utility->ordinal($i); ?> Post Published
+                                                                Link
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="modal-body" id="update-modal-body">
+                                                            <input type="text" class="form-control mt-1"
+                                                                value="<?php echo $publishedStatus['url']; ?>">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary"
+                                                                data-dismiss="modal">Update</button>
+                                                        </div>
+                                                    </form>
+                                                    <?php
+                                                            }else {
+                                                                ?>
                                                     <form action="ajax/package-posting-update.ajax.php" method="POST"
                                                         name="urlsForm-<?php echo $i; ?>">
                                                         <div class="modal-header">
@@ -391,8 +431,17 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                     id="sectionAdded-<?php echo $i; ?>"
                                                                     value="<?php echo $linkNo;?>">
                                                             </div>
+
+                                                            <?php
+                                                                if ($existLinksNo >= 3 ) {
+                                                                    $addBtnDispaly = 'd-none';
+                                                                }else {
+                                                                    $addBtnDispaly = 'd-block';
+                                                                }
+                                                            ?>
                                                             <div class="text-right">
-                                                                <button type="button" class="btn btn-sm btn-primary"
+                                                                <button type="button"
+                                                                    class="btn btn-sm btn-primary <?php echo $addBtnDispaly; ?>"
                                                                     onclick="addField('fieldBox-<?php echo $i; ?>', 'sectionAdded-<?php echo $i; ?>', 3)">Add</button>
                                                             </div>
                                                         </div>
@@ -405,6 +454,9 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                 onclick="validateForm('urlsForm-<?php echo $i; ?>', '<?php echo $i; ?>')">Update</button>
                                                         </div>
                                                     </form>
+                                                    <?php
+                                                        }
+                                                        ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -551,7 +603,6 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     <div class="modal fade" id="publishModal" tabindex="-1" aria-labelledby="publishModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <!-- <form action="ajax/package-posting-update.ajax.php" method="POST"> -->
                 <div class="modal-header">
                     <h3 class="modal-title fs-5" id="publishModalLabel">
                         Published URL
@@ -573,7 +624,6 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                     <button type="button" class="btn btn-danger"
                         onclick="publishUrl(<?php echo $orderId; ?>)">Update</button>
                 </div>
-                </form>
             </div>
         </div>
     </div>
@@ -725,13 +775,13 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                 issueMsg: issueMsg
             },
             success: function(response) {
-                console.log(response);
+                // console.log(response);
                 if (response.includes('updated!')) {
                     location.reload();
                 } else {
                     Swal.fire(
-                        'failed!',
-                        'Failed to Complete Order!! 😥.',
+                        'Failed!',
+                        'Failed to Complete Order!!',
                         'error'
                     )
                 }
@@ -757,25 +807,25 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
         }
         let cheakedUrl = checkUrl(publishedUrl);
 
-        if(cheakedUrl == true){
+        if (cheakedUrl == true) {
             $.ajax({
-                    url: "ajax/package-posting-update.ajax.php",
-                    type: "POST",
-                    data: {
-                        publishOrder: orderId,
-                        forPost: postNo,
-                        url: publishedUrl
-                    },
-                    success: function(response) {
-                        // alert(`response=> ${response}`);
-                        if (response.trim().includes('updated!')) {
-                            location.reload();
-                        } else {
-                            Swal.fire('Failed!', response.trim(), 'error');
-                        }
-
+                url: "ajax/package-posting-update.ajax.php",
+                type: "POST",
+                data: {
+                    publishOrder: orderId,
+                    forPost: postNo,
+                    url: publishedUrl
+                },
+                success: function(response) {
+                    // alert(`response=> ${response}`);
+                    if (response.trim().includes('updated!')) {
+                        location.reload();
+                    } else {
+                        Swal.fire('Failed!', response.trim(), 'error');
                     }
-                });
+
+                }
+            });
         }
     }
 
@@ -786,7 +836,6 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
             if (x.value != '' && y.value != '') {
                 $("#publishModal").modal();
                 document.getElementById('forPost').value = forPost;
-                // document.getElementById('forPostTxt').innerText = forPost;
             } else {
                 Swal.fire('Error!', 'Link Not Found.', 'error');
             }
@@ -799,7 +848,6 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                     if ((x[i].value !== null && y[i].value !== null) || (x[i].value !== '' && y[i].value !== '')) {
                         $("#publishModal").modal();
                         document.getElementById('forPost').value = forPost;
-                        // document.getElementById('forPostTxt').innerText = forPost;
                     } else {
                         Swal.fire(
                             'Error!',
@@ -812,28 +860,6 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
         }
     }
-
-    // const validateForm = () => {
-
-    //     // alert("Hi");
-    //     // return false;
-    //     let postUrl = document.getElementById("deliver-link").value;
-    //     if (postUrl == "") {
-    //         document.getElementById('blank-msg').innerText = "Link Can't be blank";
-    //         return false;
-    //     } else {
-    //         // function isValidHttpUrl(postUrl) {
-    //         let url;
-    //         try {
-    //             url = new URL(postUrl);
-    //         } catch (_) {
-    //             document.getElementById('blank-msg').innerText = "Link is not valid";
-    //             return false;
-    //         }
-    //         return url.protocol === "http:" || url.protocol === "https:";
-    //         // }
-    //     }
-    // }
     </script>
 </body>
 

@@ -19,6 +19,9 @@
     background: #EBF4FE
 }
 
+.bg_mustard{
+    background: var(--mustard) !important;
+}
 
 /* font sizes  */
 .fs_p8{

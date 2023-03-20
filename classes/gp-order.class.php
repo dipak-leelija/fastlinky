@@ -287,12 +287,12 @@ class PackageOrder extends DatabaseConnection{
   ##############################################################################################################
 
 
-  function addPackPubLinks($orderId, $for_post, $pubUrl, $added_by){
+  function addPackPubLinks($orderId, $for_post, $pubUrl, $status, $added_by){
 
       $pubUrl = addslashes(trim($pubUrl));
 
-      $query =  "INSERT INTO `package_publish_links`(`order_id`,	`for_post`,	`url`, `added_on`, `added_by`)
-                                              VALUES ('$orderId', '$for_post', '$pubUrl', now(), '$added_by')";
+      $query =  "INSERT INTO `package_publish_links`(`order_id`,	`for_post`,	`url`, `status`, `added_on`, `added_by`)
+                                              VALUES ('$orderId', '$for_post', '$pubUrl', `$status`, now(), '$added_by')";
       $res = $this->conn->query($query);
       // $count = $this->conn->insert_id();
       return $res;
@@ -302,14 +302,14 @@ class PackageOrder extends DatabaseConnection{
 
 
 
-  function getPackPubUrl($orderId, $ordrBy){
+  function getPackPubUrl($orderId, $forPost){
 
     $data     = array();
     $query    = "SELECT * FROM `package_publish_links` 
-                WHERE order_id = '$orderId' ORDER BY id $ordrBy";
+                WHERE order_id = '$orderId'AND for_post = '$forPost'";
     $res      = $this->conn->query($query);
     while ($result = $res->fetch_assoc()) {
-      $data[] = $result;
+      $data = $result;
     }
     return $data;
 
