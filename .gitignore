@@ -1,0 +1,3 @@
+*.log
+includes/constant.inc.php
+_config/

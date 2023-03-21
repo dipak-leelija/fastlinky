@@ -5,7 +5,7 @@
 	//URLS Details 
 	$protocol = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
 
-	define('LOCAL_DIR',			'/fastlinky');
+	define('LOCAL_DIR',			'/fastlinky'); 
 	define('URL', 				$protocol.$_SERVER['HTTP_HOST'].LOCAL_DIR);
 	// define('ROOT_DIR', 			dirname(dirname(__FILE__)));
 	// define('ADM_DIR', 			dirname(dirname(__FILE__)).'/admin/');
