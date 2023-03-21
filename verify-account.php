@@ -1,17 +1,12 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-// session_start();
-
-//include_once('checkSession.php');
-require_once("_config/dbconnect.php");
-require_once("_config/dbconnect.trait.php");
-
 require_once "includes/constant.inc.php";
 require_once "includes/registration.inc.php";
-
 require_once "classes/encrypt.inc.php";
+
+// session_start();
+
+require_once("_config/dbconnect.php");
+
 require_once "classes/class.phpmailer.php";
 
 require_once "classes/date.class.php";

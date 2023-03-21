@@ -1,10 +1,9 @@
 <?php 
-session_start();
-// require_once("_config/connect.php");
-require_once("_config/dbconnect.php");
-
 include_once("includes/constant.inc.php");
 include_once("includes/contact-us-email.inc.php");
+session_start();
+
+require_once("_config/dbconnect.php");
 
 require_once("classes/contact.class.php"); 
 

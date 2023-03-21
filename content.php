@@ -1,25 +1,18 @@
 
 <?php 
+require_once("includes/constant.inc.php");
+require_once("includes/content.inc.php");
+require_once("includes/contact-us-email.inc.php");
+
 session_start();
 
-// require_once("_config/connect.php");
 require_once("_config/dbconnect.php");
-
-
-require_once("includes/constant.inc.php");
-// require_once("includes/checkout.inc.php"); 
-// require_once("includes/content.inc.php");
-require_once("includes/content.inc.php");
-
-// require_once("includes/contact.inc.php");
-require_once("includes/contact-us-email.inc.php");
  
 require_once("classes/date.class.php");  
 require_once("classes/error.class.php");
 
 require_once("classes/category.class.php"); 
 require_once("classes/static.class.php"); 
-// require_once("classes/navigation.class.php"); 
 require_once("classes/contact.class.php");
 require_once("classes/login.class.php"); 
 

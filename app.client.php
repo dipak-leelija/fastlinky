@@ -1,9 +1,8 @@
 <?php
-session_start();
 require_once "includes/constant.inc.php";
+session_start();
 
 require_once ROOT_DIR."/_config/dbconnect.php";
-require_once ROOT_DIR."/_config/dbconnect.trait.php";
 
 require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/content-order.class.php";

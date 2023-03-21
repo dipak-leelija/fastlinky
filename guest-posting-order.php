@@ -1,11 +1,13 @@
 <?php 
+require_once "includes/constant.inc.php";
+
 session_start();
-// var_dump($_SESSION);
+
 $niche              = $_SESSION['niche'];
 $clientUserId       = $_SESSION['userid'];
 $clientName         = $_SESSION['name'];
 $orderPackagePrice  = $_SESSION['orderPrice'];
-// require_once("_config/connect.php");
+
 require_once "_config/dbconnect.php";
 require_once "classes/client-order.class.php";
 include "Crypto.php";

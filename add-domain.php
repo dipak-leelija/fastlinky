@@ -1,22 +1,16 @@
-<!--
-Author: Safikul Islam
-Author URL: http://webtechhelp.org
--->
-<?php
-session_start();
-//include_once('checkSession.php');
-// require_once("_config/connect.php");
-require_once("_config/dbconnect.php");
-require_once "_config/dbconnect.trait.php";
 
+<?php
 require_once("includes/constant.inc.php");
+session_start();
+
+require_once("_config/dbconnect.php");
+
 require_once("classes/date.class.php");
 require_once("classes/error.class.php");
 require_once("classes/search.class.php");
 require_once("classes/customer.class.php");
 require_once("classes/login.class.php");
 
-//require_once("../classes/front_photo.class.php");
 require_once("classes/blog_mst.class.php");
 require_once("classes/domain.class.php");
 require_once("classes/utility.class.php");

@@ -1,13 +1,9 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-session_start();
 require_once "includes/constant.inc.php";
 
+session_start();
+
 require_once ROOT_DIR."/_config/dbconnect.php";
-require_once ROOT_DIR."/_config/dbconnect.trait.php";
 
 require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/error.class.php";

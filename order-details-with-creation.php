@@ -1,10 +1,10 @@
 <?php 
-session_start();
-require_once "_config/dbconnect.php";
-require_once "_config/dbconnect.trait.php";
 
 require_once "includes/constant.inc.php";
 require_once "includes/paypal.inc.php";
+
+session_start();
+require_once "_config/dbconnect.php";
 
 require_once "classes/customer.class.php";
 require_once "classes/content-order.class.php";

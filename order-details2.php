@@ -1,18 +1,20 @@
 <?php 
-session_start();
-require_once "_config/dbconnect.php";
-require_once "_config/dbconnect.trait.php";
-
-$clientUserId= $_SESSION['userid'];
-$clientName= $_SESSION['name'];
-$clientEmail= $_SESSION['USERcontinuecontent_ecom_SESS2016'];
-$clientOrderedSite = $_REQUEST['domainName2'];
-$clientOrderPrice = $_REQUEST['sitePrice2'];
-// require_once("_config/connect.php");
-require_once("classes/client-order.class.php");
-include('Crypto.php');
 require_once "includes/constant.inc.php";
 require_once("includes/paypal.inc.php");  
+
+session_start();
+require_once "_config/dbconnect.php";
+
+$clientUserId           = $_SESSION['userid'];
+$clientName             = $_SESSION['name'];
+$clientEmail            = $_SESSION['USERLOGGEDIN'];
+$clientOrderedSite      = $_REQUEST['domainName2'];
+$clientOrderPrice       = $_REQUEST['sitePrice2'];
+
+
+require_once("classes/client-order.class.php");
+include('Crypto.php');
+
 $clientOrderModel = new ClientOrder();
 
 if(isset($_POST['OrderNowPaypal2']) || isset($_POST['orderNowCcavenue2'])){

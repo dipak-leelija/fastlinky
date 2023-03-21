@@ -1,4 +1,5 @@
 <?php
+require_once "includes/constant.inc.php";
 session_start();
 
 require_once("_config/dbconnect.php");

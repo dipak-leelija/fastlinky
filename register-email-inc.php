@@ -1,15 +1,11 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-session_start();
-
-require_once __DIR__ . "/_config/dbconnect.php";
-require_once __DIR__ . "/_config/connect.php";
-
 include_once __DIR__ . "/includes/constant.inc.php";
 include_once __DIR__ . "/includes/contact-us-email.inc.php";
 require_once __DIR__ . "/classes/encrypt.inc.php";
+
+session_start();
+
+require_once __DIR__ . "/_config/dbconnect.php";
 
 require_once __DIR__ . "/classes/class.phpmailer.php";
 require_once __DIR__ . "/mail-templates/welcome-mail-template.php";

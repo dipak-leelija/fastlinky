@@ -1,23 +1,19 @@
 <?php 
-session_start();
-// require_once("_config/connect.php");
-require_once "_config/dbconnect.php";
-require_once "_config/dbconnect.trait.php";
-
 require_once("includes/constant.inc.php");
+
 require_once("includes/user.inc.php");
 require_once("includes/email.inc.php");
 require_once("includes/registration.inc.php");
-// require_once("includes/company_contact.inc.php");
-// require_once("includes/order_landing.inc.php");
 require_once("includes/paypal.inc.php");
+
+session_start();
+
+require_once "_config/dbconnect.php";
 
 require_once("classes/error.class.php"); 
 require_once("classes/date.class.php"); 
 require_once("classes/customer.class.php");
-
 require_once("classes/order.class.php");
-
 require_once("classes/utility.class.php"); 
 require_once("classes/utilityMesg.class.php"); 
 require_once("classes/utilityImage.class.php");

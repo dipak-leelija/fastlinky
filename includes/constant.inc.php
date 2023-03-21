@@ -12,6 +12,22 @@
 	define('ROOT_DIR', 			$_SERVER['DOCUMENT_ROOT'].LOCAL_DIR);
 	define('ADM_DIR', 			$_SERVER['DOCUMENT_ROOT'].LOCAL_DIR.'/admin/');
 
+
+	// database credentials 
+	
+
+	if (LOCAL_DIR == "") {
+		define('DBHOST',				'localhost');
+		define('DBUSER',				'fastlinky_user');
+		define('DBPASS',				'FYFcL;}H_f2T');
+		define('DBNAME',				'fastlinky_db');
+	}else {
+		define('DBHOST',				'localhost');
+		define('DBUSER',				'root');
+		define('DBPASS',				'');
+		define('DBNAME',				'fastlinky_db');
+	}
+
 	define('PAGE',				$_SERVER['PHP_SELF']);
 	define('ADM_URL',  			URL.'/admin/');
 	define('SELLER_AREA',  		URL."/dashboard.php");

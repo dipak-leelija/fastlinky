@@ -1,16 +1,9 @@
 <?php
+require_once "includes/constant.inc.php";
 session_start();
 
-
-
-// var_dump($_SESSION);
-
 require_once("_config/dbconnect.php");
-require_once "_config/dbconnect.trait.php";
 
-
-
-require_once "includes/constant.inc.php";
 require_once "classes/customer.class.php";
 require_once "classes/wishList.class.php";
 require_once "classes/blog_mst.class.php";
