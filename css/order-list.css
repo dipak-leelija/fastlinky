@@ -213,26 +213,27 @@ small, .small {
     border-radius: 100%;
 }
 .icon-data-list h5{
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
 }
 .icon-data-list p{
     font-weight: 500;
-    font-size: 1rem;
+    font-size: .9rem !important;
     color: black;
-    line-height: 1.5;
+    line-height: 1.27;
 }
 .icon-data-list small{
     text-transform: inherit;
 }
+.extra-scroll-add{
+    max-height: 450px;
+    overflow: hidden;
+    border-radius: 0.375rem 0.375rem 0px 0px;
+    border-bottom: none;
+}
 .crd-box-fr-scroll{
-    /* overflow-y: scroll;
-     max-height: 390px; */
      border: none;
 }
-/* .crd-box-fr-scroll::-webkit-scrollbar-thumb {
-    background: var(#333333) !important;
-    border-radius: 2px;
-} */
 .status_card{
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 8px;
     border: 1px solid #d3d3d3a1;
