@@ -1,6 +1,6 @@
 <?php
-require_once "../../_config/dbconnect.php";
 require_once "../../includes/constant.inc.php";
+require_once "../../_config/dbconnect.php";
 require_once "../../classes/backup.class.php";
 $Backup = new Backup();
 

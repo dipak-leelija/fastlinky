@@ -1,10 +1,7 @@
 <?php
+require_once dirname(__DIR__)."/includes/constant.inc.php";
 session_start();
 require_once dirname(__DIR__).'/_config/dbconnect.php';
-require_once dirname(__DIR__)."/_config/dbconnect.trait.php";
-
-require_once dirname(__DIR__)."/includes/constant.inc.php";
-// require_once dirname(__DIR__)."/includes/html2text.php";
 
 require_once dirname(__DIR__)."/classes/emails.class.php";
 require_once dirname(__DIR__)."/classes/date.class.php";

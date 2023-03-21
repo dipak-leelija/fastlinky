@@ -1,11 +1,9 @@
 <?php
-session_start();
-//var_dump($_SESSION);
-//include_once('checkSession.php');
-require_once "../_config/dbconnect.php";
-require_once "../_config/dbconnect.trait.php";
-
+require_once "../includes/constant.inc.php";
 require_once "../classes/encrypt.inc.php";
+session_start();
+require_once "../_config/dbconnect.php";
+
 
 require_once "../classes/customer.class.php";
 require_once "../classes/order.class.php";
