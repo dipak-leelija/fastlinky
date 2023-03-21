@@ -160,9 +160,9 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                 <!-- Details section End -->
                                 <div class="card crd-box-fr-scroll mt-3">
                                     <div class="p-0 px-0 row m-0">
-                                        <div class="col-12 col-md-6">
+                                        <div class="col-12 col-md-6 m-auto">
                                             <div class="action_box">
-                                                <h5 class="fw-bold text-center text-md-start">Upload Links</h5>
+                                                <h5 class="fw-bold text-center ">Upload Links</h5>
                                                 <?php
                                             for ($i=1; $i <= $package['blog_post']; $i++) { 
                                                 $links = $PackageOrder->getPackOrdLinks($order['order_id'], $i);
@@ -182,7 +182,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                     $btnIcon = 'fa-solid fa-circle-exclamation px-3 text-warning';
 
 
-                                                echo "<button class='d-block  d_border mt-2 px-3 py-2 ms-md-0 w-75 m-auto m-md-2  ".$btnBg."' data-bs-toggle='modal' data-bs-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
+                                                echo "<button class='d-block  d_border mt-2 px-3 py-2  w-75 m-auto   ".$btnBg."' data-bs-toggle='modal' data-bs-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
 
                                             ?>
                                                 <!-- Modal -->
@@ -340,8 +340,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                             <div class="stretch-card grid-margin">
                                                 <h5 class="fw-bold mt-3 mt-md-0 mb-2 text-center text-md-start">Updates</h5>
 
-                                                <div class="card status_card "
-                                                    style="max-height: 462px;overflow: hidden;">
+                                                <div class="card status_card extra-scroll-add">
                                                     <div class="card-body p-0">
                                                         <ul class="icon-data-list">
 
@@ -354,7 +353,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                     <img src="<?php echo URL?>/images/user/default-user-icon.png"
                                                                         alt="user">
                                                                     <div>
-                                                                        <h5 class="text-info mb-1">
+                                                                        <h5 class="text-info mb-0">
                                                                             <?php
                                                                 $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
                                                                 echo $updateShow[0][1];
@@ -385,13 +384,13 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                 </div>
 
                                                 <div class="">
-                                                    <button type="button " class="btn btn-primary w-100" data-bs-toggle="modal"
+                                                    <button type="button" class="btn btn-primary w-100" style="    border-radius:0px 0px 0.375rem 0.375rem; border-top:none;"data-bs-toggle="modal"
                                                         data-bs-target="#exampleModal">View
                                                         More</button>
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="exampleModal" tabindex="-1"
                                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog m-0 m-sm-auto">
+                                                        <div class="modal-dialog modal-lg m-0 m-sm-auto">
                                                             <div class="modal-content px-0 px-md-4">
                                                                 <div class="modal-header">
                                                                     <h1 class="modal-title fs-5" id="exampleModalLabel">
@@ -416,7 +415,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                                                     alt="user">
                                                                                                 <div>
                                                                                                     <h5
-                                                                                                        class="text-info mb-1">
+                                                                                                        class="text-info mb-0">
                                                                                                         <?php
                                                                 $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
                                                                 echo $updateShow[0][1];
