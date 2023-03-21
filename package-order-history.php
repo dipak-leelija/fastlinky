@@ -88,7 +88,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                 <div class=" display-table">
                     <div class="row ">
                         <!--Row start-->
-                        <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
+                        <div class="col-md-3 hidden-xs display-table-cell v-align " id="navigation">
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
@@ -96,7 +96,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                             </div>
 
                         </div>
-                        <div class="col-md-9 ps-md-0 display-table-cell v-align ">
+                        <div class="col-md-9 ps-md-0 display-table-cell v-align  ">
                             <div class="div-border-css">
                                 <!-- Details section Start  -->
                                 <div class="p-3 p-kage-de-tails">
@@ -159,11 +159,11 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                 </div>
                                 <!-- Details section End -->
                                 <div class="card crd-box-fr-scroll mt-3">
-                                <div class="p-0 px-0 row m-0">
-                                    <div class="col-12 col-md-6">
-                                        <div class="action_box">
-                                            <h5 class="fw-bold">Upload Links</h5>
-                                            <?php
+                                    <div class="p-0 px-0 row m-0">
+                                        <div class="col-12 col-md-6">
+                                            <div class="action_box">
+                                                <h5 class="fw-bold text-center text-md-start">Upload Links</h5>
+                                                <?php
                                             for ($i=1; $i <= $package['blog_post']; $i++) { 
                                                 $links = $PackageOrder->getPackOrdLinks($order['order_id'], $i);
                                                 $publishedStatus = $PackageOrder->getPackPubUrl($order['order_id'], $i);
@@ -185,61 +185,67 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                 echo "<button class='d-block  d_border mt-2 px-3 py-2 ms-md-0 w-75 m-auto m-md-2  ".$btnBg."' data-bs-toggle='modal' data-bs-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
 
                                             ?>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="exampleModal-<?php echo $i; ?>" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content px-md-4">
-                                                        <form action="ajax/package-order-update.ajax.php" method="POST">
-                                                            <?php
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModal-<?php echo $i; ?>"
+                                                    tabindex="-1" aria-labelledby="exampleModalLabel"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg">
+                                                        <div class="modal-content px-md-4">
+                                                            <form action="ajax/package-order-update.ajax.php"
+                                                                method="POST">
+                                                                <?php
                                                             if ($pulished) {
                                                                 // echo 'Published';
                                                                 ?>
-                                                            <div class="modal-header">
-                                                                <h1 class="modal-title fs-5" id="exampleModalLabel">
-                                                                    <?php echo $utility->ordinal($i); ?> Post Published
-                                                                    Link
-                                                                </h1>
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
+                                                                <div class="modal-header">
+                                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                                                        <?php echo $utility->ordinal($i); ?> Post
+                                                                        Published
+                                                                        Link
+                                                                    </h1>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
 
-                                                            <div class="modal-body" id="update-modal-body">
-                                                                <input type="text" class="form-control mt-1"
-                                                                    value="<?php echo $publishedStatus['url']; ?>">
-                                                            </div>
+                                                                <div class="modal-body" id="update-modal-body">
+                                                                    <input type="text" class="form-control mt-1"
+                                                                        value="<?php echo $publishedStatus['url']; ?>">
+                                                                </div>
 
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary"
-                                                                    data-bs-dismiss="modal">Close</button>
-                                                            </div>
-                                                            <?php
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-bs-dismiss="modal">Close</button>
+                                                                </div>
+                                                                <?php
                                                             }else{
                                                             ?>
-                                                            <div class="modal-header">
-                                                                <h1 class="modal-title fs-5" id="exampleModalLabel">
-                                                                    Link for <?php echo $utility->ordinal($i); ?> Post
-                                                                </h1>
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
+                                                                <div class="modal-header">
+                                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                                                        Link for <?php echo $utility->ordinal($i); ?>
+                                                                        Post
+                                                                    </h1>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
 
-                                                            <div class="modal-body" id="update-modal-body">
-                                                                <div class="mb-3" id="fieldBox-<?php echo $i; ?>">
-                                                                    <?php
+                                                                <div class="modal-body" id="update-modal-body">
+                                                                    <div class="mb-3" id="fieldBox-<?php echo $i; ?>">
+                                                                        <?php
                                                                     if ($existLinksNo > 0) {
                                                                         $linkNo = 0;
                                                                         foreach ($links as $eachLink) {
                                                                         $linkNo ++;
                                                                         ?>
-                                                                    <div class="mb-4"
-                                                                        id="linkBox-<?php echo $linkNo; ?>">
-                                                                        <label for="ancortext"
-                                                                            class="form-label fw-bold mb-0">Link
-                                                                            <?php echo $linkNo; ?></label>
+                                                                        <div class="mb-4"
+                                                                            id="linkBox-<?php echo $linkNo; ?>">
+                                                                            <label for="ancortext"
+                                                                                class="form-label fw-bold mb-0">Link
+                                                                                <?php echo $linkNo; ?></label>
 
-                                                                        <div class="text-danger fs-small">
-                                                                            <?php
+                                                                            <div class="text-danger fs-small">
+                                                                                <?php
                                                                             $border = '';
                                                                             $issues = $PackageOrder->getPackOrdLinksIssue($eachLink['id']);
                                                                             if (count($issues) > 0) {
@@ -249,28 +255,29 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                                 }
                                                                             }
                                                                             ?>
-                                                                        </div>
+                                                                            </div>
 
-                                                                        <input type="text"
-                                                                            class="form-control <?php echo $border; ?>"
-                                                                            name="ancortext[]" placeholder="Ancor Text"
-                                                                            value="<?php
+                                                                            <input type="text"
+                                                                                class="form-control <?php echo $border; ?>"
+                                                                                name="ancortext[]"
+                                                                                placeholder="Ancor Text" value="<?php
                                                                             echo $eachLink['anchor']; ?>">
-                                                                        <input type="text"
-                                                                            class="form-control mt-1 <?php echo $border; ?>"
-                                                                            name="url[]" placeholder="URL" value="<?php
+                                                                            <input type="text"
+                                                                                class="form-control mt-1 <?php echo $border; ?>"
+                                                                                name="url[]" placeholder="URL" value="<?php
                                                                             echo $eachLink['url']; ?>">
 
 
-                                                                        <div class="d-flex justify-content-end mt-1">
+                                                                            <div
+                                                                                class="d-flex justify-content-end mt-1">
 
-                                                                            <span class=" badge rounded-pill text-danger
+                                                                                <span class=" badge rounded-pill text-danger
                                                                                 border border-danger ms-2
                                                                                 cursor_pointer"
-                                                                                onclick="deleteElement('linkBox-<?php echo $linkNo; ?>')">Remove</span>
+                                                                                    onclick="deleteElement('linkBox-<?php echo $linkNo; ?>')">Remove</span>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <?php
+                                                                        <?php
                                                                         }
                                                                     }else {
                                                                         $linkNo = 1;
@@ -285,74 +292,76 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                         </div>';
                                                                     }
                                                                     ?>
-                                                                    <input type="hidden" name="order-id"
-                                                                        value="<?php echo $order['order_id']; ?>">
-                                                                    <input type="hidden" name="for-post"
-                                                                        value="<?php echo $i?>">
-                                                                    <input type="hidden" name="sectionAdded"
-                                                                        id="sectionAdded-<?php echo $i; ?>"
-                                                                        value="<?php echo $linkNo;?>">
-                                                                </div>
-                                                                <?php
+                                                                        <input type="hidden" name="order-id"
+                                                                            value="<?php echo $order['order_id']; ?>">
+                                                                        <input type="hidden" name="for-post"
+                                                                            value="<?php echo $i?>">
+                                                                        <input type="hidden" name="sectionAdded"
+                                                                            id="sectionAdded-<?php echo $i; ?>"
+                                                                            value="<?php echo $linkNo;?>">
+                                                                    </div>
+                                                                    <?php
                                                                 if ($existLinksNo >= 3 ) {
                                                                     $addBtnDispaly = 'd-none';
                                                                 }else {
                                                                     $addBtnDispaly = 'd-block';
                                                                 }
                                                                 ?>
-                                                                <div class="text-end <?php echo $addBtnDispaly; ?>">
-                                                                    <button type="button" class="btn btn-sm btn-primary"
-                                                                        onclick="addField('fieldBox-<?php echo $i; ?>', 'sectionAdded-<?php echo $i; ?>', 3)">Add</button>
+                                                                    <div class="text-end <?php echo $addBtnDispaly; ?>">
+                                                                        <button type="button"
+                                                                            class="btn btn-sm btn-primary"
+                                                                            onclick="addField('fieldBox-<?php echo $i; ?>', 'sectionAdded-<?php echo $i; ?>', 3)">Add</button>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
 
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary"
-                                                                    data-bs-dismiss="modal"
-                                                                    onclick="reloadPage()">Close</button>
-                                                                <button type="submit" class="btn btn-primary"
-                                                                    id="modal-action-btn">Save
-                                                                    changes</button>
-                                                            </div>
-                                                            <?php
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-bs-dismiss="modal"
+                                                                        onclick="reloadPage()">Close</button>
+                                                                    <button type="submit" class="btn btn-primary"
+                                                                        id="modal-action-btn">Save
+                                                                        changes</button>
+                                                                </div>
+                                                                <?php
                                                             }
                                                             ?>
-                                                        </form>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <?php
+                                                <?php
                                             }
                                             ?>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <!-- right col start  -->
-                                    <div class="col-12 col-md-6">
-                                        <div class="stretch-card grid-margin">
-                                            <h5 class="fw-bold mt-3 mt-md-0 mb-2">Updates</h5>
+                                        <!-- right col start  -->
+                                        <div class="col-12 col-md-6">
+                                            <div class="stretch-card grid-margin">
+                                                <h5 class="fw-bold mt-3 mt-md-0 mb-2 text-center text-md-start">Updates</h5>
 
-                                            <div class="card status_card " >
-                                                <div class="card-body p-0">
-                                                    <ul class="icon-data-list">
+                                                <div class="card status_card "
+                                                    style="max-height: 462px;overflow: hidden;">
+                                                    <div class="card-body p-0">
+                                                        <ul class="icon-data-list">
 
-                                                        <?php
-                                            foreach ($updates as $ordUpdate) {
-                                            ?>
+                                                            <?php
+                                                      foreach ($updates as $ordUpdate) {
+                                                       ?>
 
-                                                        <li>
-                                                            <div class="d-flex">
-                                                                <img src="<?php echo URL?>/images/user/default-user-icon.png"
-                                                                    alt="user">
-                                                                <div >
-                                                                    <h5 class="text-info mb-1">
-                                                                        <?php
+                                                            <li>
+                                                                <div class="d-flex">
+                                                                    <img src="<?php echo URL?>/images/user/default-user-icon.png"
+                                                                        alt="user">
+                                                                    <div>
+                                                                        <h5 class="text-info mb-1">
+                                                                            <?php
                                                                 $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
                                                                 echo $updateShow[0][1];
                                                                 ?>
-                                                                    </h5>
-                                                                    <p class="mb-0">
-                                                                        <?php
+                                                                        </h5>
+                                                                        <p class="mb-0">
+                                                                            <?php
                                                                         if ($ordUpdate['dsc'] != null) {
                                                                             echo $ordUpdate['dsc'] . '<br>';
                                                                         }
@@ -361,27 +370,95 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                             echo '<small>By ' . $ordUpdate['updator'] . '</small> <br>';
                                                                         }
                                                                         ?>
-                                                                    <small><?php echo $ordUpdate['added_on']; ?></small>
-                                                                </p>
+                                                                            <small><?php echo $ordUpdate['added_on']; ?></small>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                            </li>
+                                                            <?php
+                                                       }
+                                                       ?>
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="">
+                                                    <button type="button " class="btn btn-primary w-100" data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal">View
+                                                        More</button>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog m-0 m-sm-auto">
+                                                            <div class="modal-content px-0 px-md-4">
+                                                                <div class="modal-header">
+                                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                                                    Updates</h1>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body p-2">
+                                                                    <div class="col-12 ">
+                                                                        <div class="stretch-card grid-margin">
+                                                                            <div class="card status_card " style="   overflow-y: scroll; max-height: 500px;">
+                                                                                <div class="card-body p-0">
+                                                                                    <ul class="icon-data-list">
+
+                                                                                        <?php
+                                              foreach ($updates as $ordUpdate) {
+                                              ?>
+                                                                                        <li>
+                                                                                            <div class="d-flex">
+                                                                                                <img src="<?php echo URL?>/images/user/default-user-icon.png"
+                                                                                                    alt="user">
+                                                                                                <div>
+                                                                                                    <h5
+                                                                                                        class="text-info mb-1">
+                                                                                                        <?php
+                                                                $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
+                                                                echo $updateShow[0][1];
+                                                                ?>
+                                                                                                    </h5>
+                                                                                                    <p class="mb-0">
+                                                                                                        <?php
+                                                                        if ($ordUpdate['dsc'] != null) {
+                                                                            echo $ordUpdate['dsc'] . '<br>';
+                                                                        }
+
+                                                                        if ($ordUpdate['updator'] != null) {
+                                                                            echo '<small>By ' . $ordUpdate['updator'] . '</small> <br>';
+                                                                        }
+                                                                        ?>
+                                                                                                        <small><?php echo $ordUpdate['added_on']; ?></small>
+                                                                                                    </p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <hr>
+                                                                                        </li>
+                                                                                        <?php
+                                             }
+                                             ?>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <hr>
-                                                        </li>
-                                                        <?php
-                                            }
-                                            ?>
-
-                                                    </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </div>
+                                        <!-- right col end  -->
 
                                     </div>
-                                    <!-- right col end  -->
+                                </div>
 
-                                </div>
-                                </div>
-                                
 
                             </div>
                         </div>

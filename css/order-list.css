@@ -225,16 +225,17 @@ small, .small {
     text-transform: inherit;
 }
 .crd-box-fr-scroll{
-    overflow-y: scroll;
-     max-height: 390px;
+    /* overflow-y: scroll;
+     max-height: 390px; */
      border: none;
 }
-.crd-box-fr-scroll::-webkit-scrollbar-thumb {
+/* .crd-box-fr-scroll::-webkit-scrollbar-thumb {
     background: var(#333333) !important;
     border-radius: 2px;
-}
+} */
 .status_card{
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 8px;
     border: 1px solid #d3d3d3a1;
     padding: .5rem;
+
 }

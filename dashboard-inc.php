@@ -119,7 +119,7 @@ $activePage = basename($_SERVER['PHP_SELF']);
                     class="hidden-xs hidden-sm">Dashboard</span></a>
         </li>
         <li
-            class="<?= ($activePage == 'my-orders.php' || $activePage == 'guest-post-order-list.php') ? 'active-styling':''; if($activePage == 'guest-post-article-submit.php'){echo 'active-styling';}  ?>">
+            class="<?= ($activePage == 'my-orders.php' || $activePage == 'guest-post-order-list.php' || $activePage == 'package-order-history.php') ? 'active-styling':''; if($activePage == 'guest-post-article-submit.php'){echo 'active-styling';}  ?>">
             <a href="my-orders.php" class="dboard-li-atag"><i class=" fas fa-handshake pe-2" aria-hidden="true"></i><span
                     class="hidden-xs hidden-sm">My Orders</span></a>
         </li>
