@@ -5,7 +5,6 @@ require_once dirname(__DIR__)."/includes/constant.inc.php";
 
 require_once ROOT_DIR."/includes/content.inc.php";
 require_once ROOT_DIR."/_config/dbconnect.php";
-require_once ROOT_DIR."/_config/dbconnect.trait.php";
 
 require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/gp-package.class.php";
