@@ -5,7 +5,7 @@
 	//URLS Details 
 	$protocol = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
 
-	define('LOCAL_DIR',			'/fastlinky');
+	define('LOCAL_DIR',			'/fastlinky'); // value of this constant should be removed when it is in server
 	define('URL', 				$protocol.$_SERVER['HTTP_HOST'].LOCAL_DIR);
 	// define('ROOT_DIR', 			dirname(dirname(__FILE__)));
 	// define('ADM_DIR', 			dirname(dirname(__FILE__)).'/admin/');
@@ -72,9 +72,9 @@
 
 
 	//session constant
-	define('ADM_SESS',   						"continuecontent_SESSION_2016ADM_SESS"); 		//admin session var	
-	define('USR_SESS',   						"USERcontinuecontent_ecom_SESS2016"); 			//user session var	
-	define('STAFF_SESS',   						"SESS_continuecontentMar2016");					//user session var
+	define('ADM_SESS',   						"ADMINLOGGEDIN"); 		//admin session var	
+	define('USR_SESS',   						"USERLOGGEDIN"); 		//user session var	
+	// define('STAFF_SESS',   						"EMPLOGGEDIN");					//user session var
 
 	
 	//display style constant

@@ -14,13 +14,6 @@ require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/location.class.php";
 require_once ROOT_DIR."/classes/countries.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
-###############################################################################endregion$typeM		    = $utility->returnGetVar('typeM','');
-//user id
-$cusId		    = $utility->returnSess('userid', 0);
-$cusDtl		    = $customer->getCustomerData($cusId);
-$currentPage    = $utility->setCurrentPageSession();
-
-require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 /* INSTANTIATING CLASSES */
 $DateUtil       = new DateUtil();
@@ -31,6 +24,15 @@ $PackageOrder   = new PackageOrder();
 $Location       = new Location();
 $Countries      = new Countries();
 $utility		= new Utility();
+
+
+###############################################################################endregion$typeM		    = $utility->returnGetVar('typeM','');
+//user id
+$cusId		    = $utility->returnSess('userid', 0);
+$cusDtl		    = $customer->getCustomerData($cusId);
+$currentPage    = $utility->setCurrentPageSession();
+
+require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 
 
