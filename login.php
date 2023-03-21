@@ -37,6 +37,8 @@ $typeM			= $utility->returnGetVar('typeM','');
 $cusId			= $utility->returnSess('userid', 0);
 $return_url		= $utility->goToPreviousSessionPage();
 //$cusDtl			= $client->getClientData($cusId);
+// echo $return_url;exit;
+// print_r($_SESSION);exit;
 
 
 

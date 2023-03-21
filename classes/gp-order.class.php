@@ -287,12 +287,15 @@ class PackageOrder extends DatabaseConnection{
   ##############################################################################################################
 
 
-  function addPackPubLinks($orderId, $for_post, $pubUrl, $status, $added_by){
+  /**
+   * status code 1 = delivered;
+   */
+  function addPackPubLinks($orderId, $for_post, $pubUrl, $added_by){
 
       $pubUrl = addslashes(trim($pubUrl));
 
       $query =  "INSERT INTO `package_publish_links`(`order_id`,	`for_post`,	`url`, `status`, `added_on`, `added_by`)
-                                              VALUES ('$orderId', '$for_post', '$pubUrl', `$status`, now(), '$added_by')";
+                                              VALUES ('$orderId', '$for_post', '$pubUrl', '1', now(), '$added_by')";
       $res = $this->conn->query($query);
       // $count = $this->conn->insert_id();
       return $res;

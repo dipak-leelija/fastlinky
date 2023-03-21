@@ -29,6 +29,7 @@ $typeM		    = $utility->returnGetVar('typeM','');
 $cusId		    = $utility->returnSess('userid', 0);
 $cusDtl		    = $customer->getCustomerData($cusId);
 $currentPage    = $utility->setCurrentPageSession();
+// print_r($_SESSION);exit;
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
@@ -124,7 +125,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                 // foreach($packFeatures as $feature){
                                                 //     echo $feature['features'];
                                                 // }
-                                                    ?>
+                                                ?>
                                                 <li> Order : <?php echo $ordStatus[0][1]; ?></li>
                                                 <li> Payment : <?php echo $payStatus[0][1]; ?></li>
                                                 <li> Date :
@@ -158,6 +159,90 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                     </div>
                                 </div>
                                 <!-- Details section End -->
+
+
+
+
+                                <?php
+                                // 4 is the code of ordered status 
+                                if ($order['order_status'] == 4) {
+                                    ?>
+                                <div class="rounded mt-3" style="background: aliceblue;">
+                                    <div class="d-flex justify-content-center py-3">
+                                        Please wait for the response
+                                        <!-- <button class="btn btn-sm btn-danger mx-2" data-toggle="modal"
+                                            data-target="#rejectModal">Cancel Order</button> -->
+                                    </div>
+                                </div>
+                                <?php
+                                }elseif ($order['order_status'] == 10) {
+                                    ?>
+                                <div class="rounded bg-danger mt-3 text-center">
+                                    <div class="d-flex justify-content-center pt-3">
+                                        <h4 class="font-weight-bold"> Order Rejected </h4>
+                                    </div>
+                                    <button class="btn btn-sm btn-info mt-1 mb-3" data-toggle="modal"
+                                        data-target="#updatesModal">View Updates</button>
+                                </div>
+
+                                <div class="modal fade" id="updatesModal" tabindex="-1"
+                                    aria-labelledby="updatesModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p class="card-title">Updates</p>
+                                                <ul class="icon-data-list">
+                                                    <?php
+                                                    foreach ($updates as $ordUpdate) {
+                                                    ?>
+
+                                                    <li>
+                                                        <div class="d-flex">
+                                                            <img src="images/faces/face1.jpg" alt="user">
+                                                            <div>
+                                                                <p class="text-info mb-1">
+                                                                    <?php
+                                                                $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
+                                                                echo $updateShow[0][1];
+                                                                ?>
+                                                                </p>
+                                                                <p class="mb-0">
+                                                                    <?php
+                                                                        if ($ordUpdate['dsc'] != null) {
+                                                                            echo $ordUpdate['dsc'] . '<br>';
+                                                                        }
+
+                                                                        if ($ordUpdate['updator'] != null) {
+                                                                            echo '<small>By ' . $ordUpdate['updator'] . '</small>';
+                                                                        }
+                                                                        ?>
+                                                                </p>
+                                                                <small><?php echo $ordUpdate['added_on']; ?></small>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <?php
+                                }else {
+                                ?>
+
+                                <!-- row start  -->
                                 <div class="p-3 row">
                                     <div class="col-12 col-md-6">
                                         <div class="action_box">
@@ -378,7 +463,10 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                     <!-- right col end  -->
 
                                 </div>
-
+                                <!-- row end  -->
+                                <?php
+                                }
+                            ?>
                             </div>
                         </div>
                     </div>

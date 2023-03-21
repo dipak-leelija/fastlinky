@@ -72,9 +72,9 @@
 
 
 	//session constant
-	define('ADM_SESS',   						"continuecontent_SESSION_2016ADM_SESS"); 		//admin session var	
-	define('USR_SESS',   						"USERcontinuecontent_ecom_SESS2016"); 			//user session var	
-	define('STAFF_SESS',   						"SESS_continuecontentMar2016");					//user session var
+	define('ADM_SESS',   						"ADMINLOGGEDIN"); 		//admin session var	
+	define('USR_SESS',   						"USERLOGGEDIN"); 		//user session var	
+	// define('STAFF_SESS',   						"EMPLOGGEDIN");					//user session var
 
 	
 	//display style constant
