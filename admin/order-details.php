@@ -4,7 +4,6 @@ session_start();
 include_once ADM_DIR . 'checkSession.php';
 
 require_once ROOT_DIR . "/_config/dbconnect.php";
-require_once ROOT_DIR . "/_config/dbconnect.trait.php";
 
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/error.class.php";

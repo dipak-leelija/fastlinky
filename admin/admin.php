@@ -2,11 +2,7 @@
 require_once "../includes/constant.inc.php";
 session_start();
 include_once('checkSession.php');
-// include_once('../_config/connect.php');
 require_once "../_config/dbconnect.php";
-require_once "../_config/dbconnect.trait.php";
-
-
 
 require_once("../classes/adminLogin.class.php"); 
 require_once("../classes/date.class.php"); 

@@ -1,14 +1,10 @@
 <?php 
-session_start(); 
-// require_once "../_config/dbconnect.php";
-require_once "../_config/dbconnect.php";
-require_once "../_config/dbconnect.trait.php";
-
 require_once("../includes/constant.inc.php");
+session_start(); 
+require_once "../_config/dbconnect.php";
 
 include_once('../classes/encrypt.inc.php'); 
 include_once('../classes/adminLogin.class.php'); 
-
 require_once("../classes/utility.class.php");
 require_once("../classes/utilityMesg.class.php"); 
 
@@ -23,7 +19,6 @@ $uMesg 			= new MesgUtility();
 //declare vars
 $typeM		= $utility->returnGetVar('typeM','');
 
-// echo $typeM;exit;
 if(isset($_POST['btnLogin'])){
 
 	$login = $_POST['txtLogin']; 

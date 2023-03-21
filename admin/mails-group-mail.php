@@ -1,18 +1,15 @@
-<?php 
+<?php
+require_once("../includes/constant.inc.php");
 session_start();
 include_once('checkSession.php');
-// require_once("../_config/connect.php");
 require_once "../_config/dbconnect.php";
-require_once "../_config/dbconnect.trait.php";
 
-require_once("../includes/constant.inc.php"); 
 require_once("../includes/email.inc.php"); 
 
 require_once("../classes/adminLogin.class.php"); 
 require_once("../classes/customer.class.php");
 require_once("../classes/search.class.php");
 include_once("../classes/emails.class.php");
-
 require_once("../classes/error.class.php"); 
 require_once("../classes/date.class.php"); 
 require_once("../classes/utility.class.php"); 
@@ -39,11 +36,6 @@ $typeM		= $utility->returnGetVar('typeM','');
 
 //declare vars
 $numResDisplay	= (int)$utility->returnGetVar('numResDisplay', 10);
-
-/*if($numResDisplay == 0)
-{
-	$numResDisplay = 10;
-}*/
 
 
 //no of customer

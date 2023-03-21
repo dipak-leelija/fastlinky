@@ -1,18 +1,15 @@
 <?php 
+require_once("../includes/constant.inc.php");
 session_start();
 include_once('checkSession.php');
-// include_once('../_config/connect.php');
 require_once "../_config/dbconnect.php";
-require_once "../_config/dbconnect.trait.php";
 
 require_once("../classes/adminLogin.class.php"); 
 require_once("../classes/date.class.php"); 
 
 require_once("../classes/content-order.class.php");
-// require_once("../classes/product.class.php");
 
 require_once("../classes/utility.class.php"); 
-require_once("../includes/constant.inc.php");
 
 /* INSTANTIATING CLASSES */
 $adminLogin 	= new adminLogin();

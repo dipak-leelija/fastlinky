@@ -1,16 +1,11 @@
-<?php 
-error_reporting(E_ALL);
-error_reporting(-1);
-ini_set('error_reporting', E_ALL);
-
+<?php
+require_once("../includes/constant.inc.php");
+require_once "../includes/email.inc.php";
 session_start();
 include_once('checkSession.php');
 
 require_once "../_config/dbconnect.php";
-require_once "../_config/dbconnect.trait.php";
-
-require_once "../includes/constant.inc.php"; 
-require_once "../includes/email.inc.php";
+ 
 
 require_once("../classes/adminLogin.class.php"); 
 require_once("../classes/customer.class.php");

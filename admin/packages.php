@@ -1,11 +1,9 @@
-<?php 
+<?php
+require_once "../includes/constant.inc.php";
 session_start();
 include_once('checkSession.php');
-// include_once('../_config/connect.php');
-require_once "../includes/constant.inc.php";
 
 require_once ROOT_DIR."/_config/dbconnect.php";
-require_once ROOT_DIR."/_config/dbconnect.trait.php";
 
 require_once ROOT_DIR."/includes/user.inc.php";
 require_once ROOT_DIR.'/classes/encrypt.inc.php';
