@@ -1,14 +1,11 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
+require_once "../../includes/constant.inc.php";
 session_start();
 include_once('checkSession.php');
 
 
 require_once "../../_config/dbconnect.php";
-require_once "../../_config/dbconnect.trait.php";
+
 require_once "../../classes/utilityMesg.class.php";
 require_once "../../classes/content-order.class.php";
 
