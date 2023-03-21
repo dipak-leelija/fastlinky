@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/ws6gs9ua9bm3/fastlinky.com/
+    - /bin/cp * $DEPLOYPATH
+
+    
