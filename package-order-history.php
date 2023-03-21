@@ -159,6 +159,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                     </div>
                                 </div>
                                 <!-- Details section End -->
+<<<<<<< HEAD
 
 
 
@@ -244,6 +245,10 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
 
                                 <!-- row start  -->
                                 <div class="p-3 row">
+=======
+                                <div class="card crd-box-fr-scroll mt-3">
+                                <div class="p-0 px-0 row m-0">
+>>>>>>> 91b0db7a9376d15c557d4d99e4baa75482c68c72
                                     <div class="col-12 col-md-6">
                                         <div class="action_box">
                                             <h5 class="fw-bold">Upload Links</h5>
@@ -266,7 +271,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                     $btnIcon = 'fa-solid fa-circle-exclamation px-3 text-warning';
 
 
-                                                echo "<button class='d-block  d_border mt-2 px-5 py-2 w-50 ".$btnBg."' data-bs-toggle='modal' data-bs-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
+                                                echo "<button class='d-block  d_border mt-2 px-3 py-2 ms-md-0 w-75 m-auto m-md-2  ".$btnBg."' data-bs-toggle='modal' data-bs-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
 
                                             ?>
                                             <!-- Modal -->
@@ -414,10 +419,10 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                     <!-- right col start  -->
                                     <div class="col-12 col-md-6">
                                         <div class="stretch-card grid-margin">
-                                            <h5 class="fw-bold">Updates</h5>
+                                            <h5 class="fw-bold mt-3 mt-md-0 mb-2">Updates</h5>
 
-                                            <div class="card status_card rounded-1r border shadow">
-                                                <div class="card-body">
+                                            <div class="card status_card " >
+                                                <div class="card-body p-0">
                                                     <ul class="icon-data-list">
 
                                                         <?php
@@ -428,13 +433,13 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                             <div class="d-flex">
                                                                 <img src="<?php echo URL?>/images/user/default-user-icon.png"
                                                                     alt="user">
-                                                                <div>
-                                                                    <p class="text-info mb-1">
+                                                                <div >
+                                                                    <h5 class="text-info mb-1">
                                                                         <?php
                                                                 $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
                                                                 echo $updateShow[0][1];
                                                                 ?>
-                                                                    </p>
+                                                                    </h5>
                                                                     <p class="mb-0">
                                                                         <?php
                                                                         if ($ordUpdate['dsc'] != null) {
@@ -442,13 +447,14 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                         }
 
                                                                         if ($ordUpdate['updator'] != null) {
-                                                                            echo '<small>By ' . $ordUpdate['updator'] . '</small>';
+                                                                            echo '<small>By ' . $ordUpdate['updator'] . '</small> <br>';
                                                                         }
                                                                         ?>
-                                                                    </p>
                                                                     <small><?php echo $ordUpdate['added_on']; ?></small>
+                                                                </p>
                                                                 </div>
                                                             </div>
+                                                            <hr>
                                                         </li>
                                                         <?php
                                             }
@@ -463,10 +469,16 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                     <!-- right col end  -->
 
                                 </div>
+<<<<<<< HEAD
                                 <!-- row end  -->
                                 <?php
                                 }
                             ?>
+=======
+                                </div>
+                                
+
+>>>>>>> 91b0db7a9376d15c557d4d99e4baa75482c68c72
                             </div>
                         </div>
                     </div>

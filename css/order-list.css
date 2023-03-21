@@ -194,11 +194,16 @@ small, .small {
     padding-left: 0;
     position: relative;
     margin-bottom: 0;
-    font-family: "Nunito", sans-serif;
+    font-family: "Satoshi-Variable";
+    /* font-family: "Nunito", sans-serif; */
 }
 
 .icon-data-list li {
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
+}
+.icon-data-list hr {
+    margin: .4rem 0;
+    color: cadetblue;
 }
 
 .icon-data-list li img {
@@ -206,4 +211,30 @@ small, .small {
     height: 40px;
     margin-right: 10px;
     border-radius: 100%;
+}
+.icon-data-list h5{
+    font-size: 1.2rem;
+}
+.icon-data-list p{
+    font-weight: 500;
+    font-size: 1rem;
+    color: black;
+    line-height: 1.5;
+}
+.icon-data-list small{
+    text-transform: inherit;
+}
+.crd-box-fr-scroll{
+    overflow-y: scroll;
+     max-height: 390px;
+     border: none;
+}
+.crd-box-fr-scroll::-webkit-scrollbar-thumb {
+    background: var(#333333) !important;
+    border-radius: 2px;
+}
+.status_card{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 8px;
+    border: 1px solid #d3d3d3a1;
+    padding: .5rem;
 }
