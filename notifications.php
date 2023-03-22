@@ -40,7 +40,7 @@ if($cusDtl[0][0] == 0){
 
 // $Emails->getemailDetail('to_email', $colVal)
 
-$mails = $Emails->ShowMailsbyCol('to_email', $_SESSION['USERcontinuecontent_ecom_SESS2016']);
+$mails = $Emails->ShowMailsbyCol('to_email', $_SESSION[USR_SESS]);
 
 ?>
 <!DOCTYPE HTML>
