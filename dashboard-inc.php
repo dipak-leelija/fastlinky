@@ -1,6 +1,5 @@
 <?php
 require_once("includes/constant.inc.php");
-require_once("_config/connect.php");
 
 require_once("classes/date.class.php");
 require_once("classes/error.class.php");
