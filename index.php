@@ -93,8 +93,8 @@ if(isset($_GET['seo_url']))
                 <div class="col-12 col-lg-6 col-md-6  pe-0 ps-0 pe-lg-3 d-flex align-items-center">
                     <div class="mlb-wrapping">
                         <h1 class="mlb-starting-main-h1">
-                            Cheaking the deployment
-                        <!-- Give Your Organic Growth a Boost With High-Quality Backlinks -->
+                            <!-- Cheaking the deployment -->
+                        Give Your Organic Growth a Boost With High-Quality Backlinks
                         </h1>
                         <p class=" mt-3 mb-4 py-0 py-md-2 mlb-starting-main-p">We help global brands to grow their ROI
                             3x faster with our data-driven strategies and link-building expertise.
