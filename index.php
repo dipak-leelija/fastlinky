@@ -65,8 +65,8 @@ if(isset($_GET['seo_url']))
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
     <link href="css/index.css" rel='stylesheet' type='text/css' />
-    <link href="css/testimonials.css rel="stylesheet"">
-    <link href="css/clientside-logo.css rel="stylesheet"">
+    <link href="css/testimonials.css" rel="stylesheet">
+    <link href="css/clientside-logo.css" rel="stylesheet">
 
     <!-- font-awesome icons -->
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
