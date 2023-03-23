@@ -176,17 +176,17 @@ $allFeatures       = $GPPackage->featureByPackageId($packageId);
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="<?php echo ADM_PATH; ?>/vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?php echo ADM_URL; ?>/vendors/js/vendor.bundle.base.js"></script>
     <script src="<?php echo URL; ?>/plugins/jquery-3.6.0.min.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="<?php echo ADM_PATH; ?>/js/off-canvas.js"></script>
-    <script src="<?php echo ADM_PATH; ?>/js/hoverable-collapse.js"></script>
-    <script src="<?php echo ADM_PATH; ?>/js/template.js"></script>
-    <script src="<?php echo ADM_PATH; ?>/js/settings.js"></script>
-    <script src="<?php echo ADM_PATH; ?>/js/todolist.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/off-canvas.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/hoverable-collapse.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/template.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/settings.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/todolist.js"></script>
 
     <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
     <script src="<?php echo URL; ?>/plugins/data-table/simple-datatables.js"></script>

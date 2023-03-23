@@ -11,12 +11,12 @@
                         <a href="mailto:<?php echo SITE_EMAIL; ?>" style="color:white;">
                             <li class="mb-4 pl-4">
                                 <span class="position-absolute"><i class="fas fa-envelope"></i></span>
-                                billing@fastlinky.com
+                                <?php echo SITE_EMAIL;?>
                             </li>
                         </a>
                         <a href="tel:+91 874224523" style="color:white;">
                             <li class="mb-4 pl-4">
-                                <span class="position-absolute"><i class="fas fa-phone"></i></span> (021)-241454-545
+                                <span class="position-absolute"><i class="fas fa-phone"></i></span> <?php echo SITE_CONTACT_NO;?>
                             </li>
                         </a>
                         <li class="mb-4 pl-4">
@@ -48,12 +48,9 @@
                                 <div class="form-group">
                                     <label class="required-field" for="firstname">First Name</label>
                                     <input type="text" minlength="4" class="form-control" id="firstname" name="firstname"
-                                        placeholder="John" required>
+                                        placeholder="Your First Name" required>
                                     <div class="invalid-feedback">
                                         Please Enter your first Name!
-                                    </div>
-                                    <div class="valid-feedback">
-                                        Looks good!
                                     </div>
                                 </div>
                             </div>
@@ -62,12 +59,9 @@
                                 <div class="form-group">
                                     <label for="lastName">Last Name</label>
                                     <input type="text" minlength="4" class="form-control" id="lastName" name="lastName"
-                                        placeholder="Doe" required>
+                                        placeholder="Your Last Name" required>
                                     <div class="invalid-feedback">
                                         Please Enter your last Name!
-                                    </div>
-                                    <div class="valid-feedback">
-                                        Looks good!
                                     </div>
                                 </div>
                             </div>
@@ -76,12 +70,9 @@
                                 <div class="form-group">
                                     <label class="required-field" for="email">Email</label>
                                     <input type="email" class="form-control" id="email" name="email"
-                                        placeholder="example@gmail.com" required>
+                                        placeholder="Your mail address" required>
                                     <div class="invalid-feedback">
                                         Please enter your email!
-                                    </div>
-                                    <div class="valid-feedback">
-                                        Email is valid!
                                     </div>
                                 </div>
                             </div>
@@ -94,9 +85,6 @@
                                     <div class="invalid-feedback">
                                         Please enter valid phone Number!
                                     </div>
-                                    <div class="valid-feedback">
-                                        Phone number is valid!
-                                    </div>
                                 </div>
                             </div>
 
@@ -104,12 +92,9 @@
                                 <div class="form-group">
                                     <label class="required-field" for="message">How can we help?</label>
                                     <textarea class="form-control" minlength="10" id="message" name="message" rows="4"
-                                        placeholder="Hi there, I would like to....." required></textarea>
+                                        placeholder="Write here....." required></textarea>
                                     <div class="invalid-feedback">
                                         Please enter your queries!
-                                    </div>
-                                    <div class="valid-feedback">
-                                        We will solve this soon!
                                     </div>
                                 </div>
                             </div>

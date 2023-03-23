@@ -1,32 +1,5 @@
 <?php
-
-// require_once "_config/dbconnect.php";
-
-
-
-/*
-
-USABLE FOR DISPLAY, EDIT, DELETE CONTACT FROM THE ADMIN CONTROL PANEL.
-
-AUTHOR 		: SAFIKUL
-
-DATE   		: JULY 09, 2019
-
-VERSION		: 1.0
-
-COPYRIGHT	: LeeLija
-
-EMAIL		: safikulislamwb@gmail.com
-
-*/
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-class Contact extends DatabaseConnection
-
-{
+class Contact extends DatabaseConnection{
 
 	
 
@@ -147,15 +120,10 @@ class Contact extends DatabaseConnection
 				$data	=	array(
 
 								  $result['id'],				//0
-
 								  $result['contact_name'],		//1
-
 								  $result['contact_email'],		//2
-
 								  $result['contact_phone'],		//3
-
 								  $result['message'],			//4
-
 								  $result['added_on']			//5
 
 								);
@@ -178,14 +146,14 @@ class Contact extends DatabaseConnection
 
 	//  Display Contact identity  use
 	public function ShowContact(){
-
-		$res = "SELECT * FROM contact order by id asc";
-		$resQuery = $this->conn->query($res);
-		while($row = $resQuery->fetch_array()) {
+		$temp_arr 	= array();
+		$res 		= "SELECT * FROM contact order by id asc";
+		$resQuery 	= $this->conn->query($res);
+		while($row 	= $resQuery->fetch_array()) {
 			 $temp_arr[] =$row;
 	
-		 }
-		 return $temp_arr;
+		}
+		return $temp_arr;
 	}
 	
 	

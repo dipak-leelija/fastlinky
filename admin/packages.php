@@ -55,28 +55,28 @@ $packageCats = $GPPackage->allPackagesCat();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Packages | <?php echo COMPANY_FULL_NAME;?></title>
+    <title>Packages - <?php echo COMPANY_FULL_NAME;?></title>
     <link rel="icon" href="<?php echo FAVCON_PATH;?>" type="image/png">
     <!-- plugins:css -->
-    <link rel="stylesheet" href="<?php echo ADM_PATH; ?>/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="<?php echo ADM_PATH; ?>/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="<?php echo ADM_URL; ?>/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="<?php echo ADM_URL; ?>/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/plugins/data-table/style.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/css/order-table.css">
 
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
 
-    <link rel="stylesheet" href="<?php echo ADM_PATH; ?>/css/vertical-layout-light/style.css">
+    <link rel="stylesheet" href="<?php echo ADM_URL; ?>/css/vertical-layout-light/style.css">
     <!-- endinject -->
 
-
+<!-- 
     <style>
     @media (max-width:1200px) {
         .modal .modal-dialog .modal-content .modal-body {
             padding: 0px !important;
         }
     }
-    </style>
+    </style> -->
 </head>
 
 <body>
@@ -292,17 +292,17 @@ $packageCats = $GPPackage->allPackagesCat();
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="<?php echo ADM_PATH; ?>/vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?php echo ADM_URL; ?>/vendors/js/vendor.bundle.base.js"></script>
     <script src="<?php echo URL; ?>/plugins/jquery-3.6.0.min.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="<?php echo ADM_PATH; ?>/js/off-canvas.js"></script>
-    <script src="<?php echo ADM_PATH; ?>/js/hoverable-collapse.js"></script>
-    <script src="<?php echo ADM_PATH; ?>/js/template.js"></script>
-    <script src="<?php echo ADM_PATH; ?>/js/settings.js"></script>
-    <script src="<?php echo ADM_PATH; ?>/js/todolist.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/off-canvas.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/hoverable-collapse.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/template.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/settings.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/todolist.js"></script>
 
     <script src="<?php echo URL; ?>/plugins/data-table/simple-datatables.js"></script>
     <script src="<?php echo URL; ?>/plugins/tinymce/tinymce.js"></script>
