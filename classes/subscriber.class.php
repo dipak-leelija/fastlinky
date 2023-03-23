@@ -1,165 +1,5 @@
 <?php 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/**
-	*	Managing Initiativeletter subscriber 
-	*	
-	*	@author		Himadri Shekhar Roy
-	*	@date   	September 29, 2006
-	*	@update		February 15, 2008
-	*	@version	2.0
-	*	@copyright	Analyze System Software Pvt. Ltd.
-	*	@email		himadri.s.roy@ansysoft.com
-	*/
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	
-	include_once('utility.class.php');
-	class EmailSubscriber extends Utility
-	{
-		//////////////////////////////////////////////////////////////////////////////////////////
-		//
-		//								Subscriber Category
-		//
-		//////////////////////////////////////////////////////////////////////////////////////////
-		
-		/**
-		* 	Add a new Category
-		*	
-		*	@param
-		*			$title		Title/heading of the category
-		*			$desc		description of the category
-		*			
-		*	@return	int
-		*/
-		function addCategory($title, $desc)
-		{
-			$title 		= trim(addslashes($title));
-			$desc 		= trim(addslashes($desc));
-			
-			$sql 	= "INSERT INTO email_categories
-					  (title, description, added_on)
-					  VALUES
-					  ('$title', '$desc', now())";
-			$query	= mysql_query($sql);
-			
-			$result = mysql_insert_id();
-			
-			return $result;
-		}//eof
-		
-		/**
-		*	Delete a category from the database
-		*
-		*	@param 
-		*			$id	category id
-		*
-		*	@return string
-		*/
-		function deleteCategory($id)
-		{
-			//delete from category
-			$sql	= "DELETE FROM email_categories WHERE cat_id='$id'";
-			$query	= mysql_query($sql);
-			
-			$result = '';
-			if(!$query)
-			{
-				$result = "ER103";
-			}
-			else
-			{
-				$result = "SU103";
-			}
-			
-			//return the result
-			return $result;
-		}//eof
-		
-		/**
-		*	Update 	Category
-		*	
-		*	@param
-		*			$id			Category content identity
-		*			$title		Title/heading of the category
-		*			$desc		Description of the place
-		*			
-		*
-		*	@return string
-		*/
-		function updateCategory($id, $title, $desc)
-		{
-			
-			$title 	= trim(addslashes($title));
-			$desc 	= trim(addslashes($desc));
-			
-			$sql	= "UPDATE email_categories SET
-					  title			= '$title',
-					  description	= '$desc',
-					  modified_on 	=  now()
-					  WHERE 
-					  cat_id 	= '$id'
-					  ";
-			$query	= mysql_query($sql);
-			
-			$result = '';
-			if(!$query)
-			{
-				$result = "ER102";
-			}
-			else
-			{
-				$result = "SU102";
-			}
-			
-			//return the result
-			return $result;
-		}//eof
-		
-		/**
-		*	Retrieve all category id 
-		*
-		*	@return array
-		*/
-		function getCategoryId(){
-
-			$data	= array();
-			$sql	= "SELECT cat_id FROM email_categories ORDER BY title";
-			$query	= $this->conn->query($sql);
-			
-			if($this->conn->num_rows > 0)
-			{
-				while($result = $query->fetch_array())
-				{
-					$data[] = $result['cat_id'];
-				}
-			}
-			return $data;
-		}//eof
-		
-		/**
-		*	Retrieve all category data
-		*	@return array
-		*	@param	$id		id of the category
-		*/
-		function getCategoryData($id)
-		{
-			//create the statement
-			$sql	= "SELECT * FROM email_categories WHERE cat_id= '$id'";
-			$query	= mysql_query($sql);
-			$data	= array();
-			//echo $query;
-			if(mysql_num_rows($query) == 1)
-			{
-				$result = mysql_fetch_array($query);
-				$data = array(
-							 $result['title'],			//0
-							 $result['description'],	//1
-							 $result['added_on'],		//2
-							 $result['modified_on'],	//3
-							 );
-			}
-			return $data;
-		}//eof
-		
+	class EmailSubscriber extends Customer{
 		
 		//////////////////////////////////////////////////////////////////////////////////////////
 		//
@@ -167,69 +7,61 @@
 		//
 		//////////////////////////////////////////////////////////////////////////////////////////
 		
-		function addEmail($email){
+		function addSubscriber($email){
+			$allEmails = $this->getUserByEmail($email);
 
-			$sqli = "SELECT * FROM `email_subscriber` WHERE `email_subscriber`.`email` = '$email'";
-       
-			$selectemail  = $this->conn->query($sqli);
+			if (isset($_SESSION[USR_SESS])) {
+				$customerDetails = $this->getCustomerByemail($email);
+				if ($allEmails == 0) {
+					if ($customerDetails > 0) {
+						if ($customerDetails['email'] == $email) {
+						
+							$mobNo = '';
+							if($customerDetails['mobile'] != ''){
+								$mobNo = $customerDetails['mobile'];
+							}elseif ($customerDetails['phone1'] != '') {
+								$mobNo = $customerDetails['phone1'];
+							}else {
+								$mobNo = $customerDetails['phone2'];
+							}
 
-			$emailrows = $selectemail->num_rows;
+							$status = 1;
 
-        if ($emailrows == 0) {
+							$added = $this->addSubscriberDetails($customerDetails['customer_id'], $email, $customerDetails['fname'], $customerDetails['lname'], $mobNo, $customerDetails['organization'], $status);
+							if ($added == 1) {
+								return ESSU;
+							}
+						}else {
+							$added = $this->addMail($email);
+							return ESSU;
+						}
+					}else {
+						$added = $this->addMail($email);
+						return ESSU;
+					}
 
-			$sql = "SELECT * FROM `customer` WHERE `customer`.`email` = '$email'";
-		
-			$selectdata   = $this->conn->query($sql);
+				}else{
+					return ESAE;
+				}
+			}else {
+				if ($allEmails == 0) {
+					$added = $this->addMail($email);
+					return ESSU;
+				}else {
+					return ESAE;
+				}
+			}	
+		}
 
-			foreach($selectdata as $rowsdata){				
-				$customer_id  = $rowsdata['customer_id'];
-				$fname        = $rowsdata['fname'];
-				$lname        = $rowsdata['lname'];
-				$status       = $rowsdata['status'];
-			}
-	
+		function addMail($email){
 
-			$sql = "SELECT * FROM `customer_address` WHERE `customer_address`.`customer_id` = '$customer_id'";
-		
-			$selecaddress  = $this->conn->query($sql);
-
-			foreach($selecaddress as $rowdata){				
-				$phone1   = $rowdata['phone1'];
-			}
-
-
-			$rows = $selectdata->num_rows;
-
-			if ($rows == 0) {				  
-			$sql = "INSERT INTO `email_subscriber`
-			( `email`, added_on)
-			VALUES
-			('$email', now())";
-
+			$email	= trim(addslashes($email));
+			$sql = "INSERT INTO `email_subscriber` ( `email`, `added_on`) VALUES ('$email', now())";
 			$res = $this->conn->query($sql);
-			return $res;
-			
-			}
-			else
-			{				 
-			$sql = "INSERT INTO `email_subscriber`
-			(`email`, `customer_id`, `fname`, `lname`, `status`, `phone`,`added_on`)
-			VALUES 
-			('$email', '$customer_id', '$fname', '$lname', '$status', '$phone1', now())";
 
-			$res = $this->conn->query($sql);
+			return $this->conn->insert_id;
 
-			return $res;
-
-			}			 
-	 
-	    }
-		else
-			{
-				// return $emailrows;
-			}
-	}
-
+		}
 
 
 
@@ -238,46 +70,26 @@
 		*	Add a new subscriber
 		*	@return int
 		*/
-		function addSubscriber($cusid, $email, $fname, $lname, $category, $company, $phone)
-		{
+		function addSubscriberDetails($cusid, $email, $fname, $lname, $phone, $company, $status){
 			
-			$cusid		=	$cusid;
+			$cusid		= $cusid;
 			$email		= trim($email);
 			$fname		= trim(addslashes($fname));
 			$lname		= trim(addslashes($lname));
-			$category	= (int) $category;
-			$company	= trim(addslashes($company));
 			$phone		= trim(addslashes($phone));
-			
-			$id = 0;
-			
-			//validate whether subscriber is already added
-			$sql 	= "SELECT * FROM email_subscriber WHERE email = '$email'";
-			$query 	= $this->conn->query($sql);
-			
-			//echo $sql.mysql_error();  exit;
-			if($query->num_rows > 0)
-			{
-				$id = 0;
-			}
-			else
-			{
-				//inserting the email
-				$insert = "INSERT INTO email_subscriber 
-						   (customer_id, email, fname, lname, added_on, status, 
-						   cat_id, company, phone)
-						   VALUES
-						   ('$cusid', '$email', '$fname', '$lname', now(), 'a', 
-						   '$category','$company','$phone')
-						   ";
+			$company	= trim(addslashes($company));
+
+			//inserting the email
+			$insert = "INSERT INTO email_subscriber 
+								(customer_id, email, fname, lname, company, phone, status, added_on)
+						   		VALUES
+						   		('$cusid', '$email', '$fname', '$lname', '$company', '$phone', '$status', now())";
+
 				$query  = $this->conn->query($insert);
 				
 				//echo $insert.mysql_error(); exit;
-				$id		= $this->conn->insert_id;
-			}
-			
-			//return the value
-			return $id;
+				// $id		= $this->conn->insert_id;
+				return $query;
 			
 		}//eof
 		
@@ -311,6 +123,23 @@
 			
 		}//end of add subscriber
 		
+
+
+		function getUserByEmail($email){
+			$email	= trim(addslashes($email));
+			
+			$sql  = "SELECT * FROM `email_subscriber` WHERE `email_subscriber`.`email` = '$email'";
+			$res  = $this->conn->query($sql);
+			$rows = $res->num_rows;
+			if ($rows > 0) {
+				while ($data = $res->fetch_assoc()) {
+					$result[] = $data;
+				}
+				return $result;
+			}else {
+				$result = false;
+			}
+		}
 		/**
 		*	Get email in alphabetical order
 		*
@@ -605,5 +434,5 @@
 		}//eof email list
 		
 		
-	}//end of class
+}//end of class
 ?>
