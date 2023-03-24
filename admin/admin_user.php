@@ -1,22 +1,16 @@
 <?php 
-require_once("../includes/constant.inc.php");
+require_once dirname(__DIR__) . "/includes/constant.inc.php";
 session_start();
-include_once('checkSession.php');
-require_once "../_config/dbconnect.php";
+include_once ADM_DIR .'checkSession.php';
+require_once ROOT_DIR ."/_config/dbconnect.php";
 
-require_once("../classes/adminLogin.class.php"); 
-require_once("../classes/date.class.php"); 
-
-require_once("../classes/content-order.class.php");
-
-require_once("../classes/utility.class.php"); 
+require_once ROOT_DIR . "/classes/adminLogin.class.php";
+require_once ROOT_DIR . "/classes/date.class.php";
+require_once ROOT_DIR . "/classes/utility.class.php"; 
 
 /* INSTANTIATING CLASSES */
 $adminLogin 	= new adminLogin();
 $dateUtil      	= new DateUtil();
-
-// $product		= new Product();
-
 $utility		= new Utility();
 
 ######################################################################################################################
@@ -38,24 +32,18 @@ $adminData	   = $adminLogin->ShowUserData();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>fastlinky Admin</title>
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
+    <title><?php echo COMPANY_S?> - Admin List</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="vendors/feather/feather.css">
-    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-    <!-- <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css"> -->
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../plugins/data-table/style.css">
+    <link rel="stylesheet" href="<?php echo ADM_URL?>vendors/feather/feather.css">
+    <link rel="stylesheet" href="<?php echo ADM_URL?>vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="<?php echo ADM_URL?>vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="<?php echo URL?>/plugins/data-table/style.css">
+    <link rel="stylesheet" href="<?php echo ADM_URL?>css/vertical-layout-light/style.css">
 
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
 
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
     <style>
     .addnewbtncss {
         margin: auto;
@@ -89,7 +77,7 @@ $adminData	   = $adminLogin->ShowUserData();
 
             <!-- partial -->
             <?php require_once "partials/_sidebar.php"; ?>
-            <!-- partial:../../ -->
+            <!-- partial end -->
 
             <!-- partial -->
             <div class="main-panel">
@@ -100,7 +88,7 @@ $adminData	   = $adminLogin->ShowUserData();
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Admin User</h4>
-                                    <button type="button" class="btn btn-primary .ml-1 addnewbtncss"
+                                    <button type="button" class="btn btn-primary addnewbtncss"
                                         onclick="location.href='add_user.php?action=add_user#addAdmin';"> Add New Admin
                                     </button>
                                     <div class="table-responsive">
@@ -136,7 +124,7 @@ $adminData	   = $adminLogin->ShowUserData();
                                                 ?>
 
                                                 <tr >
-                                                    <td class="p-0">
+                                                    <td>
                                                         <?php echo $i; ?>
                                                     </td>
                                                     <td>
@@ -179,17 +167,9 @@ $adminData	   = $adminLogin->ShowUserData();
                     </div>
                 </div>
                 <!-- content-wrapper ends -->
-                <!-- partial:../../partials/_footer.html -->
-                <footer class="footer">
-                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.
-                            Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin
-                                template</a> from BootstrapDash. All rights reserved.</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made
-                            with <i class="ti-heart text-danger ml-1"></i></span>
-                    </div>
-                </footer>
-                <!-- partial -->
+                <!-- partial footer -->
+                <?php require_once ADM_DIR . 'partials/_footer.php'; ?>
+                <!-- partial footer end-->
             </div>
             <!-- main-panel ends -->
         </div>
@@ -197,22 +177,19 @@ $adminData	   = $adminLogin->ShowUserData();
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <script src="../plugins/jquery-3.6.0.min.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
+    <script src="<?php echo ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?php echo URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    
     <!-- inject:js -->
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
+    <script src="<?php echo ADM_URL ?>js/off-canvas.js"></script>
+    <script src="<?php echo ADM_URL ?>js/hoverable-collapse.js"></script>
+    <script src="<?php echo ADM_URL ?>js/template.js"></script>
+    <script src="<?php echo ADM_URL ?>js/settings.js"></script>
+    <script src="<?php echo ADM_URL ?>js/todolist.js"></script>
 
-    <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
-    <script src="../plugins/data-table/simple-datatables.js"></script>
-    <script src="../plugins/tinymce/tinymce.js"></script>
-    <script src="../plugins/main.js"></script>
+    <script src="<?php echo URL ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?php echo URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?php echo URL ?>/plugins/main.js"></script>
 
     <script>
     function deleteUser() {
@@ -221,10 +198,6 @@ $adminData	   = $adminLogin->ShowUserData();
 
     };
     </script>
-
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!-- End custom js for this page-->
 </body>
 
 </html>
