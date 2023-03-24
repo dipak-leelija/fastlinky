@@ -106,7 +106,7 @@ $adminData	   = $adminLogin->ShowUserData();
                                                         Login Id
                                                     </th>                                                 
                                                     <th>
-                                                        Added On
+                                                        Total Login
                                                     </th>
                                                     <th>
                                                         Last Login
@@ -134,10 +134,10 @@ $adminData	   = $adminLogin->ShowUserData();
                                                         <?php echo $row['username']; ?>
                                                     </td>                                                                                                 
                                                     <td>
-                                                        <?php echo $row['added_on']; ?>
+                                                        <?php echo $row['no_logon']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $row['last_logon']; ?>
+                                                        <?php echo $dateUtil->dateTimeNumber($row['last_logon']); ?>
                                                     </td>
                                                     <td>
                                                         <a class="text-decoration-none mx-1"
