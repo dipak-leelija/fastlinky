@@ -1,19 +1,19 @@
 <?php 
 session_start();
-require_once "../_config/dbconnect.php";
-require_once "../_config/dbconnect.trait.php";
+require_once dirname(__DIR__) . "/includes/constant.inc.php";
 
-require_once "../includes/constant.inc.php";
-require_once "../includes/paypal.inc.php";
+require_once ROOT_DIR . "/_config/dbconnect.php";
 
-require_once "../classes/customer.class.php";
-require_once "../classes/content-order.class.php";
-require_once "../classes/blog_mst.class.php";
-require_once "../classes/utility.class.php";
-require_once "../classes/date.class.php";
+require_once ROOT_DIR . "/includes/paypal.inc.php";
+
+require_once ROOT_DIR . "/classes/customer.class.php";
+require_once ROOT_DIR . "/classes/content-order.class.php";
+require_once ROOT_DIR . "/classes/blog_mst.class.php";
+require_once ROOT_DIR . "/classes/utility.class.php";
+require_once ROOT_DIR . "/classes/date.class.php";
 
 
-include "../Crypto.php";
+include ROOT_DIR . "/Crypto.php";
 
 $ContentOrder     = new ContentOrder();
 $BlogMst          = new BlogMst();
@@ -27,13 +27,8 @@ $typeM		= $Utility->returnGetVar('typeM','');
 $cusId		= $Utility->returnSess('userid', 0);
 $cusDtl		= $Customer->getCustomerData($cusId);
 
-if($cusId == 0){
-	header("Location: ".URL);
-}
+require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
-if($cusDtl[0] == 1){ 
-	header("Location: dashboard.php");
-}
 ######################################################################################################################
 
 $todayDate      = $DateUtil->todayDate("/");

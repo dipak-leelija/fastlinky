@@ -1,38 +1,32 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
-require_once "../includes/constant.inc.php";
+require_once dirname(__DIR__) .  "/includes/constant.inc.php";
 
-require_once "../_config/dbconnect.php";
-require_once "../_config/dbconnect.trait.php";
+require_once ROOT_DIR . "/includes/user.inc.php";
+require_once ROOT_DIR . "/includes/email.inc.php";
+require_once ROOT_DIR . "/includes/registration.inc.php";
+require_once ROOT_DIR . "/includes/mail-functions.php";
+require_once ROOT_DIR . "/includes/paypal.inc.php";
 
+require_once ROOT_DIR . "/_config/dbconnect.php";
+require_once ROOT_DIR . "/classes/customer.class.php";
+require_once ROOT_DIR . "/classes/domain.class.php"; 
+require_once ROOT_DIR . "/classes/blog_mst.class.php"; 
+require_once ROOT_DIR . "/classes/orderStatus.class.php";
+require_once ROOT_DIR . "/classes/error.class.php";
+require_once ROOT_DIR . "/classes/date.class.php";
+require_once ROOT_DIR . "/classes/content-order.class.php";
+require_once ROOT_DIR . "/classes/wishList.class.php";
+require_once ROOT_DIR . "/classes/countries.class.php";
+require_once ROOT_DIR . "/classes/location.class.php";
 
-require_once "../includes/user.inc.php";
-require_once "../includes/email.inc.php";
-require_once "../includes/registration.inc.php";
-require_once "../includes/mail-functions.php";
-require_once "../includes/paypal.inc.php";
-
-require_once "../classes/domain.class.php"; 
-require_once "../classes/blog_mst.class.php"; 
-require_once "../classes/orderStatus.class.php";
-require_once "../classes/error.class.php";
-require_once "../classes/date.class.php";
-require_once "../classes/content-order.class.php";
-require_once "../classes/wishList.class.php";
-require_once "../classes/countries.class.php";
-require_once "../classes/location.class.php";
-
-require_once "../classes/utility.class.php"; 
-require_once "../classes/utilityMesg.class.php"; 
+require_once ROOT_DIR . "/classes/utility.class.php"; 
+require_once ROOT_DIR . "/classes/utilityMesg.class.php"; 
 
 /* INSTANTIATING CLASSES */
+$customer		= new Customer();
 $domain			= new Domain();
 $BlogMst		= new BlogMst();
-// $ordObj			= new Order();
 $OrderStatus	= new OrderStatus();
 $error			= new MyError();
 $ContentOrder	= new ContentOrder();
@@ -45,33 +39,29 @@ $utility		= new Utility();
 $uMesg 			= new MesgUtility();
 
 ###############################################################################################
-
-require_once("../classes/customer.class.php");
-$customer		= new Customer();
-$cusId		= $utility->returnSess('userid', 0);
-$cusDtl		= $customer->getCustomerData($cusId);
-
-
-###############################################################################################
-
 //declare vars
 $typeM		= $utility->returnGetVar('typeM','');
 
+$cusId		= $utility->returnSess('userid', 0);
+$cusDtl		= $customer->getCustomerData($cusId);
+
+###############################################################################################
+
 
 if (!isset($_POST)) {
-	header("Location: ../dashboard.php");
+	header("Location: ".URL . "/dashboard.php");
 	exit;
 }
 
 
 if (!isset($_SESSION['domainName']) && !isset($_SESSION['sitePrice']) && !isset($_SESSION['order-data'])) {
-	header("Location: ../my-orders.php");
+	header("Location: ".URL . "/my-orders.php");
 	exit;
 }else {
 	
 	$clientUserId       = $_SESSION['userid'];
 	$clientName         = $_SESSION['name'];
-	$clientEmail        = $_SESSION['USERcontinuecontent_ecom_SESS2016'];
+	$clientEmail        = $_SESSION[USR_SESS];
 
 	// Order Data
 	$clientOrderedSite 	= $_SESSION['domainName'];
@@ -100,8 +90,8 @@ if (!isset($_SESSION['domainName']) && !isset($_SESSION['sitePrice']) && !isset(
 		$domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
     	$itemAmount = $domain[9]+$domain[16]; // cost + ext_cost
 		
-		// $sess_arr = array('domainName','sitePrice','order-data');
-		// $utility->delSessArr($sess_arr);
+		$sess_arr = array('domainName','sitePrice','order-data');
+		$utility->delSessArr($sess_arr);
 
 }
 
@@ -174,11 +164,17 @@ if(isset($_SESSION['orderId'])) {
 
 	//city details
 	$cityDetails 	= $Location->getCityDataById($client[0][27]);
-	$cityName = $cityDetails['city'];
+	$cityName = '';
+	if (isset($cityDetails['city'])) {
+		$cityName = $cityDetails['city'];
+	}
 
 	//state details
 	$stateDetails 	= $Location->getStateData($client[0][28]);
-	$stateName 		= $stateDetails['state_name'];
+	$stateName = '';
+	if (isset($stateName['state_name'])) {
+		$stateName 		= $stateDetails['state_name'];
+	}
 
 
 	$domainDetails = $BlogMst->showBlogbyDomain($orderDetail[0]['clientOrderedSite']);
@@ -353,12 +349,11 @@ if(isset($_SESSION['orderId'])) {
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <link rel="stylesheet" href="<?php echo URL ?>style/ansysoft.css" type="text/css" />
-    <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="../plugins/fontawesome-6.1.1/css/all.css">
+    <link rel="stylesheet" href="<?php echo URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="<?php echo URL ?>/plugins/fontawesome-6.1.1/css/all.css">
 
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <link rel="stylesheet" href="../css/leelija.css">
-    <link rel="stylesheet" href="../css/payment-status.css">
+    <link rel="stylesheet" href="<?php echo URL ?>/css/leelija.css">
+    <link rel="stylesheet" href="<?php echo URL ?>/css/payment-status.css">
 
 </head>
 
@@ -366,7 +361,7 @@ if(isset($_SESSION['orderId'])) {
 <body>
 
     <!-- Start  Header -->
-    <?php require_once "../partials/navbar.php"; ?>
+    <?php require_once ROOT_DIR . "/partials/navbar.php"; ?>
     <!-- End  Header -->
 
     <!-- Start  container -->
@@ -383,11 +378,11 @@ if(isset($_SESSION['orderId'])) {
                     <p><i class="fas fa-exclamation-circle fs-5 text-warning"></i> If you find any difficulty, drop an
                         email to <?php echo SITE_BILLING_EMAIL ?></p>
 					<?php
-					if ($mailSended) {
-						?>
-						<p><small>Order details has been sent to your email.</small></p>
-						<?php
-					}
+					// if ($mailSended) {
+					?>
+					<!-- // 	<p><small>Order details has been sent to your email.</small></p> -->
+					<?php
+					// }
 					?>
                 </div>
             </div>
@@ -407,8 +402,10 @@ if(isset($_SESSION['orderId'])) {
     <!-- End  MainWrap -->
 
     <!-- Start Foter -->
-    <?php require_once "../partials/footer.php"; ?>
+    <?php require_once ROOT_DIR . "/partials/footer.php"; ?>
     <!-- End Foter -->
+	<script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
