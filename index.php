@@ -79,15 +79,14 @@ if(isset($_GET['seo_url']))
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
     <!--//webfonts-->
 
-
-
 </head>
-
 <body>
     <?php require_once "partials/navbar.php"; ?>
     <!--____________________________________________________________________________________________ -->
     <!-- starting of index-link-building main banner -->
+
     <section class="managed-link-building-main-banner">
+    <div class="cube "></div>  
         <div class="container mlb-main-cntainer ">
             <div class="row mlb-main-start-row">
                 <div class="col-12 col-lg-6 col-md-6  pe-0 ps-0 pe-lg-3 d-flex align-items-center">
@@ -99,7 +98,7 @@ if(isset($_GET['seo_url']))
                         <p class=" mt-3 mb-4 py-0 py-md-2 mlb-starting-main-p">We help global brands to grow their ROI
                             3x faster with our data-driven strategies and link-building expertise.
                         </p>
-
+                                         
                         <div class=" buttonsinfo ">
                             <button type="button" class="btn managed-link-btn ">See Pricing</button>
                         </div>
@@ -657,12 +656,17 @@ if(isset($_GET['seo_url']))
 
     <!-- actionpage ends -->
     <!-- ---------------------------------------------------------------------------------- -->
+    <!-- --------------------------------------- -->
+    <!-- feedback form -->
+    <?php require_once "partials/feedback.php"; ?>
+    <!-- feedback form -->
+    <!-- ----------------------------------------------- -->
     <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
-    <!-- /Footer -->
+    <!-- footer -->
+    <!-- -------------------------------------- -->
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-
 </body>
 
 </html>

@@ -61,344 +61,198 @@ $return_url		= "";
     <link href="css/form.css" rel='stylesheet' type='text/css' />
 
     <style>
-    *,
-    *:before,
-    *:after {
-        margin: 0;
-        padding: 0;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -ms-box-sizing: border-box;
-        box-sizing: border-box;
-        transition: all 0.3s ease-out;
-        -webkit-transition: all 0.3s ease-out;
-        -moz-transition: all 0.3s ease-out;
+    .feedback-main-card {
+        max-width: 23rem;
+        margin: auto;
+        border: none;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+.required-field{
+    color:  var(--black) !important;
+}
+    div.stars {
+        display: flex;
+        margin: auto;
+        justify-content: center;
     }
 
-    body {
-        font-family: 'Nunito', sans-serif;
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden;
-        font-weight: 400;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-        margin: 0;
-    }
-
-    html {
-        width: 100%;
-        height: 100%;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-weight: 400;
-        padding: 0;
-        margin: 0;
-    }
-
-    p {
-        padding: 0;
-        margin: 0;
-    }
-
-    a {
-        text-decoration: none;
-        padding: 0;
-        margin: 0;
-        outline: medium none !important;
-    }
-
-    a:hover {
-        text-decoration: none;
-        outline: medium none !important;
-    }
-
-    a:focus {
-        text-decoration: none;
-        outline: medium none !important;
-    }
-
-    img {
-        display: inline-block;
-        vertical-align: middle;
-        max-width: 100%;
-    }
-
-    .clear {
-        clear: both;
-        width: 0;
-        height: 0;
-        visibility: hidden;
-        overflow: hidden;
-    }
-
-    .test .open {
-
-        display: none !important;
-    }
-
-    .smiley .open {
-        display: block;
-    }
-
-    .smiley .close {
+    input.star {
         display: none;
     }
 
-    .test .close {
-        display: block !important;
+    label.star {
+        float: right;
+        padding: 2px 8px 0px !important;
+        font-size: 30px;
+        /* color: #4A148C; */
+        color:  var(--mustard) !important;
+        transition: all .2s;
     }
 
-    /********************************************************************/
-
-    .feedback_container {
-        text-align: center;
-        padding: 50px;
+    input.star:checked~label.star:before {
+        content: '\f005';
+        color: #FD4;
+        transition: all .25s;
     }
 
-    .title_feedback {
-        font-size: 31px;
-        font-weight: 800;
-        padding-bottom: 30px;
+    input.star-5:checked~label.star:before {
+        color: #FE7;
+        text-shadow: 0 0 10px #952;
     }
 
-    .rating_div,
-    .question {
-        margin-bottom: 80px;
+    input.star-1:checked~label.star:before {
+        color: #F62;
     }
 
-    .smiley {
-        width: 72%;
-        margin: auto;
+    label.star:hover {
+        transform: rotate(-15deg) scale(1.3);
     }
 
-    .smiley span {
-        display: block;
-        float: left;
-        margin: 0 20px;
-        width: 70px;
-        height: 70px;
+    label.star:before {
+        content: '\f006';
+        font-family: FontAwesome;
+    }
+    </style>
+    <style media="screen">
+    .auto-popup-feedback {
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+        display: none;
+        z-index: 99;
+    }
+
+    .closing-icon {
+        text-align: end;
+        font-size: 1.65rem;
+        padding-right: .4rem;
         cursor: pointer;
+        color: #ff0000ab;
     }
 
-    .close {
-        opacity: 1 !important;
+    .auto-popup-feedback h2 {
+        margin-top: -20px;
     }
 
-    .question a {
-        text-align: center;
-        display: block;
-        border: 2px solid #f18700;
-        margin-bottom: 30px;
-        font-size: 18px;
-        color: #000;
-        font-weight: 800;
-        padding: 10px 0;
-    }
-
-    .question a:hover,
-    .question a.active_qa {
-        background: #f18700;
-        color: #fff;
-    }
-
-    .comment_div textarea {
-        width: 100%;
-        border: 2px solid #f18700;
-        resize: none;
-        outline: 0;
-        font-weight: 800;
-        padding: 20px;
-        font-size: 18px;
-    }
-
-    .submit_btn {
-        margin-top: 40px;
-    }
-
-    .submit_btn a {
-        display: inline-block;
-        background: #f18700;
-        color: #fff;
-        font-size: 20px;
-        font-weight: 700;
-        padding: 10px 40px;
-        text-transform: uppercase;
-    }
-
-    @media only screen and (max-width: 800px) {
-
-        .smiley {
-            width: 97%;
-        }
-
-        .smiley span {
-            width: 50px;
-            height: 50px;
-        }
-
-    }
-
-    @media only screen and (max-width: 640px) {
-
-        .feedback_container {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .title_feedback {
-            font-size: 24px;
-        }
-
-        .smiley {
-            width: 100%;
-        }
-
-        .smiley span {
-            width: 40px;
-            height: 40px;
-            margin: 0 10px;
-        }
-
+    .auto-popup-feedback p {
+        font-size: 14px;
+        text-align: justify;
+        margin: 20px 0;
+        line-height: 25px;
     }
     </style>
 </head>
 
-<body class="pt-0">
+<body>
     <div id="home">
         <!-- header -->
         <?php require_once "partials/navbar.php"; ?>
         <!-- //header -->
-        <section class="" style="margin-top: 2.9rem">
 
-            <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
-                data-target="#myModal">Feedback</button>
-
-          
-            <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog"
-                aria-labelledby="myModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-
-                           
-
-                        </div>
-                    </div>
+        <div class="auto-popup-feedback">
+            <div>
+            <div class="card feedback-main-card">
+                <div class="text-end">
+                    <i id="close" class="fa-sharp fa-solid fa-circle-xmark closing-icon pt-2"></i>
                 </div>
-            </div> -->
-            <div class="feedback_container">
+                <div class="row no-gutters  m-auto">
+                    <div class="col pt-1">
+                        <form method="post" class="contact-form needs-validation" novalidate>
+                            <div class="row">
+                                <div class="col-sm-12 mb-0">
+                                    <div class="form-group">
+                                        <label class="required-field" for="firstname">How Satisfied were you with
+                                            your recent visit in the following areas?</label>
+                                        <div class="stars">
+                                            <form action="">
+                                                <div>
+                                                    <input class="star star-5" id="star-5" type="radio" name="star" />
+                                                    <label class="star star-5" for="star-5"></label>
+                                                    <input class="star star-4" id="star-4" type="radio" name="star" />
+                                                    <label class="star star-4" for="star-4"></label>
+                                                    <input class="star star-3" id="star-3" type="radio" name="star" />
+                                                    <label class="star star-3" for="star-3"></label>
+                                                    <input class="star star-2" id="star-2" type="radio" name="star" />
+                                                    <label class="star star-2" for="star-2"></label>
+                                                    <input class="star star-1" id="star-1" type="radio" name="star" />
+                                                    <label class="star star-1" for="star-1"></label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 mb-0">
+                                    <div class="form-group">
+                                        <label class="required-field" for="firstname">Full Name</label>
+                                        <input type="text" minlength="4" class="form-control" id="firstname"
+                                            name="firstname" placeholder="John" required>
+                                        <div class="invalid-feedback">
+                                            Please Enter your first Name!
+                                        </div>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
 
-                <div class="rating_div">
+                                <div class="col-sm-12 mb-0">
+                                    <div class="form-group">
+                                        <label class="required-field" for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="example@gmail.com" required>
+                                        <div class="invalid-feedback">
+                                            Please enter your email!
+                                        </div>
+                                        <div class="valid-feedback">
+                                            Email is valid!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 mb-0">
+                                    <div class="form-group">
+                                        <label class="required-field" for="message">What feature can we add to
+                                            improve?</label>
+                                        <textarea class="form-control mb-0" minlength="10" id="message" name="message"
+                                            rows="2" placeholder="Hi there, I would like to....." required></textarea>
+                                        <div class="invalid-feedback">
+                                            Please enter your queries!
+                                        </div>
+                                        <div class="valid-feedback">
+                                            We will solve this soon!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 mb-0 submit-divclass text-center">
+                                    <a href="/">
 
-                    <h4 class="title_feedback">Please Rate Our Website</h4>
-
-                    <div class="smiley">
-                        <span class="open"><img src="./images/dummy-img/dead_tminl7.png" /></span>
-                        <span class="close"><img src="./images/dummy-img/dead-active_gcseca.png" /></span>
-
-                    </div>
-                    <div class="smiley">
-                        <span class="open"><img src="./images/dummy-img/sad_il7kmb.png" /></span>
-                        <span class="close"><img src="./images/dummy-img/sad-active_rhibzn.png" />
-                    </div>
-                    <div class="smiley">
-                        <span class="open"><img src="./images/dummy-img/sceptic_we1bxv.png" /></span>
-                        <span class="close"><img src="./images/dummy-img/sceptic-active_kez7sa.png" />
-                    </div>
-                    <div class="smiley">
-                        <span class="open""><img src=" ./images/dummy-img/more-happy_f53bgi.png" /></span>
-                        <span class="close"><img src="./images/dummy-img/more-happy-active_d2hget.png" />
-                    </div>
-                    <div class="smiley">
-                        <span class="open"><img src="./images/dummy-img/happy_kakekm.png" /></span>
-                        <span class="close"><img src="./images/dummy-img/happy-active_fs6ztw.png" />
-                    </div>
-
-                </div>
-
-                <div class="qa_div">
-
-                    <h4 class="title_feedback">What Could Be Better?</h4>
-
-                    <div class="question">
-
-                        <div class="row">
-
-                            <div class="col-md-4">
-                                <a href="javascript:;">Navigation Experience</a>
+                                        <button class="my-buttons-hover bn21">Submit <i class="fas fa-comments"
+                                                style="font-size: 1.2rem;"></i></button>
+                                    </a>
+                                </div>
                             </div>
-
-                            <div class="col-md-4">
-                                <a href="javascript:;">Overall Experience</a>
-                            </div>
-
-                            <div class="col-md-4">
-                                <a href="javascript:;">Website Look & Feel</a>
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-md-4"> </div>
-
-                            <div class="col-md-4">
-                                <a href="javascript:;">Information Availablity</a>
-                            </div>
-
-                            <div class="col-md-4"> </div>
-
-                        </div>
-
+                        </form>
                     </div>
 
                 </div>
-
-                <div class="comment_div">
-
-                    <h4 class="title_feedback">Comments / Suggestions?</h4>
-
-                    <textarea rows="8"></textarea>
-
-                </div>
-
-                <div class="submit_btn">
-                    <a href="">Submit</a>
-                </div>
-
             </div>
-        </section>
+            </div>
+            
+        </div>
     </div>
 
     <!-- js-->
-
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-
-    <!-- ==== js for smooth scrollbar ==== -->
     <script src="plugins/smooth-scrollbar.js"></script>
-    <script>
-    $(document).ready(function() {
-
-
-        $(".question a").click(function() {
-            $(this).toggleClass("active_qa");
-        });
-
-        $(".smiley").click(function() {
-            $(this).toggleClass("test");
-            $(this).siblings().removeClass("test");
-
-
-        });
-
+    <script type="text/javascript">
+    window.addEventListener("load", function() {
+        setTimeout(
+            function open(event) {
+                document.querySelector(".auto-popup-feedback").style.display = "block";
+            },
+            8000
+        )
+    });
+    document.querySelector("#close").addEventListener("click", function() {
+        document.querySelector(".auto-popup-feedback").style.display = "none";
     });
     </script>
 </body>

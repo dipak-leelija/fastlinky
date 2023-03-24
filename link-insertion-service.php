@@ -435,9 +435,15 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <?php include_once 'partials/seller-action.php'; ?>
     </div>
     <!-- ============================================================== -->
+  <!-- --------------------------------------- -->
+    <!-- feedback form -->
+    <?php require_once "partials/feedback.php"; ?>
+    <!-- feedback form -->
+    <!-- ----------------------------------------------- -->
     <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
-    <!-- /Footer -->
+    <!-- footer -->
+    <!-- -------------------------------------- -->
 
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>

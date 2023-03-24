@@ -112,8 +112,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <p class="mt-2">
                         Thus, our country-specific link-building service can benefit you in two ways:
                     </p>
-                    <p class="ps-2 ps-md-4 mt-2">1. It directs foreign visitors to your website. So that you will get increased traffic and
-                        exposure to potential clients. 
+                    <p class="ps-2 ps-md-4 mt-2">1. It directs foreign visitors to your website. So that you will get
+                        increased traffic and
+                        exposure to potential clients.
                     </p>
                     <p class="ps-2 ps-md-4 mt-2">
                         2. It makes your website more visible to search engines, making it easier for native clients to
@@ -449,10 +450,15 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <div class="mt-4">
         <?php include_once 'partials/seller-action.php'; ?>
     </div>
-
+    <!-- --------------------------------------- -->
+    <!-- feedback form -->
+    <?php require_once "partials/feedback.php"; ?>
+    <!-- feedback form -->
+    <!-- ----------------------------------------------- -->
     <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
-    <!-- /Footer -->
+    <!-- footer -->
+    <!-- -------------------------------------- -->
 
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>

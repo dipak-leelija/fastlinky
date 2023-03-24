@@ -31,6 +31,7 @@
     --dark-blue: #407BFF;
     --pink: #FF0833;
     --mustard:#FDA33B;
+    --black: #383a50;
 }
 
 
@@ -65,7 +66,7 @@ body a {
 p {
     line-height: 1.8;
     font-size: 1.1em;
-    color: #222244;
+    color: var(--black);
     /* font-weight: 100; */
     margin: 0;
 }
@@ -305,7 +306,7 @@ p {
 }
 
 .login-btn {
-    background-image: linear-gradient(120deg, #FDA33B 0%, #FA8273 100%);
+    background-image: linear-gradient(120deg, var(--mustard) 0%, #FA8273 100%);
     border: none;
     border-radius: 8px;
     color: var(--pure-white);
@@ -319,7 +320,7 @@ p {
 
 .login-btn:hover {
     color: var(--pure-white);
-    background-image: linear-gradient(120deg, #FA8273 0%, #FDA33B 100%);
+    background-image: linear-gradient(120deg, #FA8273 0%, var(--mustard) 100%);
 }
 
 .producting-menues {
@@ -334,11 +335,11 @@ p {
 }
 
 .producting-menues-lis {
-    --c: #fda33b;
+    --c: var(--mustard);
     --s: .15em;
     line-height: 1.1em;
     padding-bottom: calc(2.1*var(--s));
-    box-shadow: inset 0 -3px 0 #fda33b;
+    box-shadow: inset 0 -3px 0 var(--mustard);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) 0/var(--_p, 0%) padding-box no-repeat;
     transition: .5s;
     background: #fbf5ef !important;
@@ -348,14 +349,14 @@ p {
 }
 
 .external-styling {
-    background-image: linear-gradient(120deg, #FA8273 0%, #FDA33B 100%) !important;
+    background-image: linear-gradient(120deg, #FA8273 0%, var(--mustard) 100%) !important;
     color: white !important;
     width: 8.3rem;
     justify-content: center;
 }
 
 .external-lis {
-    background-image: linear-gradient(120deg, #FA8273 0%, #FDA33B 100%) !important;
+    background-image: linear-gradient(120deg, #FA8273 0%, var(--mustard) 100%) !important;
     color: white !important;
     font-weight: 500 !important;
 }
@@ -367,9 +368,9 @@ p {
 .external-drop-menu {
     border: none !important;
     --bs-dropdown-min-width: 8.3rem !important;
-    background-image: linear-gradient(120deg, #FA8273 0%, #FDA33B 100%) !important;
+    background-image: linear-gradient(120deg, #FA8273 0%, var(--mustard) 100%) !important;
     border-radius: 0 0 8px 8px !important;
-    box-shadow: inset 0 -3px 0 #FDA33B !important;
+    box-shadow: inset 0 -3px 0 var(--mustard) !important;
 }
 
 .dashboaard_button:hover .external-styling {
@@ -463,7 +464,7 @@ p {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>.myservicecss {
-    box-shadow: inset 0 -3px 0 #fda33b;
+    box-shadow: inset 0 -3px 0 var(--mustard);
     color: black !important;
 }
 
@@ -493,17 +494,17 @@ p {
 
 .li-style:hover {
     color: black !important;
-    box-shadow: inset 0 -3px 0 #fda33b;
+    box-shadow: inset 0 -3px 0 var(--mustard);
 }
 
 .producting-menues-lis:hover {
     --_p: 100%;
-    color: #fda33b;
+    color: var(--mustard);
 }
 
 .mynav_item .li-style.active {
     color: black !important;
-    box-shadow: inset 0 -3px 0 #fda33b;
+    box-shadow: inset 0 -3px 0 var(--mustard);
 }
 
 .mobile-menu {

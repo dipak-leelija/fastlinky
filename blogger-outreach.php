@@ -113,7 +113,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class=" col-md-6 order-1 order-md-2">
                 <div>
                     <p>Along with domain authority, our links evaluate past link performance, domain score, and
-                        reliability connections. <b>Our blogger outreach services</b>  offer additional capabilities, in
+                        reliability connections. <b>Our blogger outreach services</b> offer additional capabilities, in
                         addition, to support for problems such as thorough article layout,quantity and quality of
                         backlinks, customer requirements, and comment management.</p>
                     <div class=" buttonsinfo mt-md-5 text-md-end">
@@ -474,7 +474,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <h1 class="real-bo-text-h1 mb-5">Blogger Outreach <span>Agency</span> </h1>
                     </div>
 
-                    <p class="real-bo-text-p text-md-start mb-5">Being a reputable <b>blogger outreach agency</b> , our distinctive strategy has helped our clients' websites secure content from blogs that link to them, and enhance their SEO. Our experience staffs are always in touch with top blogs and websites so that clients can feel hassle-free in their link building target. This could be less time and energy consuming for them going forwards.</p>
+                    <p class="real-bo-text-p text-md-start mb-5">Being a reputable <b>blogger outreach agency</b> , our
+                        distinctive strategy has helped our clients' websites secure content from blogs that link to
+                        them, and enhance their SEO. Our experience staffs are always in touch with top blogs and
+                        websites so that clients can feel hassle-free in their link building target. This could be less
+                        time and energy consuming for them going forwards.</p>
 
                     <div class=" buttonsinfo ">
                         <a href="#pricing-cards">
@@ -770,9 +774,15 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <?php include_once 'partials/seller-action.php'; ?>
     </div>
 
+  <!-- --------------------------------------- -->
+    <!-- feedback form -->
+    <?php require_once "partials/feedback.php"; ?>
+    <!-- feedback form -->
+    <!-- ----------------------------------------------- -->
     <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
-    <!-- /Footer -->
+    <!-- footer -->
+    <!-- -------------------------------------- -->
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 

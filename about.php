@@ -64,7 +64,7 @@ if(isset($_GET['seo_url']))
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <!-- <link href="css/style.css" rel='stylesheet' type='text/css' /> -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/about-us.css" rel='stylesheet' type='text/css' />
     <link href="css/leelija.css" rel='stylesheet' type='text/css' />
 
@@ -578,17 +578,15 @@ if(isset($_GET['seo_url']))
     <!-- ..................................................... -->
     <!-- get started wrok with us ends -->
     <!-- ............................. -->
-
-
-
-
-
-
-
-
-
+  <!-- --------------------------------------- -->
+    <!-- feedback form -->
+    <?php require_once "partials/feedback.php"; ?>
+    <!-- feedback form -->
+    <!-- ----------------------------------------------- -->
+    <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
-    <!-- /Footer -->
+    <!-- footer -->
+    <!-- -------------------------------------- -->
 
     <!-- </div> -->
 

@@ -187,7 +187,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!--========= Cannabis Link Building Or Regular Link Building-  Start =========-->
     <section class="cannabis-clb-rlb-section">
         <div class="cannabis-clb-rlb-main-div ">
-            <h2>Why Choose “Cannabis Link Building”  <strong> is important for CBD niche ? </strong> </h2>
+            <h2>Why Choose “Cannabis Link Building” <strong> is important for CBD niche ? </strong> </h2>
             <!-- Why is it important to choose “Cannabis Link Building” for the CBD niche? -->
             <ul>
                 <li> <span><i class="fa-solid fa-circle-check"></i></span> It is a large CBD fund, which is growing
@@ -378,7 +378,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     experts in web design, PPC advertising, digital marketing, development, etc. This is the agency to
                     help to boost the traffic on your website. Further, if you are interested in searching for top
                     <b>Cannabis SEO experts</b> in cannabis production, you may not find a site as good as
-                    <b>FastLinky</b>. We are experienced and have worked in the cannabis niche for years.</p>
+                    <b>FastLinky</b>. We are experienced and have worked in the cannabis niche for years.
+                </p>
 
 
                 <div class=" buttonsinfo mt-3">
@@ -478,10 +479,15 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <?php include_once 'partials/seller-action.php'; ?>
     </div>
     <!-- =---------------------------------------------------------------------------------------------- -->
-
-
+    <!-- --------------------------------------- -->
+    <!-- feedback form -->
+    <?php require_once "partials/feedback.php"; ?>
+    <!-- feedback form -->
+    <!-- ----------------------------------------------- -->
     <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
+    <!-- footer -->
+    <!-- -------------------------------------- -->
 
     <script src="js/jquery-2.2.3.min.js"></script>
 

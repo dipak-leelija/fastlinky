@@ -287,7 +287,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <div class="col-12">
                                                                     <label for="country"
                                                                         class="control-label required-field"
-                                                                        style="font-weight: 500; color: #407BFF;">Please
+                                                                        >Please
                                                                         Select
                                                                         Your Country</label>
                                                                 </div>
@@ -323,7 +323,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <div class="col-12">
                                                                     <label for="profession"
                                                                         class="control-label required-field"
-                                                                        style="font-weight: 500; color: #407BFF;">Please
+                                                                        >Please
                                                                         Select
                                                                         Your Profession</label>
                                                                 </div>

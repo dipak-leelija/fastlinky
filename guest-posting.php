@@ -153,12 +153,15 @@ if(isset($_GET['seo_url']))
                         details and this will help you to choose the best options for the best blogs. Invest in
                         Fastlinky which supports your website with the proper authority. We drown our effort and time
                         with high-quality placements which have a selected readership. You can easily choose the best
-                        <b>guest posting sites</b> from FastLinky. </p>
+                        <b>guest posting sites</b> from FastLinky.
+                    </p>
                     <p class="best-blogs-best-result-main-p mb-3">
                         We make sure that this placement is permanent and
                         well-established. We take special care to ensure that FastLinky is able to provide you with the
-                        full benefits of <b>guest posting services</b>. A quality white hat link is always built with a strong
-                        <b>guest posting</b> scheme. Our <b>Guest posting SEO</b> always increases a higher search ranking and
+                        full benefits of <b>guest posting services</b>. A quality white hat link is always built with a
+                        strong
+                        <b>guest posting</b> scheme. Our <b>Guest posting SEO</b> always increases a higher search
+                        ranking and
                         improves your website traffic.
                     </p>
 
@@ -263,7 +266,8 @@ if(isset($_GET['seo_url']))
                             </div>
                             <h4 class="how-fonts-h4  ">Associate Vendors</h4>
                             <p class="">
-                                We know you have already opted for <b>guest posting sites</b> from other platforms but give us
+                                We know you have already opted for <b>guest posting sites</b> from other platforms but
+                                give us
                                 this chance, and you will be satisfied. You are not to be disappointed, We guarantee it.
                             </p>
 
@@ -506,7 +510,8 @@ if(isset($_GET['seo_url']))
         </div>
         <div class="tipsto-get-best-gps">
             <h3>You Should Post only Fresh content</h3>
-            <p>Before posting any <b>guest posts</b> , make sure they are fresh and don't want to publish duplicate content that
+            <p>Before posting any <b>guest posts</b> , make sure they are fresh and don't want to publish duplicate
+                content that
                 can be found on other websites. This is harmful to SEO. </p>
         </div>
 
@@ -606,9 +611,15 @@ if(isset($_GET['seo_url']))
     <div class="mt-4">
         <?php include('partials/seller-action.php') ?>
     </div>
+    <!-- --------------------------------------- -->
+    <!-- feedback form -->
+    <?php require_once "partials/feedback.php"; ?>
+    <!-- feedback form -->
+    <!-- ----------------------------------------------- -->
     <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
-    <!-- /Footer -->
+    <!-- footer -->
+    <!-- -------------------------------------- -->
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 

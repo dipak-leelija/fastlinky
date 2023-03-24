@@ -548,9 +548,15 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
         <?php include_once 'partials/seller-action.php'; ?>
     </div>
     <!-- ================================================================================================= -->
+   <!-- --------------------------------------- -->
+    <!-- feedback form -->
+    <?php require_once "partials/feedback.php"; ?>
+    <!-- feedback form -->
+    <!-- ----------------------------------------------- -->
     <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
-    <!-- /Footer -->
+    <!-- footer -->
+    <!-- -------------------------------------- -->
 
 
     <script src="js/jquery-2.2.3.min.js"></script>

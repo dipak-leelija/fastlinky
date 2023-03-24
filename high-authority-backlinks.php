@@ -748,32 +748,16 @@ benefits of high domain authority website, domain authority rank" />
     <div class="mt-4">
         <?php include_once 'partials/seller-action.php'; ?>
     </div>
-
-
-
+     <!-- --------------------------------------- -->
+    <!-- feedback form -->
+    <?php require_once "partials/feedback.php"; ?>
+    <!-- feedback form -->
+    <!-- ----------------------------------------------- -->
     <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
-
+    <!-- footer -->
+    <!-- -------------------------------------- -->
     <script src="js/jquery-2.2.3.min.js"></script>
-
-
-
-    <!-- /Footer -->
-    <!-- <script type="text/javascript">
-    $(document).ready(function() {
-        $(".faq-li").click(function() {
-            var icon = $(this).children("i");
-            var notThis = $(".faq-li").not(this);
-            var include = icon.hasClass("fa-circle-plus");
-            $(this).children("i").toggleClass("fa-circle-plus fa-circle-minus");
-            $(this).children(".faq-details").toggle();
-            notThis.children(".faq-details").css("display", "none");
-            notThis.children("i").addClass("fa-circle-plus").remove("fa-circle-minus");
-        })
-    });
-    </script> -->
-
-
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 
 </body>

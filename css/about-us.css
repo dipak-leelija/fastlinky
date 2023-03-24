@@ -1,3 +1,4 @@
+
 .about-banner_section {
     padding: 70px 0;
     position: relative;
@@ -47,7 +48,7 @@
 .about-banner_section .counter-section {
     padding: 22px 20px;
     /* background: #ffffff; */
-    background: #FDA33B;
+    background: var(--mustard);
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
 }
@@ -69,11 +70,11 @@
 }
 
 .theme-color {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .dark-color {
-    color: #383a50;
+    color: var(--black);
 }
 
 /* bannner ends */
@@ -86,7 +87,7 @@
 
 .why-choose-us-section h2 {
     font-size: 3rem;
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .rounded-circle {
@@ -103,7 +104,7 @@
 .sub-info {
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    color: #383a50;
+    color: var(--black);
 }
 
 .display-30 {
@@ -123,7 +124,7 @@
 
 .our-Workshop-History-section-h2 {
     font-size: 3rem;
-    color: darkorange;
+    color: var(--mustard);
     text-align: center;
     margin-bottom: 3rem;
 }
@@ -184,9 +185,9 @@
     height: 100px;
     border-radius: 50%;
     position: absolute;
-    background: #fff;
+    background: var(--pure-white);
     top: 30%;
-    color: #3b3b3b;
+    color: var(--black);
     transform: translateY(-50%);
     border: 1px solid #dbdbdb;
     line-height: 100px;
@@ -209,7 +210,7 @@
     height: 15px;
     border-left: 1px solid #dbdbdb;
     border-bottom: 1px solid #dbdbdb;
-    background: #ffffff;
+    background: var(--pure-white);
     position: absolute;
     top: 50%;
     margin-top: -7.5px;
@@ -229,7 +230,7 @@
     content: "";
     width: 3px;
     height: 0;
-    background: #ffa200;
+    background: var(--mustard);
     position: absolute;
     top: 30%;
     transform: translateY(-50%);
@@ -256,7 +257,7 @@
     border-radius: 50%;
     border: 5px solid #ededed;
     position: absolute;
-    background: #fff;
+    background: var(--pure-white);
     z-index: 2;
     top: 30%;
     transform: translateY(-50%);
@@ -272,7 +273,7 @@
 }
 
 .timeline-box:hover:before {
-    border: 5px solid #ffa200;
+    border: 5px solid var(--mustard);
 }
 
 @media screen and (max-width: 1199px) {
@@ -440,7 +441,7 @@
 .service-wrapper:hover {
     -webkit-box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;
     box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;
-    background: #ffffff;
+    background: var(--pure-white);
     -webkit-transform: translateY(-8px);
     transform: translateY(-8px);
     border-color: transparent !important;
@@ -448,8 +449,8 @@
 }
 
 .service-wrapper:hover .icon {
-    background: #407BFF !important;
-    color: #ffffff !important;
+    background: var(--custom-blue) !important;
+    color: var(--pure-white) !important;
 }
 
 .service-wrapper:hover .big-icon {
@@ -459,7 +460,7 @@
 }
 
 .text-custom {
-    color: #407BFF!important;
+    color: var(--custom-blue) !important;
     text-decoration: underline;
 }
 
@@ -476,7 +477,7 @@
 /* ............................ */
 .get-started-section {
     padding: 3rem 0 5rem;
-    background: #FDA33B;
+    background: var(--mustard);
     box-shadow: rgb(204 219 232) 3px 3px 6px 0px inset, rgb(255 255 255 / 50%) -3px -3px 6px 1px inset;
 }
 
@@ -487,7 +488,7 @@
 }
 
 .get-started-section h2 {
-    color: #fff;
+    color: var(--pure-white);
 }
 
 .my-a-btn-div {
@@ -497,7 +498,7 @@
 
 .my-a-btn {
     text-decoration: none;
-    border: 3px solid white;
+    border: 3px solid var(--pure-white);
     color: transparent;
     padding: 20px 40px;
     font-size: 1.5rem;
@@ -513,8 +514,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #407BFF;
-        background: #ffffff;
+        color: var(--custom-blue);
+        background: var(--pure-white);
         font-size: 1.5rem;
         top: 0;
         left: 100%;
@@ -539,8 +540,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #407BFF;
-        background: #ffffff;
+        color: var(--custom-blue);
+        background: var(--pure-white);
         font-size: 1.5rem;
         top: 0;
         left: 0;
@@ -589,14 +590,14 @@
 
 @media (max-width:399px) {
     .my-a-btn {
-        color: #407BFF;
+        color: var(--custom-blue);
         padding: 15px 30px;
         font-size: 1.2rem;
 
     }
 
     .my-a-btn:hover {
-        background: white !important;
+        background: var(--pure-white) !important;
     }
 }
 @media(min-width:991px){
