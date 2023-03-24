@@ -837,7 +837,7 @@ class Customer extends Utility{
 		// echo $rows;exit;
 		//fetch the rows
 		if ($rows > 0) {
-			while($result = $query->fetch_array()){
+			while($result = $query->fetch_assoc()){
 					$data	=	$result;
 			}
 			return $data;

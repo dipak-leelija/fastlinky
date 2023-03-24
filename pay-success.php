@@ -1,6 +1,6 @@
 <?php
-require_once "includes/constant.inc.php";
 session_start();
+require_once "includes/constant.inc.php";
 
 require_once ROOT_DIR."/_config/dbconnect.php";
 
@@ -332,7 +332,7 @@ if(isset($_SESSION['orderId'])) {
     <!-- End  Header -->
 
     <!-- Start  container -->
-    <div id="container" class="mt-2">
+    <div id="container" class="mt-5">
 
         <div class="row flex-column  align-items-center">
 

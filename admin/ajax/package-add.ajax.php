@@ -56,14 +56,7 @@ $packageCats = $GPPackage->allPackagesCat();
 <head>
     <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../../plugins/data-table/style.css">
-
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
     <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
 
 </head>
 
@@ -85,7 +78,7 @@ $packageCats = $GPPackage->allPackagesCat();
                                 </div>
 
                                 <div class="col-12 mt-3">
-                                    <label for="" class="mb-1">Price</label>
+                                    <label for="" class="mb-1">Package Category</label>
                                     <select name="package_id" id="" class="form-control">
                                         <option value="">Select Package Category</option>
                                         <?php

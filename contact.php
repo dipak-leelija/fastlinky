@@ -52,7 +52,7 @@ if(isset($_POST['emailSubmit']))
 
 <head>
 
-    <title>Fast Linky Global Support | Contact Us </title>
+    <title><?php echo COMPANY_S; ?> Global Support - Contact Us </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="LeeLija staff always available for your support. Our technical and SEO staffs always online, Leelija team provided free support for every one." />
@@ -60,7 +60,7 @@ if(isset($_POST['emailSubmit']))
     <meta name="keywords"
         content="contact for SEO, contact for web development, support for on page SEO, support for technical SEO, contact for guest post" />
         <link href="css/contact-us.css" rel='stylesheet' type='text/css' />
-        <link rel="icon" href="images/logo/favicon.png" type="image/png" >
+        <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png" >
 	<!-- Bootstrap Core CSS -->
 	<!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
 	<link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">

@@ -316,7 +316,8 @@ footer .thumb-content ::before {
                                         Building</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="white-label-link-building.php">&nbsp;White Label Link
+                                <div class="thumb-content"><a href="white-label-link-building.php">&nbsp;White Label
+                                        Link
                                         Building</a></div>
                             </li>
                             <li>
@@ -324,7 +325,8 @@ footer .thumb-content ::before {
                                         Backlinks</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="country-specific-backlinks.php">&nbsp;Country Specific
+                                <div class="thumb-content"><a href="country-specific-backlinks.php">&nbsp;Country
+                                        Specific
                                         Backlinks</a></div>
                             </li>
                             <li>
@@ -332,7 +334,8 @@ footer .thumb-content ::before {
                                 </div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="link-insertion-service.php">&nbsp;Link Insertion Service</a></div>
+                                <div class="thumb-content"><a href="link-insertion-service.php">&nbsp;Link Insertion
+                                        Service</a></div>
                             </li>
                             <li>
                                 <div class="thumb-content"><a href="blogger-outreach.php">&nbsp;Blogger
@@ -403,10 +406,8 @@ footer .thumb-content ::before {
                             simply subscribe with your email
                             address.</p>
                         <div class="emailfield-for-outreach">
-                            <input type="text" name="email" id="email" placeholder="Email">
-                            <input name="uri" type="hidden" value="arabiantheme">
-                            <input name="loc" type="hidden" value="en_US">
-                            <input class="submitbutton ripplelink" type="submit" onclick='saveItem(this.id)'
+                            <input type="text" name="email" id="subscriberEmail" placeholder="Email">
+                            <input class="submitbutton ripplelink" type="submit" onclick="saveItem('subscriberEmail')"
                                 value="Subscribe">
                         </div>
                     </div>
@@ -430,24 +431,29 @@ footer .thumb-content ::before {
 
 <script>
 function saveItem(id) {
-    let emaildatas = document.getElementById(id);
-    //       $("#save-button").on("click",function(e)){
-    //         e.preventDefault();
-    var emaildata = $("#email").val();
-    // var id1 = $("#id").val();
-    // alert(emaildata);
-    if (emaildata == "") {
-        alert("All Fields Are Required");
-
+    let subscribermail = document.getElementById(id).value;
+    if (subscribermail == "") {
+        // alert("All Fields Are Required");
+        Swal.fire(
+            'Failed!',
+            'Please Enter Your Email!',
+            'error'
+        )
     } else {
         $.ajax({
-            url: "email_sub.action.php",
+            url: "ajax/mail-subscriber.add.php",
             type: "POST",
             data: {
-                emaildata: emaildata
+                mail: subscribermail
             },
             success: function(data) {
-                alert(data);
+                // alert(data);
+                // console.log(data);
+                Swal.fire(
+                    // 'Failed!',
+                    data,
+                    // 'success'
+                )
             }
 
 
@@ -455,5 +461,5 @@ function saveItem(id) {
     }
 };
 </script>
-
+<script src="<?php echo URL; ?>/plugins/sweetalert/sweetalert2.all.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

@@ -12,6 +12,7 @@ require_once __DIR__ . "/mail-templates/welcome-mail-template.php";
 
 require_once __DIR__ . "/classes/contact.class.php";
 require_once __DIR__ . "/classes/emails.class.php"; 
+include_once __DIR__ . "/classes/customer.class.php";
 include_once __DIR__ . "/classes/subscriber.class.php";
 include_once __DIR__ . "/classes/encrypt.inc.php";
 require_once __DIR__ . "/classes/utility.class.php"; 
@@ -20,6 +21,7 @@ include_once __DIR__ . "/classes/utilityMesg.class.php";
 
 $PHPMailer		= new PHPMailer();
 $contact 		= new Contact();
+$Customer		= new Customer();
 $subscriber 	= new EmailSubscriber();
 $error			= new MyError();
 $emailObj		= new Emails();

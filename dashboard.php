@@ -183,7 +183,7 @@ $mostSelling    = $BlogMst->mostSellingBlogs($cusId);
                                                                     <td>
                                                                         <span class="badge text-bg-primary '.$status[0]["orders_status_name"].'">'.$status[0]["orders_status_name"].'<span>
                                                                     </td>
-                                                                    <td class="text-center">'.$DateUtil->dateTimeNum($order['added_on'], '.').'</td>
+                                                                    <td class="text-center">'.$DateUtil->dateTimeNumber($order['added_on']).'</td>
                                                                 </tr>';
                                                             
                                                             if ($sl == 7) {

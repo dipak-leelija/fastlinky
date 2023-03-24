@@ -3,13 +3,13 @@ require_once("../includes/constant.inc.php");
 session_start();
 include_once('checkSession.php');
 
-require_once "../_config/dbconnect.trait.php";
+require_once ROOT_DIR . "/_config/dbconnect.php";
 
-require_once "../classes/adminLogin.class.php"; 
-require_once "../classes/date.class.php";
-require_once "../classes/content-order.class.php";
-require_once "../classes/utility.class.php";
-require_once "../classes/blog_mst.class.php";
+require_once ROOT_DIR . "/classes/adminLogin.class.php"; 
+require_once ROOT_DIR . "/classes/date.class.php";
+require_once ROOT_DIR . "/classes/content-order.class.php";
+require_once ROOT_DIR . "/classes/utility.class.php";
+require_once ROOT_DIR . "/classes/blog_mst.class.php";
 
 
 /* INSTANTIATING CLASSES */
@@ -37,15 +37,15 @@ $blogsDtls	   = $blogMst->ShowBlogData();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Blog List - <?php echo COMPANY_FULL_NAME; ?></title>
+    <title>Listed Blogs - <?php echo COMPANY_FULL_NAME; ?></title>
     <link rel="shortcut icon" href="images/favicon.png" />
 
-    <link rel="stylesheet" href="vendors/feather/feather.css">
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../plugins/data-table/style.css">
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="../plugins/sweetalert/sweetalert2.css">
+    <link rel="stylesheet" href="<?php echo ADM_URL; ?>/vendors/feather/feather.css">
+    <link rel="stylesheet" href="<?php echo ADM_URL; ?>/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="<?php echo URL; ?>/plugins/data-table/style.css">
+    <link rel="stylesheet" href="<?php echo ADM_URL; ?>/css/vertical-layout-light/style.css">
+    <link rel="stylesheet" href="<?php echo ADM_URL; ?>/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="<?php echo URL; ?>/plugins/sweetalert/sweetalert2.css">
 
 
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
@@ -74,7 +74,7 @@ $blogsDtls	   = $blogMst->ShowBlogData();
                             <div class="card">
                                 <div class="card-body">
                                     <div class="border-bottom d-flex justify-content-between pb-1">
-                                        <h4 class="card-title">Niche wise Blogs Maintenance</h4>
+                                        <h4 class="card-title">Listed Blogs</h4>
                                         <button type="button" class="btn btn-sm btn-primary"
                                             onclick="location.href='blog_add.php?action=addblog';">Add New Blog
                                         </button>

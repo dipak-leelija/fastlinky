@@ -39,7 +39,6 @@ $cusId		= $utility->returnSess('userid', 0);
 if(isset($_GET['seo_url']))
 	{
 		 $seo_url			  		= $_GET['seo_url'];
-		// $return_url 	= base64_decode($_GET["return_url"]); //get return url
 	}
 
 ?>
@@ -59,7 +58,6 @@ if(isset($_GET['seo_url']))
         content="seo services, local seo services, seo company, seo agency, Link Building services agency, link building, backlink building, seo link building, what is a backlink ,link building services, seo link building services, best link building services, back link building services, link building seo services" />
 
 
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <!-- Custom CSS -->
@@ -67,10 +65,12 @@ if(isset($_GET['seo_url']))
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
     <link href="css/index.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/testimonials.css">
-    <link rel="stylesheet" href="css/clientside-logo.css">
+    <link href="css/testimonials.css" rel="stylesheet">
+    <link href="css/clientside-logo.css" rel="stylesheet">
+
     <!-- font-awesome icons -->
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="./plugins/sweetalert/sweetalert2.css" rel="stylesheet">
     <!-- //Custom Theme files -->
     <!--webfonts-->
     <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">

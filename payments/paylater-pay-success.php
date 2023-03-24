@@ -1,29 +1,22 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
-require_once "../_config/dbconnect.php";
-require_once "../_config/dbconnect.trait.php";
+require_once dirname(__DIR__) .  "/includes/constant.inc.php";
+require_once ROOT_DIR . "/_config/dbconnect.php";
 
+require_once ROOT_DIR . "/includes/user.inc.php";
+require_once ROOT_DIR . "/includes/email.inc.php";
+require_once ROOT_DIR . "/includes/registration.inc.php";
+require_once ROOT_DIR . "/includes/mail-functions.php";
+require_once ROOT_DIR . "/includes/paypal.inc.php";
 
-require_once "../includes/constant.inc.php";
-
-require_once "../includes/user.inc.php";
-require_once "../includes/email.inc.php";
-require_once "../includes/registration.inc.php";
-require_once "../includes/mail-functions.php";
-require_once "../includes/paypal.inc.php";
-
-require_once "../classes/domain.class.php"; 
-require_once "../classes/blog_mst.class.php"; 
-require_once "../classes/orderStatus.class.php";
-require_once "../classes/error.class.php";
-require_once "../classes/date.class.php";
-require_once "../classes/content-order.class.php";
-require_once "../classes/utility.class.php"; 
-require_once "../classes/utilityMesg.class.php"; 
+require_once ROOT_DIR . "/classes/domain.class.php"; 
+require_once ROOT_DIR . "/classes/blog_mst.class.php"; 
+require_once ROOT_DIR . "/classes/orderStatus.class.php";
+require_once ROOT_DIR . "/classes/error.class.php";
+require_once ROOT_DIR . "/classes/date.class.php";
+require_once ROOT_DIR . "/classes/content-order.class.php";
+require_once ROOT_DIR . "/classes/utility.class.php"; 
+require_once ROOT_DIR . "/classes/utilityMesg.class.php"; 
 
 /* INSTANTIATING CLASSES */
 $domain			= new Domain();
@@ -56,7 +49,7 @@ if (!isset($_POST)) {
 }
 
 if (!isset($_SESSION['payment-process']) || $_SESSION['payment-process'] != true) {
-	header("Location: ../dashboard.php");
+	header("Location: ".URL."/dashboard.php");
 	exit;
 }
 
@@ -215,15 +208,17 @@ if($_SESSION['pay_success'] == true) {
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
+    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <title>Payment Success - Order Received</title>
-    <link rel="stylesheet" href="<?php echo URL ?>style/ansysoft.css" type="text/css" />
-    <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="../plugins/fontawesome-6.1.1/css/all.css">
-
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <link rel="stylesheet" href="../css/leelija.css">
-    <link rel="stylesheet" href="../css/payment-status.css">
+    <link rel="stylesheet" href="<?php echo URL ?>/style/ansysoft.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="<?php echo URL ?>/plugins/fontawesome-6.1.1/css/all.css">
+    <link rel="stylesheet" href="<?php echo URL ?>/css/leelija.css">
+    <link rel="stylesheet" href="<?php echo URL ?>/css/payment-status.css">
 
 </head>
 
@@ -237,7 +232,7 @@ if($_SESSION['pay_success'] == true) {
     <!-- Start  container -->
     <div id="container">
 
-        <div class="row flex-column  align-items-center">
+        <div class="row flex-column  align-items-center mt-5">
 
             <!--======= column 1 =======-->
             <div class="col-11 col-md-10">
@@ -274,6 +269,8 @@ if($_SESSION['pay_success'] == true) {
     <!-- Start Foter -->
     <?php require_once "../partials/footer.php"; ?>
     <!-- End Foter -->
+	<script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
