@@ -1,21 +1,21 @@
 <?php
-require_once "../includes/constant.inc.php";
 session_start();
-include_once('checkSession.php');
+require_once "../includes/constant.inc.php";
+require_once ROOT_DIR."/includes/user.inc.php";
+include_once ADM_DIR . "checkSession.php";
 
+
+require_once ROOT_DIR.'/classes/encrypt.inc.php';
 require_once ROOT_DIR."/_config/dbconnect.php";
 
-require_once ROOT_DIR."/includes/user.inc.php";
-require_once ROOT_DIR.'/classes/encrypt.inc.php';
 
-require_once ROOT_DIR."/classes/date.class.php";  
-require_once ROOT_DIR."/classes/error.class.php";
 require_once ROOT_DIR."/classes/gp-package.class.php";
 require_once ROOT_DIR."/classes/location.class.php"; 
 include_once ROOT_DIR."/classes/countries.class.php";
-require_once ROOT_DIR."/classes/subscriber.class.php";
 require_once ROOT_DIR."/classes/search.class.php";
+require_once ROOT_DIR."/classes/error.class.php";
 
+require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
 require_once ROOT_DIR."/classes/utilityMesg.class.php"; 
 require_once ROOT_DIR."/classes/utilityImage.class.php";
@@ -28,7 +28,6 @@ $error 			= new Error();
 $GPPackage      = new GuestPostpackage();
 $lc		 		= new Location();
 $country		= new Countries();
-$subscribe		= new EmailSubscriber();
 $search_obj		= new Search();
 
 $utility		= new Utility();
