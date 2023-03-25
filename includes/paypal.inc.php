@@ -1,6 +1,6 @@
 <?php 
 
-	define('PAYPAL_BUSINESS',				"sb-iwgos15214270@personal.example.com");		//Paypal Merchent Account  
+	define('PAYPAL_BUSINESS',				"");		//Paypal Merchent Account  
 	define('PAYPAL_LIVE_ID',				"AVfNiFu9M4brh84SlYmeHtHJCtdjW1CUmWl5T0wLsU2JOm6VNB6pCRcxi8zKxBbCO9p0t54pPtF65Tim"); //
 	define('PAYPAL_SANDBOX_ID',				"Ad-k2bukRixHHQ6YLq08lkeobaQU8EJtuiiW6vuuthWJIOdqEpUlpz73mKZBxU_pvTPy9q086XgtFw2d"); //
 
@@ -12,15 +12,11 @@
 	define('PAYPAL_NOTIFY_URL',     		PAYPAL_SITE_URL."/payipn.php");
 
 
-
-
 	define('PAYPAL_RETURN_METHOD',  		"2"); //1=GET 2=POST  --> Use post since we will need the return values to check if order is valid
 
 	define('PAYPAL_CURRENCY_CODE',  		"USD"); //['USD,GBP,JPY,CAD,EUR
 
 	define('PAYPAL_LC',             		"GB");
-
-	
 
 	
 

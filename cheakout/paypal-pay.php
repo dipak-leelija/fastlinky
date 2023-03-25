@@ -2,6 +2,7 @@
 session_start();
 
 require_once dirname(__DIR__)."/includes/constant.inc.php";
+require_once ROOT_DIR."/includes/paypal.inc.php";
 require_once ROOT_DIR."/_config/dbconnect.php";
 
 require_once ROOT_DIR."/classes/customer.class.php";
@@ -203,18 +204,17 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
                 </div>
             </form>
         <form action="order-processing.php" method="post" id="payment-process-form" name="payment-process-form">
-            <input type="hidden" id="pppamn" name="pppamn" value="<?php echo $totalCost?>">
+            <input type="hidden" id="pppamn" name="pppamn" value="">
             <input type="hidden" id="paymentdata" name="paymentdata" value="">
         </form>
     </section>
 
     <script
-        src="https://www.paypal.com/sdk/js?client-id=Ad-k2bukRixHHQ6YLq08lkeobaQU8EJtuiiW6vuuthWJIOdqEpUlpz73mKZBxU_pvTPy9q086XgtFw2d&disable-funding=credit,card&currency=USD">
-    // Live Id = AVfNiFu9M4brh84SlYmeHtHJCtdjW1CUmWl5T0wLsU2JOm6VNB6pCRcxi8zKxBbCO9p0t54pPtF65Tim
+        src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_LIVE_ID?>&disable-funding=credit,card,paylater&currency=USD">
     </script>
     <script>
-    let amount = document.getElementById("pppamn").value;
 
+    let getAmount = document.getElementById("pppamn");
     let paymentdata = document.getElementById('paymentdata');
     let form = document.getElementById('payment-process-form');
 
@@ -232,7 +232,7 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
             return actions.order.create({
                 purchase_units: [{
                     amount: {
-                        value: amount
+                        value: <?= $totalCost?>
                     }
                 }]
             });
@@ -244,6 +244,7 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
                 // alert('Done');
                 document.getElementById('payBtn').innerHTML =
                     `<div class="bg-secondary border border-info rounded text-center"><p class="fw-bold py-2 mb-0"><span><img src="images/icons/loading-2.gif" alt="loading"></span> Please Wait..</p></div>`;
+                getAmount.value = <?= $totalCost?>;
                 paymentdata.value = JSON.stringify(details);
                 form.submit();
 
@@ -251,11 +252,11 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
         },
         onCancel: function(data) {
 
-            console.log(data);
-            sessionStorage.setItem('orderStatus', 'Cancled');
-            if (sessionStorage.getItem('orderStatus') == 'Cancled') {
+            // console.log(data);
+            // sessionStorage.setItem('orderStatus', 'Cancled');
+            // if (sessionStorage.getItem('orderStatus') == 'Cancled') {
                 alert('cancled');
-            }
+            // }
         },
         onError: function(err) {
             alert(`Error: ${err}`);
