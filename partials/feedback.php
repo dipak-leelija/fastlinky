@@ -9,8 +9,11 @@
     left: 0;
     right: 0;
     margin: 0 auto;
+    /* transition: all .25s; */
 }
-
+.fade {
+    transition: opacity .15s linear;
+}
 .closing-icon {
     text-align: end;
     font-size: 1.65rem;
@@ -18,22 +21,22 @@
     cursor: pointer;
     color: #ff0000ab;
 }
-
-.auto-popup-feedback h2 {
-    margin-top: -20px;
+ .closing-icon:active {
+        animation: lit 50s;
 }
+@keyframes lit {
+    from {
+        opacity: 1;
+    }
 
-.auto-popup-feedback p {
-    font-size: 14px;
-    text-align: justify;
-    margin: 20px 0;
-    line-height: 25px;
+    to {
+        opacity: 0;
+    }
 }
-
 .popoup-wrapper {
-    background: #80808099;
+    background: #0e0e0e9c;
     padding: 3.4rem;
-
+    min-height: 100vh !important;
 }
 
 .my-buttons-hover {
@@ -80,10 +83,24 @@
     margin: auto;
     border: none;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* animation: lit 2s; */
+    /* animation-delay: 2s; */
 }
-.starting-column{
+
+/* @keyframes lit {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+} */
+
+.starting-column {
     padding: 0 2rem 1rem;
 }
+
 .required-field {
     color: var(--black) !important;
 }
@@ -130,9 +147,12 @@ label.star:before {
     content: '\f006';
     font-family: FontAwesome;
 }
-form .form-group input, form .form-group textarea {
+
+form .form-group input,
+form .form-group textarea {
     font-size: 15px !important;
 }
+
 @media(max-width:991px) {
     .submit-divclass {
         text-align: center;
@@ -147,10 +167,12 @@ form .form-group input, form .form-group textarea {
     .popoup-wrapper {
         padding: 4.2rem 0rem;
     }
-    .starting-column{
-    padding: 0 1rem 1rem;
+
+    .starting-column {
+        padding: 0 1rem 1rem;
+    }
 }
-}
+
 @media(max-width:390px) {
     label.star {
         font-size: 25px;
@@ -165,18 +187,13 @@ form .form-group input, form .form-group textarea {
         height: 40px !important;
 
     }
-    .starting-column{
-    padding: 0 .8rem 1rem;
+
+    .starting-column {
+        padding: 0 .8rem 1rem;
+    }
 }
-}
- </style>
-
- <style media="screen">
-
-
-
- </style>
- <div class="auto-popup-feedback">
+ </style> 
+ <div class="auto-popup-feedback fade show">
      <div class="popoup-wrapper">
          <div class="card feedback-main-card">
              <div class="text-end">
@@ -266,15 +283,15 @@ form .form-group input, form .form-group textarea {
  </div>
 
  <script type="text/javascript">
-    window.addEventListener("load", function() {
-        setTimeout(
-            function open(event) {
-                document.querySelector(".auto-popup-feedback").style.display = "block";
-            },
-            7000
-        )
-    });
-    document.querySelector("#close").addEventListener("click", function() {
-        document.querySelector(".auto-popup-feedback").style.display = "none";
-    });
-    </script>
+window.addEventListener("load", function() {
+    setTimeout(
+        function open(event) {
+            document.querySelector(".auto-popup-feedback").style.display = "block";
+        },
+        1000
+    )
+});
+document.querySelector("#close").addEventListener("click", function() {
+    document.querySelector(".auto-popup-feedback").style.display = "none";
+});
+ </script>
