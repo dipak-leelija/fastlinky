@@ -97,7 +97,7 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, '*');
                             <div class="col-lg-10 m-auto">
                                 <div class="card product_card   position-relative border rounded  mb-3">
                                     <div class="p-textdiv-card-history">
-                                        <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($eachPackOrd['order_id'])); ?>"
+                                        <a href="package-order-history.php?order=<?php echo base64_encode(urlencode($eachPackOrd['order_id'])); ?>"
                                             class="text-dark">
                                             <h3 class="product-title-package-history"> Managed Link Building Basic
                                                 <span
