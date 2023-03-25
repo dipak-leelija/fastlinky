@@ -22,9 +22,9 @@
     color: #ff0000ab;
 }
  .closing-icon:active {
-        animation: lit 50s;
+        animation: lifting 15s;
 }
-@keyframes lit {
+@keyframes lifting {
     from {
         opacity: 1;
     }
@@ -83,11 +83,11 @@
     margin: auto;
     border: none;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    /* animation: lit 2s; */
+    animation: lit 2s;
     /* animation-delay: 2s; */
 }
 
-/* @keyframes lit {
+@keyframes lit {
     from {
         opacity: 0;
     }
@@ -95,7 +95,7 @@
     to {
         opacity: 1;
     }
-} */
+}
 
 .starting-column {
     padding: 0 2rem 1rem;
@@ -288,7 +288,7 @@ window.addEventListener("load", function() {
         function open(event) {
             document.querySelector(".auto-popup-feedback").style.display = "block";
         },
-        1000
+        6000
     )
 });
 document.querySelector("#close").addEventListener("click", function() {
