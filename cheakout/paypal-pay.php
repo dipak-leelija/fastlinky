@@ -30,13 +30,7 @@ $typeM		= $utility->returnGetVar('typeM','');
 $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 
-if($cusId == 0){
-	header("Location: ".URL);
-}
-
-if($cusDtl[0][0] == 2){ 
-	header("Location: dashboard.php");
-}
+require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 if (!isset($_SESSION['package'])) {
     // print_r($_SESSION['package']);
