@@ -11,9 +11,11 @@
     margin: 0 auto;
     /* transition: all .25s; */
 }
+
 .fade {
     transition: opacity .15s linear;
 }
+
 .closing-icon {
     text-align: end;
     font-size: 1.65rem;
@@ -21,9 +23,11 @@
     cursor: pointer;
     color: #ff0000ab;
 }
- .closing-icon:active {
-        animation: lifting 15s;
+
+.closing-icon:active {
+    animation: lifting 15s;
 }
+
 @keyframes lifting {
     from {
         opacity: 1;
@@ -33,6 +37,7 @@
         opacity: 0;
     }
 }
+
 .popoup-wrapper {
     background: #0e0e0e9c;
     padding: 3.4rem;
@@ -192,7 +197,7 @@ form .form-group textarea {
         padding: 0 .8rem 1rem;
     }
 }
- </style> 
+ </style>
  <div class="auto-popup-feedback fade show">
      <div class="popoup-wrapper">
          <div class="card feedback-main-card">
@@ -201,7 +206,7 @@ form .form-group textarea {
              </div>
              <div class="row no-gutters  m-auto">
                  <div class="col starting-column ">
-                     <form method="post" class=" needs-validation" novalidate>
+                     <form method="post" class="needs-validation" name="feedback-form" novalidate>
                          <div class="row">
                              <div class="col-sm-12 mb-0">
                                  <div class="form-group pb-2">
@@ -227,14 +232,11 @@ form .form-group textarea {
                              </div>
                              <div class="col-sm-12 mb-0">
                                  <div class="form-group pb-2">
-                                     <label class="required-field" for="firstname">Full Name</label>
-                                     <input type="text" minlength="4" class="form-control mb-2" id="firstname"
-                                         name="firstname" placeholder="John" required>
-                                     <div class="invalid-feedback">
-                                         Please Enter your first Name!
-                                     </div>
-                                     <div class="valid-feedback">
-                                         Looks good!
+                                     <label class="required-field" for="name">Full Name</label>
+                                     <input type="text" minlength="4" class="form-control mb-2" id="name"
+                                         name="name">
+                                     <div class="valid-feedback" id="invalid-name">
+                                         Please Enter your Name!
                                      </div>
                                  </div>
                              </div>
@@ -242,13 +244,9 @@ form .form-group textarea {
                              <div class="col-sm-12 mb-0">
                                  <div class="form-group pb-2">
                                      <label class="required-field" for="email">Email</label>
-                                     <input type="email" class="form-control mb-2" id="email" name="email"
-                                         placeholder="example@gmail.com" required>
-                                     <div class="invalid-feedback">
+                                     <input type="email" class="form-control mb-2" id="email" name="email">
+                                     <div class="invalid-feedback" id="invalid-email">
                                          Please enter your email!
-                                     </div>
-                                     <div class="valid-feedback">
-                                         Email is valid!
                                      </div>
                                  </div>
                              </div>
@@ -258,19 +256,16 @@ form .form-group textarea {
                                          improve?</label>
                                      <textarea class="form-control mb-0" minlength="10" id="message" name="message"
                                          rows="2" placeholder="Hi there, I would like to....." required></textarea>
-                                     <div class="invalid-feedback">
-                                         Please enter your queries!
-                                     </div>
-                                     <div class="valid-feedback">
-                                         We will solve this soon!
+                                     <div class="invalid-feedback" id="invalid-feedback">
+                                         Please write something!
                                      </div>
                                  </div>
                              </div>
                              <div class="col-sm-12 mb-0 submit-divclass text-center">
-                                 <a href="/">
-                                     <button class="my-buttons-hover bn21">Submit <i class="fas fa-comments"
-                                             style="font-size: 1.2rem;"></i></button>
-                                 </a>
+                                 <button type="button" class="my-buttons-hover bn21" onclick="return feedbackSubmit()">
+                                     Submit
+                                     <i class="fas fa-comments" style="font-size: 1.2rem;"></i>
+                                 </button>
                              </div>
                          </div>
                      </form>
@@ -282,16 +277,55 @@ form .form-group textarea {
  </div>
  </div>
 
+ <?php
+if(isset($_SESSION[USR_SESS])){
+?>
+
  <script type="text/javascript">
 window.addEventListener("load", function() {
     setTimeout(
         function open(event) {
             document.querySelector(".auto-popup-feedback").style.display = "block";
         },
-        6000
+        60
     )
 });
+
 document.querySelector("#close").addEventListener("click", function() {
     document.querySelector(".auto-popup-feedback").style.display = "none";
+    document.cookie = "feedback=closed";
 });
+
+const feedbackSubmit = () => {
+    let name = document.forms["feedback-form"]["name"].value;
+    let email = document.forms["feedback-form"]["email"].value;
+    let message = document.forms["feedback-form"]["message"].value;
+
+    if (name == '') {
+        document.getElementById(`invalid-name`).classList.add('d-block');
+        return false;
+    }else{
+        document.getElementById(`invalid-name`).classList.add('d-none');
+    }
+
+    if (email == '') {
+        document.getElementById(`invalid-email`).classList.add('d-block');
+        return false;
+    }else{
+        document.getElementById(`invalid-email`).classList.add('d-none');
+    }
+
+    if (message == '') {
+        document.getElementById(`invalid-feedback`).classList.add('d-block');
+        return false;
+    }else{
+        document.getElementById(`invalid-feedback`).classList.add('d-none');
+    }
+    // feedbackSubmit()
+    document.forms["feedback-form"].submit();
+    return true;
+}
  </script>
+ <?php
+}
+?>

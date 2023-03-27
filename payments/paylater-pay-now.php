@@ -169,8 +169,6 @@ $_SESSION['payment-process'] = true;
                     </table>
                 </div>
 
-                <input type="hidden" id="amount" value="<?php echo $orderPrice;?>">
-
                 <div class="col-11">
                     <div class="d-flex justify-content-end mt-2" id="payBtn">
                         <div id="paypal-payment-button">
@@ -184,16 +182,12 @@ $_SESSION['payment-process'] = true;
 
     <form action="paylater-pay-success.php" method="post" id="send-data" class="d-none">
         <input type="text" name="data" id="form-inp">
-        <!-- <input type="text" name="blogId" id="blogId" value="<?php echo $blogId; ?>"> -->
         <input type="text" name="orderId" value="<?php echo $orderId; ?>">
     </form>
 
 
-    <script
-        src="https://www.paypal.com/sdk/js?client-id=Ad-k2bukRixHHQ6YLq08lkeobaQU8EJtuiiW6vuuthWJIOdqEpUlpz73mKZBxU_pvTPy9q086XgtFw2d&disable-funding=credit,card&currency=USD">
-    </script>
+    <script src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_LIVE_ID?>&disable-funding=credit,card&currency=USD"></script>
     <script>
-    let amount = document.getElementById("amount").value;
     let customerName = document.getElementById("customer-name").innerText;
     let waitingBox = document.getElementById("waiting-box");
     let paymentBox = document.getElementById("payment-box");
@@ -214,7 +208,7 @@ $_SESSION['payment-process'] = true;
             return actions.order.create({
                 purchase_units: [{
                     amount: {
-                        value: amount
+                        value: <?= $orderPrice ?>
                     }
                 }]
             });
@@ -234,11 +228,11 @@ $_SESSION['payment-process'] = true;
         },
         onCancel: function(data) {
 
-            console.log(data);
-            sessionStorage.setItem('orderStatus', 'Cancled');
-            if (sessionStorage.getItem('orderStatus') == 'Cancled') {
+            // console.log(data);
+            // sessionStorage.setItem('orderStatus', 'Cancled');
+            // if (sessionStorage.getItem('orderStatus') == 'Cancled') {
                 alert('cancled');
-            }
+            // }
         },
         onError: function(err) {
             alert(`Error: ${err}`);
