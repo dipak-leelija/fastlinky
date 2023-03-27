@@ -11,9 +11,11 @@
     margin: 0 auto;
     /* transition: all .25s; */
 }
+
 .fade {
     transition: opacity .15s linear;
 }
+
 .closing-icon {
     text-align: end;
     font-size: 1.65rem;
@@ -21,9 +23,11 @@
     cursor: pointer;
     color: #ff0000ab;
 }
- .closing-icon:active {
-        animation: lifting 15s;
+
+.closing-icon:active {
+    animation: lifting 15s;
 }
+
 @keyframes lifting {
     from {
         opacity: 1;
@@ -33,6 +37,7 @@
         opacity: 0;
     }
 }
+
 .popoup-wrapper {
     background: #0e0e0e9c;
     padding: 3.4rem;
@@ -192,7 +197,7 @@ form .form-group textarea {
         padding: 0 .8rem 1rem;
     }
 }
- </style> 
+ </style>
  <div class="auto-popup-feedback fade show">
      <div class="popoup-wrapper">
          <div class="card feedback-main-card">
@@ -282,16 +287,46 @@ form .form-group textarea {
  </div>
  </div>
 
- <script type="text/javascript">
-window.addEventListener("load", function() {
-    setTimeout(
-        function open(event) {
-            document.querySelector(".auto-popup-feedback").style.display = "block";
-        },
-        6000
-    )
-});
-document.querySelector("#close").addEventListener("click", function() {
-    document.querySelector(".auto-popup-feedback").style.display = "none";
-});
+<script type="text/javascript">
+    window.addEventListener("load", function() {
+        checkCookie();
+
+    });
+    document.querySelector("#close").addEventListener("click", function() {
+        document.querySelector(".auto-popup-feedback").style.display = "none";
+        document.cookie = "feedback=closed";
+    });
+
+
+
+
+    function checkCookie() {
+        let username = getCookie("feedback");
+        if (username == "") {
+            setTimeout(
+                function open(event) {
+                    document.querySelector(".auto-popup-feedback").style.display = "block";
+                },
+                6000
+            )
+        }
+    }
+
+
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
  </script>
