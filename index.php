@@ -6,22 +6,22 @@ require_once ROOT_DIR . "/_config/dbconnect.php";
 
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/customer.class.php";
-require_once ROOT_DIR . "/classes/login.class.php";
 require_once ROOT_DIR . "/classes/services.class.php";
+require_once ROOT_DIR . "/classes/feedback.class.php";
 
 require_once ROOT_DIR . "/classes/blog_mst.class.php";
+require_once ROOT_DIR . "/classes/faqs.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php";
 require_once ROOT_DIR . "/classes/utilityMesg.class.php";
 require_once ROOT_DIR . "/classes/utilityImage.class.php";
 require_once ROOT_DIR . "/classes/utilityNum.class.php";
-require_once ROOT_DIR . "/classes/faqs.class.php";
 
 // require_once("classes/gp-package.class.php");
 /* INSTANTIATING CLASSES */
 $dateUtil       = new DateUtil();
 $customer		= new Customer();
-$logIn			= new Login();
 $service		= new Services();
+$Feedback       = new Feedback();
 $blogMst		= new BlogMst();
 $utility		= new Utility();
 $uMesg 			= new MesgUtility();
