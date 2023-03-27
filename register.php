@@ -199,7 +199,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                             <div class="section group">
                                                 <div class="bfrom">
                                                     <form class="form-horizontal-login needs-validation" role="form"
-                                                        action="<?php echo $_SERVER['PHP_SELF'] ?>" name="regUserForm"
+                                                        action="<?php echo $_SERVER['PHP_SELF'] ?>" onsubmit="return userCheck()" name="regUserForm"
                                                         method="post" enctype="multipart/form-data" autocomplete="off"
                                                         id="regUserForm" novalidate>
                                                         <div class="row">
@@ -209,7 +209,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <div class="d-flex  user-client-radio">
                                                                     <div class="form-check form-check-inline mb-0">
                                                                         <input class="form-check-input" type="radio"
-                                                                            name="inlineRadioOptions" id="inlineRadio1"
+                                                                            name="userOptions" id="inlineRadio1"
                                                                             value="option1" required>
                                                                         <label class="form-check-label"
                                                                             for="inlineRadio1">Client</label>
@@ -222,12 +222,15 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                     </div>
                                                                     <div class="form-check form-check-inline mb-0">
                                                                         <input class="form-check-input" type="radio"
-                                                                            name="inlineRadioOptions" id="inlineRadio2"
+                                                                            name="userOptions" id="inlineRadio2"
                                                                             value="option2">
                                                                         <label class="form-check-label"
                                                                             for="inlineRadio2" required>Seller</label>
 
                                                                     </div>
+                                                                </div>
+                                                                <div class="invalid-feedback" id="select-user-type">
+                                                                    Please Select One
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
@@ -422,6 +425,26 @@ Ready website for business, High Quality website sales, High quality blogs sales
     </script>
 
     <script>
+
+    const userCheck = ()=>{
+        let userOptions = document.forms["regUserForm"]["userOptions"].value;
+        boxes = document.querySelectorAll('.user-client-radio');
+
+        if (userOptions == '' || userOptions == null ) {
+            document.getElementById('select-user-type').classList.add('d-block');
+            for (const box of boxes) {
+                box.classList.add('border-danger');
+            }
+            return false;
+        }else{
+            document.getElementById('select-user-type').classList.add('d-none');
+            for (const box of boxes) {
+                box.classList.remove('border-danger');
+            }      
+        }
+    }
+
+
     $('#txtPassword, #txtPasswordConfirm').on('keyup', function() {
         'use strict'
 
