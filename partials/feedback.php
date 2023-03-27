@@ -272,10 +272,10 @@ form .form-group textarea {
                                  </div>
                              </div>
                              <div class="col-sm-12 mb-0 submit-divclass text-center">
-                                 <a href="/">
-                                     <button class="my-buttons-hover bn21">Submit <i class="fas fa-comments"
-                                             style="font-size: 1.2rem;"></i></button>
-                                 </a>
+                            <button type="button" class="my-buttons-hover bn21">
+                                Submit
+                                <i class="fas fa-comments" style="font-size: 1.2rem;"></i>
+                            </button>
                              </div>
                          </div>
                      </form>
@@ -287,46 +287,25 @@ form .form-group textarea {
  </div>
  </div>
 
-<script type="text/javascript">
-    window.addEventListener("load", function() {
-        checkCookie();
+ <?php
+if(isset($_SESSION[USR_SESS])){
+?>
 
-    });
-    document.querySelector("#close").addEventListener("click", function() {
-        document.querySelector(".auto-popup-feedback").style.display = "none";
-        document.cookie = "feedback=closed";
-    });
+ <script type="text/javascript">
+window.addEventListener("load", function() {
+    setTimeout(
+        function open(event) {
+            document.querySelector(".auto-popup-feedback").style.display = "block";
+        },
+        6000
+    )
+});
 
-
-
-
-    function checkCookie() {
-        let username = getCookie("feedback");
-        if (username == "") {
-            setTimeout(
-                function open(event) {
-                    document.querySelector(".auto-popup-feedback").style.display = "block";
-                },
-                6000
-            )
-        }
-    }
-
-
-
-    function getCookie(cname) {
-        let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-    }
+document.querySelector("#close").addEventListener("click", function() {
+    document.querySelector(".auto-popup-feedback").style.display = "none";
+    document.cookie = "feedback=closed";
+});
  </script>
+ <?php
+}
+?>
