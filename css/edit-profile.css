@@ -95,9 +95,9 @@ font-size: 1.1rem;
     position: absolute;
 }
 
-.form-select {
+/* .form-select {
     border: 1px solid #407BFF5c !important;
-}
+} */
 .edit_profile .bfrom {
     margin: auto;
     width: 100%

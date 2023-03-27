@@ -9,6 +9,17 @@
     text-align: center;
     color: coral;
 }
+.user-client-radio{
+    justify-content: space-between;
+    padding: .438rem .5rem;
+    border: 1px solid #ced4da;
+    margin: 10px 0;
+    /* height: 40px; */
+}
+.term-n-policy{
+    color: var(--black);
+    text-decoration: underline;
+}
 #txtProfession,
 #txtProfession option {
     font-weight: 400 !important;

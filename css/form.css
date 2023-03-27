@@ -28,14 +28,6 @@
     margin: auto;
 }
 
-.form-horizontal-login input {
-    border-radius: 10px !important;
-    padding-left: 40px;
-}
-
-.form-horizontal-login select {
-    border-radius: 10px !important;
-}
 .login-logo {
     z-index: 2;
 }
@@ -359,10 +351,6 @@ hr {
 /* select.form-control:not([size]):not([multiple]) {
     border: 1px solid #3134355c;
 } */
-
-#selectCountry , #selectCountry option{
-    font-weight: 400;
-}
 
 
 @media (min-width:576px){
