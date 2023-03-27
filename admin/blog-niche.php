@@ -36,37 +36,18 @@ $blogsDtls	   = $blogMst->ShowBlogNichMast();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
+    <title>Niches - <?php echo COMPANY_S?></title>
     <link rel="shortcut icon" href="images/favicon.png" />
     
+    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+    <link rel="stylesheet" href="css/fastlinky.css">
     <link rel="stylesheet" href="vendors/feather/feather.css">
     <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../plugins/data-table/style.css">
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
 
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
 
-    <style>
-    .addnewbtncss {
-        margin: auto;
-        display: flex;
-        align-items: center;
-        margin-right: 1rem;
-        margin-top: -2.6rem;
-
-    }
-
-    @media (min-width:150px) and (max-width:390px) {
-        .addnewbtncss {
-            margin: 0rem;
-            display: flex;
-            align-items: center;
-            margin-right: 0rem;
-            margin-top: -1.2rem;
-        }
-    }
-    </style>
 </head>
 
 <body>
@@ -89,11 +70,13 @@ $blogsDtls	   = $blogMst->ShowBlogNichMast();
 
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-header bg-white d-flex justify-content-between">
                                     <h4 class="card-title">Niche Maintenance</h4>
-                                    <button type="button" class="btn btn-primary .ml-1 addnewbtncss"
+                                    <button type="button" class="btn btn-sm btn-primary"
                                         onclick="location.href='niche-add.php?action=addniche';"> Add New Niche
                                     </button>
+                                </div>
+                                <div class="card-body">
                                     <div class="table-responsive">
                                         <table id="dtBasicExample" class="table table-striped datatable"
                                             cellspacing="0">
