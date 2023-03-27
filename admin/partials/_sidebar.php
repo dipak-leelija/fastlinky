@@ -79,6 +79,7 @@
             </a>
             <div class="collapse" id="faqs">
                 <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="static-pages.php">Pages</a></li>
                     <li class="nav-item"> <a class="nav-link" href="faqs.php">Faqs</a></li>
                 </ul>
             </div>
