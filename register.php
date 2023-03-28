@@ -38,12 +38,12 @@ $cusId			= $utility->returnSess('userid', 0);
 
 if(isset($_POST['btnSubmit'])){
     //post vars
-    $customerType       = $_POST['customer-type'];
+    $customerType       = 1;
     $firstName 		    = $_POST['firstName'];
-    $fullname           = explode(" ",$firstName );
-    $firstName          = $fullname[0];
-    $lastName           = $fullname[1];
-    // $lastName 		= $_POST['lastName'];
+    $lastName 		    = $_POST['lastName'];    
+    // $fullname           = explode(" ",$firstName );
+    // $firstName          = $fullname[0];
+    // $lastName           = $fullname[1];
     $mobNo              = $_POST['mobNumber'];
     $txtemail  		    = $_POST['txtemail'];
     $txtUserName 	    = $_POST['txtemail'];
@@ -194,7 +194,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                         method="post" enctype="multipart/form-data" autocomplete="off"
                                                         id="regUserForm" novalidate>
                                                         <div class="row">
-                                                            <div class="col-sm-6">
+                                                            <!-- <div class="col-sm-6">
                                                                 <label class="required-field">Register As </label>
 
                                                                 <div class="d-flex  user-client-radio">
@@ -204,12 +204,6 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                             value="1" required>
                                                                         <label class="form-check-label"
                                                                             for="inlineRadio1">Client</label>
-                                                                        <!-- <div class="invalid-feedback">
-                                                                            Choose one!
-                                                                        </div>
-                                                                        <div class="valid-feedback">
-                                                                            Looks good!
-                                                                        </div> -->
                                                                     </div>
                                                                     <div class="form-check form-check-inline mb-0">
                                                                         <input class="form-check-input" type="radio"
@@ -223,14 +217,24 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <div class="invalid-feedback" id="select-user-type">
                                                                     Please Select One
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
+
                                                             <div class="col-sm-6">
-                                                                <label class="required-field">Name</label>
-                                                                <input type="text" minlength="8" id="firstName"
-                                                                    name="firstName" placeholder="John Doe"
+                                                                <label class="required-field">First Name</label>
+                                                                <input type="text" minlength="3" id="firstName"
+                                                                    name="firstName" placeholder="First Name"
                                                                     class="form-control" required>
                                                                 <div class="invalid-feedback">
-                                                                    Please Enter your Name!
+                                                                    Please Enter your First Name!
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <label class="required-field">Last Name</label>
+                                                                <input type="text" minlength="3" id="lastName"
+                                                                    name="lastName" placeholder="Last Name"
+                                                                    class="form-control" required>
+                                                                <div class="invalid-feedback">
+                                                                    Please Enter your Last Name!
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -316,8 +320,8 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                             <div class="col-sm-6">
                                                                 <label class="required-field">Password</label>
                                                                 <input type="password" minlength="6" id="txtPassword"
-                                                                    name="txtPassword" placeholder="(username)123"
-                                                                    class="form-control" required>
+                                                                    name="txtPassword" placeholder="Secure Password"
+                                                                    class="form-control" autocomplete="off" required>
                                                                 <div class="invalid-feedback">
                                                                     Your password must be 6-20 characters long!
                                                                 </div>
@@ -408,23 +412,23 @@ Ready website for business, High Quality website sales, High quality blogs sales
 
     <script>
 
-    const userCheck = ()=>{
-        let customerType = document.forms["regUserForm"]["customer-type"].value;
-        boxes = document.querySelectorAll('.user-client-radio');
+    // const userCheck = ()=>{
+    //     let customerType = document.forms["regUserForm"]["customer-type"].value;
+    //     boxes = document.querySelectorAll('.user-client-radio');
 
-        if (customerType == '' || customerType == null ) {
-            document.getElementById('select-user-type').classList.add('d-block');
-            for (const box of boxes) {
-                box.classList.add('border-danger');
-            }
-            return false;
-        }else{
-            document.getElementById('select-user-type').classList.add('d-none');
-            for (const box of boxes) {
-                box.classList.remove('border-danger');
-            }      
-        }
-    }
+    //     if (customerType == '' || customerType == null ) {
+    //         document.getElementById('select-user-type').classList.add('d-block');
+    //         for (const box of boxes) {
+    //             box.classList.add('border-danger');
+    //         }
+    //         return false;
+    //     }else{
+    //         document.getElementById('select-user-type').classList.add('d-none');
+    //         for (const box of boxes) {
+    //             box.classList.remove('border-danger');
+    //         }      
+    //     }
+    // }
 
 
     $('#txtPassword, #txtPasswordConfirm').on('keyup', function() {
