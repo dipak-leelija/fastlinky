@@ -229,7 +229,7 @@ if (isset($_SESSION['order-data'])) {
                                             </button>
                                         </div>
 
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <button type="submit" class="cardBtn" id="orderNowCcavenue"
                                                 onclick="ccAvenueOrder()">
                                                 <span class="masterCard"><img
@@ -237,7 +237,7 @@ if (isset($_SESSION['order-data'])) {
                                                 <span class="visaCard"><img src="images/payments/visaCard.png"></span>
                                                 <span> Credit or Debit Card</span>
                                             </button>
-                                        </div>
+                                        </div> -->
 
                                         <div class="form-group">
                                             <button type="submit" class="payLaterBtn" onclick="payLaterOrder()">
@@ -315,7 +315,7 @@ if (isset($_SESSION['order-data'])) {
                                             </button>
                                         </div>
 
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <button type="submit" class="cardBtn" id="orderNowCcavenue"
                                                 onclick="ccAvenueOrder2()">
                                                 <span class="masterCard"><img
@@ -323,7 +323,7 @@ if (isset($_SESSION['order-data'])) {
                                                 <span class="visaCard"><img src="images/payments/visaCard.png"></span>
                                                 <span> Credit or Debit Card</span>
                                             </button>
-                                        </div>
+                                        </div> -->
 
                                         <div class="form-group">
                                             <button type="submit" class="payLaterBtn" onclick="payLaterOrder2()">

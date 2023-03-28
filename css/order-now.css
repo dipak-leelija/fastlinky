@@ -8,6 +8,7 @@
 
 .bx_width_40 {
     max-width: 40%;
+    min-width: 40%;
     background: lightblue;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -16,6 +17,7 @@
 @media (max-width: 767.98px) {
     .bx_width_40 {
         max-width: 100%;
+        min-width: 100%;
     }
 }
 
