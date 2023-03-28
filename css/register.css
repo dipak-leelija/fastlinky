@@ -1,5 +1,5 @@
 .register-section{
-    margin-top: 2.9rem
+    margin-top: 4rem
 }
 .reg-div-below-card{
     padding: 1.3rem 2.5rem;
@@ -20,9 +20,11 @@
     color: var(--black);
     text-decoration: underline;
 }
-#txtProfession,
-#txtProfession option {
-    font-weight: 400 !important;
+.form-select:focus {
+    box-shadow: none;
+}
+.form-select {
+    border-radius: inherit;
 }
 @media(max-width:991px){
     .submit-divclass{
@@ -89,3 +91,4 @@
 .error-message {
     color: red !important;
 }
+
