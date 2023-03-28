@@ -57,7 +57,7 @@ $activePage = basename($_SERVER['PHP_SELF']);
 </div>
 
 
-<div class="navi">
+<div class="navi mt-4">
 
     <?php if($cusDtl[0][0] == 2){?>
     <!-- Customer Switch Mode -->
@@ -66,6 +66,17 @@ $activePage = basename($_SERVER['PHP_SELF']);
         <label class="form-check-label" for="flexSwitchCheckDefault" style="color: #383a50; font-weight: 600;">Become a
             Client</label>
     </div>
+    <!-- Customer Switch Mode end-->
+
+     <!-- Customer Switch Mode -->
+     <div class="form-check form-switch  my-3">
+        <input class="form-check-input" type="checkbox" id="toSeller" />
+        <label class="form-check-label" for="flexSwitchCheckDefault" style="color: #383a50; font-weight: 600;">Become a
+            Seller</label>
+    </div>
+    <!-- Customer Switch Mode end-->
+
+
     <ul>
         <li class="<?= ($activePage == 'dashboard.php') ? 'active-styling':''; ?>">
             <a href="dashboard.php" class="dboard-li-atag"><i class="fa fa-home pe-2" aria-hidden="true"></i><span
@@ -103,13 +114,6 @@ $activePage = basename($_SERVER['PHP_SELF']);
     <!-- ===============================================================================================================
         ==========================================     Side Navbar For Client     ==========================================
         =================================================================================================================-->
-    <!-- Customer Switch Mode -->
-    <div class="form-check form-switch  my-3">
-        <input class="form-check-input" type="checkbox" id="toSeller" />
-        <label class="form-check-label" for="flexSwitchCheckDefault" style="color: #383a50; font-weight: 600;">Become a
-            Seller</label>
-    </div>
-    <!-- Customer Switch Mode end-->
 
     <ul>
         <li class="<?= ($activePage == 'app.client.php') ? 'active-styling':''; ?>">
