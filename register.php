@@ -1,22 +1,21 @@
 <?php
-require_once "includes/constant.inc.php";
-require_once "includes/registration.inc.php";
+require_once __DIR__ . "/includes/constant.inc.php";
+require_once ROOT_DIR . "/includes/registration.inc.php";
 session_start();
 
-require_once("_config/dbconnect.php");
+require_once ROOT_DIR . "/_config/dbconnect.php";
 
-require_once "classes/date.class.php";
-require_once "classes/error.class.php";
-require_once "classes/search.class.php";
-require_once "classes/customer.class.php";
+require_once ROOT_DIR . "/classes/date.class.php";
+require_once ROOT_DIR . "/classes/error.class.php";
+require_once ROOT_DIR . "/classes/search.class.php";
+require_once ROOT_DIR . "/classes/customer.class.php";
 
-require_once "classes/blog_mst.class.php";
-require_once "classes/utility.class.php";
-require_once "classes/utilityMesg.class.php";
-require_once "classes/utilityImage.class.php";
-require_once("classes/utilityNum.class.php");
+require_once ROOT_DIR . "/classes/blog_mst.class.php";
+require_once ROOT_DIR . "/classes/utility.class.php";
+require_once ROOT_DIR . "/classes/utilityMesg.class.php";
+require_once ROOT_DIR . "/classes/utilityImage.class.php";
+require_once ROOT_DIR . "/classes/utilityNum.class.php";
 
-require_once("includes/registration.inc.php");
 
 
 /* INSTANTIATING CLASSES */
@@ -39,6 +38,7 @@ $cusId			= $utility->returnSess('userid', 0);
 
 if(isset($_POST['btnSubmit'])){
     //post vars
+    $customerType       = $_POST['customer-type'];
     $firstName 		    = $_POST['firstName'];
     $fullname           = explode(" ",$firstName );
     $firstName          = $fullname[0];
@@ -103,7 +103,7 @@ if(isset($_POST['btnSubmit'])){
         $uniqueId = md5($uniqueId);
                     
         //Add New User
-        $custId 	= $customer->addCustomer(1, 1, $txtUserName, $txtemail, $txtPassword, $firstName, $lastName, $txtGender,'', 'a',
+        $custId 	= $customer->addCustomer($customerType, 1, $txtUserName, $txtemail, $txtPassword, $firstName, $lastName, $txtGender,'', 'a',
         '', '', '', 'Y', $txtProfession, 0, $uniqueId,
         'N', 0);
 
@@ -149,15 +149,6 @@ if(isset($_POST['btnSubmit'])){
         content="Client register for buy ready web products or guest post services Or Reseller can register for sell his/her web products or guest post services">
     <meta name="keywords" content="Web Design, Web Development, Apps Development, SEO Services, Guest Post Services, Domain name with Ready Website,
 Ready website for business, High Quality website sales, High quality blogs sales, expired domain sales" />
-    <script>
-    addEventListener("load", function() {
-        setTimeout(hideURLbar, 0);
-    }, false);
-
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    }
-    </script>
 
     <!-- Bootstrap Core CSS -->
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
@@ -209,8 +200,8 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <div class="d-flex  user-client-radio">
                                                                     <div class="form-check form-check-inline mb-0">
                                                                         <input class="form-check-input" type="radio"
-                                                                            name="userOptions" id="inlineRadio1"
-                                                                            value="option1" required>
+                                                                            name="customer-type" id="inlineRadio1"
+                                                                            value="1" required>
                                                                         <label class="form-check-label"
                                                                             for="inlineRadio1">Client</label>
                                                                         <!-- <div class="invalid-feedback">
@@ -222,8 +213,8 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                     </div>
                                                                     <div class="form-check form-check-inline mb-0">
                                                                         <input class="form-check-input" type="radio"
-                                                                            name="userOptions" id="inlineRadio2"
-                                                                            value="option2">
+                                                                            name="customer-type" id="inlineRadio2"
+                                                                            value="2">
                                                                         <label class="form-check-label"
                                                                             for="inlineRadio2" required>Seller</label>
 
@@ -240,9 +231,6 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                     class="form-control" required>
                                                                 <div class="invalid-feedback">
                                                                     Please Enter your Name!
-                                                                </div>
-                                                                <div class="valid-feedback">
-                                                                    Looks good!
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -299,9 +287,6 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <div class="invalid-feedback">
                                                                     Please choose a profession!
                                                                 </div>
-                                                                <div class="valid-feedback">
-                                                                    Looks good!
-                                                                </div>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <label for="country"
@@ -324,9 +309,6 @@ Ready website for business, High Quality website sales, High quality blogs sales
 
                                                                 <div class="invalid-feedback">
                                                                     Please choose a country!
-                                                                </div>
-                                                                <div class="valid-feedback">
-                                                                    Looks good!
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -360,8 +342,8 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                     <input class="form-check-input" type="checkbox"
                                                                         id="gridCheck1" required>
                                                                     <label class="form-check-label" for="gridCheck1">
-                                                                        I Agree with the <a class="term-n-policy" href="">Terms of service</a>
-                                                                        and <a class="term-n-policy" href="">Privacy Policy</a> .
+                                                                        I Agree with the <a class="term-n-policy" href="#">Terms of service</a>
+                                                                        and <a class="term-n-policy" href="#">Privacy Policy</a> .
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -427,10 +409,10 @@ Ready website for business, High Quality website sales, High quality blogs sales
     <script>
 
     const userCheck = ()=>{
-        let userOptions = document.forms["regUserForm"]["userOptions"].value;
+        let customerType = document.forms["regUserForm"]["customer-type"].value;
         boxes = document.querySelectorAll('.user-client-radio');
 
-        if (userOptions == '' || userOptions == null ) {
+        if (customerType == '' || customerType == null ) {
             document.getElementById('select-user-type').classList.add('d-block');
             for (const box of boxes) {
                 box.classList.add('border-danger');
