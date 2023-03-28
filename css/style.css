@@ -1901,11 +1901,6 @@ textarea {
     padding: 2%
 }
 
-#txtProfession,
-#txtProfession option {
-    font-weight: 500;
-}
-
 #txtProfession option:hover {
     cursor: pointer;
 }

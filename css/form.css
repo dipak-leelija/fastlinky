@@ -78,9 +78,6 @@
 
 .form-control {
     border-radius: inherit;
-    height: 40px!important;
-    padding: 10px;
-    margin: 10px 0
 }
 
 .form-control:focus {
@@ -173,7 +170,6 @@ input[type=text]:focus,
 input[type=password]:focus {
     background-color: #FBFCFE;
     outline: none;
-    border: 1px solid #407BFF
 }
 
 
