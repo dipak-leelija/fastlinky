@@ -1,22 +1,21 @@
 <?php
-require_once "includes/constant.inc.php";
-require_once "includes/registration.inc.php";
+require_once __DIR__ . "/includes/constant.inc.php";
+require_once ROOT_DIR . "/includes/registration.inc.php";
 session_start();
 
-require_once("_config/dbconnect.php");
+require_once ROOT_DIR . "/_config/dbconnect.php";
 
-require_once "classes/date.class.php";
-require_once "classes/error.class.php";
-require_once "classes/search.class.php";
-require_once "classes/customer.class.php";
+require_once ROOT_DIR . "/classes/date.class.php";
+require_once ROOT_DIR . "/classes/error.class.php";
+require_once ROOT_DIR . "/classes/search.class.php";
+require_once ROOT_DIR . "/classes/customer.class.php";
 
-require_once "classes/blog_mst.class.php";
-require_once "classes/utility.class.php";
-require_once "classes/utilityMesg.class.php";
-require_once "classes/utilityImage.class.php";
-require_once("classes/utilityNum.class.php");
+require_once ROOT_DIR . "/classes/blog_mst.class.php";
+require_once ROOT_DIR . "/classes/utility.class.php";
+require_once ROOT_DIR . "/classes/utilityMesg.class.php";
+require_once ROOT_DIR . "/classes/utilityImage.class.php";
+require_once ROOT_DIR . "/classes/utilityNum.class.php";
 
-require_once("includes/registration.inc.php");
 
 
 /* INSTANTIATING CLASSES */
@@ -39,11 +38,12 @@ $cusId			= $utility->returnSess('userid', 0);
 
 if(isset($_POST['btnSubmit'])){
     //post vars
+    $customerType       = 1;
     $firstName 		    = $_POST['firstName'];
-    $fullname           = explode(" ",$firstName );
-    $firstName          = $fullname[0];
-    $lastName           = $fullname[1];
-    // $lastName 		= $_POST['lastName'];
+    $lastName 		    = $_POST['lastName'];    
+    // $fullname           = explode(" ",$firstName );
+    // $firstName          = $fullname[0];
+    // $lastName           = $fullname[1];
     $mobNo              = $_POST['mobNumber'];
     $txtemail  		    = $_POST['txtemail'];
     $txtUserName 	    = $_POST['txtemail'];
@@ -103,7 +103,7 @@ if(isset($_POST['btnSubmit'])){
         $uniqueId = md5($uniqueId);
                     
         //Add New User
-        $custId 	= $customer->addCustomer(1, 1, $txtUserName, $txtemail, $txtPassword, $firstName, $lastName, $txtGender,'', 'a',
+        $custId 	= $customer->addCustomer($customerType, 1, $txtUserName, $txtemail, $txtPassword, $firstName, $lastName, $txtGender,'', 'a',
         '', '', '', 'Y', $txtProfession, 0, $uniqueId,
         'N', 0);
 
@@ -149,15 +149,6 @@ if(isset($_POST['btnSubmit'])){
         content="Client register for buy ready web products or guest post services Or Reseller can register for sell his/her web products or guest post services">
     <meta name="keywords" content="Web Design, Web Development, Apps Development, SEO Services, Guest Post Services, Domain name with Ready Website,
 Ready website for business, High Quality website sales, High quality blogs sales, expired domain sales" />
-    <script>
-    addEventListener("load", function() {
-        setTimeout(hideURLbar, 0);
-    }, false);
-
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    }
-    </script>
 
     <!-- Bootstrap Core CSS -->
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
@@ -199,37 +190,52 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                             <div class="section group">
                                                 <div class="bfrom">
                                                     <form class="form-horizontal-login needs-validation" role="form"
-                                                        action="<?php echo $_SERVER['PHP_SELF'] ?>" name="regUserForm"
+                                                        action="<?php echo $_SERVER['PHP_SELF'] ?>" onsubmit="return userCheck()" name="regUserForm"
                                                         method="post" enctype="multipart/form-data" autocomplete="off"
                                                         id="regUserForm" novalidate>
                                                         
                                                         <div class="row">
                                                             <div class="col-sm-6">
-                                                                <div class="form-floating mb-2">
-                                                                    <input type="text" minlength="8" id="firstName"
-                                                                        name="firstName" placeholder="John Doe"
-                                                                        class="form-control" required>
-                                                                    <label class="required-field">First Name</label>
-                                                                    <div class="invalid-feedback">
-                                                                        Please Enter First your Name!
+                                                                <label class="required-field">Register As </label>
+
+                                                                <div class="d-flex  user-client-radio">
+                                                                    <div class="form-check form-check-inline mb-0">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="inlineRadioOptions" id="inlineRadio1"
+                                                                            value="option1" required>
+                                                                        <label class="form-check-label"
+                                                                            for="inlineRadio1">Client</label>
+                                                                        <!-- <div class="invalid-feedback">
+                                                                            Choose one!
+                                                                        </div>
+                                                                        <div class="valid-feedback">
+                                                                            Looks good!
+                                                                        </div> -->
                                                                     </div>
-                                                                    <div class="valid-feedback">
-                                                                        Looks good!
+                                                                    <div class="form-check form-check-inline mb-0">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="inlineRadioOptions" id="inlineRadio2"
+                                                                            value="option2">
+                                                                        <label class="form-check-label"
+                                                                            for="inlineRadio2" required>Seller</label>
+
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                                <div class="invalid-feedback" id="select-user-type">
+                                                                    Please Select One
+                                                                </div>
+                                                            </div> -->
+
                                                             <div class="col-sm-6">
-                                                                <div class="form-floating mb-2">
-                                                                    <input type="text" minlength="8" id="lastName"
-                                                                        name="lastName" placeholder="John Doe"
-                                                                        class="form-control" required>
-                                                                    <label class="required-field">Last Name</label>
-                                                                    <div class="invalid-feedback">
-                                                                        Please Enter your Last Name!
-                                                                    </div>
-                                                                    <div class="valid-feedback">
-                                                                        Looks good!
-                                                                    </div>
+                                                                <label class="required-field">Name</label>
+                                                                <input type="text" minlength="8" id="firstName"
+                                                                    name="firstName" placeholder="John Doe"
+                                                                    class="form-control" required>
+                                                                <div class="invalid-feedback">
+                                                                    Please Enter your Name!
+                                                                </div>
+                                                                <div class="valid-feedback">
+                                                                    Looks good!
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -267,77 +273,77 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-sm-6">
-                                                                <div class="form-floating mb-2">
-                                                                    <select class="form-select" name="txtProfession"
-                                                                        id="txtProfession"
-                                                                        aria-label="Floating label select example"
-                                                                        required>
-                                                                        <option value="" selected="selected">Select
-                                                                            Profession</option>
-                                                                        <option value="Author">Author</option>
-                                                                        <option value="Blogger">Blogger</option>
-                                                                        <option value="Blogger">Blogger Outreach Manager
-                                                                        </option>
-                                                                        <option value="Business Analyser">Business
-                                                                            Analyser
-                                                                        </option>
-                                                                        <option value="Marketing Manager">Marketing
-                                                                            Manager
-                                                                        </option>
-                                                                        <option value="Web Developer">Web Developer
-                                                                        </option>
-                                                                        <option value="Others">Others</option>
-                                                                    </select>
-                                                                    <label for="profession">Profession</label>
-                                                                    <div class="invalid-feedback">
-                                                                        Please choose a profession!
-                                                                    </div>
-                                                                    <div class="valid-feedback">
-                                                                        Looks good!
-                                                                    </div>
+                                                                <label for="profession"
+                                                                    class="control-label required-field">
+                                                                    Select
+                                                                    Your Profession</label>
+                                                                <select id="txtProfession"
+                                                                    class="form-control py-0 select2  mb-3"
+                                                                    name="txtProfession" style="align-items: center;"
+                                                                    required>
+                                                                    <option value="" selected="selected">-- Select
+                                                                        Profession --
+                                                                    </option>
+                                                                    <option value="Author">Author</option>
+                                                                    <option value="Blogger">Blogger</option>
+                                                                    <option value="Blogger">Blogger Outreach Manager
+                                                                    </option>
+                                                                    <option value="Business Analyser">Business
+                                                                        Analyser
+                                                                    </option>
+                                                                    <option value="Marketing Manager">Marketing
+                                                                        Manager
+                                                                    </option>
+                                                                    <option value="Web Developer">Web Developer
+                                                                    </option>
+                                                                    <option value="Others">Others</option>
+                                                                </select>
+
+                                                                <div class="invalid-feedback">
+                                                                    Please choose a profession!
+                                                                </div>
+                                                                <div class="valid-feedback">
+                                                                    Looks good!
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
-                                                                <div class="form-floating mb-2">
-                                                                    <select class="form-select" id="selectCountry"
-                                                                        name="txtCountry" required>
-                                                                        <option value="" selected="selected">Select
-                                                                            Country</option>
-                                                                        <?php
-												                           if(isset($_SESSION['userid'])){
-												                            
-												                               $utility->populateDropDown($cusDtl[24], 'id', 'country_name', 'countries');
-												                                }else{
-												                             
-												                                $utility->populateDropDown(0, 'id', 'country_name', 'countries');
-												                               }
-												                             ?>
-                                                                    </select>
-                                                                    <label for="floatingSelect">Country</label>
-                                                                    <div class="invalid-feedback">
-                                                                        Please choose a country!
-                                                                    </div>
-                                                                    <div class="valid-feedback">
-                                                                        Looks good!
-                                                                    </div>
+                                                                <label for="country"
+                                                                    class="control-label required-field">
+                                                                    Select
+                                                                    Your Country</label>
+                                                                <select id="selectCountry" name="txtCountry"
+                                                                    class="form-control py-0 " required>
+                                                                    <option value="">-- Select Country --</option>
+                                                                    <?php
+												         if(isset($_SESSION['userid'])){
+												              //$utility->genDropDown($_SESSION['txtCountriesId'], $arr_val, $arr_label);
+												            $utility->populateDropDown($cusDtl[24], 'id', 'country_name', 'countries');
+												              }else{
+												                //$utility->genDropDown(0, $arr_val, $arr_label);
+												                 $utility->populateDropDown(0, 'id', 'country_name', 'countries');
+												                          }
+												                     ?>
+                                                                </select>
+
+                                                                <div class="invalid-feedback">
+                                                                    Please choose a country!
+                                                                </div>
+                                                                <div class="valid-feedback">
+                                                                    Looks good!
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-sm-6">
-                                                                <div class="form-floating mb-2">
-                                                                    <input type="password" minlength="6"
-                                                                        id="txtPassword" name="txtPassword"
-                                                                        placeholder="(username)123" class="form-control"
-                                                                        required>
-                                                                    <label class="required-field">Password</label>
-
-                                                                    <div class="invalid-feedback">
-                                                                        Must be 6-20 characters long!
-                                                                    </div>
-                                                                    <div class="valid-feedback">
-                                                                        Strong password!
-                                                                    </div>
+                                                                <label class="required-field">Password</label>
+                                                                <input type="password" minlength="6" id="txtPassword"
+                                                                    name="txtPassword" placeholder="(username)123"
+                                                                    class="form-control" required>
+                                                                <div class="invalid-feedback">
+                                                                    Your password must be 6-20 characters long!
+                                                                </div>
+                                                                <div class="valid-feedback">
+                                                                    Strong password!
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
@@ -358,10 +364,8 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                     <input class="form-check-input" type="checkbox"
                                                                         id="gridCheck1" required>
                                                                     <label class="form-check-label" for="gridCheck1">
-                                                                        I Agree with the <a class="term-n-policy"
-                                                                            href="">Terms of service</a>
-                                                                        and <a class="term-n-policy" href="">Privacy
-                                                                            Policy</a> .
+                                                                        I Agree with the <a class="term-n-policy" href="">Terms of service</a>
+                                                                        and <a class="term-n-policy" href="">Privacy Policy</a> .
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -425,6 +429,26 @@ Ready website for business, High Quality website sales, High quality blogs sales
     </script>
 
     <script>
+
+    // const userCheck = ()=>{
+    //     let customerType = document.forms["regUserForm"]["customer-type"].value;
+    //     boxes = document.querySelectorAll('.user-client-radio');
+
+    //     if (customerType == '' || customerType == null ) {
+    //         document.getElementById('select-user-type').classList.add('d-block');
+    //         for (const box of boxes) {
+    //             box.classList.add('border-danger');
+    //         }
+    //         return false;
+    //     }else{
+    //         document.getElementById('select-user-type').classList.add('d-none');
+    //         for (const box of boxes) {
+    //             box.classList.remove('border-danger');
+    //         }      
+    //     }
+    // }
+
+
     $('#txtPassword, #txtPasswordConfirm').on('keyup', function() {
         'use strict'
 

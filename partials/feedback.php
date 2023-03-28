@@ -1,4 +1,9 @@
- <style>
+<?php
+if(isset($_SESSION[USR_SESS])){
+    $getExistance = $Feedback->checkFeedBackExistance($cusId);
+    if ($getExistance == true) {
+?>
+<style>
 .auto-popup-feedback {
     border-radius: 8px;
     font-family: "Poppins", sans-serif;
@@ -206,36 +211,41 @@ form .form-group textarea {
              </div>
              <div class="row no-gutters  m-auto">
                  <div class="col starting-column ">
-                     <form method="post" class="needs-validation" name="feedback-form" novalidate>
+                     <form class="needs-validation" name="feedback-form" id="feedback-form" novalidate>
                          <div class="row">
                              <div class="col-sm-12 mb-0">
                                  <div class="form-group pb-2">
                                      <label class="required-field" for="firstname">How Satisfied were you with
                                          your recent visit in the following areas?</label>
                                      <div class="stars">
-                                         <form action="">
-                                             <div>
-                                                 <input class="star star-5" id="star-5" type="radio" name="star" />
-                                                 <label class="star star-5" for="star-5"></label>
-                                                 <input class="star star-4" id="star-4" type="radio" name="star" />
-                                                 <label class="star star-4" for="star-4"></label>
-                                                 <input class="star star-3" id="star-3" type="radio" name="star" />
-                                                 <label class="star star-3" for="star-3"></label>
-                                                 <input class="star star-2" id="star-2" type="radio" name="star" />
-                                                 <label class="star star-2" for="star-2"></label>
-                                                 <input class="star star-1" id="star-1" type="radio" name="star" />
-                                                 <label class="star star-1" for="star-1"></label>
-                                             </div>
-                                         </form>
+                                         <div>
+                                             <input class="star star-5" id="star-5" type="radio" name="star"
+                                                 value="5" />
+                                             <label class="star star-5" for="star-5"></label>
+                                             <input class="star star-4" id="star-4" type="radio" name="star"
+                                                 value="4" />
+                                             <label class="star star-4" for="star-4"></label>
+                                             <input class="star star-3" id="star-3" type="radio" name="star"
+                                                 value="3" />
+                                             <label class="star star-3" for="star-3"></label>
+                                             <input class="star star-2" id="star-2" type="radio" name="star"
+                                                 value="2" />
+                                             <label class="star star-2" for="star-2"></label>
+                                             <input class="star star-1" id="star-1" type="radio" name="star"
+                                                 value="1" />
+                                             <label class="star star-1" for="star-1"></label>
+                                         </div>
+                                     </div>
+                                     <div class="invalid-feedback text-center" id="invalid-star">
+                                         Please Select a star
                                      </div>
                                  </div>
                              </div>
                              <div class="col-sm-12 mb-0">
                                  <div class="form-group pb-2">
                                      <label class="required-field" for="name">Full Name</label>
-                                     <input type="text" minlength="4" class="form-control mb-2" id="name"
-                                         name="name">
-                                     <div class="valid-feedback" id="invalid-name">
+                                     <input type="text" minlength="4" class="form-control mb-2" id="name" name="name">
+                                     <div class="invalid-feedback" id="invalid-name">
                                          Please Enter your Name!
                                      </div>
                                  </div>
@@ -277,9 +287,6 @@ form .form-group textarea {
  </div>
  </div>
 
- <?php
-if(isset($_SESSION[USR_SESS])){
-?>
 
  <script type="text/javascript">
 window.addEventListener("load", function() {
@@ -287,7 +294,7 @@ window.addEventListener("load", function() {
         function open(event) {
             document.querySelector(".auto-popup-feedback").style.display = "block";
         },
-        60
+        6000
     )
 });
 
@@ -297,35 +304,74 @@ document.querySelector("#close").addEventListener("click", function() {
 });
 
 const feedbackSubmit = () => {
+    let star = document.forms["feedback-form"]["star"].value;
     let name = document.forms["feedback-form"]["name"].value;
     let email = document.forms["feedback-form"]["email"].value;
     let message = document.forms["feedback-form"]["message"].value;
 
+    if (star == '') {
+        document.getElementById(`invalid-star`).classList.add('d-block');
+        return false;
+    } else {
+        document.getElementById(`invalid-star`).classList.add('d-none');
+    }
+
     if (name == '') {
         document.getElementById(`invalid-name`).classList.add('d-block');
         return false;
-    }else{
+    } else {
         document.getElementById(`invalid-name`).classList.add('d-none');
     }
 
     if (email == '') {
         document.getElementById(`invalid-email`).classList.add('d-block');
         return false;
-    }else{
+    } else {
         document.getElementById(`invalid-email`).classList.add('d-none');
     }
 
     if (message == '') {
         document.getElementById(`invalid-feedback`).classList.add('d-block');
         return false;
-    }else{
+    } else {
         document.getElementById(`invalid-feedback`).classList.add('d-none');
     }
-    // feedbackSubmit()
-    document.forms["feedback-form"].submit();
-    return true;
+
+    submitFeedback();
+}
+
+
+
+const submitFeedback = () => {
+
+    $.ajax({
+        url: "ajax/feedback.submit.ajax.php",
+        type: "POST",
+        data: $('#feedback-form').serialize(),
+        encode: true,
+        success: function(response) {
+            // console.log(response);
+            if (response.trim().includes('updated')) {
+                Swal.fire(
+                    'Thank You!',
+                    'Thanks For Your Valuable Feedback.',
+                    'success'
+                ).then((result) => {
+                    location.reload();
+                });
+            } else {
+                Swal.fire(
+                    'failed!',
+                    'Something is wromg!! 😥.',
+                    'error'
+                )
+            }
+        }
+    });
 }
  </script>
  <?php
+    }
 }
+
 ?>
