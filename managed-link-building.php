@@ -1,47 +1,7 @@
 <?php
-require_once "includes/constant.inc.php";
-session_start();
-
-require_once ROOT_DIR."/_config/dbconnect.php";
-
-require_once ROOT_DIR."/classes/date.class.php";
-require_once ROOT_DIR."/classes/error.class.php";
-require_once ROOT_DIR."/classes/search.class.php";
-require_once ROOT_DIR."/classes/customer.class.php";
-require_once ROOT_DIR."/classes/login.class.php";
-require_once ROOT_DIR."/classes/services.class.php";
-
-require_once ROOT_DIR."/classes/blog_mst.class.php";
-require_once ROOT_DIR."/classes/gp-package.class.php";
-require_once ROOT_DIR."/classes/utility.class.php";
-require_once ROOT_DIR."/classes/utilityMesg.class.php";
-require_once ROOT_DIR."/classes/utilityImage.class.php";
-require_once ROOT_DIR."/classes/utilityNum.class.php";
-require_once ROOT_DIR."/classes/faqs.class.php";
-
-/* INSTANTIATING CLASSES */
-$dateUtil       = new DateUtil();
-
-$GPPackage      = new GuestPostpackage();
-// $error 			= new Error();
-// $search_obj	    = new Search();
-$customer		= new Customer();
-// $logIn			= new Login();
-// $service		= new Services();
-// $blogMst		= new BlogMst();
-$utility		= new Utility();
-$uMesg 			= new MesgUtility();
-$uImg 			= new ImageUtility();
-$uNum 			= new NumUtility();
-$faqs		    = new faqs();
-######################################################################################################################
-$typeM		= $utility->returnGetVar('typeM','');
-//user id
-$cusId		= $utility->returnSess('userid', 0);
-
+require_once __DIR__ . "/includes/common-service-class-functions.inc.php";
 $packages = $GPPackage->packDetailsByCat(1);
 require_once ROOT_DIR."/includes/package-submission.inc.php";
-
 ?>
 
 <!DOCTYPE HTML>
