@@ -40,10 +40,10 @@ $cusId			= $utility->returnSess('userid', 0);
 if(isset($_POST['btnSubmit'])){
     //post vars
     $firstName 		    = $_POST['firstName'];
-    $fullname           = explode(" ",$firstName );
-    $firstName          = $fullname[0];
-    $lastName           = $fullname[1];
-    // $lastName 		= $_POST['lastName'];
+    $lastName 		    = $_POST['lastName'];
+    // $fullname           = explode(" ",$firstName );
+    // $firstName          = $fullname[0];
+    // $lastName           = $fullname[1];
     $mobNo              = $_POST['mobNumber'];
     $txtemail  		    = $_POST['txtemail'];
     $txtUserName 	    = $_POST['txtemail'];
@@ -207,8 +207,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                             <div class="col-sm-6">
                                                                 <div class="form-floating mb-2">
                                                                     <input type="text" minlength="8" id="firstName"
-                                                                        name="firstName" placeholder="John Doe"
-                                                                        class="form-control" required>
+                                                                        name="firstName" class="form-control" required>
                                                                     <label class="required-field">First Name</label>
                                                                     <div class="invalid-feedback">
                                                                         Please Enter First your Name!
@@ -221,8 +220,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                             <div class="col-sm-6">
                                                                 <div class="form-floating mb-2">
                                                                     <input type="text" minlength="8" id="lastName"
-                                                                        name="lastName" placeholder="John Doe"
-                                                                        class="form-control" required>
+                                                                        name="lastName" class="form-control" required>
                                                                     <label class="required-field">Last Name</label>
                                                                     <div class="invalid-feedback">
                                                                         Please Enter your Last Name!
