@@ -34,10 +34,21 @@ $uNum 			= new NumUtility();
 $typeM			= $utility->returnGetVar('typeM','');
 //user id
 $cusId			= $utility->returnSess('userid', 0);
+$cusDtl		    = $customer->getCustomerData($cusId);
 $return_url		= $utility->goToPreviousSessionPage();
-//$cusDtl			= $client->getClientData($cusId);
-// echo $return_url;exit;
-// print_r($_SESSION);exit;
+
+if($cusDtl != NULL){
+
+    if($cusDtl[0][0] == 1){
+        // redirect to dashboard if loggedin user is set as seller 
+        header("Location: ".URL."/app.client.php");
+        exit;
+    }elseif($cusDtl[0][0] == 2){
+        // redirect to dashboard if loggedin user is set as seller 
+        header("Location: ".URL."/dashboard.php");
+        exit;
+    }
+}
 
 
 
