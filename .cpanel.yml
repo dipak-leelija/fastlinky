@@ -1,5 +1,10 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/ws6gs9ua9bm3/fastlinky.com/
-    - /bin/cp -R * $DEPLOYPATH
+# ---
+# deployment:
+  # tasks:
+    # - export DEPLOYPATH=/home/ws6gs9ua9bm3/fastlinky.com
+    # - /bin/cp -R * $DEPLOYPATH
+
+home/ws6gs9ua9bm3/
+- git/gitrepo/
+    - all of the git files and folders
+- fastlinky.com/
