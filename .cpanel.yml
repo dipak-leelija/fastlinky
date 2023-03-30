@@ -1,10 +1,7 @@
-# ---
-# deployment:
-  # tasks:
-    # - export DEPLOYPATH=/home/ws6gs9ua9bm3/fastlinky.com
-    # - /bin/cp -R * $DEPLOYPATH
-
-home/ws6gs9ua9bm3/
-- git/gitrepo/
-    - all of the git files and folders
-- fastlinky.com/
+---
+deployment:
+      tasks:
+        - export DEPLOYPATH=/home/ws6gs9ua9bm3/fastlinky.com  # Add /<app_folder> if required
+        - /bin cp * $DEPLOYPATH                           #copy all from root 
+        - /bin cp /fastlinky.com/* $DEPLOYPATH             #copy all from sub folder root
+        - /bin/cp -r * $DEPLOYPATH                        #copy all recursively to $DEPLOYPATH
