@@ -1,12 +1,12 @@
 <?php 
-require_once "../includes/constant.inc.php";
+require_once dirname(__DIR__) . "/includes/constant.inc.php";
 session_start();
-include_once('checkSession.php');
-require_once("../_config/dbconnect.php");
 
-require_once("../classes/adminLogin.class.php"); 
-require_once("../classes/utility.class.php");
-require_once("../classes/utilityImage.class.php");
+require_once ADM_DIR  . "checkSession.php";
+require_once ROOT_DIR . "/_config/dbconnect.php";
+require_once ROOT_DIR . "/classes/adminLogin.class.php"; 
+require_once ROOT_DIR . "/classes/utility.class.php";
+require_once ROOT_DIR . "/classes/utilityImage.class.php";
 
 /* INSTANTIATING CLASSES */
 $adminLogin 	= new adminLogin();
@@ -34,8 +34,6 @@ $userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
 
     <!-- plugins:css -->
     <link rel="stylesheet" href="vendors/feather/feather.css">
-    <!-- <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css"> -->
-    <!-- <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css"> -->
     <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
 
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
@@ -59,12 +57,15 @@ $userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
-                    <div class="">
-                        <?php
-                    // print_r($userData);
-                    // phpinfo();
-
+                    <?php
+                    if (isset($_GET['action'])) {
+                        echo '
+                            <div class="card shadow-sm border border-danger px-4 py-3">
+                                <p class="my-0 font-weight-bold">'.$_GET['action'].'</p>
+                            </div>';
+                    }
                     ?>
+                    <div class="">
                         <div class="row justify-content-md-around px-2">
                             <div class="col-md-6 my-md-4">
                                 <div class="img_bx card shadow-sm px-2">
@@ -215,24 +216,24 @@ $userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
 
                             <div class="col-md-5 card shadow-sm my-md-4">
                                 <h4 class="text-center text-md-left mt-4">Change Password</h4>
-                                <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" class="row m-3"
+                                <form method="POST" action="ajax/admin-password-reset.ajax.php" class="row m-3"
                                     enctype="multipart/form-data">
 
                                     <div class="col-12">
-                                        <label for="inputAddress2" class="form-label">Current Password</label>
-                                        <input type="password" name="txtFName" class="form-control" value="">
+                                        <label for="current-password" class="form-label">Current Password</label>
+                                        <input type="password" name="current-password" class="form-control" required>
                                     </div>
                                     <div class="col-12 mt-3">
-                                        <label for="inputAddress2" class="form-label">New Password</label>
-                                        <input type="password" name="txtAddress" class="form-control" value="">
+                                        <label for="new-password" class="form-label">New Password</label>
+                                        <input type="password" name="new-password" class="form-control" required>
                                     </div>
                                     <div class="col-12 mt-3">
-                                        <label for="inputAddress2" class="form-label">Confirm Password</label>
-                                        <input type="password" name="txtEmail" class="form-control" value="">
+                                        <label for="confirm-password" class="form-label">Confirm Password</label>
+                                        <input type="password" name="confirm-password" class="form-control" required>
                                     </div>
 
                                     <div class="col-12 text-center mt-3">
-                                        <button class="btn btn-primary" name="btnEditUser" type="submit">Update</button>
+                                        <button class="btn btn-primary" type="submit">Update</button>
                                     </div>
                                 </form>
                             </div>
