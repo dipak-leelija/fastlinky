@@ -39,9 +39,8 @@ class BlogMst extends DatabaseConnection{
 	*/
 	function addBlog($domain,$niche, $da, $pa, $cf, $tf, $gip, $mozr,$alexa_traffic,$organic_trafic, $follow, $internal,
 						$cost, $review_type, $issue, $issue_comment, $int_email, $ext_email, $ext_contact_name,$ext_cost, 
-						$ex_url, $domain_comments,$deliver_time,$created_by,$approved)
-						
-	{
+						$ex_url, $domain_comments,$deliver_time,$created_by,$approved){
+							
 		$domain				=	addslashes(trim($domain));
 		$niche				=	addslashes(trim($niche));
 		$da					=	addslashes(trim($da));
@@ -98,8 +97,6 @@ class BlogMst extends DatabaseConnection{
 	*
 	*	@update	feb 23 2016
 	*
-	*	
-	*
 	*	@param
 	*			$blog_id				Blog id
 	*			$domain					Domain Name
@@ -126,9 +123,8 @@ class BlogMst extends DatabaseConnection{
 	*/
 	function editBlog($blog_id,$domain,$niche, $da, $pa, $cf, $tf, $gip, $mozr,$alexa_traffic,$organic_trafic, $follow, $internal,
 						$cost, $review_type, $issue, $issue_comment, $int_email, $ext_email, $ext_contact_name,$ext_cost, 
-						$ex_url, $domain_comments,$deliver_time,$updated_by)
-						
-	{
+						$ex_url, $domain_comments,$deliver_time,$updated_by){
+
 		$domain				=	addslashes(trim($domain));
 		$niche				=	addslashes(trim($niche));
 		$da					=	addslashes(trim($da));
@@ -223,12 +219,9 @@ class BlogMst extends DatabaseConnection{
 		//echo $sql.mysql_error();exit;
 		//echo $sql;exit;
 		$result = '';
-		if(!$query)
-		{
+		if(!$query){
 			$result = "ER102";
-		}
-		else
-		{
+		}else{
 			$result = "SU102";
 		}
 		
@@ -464,220 +457,17 @@ class BlogMst extends DatabaseConnection{
 			  $data[] = $result;
 		}
 		return $data;
-  }
+  	}
 
-  
-	#####################################################################################################
-	#
-	#										BLOG Niches Details
-	#
-	#####################################################################################################
-	
-	
-	
-	
-	// 			Blog Niche Details add
-	/**
-	*	Add a new Blog niche details table. 
-	*
-	*	@param
-	*			$blog_id				blog_id
-	*			$niche_id				niche_id
-	*			$domain_niche_comments	domain_niche_comments 
-	*			
-	*
-	*	@return int
-	*/
-	function addBlogNicheDetails($blog_id, $niche_id, $domain_niche_comments, $added_by){
-
-		$blog_id						=	addslashes(trim($blog_id));
-		$niche_id						=	addslashes(trim($niche_id));
-		$domain_niche_comments			=	addslashes(trim($domain_niche_comments));
-		$added_by						=	addslashes(trim($added_by));
-		$modified_by					=	addslashes(trim($added_by));
-		//satement to insert in product table
-		$sql	=   "INSERT INTO blog_niche_detail
-						(blog_id,niche_id,domain_niche_comments,added_on,added_by,modified_on,modified_by)
-						VALUES
-						('$blog_id','$niche_id','$domain_niche_comments',now(),'$added_by',now(),'$modified_by')
-						";
-		
-		//execute query
+	function searchBlog($domain){
+		$sql = "SELECT * FROM blog_mst WHERE domain like '%".$domain."%'";
 		$query = $this->conn->query($sql);
-		//echo $sql.$this->conn->error;exit;
-		//get the primary key
-		$blog_niche_id		= $this->conn->insert_id;
-		
-		//return the blog_niche_id
-		return $blog_niche_id;
-		
-	}//eof
-	
-	
-	// blog Niche details update
-	function editBlogNicheDtl($blog_niche_id, $niche_id, $domain_niche_comments, $modified_by){
-
-		$niche_id							=	addslashes(trim($niche_id));
-		$domain_niche_comments				=	addslashes(trim($domain_niche_comments));
-		$modified_by						=	addslashes(trim($modified_by));
-		
-		//statement
-		$sql	= "UPDATE blog_niche_detail SET
-				  niche_id						='$niche_id',
-				  domain_niche_comments			= '$domain_niche_comments',
-				  modified_on 					= now(),
-				  modified_by					='$modified_by'
-				  WHERE 
-				  blog_niche_id 			= '$blog_niche_id'
-				  ";
-				  
-		//execute query
-		$query	= $this->conn->query($sql);
-		//echo $sql.$this->conn->error;exit;
-		//echo $sql;exit;
-		$result = '';
-		if(!$query){
-			$result = "ER102";
-		}else{
-			$result = "SU102";
+		if ($query->num_rows > 0) {
+			return 'EXISTS';
+		}else {
+			return 'ER001';
 		}
-		
-		//return the result
-		return $result;
-	}//eof
-
-	
-	
-	//  Display Blog Niches
-	public function ShowBlogNicheData(){
-     $temp_arr = array();
-     $res = mysql_query("SELECT * FROM blog_niche_detail order by added_on desc") or die(mysql_error());        
-     $count=mysql_num_rows($res);
-    while($row = mysql_fetch_array($res)) {
-         $temp_arr[] =$row;
-		 
-     }
-     return $temp_arr;  
-     }
-	
-	
-	
-	//  Display Blog Niches
-	public function ShowBlogNicheDataDtls($blog_id){
-     $temp_arr = array();
-     $res = mysql_query("SELECT * FROM blog_niche_detail WHERE  blog_id	= '$blog_id' ") or die(mysql_error());        
-     $count=mysql_num_rows($res);
-    while($row = mysql_fetch_array($res)) {
-         $temp_arr[] =$row;
-		 
-     }
-     return $temp_arr;  
-     }
-	
-	
-	/**
-	*	Get the data associated with a Blog Niche Details based upon the blog_id key
-	*
-	*	@param
-	*			$blog_id		Blog id
-	*
-	*	@return array				
-	*/
-	function getBlogNicheDtls($blog_id)
-	{
-		//declare vars
-		$data = array();
-		
-		//statement
-		$select = "SELECT * 
-				   FROM 
-				   blog_niche_detail 
-				   WHERE 
-				   blog_id		= '$blog_id'
-				   ";
-				   
-		//execute query
-		$query	= mysql_query($select);
-		//echo $select.mysql_error();exit;
-		//holds the data
-		while($result = mysql_fetch_object($query))
-		{
-			$data  = array(
-					$result->blog_niche_id,			//0
-					$result->blog_id,		//1
-					$result->niche_id,		//2
-					$result->domain_niche_comments,		//3
-					$result->added_on,		//4
-					$result->added_by,		//5
-					$result->modified_on,		//6
-					$result->modified_by			//7
-					);
-		}
-		//print_r($data);
-		//return the data
-		return $data;
-		
-	}//eof
-	
-	
-	/**
-	*	Get the data associated with a Blog Niche Details based upon the blog_niche_id key
-	*
-	*	@param
-	*			$blog_niche_id		Blog niche id
-	*
-	*	@return array				
-	*/
-	function showBlogNiche($blog_niche_id)
-	{
-		//declare vars
-		$data = array();
-		
-		//statement
-		$select = "SELECT * 
-				   FROM 
-				   blog_niche_detail 
-				   WHERE 
-				   blog_niche_id		= '$blog_niche_id'
-				   ";
-				   
-		//execute query
-		$query	= mysql_query($select);
-		//echo $select.mysql_error();exit;
-		//holds the data
-		while($result = mysql_fetch_object($query))
-		{
-			$data  = array(
-					$result->blog_niche_id,			//0
-					$result->blog_id,		//1
-					$result->niche_id,		//2
-					$result->domain_niche_comments,		//3
-					$result->added_on,		//4
-					$result->added_by,		//5
-					$result->modified_on,		//6
-					$result->modified_by			//7
-					);
-		}
-		//print_r($data);
-		//return the data
-		return $data;
-		
-	}//eof
-	
-	
-	
-	//  Display blog_id group by niche_id 
-	public function getBlogNicheData($blog_id){
-     $temp_arr = array();
-     $res = mysql_query("SELECT * FROM blog_niche_detail WHERE blog_id	= '$blog_id' group by niche_id ") or die(mysql_error());        
-     $count=mysql_num_rows($res);
-    while($row = mysql_fetch_array($res)) {
-         $temp_arr[] =$row;
-		 
-     }
-     return $temp_arr;  
-     }
-	 
+	}
 	
 	
 	#####################################################################################################

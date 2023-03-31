@@ -1,10 +1,8 @@
 <?php
-require_once("../includes/constant.inc.php");
 session_start();
-include_once('checkSession.php');
-
+require_once dirname(__DIR__) . "/includes/constant.inc.php";
+include_once ADM_DIR . "/checkSession.php";
 require_once ROOT_DIR . "/_config/dbconnect.php";
-
 require_once ROOT_DIR . "/classes/adminLogin.class.php"; 
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/content-order.class.php";
@@ -76,7 +74,7 @@ $blogsDtls	   = $blogMst->ShowBlogData();
                                     <div class="border-bottom d-flex justify-content-between pb-1">
                                         <h4 class="card-title">Listed Blogs</h4>
                                         <button type="button" class="btn btn-sm btn-primary"
-                                            onclick="location.href='blog_add.php?action=addblog';">Add New Blog
+                                            onclick="goTo('blog-add.php')">Add New Blog
                                         </button>
                                     </div>
 
@@ -96,23 +94,21 @@ $blogsDtls	   = $blogMst->ShowBlogData();
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <script src="../plugins/jquery-3.6.0.min.js"></script>
-
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
-
-    <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
-    <script src="../plugins/data-table/simple-datatables.js"></script>
-    <script src="../plugins/tinymce/tinymce.js"></script>
-    <script src="../plugins/main.js"></script>
-    <script src="../plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+    <script src="<?php echo URL; ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?php echo URL; ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?php echo URL; ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?php echo URL; ?>/plugins/main.js"></script>
+    <script src="<?php echo URL; ?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
 
 
+    <script src="<?php echo ADM_URL; ?>/vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/off-canvas.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/hoverable-collapse.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/template.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/settings.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/todolist.js"></script>
+    <script src="<?php echo ADM_URL; ?>/js/fastlinky-admin.js"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
     $(document).ready(function() {
