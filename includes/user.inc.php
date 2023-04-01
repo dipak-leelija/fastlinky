@@ -26,8 +26,8 @@
 	define('ERU121', ' Licence No  is empty.');
 	define('ERU122', ' Company Name  is empty.');
 	define('ERU123', ' Address is empty.');
-	define('ERU124', ' Town is empty.');
-	define('ERU125', ' Province is not selected.');
+	define('ERU124', ' City is empty.');
+	define('ERU125', ' State is not selected.');
 	define('ERU126', ' Postal Code is empty.');
 	define('ERU127', ' Phone No is empty.');
 	define('ERU128', ' Retailer Type is not selected.');

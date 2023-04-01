@@ -3,6 +3,7 @@ session_start();
 define('SUADM002', ' Administrative user information has been updated');
 
 require_once dirname(dirname(__DIR__)) . "/includes/constant.inc.php";
+require_once ROOT_DIR . "/includes/user.inc.php";
 require_once ADM_DIR . "checkSession.php";
 require_once ROOT_DIR . "/_config/dbconnect.php";
 
@@ -21,30 +22,20 @@ $uMesg 			= new MesgUtility();
 
 $username   = $_SESSION[ADM_SESS];
 
+if(isset($_POST['current-password']) && isset($_POST['new-password']) && isset($_POST['confirm-password'])){
+    
+    $currentPassword    = $_POST['current-password'];
+    $newPassword        = $_POST['new-password'];
+    $confirmPassword    = $_POST['confirm-password'];
 
-if(isset($_POST['updateAdminimage'])){
-    $username   = $_SESSION[ADM_SESS];
-	
-		//uploading images
-		if($_FILES['profile-image']['name'] != ''){
-
-			//delete the image before uploading
-			$utility->deleteFile($username, 'username' ,'../../images/admin/user/', 'image', 'admin_users');
-			
-			//rename the file
-			$newName = $utility->getNewName4($_FILES['profile-image'], '',$username);
-			
-			//upload and crop the file
-			$updated = $uImg->imgCropResize($_FILES['profile-image'], '', $newName, '../../images/admin/user/', 140, 140, $username,'image', 'username', 'admin_users');
-
-			if ($updated) {
-				$uMesg->showSuccessT('success', $username, 'username', '../profile-edit.php', SUADM002, 'SUCCESS');
-			}else {
-				$uMesg->showSuccessT('failed', $username, 'username', '../profile-edit.php', 'failed to update', 'FAILED');
-			}
-		}else {
-			$uMesg->showSuccessT('error', $username, 'username', '../profile-edit.php', 'image not avilable', 'ERRROR');
-		}
+    $isUpdated = $adminLogin->resetAdminPassword($username, $currentPassword, $newPassword, $confirmPassword);
+    if ($isUpdated == 1) {
+        header('Location: ../profile-edit.php?action='.SUADM004);
+        exit;
+    }else {
+        header('Location: ../profile-edit.php?action='.$isUpdated);
+        exit;
+    }
 	
 }
 

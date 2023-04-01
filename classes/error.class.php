@@ -1,25 +1,8 @@
 <?php 
-/**
-*	This is a generic error handling class, offer seamless integration with many other application
-*	wherever required. 	
-*
-*	UPDATE March 30, 2011
-*	Added function that will check whether http is being present in a url or not.
-*
-*
-*	@author		Himadri Shekhar Roy
-*	@date		November 26, 2006
-*	@update		August 16, 2008
-*	@version	2.0
-*	@copyright	Analyze System Software Pvt. Ltd.
-*	@url		http://www.ansysoft.com
-*	@email		himadri.s.roy@ansysoft.com
-* 
-*/
+
 include_once("utility.class.php");
 
-class MyError extends	Utility
-{
+class MyError extends	Utility{
 
 	##########################################################################################
 	#
@@ -48,9 +31,9 @@ class MyError extends	Utility
 	*
 	*	@return string
 	*/
-	function duplicateUser($id, $fieldName, $tableName){
+	function duplicateUser($value, $fieldName, $tableName){
 
-		$select = "SELECT * FROM ".$tableName." WHERE  ".$fieldName." = '$id'";
+		$select = "SELECT * FROM ".$tableName." WHERE  ".$fieldName." = '$value'";
 		$query  = $this->conn->query($select);
 		$rows   =  $query->num_rows;
 		
@@ -63,6 +46,14 @@ class MyError extends	Utility
 		return $msg;
 
 	}//eof
+
+
+	function extractDomain($domain){
+
+		$sourceUrl = parse_url($domain);
+		return $sourceUrl['host'];
+
+	}
 	
 	
 	

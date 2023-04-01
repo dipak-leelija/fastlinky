@@ -239,33 +239,60 @@ class adminLogin extends Utility
 
 	
 
+
+	function resetAdminPassword($username, $currentPassword, $newPassword, $confirmPassword){
+		
+		if ($currentPassword == '') {
+			return 'Current password can not be blank!';
+		}
+		if ($newPassword == '') {
+			return 'New password can not be blank!';
+		}
+		if ($confirmPassword == '') {
+			return 'Coinfirm password can not be blank!';
+		}
+
+		$username 			= trim($username);
+		$currentPassword 	= trim($currentPassword);
+		$newPassword 		= trim($newPassword);
+		$confirmPassword 	= trim($confirmPassword);
+
+		$oldPassword 	= $this->getAdminPassword($username);
+		$oldPassword 	= md5_decrypt($oldPassword, ADMIN_PASS);
+
+		if ($oldPassword === $currentPassword) {
+			if ($newPassword == $confirmPassword){
+				$isSuccess = $this->changePassword($username, $newPassword);
+				if ($isSuccess == 1) {
+					return 1;
+				}else {
+					return 'Something is Wrong!';
+				}
+			}else {
+				return 'Confirm password not matched!';
+			}
+		}else {
+			return 'Current password is wrong!';
+		}
+
+	}
 	
 
 	/**
 
 	*	Change the user password. As changing password is done by administrator, so he doesn't 
-
 	*	need to enter old password
-
 	*	
-
 	*	@param	
-
 	*			$id			User unique identity
-
 	*			$password	User New Password
-
 	*/
-
-	function changePassword($id, $password)
-
-	{
+	function changePassword($id, $password){
 
 		$x_password = md5_encrypt($password,ADMIN_PASS);
-
 		$update = "UPDATE admin_users SET password= '$x_password' WHERE username='$id'";
-
-		$query 	  = $this->conn->query($update); 
+		$query 	  = $this->conn->query($update);
+		return $query;
 
 	}//eof
 
@@ -411,6 +438,33 @@ class adminLogin extends Utility
 
 
 		
+	/**
+	*	Show User Admin Usre
+	*/
+	function getAdminPassword($masterKey){
+		
+		$masterKey	= trim($masterKey);
+		
+		if (str_contains($masterKey, '@')) {
+
+			$sql 	  = "SELECT password FROM admin_users WHERE email = '$masterKey'";
+		}else {
+			$sql 	  = "SELECT password FROM admin_users WHERE username = '$masterKey'";
+		}
+
+		$query 	  = $this->conn->query($sql);        
+		$count	  = $query->num_rows;
+
+	   if ($count > 0) {
+		   while($row = $query->fetch_assoc()) {
+			   $password = $row['password'];
+		   }
+		   return $password;
+	   }else {
+		return null;  
+	   }
+	}
+
 
     /**
 	*	Show User Admin Usre

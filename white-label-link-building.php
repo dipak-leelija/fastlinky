@@ -1,30 +1,5 @@
 <?php
-require_once("includes/constant.inc.php");
-session_start();
-
-require_once ROOT_DIR."/_config/dbconnect.php";
-
-require_once ROOT_DIR."/classes/date.class.php";
-require_once ROOT_DIR."/classes/customer.class.php";
-
-//require_once("../classes/front_photo.class.php");
-require_once ROOT_DIR."/classes/gp-package.class.php";
-require_once ROOT_DIR."/classes/utility.class.php";
-require_once ROOT_DIR."/classes/faqs.class.php";
-
-
-/* INSTANTIATING CLASSES */
-$dateUtil       = new DateUtil();
-$GPPackage      = new GuestPostpackage();
-$customer		= new Customer();
-$utility		= new Utility();
-$faqs		    = new faqs();
-######################################################################################################################
-$typeM		= $utility->returnGetVar('typeM','');
-//user id
-$cusId		= $utility->returnSess('userid', 0);
-
-
+require_once __DIR__ . "/includes/common-service-class-functions.inc.php";
 $packages = $GPPackage->packDetailsByCat(2);
 require_once ROOT_DIR."/includes/package-submission.inc.php";
 
