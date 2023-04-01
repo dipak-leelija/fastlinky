@@ -180,8 +180,8 @@ if(isset($_GET['seo_url']))
                     </div>
                 </div>
                 <div class="col-xl-7 col-md-7 mt-3 mt-md-0">
-                    <div class="row row-cols-md-2">
-                        <div class="col mb-2">
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
                             <div class="our-secret-delivering-main-card2 h-100">
                                 <div class="text-chnging-css pb-3 ">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" style="width: 75px;" alt="">
@@ -194,7 +194,7 @@ if(isset($_GET['seo_url']))
 
                             </div>
                         </div>
-                        <div class="col mb-2">
+                        <div class="col-md-6 mb-2">
                             <div class="our-secret-delivering-main-card2 h-100">
                                 <div class="text-chnging-css pb-3 ">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" style="width: 75px;" alt="">
@@ -207,7 +207,7 @@ if(isset($_GET['seo_url']))
                                     personally connect with real bloggers from your sector. </p>
                             </div>
                         </div>
-                        <div class="col mb-2">
+                        <div class="col-md-6 mb-2">
                             <div class="our-secret-delivering-main-card2 h-100">
                                 <div class="text-chnging-css pb-3 ">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" style="width: 75px;" alt="">
@@ -220,7 +220,7 @@ if(isset($_GET['seo_url']))
                                         backlinks</b> and ratings. </p>
                             </div>
                         </div>
-                        <div class="col mb-2">
+                        <div class="col-md-6 mb-2">
                             <div class="our-secret-delivering-main-card2 h-100">
                                 <div class="text-chnging-css pb-3 ">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" style="width: 75px;" alt="">
@@ -454,8 +454,8 @@ if(isset($_GET['seo_url']))
                 Here are some of the benefits of hiring your link building team over producing one in-house.
             </p>
             <div class="our-secrect-delvry-main">
-                <div class="row row-cols-md-4">
-                    <div class="col">
+                <div class="row ">
+                    <div class="col-xl-3 col-sm-6">
                         <div class="our-secret-delivering-main-card2 h-100">
                             <div class="text-chnging-css pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
@@ -472,7 +472,7 @@ if(isset($_GET['seo_url']))
 
                     </div>
 
-                    <div class="col">
+                    <div class="col-xl-3 col-sm-6">
                         <div class="our-secret-delivering-main-card2 h-100">
                             <div class="text-chnging-css pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" alt="">
@@ -489,7 +489,7 @@ if(isset($_GET['seo_url']))
 
                     </div>
 
-                    <div class="col">
+                    <div class="col-xl-3 col-sm-6">
                         <div class="our-secret-delivering-main-card2 h-100">
                             <div class="text-chnging-css pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" alt="">
@@ -504,7 +504,7 @@ if(isset($_GET['seo_url']))
                         </div>
 
                     </div>
-                    <div class="col">
+                    <div class="col-xl-3 col-sm-6">
                         <div class="our-secret-delivering-main-card2 h-100">
                             <div class="text-chnging-css pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
