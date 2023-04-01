@@ -68,3 +68,11 @@ const copyText = (fieldId) => {
     document.execCommand('copy');
     // alert('Copied');
 }
+
+
+// function afterLoginCard() {
+//     window.location.href = "about.php";
+// //   location.replace("http://localhost/fastlinky/customer-packages.php")
+// }
+
+

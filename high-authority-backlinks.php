@@ -257,7 +257,7 @@ benefits of high domain authority website, domain authority rank" />
                         <div class="card h-100 how-it-work-f-u-card">
 
                             <div class="pb-3 text-center text-md-start">
-                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class=""
                                     alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Significant Growth In Ranking:</h4>
@@ -274,7 +274,7 @@ benefits of high domain authority website, domain authority rank" />
                         <div class="card h-100 how-it-work-f-u-card">
 
                             <div class="pb-3 text-center text-md-start">
-                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class=""
                                     alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Backlink Strategy:</h4>
@@ -296,7 +296,7 @@ benefits of high domain authority website, domain authority rank" />
                         <div class="card h-100 how-it-work-f-u-card">
 
                             <div class=" pb-3 text-center text-md-start">
-                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class=""
                                     alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Comprehensive Backlinks Database:
@@ -361,7 +361,6 @@ benefits of high domain authority website, domain authority rank" />
     <!-- ------------------------------------------------------------------ -->
     <!--Benefits Of High Domain Authority Website ending -->
     <!-- _______________________________________________________________________________________________ -->
-
     <!-- How does it work? -->
     <!-- --------------------------------------------------------------- -->
     <section class="how-it-works-main-section">
@@ -503,7 +502,7 @@ benefits of high domain authority website, domain authority rank" />
                         <div class="card h-100 how-it-work-f-u-card">
 
                             <div class="pb-3 text-center text-md-start">
-                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" 
                                     alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Analysis Of Backlinks:</h4>
@@ -520,7 +519,7 @@ benefits of high domain authority website, domain authority rank" />
                         <div class="card h-100 how-it-work-f-u-card">
 
                             <div class="pb-3 text-center text-md-start">
-                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" 
                                     alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Reverse Link Strategy:</h4>
@@ -539,7 +538,7 @@ benefits of high domain authority website, domain authority rank" />
                         <div class="card h-100 how-it-work-f-u-card">
 
                             <div class=" pb-3 text-center text-md-start">
-                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" 
                                     alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Contribution Of Backlinks:

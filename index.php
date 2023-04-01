@@ -80,32 +80,35 @@ if(isset($_GET['seo_url']))
     <!--//webfonts-->
 
 </head>
+
 <body>
     <?php require_once "partials/navbar.php"; ?>
     <!--____________________________________________________________________________________________ -->
     <!-- starting of index-link-building main banner -->
 
-    <section class="managed-link-building-main-banner">
-    <div class="cube "></div>  
-        <div class="container mlb-main-cntainer ">
-            <div class="row mlb-main-start-row">
-                <div class="col-12 col-lg-6 col-md-6  pe-0 ps-0 pe-lg-3 d-flex align-items-center">
-                    <div class="mlb-wrapping">
-                        <h1 class="mlb-starting-main-h1">
-                            <!-- Cheaking the deployment -->
-                        Give Your Organic Growth a Boost With High-Quality Backlinks
+    <section class="indexpage-main-banner">
+        <div class="cube "></div>
+        <div class="">
+            <div class="row ">
+                <div class="col-12 col-lg-6 col-md-6 px-0 px-md-3 d-flex align-items-center">
+                    <div class="index-wrap">
+                        <h1 class="indexpage-starting-main-h1">
+                            Get High-Quality Backlinks To Boost Your Website’s Organic Growth
                         </h1>
-                        <p class=" mt-3 mb-4 py-0 py-md-2 mlb-starting-main-p">We help global brands to grow their ROI
-                            3x faster with our data-driven strategies and link-building expertise.
+                        <p class=" mt-3 mb-4 py-0 py-md-2 indexpage-starting-main-p">FastLinky offers data-driven
+                            strategies
+                            and <strong>SEO link building services</strong> to help international brands grow their ROI
+                            3x faster.
                         </p>
-                                         
+
                         <div class=" buttonsinfo ">
-                            <button type="button" class="btn managed-link-btn ">See Pricing</button>
+                            <button class="btn indexpage-link-btn" onclick="goTo('customer-packages.php')"> Get Started
+                                Now</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6 col-md-6 ">
-                    <div class="mlb-wrapping p-0 ">
+                <div class="col-12 col-lg-6 col-md-6 p-0">
+                    <div class="p-0 ">
                         <img src="./images/fast-linky-outreach.png" class="w-100" alt="">
                     </div>
                 </div>
@@ -118,258 +121,320 @@ if(isset($_GET['seo_url']))
     <?php require_once "partials/clientssides-logos.php"; ?>
     <!-- clients-logo -->
     <!-- _________________________________________________________________________________________________ -->
-    <!-- Why does A brand need link buildings start -->
-    <section class="a-brand-need-link-section">
+    <!-- Backlinks From High Authority And High Traffic Websites start -->
+    <section class="backlinks-HA-HT-section">
         <div class="row  ">
-            <div class="a-brand-need-link-main-div">
-                <h1 class="text-center a-brand-need-link-main-h1 ">Why does <span>A brand need</span> link buildings?
+
+            <div class="col-lg-6 col-md-6">
+                <h1 class="backlinks-HA-HT-main-h1 mb-3">Backlinks From <span>High Authority And High
+                        Traffic Websites</span>
                 </h1>
-            </div>
-            <div class="col-lg-6 col-md-6 a-brand-need-link-main-col-1">
-                <div class="">
-                    <div>
-                        <div class="mt-5">
-                            <ul>
-                                <li class="square-box-p"> <span class="sq-pen-css"><i
-                                            class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
-
-                                    Google
-                                    has
-                                    complex algorithms to deal with. Therefore, backlinks still is an essential factor
-                                    to determine the keyword for which the site is trending.
-                                </li>
-                                <li class="square-box-p"> <span class="sq-pen-css"><i
-                                            class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
-
-                                    Link
-                                    building
-                                    is a vital part of SEO service. Depending on your link it signals to Google that
-                                    your website has quality content resources.
-                                </li>
-                                <li class="square-box-p"> <span class="sq-pen-css"><i
-                                            class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
-
-                                    Moreover,
-                                    if
-                                    your site has more backlinks, it's a high possibility to get upper rankings.
-                                </li>
-                                <li class="square-box-p"> <span class="sq-pen-css"><i
-                                            class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
-
-                                    In fact,
-                                    if
-                                    your site got more backlinks, the value of your site significantly arises. The
-                                    backlinks create an extra impression on google as your site is more trustworthy and
-                                    credible.
-
-                            </ul>
-                        </div>
-
-                        <div class=" buttonsinfo ">
-                            <button type="button" class="btn managed-link-btn ">Get Your Links Now</button>
-                        </div>
-                    </div>
+                <div class="mt-0  ">
+                    <p class="backlinks-HA-HT-main-p mb-3">Many business owners benefit from FastLinky's top-notch
+                        <b>backlinks services</b>. We at FastLinky will provide you with the <b>best link building
+                            services</b> to make
+                        pursuing
+                        your big purpose easier. We have expert teams who can develop content strategies for you. Our
+                        high-quality <b>backlink building</b> services will help keep your website's organic profile.
+                    </p>
                 </div>
+
+                <div class=" buttonsinfo ">
+                    <button type="button" onclick="goTo('customer-packages.php')" class="btn indexpage-link-btn ">Get
+                        Your Links Now</button>
+                </div>
+
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="">
                     <div>
-                        <img src="./images/boost-blog.png" class=" w-75  mb-4 " alt="">
+                        <img src="./images/boost-blog.png" class="w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--Why does A brand need link buildings end -->
-    <!-- ________________________________________________________________________________________ -->
-
-    <section class="a-brand-need-link-section mt-0 mb-0">
-        <div class="row ">
-            <div class="col-lg-6 col-md-6">
-                <div class="">
-                    <div>
-                        <img src="./images/growing-time.png" class="w-75 mb-4" alt="">
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 a-brand-need-link-main-col-1">
-                <div class="">
-                    <div>
-                        <div class="mt-5">
-                            <p class="need-link-text-p mb-3">At Fastlinky, we are helping a lot of owners with our
-                                high-quality link-building procedure. We will help you with our top-quality
-                                link-building services that might easier your path to go for your big dream. Otherwise,
-                                it might be difficult for you to touch that. We have expert teams that create content
-                                strategies on our behalf of you. Through high-quality backlinks, your website’s profile
-                                will be strengthened organically. </p>
-                            <p class="need-link-text-p mb-3">Keep in touch with us for more details and to boost your
-                                brand. </p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class=" getyour-linkbtn mt-5 ">
-                            <button type="button" class="btn managed-link-btn d-flex justify-content-right">Get Your
-                                Links Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Why does A brand need link buildings section2 end -->
-    <!-- ________________________________________________________________________________________ -->
+    <!--Backlinks From High Authority And High Traffic Websites end -->
+    <!-- __________________________________________________________________________________________ -->
+    <!-- ___________________________________________________________________________________________ -->
+    <!-- testimonials customers reviews -->
+    <?php require_once "partials/testimonials.php"; ?>
+    <!-- testimonials customers reviews -->
     <!-- ________________________________________________________________________________________ -->
     <!-- Link Building Services that Actually Matters-starts -->
     <section class="lbs-actually-matters-main">
         <div>
             <div class="row">
-                <div class=" col-xl-6 col-md-6">
+                <div class=" col-xl-5 col-md-5">
                     <h1 class="sec_heading mb-3">
-                        Link Building Services <br> <span>That Actually Matters !</span>
+                        What Makes Us <br><span>A Reliable Link Building Provider?</span>
                     </h1>
-
-                    <div class="actually-card-div1">
-                        <div class="  actually-card-inn-img-div">
-                            <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
-                                alt="">
-                        </div>
-                        <div class="lbp-texting">
-                        <div class="ibp-centering-b">
-                                <b> Authority Backlinks : </b>
-                            </div>
-                            We help brands to create diverse link profiles. We
-                            publish editorial writings on different authoritative domains.
-                        </div>
-                    </div>
-                    <div class="actually-card-div1">
-                        <div class="  actually-card-inn-img-div">
-                            <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
-                                alt="">
-                        </div>
-                        <div class="lbp-texting">
-                        <div class="ibp-centering-b"><b> Detailed Vetting Process : </b></div>
-                              Our expert team has done the whole outreach process
-                            in properly oriented vetting. They look for unusual places that could be advantageous for
-                            your company profile.
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-xl-6 col-md-6">
-                    <div class="actually-card-div1 ">
-                        <div class="  actually-card-inn-img-div">
-                            <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img"
-                                alt="">
-                        </div>
-                        <div class="lbp-texting">
-                            <div class="ibp-centering-b">
-                                <b> Content is the key point : </b>
-                            </div>
-                            We do not provide content based on links. Moreover,
-                            we create beautiful content that everyone loves to read.
-                        </div>
-                    </div>
-                    <div class="actually-card-div1">
-                        <div class="  actually-card-inn-img-div">
-                            <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
-                                alt="">
-                        </div>
-                        <div class="lbp-texting">
-                            <div class="ibp-centering-b"> <b> Increasing ROI: </b></div>
-                             Our aim is to help the brand to achieve its target by
-                            providing organic growth and increased ROI.
-                        </div>
-                    </div>
-                    <div class=" getyour-linkbtn mt-5 ">
-                        <button type="button" class="btn managed-link-btn d-flex justify-content-center w-100 ">Get Your
-                            Links Now</button>
+                    <p class="service-index-p text-md-start">
+                        Our specialty is link development. We work to gather backlinks for you that are typically
+                        impossible to acquire through standard <b>SEO services</b> while keeping <b>domain authority</b>
+                        and organic
+                        development in mind.
+                    </p>
+                    <div>
+                        <img src="./images/freepik-img/country-reach-outreach.png" class="w-100 " alt="">
                     </div>
                 </div>
+                <div class="col-xl-7 col-md-7 mt-3 mt-md-0">
+                    <div class="row row-cols-md-2">
+                        <div class="col mb-2">
+                            <div class="our-secret-delivering-main-card2 h-100">
+                                <div class="text-chnging-css pb-3 ">
+                                    <img src="./images/dummy-img/real-bo-ul-li-1.png" style="width: 75px;" alt="">
+                                </div>
+                                <h4 class="how-fonts-h4 ">Services For Fully Customized Link Building</h4>
+                                <p class="">
+                                    Clients are most important. We take that carefully, and all of our work is driven by
+                                    the selection and guidance of our clients. For the utmost, our team carefully places
+                                    appropriate keywords. </p>
+
+                            </div>
+                        </div>
+                        <div class="col mb-2">
+                            <div class="our-secret-delivering-main-card2 h-100">
+                                <div class="text-chnging-css pb-3 ">
+                                    <img src="./images/dummy-img/real-bo-ul-li-2.png" style="width: 75px;" alt="">
+                                </div>
+                                <h4 class="how-fonts-h4 ">Increased Readership</h4>
+                                <p class="">
+                                    Get relevant niche-driven traffic and enjoy <b>high domain authority backlinks</b>
+                                    that
+                                    were personally acquired. To guarantee quality and quick-performing plans, we
+                                    personally connect with real bloggers from your sector. </p>
+                            </div>
+                        </div>
+                        <div class="col mb-2">
+                            <div class="our-secret-delivering-main-card2 h-100">
+                                <div class="text-chnging-css pb-3 ">
+                                    <img src="./images/dummy-img/real-bo-ul-li-3.png" style="width: 75px;" alt="">
+                                </div>
+                                <h4 class="how-fonts-h4 ">Perfect Reliable Outcomes</h4>
+                                <p class="">
+                                    Since we provide every service locally, organization and communication are excellent
+                                    and progress quickly. There's no need to repeat yourself to us! We take care of
+                                    everything you want to appear on your website, including <b>high domain authority
+                                        backlinks</b> and ratings. </p>
+                            </div>
+                        </div>
+                        <div class="col mb-2">
+                            <div class="our-secret-delivering-main-card2 h-100">
+                                <div class="text-chnging-css pb-3 ">
+                                    <img src="./images/dummy-img/real-bo-ul-li-1.png" style="width: 75px;" alt="">
+                                </div>
+                                <h4 class="how-fonts-h4 ">Business Expertise</h4>
+                                <p class="">
+                                    We now have more than ten years of business experience. We have a group of
+                                    professionals working together to develop a database of publishers, produce
+                                    authentic content, and provide our clients with the best <b>SEO services </b> that
+                                    are of
+                                    the highest caliber. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="button" onclick="goTo('customer-packages.php')" class="btn indexpage-link-btn ">Get
+                    Your
+                    Links Now</button>
             </div>
         </div>
     </section>
 
     <!-- Link Building Services that Actually Matters-ends -->
     <!-- ________________________________________________________________________________________ -->
+    <!-- _________________________________________________________________________________________ -->
+    <!--  Why Choose Fastlinky  starts -->
+    <section class="services-index-section ">
+        <div class="custom-cntainr">
+            <div>
+                <h2 class=" text-center mt-4 my-3 service-index-h2"> <span>Services</span> That We Provide </h2>
+            </div>
+            <p class="service-index-p">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi, recusandae unde eligendi ex maiores
+                fuga nobis delectus minus quia nulla officiis harum in laborum ea rerum asperiores! Earum, consequuntur
+                neque?
+            </p>
+            <div class="service-index-card-div">
+                <div class="row row-cols-1 row-cols-sm-3">
+                    <div class="col my-2 my-md-4 px-md-3">
+                        <div class="card h-100 service-index-card-box">
+                            <div class="pb-3 text-center text-md-start">
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Blogger Outreach Links</h4>
+                            <p class="">
+                                Get authoritative, high-quality links that lead to editorial content on real,
+                                traffic-generating websites.
+
+                        </div>
+                    </div>
+                    <div class="col my-2 my-md-4 px-md-3">
+                        <div class="card h-100 service-index-card-box">
+                            <div class="pb-3 text-center text-md-start">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4 text-center text-md-start py-2">White Label Link Building</h4>
+                            <p class="">
+                                We offer trustworthy, <b>excellent link-building services</b> that are totally
+                                accessible.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col my-2 my-md-4 px-md-3">
+                        <div class="card h-100 service-index-card-box">
+                            <div class=" pb-3 text-center text-md-start">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Country-Specific Links
+                            </h4>
+                            <p class="">
+                                Improve SEO with <b>country-specific backlinks</b> from multilingual content.
+                        </div>
+                    </div>
+                    <div class="col my-2 my-md-4 px-md-3">
+                        <div class="card h-100 service-index-card-box">
+                            <div class="pb-3 text-center text-md-start">
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4 text-center text-md-start py-2">High-Caliber Links</h4>
+                            <p class="">
+                                Direct your organic growth to search engines with high DR SaaS backlinks.
+                        </div>
+                    </div>
+                    <div class="col my-2 my-md-4 px-md-3">
+                        <div class="card h-100 service-index-card-box">
+                            <div class="pb-3 text-center text-md-start">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Link Insertions</h4>
+                            <p class="">
+                                Get a variety of helpful and work-based backlinks from the previous posts.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col my-2 my-md-4 px-md-3">
+                        <div class="card h-100 service-index-card-box">
+                            <div class=" pb-3 text-center text-md-start">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Managed Link Building
+                            </h4>
+                            <p class="">
+                                With FastLinky, you can organize regular links from high-ranking websites and set up
+                                monthly backlinking campaigns.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Fastlinky  ends -->
+    <!-- ____________________________________________________________________________________________________ -->
+
+    <!-- _________________________________________________________________________________________________ -->
+    <!-- All set to rank on the first page of Google? start -->
+    <section class="backlinks-HA-HT-section mb-5">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 m-auto">
+                <h1 class="only-catchy-headline mb-4">Are You Ready To Be Present On Google's Front Page?
+                </h1>
+                <div class=" buttonsinfo ">
+                    <button type="button" onclick="goTo('customer-packages.php')"
+                        class="btn indexpage-link-btn ">Outrank Your Competition</button>
+                </div>
+
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="">
+                    <div>
+                        <img src="./images/freepik-img/country-spc-research.png" class="w-100 " alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- All set to rank on the first page of Google? end -->
+    <!-- __________________________________________________________________________________________ -->
+
     <!-- ____________________________________________________________________________________________ -->
 
     <!-- our-secret-delivering-main-sec starts -->
-    <section class="our-secret-delivering-main-sec">
+    <section class="our-secret-delivering-main-sec pt-2">
         <div class="">
             <div>
-                <h2 class=" text-center mt-4 my-3 our-secret-d-h2"> <span> Effective and Transparent</span> Link
-                    Building
-                    Process</h2>
-
+                <h2 class=" text-center mt-4 my-3 our-secret-d-h2">How <span> FastLinky works?</span></h2>
             </div>
+            <p class="service-index-p text-md-center">
+                We work for manual outreach <b>link building services</b> to gain a number of trustworthy and
+                high-quality backlinks from authoritative websites that are relevant to our customer base as quickly as
+                possible.
+            </p>
             <div class="our-secrect-delvry-main">
-                <div class="row">
-                    <div class="col-md-6 col-xl-6 ">
-                        <div class="our-secret-delivering-main-card">
+                <div class="row ">
+                    <div class="col-md-6 my-3">
+                        <div class="our-secret-delivering-main-card h-100">
 
                             <div class="text-center pb-3 ">
-                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 ">Authentic Link</h4>
+                            <h4 class="how-fonts-h4 ">Analyze And Plan</h4>
                             <p class="">
-                                We have a huge database of industry related websites from authentic bloggers. These real
-                                bloggers already gained trust in the market. After placing the order we reach out to
-                                them for improving your online appearance. </p>
+                                We carry out an overall analysis of your website and create a quick development path for
+                                it. At FastLinky, we create a fantastic <b>link building </b> plan just for you using
+                                the information that is accessible. </p>
 
                         </div>
 
                     </div>
 
-                    <div class="col-md-6 col-xl-6">
-                        <div class="our-secret-delivering-main-card">
+                    <div class="col-md-6 my-3">
+                        <div class="our-secret-delivering-main-card h-100">
 
                             <div class="text-center pb-3 ">
-                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Build Editorial Content</h4>
+                            <h4 class="how-fonts-h4  ">Customized Outreach Strategy</h4>
                             <p class="">
-                                Our expert professionals research your website to generate unique content for your
-                                brand. This magazine-style content increases the readership and viewership of your
-                                website. </p>
+                                Team FastLinky searches for outstanding websites that are appropriate to the requirement
+                                of one of our clients. Next, we develop our <b>custom outreach services</b> . To achieve
+                                the best outcomes, we update and pinch our outreach strategies frequently. </p>
 
                         </div>
 
                     </div>
 
-                    <div class="col-md-6 col-xl-6">
-                        <div class="our-secret-delivering-main-card">
-
+                    <div class="col-md-6 my-3">
+                        <div class="our-secret-delivering-main-card h-100">
                             <div class="text-center pb-3">
-                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Publication of Content</h4>
+                            <h4 class="how-fonts-h4  ">Creating High-Quality Backlinks</h4>
                             <p class="">
-                                We communicate with manually outreached bloggers and keep in touch until the content is
-                                published with a do-follow link. Moreover, we stay in the loop with the bloggers for
-                                editing if needed before or after publishing. </p>
+                                Our goal is to obtain high-authority backlinks for our customers. We develop a strong
+                                backlink profile for our clients using various <b>whitehat link building services</b> ,
+                                which ultimately help them rank higher than their rivals.</p>
 
                         </div>
-
                     </div>
-                    <div class="col-md-6 col-xl-6">
-                        <div class="our-secret-delivering-main-card">
+                    <div class="col-md-6 my-3">
+                        <div class="our-secret-delivering-main-card h-100">
 
                             <div class="text-center pb-3">
-                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Report & Tracking</h4>
+                            <h4 class="how-fonts-h4 ">Help You Outrank Your Competitors</h4>
                             <p class="">
-                                We provide a white label report and a SERP tracking dashboard. In the report you will
-                                find where we created a link for you and the dashboard will help you to check the result
-                                and plan for future campaigning. </p>
-
+                                We put more priority on quality. In order to deliver excellent results and grow your
+                                company, our <b>Link Building services agency</b> is completely ready with client
+                                requirements and expectations. </p>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -379,74 +444,79 @@ if(isset($_GET['seo_url']))
     <!-- our-secret-delivering-main-sec ends -->
     <!-- ______________________________________________________________________________________________ -->
 
-    <section class="our-secret-delivering-main-sec pb-2">
+    <section class="our-secret-delivering-main-sec py-0">
         <div class="">
             <div>
-                <h2 class=" text-center mt-4 my-3 our-secret-d-h2">Our Secret to Delivering Wanted Results <span>To Top
-                        Brands</span> </h2>
-
+                <h2 class=" text-center mt-4 my-3 our-secret-d-h2">Benefits Of <span>Hiring A Skilled Link Building
+                        Agency</span> </h2>
             </div>
+            <p class="service-index-p text-md-center fw-semibold mb-5">
+                Here are some of the benefits of hiring your link building team over producing one in-house.
+            </p>
             <div class="our-secrect-delvry-main">
-                <div class="row">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="our-secret-delivering-main-card2">
-
+                <div class="row row-cols-md-4">
+                    <div class="col">
+                        <div class="our-secret-delivering-main-card2 h-100">
                             <div class="text-chnging-css pb-3 ">
-                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 ">Campaign Customization</h4>
+                            <h4 class="how-fonts-h4 ">Increase Company Awareness</h4>
                             <p class="">
-                                We arrange, create and cooperate to offer custom link-building campaigns that benefit
-                                the company significantly. </p>
+                                By linking to guest posts, our <b>link building services agency</b>  will increase the
+                                visibility of your website. Therefore, brand recognition will give your business an
+                                advantage over competitors. Remember that when keywords on your website are related to
+                                other reliable sites with high domain authority, traffic to your site will be developed
+                                automatically. </p>
 
                         </div>
 
                     </div>
 
-                    <div class="col-md-6 col-xl-3">
-                        <div class="our-secret-delivering-main-card2">
-
+                    <div class="col">
+                        <div class="our-secret-delivering-main-card2 h-100">
                             <div class="text-chnging-css pb-3 ">
-                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Enhance SERP</h4>
+                            <h4 class="how-fonts-h4  ">Build Connections</h4>
                             <p class="">
-                                Our plan is very clear. Create top-notch do-follow links that cause high traffic to your
-                                website. </p>
+                                Our <b>SEO agency</b>  must contact other leading companies in order to build high-quality
+                                links. Although improving your site link is the main goal of our <b>blogger outreach
+                                agency</b> , there are additional advantages that will help your company overall. However,
+                                you can build powerful links that are helpful to both companies. You can even create
+                                other positive collaborations that will advance your business. </p>
 
                         </div>
 
                     </div>
 
-                    <div class="col-md-6 col-xl-3">
-                        <div class="our-secret-delivering-main-card2">
-
+                    <div class="col">
+                        <div class="our-secret-delivering-main-card2 h-100">
                             <div class="text-chnging-css pb-3">
-                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Generate Revenue</h4>
+                            <h4 class="how-fonts-h4  ">Better And High-Quality Content </h4>
                             <p class="">
-                                Editorial and niche-relevant backlinks always lead to improving SERP. Generally, that
-                                improves the website traffic. </p>
-
+                                Your readers will always appreciate high-quality content, which is one of the key
+                                benefits of <b>link building</b> . Yes, FastLinky will help in creating informative and useful
+                                content. The ultimate clients will benefit from the extra valuation. Visitors to the
+                                website will keep visiting if the article is very informative. By doing this, you can
+                                boost revenue. </p>
                         </div>
 
                     </div>
-                    <div class="col-md-6 col-xl-3">
-                        <div class="our-secret-delivering-main-card2">
-
+                    <div class="col">
+                        <div class="our-secret-delivering-main-card2 h-100">
                             <div class="text-chnging-css pb-3">
-                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Target Audience</h4>
+                            <h4 class="how-fonts-h4  ">Cost Savings</h4>
                             <p class="">
-                                Customer satisfaction is our main motto. At Fastlinky, we assigned a dedicated expert to
-                                your account after placing an order. Therefore, your queries will be resolved very
-                                quickly and you will get quick delivery. </p>
+                                If you rarely prefer <b>link building services</b>  or need them for particular campaigns, our
+                                link-building company will frequently be less expensive than hiring an in-house team.
+                                With an in-house team, you must make financial investments in hiring, informing, and
+                                observing employees. When working with <b>a link building services agency</b> , you can
+                                typically select from a variety of pricing structures and package deals and purchase the
+                                services you actually need. </p>
                         </div>
                     </div>
                 </div>
@@ -454,188 +524,11 @@ if(isset($_GET['seo_url']))
         </div>
     </section>
 
-    <!-- our secret delivering result ends -->
     <!-- _______________________________________________________________________________________________ -->
-
-    <!-- Why Fastlinky?-section start -->
-
-    <section class="why-leelija-section-mains">
-        <h1 class="why-leelija-h1">Why Fastlinky?</span> </h1>
-        <div class="row  ">
-            <div class="col-lg-6 col-md-6  m-auto ">
-                <div class="">
-
-                    <div>
-                        <img src="./images/searching-fastlinky-image.png" class="w-75  mb-4 " alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 a-brand-need-link-main-col-1">
-                <div class="">
-
-                    <div>
-                        <div class="py-4">
-                            <div class="why-leelija-main-for-card">
-                                <div class="  actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-3.png"
-                                        class="managed-page-second-ul-li-img" alt="">
-                                </div>
-                                <div class="text-chnging-css ">
-                                    Fastlinky is a <b> trustable white-label link-building provider</b> . We provide
-                                    relevant backlinks through which you will find the result. Moreover, we customize
-                                    services according to customer needs.
-                                </div>
-                            </div>
-                            <div class="why-leelija-main-for-card">
-                                <div class=" actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-1.png"
-                                        class="managed-page-second-ul-li-img" alt="">
-                                </div>
-                                <div class="text-chnging-css ">
-                                    We provide <b>guaranteed customer satisfaction</b> with our work. We will keep in
-                                    touch after project delivery.
-                                </div>
-                            </div>
-                            <div class="why-leelija-main-for-card">
-
-                                <div class=" actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-2.png"
-                                        class="managed-page-second-ul-li-img" alt="">
-                                </div>
-                                <div class="text-chnging-css">We provide a <b>dedicated account manager</b> after
-                                    placing an
-                                    order as the customer is our top priority.
-                                </div>
-                            </div>
-                            <div class="why-leelija-main-for-card">
-                                <div class=" actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-3.png"
-                                        class="managed-page-second-ul-li-img" alt="">
-                                </div>
-                                <div class="text-chnging-css ">
-                                    We provide <b>convenient dashboards</b> to check new orders or renew orders or the
-                                    status of the order.
-                                </div>
-                            </div>
-                            <div class="why-leelija-main-for-card">
-                                <div class=" actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-1.png"
-                                        class="managed-page-second-ul-li-img" alt="">
-                                </div>
-                                <div class="text-chnging-css ">
-                                    We create <b>in-house content for better quality</b> . Your topic will be assigned
-                                    to those who have experts in niche skills.
-                                </div>
-                            </div>
-                            <div class="why-leelija-main-for-card">
-                                <div class=" actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-2.png"
-                                        class="managed-page-second-ul-li-img" alt="">
-                                </div>
-                                <div class="text-chnging-css ">
-                                    We have a <b>huge database of authentic influencers</b> . Over the years we work
-                                    with a lot of influencers for industry-related blogs.
-                                </div>
-                            </div>
-                            <div class="why-leelija-main-for-card">
-                                <div class=" actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-3.png"
-                                        class="managed-page-second-ul-li-img" alt="">
-                                </div>
-                                <div class="text-chnging-css ">
-                                    Our expert checks all the aspects before submitting the project. Therefore, there
-                                    will be <b>no duplicate links</b> .
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class=" getyour-linkbtn mt-5 ">
-                            <button type="button" class="btn managed-link-btn d-flex justify-content-center ">Get Your
-                                Links Now</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-    <!-- Why Fastlinky?-section end -->
-    <!-- ___________________________________________________________________________________________ -->
-    <!-- testimonials customers reviews -->
-    <?php require_once "partials/testimonials.php"; ?>
-    <!-- testimonials customers reviews -->
-    <!-- _________________________________________________________________________________________ -->
-    <!--  What Makes Fastlinky So Special? starts -->
-    <section class="lbs-actually-matters-main">
-        <div>
-            <div class="row">
-                <h1 class="sec_heading text-center mb-3 mb-md-5">
-                    What Makes <span>Fastlinky So Special?</span>
-                </h1>
-                <div class=" col-xl-6 col-md-6">
-                    <div class="actually-card-div1 mb-4 mt-1 mt-md-0">
-                        <div class="  actually-card-inn-img-div">
-                            <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img"
-                                alt="">
-                        </div>
-                        <div class="lbp-texting">
-                            <b> Outsourcing Partner : </b> <br> Link building is a continuous process. We will keep in
-                            touch with you at every step. We help a lot of owners by giving quality link profiles from
-                            high-traffic websites.
-                        </div>
-                    </div>
-                    <div class="actually-card-div1 mb-4">
-                        <div class="  actually-card-inn-img-div">
-                            <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
-                                alt="">
-                        </div>
-                        <div class="lbp-texting">
-                            <b> After Delivery Service </b> <br> After completing the whole project and publishing
-                            content on behalf of you, still we will revisit them.
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-xl-6 col-md-6">
-                    <div class="actually-card-div1">
-                        <div class="  actually-card-inn-img-div">
-                            <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
-                                alt="">
-                        </div>
-                        <div class="lbp-texting">
-                            <b> Convenient Dashboard : </b> <br> We provide end-to-end subscriptions. After placing the
-                            order we will do the hard work for you. For instance content creation to publishing it on
-                            high-traffic websites, everything will be managed.
-                        </div>
-                    </div>
-                    <div class="actually-card-div1">
-                        <div class="  actually-card-inn-img-div">
-                            <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
-                                alt="">
-                        </div>
-                        <div class="lbp-texting">
-                            <b> Keyword Selection : </b> <br> Our team is working in this field for several years. They
-                            always set their eye on high ranked relevant keywords. Therefore, it will easily boost your
-                            website rankings.
-                        </div>
-                    </div>
-                </div>
-                <div class=" getyour-linkbtn-for-lbs-matter  ">
-                    <button type="button"
-                        class="btn managed-link-btn d-flex justify-content-center external-css-fr-size ">Get Your
-                        Links Now</button>
-                </div>
-            </div>
-    </section>
-
-    <!-- What Makes Fastlinky So Special? ends -->
-    <!-- ______________________________________________________________________________________________ -->
+    <!-- our secret delivering result ends -->
     <!-- ================================================================================================= -->
     <!-- Frequently Asked Questions starts -->
     <!-- ================================================================================================ -->
-    <!-- new faq for indexpage -->
 
     <?php require_once "partials/faqs-new.php"; ?>
 
@@ -665,6 +558,12 @@ if(isset($_GET['seo_url']))
     <?php require_once "partials/footer.php"; ?>
     <!-- footer -->
     <!-- -------------------------------------- -->
+    <script>
+    const goTo = (url) => {
+        location.href = url;
+    }
+    </script>
+    <script src="js/script.js"></script>
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
