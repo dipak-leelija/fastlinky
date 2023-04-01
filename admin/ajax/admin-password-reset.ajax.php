@@ -1,6 +1,5 @@
 <?php
 session_start();
-define('SUADM002', ' Administrative user information has been updated');
 
 require_once dirname(dirname(__DIR__)) . "/includes/constant.inc.php";
 require_once ROOT_DIR . "/includes/user.inc.php";
