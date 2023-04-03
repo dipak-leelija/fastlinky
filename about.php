@@ -10,10 +10,7 @@ require_once "classes/search.class.php";
 require_once "classes/customer.class.php";
 require_once "classes/login.class.php";
 require_once "classes/services.class.php";
-require_once "classes/employee.class.php";
 
-//require_once("../classes/front_photo.class.php");
-require_once("classes/blog_mst.class.php");
 require_once("classes/utility.class.php");
 require_once("classes/utilityMesg.class.php");
 require_once("classes/utilityImage.class.php");
@@ -26,8 +23,6 @@ $search_obj		= new Search();
 $customer		= new Customer();
 $logIn			= new Login();
 $service		= new Services();
-$blogMst		= new BlogMst();
-$Employee       = new Employee();
 
 $utility		= new Utility();
 $uMesg 			= new MesgUtility();
@@ -38,8 +33,7 @@ $typeM		= $utility->returnGetVar('typeM','');
 //user id
 $cusId		= $utility->returnSess('userid', 0);
 
-if(isset($_GET['seo_url']))
-	{
+if(isset($_GET['seo_url'])){
 		 $seo_url			  		= $_GET['seo_url'];
 		// $return_url 	= base64_decode($_GET["return_url"]); //get return url
 	}
@@ -580,7 +574,7 @@ if(isset($_GET['seo_url']))
     <!-- ............................. -->
   <!-- --------------------------------------- -->
     <!-- feedback form -->
-    <?php require_once "partials/feedback.php"; ?>
+    <?php //require_once "partials/feedback.php"; ?>
     <!-- feedback form -->
     <!-- ----------------------------------------------- -->
     <!-- Footer -->
