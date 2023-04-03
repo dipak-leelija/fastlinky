@@ -105,7 +105,7 @@ b{
 
 @media(min-width:1300px) {
     .custom-cntainr {
-        max-width: 1140px;
+        max-width: 1100px;
         margin: auto;
     }
 }
@@ -127,7 +127,15 @@ b{
     color: black;
     line-height: 1.5;
 }
-
+.services-a-btn{
+    font-family: "Helvetica", Poppins;
+    font-size: 14px;
+    font-weight: 700;
+    color: #7D8089;
+}
+.services-a-btn:hover{
+    color: var(--mustard) !important;
+}
 .service-index-card-division {
     margin-top: 1.5rem;
 }
@@ -138,9 +146,9 @@ b{
 }
 
 .service-index-card-box {
-    box-shadow: 0 0px 6px 0 rgb(12 23 52 / 20%);
     padding: 1.5rem;
     border-radius: unset;
+    box-shadow: 0px 2px 4px 0px rgba(11.999999999999991, 22.999999999999993, 52, 0.08);
     background: var(--pure-white);
     border: none;
     border-bottom-right-radius: 65px;
@@ -553,7 +561,7 @@ b{
     }
 
     .indexpage-link-btn {
-        padding: 11px 19px 11px 25px !important;
+        padding: 7px 19px 7px 25px !important;
     }
 
     .backlinks-HA-HT-main-h1 {

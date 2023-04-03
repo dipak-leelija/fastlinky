@@ -262,72 +262,96 @@ if(isset($_GET['seo_url']))
             <div class="service-index-card-div">
                 <div class="row row-cols-1 row-cols-sm-3">
                     <div class="col my-2 my-md-4 px-md-3">
-                        <div class="card h-100 service-index-card-box">
+                        <div class="card h-100 service-index-card-box pt-md-5">
                             <div class="pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Blogger Outreach Links</h4>
-                            <p class="">
+                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Blogger Outreach Service</h4>
+                            <p class="h-100">
                                 Get authoritative, high-quality links that lead to editorial content on real,
-                                traffic-generating websites.
+                                traffic-generating websites.</p>
+                            <div class="my-3">
+                                <a class="services-a-btn" href="blogger-outreach.php">Learn More <i
+                                        class="fa-solid fa-chevron-right ps-1"></i></a>
+                            </div>
 
                         </div>
                     </div>
                     <div class="col my-2 my-md-4 px-md-3">
-                        <div class="card h-100 service-index-card-box">
+                        <div class="card h-100 service-index-card-box pt-md-5">
                             <div class="pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">White Label Link Building</h4>
-                            <p class="">
+                            <p class="h-100">
                                 We offer trustworthy, <b>excellent link-building services</b> that are totally
                                 accessible.
                             </p>
+                            <div class="my-3">
+                                <a class="services-a-btn" href="white-label-link-building.php">Learn More <i
+                                        class="fa-solid fa-chevron-right ps-1"></i></a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col my-2 my-md-4 px-md-3">
-                        <div class="card h-100 service-index-card-box">
+                        <div class="card h-100 service-index-card-box pt-md-5">
                             <div class=" pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Country-Specific Links
+                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Country-Specific Backlinks
                             </h4>
-                            <p class="">
-                                Improve SEO with <b>country-specific backlinks</b> from multilingual content.
+                            <p class="h-100">
+                                Improve SEO with <b>country-specific backlinks</b> from multilingual content.</p>
+                            <div class="my-3">
+                                <a class="services-a-btn" href="country-specific-backlinks.php">Learn More <i
+                                        class="fa-solid fa-chevron-right ps-1"></i></a>
+                            </div>
                         </div>
                     </div>
                     <div class="col my-2 my-md-4 px-md-3">
-                        <div class="card h-100 service-index-card-box">
+                        <div class="card h-100 service-index-card-box pt-md-5">
                             <div class="pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">High-Caliber Links</h4>
-                            <p class="">
-                                Direct your organic growth to search engines with high DR SaaS backlinks.
+                            <p class="h-100">
+                                Direct your organic growth to search engines with high DR SaaS backlinks.</p>
+                            <div class="my-3">
+                                <a class="services-a-btn" href="high-authority-backlinks.php">Learn More <i
+                                        class="fa-solid fa-chevron-right ps-1"></i></a>
+                            </div>
                         </div>
                     </div>
                     <div class="col my-2 my-md-4 px-md-3">
-                        <div class="card h-100 service-index-card-box">
+                        <div class="card h-100 service-index-card-box pt-md-5">
                             <div class="pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Link Insertions</h4>
-                            <p class="">
+                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Link Insertion Service</h4>
+                            <p class="h-100">
                                 Get a variety of helpful and work-based backlinks from the previous posts.
                             </p>
+                            <div class="my-3">
+                                <a class="services-a-btn" href="link-insertion-service.php">Learn More <i
+                                        class="fa-solid fa-chevron-right ps-1"></i></a>
+                            </div>
                         </div>
                     </div>
                     <div class="col my-2 my-md-4 px-md-3">
-                        <div class="card h-100 service-index-card-box">
+                        <div class="card h-100 service-index-card-box pt-md-5">
                             <div class=" pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Managed Link Building
                             </h4>
-                            <p class="">
+                            <p class="h-100">
                                 With FastLinky, you can organize regular links from high-ranking websites and set up
-                                monthly backlinking campaigns.
+                                monthly backlinking campaigns.</p>
+                            <div class="my-3">
+                                <a class="services-a-btn" href="managed-link-building.php">Learn More <i
+                                        class="fa-solid fa-chevron-right ps-1"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -462,7 +486,7 @@ if(isset($_GET['seo_url']))
                             </div>
                             <h4 class="how-fonts-h4 ">Increase Company Awareness</h4>
                             <p class="">
-                                By linking to guest posts, our <b>link building services agency</b>  will increase the
+                                By linking to guest posts, our <b>link building services agency</b> will increase the
                                 visibility of your website. Therefore, brand recognition will give your business an
                                 advantage over competitors. Remember that when keywords on your website are related to
                                 other reliable sites with high domain authority, traffic to your site will be developed
@@ -479,9 +503,11 @@ if(isset($_GET['seo_url']))
                             </div>
                             <h4 class="how-fonts-h4  ">Build Connections</h4>
                             <p class="">
-                                Our <b>SEO agency</b>  must contact other leading companies in order to build high-quality
+                                Our <b>SEO agency</b> must contact other leading companies in order to build
+                                high-quality
                                 links. Although improving your site link is the main goal of our <b>blogger outreach
-                                agency</b> , there are additional advantages that will help your company overall. However,
+                                    agency</b> , there are additional advantages that will help your company overall.
+                                However,
                                 you can build powerful links that are helpful to both companies. You can even create
                                 other positive collaborations that will advance your business. </p>
 
@@ -497,7 +523,8 @@ if(isset($_GET['seo_url']))
                             <h4 class="how-fonts-h4  ">Better And High-Quality Content </h4>
                             <p class="">
                                 Your readers will always appreciate high-quality content, which is one of the key
-                                benefits of <b>link building</b> . Yes, FastLinky will help in creating informative and useful
+                                benefits of <b>link building</b> . Yes, FastLinky will help in creating informative and
+                                useful
                                 content. The ultimate clients will benefit from the extra valuation. Visitors to the
                                 website will keep visiting if the article is very informative. By doing this, you can
                                 boost revenue. </p>
@@ -511,7 +538,8 @@ if(isset($_GET['seo_url']))
                             </div>
                             <h4 class="how-fonts-h4  ">Cost Savings</h4>
                             <p class="">
-                                If you rarely prefer <b>link building services</b>  or need them for particular campaigns, our
+                                If you rarely prefer <b>link building services</b> or need them for particular
+                                campaigns, our
                                 link-building company will frequently be less expensive than hiring an in-house team.
                                 With an in-house team, you must make financial investments in hiring, informing, and
                                 observing employees. When working with <b>a link building services agency</b> , you can
