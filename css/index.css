@@ -28,11 +28,11 @@
     font-size: 18px;
     color: #324A6D;
     line-height: 1.5em;
-    font-family: "Poppins", Poppins;
+    /* font-family: "Poppins", Poppins; */
 }
 
 .indexpage-link-btn {
-    font-family: "Poppins", Poppins;
+    /* font-family: "Poppins", Poppins; */
     font-size: 20px;
     font-weight: 400;
     color: #FFF;
@@ -80,7 +80,7 @@ b{
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.5em;
-    font-family: "Poppins", Poppins;
+    /* font-family: "Poppins", Poppins; */
     text-align: justify;
     align-items: center;
 }
