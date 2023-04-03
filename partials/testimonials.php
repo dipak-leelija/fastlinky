@@ -21,10 +21,7 @@
 
                     <!-- =============== Review One =============== -->
                     <div class="carousel-item active slider">
-                        <h4 class="what-others-say-bo-ci-h4">"Honestly, they are the best in the digital marketing
-                            world. Very much
-                            committed and punctual towards their delivery. Definitely, we will use the services of
-                            Fastlinky in the upcoming years."</h4>
+                        <h4 class="what-others-say-bo-ci-h4">"FastLinky is the best SEO agency. I sincerely value our business partnership with the Fastlinky Team over the past year. They have benefited us in website design and development for our website’s organic growth."</h4>
                         <div class="containerslider">
                             <img src="images/icons/male-user.png" class="imageslider" alt="...">
                             <div class="sliderbox1">
@@ -43,10 +40,7 @@
 
                     <!-- =============== Review Two =============== -->
                     <div class="carousel-item slider">
-                        <h4 class="what-others-say-bo-ci-h4">"Fastlinky did a fantastic job with our online marketing
-                            strategy.We have to
-                            say they have a great reporting process and are always touched with our manager and
-                            outreach team."</h4>
+                        <h4 class="what-others-say-bo-ci-h4">"FastLinky has been quite helpful to me, not just with outstanding communication and comprehension of my goals, but also with fantastic link placements in well-written articles on websites with lots of relevant content.  "</h4>
                         <div class="containerslider">
                             <img src="images/icons/female-user.png" class="imageslider" alt="...">
                             <div class="sliderbox1">
@@ -65,10 +59,7 @@
 
                     <!-- =============== Review Three =============== -->
                     <div class="carousel-item slider">
-                        <h4 class="what-others-say-bo-ci-h4">"I really appreciate the business relationship we have had
-                            with Fastlinky
-                            Team for the last 1 year. They have helped us in website development and design for our
-                            organic growth."</h4>
+                        <h4 class="what-others-say-bo-ci-h4">"The custom outreach campaign's results for the successful domain are satisfactory to us. In addition to being pertinent to our industry, the placements are also excellent in terms of authority and organic search traffic. "</h4>
                         <div class="containerslider">
                             <img src="images/icons/female-user.png" class="imageslider" alt="...">
                             <div class="sliderbox1">
@@ -86,10 +77,7 @@
 
                     <!-- =============== Review Four =============== -->
                     <div class="carousel-item slider">
-                        <h4 class="what-others-say-bo-ci-h4">"From a digital marketing point of view, I am highly
-                            impressed with the
-                            hard work of the Fastlinky Team. They are amazing and so has been their support and
-                            contribution."</h4>
+                        <h4 class="what-others-say-bo-ci-h4">"In terms of digital marketing, they are absolutely the most incredible. When it comes to their delivery, I'm incredibly dependable. Without a doubt, in the approaching years, we'll use FastLinky's services. "</h4>
                         <div class="containerslider">
                             <img src="images/icons/male-user.png" class="imageslider" alt="...">
                             <div class="sliderbox1">
