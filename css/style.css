@@ -4723,9 +4723,18 @@ font-size: 25px
 }
 
 .faq-acc-flush {
+    max-height: 503px;
+    overflow: auto;
     /* width: 90%; */
 }
-
+.faq-acc-flush::-webkit-scrollbar-thumb {
+    background: #f7f7f9 !important;
+    border-radius: 2px;
+}
+.faq-acc-flush::-webkit-scrollbar-track {
+    box-shadow: none !important;
+    border-radius: 2px;
+}
 .faq-acc-body {
     font-family: Helvetica, Poppins !important;
     font-size: 17px !important;
@@ -4780,6 +4789,11 @@ font-size: 25px
 @media (max-width:991px) {
     .index-faq-section {
         padding: 4rem;
+    }
+}
+@media (max-width:1150px) {
+    .faq-acc-flush {
+        max-height: 414px;
     }
 }
 

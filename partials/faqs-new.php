@@ -15,7 +15,7 @@ $allQuestions = $faqs->getfaqqu($pageName);
         <h1>Frequently asked link building questions</h1>
         <div class="row">
             <div class="col-md-7">
-                <div class="accordion accordion-flush faq-acc-flush" id="accordionFlushExample">
+                <div class="accordion accordion-flush faq-acc-flush pe-1" id="accordionFlushExample">
                     
 
                 <?php
@@ -44,7 +44,7 @@ $allQuestions = $faqs->getfaqqu($pageName);
 
                 </div>
             </div>
-            <div class="col-md-5 text-center m-auto">
+            <div class="col-md-5 text-center ">
                 <div class="">
                     <div>
                         <img src="./images/FAQs.png.png" class="" alt="FAQs">
