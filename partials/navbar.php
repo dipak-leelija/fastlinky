@@ -111,13 +111,6 @@
                                         href="<?php echo URL;?>/guest-posting.php">GUEST
                                         POSTING</a>
                                 </li>
-
-                                <li>
-                                    <a class="dropdown-item  producting-menues-lis"
-                                        href="<?php echo URL;?>/guest-post-offer.php">GUEST POST
-                                        OFFER</a>
-                                </li>
-                            
                             </div>
                         </div>
 
