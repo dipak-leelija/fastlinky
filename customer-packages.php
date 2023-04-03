@@ -13,18 +13,13 @@ $customer		= new Customer();
 $GPPackage      = new GuestPostpackage();
 $utility		= new Utility();
 ######################################################################################################################
-$typeM		= $utility->returnGetVar('typeM','');
+$typeM		    = $utility->returnGetVar('typeM','');
 //user id
-$cusId		= $utility->returnSess('userid', 0);
-$cusDtl		= $customer->getCustomerData($cusId);
+$cusId		    = $utility->returnSess('userid', 0);
+$cusDtl		    = $customer->getCustomerData($cusId);
+$currentPage    = $utility->setCurrentPageSession();
 
-if($cusId == 0){
-	header("Location: ".URL);
-}
-
-if($cusDtl[0][0] == 2){ 
-	header("Location: dashboard.php");
-}
+require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 /* PAGE ACTIVE */
 $activePage = basename($_SERVER['PHP_SELF'], ".php");
