@@ -9,13 +9,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $_SESSION['package'] = array($_POST['packageid']);
             if (isset($_SESSION['package'])) {
-                header('Location: '.URL.'/packages-summary.php');
+                header('Location: '.URL.'/packages-summary');
                 exit;
             }
         }else {
             $_SESSION['package'] = array($_POST['packageid']);
             if (isset($_SESSION['package'])) {
-                header('Location: '.URL.'/packages-summary.php');
+                header('Location: '.URL.'/packages-summary');
                 exit;
             }
         }
