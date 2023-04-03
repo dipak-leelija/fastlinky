@@ -205,7 +205,7 @@ $userData =  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
                     </div>
                     <!-- Orders Management card End -->
 
-                    <!-- Orders Management card -->
+                    <!-- Customer Management card -->
                     <div class="col-sm-6 col-md-4 col-lg-4">
                         <div class="card maincard">
                             <div class="imgBx">
@@ -222,7 +222,46 @@ $userData =  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
                             </div>
                         </div>
                     </div>
-                    <!-- Orders Management card End -->
+                    <!-- Customer Management card End -->
+
+                    <!-- Blogs Management card -->
+                    <div class="col-sm-6 col-md-4 col-lg-4">
+                        <div class="card maincard">
+                            <div class="imgBx">
+                                <img src="../images/icons/users.png" width="80px" height="70px">
+                            </div>
+                            <div class="contentBx">
+                                <h2>Blogs Management</h2>
+                                <div class="dashboard-list">
+                                    <ul>
+                                        <li><a href="blog-niche.php">Niches</a></li>
+                                        <li><a href="blog-master.php">Blogs</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blogs Management card End -->
+
+                    <!-- Blogs Management card -->
+                    <div class="col-sm-6 col-md-4 col-lg-4">
+                        <div class="card maincard">
+                            <div class="imgBx">
+                                <img src="../images/icons/users.png" width="80px" height="70px">
+                            </div>
+                            <div class="contentBx">
+                                <h2>Package Management</h2>
+                                <div class="dashboard-list">
+                                    <ul>
+                                        <li><a href="packages.php">Packages</a></li>
+                                        <li><a href="#">Services</a></li>
+                                        <li><a href="#">Services Featured</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blogs Management card End -->
 
                     <!-- Content Management card -->
                     <div class="col-sm-6 col-md-4 col-lg-4">

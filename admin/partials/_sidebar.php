@@ -37,9 +37,6 @@
         </li>
 
 
-
-
-
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#blogs" aria-expanded="false" aria-controls="blogs">
                 <i class="fa-light fa-table-layout menu-icon"></i>
