@@ -264,7 +264,7 @@ $packageCats = $GPPackage->allPackagesCat();
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="mainModalLabel">User Details</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <button type="button" onclick="reloadPage()" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -297,6 +297,7 @@ $packageCats = $GPPackage->allPackagesCat();
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
     <!-- inject:js -->
+    <script src="<?php echo ADM_URL; ?>/js/fastlinky-admin.js"></script>
     <script src="<?php echo ADM_URL; ?>/js/off-canvas.js"></script>
     <script src="<?php echo ADM_URL; ?>/js/hoverable-collapse.js"></script>
     <script src="<?php echo ADM_URL; ?>/js/template.js"></script>
