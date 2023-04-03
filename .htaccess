@@ -2,3 +2,9 @@ RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
 RewriteCond %{HTTP_HOST} ^(www\.)?fastlinky\.com
 RewriteRule ^(.*)$ https://www.fastlinky.com/$1 [R,L]
+
+#REMOVING THE PHP EXTENSION
+#RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
