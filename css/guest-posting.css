@@ -34,53 +34,39 @@
 }
 
 .mlb-wrapping span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .high-quality-gp-heading-main {
-    /* font-family: 'Orienta', sans-serif; */
-    font-family: "Poppins", Poppins;
+    font-family: "Helvetica", "Satoshi-Variable";
     font-size: 4rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2em;
-    color: #383a50;
-    word-spacing: 0.1em;
-    stroke: #000;
+    color: var(--black);
 }
 
 .high-quality-gp-main-p {
     font-weight: 400;
     text-align: left;
     font-size: 1.7rem;
-    color: #324A6D;
+    color: var(--black);
     line-height: 1.5em;
-    /* font-family: 'Orienta', sans-serif; */
-    font-family: "Poppins", Poppins;
 }
 
 .high-quality-gp-btn{
-    font-family: "Poppins", Poppins;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: capitalize;
-    font-style: normal;
-    text-decoration: none;
-    line-height: 1em;
-    letter-spacing: 0;
-    word-spacing: 0em;
-    fill: #FFF;
     color: #FFF;
-    background-image: linear-gradient(120deg, #FDA33B 0%, #FA8273 100%);
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    border-color: #F7A546 !important;
+    background-image: linear-gradient(120deg, var(--mustard) 0%, #FA8273 100%);
+    border:1px solid var(--mustard);
     border-radius: 50px 50px 50px 50px;
-    padding: 17px 40px 17px 40px;
+    padding: 13px 40px 13px 40px;
 }
 
 .high-quality-gp-btn:hover {
     color: white !important;
-    background-image: linear-gradient(120deg, #FA8273 0%, #FDA33B 100%);
+    background-image: linear-gradient(120deg, #FA8273 0%, var(--mustard) 100%);
 }
 
 .tick-check {
@@ -93,8 +79,8 @@
 }
 
 .tick-check-p {
-    color: #3F4450;
-    font-family: "Helvetica", Poppins;
+    color:var(--black);
+    font-family:  "Satoshi-Variable";
     font-size: 21px;
     font-weight: 500;
     line-height: 1;
@@ -121,19 +107,17 @@
 .best-blogs-best-result-main-h1 {
     margin-bottom: 3rem;
     font-size: 2.48rem;
-    color: #383a50;
+    color: var(--black);
     text-align: start;
 }
 
 .best-blogs-best-result-main-h1 span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 .best-blogs-best-result-main-p {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5em;
-    /* font-family: 'Orienta', sans-serif; */
-    font-family: "Poppins", Poppins;
     text-align: justify;
     align-items: center;
 }
@@ -151,32 +135,29 @@
 /* ________________________________________________________________________________________ */
 
 .work-to-improve-vision-main-sec {
-    /* background: aliceblue; */
     padding: 5rem;
 }
 .work-to-improve-vision-main-sec p{
-    font-family: "Poppins", Poppins;
     font-size: 1rem;
     font-weight: 400;
 }
 .work-vision-h1{
-    color: #383a50;
+    color: var(--black);
 }
 .work-vision-h1 span {
-    color: #FDA33B;
+    color: var(--mustard);
     font-weight: 600;
 }
 
 .lbp-texting {
     text-align: justify;
     color: #747880;
-    font-family: "Helvetica", Poppins;
     font-size: 17px;
     line-height: 1.625em;
 }
 
 .lbp-texting b {
-    color: #383a50;
+    color: var(--black);
 }
 
 .actually-card-inn-img-div {
@@ -189,7 +170,6 @@
     padding: 2.5rem 1.5rem;
     border-radius: unset;
     border: none;
-    /* min-height: 200px; */
     margin: 0.5rem 0;
     align-items: center;
 }
@@ -216,15 +196,13 @@
 .pricing-bo-h1 {
     font-size: 3.6rem;
     font-weight: 600;
-    color: #383a50;
-    font-family: "Poppins", Poppins;
+    color: var(--black);
 }
 
 .pricing-bo-p1 {
-    font-family: "Poppins", Poppins;
     font-size: 1.1rem;
-    font-weight: 300;
-    color: #383a50b0;
+    font-weight: 400;
+    color: var(--black);
 }
 /* -------------------------------- */
 /* Pricing cards section ends */
@@ -240,12 +218,11 @@
 }
 .who-advantages-main-h2 {
     font-weight: 600;
-    color: #383a50;
-    font-family: "Poppins", Poppins;
+    color: var(--black);
 }
 
 .who-advantages-main-h2 span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 .who-take-card {
     padding:2.5rem 1.5rem;
@@ -256,7 +233,7 @@
     border: none;
     min-height: 400px;
     border-bottom-right-radius: 65px;
-    border-bottom: 2px solid #FDA33B;
+    border-bottom: 2px solid var(--mustard);
 }
 
 .who-take-card:hover {
@@ -266,8 +243,7 @@
 
 .who-take-card h4 {
     text-align: center;
-    color: #171C30;
-    font-family: "Helvetica", Poppins;
+    color: var(--black);
     font-size: 22px;
     font-weight: 700;
 }
@@ -275,7 +251,6 @@
 .who-take-card p {
     text-align: justify;
     color: #747880;
-    font-family: "Helvetica", Poppins;
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
@@ -298,12 +273,11 @@
     margin-bottom: 2rem;
 }
 .why-choose-fastlinky-sec strong{
-    color: #FDA33B;
+    color: var(--mustard);
 }
 .why-choose-fastlinky-sec ul{
     text-align: left;
-    color: #1c244b;
-    font-family: Poppins, Poppins;
+    color: var(--black);
     font-size: 17px;
     font-weight: 400;
     line-height: 2em;
@@ -322,7 +296,7 @@
     margin-bottom: 2rem;
 }
 .some-tips-section  strong{
-    color: #FDA33B;
+    color: var(--mustard);
 }
 .tipsto-get-best-gps{
     margin-bottom: 2rem;
@@ -332,8 +306,7 @@
 }
 .tipsto-get-best-gps p{
     text-align: start;
-    color: #1c244b;
-    font-family: Poppins, Poppins;
+    color: var(--black);
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.4;
@@ -353,21 +326,19 @@
     margin-bottom: 2rem;
 }
 .definition-gp-div  strong{
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .definition-gp-div p{
     text-align: start;
-    color: #1c244b;
-    font-family: Poppins, Poppins;
+    color: var(--black);
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.4;
 }
 .extraadding-lis ul{
     text-align: left;
-    color: #1c244b;
-    font-family: Poppins, Poppins;
+    color: var(--black);
     font-size: 17px;
     font-weight: 400;
     line-height: 2em;

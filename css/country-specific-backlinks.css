@@ -16,15 +16,10 @@
 }
 .country-specific-banner-h1 {
     color:  var(--black) ;
-    font-family: Helvetica, Poppins;
+    font-family: "Helvetica", "Satoshi-Variable";
     font-size: 4rem;
     font-weight: 600;
     line-height: 1.2em;
-    word-spacing: 0.1em;
-    -webkit-text-stroke-width: 0px;
-    stroke-width: 0;
-    -webkit-text-stroke-color: #000;
-    stroke: #000;
 }
 
 .country-specific-banner-p {
@@ -33,19 +28,17 @@
     font-size: 1.25rem;
     color: #324A6D;
     line-height: 1.5em;
-    font-family: "Poppins", Poppins;
 }
 
 .blogger-btn {
-    font-family: "Poppins", Poppins;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     text-transform: capitalize;
     color: var(--pure-white);
     background-color:var(--mustard);
     border: 1px solid var(--mustard);
     border-radius: 100px 100px 100px 100px;
-    padding: 16px 55px 16px 55px;
+    padding: 13px 55px 13px 55px;
 }
 .blogger-btn:hover{
     color: var(--mustard) !important;
@@ -69,7 +62,6 @@
 
 .reach-your-audience-globally-section h1 {
     color:  var(--black);
-    font-family: Poppins, Poppins;
     font-size: 2.3rem;
     font-weight: 500;
 }
@@ -79,7 +71,6 @@
 .reach-your-audience-globally-section p {
     text-align: left;
     color: var(--black);
-    font-family: Poppins, Poppins;
     font-size: 17px;
     font-weight: 400;
     line-height: 1.5em;
@@ -104,16 +95,12 @@
 
 .why-country-specific-link-section h2 {
     color:  var(--mustard);
-    font-family: Poppins, Poppins;
     font-weight: 500;
-    -webkit-text-stroke-color: #000;
-    stroke: #000;
     text-align: center;
     margin-bottom: 2rem;
 }
 .why-country-specific-link-section-p{
     color: #1c244b;
-    font-family: Poppins, Poppins;
     font-weight: 400;
     text-align: center;
 }
@@ -132,15 +119,12 @@
 }
 .img-country-div:hover img{
     border-radius: 0;
-
     transform: scale(1.1);
-
 }
 
 .why-country-specific-link-card-div h4 {
     margin-bottom: 17px;
     color:  var(--mustard);
-    font-family: Poppins, Poppins;
     font-size: 23px;
     font-weight: 500;
     min-height: 70px;
@@ -148,12 +132,10 @@
 
 .why-country-specific-link-card-div span {
     color:  var(--mustard);
-
 }
 
 .why-country-specific-link-card-div p {
     color: #1c244b;
-    font-family: Poppins, Poppins;
     font-weight: 400;
 }
 
@@ -168,22 +150,13 @@
     font-size: 3.2rem;
     font-weight: 600;
     color:  var(--black);
-    font-family: "Poppins", Poppins;
 }
 
 .pricing-bo-p1 {
-    font-family: "Poppins", Poppins;
     font-size: 1.1rem;
     font-weight: 300;
 
 }
-
-/* .price-table {
-    background: #F9F9F9;
-    padding: 20px 5rem;
-    margin: 5rem 0;
-   
-} */
 
 /* _____________________________________________________________________________________________________ */
 /* Pricing blogger outreach section ends */
@@ -214,7 +187,6 @@
 }
 
 .how-itsworks-main-div-casino p {
-    font-family: "Poppins", Poppins;
     text-align: justify;
     color: #3f4450;
     font-weight: 400;
@@ -224,7 +196,6 @@
 
 .how-itsworks-main-div-casino h3 {
     color: var(--black);
-    font-family: Roboto, Poppins;
     font-size: 24px;
     font-weight: 400;
     text-shadow: 0 0 0 rgb(0 0 0 / 30%);
@@ -247,7 +218,6 @@
 }
 
 .lbp-texting {
-    font-family: "Helvetica", Poppins;
     font-size: 17px;
     line-height: 1.625em;
 }
@@ -328,11 +298,6 @@
         font-weight: 400;
         font-size: 1.445rem !important;
     }
-/* 
-    .price-table {
-        padding: 20px 2rem !important;
-        margin: 2rem 0 !important;
-    } */
 
     .country-specific-international-section-h2 {
         font-size: 1.8rem;

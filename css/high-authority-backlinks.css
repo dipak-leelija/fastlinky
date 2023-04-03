@@ -24,7 +24,6 @@
 
 .mlb-wrapping h2 {
     color: var(--mustard);
-    font-family: Poppins, Poppins;
     font-weight: 500;
     line-height: 1.2;
     font-size: 1.1rem;
@@ -32,7 +31,7 @@
 }
 
 .mlb-starting-main-h1 {
-    font-family: "Poppins", Poppins;
+    font-family: "Helvetica", "Satoshi-Variable";
     font-size: 3.3rem;
     font-weight: 600;
     line-height: 1.2em;
@@ -47,20 +46,18 @@
     font-size: 1.5rem;
     color: var(--black);
     line-height: 1.5em;
-    font-family: "Poppins", Poppins;
     margin-top: 2.5rem;
 }
 
 .managed-link-btn {
-    font-family: "Helvetica", Poppins;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
     text-transform: capitalize;
     color: var(--pure-white);
     background-color: var(--mustard);
     border:1px solid var(--mustard) !important;
     border-radius: 100px 100px 100px 100px;
-    padding: 16px 55px 16px 55px;
+    padding: 13px 55px 13px 55px;
 }
 
 .managed-link-btn:hover {
@@ -71,9 +68,8 @@
     padding :0rem 5rem 2rem;
   }
   .paragraph_texts p{
-      font-size: 1.2rem;
-      font-weight: 300;
-      font-family: "Poppins", Poppins;
+      font-size: 1.3rem;
+      font-weight: 400;
       text-align: start;
   }
 /* ________________________________________________________________________________________ */
@@ -89,7 +85,6 @@
 
 .lbs-actually-matters-main-h1 {
     font-size: 2rem;
-    font-family: "Helvetica", Poppins;
     margin-bottom: 2.5rem;
     font-weight: 500;
     line-height: 1.2;
@@ -103,7 +98,6 @@
 .lbs-actually-matters-main p {
     text-align: left;
     color: var(--black);
-    font-family: "Helvetica", Poppins;
     font-size: 19px;
     font-weight: 400;
     margin-bottom: 1rem;
@@ -135,7 +129,6 @@
 
 .high-autority-placement-div h2 {
     text-align: center;
-    font-family: "Helvetica", Poppins;
     font-weight: 500;
     margin-bottom: 2rem;
     color: var(--black);
@@ -148,7 +141,6 @@
 
 .high-autority-placement-div p {
     font-weight: 500;
-    font-family: "Helvetica", Poppins;
     font-size: 1.1rem;
     text-align: justify;
     margin-bottom: 1rem;
@@ -163,11 +155,9 @@
     font-size: 3.2rem;
     font-weight: 600;
     color: var(--black);
-    font-family: "Poppins", Poppins;
 }
 
 .pricing-bo-p1 {
-    font-family: "Poppins", Poppins;
     font-size: 1.1rem;
     font-weight: 300;
 }
@@ -186,7 +176,6 @@
 }
 
 .how-it-works-main-section h1 {
-    font-family: "Helvetica", Poppins;
     text-align: center;
     margin: 0 0 3rem 0;
     font-size: 36px;
@@ -208,7 +197,6 @@
 .how-it-works-main-card-div h4 {
     font-size: 1.94rem;
     font-weight: 600;
-    font-family: "Helvetica", Poppins;
 }
 
 .how-it-works-main-card-div span {
@@ -216,7 +204,6 @@
 }
 
 .how-it-works-main-card-div p {
-    font-family: "Helvetica", Poppins;
     font-weight: 400;
     line-height: 1.5;
     text-align: justify;
@@ -231,14 +218,12 @@
     background-size: cover;
 }
 .advantages-of-using-bos-section p {
-    font-family: Poppins, Poppins;
     font-weight: 400;
     line-height: 1.5;
 }
 
 .advantages-of-using-bos-section h3 {
     color:var(--black);
-    font-family: Poppins, Poppins;
     font-size: 33px;
     font-weight: 600;
     margin-bottom: 2rem;
@@ -250,7 +235,6 @@
 .advantages-of-using-bos-section ul {
     text-align: left;
     color: var(--black);
-    font-family: Poppins, Poppins;
     font-size: 17px;
     font-weight: 400;
     line-height: 2em;
@@ -274,7 +258,6 @@
 .works-bo-h2 {
     font-weight: 600;
     color: var(--black);
-    font-family: "Poppins", Poppins;
 }
 
 .works-bo-h2 span {

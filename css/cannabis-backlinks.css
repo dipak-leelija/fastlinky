@@ -33,16 +33,14 @@
 }
 
 .mlb-starting-main-h1 {
-    font-family: "Poppins", Poppins;
+    font-family: "Helvetica", "Satoshi-Variable";
     font-size: 3.42rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2em;
-    color: #383a50;
-    word-spacing: 0.1em;
-    stroke: #000;
+    color: var(--black);
 }
 .mlb-starting-main-h1 span{
-    color: #FDA33B;
+    color: var(--mustard);
 }
 .mlb-starting-main-p {
     font-weight: 400;
@@ -50,31 +48,21 @@
     font-size: 1.4rem;
     color: #324A6D;
     line-height: 1.5em;
-    font-family: "Poppins", Poppins;
 }
 
 .managed-link-btn {
-    font-family: "Helvetica", Poppins;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
     text-transform: capitalize;
-    font-style: normal;
-    text-decoration: none;
-    line-height: 1em;
-    letter-spacing: 0;
-    word-spacing: 0em;
-    fill: #FFF;
-    color: #FFF;
-    background-color: #FDA33B;
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    border-color: #FDA33B !important;
+    color: var(--pure-white);
+    background-color: var(--mustard);
+    border: 1px solid var(--mustard);
     border-radius: 100px 100px 100px 100px;
-    padding: 16px 55px 16px 55px;
+    padding: 13px 55px 13px 55px;
 }
 
 .managed-link-btn:hover {
-    color: #FDA33B !important;
+    color: var(--mustard) !important;
 
 }
 
@@ -88,8 +76,8 @@
 }
 
 .tick-check-p {
-    color: #3F4450;
-    font-family: "Helvetica", Poppins;
+    color: var(--black);
+    font-family:"Satoshi-Variable";
     font-size: 21px;
     font-weight: 500;
     line-height: 1;
@@ -117,29 +105,26 @@
 
 .lbs-actually-matters-main-h1 {
     font-size: 2rem;
-    font-family: "Helvetica", Poppins;
     margin-bottom: 2.5rem;
     font-weight: 500;
     line-height: 1.2;
-    color:#383a50;
+    color:var(--black);
 }
 
 .lbs-actually-matters-main-h1 span {
-    color: #FDA33B;
+    color: var(--mustard);
 
 }
 
 .lbs-actually-matters-main p {
     text-align: left;
-    color: #3F4450;
-    font-family: "Helvetica", Poppins;
+    color: var(--black);
     font-size: 19px;
     font-weight: 400;
     margin-bottom: 1rem;
 }
 
 .lbp-texting {
-    font-family: "Helvetica", Poppins;
     font-size: 17px;
     line-height: 1.625em;
 }
@@ -173,15 +158,14 @@
 }
 .cannabis-cbd-service-h1{
     font-size: 3.5rem;
-    font-family: "Helvetica", Poppins;
     margin-bottom: 3rem;
     font-weight: 500;
     line-height: 1.2;
-    color:#383a50;
+    color:var(--black);
     text-align: center;
 }
 .cannabis-cbd-service-h1 span{
-    color: #FDA33B;
+    color: var(--mustard);
 }
 /* __________________________________________________________________________________________________ */
 /* Collaboration opportunity-cb  ends */
@@ -204,27 +188,25 @@
 .cannabis-clb-rlb-main-div h2 {
     font-size: 2.3rem;
     text-align: left;
-    color: #3F4450;
-    font-family: "Helvetica", Poppins;
-    font-weight: 400;
+    color: var(--black);
+    font-weight: 500;
     margin-bottom: 2rem;
 }
 
 .cannabis-clb-rlb-main-div strong {
-    color: #FDA33B;
+    color: var(--mustard);
     font-weight: 500;
 }
 
 .cannabis-clb-rlb-main-div ul {
-    font-family: "Helvetica", Poppins;
     font-size: 22px;
     font-weight: 400;
-    color: #3F4450;
+    color: var(--black);
 
 }
 
 .cannabis-clb-rlb-main-div span {
-    color: #FDA33B;
+    color: var(--mustard);
     font-size: 26px;
 }
 
@@ -241,41 +223,38 @@
 }
 .cbd-business-main-section p{
     text-align: left;
-    color: #3F4450;
-    font-family: "Helvetica", Poppins;
+    color: var(--black);
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 1rem;
 }
 .cbd-business-main-section-h1 {
     font-size: 2.3rem;
-    font-family: "Helvetica", Poppins;
     margin-bottom: 2.5rem;
     font-weight: 500;
     line-height: 1.2;
-    color: #383a50;
+    color: var(--black);
 }
 
 .cbd-business-main-section-h1 strong {
-    color: #FDA33B;
+    color: var(--mustard);
     font-weight: 500;
 }
 
 .cbd-business-main-section ul {
-    font-family: Helvetica, Poppins;
     font-size: 20px;
     font-weight: 400;
-    color: #3f4450;
+    color: var(--black);
     margin-bottom: 2rem;
 }
 
 .cbd-business-main-section span {
-    color: #FDA33B;
+    color: var(--mustard);
     font-size: 25px;
 }
 
 .cbd-business-main-section span :hover {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 /* __________________________________________________________________________________________________ */
@@ -287,23 +266,14 @@
 .pricing-bo-h1 {
     font-size: 3.6rem;
     font-weight: 600;
-    color: #383a50;
-    font-family: "Poppins", Poppins;
+    color: var(--black);
 }
 
 .pricing-bo-p1 {
-    font-family: "Poppins", Poppins;
     font-size: 1.1rem;
-    font-weight: 300;
+    font-weight: 400;
 
 }
-
-/* .price-table {
-    background: #F9F9F9;
-    padding: 20px 5rem;
-    margin: 5rem 0;
-
-} */
 
 /* _____________________________________________________________________________________________________ */
 /* Pricing blogger outreach section ends */
@@ -318,22 +288,20 @@
 
 .why-is-lb-important-main-h1 {
     font-size: 2rem;
-    font-family: "Helvetica", Poppins;
     margin-bottom: 2.5rem;
     font-weight: 500;
     line-height: 1.2;
-    color: #383a50;
+    color: var(--black);
 }
 
 .why-is-lb-important-main-h1 span {
-    color: #FDA33B;
+    color: var(--mustard);
 
 }
 
 .why-is-lb-important-main p {
     text-align: left;
-    color: #3F4450;
-    font-family: "Helvetica", Poppins;
+    color: var(--black);
     font-size: 17px;
     font-weight: 400;
     margin-bottom: 1rem;
@@ -351,22 +319,20 @@
 
 .improve-your-roi-organic-main-h1 {
     font-size: 2rem;
-    font-family: "Helvetica", Poppins;
     margin-bottom: 2.5rem;
     font-weight: 500;
     line-height: 1.2;
-    color: #383a50;
+    color: var(--black);
 }
 
 .improve-your-roi-organic-main span {
-    color: #FDA33B;
+    color: var(--mustard);
 
 }
 
 .improve-your-roi-organic-main p {
     text-align: left;
-    color: #3F4450;
-    font-family: "Helvetica", Poppins;
+    color: var(--black);
     font-size: 17px;
     font-weight: 400;
     margin-bottom: 1rem;
@@ -379,11 +345,11 @@
 /* Frequently Asked Questions (FAQs) starts */
 /* --------------------------------------------------------------------------------------------- */
 .faq-head-section {
-    color: #383a50;
+    color: var(--black);
 }
 
 .faq-head-section span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 /* --------------------------------------------------------------------------------------------- */

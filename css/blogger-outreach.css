@@ -14,15 +14,17 @@
         background-position: inherit;
     }
 }
-.paragraph_texts{
-    padding :0rem 5rem 2rem;
-  }
-  .paragraph_texts p{
-      font-size: 1.2rem;
-      font-weight: 300;
-      font-family: "Poppins", Poppins;
-      text-align: start;
-  }
+
+.paragraph_texts {
+    padding: 0rem 5rem 2rem;
+}
+
+.paragraph_texts p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: start;
+}
+
 .blog-1main-row {
     padding: 5rem 0;
 }
@@ -43,52 +45,41 @@
 }
 
 .bo-wrap span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .blogout-main-h1 {
-    font-family: "Poppins", Poppins;
+    font-family: "Helvetica", "Satoshi-Variable";
     font-size: 3.8rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2em;
-    color: #383a50;
+    color: var(--black);
     word-spacing: 0.1em;
     stroke: #000;
 }
 
 .blogout-main-p {
-    font-weight: 300;
+    font-weight: 400;
     text-align: left;
     font-size: 1.5rem;
     color: #324A6D;
     line-height: 1.5em;
-    /* font-family: 'Orienta', sans-serif; */
-    font-family: "Poppins", Poppins;
 
 }
 
 .blogger-btn {
-    font-family: "Poppins", Poppins;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     text-transform: capitalize;
-    font-style: normal;
-    text-decoration: none;
-    line-height: 1em;
-    letter-spacing: 0;
-    word-spacing: 0em;
-    fill: #FFF;
     color: #FFF;
-    background-color: #F7A546;
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    border-color: #F7A546 !important;
+    background-color: var(--mustard);
+    border: 1px solid var(--mustard);
     border-radius: 100px 100px 100px 100px;
     padding: 16px 55px 16px 55px;
 }
 
 .blogger-btn:hover {
-    color: #FDA33B !important;
+    color: var(--mustard) !important;
 }
 
 /* blogger outreach main banner end */
@@ -103,11 +94,11 @@
 
 .real-bo-text-h1 {
     font-size: 2.48rem;
-    color: #383a50;
+    color: var(--black);
 }
 
 .real-bo-text-h1 span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .real-bo-secondcol-div1 {
@@ -129,7 +120,6 @@
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.5em;
-    font-family: "Poppins", Poppins;
     text-align: center;
 }
 
@@ -162,11 +152,11 @@
 
 .amazing-bo-text-h1 {
     font-size: 2rem;
-    color: #383a50;
+    color: var(--black);
 }
 
 .amazing-bo-text-h1 span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 /* amazing blogger outreach section end */
@@ -175,12 +165,10 @@
 .pricing-bo-h1 {
     font-size: 3.2rem;
     font-weight: 600;
-    color: #383a50;
-    font-family: "Poppins", Poppins;
+    color: var(--black);
 }
 
 .pricing-bo-p1 {
-    font-family: "Poppins", Poppins;
     font-size: 1.1rem;
     font-weight: 300;
 
@@ -191,21 +179,21 @@
 .works-for-you-bo-section {
     padding: 3rem;
 }
-.fbos-p{
-    font-family: "Poppins", Poppins;
+
+.fbos-p {
     font-size: 1.1rem;
     font-weight: 300;
     text-align: center;
     margin-top: 1rem;
 }
+
 .works-bo-h2 {
     font-weight: 600;
-    color: #383a50;
-    font-family: "Poppins", Poppins;
+    color: var(--black);
 }
 
 .works-bo-h2 span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .works-bo-p1 {
@@ -255,13 +243,14 @@
 }
 
 .advantages-of-using-bos-section h3 {
-    color: #383a50;
+    color: var(--black);
     font-family: Poppins, Poppins;
     font-size: 33px;
     font-weight: 600;
     margin-bottom: 2rem;
 }
-.advantages-of-using-bos-section h3 span{
+
+.advantages-of-using-bos-section h3 span {
     color: var(--mustard);
 }
 
@@ -310,12 +299,14 @@
 }
 
 @media (max-width:991px) {
-    .blogger_outreach_banner{
+    .blogger_outreach_banner {
         padding: 7rem 1rem;
     }
-    .paragraph_texts{
-        padding: 1rem ;
+
+    .paragraph_texts {
+        padding: 1rem;
     }
+
     .blogout-main-h1 {
         font-size: 2.3rem;
         font-weight: 500;
@@ -331,6 +322,7 @@
     .real-bo-section {
         margin: 5rem 1rem !important;
     }
+
     .advantages-of-using-bos-section {
         padding: 0rem 3rem;
     }
@@ -338,9 +330,10 @@
 }
 
 @media (max-width:767px) {
-    .blogger_outreach_banner{
+    .blogger_outreach_banner {
         padding: 4rem 1rem 0rem;
     }
+
     .blog-1main-row {
         padding: 2rem 0;
     }
@@ -371,9 +364,11 @@
         margin-bottom: 3rem;
         margin-top: 2rem;
     }
+
     .real-bo-section {
         margin: 3rem 1rem 1rem !important;
     }
+
     .real-bo-text-h1 {
         text-align: center;
     }
@@ -381,9 +376,11 @@
     .amazing-bo-text-h1 {
         text-align: center;
     }
+
     .advantages-of-using-bos-section ul {
         padding-left: 2rem;
     }
+
     .advantages-of-using-bos-section h3 {
         text-align: center;
     }
@@ -433,6 +430,7 @@
     .pricing-bo-p1 {
         padding: .8rem;
     }
+
     .advantages-of-using-bos-section {
         padding: 0rem 1rem 2rem;
     }
@@ -472,7 +470,7 @@
 
     .blogout-main-p {
         font-size: 1.2rem !important;
-    } 
+    }
 
     .pricing-bo-h1 {
         font-size: 1.7rem !important;
@@ -482,6 +480,7 @@
         font-size: 1.19rem;
         font-weight: 700 !important;
     }
+
     .advantages-of-using-bos-section h3 {
         font-size: 23px;
     }
@@ -491,6 +490,7 @@
     .blogout-main-h1 {
         font-size: 1.7rem;
     }
+
     .advantages-of-using-bos-section h3 {
         font-size: 25.5px;
     }
@@ -537,21 +537,16 @@
     .works-for-u-card {
         min-height: 573px !important;
     }
-
 }
 
 @media (min-width:850px) and (max-width:1030px) {
     .how-it-work-f-u-card {
         min-height: 517px !important;
     }
-
-
 }
 
 @media (min-width:1250px) and (max-width:1290px) {
     .how-it-work-f-u-card {
         min-height: 425px !important;
     }
-
-
 }

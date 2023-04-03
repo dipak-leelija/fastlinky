@@ -13,30 +13,27 @@
 }
 
 .indexpage-starting-main-h1 {
-    font-family: "Poppins", Poppins;
+    font-family: "Helvetica", "Satoshi-Variable";
     font-size: 52px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2em;
     color: #1C244B;
-    word-spacing: 0.1em;
-    stroke: #000;
+
 }
 
 .indexpage-starting-main-p {
     font-weight: 400;
     text-align: left;
-    font-size: 18px;
-    color: #324A6D;
+    font-size: 1.4rem;
+    color: var(--black);
     line-height: 1.5em;
-    /* font-family: "Poppins", Poppins; */
 }
 
 .indexpage-link-btn {
-    /* font-family: "Poppins", Poppins; */
     font-size: 20px;
     font-weight: 400;
     color: #FFF;
-    background-image: linear-gradient(120deg, #FDA33B 0%, #FA8273 100%);
+    background-image: linear-gradient(120deg, var(--mustard) 0%, #FA8273 100%);
     border: 1px solid #F7A546 !important;
     border-radius: 50px 50px 50px 50px;
     padding: 13px 40px 13px 40px;
@@ -44,7 +41,7 @@
 
 .indexpage-link-btn:hover {
     color: white !important;
-    background-image: linear-gradient(120deg, #FA8273 0%, #FDA33B 100%);
+    background-image: linear-gradient(120deg, #FA8273 0%, var(--mustard) 100%);
 }
 b{
     font-weight: 600 !important;
@@ -61,18 +58,17 @@ b{
 
 .backlinks-HA-HT-main-h1 {
     font-size: 2.48rem;
-    color: #383a50;
+    color: var(--black);
 }
 
 .only-catchy-headline {
-    font-size: 42px;
-    color: #383a50;
-    font-weight: 600;
-    font-family: "Helvetica", Poppins;
+    font-size: 44px;
+    color: var(--black);
+    font-weight: 800;
 }
 
 .backlinks-HA-HT-main-h1 span {
-    color: #FDA33B;
+    color: var(--mustard);
     display: inline-block;
 }
 
@@ -80,7 +76,6 @@ b{
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.5em;
-    /* font-family: "Poppins", Poppins; */
     text-align: justify;
     align-items: center;
 }
@@ -113,7 +108,6 @@ b{
 .service-index-h2 {
     font-weight: 600;
     color: var(--black);
-    font-family: "Poppins", Poppins;
 }
 
 .service-index-h2 span {
@@ -121,10 +115,10 @@ b{
 }
 
 .service-index-p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 400;
     text-align: center;
-    color: black;
+    color: var(--black);
     line-height: 1.5;
 }
 .services-a-btn{
@@ -169,18 +163,17 @@ b{
 }
 
 .sec_heading {
-    color: #383a50;
+    color: var(--black);
 }
 
 .sec_heading span {
-    color: #FDA33B;
+    color: var(--mustard);
     font-weight: 600;
 }
 
 .lbp-texting {
     text-align: justify;
     color: #747880;
-    font-family: "Helvetica", Poppins;
     font-size: 17px;
     line-height: 1.625em;
 }
@@ -188,8 +181,7 @@ b{
 .lbp-texting b {
     margin: 0 0 11px 0;
     padding: 0 0 0 0;
-    color: #383a50;
-    font-family: "Helvetica", Poppins;
+    color: var(--black);
     font-size: 20px;
     font-weight: 700;
     line-height: 1.1em;
@@ -228,12 +220,11 @@ b{
 
 .our-secret-d-h2 {
     font-weight: 600;
-    font-family: "Poppins", Poppins;
-    color: #383a50;
+    color: var(--black);
 }
 
 .our-secret-d-h2 span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .our-secrect-delvry-main-card {
@@ -252,7 +243,6 @@ b{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
     border: none;
-    /* min-height: 320px; */
     border-radius: 15px;
 }
 
@@ -263,8 +253,7 @@ b{
 
 .our-secret-delivering-main-card h4 {
     text-align: center;
-    color: #171C30;
-    font-family: "Helvetica", Poppins;
+    color: var(--black);
     font-size: 22px;
     font-weight: 700;
 }
@@ -272,7 +261,6 @@ b{
 .our-secret-delivering-main-card p {
     text-align: justify;
     color: #747880;
-    font-family: "Helvetica", Poppins;
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
@@ -303,16 +291,14 @@ b{
 
 .our-secret-delivering-main-card2 h4 {
     text-align: start;
-    color: #171C30;
-    font-family: "Helvetica", Poppins;
+    color: var(--black);
     font-size: 20px;
     font-weight: 700;
 }
 
 .our-secret-delivering-main-card2 p {
     color: #5e6062;
-    font-family: "Helvetica", Poppins;
-    font-size: 16px;
+    font-size: 1.1rem;
     font-weight: 400;
     line-height: 25px;
 }
@@ -324,15 +310,15 @@ b{
 
 .actionpage-section h2 {
     text-align: center;
-    color: #383a50;
+    color: var(--black);
     font-size: 3rem;
     font-family: serif !important;
 }
 
 .action-contact_btn {
-    border: 1px solid #FDA33B;
+    border: 1px solid var(--mustard);
     color: #fff;
-    background: #FDA33B;
+    background: var(--mustard);
     border-radius: 6px;
     padding: 0.4rem 1.2rem;
     font-size: 1.4rem;
@@ -354,9 +340,9 @@ b{
 }
 
 .action-start_btn:hover {
-    border: 1px solid #FDA33B;
+    border: 1px solid var(--mustard);
     color: #fff;
-    background: #FDA33B;
+    background: var(--mustard);
 }
 
 .text-chnging-css {

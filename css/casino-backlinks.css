@@ -23,7 +23,7 @@
 .casino-sizing-div h1 {
     color: var(--black);
     margin: 0 0 14px;
-    font-family: Helvetica, Poppins;
+    font-family: "Helvetica", "Satoshi-Variable";
     font-size: 4rem;
     font-weight: 700;
     line-height: 1.15625em;
@@ -41,7 +41,6 @@
 
 .casino-sizing-div p {
     color: var(--black);
-    font-family: Helvetica, Poppins;
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.6em;
@@ -49,22 +48,19 @@
 }
 
 .managed-link-btn {
-    font-family: "Poppins", Poppins;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: capitalize;
     color: var(--pure-white);
-    background-image: linear-gradient(120deg, #FDA33B 0%, #FA8273 100%);
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    border-color: var(--mustard) !important;
+    background-image: linear-gradient(120deg, var(--mustard) 0%, #FA8273 100%);
+    border:1px solid var(--mustard);
     border-radius: 50px 50px 50px 50px;
-    padding: 17px 40px 17px 40px;
+    padding: 13px 40px 13px 40px;
 }
 
 .managed-link-btn:hover {
     color: var(--pure-white);
-    background-image: linear-gradient(120deg, #FA8273 0%, #FDA33B 100%);
+    background-image: linear-gradient(120deg, #FA8273 0%, var(--mustard) 100%);
 }
 
 .casino-btn-div {
@@ -72,17 +68,14 @@
 }
 
 .blogger-btn {
-    font-family: "Poppins", Poppins;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
     text-transform: capitalize;
     color: var(--pure-white);
     background-color: var(--mustard);
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    border-color: var(--mustard) !important;
+    border:1px solid var(--mustard);
     border-radius: 100px 100px 100px 100px;
-    padding: 16px 55px 16px 55px;
+    padding: 13px 55px 13px 55px;
 }
 
 .blogger-btn:hover {
@@ -129,7 +122,7 @@
 .linkbuilding-casino p {
     line-height: 1.8;
     font-size: 1.2rem;
-    color: #222244;
+    color: var(--black);
     font-weight: 400;
     margin: 0;
 }
@@ -144,11 +137,9 @@
     font-size: 3.2rem;
     font-weight: 600;
     color: var(--black);
-    font-family: "Poppins", Poppins;
 }
 
 .pricing-bo-p1 {
-    font-family: "Poppins", Poppins;
     font-size: 1.1rem;
     font-weight: 300;
 }
@@ -188,7 +179,6 @@
 }
 
 .how-itsworks-main-div-casino p {
-    font-family: "Poppins", Poppins;
     text-align: center;
     color: var(--black);
     font-weight: 400;
@@ -198,7 +188,6 @@
 
 .how-itsworks-main-div-casino h3 {
     color: var(--mustard);
-    font-family: Roboto, Poppins;
     font-size: 24px;
     font-weight: 400;
     text-shadow: 0 0 0 rgb(0 0 0 / 30%);
@@ -217,7 +206,6 @@
 
 .benifits-online-gaming-casino-section h3 {
     color:var(--black);
-    font-family: Poppins, Poppins;
     font-size:  1.97rem;
     font-weight: 600;
 }
@@ -225,7 +213,6 @@
 .benifits-online-gaming-casino-section h4 {
     text-align: left;
     color: var(--black);
-    font-family: Poppins, Poppins;
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2em;
@@ -239,7 +226,6 @@ font-weight: 600;
 .benifits-online-gaming-casino-section p {
     text-align: left;
     color: var(--black);
-    font-family: Poppins, Poppins;
     font-size: 18px;
     font-weight: 400;
     line-height: 2em;
@@ -255,7 +241,6 @@ font-weight: 600;
     text-align: center;
     color: var(--black);
     font-size: 2rem;
-    font-family: Roboto, Poppins;
     font-weight: 500;
     margin-bottom: 2rem;
 }
@@ -268,7 +253,6 @@ font-weight: 600;
 .casino-building-services-maindiv p {
     text-align: center;
     color: var(--black);
-    font-family: Poppins, Poppins;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.4;
@@ -286,7 +270,6 @@ font-weight: 600;
 
 .why-choose-leelija-casino-section h3 {
     color: var(--black);
-    font-family: Poppins, Poppins;
     font-size: 33px;
     font-weight: 600;
     margin-bottom: 2rem;
@@ -295,7 +278,6 @@ font-weight: 600;
 .why-choose-leelija-casino-section ul {
     text-align: left;
     color: var(--black);
-    font-family: Poppins, Poppins;
     font-size: 17px;
     font-weight: 400;
     line-height: 2em;
@@ -519,7 +501,7 @@ font-weight: 600;
 
     .casino-building-services-maindiv h1 {
         font-size: calc(1.375rem + 1.5vw);
-    }
+    }  
 
     .challenges-casino-section {
         margin: 0rem 1rem !important;

@@ -400,7 +400,7 @@ if(isset($_GET['seo_url']))
                 high-quality backlinks from authoritative websites that are relevant to our customer base as quickly as
                 possible.
             </p>
-            <div class="our-secrect-delvry-main">
+            <div class="our-secrect-delvry-main custom-cntainr">
                 <div class="row ">
                     <div class="col-md-6 my-3">
                         <div class="our-secret-delivering-main-card h-100">

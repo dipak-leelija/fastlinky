@@ -7,11 +7,13 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-@media(max-width:766px){
-    .managed-link-building-main-banner  {
+
+@media(max-width:766px) {
+    .managed-link-building-main-banner {
         background-position: inherit;
-    }  
+    }
 }
+
 .mlb-main-start-row {
     padding: 5rem 0;
 }
@@ -31,15 +33,15 @@
 }
 
 .mlb-wrapping span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .mlb-starting-main-h1 {
-    font-family: "Poppins", Poppins;
+    font-family: "Helvetica", "Satoshi-Variable";
     font-size: 4rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2em;
-    color: #383a50 ;
+    color: var(--black);
     word-spacing: 0.1em;
     stroke: #000;
 }
@@ -50,32 +52,22 @@
     font-size: 1.5rem;
     color: #324A6D;
     line-height: 1.5em;
-    font-family: "Poppins", Poppins;
 }
 
 .managed-link-btn {
-    font-family: "Poppins", Poppins;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: capitalize;
-    font-style: normal;
-    text-decoration: none;
-    line-height: 1em;
-    letter-spacing: 0;
-    word-spacing: 0em;
-    fill: #FFF;
     color: #FFF;
-    background-image: linear-gradient(120deg, #FDA33B 0%, #FA8273 100%);
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    border-color: #F7A546 !important;
+    background-image: linear-gradient(120deg, var(--mustard) 0%, #FA8273 100%);
+    border: 1px solid var(--mustard) !important;
     border-radius: 50px 50px 50px 50px;
-    padding: 17px 40px 17px 40px;
+    padding: 13px 40px 13px 40px;
 }
 
 .managed-link-btn:hover {
     color: white;
-    background-image: linear-gradient(120deg, #FA8273 0%, #FDA33B 100%);
+    background-image: linear-gradient(120deg, #FA8273 0%, var(--mustard) 100%);
 }
 
 .tick-check {
@@ -89,7 +81,7 @@
 
 .tick-check-p {
     color: #3F4450;
-    font-family: "Helvetica", Poppins;
+    font-family: "Satoshi-Variable";
     font-size: 21px;
     font-weight: 500;
     line-height: 1;
@@ -111,37 +103,42 @@
 /* __________________________________________________________________________________________________ */
 /* Advantages Of Link Insert starts */
 /* __________________________________________________________________________________________________ */
-.insertion-page-second-ul-li-img{
+.insertion-page-second-ul-li-img {
     width: 70px;
 }
+
 .lbs-actually-matters-main {
     /* background: #f7f7f7; */
     padding: 5rem;
 }
+
 .lbs-actually-matters-main-h1 {
-    color: #383a50;
+    color: var(--black);
 }
+
 .lbs-actually-matters-main-h1 span {
-    color: #FDA33B;
+    color: var(--mustard);
     font-weight: 600;
 }
+
 .lbs-actually-matters-main p {
     text-align: left;
     color: #3F4450;
-    font-family: "Helvetica", Poppins;
     font-size: 19px;
     font-weight: 400;
     margin-bottom: 1rem;
 }
+
 .lbp-texting {
     color: #747880;
-    font-family: "Helvetica", Poppins;
     font-size: 17px;
     line-height: 1.625em;
 }
-.lbp-texting strong{
-    color: #383a50;
+
+.lbp-texting strong {
+    color: var(--black);
 }
+
 .actually-card-inn-img-div {
     padding-right: 1rem;
     padding-left: 1rem;
@@ -181,12 +178,10 @@
 .pricing-bo-h1 {
     font-size: 3.6rem;
     font-weight: 600;
-    color: #383a50;
-    font-family: "Poppins", Poppins;
+    color: var(--black);
 }
 
 .pricing-bo-p1 {
-    font-family: "Poppins", Poppins;
     font-size: 1.1rem;
     font-weight: 300;
 
@@ -204,17 +199,16 @@
 }
 
 .how-it-works-main-section h1 {
-    font-family: "Helvetica", Poppins;
     text-align: center;
     margin: 0 0 3rem 0;
     font-size: 36px;
     line-height: 48px;
     font-weight: 600;
-    color: #383a50;
+    color: var(--black);
 }
 
 .how-it-works-main-section span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 .how-it-works-1st-img {
@@ -230,17 +224,15 @@
 .how-it-works-main-card-div h4 {
     font-size: 1.75rem;
     font-weight: 600;
-    font-family: "Helvetica", Poppins;
-    color: #383a50;
+    color: var(--black);
 }
 
 .how-it-works-main-card-div span {
-    color: #FDA33B;
+    color: var(--mustard);
 
 }
 
 .how-it-works-main-card-div p {
-    font-family: "Helvetica", Poppins;
     font-weight: 400;
     line-height: 28px;
 }
@@ -253,17 +245,18 @@
 .who-can-take-section {
     padding: 4rem 6rem 2rem;
 }
+
 .who-advantages-main-h2 {
     font-weight: 600;
-    color: #383a50;
-    font-family: "Poppins", Poppins;
+    color: var(--black);
 }
 
 .who-advantages-main-h2 span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
+
 .who-take-card {
-    padding:2.5rem 1.5rem 1rem;
+    padding: 2.5rem 1.5rem 1rem;
     background: #fff;
     margin: 13px 0;
     border: none;
@@ -280,13 +273,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     /* border-top-right-radius: 65px;
-    border-top: 2px solid #FDA33B; */
+    border-top: 2px solid var(--mustard); */
 }
 
 .who-take-card h4 {
     text-align: center;
     color: #171C30;
-    font-family: "Helvetica", Poppins;
     font-size: 20px;
     font-weight: 700;
 }
@@ -294,11 +286,11 @@
 .who-take-card p {
     text-align: justify;
     color: #747880;
-    font-family: "Helvetica", Poppins;
     font-size: 16px;
     font-weight: 400;
     line-height: 28px;
 }
+
 @media (min-width:768px) and (max-width:1100px) {
     .who-take-card {
         padding: 1rem !important;
@@ -306,15 +298,16 @@
     }
 
 }
+
 /* --------------------------------------------------------------------------------------------- */
 /* Frequently Asked Questions (FAQs) starts */
 /* --------------------------------------------------------------------------------------------- */
 .faq-head-section {
-    color: #383a50;
+    color: var(--black);
 }
 
 .faq-head-section span {
-    color: #FDA33B;
+    color: var(--mustard);
 }
 
 /* --------------------------------------------------------------------------------------------- */
@@ -325,10 +318,11 @@
 /* ____________________________________________________ */
 
 @media (max-width:1199px) {
-    
+
     .who-can-take-section {
         padding: 4rem !important;
     }
+
     .lbs-actually-matters-main {
         padding: 3rem !important;
     }
@@ -355,9 +349,11 @@
     .who-take-card {
         min-height: 300px;
     }
+
     .who-can-take-section {
         padding: 2rem !important;
     }
+
     .mlb-starting-main-h1 {
         font-size: 2.3rem;
         font-weight: 500;
@@ -441,10 +437,12 @@
     .who-can-take-section {
         padding: 1rem !important;
     }
+
     .who-take-card {
         min-height: 300px;
-    
+
     }
+
     .how-it-works-main-section h1 {
         margin: 0 !important;
     }
@@ -452,6 +450,7 @@
     .how-it-works-main-section {
         padding: 4rem 2rem !important;
     }
+
     .mlb-starting-main-h1 {
         font-size: 2rem;
     }
@@ -562,10 +561,12 @@
     .who-can-take-section {
         padding: 1rem !important;
     }
+
     .who-take-card {
         padding: 1rem !important;
 
     }
+
     .tick-check-p {
         font-size: 18px;
     }
@@ -593,7 +594,8 @@
     .how-it-works-main-section {
         padding: 3rem .5rem !important;
     }
-    .add-css-frleft{
+
+    .add-css-frleft {
         text-align: left;
         padding-left: 1rem;
     }

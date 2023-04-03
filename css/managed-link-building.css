@@ -38,10 +38,9 @@
 }
 
 .mlb-starting-main-h1 {
-    /* font-family: 'Orienta', sans-serif; */
-    font-family: "Poppins", Poppins;
+    font-family: "Helvetica", "Satoshi-Variable";
     font-size: 4rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2em;
     color: var(--black);
     word-spacing: 0.1em;
@@ -54,21 +53,19 @@
     font-size: 1.4rem;
     color: #324A6D;
     line-height: 1.5em;
-    font-family: 'Orienta', sans-serif;
 }
 
 .managed-link-btn {
-    font-family: "Poppins", Poppins;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: capitalize;
     color: var(--pure-white);
     background-image: linear-gradient(120deg, var(--mustard) 0%, #FA8273 100%);
-    border-style: solid;
+    border: 1PX solid var(--mustard);
     border-width: 1px 1px 1px 1px;
     border-color: var(--mustard) !important;
     border-radius: 50px 50px 50px 50px;
-    padding: 17px 40px 17px 40px;
+    padding: 13px 40px 13px 40px;
 }
 
 .managed-link-btn:hover {
@@ -87,7 +84,7 @@
 
 .tick-check-p {
     color: var(--black);
-    font-family: "Helvetica", Poppins;
+    font-family: "Satoshi-Variable";
     font-size: 21px;
     font-weight: 500;
     line-height: 1;
@@ -113,11 +110,9 @@
 
 .a-brand-need-link-main-div {
     margin-top: 1rem;
-    /* margin-bottom: 3rem; */
 }
 
 .a-brand-need-link-main-h1 {
-    /* margin-bottom: 3rem; */
     font-size: 2.48rem;
     color: var(--black);
 }
@@ -129,7 +124,6 @@
 .square-box-p {
     text-align: justify;
     color: #3F4450;
-    font-family: "Helvetica", Poppins;
     font-size: 18px;
     font-weight: 500;
     line-height: 1;
@@ -144,8 +138,6 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5em;
-    /* font-family: 'Orienta', sans-serif; */
-    font-family: "Poppins", Poppins;
     text-align: justify;
     align-items: center;
 }
@@ -166,16 +158,18 @@
 
 /* ___________________________________________________________________________________ */
 /* a-brand-need-link-section end */
-/* --------------------------------------------------------------------------- */ 
+/* --------------------------------------------------------------------------- */
 /* <!-- ________________________________________________________________________________________ --> */
 
 .lbs-actually-matters-main {
     /* background: aliceblue; */
     padding: 5rem;
 }
-.lbs-actually-matters-main-h1{
+
+.lbs-actually-matters-main-h1 {
     color: var(--black);
 }
+
 .lbs-actually-matters-main-h1 span {
     color: var(--mustard);
     font-weight: 600;
@@ -184,18 +178,18 @@
 .lbp-texting {
     text-align: justify;
     color: #747880;
-    font-family: "Helvetica", Poppins;
     font-size: 17px;
     line-height: 1.625em;
 }
-.ibp-centering-b{
-text-align: start !important;
+
+.ibp-centering-b {
+    text-align: start !important;
 }
+
 .lbp-texting b {
     margin: 0 0 11px 0;
     padding: 0 0 0 0;
     color: var(--black);
-    font-family: "Helvetica", Poppins;
     font-size: 20px;
     font-weight: 700;
     line-height: 1.1em;
@@ -247,7 +241,6 @@ text-align: start !important;
 }
 
 .why-fastlinky-h1 {
-    font-family: "Poppins", Poppins;
     text-align: center;
     font-size: 2.7rem;
     color: var(--mustard);
@@ -272,11 +265,9 @@ text-align: start !important;
     font-size: 3.6rem;
     font-weight: 600;
     color: var(--black);
-    font-family: "Poppins", Poppins;
 }
 
 .pricing-bo-p1 {
-    font-family: "Poppins", Poppins;
     font-size: 1.1rem;
     font-weight: 300;
     color: var(--black)b0;
@@ -297,18 +288,17 @@ text-align: start !important;
 .our-secret-d-h2 {
     font-weight: 600;
     color: var(--black);
-    font-family: "Poppins", Poppins;
 }
 
 .our-secret-d-h2 span {
     color: var(--mustard);
 }
-.our-secret-d-p{
+
+.our-secret-d-p {
     font-weight: 400;
     font-size: 1.2rem;
     color: #324A6D;
     line-height: 1.5em;
-    font-family: 'Orienta', sans-serif;
 }
 
 .our-secrect-delvry-main-card {
@@ -339,7 +329,6 @@ text-align: start !important;
 .our-secret-delivering-main-card h4 {
     text-align: center;
     color: #171C30;
-    font-family: "Helvetica", Poppins;
     font-size: 22px;
     font-weight: 700;
 }
@@ -347,7 +336,6 @@ text-align: start !important;
 .our-secret-delivering-main-card p {
     text-align: justify;
     color: #747880;
-    font-family: "Helvetica", Poppins;
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
@@ -377,7 +365,6 @@ text-align: start !important;
 .our-secret-delivering-main-card2 h4 {
     text-align: start;
     color: #171C30;
-    font-family: "Helvetica", Poppins;
     font-size: 20px;
     font-weight: 700;
 }
@@ -385,7 +372,6 @@ text-align: start !important;
 .our-secret-delivering-main-card2 p {
     text-align: justify;
     color: #747880;
-    font-family: "Helvetica", Poppins;
     font-size: 18px;
     font-weight: 400;
     line-height: 25px;
@@ -395,15 +381,17 @@ text-align: start !important;
     display: flex;
     justify-content: right;
 }
-.css-beats{
+
+.css-beats {
     --fa-beat-fade-opacity: 0.67 !important;
-     --fa-beat-fade-scale: 1.075 !important;
-      color: var(--mustard) !important;
+    --fa-beat-fade-scale: 1.075 !important;
+    color: var(--mustard) !important;
 }
 
-.text-chnging-css{
+.text-chnging-css {
     text-align: start;
 }
+
 /* We Employ An Efficient And Open Link-Building Strategy ends */
 /* _____________________________________________________________________________________________________ */
 
@@ -475,6 +463,7 @@ text-align: start !important;
     .external-css-fr-size {
         width: 100%;
     }
+
     .mlb-main-start-row {
         padding: 2rem 0;
     }
@@ -550,6 +539,7 @@ text-align: start !important;
     h3.stat-title {
         font-size: 2em !important;
     }
+
     .mlb-starting-main-h1 {
         font-size: 2rem;
     }
@@ -563,6 +553,7 @@ text-align: start !important;
     .pricing-bo-p1 {
         padding: .8rem;
     }
+
     .a-brand-need-link-section {
         margin: 2rem 1rem !important;
     }
@@ -602,6 +593,7 @@ text-align: start !important;
     .mlb-starting-main-h1 {
         font-size: 1.79rem;
     }
+
     .lbs-actually-matters-main-h1 {
         font-size: 1.6rem !important;
     }
@@ -649,19 +641,23 @@ text-align: start !important;
 }
 
 @media (min-width:250px) and (max-width:451px) {
-    .mlb-starting-main-p { 
+    .mlb-starting-main-p {
         font-size: 1.2rem !important;
     }
+
     .a-brand-need-link-main-h1 {
         font-size: 1.7rem !important;
         margin-bottom: 0rem !important;
     }
-    .text-chnging-css{
+
+    .text-chnging-css {
         text-align: center !important;
     }
+
     .tick-check-p {
         font-size: 18px;
     }
+
     .plugging-div-main-h1 {
         text-align: center;
         margin: 0rem 0 !important;
@@ -699,8 +695,8 @@ text-align: start !important;
         text-align: center;
     }
 
- 
- 
+
+
 
     .actually-card-div1 {
         display: inline-block !important;
