@@ -200,7 +200,7 @@ $allFeatures       = $GPPackage->featureByPackageId($packageId);
                         <input type="text" class="form-control" name="features[]">
                         <span><i class="fa-solid fa-xmark h3 mb-0 pb-0 ml-3" onclick="deleteField(this)"></i></span>
                     </div>`;
-        document.getElementById("featureBox").innerHTML += filed;
+        document.getElementById("featureBox").insertAdjacentHTML('beforeend', filed);
     }
 
     const deleteField = (elem) => {
