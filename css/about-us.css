@@ -36,7 +36,7 @@
 }
 
 .about-text p {
-    font-size: 18px;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 991px) {
@@ -75,6 +75,7 @@
 
 .dark-color {
     color: var(--black);
+    font-size: 3rem;
 }
 
 /* bannner ends */
@@ -102,13 +103,14 @@
 }
 
 .sub-info {
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    /* font-family: 'Poppins', sans-serif; */
     color: var(--black);
 }
 
 .display-30 {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
 }
 
 /* why choose us section ends */
@@ -502,8 +504,8 @@
     color: transparent;
     padding: 20px 40px;
     font-size: 1.5rem;
-    font-family: sans-serif;
-    letter-spacing: 3px;
+    font-family: "Satoshi-Variable";
+    letter-spacing: .01em;
     transition: all 0.5s;
     position: relative;
 }
@@ -519,8 +521,8 @@
         font-size: 1.5rem;
         top: 0;
         left: 100%;
-        font-family: sans-serif;
-        letter-spacing: 3px;
+        font-family:"Satoshi-Variable";
+        letter-spacing: .01em;
         transition: all 1s;
         height: 100%;
         width: 101%;
@@ -545,8 +547,8 @@
         font-size: 1.5rem;
         top: 0;
         left: 0;
-        font-family: sans-serif;
-        letter-spacing: 3px;
+        font-family: "Satoshi-Variable";
+        letter-spacing: .01em;
         transition: all 1s;
         height: 100%;
         width: 101%;

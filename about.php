@@ -302,8 +302,8 @@ $cusId		= $utility->returnSess('userid', 0);
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <div class="section-title text-center mb-4 pb-2">
-                        <h4 class="title mb-4 fs-1 dark-color ">Our Features</h4>
+                    <div class="section-title text-center mb-2 pb-0">
+                        <h4 class="title mb-2  dark-color ">Our Features</h4>
                         <p class="text-muted para-desc mx-auto mb-0">Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Iste, inventore recusandae? Ad possimus, repellat delectus tempore minus.</p>
                     </div>

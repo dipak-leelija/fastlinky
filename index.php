@@ -254,9 +254,7 @@ if(isset($_GET['seo_url']))
                 <h2 class=" text-center mt-4 my-3 service-index-h2"> <span>Services</span> That We Provide </h2>
             </div>
             <p class="service-index-p">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi, recusandae unde eligendi ex maiores
-                fuga nobis delectus minus quia nulla officiis harum in laborum ea rerum asperiores! Earum, consequuntur
-                neque?
+            From <b>managed link building services</b>  to  <b>country specific links</b>, cannabis backlinks, guest posting, and casino backlinks you will find everything at Fastlinky.
             </p>
             <div class="service-index-card-div">
                 <div class="row row-cols-1 row-cols-sm-3">
@@ -361,8 +359,7 @@ if(isset($_GET['seo_url']))
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Cannabis Backlink
                             </h4>
                             <p class="h-100">
-                                With FastLinky, you can organize regular links from high-ranking websites and set up
-                                monthly backlinking campaigns.</p>
+                            Get powerful backlinks for <b>Cannabis</b>  and <b>CBD link-building services.</b>  </p>
                             <div class="my-3">
                                 <a class="services-a-btn" href="cannabis-backlinks">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
@@ -377,8 +374,7 @@ if(isset($_GET['seo_url']))
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Guest Posting
                             </h4>
                             <p class="h-100">
-                                With FastLinky, you can organize regular links from high-ranking websites and set up
-                                monthly backlinking campaigns.</p>
+                            We offer high-quality <b>guest posting services</b>  with useful backlinks and content links that boost the organic growth of your site. </p>
                             <div class="my-3">
                                 <a class="services-a-btn" href="guest-posting">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
@@ -393,8 +389,7 @@ if(isset($_GET['seo_url']))
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Casino Backlinks
                             </h4>
                             <p class="h-100">
-                                With FastLinky, you can organize regular links from high-ranking websites and set up
-                                monthly backlinking campaigns.</p>
+                            Buy <b>casino backlinks</b>  to grow your <b>online gambling and casino websites</b> . </p>
                             <div class="my-3">
                                 <a class="services-a-btn" href="casino-backlinks">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
