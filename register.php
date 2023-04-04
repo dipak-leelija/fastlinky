@@ -206,7 +206,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <div class="form-floating mb-2">
-                                                                    <input type="text" minlength="8" id="firstName"
+                                                                    <input type="text" placeholder="firstname" minlength="3" id="firstName"
                                                                         name="firstName" class="form-control" required>
                                                                     <label class="required-field">First Name</label>
                                                                     <div class="invalid-feedback">
@@ -219,7 +219,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="form-floating mb-2">
-                                                                    <input type="text" minlength="8" id="lastName"
+                                                                    <input type="text" placeholder="lastname"   minlength="3" id="lastName"
                                                                         name="lastName" class="form-control" required>
                                                                     <label class="required-field">Last Name</label>
                                                                     <div class="invalid-feedback">
@@ -234,9 +234,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <div class="form-floating mb-2">
-                                                                    <input type="number"
-                                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                                                        maxlength="10" class="form-control"
+                                                                    <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" minlength="10" pattern="[0-9]+" maxlength="10"  class="form-control"
                                                                         id="mobNumber" placeholder=" " name="mobNumber"
                                                                         required>
                                                                     <label for="floatingInput"> Contact Number </label>
@@ -251,8 +249,8 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                             <div class="col-sm-6">
                                                                 <div class="form-floating mb-2">
                                                                     <input type="email" id="txtemail" name="txtemail"
-                                                                        placeholder="example@email.com"
-                                                                        class="form-control" required>
+                                                                        placeholder="example@email.com" inputmode="email" autocomplete="false"
+                                                                        class="form-control" required> 
                                                                     <label class="required-field">Email</label>
                                                                     <div class="invalid-feedback">
                                                                         Please enter your email!
@@ -326,7 +324,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <div class="form-floating mb-2">
                                                                     <input type="password" minlength="6"
                                                                         id="txtPassword" name="txtPassword"
-                                                                        placeholder="(username)123" class="form-control"
+                                                                        placeholder="(username)123" class="form-control" autocomplete="false"
                                                                         required>
                                                                     <label class="required-field">Password</label>
 

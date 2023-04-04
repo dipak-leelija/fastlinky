@@ -313,7 +313,7 @@ if(isset($_GET['seo_url']))
                             <div class="pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">High-Caliber Links</h4>
+                            <h4 class="how-fonts-h4 text-center text-md-start py-2">High Authority Backlinks</h4>
                             <p class="h-100">
                                 Direct your organic growth to search engines with high DR SaaS backlinks.</p>
                             <div class="my-3">
@@ -364,7 +364,7 @@ if(isset($_GET['seo_url']))
                                 With FastLinky, you can organize regular links from high-ranking websites and set up
                                 monthly backlinking campaigns.</p>
                             <div class="my-3">
-                                <a class="services-a-btn" href="managed-link-building.php">Learn More <i
+                                <a class="services-a-btn" href="cannabis-backlinks">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
                             </div>
                         </div>
@@ -396,7 +396,7 @@ if(isset($_GET['seo_url']))
                                 With FastLinky, you can organize regular links from high-ranking websites and set up
                                 monthly backlinking campaigns.</p>
                             <div class="my-3">
-                                <a class="services-a-btn" href="managed-link-building.php">Learn More <i
+                                <a class="services-a-btn" href="casino-backlinks">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
                             </div>
                         </div>
