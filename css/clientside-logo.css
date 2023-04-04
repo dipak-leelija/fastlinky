@@ -7,17 +7,17 @@
 }
 
 .clientsides-item h2 {
-    font-size: 2.2rem;
-    font-weight: 400;
+    font-size: 2.4rem;
+    font-weight: 500;
     color: #383a50;
-    font-family: "Poppins", Poppins;
+    /* font-family: "Poppins", Poppins; */
     margin-bottom: 3rem;
     text-align: center;
 }
 
 .clientsides-item strong {
     color: #FDA33B;
-    font-weight: 400 !important;
+    font-weight: 500 !important;
 }
 
 .clientside-logo-row {
