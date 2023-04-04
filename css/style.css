@@ -4332,3 +4332,10 @@ span,
 strong {
     text-transform: capitalize !important;
 }
+
+@media (min-width: 1300px){
+    .custom-cntainr {
+        max-width: 1100px;
+        margin: auto;
+    }
+}

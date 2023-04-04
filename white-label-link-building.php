@@ -27,7 +27,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- Custom CSS -->
     <link href="css/leelija.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
     <link href="css/white-label-link-building.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/testimonials.css">
 
@@ -98,7 +97,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         needs to
                         succeed. Our white hat link development techniques are based on genuine, high-quality links that
                         produce benefits for you.</p>
-                    <div class=" buttonsinfo mt-md-5 text-md-end">
+                    <div class=" buttonsinfo mt-5 text-md-end">
                         <a href="#pricing-cards">
                             <button type="button" class="btn blogger-btn">Get Your Links Now</button>
                         </a>
@@ -317,77 +316,64 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="trustwhite-section">
         <h1 class="work-procedure-white-lebel-text-h1 wp-building2">How Does It Work? </h1>
         <div class="row">
-
             <div class="col-lg-6 col-md-6  m-auto">
                 <div class="text-center">
                     <img src="./images/links-processing.png" class="w-100 mb-4" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 ">
-                <div class="">
-
-                    <div>
-                        <div class="py-4">
-                            <div class="real-bo-secondcol-div1">
-                                <div class=" px-3 trustworthy-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
-                                        alt="">
-                                </div>
-                                <div class="lbp-texting">
-                                    <div>
-                                        <b>Effective Keywords Analysis: </b>
-                                    </div>
-                                    Our prominent keywords experts will go through comprehensive analysis to identify
-                                    effective keywords that suit your business.
-                                </div>
-                            </div>
-                            <div class="real-bo-secondcol-div1">
-                                <div class=" px-3 trustworthy-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
-                                        alt="">
-                                </div>
-                                <div class="lbp-texting ">
-                                    <div> <b>Create Beautiful Content: </b></div>
-                                    Produce engaging content because it is what matters most. Our skilled writers
-                                    provide content that is genuine, legible, and valuable to clients.
-                                </div>
-                            </div>
-                            <div class="real-bo-secondcol-div1">
-
-                                <div class=" px-3 trustworthy-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
-                                        alt="">
-                                </div>
-                                <div class="lbp-texting ">
-                                    <div>
-                                        <b> Content Publishing: </b>
-                                    </div>
-                                    Our Outreach team will arrange preffered sites for your contents so it can rank on
-                                    SERP. The article obtains traffic, and you will meet your readership.
-                                </div>
-                            </div>
-                            <div class="real-bo-secondcol-div1 mb-3">
-                                <div class=" px-3 trustworthy-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
-                                        alt="">
-                                </div>
-                                <div class="lbp-texting ">
-                                    <div><b>Special Report:</b></div>
-                                    You'll get a special update on just how readership,SERPs,and links have changed for
-                                    your service pages through white-label link building service
-                                </div>
-                            </div>
-
+                <div class="py-4">
+                    <div class="real-bo-secondcol-div1">
+                        <div class=" px-3 trustworthy-img-div">
+                            <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img" alt="">
                         </div>
+                        <div class="lbp-texting">
+                            <div>
+                                <b>Effective Keywords Analysis: </b>
+                            </div>
+                            Our prominent keywords experts will go through comprehensive analysis to identify
+                            effective keywords that suit your business.
+                        </div>
+                    </div>
+                    <div class="real-bo-secondcol-div1">
+                        <div class=" px-3 trustworthy-img-div">
+                            <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img" alt="">
+                        </div>
+                        <div class="lbp-texting ">
+                            <div> <b>Create Beautiful Content: </b></div>
+                            Produce engaging content because it is what matters most. Our skilled writers
+                            provide content that is genuine, legible, and valuable to clients.
+                        </div>
+                    </div>
+                    <div class="real-bo-secondcol-div1">
 
-                        <div class=" getyour-linkbtn ">
-                            <a href="#pricing-cards">
-                                <button type="button" class="btn blogger-btn">Get Your Links Now</button>
-                            </a>
+                        <div class=" px-3 trustworthy-img-div">
+                            <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img" alt="">
+                        </div>
+                        <div class="lbp-texting ">
+                            <div>
+                                <b> Content Publishing: </b>
+                            </div>
+                            Our Outreach team will arrange preffered sites for your contents so it can rank on
+                            SERP. The article obtains traffic, and you will meet your readership.
+                        </div>
+                    </div>
+                    <div class="real-bo-secondcol-div1 mb-3">
+                        <div class=" px-3 trustworthy-img-div">
+                            <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img" alt="">
+                        </div>
+                        <div class="lbp-texting ">
+                            <div><b>Special Report:</b></div>
+                            You'll get a special update on just how readership,SERPs,and links have changed for
+                            your service pages through white-label link building service
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div class="text-center ">
+                <a href="#pricing-cards">
+                    <button type="button" class="btn blogger-btn">Get Your Links Now</button>
+                </a>
             </div>
         </div>
 
@@ -408,7 +394,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row">
             <div class="col-lg-6 col-md-6 ">
                 <div>
-                    <div class="py-4">
+                    <div class="">
                         <div class="real-bo-secondcol-div1">
                             <div class=" px-3 trustworthy-img-div">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
@@ -530,8 +516,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 mt-5">White Label Link Building Pricing
         </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
-            DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>
@@ -539,92 +525,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
-
-
-    <!-- _________________________________________________________________________________________________ -->
-
-
-    <!-- extra details -->
-    <div class="features-sec">
-        <div class="features">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Real Ranking Sites
-                            </p>
-                            <p class="features-sec-details">
-                                Manual outreach on 100% real sites ranking in Google
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-th"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Customize Your Criteria
-                            </p>
-                            <p class="features-sec-details">
-                                Choose between Domain Authority or Publisher Traffic
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-truck"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Fast Deliverables
-                            </p>
-                            <p class="features-sec-details">
-                                7-day turnaround time guaranteed for your Guest Post
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-users"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Reseller Friendly
-                            </p>
-                            <p class="features-sec-details">
-                                Reseller friendly white-label reports to share with your clients
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- extra details -->
-
-    <!-- _______________________________________________________________________________________________ -->
-
     <!-- What We Can Deliver?-section start -->
 
     <section class="trustwhite-section my-1">
         <h1 class="work-procedure-white-lebel-text-h1 mb-4">What We Can Deliver?</h1>
         <div class="row">
-
             <div class="col-lg-6 col-md-6  m-auto">
-                <div class="">
-                    <div>
-                        <img src="./images/searching-fastlinky-image.png" class="w-100 mb-4" alt="">
-                    </div>
-
+                <div>
+                    <img src="./images/searching-fastlinky-image.png" class="w-100 mb-4" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 d-flex flex-column justify-content-center ">
@@ -673,13 +581,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
 
                 </div>
-
-                <div class=" getyour-linkbtn ">
-                    <a href="#pricing-cards">
-                        <button type="button" class="btn blogger-btn">Get Your Links Now</button>
-                    </a>
-                </div>
-
+            </div>
+            <div class=" text-center ">
+                <a href="#pricing-cards">
+                    <button type="button" class="btn blogger-btn">Get Your Links Now</button>
+                </a>
             </div>
         </div>
 
@@ -728,7 +634,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </div>
                             <div class=" lbp-texting">
                                 <b>Improved Brand Reputation:</b> <br>
-                                The service providers only employ strategies that follow Google's advice. They create <b> white label backlinks </b>
+                                The service providers only employ strategies that follow Google's advice. They create
+                                <b> white label backlinks </b>
                                 of the highest caliber, which will raise your rankings and be
                                 effective for a long time.
                             </div>
@@ -740,7 +647,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </div>
                             <div class=" lbp-texting"> <b>Scalability:</b>
                                 You may carry out as many link-building initiatives as you want with <b>white label link
-                                building</b> . Also, it makes handling unforeseen consumer requests easier.
+                                    building</b> . Also, it makes handling unforeseen consumer requests easier.
                             </div>
                         </div>
                         <div class="real-bo-secondcol-div1">
@@ -778,16 +685,15 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     <!--  Why Fast Linky Can Give You That Top Level? starts -->
     <section class="works-for-you-bo-section py-3" style="background-color: #f9fafc;">
-        <div class="">
+        <div class="custom-cntainr">
             <div>
                 <h2 class=" text-center mt-4 my-3 works-bo-h2">Why Can Fast Linky Give You <span>
                         That Top Level?</span></h2>
             </div>
             <div class="works-f-u-main-card-div">
                 <div class="row">
-                    <div class="col-md-4 col-xl-4">
-                        <div class="card  how-it-work-f-u-card">
-
+                    <div class="col-md-4 my-2 my-md-4">
+                        <div class="card  how-it-work-f-u-card h-100">
                             <div class="pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
@@ -798,13 +704,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 When you make your investment. We designate a committed manager to oversee. As a
                                 result, you received your delivery on time or earlier and a prompt answer.
                             </p>
-
                         </div>
-
                     </div>
 
-                    <div class="col-md-4 col-xl-4">
-                        <div class="card how-it-work-f-u-card">
+                    <div class="col-md-4 my-2 my-md-4">
+                        <div class="card how-it-work-f-u-card h-100">
 
                             <div class="pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
@@ -818,8 +722,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                     </div>
 
-                    <div class="col-md-4 col-xl-4">
-                        <div class="card how-it-work-f-u-card">
+                    <div class="col-md-4 my-2 my-md-4">
+                        <div class="card how-it-work-f-u-card h-100">
 
                             <div class=" pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
@@ -833,8 +737,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
 
                     </div>
-                    <div class="col-md-4 col-xl-4">
-                        <div class="card how-it-work-f-u-card">
+                    <div class="col-md-4 my-2 my-md-4">
+                        <div class="card how-it-work-f-u-card h-100">
 
                             <div class="pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
@@ -850,8 +754,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                     </div>
 
-                    <div class="col-md-4 col-xl-4">
-                        <div class="card how-it-work-f-u-card">
+                    <div class="col-md-4 my-2 my-md-4">
+                        <div class="card how-it-work-f-u-card h-100">
 
                             <div class="pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
@@ -867,8 +771,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                     </div>
 
-                    <div class="col-md-4 col-xl-4 ">
-                        <div class="card how-it-work-f-u-card">
+                    <div class="col-md-4 my-2 my-md-4">
+                        <div class="card how-it-work-f-u-card h-100">
 
                             <div class=" pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
@@ -964,7 +868,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="trustwhite-section my-2">
         <div class="row">
             <div>
-                <h1 class="trustworthy-white-lebel-text-h1">Things To Consider Before Selecting <span>A White Label
+                <h1 class="trustworthy-white-lebel-text-h1 text-center">Things To Consider Before Selecting <span>A
+                        White Label
                         Link Building Service</span>
                 </h1>
             </div>
@@ -1045,6 +950,74 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     </section>
     <!-- Things To Consider Before Selecting-section end -->
     <!-- _______________________________________________________________________________________________ -->
+
+    <!-- _________________________________________________________________________________________________ -->
+    <!-- extra details -->
+    <div class="features-sec">
+        <div class="features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="features-sec-head-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </p>
+                        <div class="features-sec-all-details">
+                            <p class="features-sec-head">
+                                Real Ranking Sites
+                            </p>
+                            <p class="features-sec-details">
+                                Manual outreach on 100% real sites ranking in Google
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <p class="features-sec-head-icon">
+                            <i class="fas fa-th"></i>
+                        </p>
+                        <div class="features-sec-all-details">
+                            <p class="features-sec-head">
+                                Customize Your Criteria
+                            </p>
+                            <p class="features-sec-details">
+                                Choose between Domain Authority or Publisher Traffic
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <p class="features-sec-head-icon">
+                            <i class="fas fa-truck"></i>
+                        </p>
+                        <div class="features-sec-all-details">
+                            <p class="features-sec-head">
+                                Fast Deliverables
+                            </p>
+                            <p class="features-sec-details">
+                                7-day turnaround time guaranteed for your Guest Post
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <p class="features-sec-head-icon">
+                            <i class="fas fa-users"></i>
+                        </p>
+                        <div class="features-sec-all-details">
+                            <p class="features-sec-head">
+                                Reseller Friendly
+                            </p>
+                            <p class="features-sec-details">
+                                Reseller friendly white-label reports to share with your clients
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- extra details -->
+    <!-- _______________________________________________________________________________________________ -->
     <!-- ================================================================================================= -->
     <!-- Frequently Asked Questions starts -->
     <!-- ================================================================================================ -->
@@ -1060,7 +1033,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <?php include('partials/seller-action.php') ?>
     </div>
 
-  <!-- --------------------------------------- -->
+    <!-- --------------------------------------- -->
     <!-- feedback form -->
     <?php require_once "partials/feedback.php"; ?>
     <!-- feedback form -->

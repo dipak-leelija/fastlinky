@@ -55,7 +55,7 @@
 }
 
 .paragraph_texts p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     text-align: start;
 }
@@ -70,7 +70,7 @@
 .trustworthy-white-lebel-text-h1 {
     font-size: 2.6rem;
     color: var(--black);
-    text-align: center;
+
 }
 
 .trustworthy-white-lebel-text-h1 span {
@@ -111,7 +111,7 @@
     text-align: center;
     font-size: 2.7rem;
     color: var(--mustard);
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 /* Our Work Procedure-section  end */
@@ -142,18 +142,8 @@
     margin-top: 4rem;
 }
 
-.works-for-u-card {
-    padding: 1.5rem;
-    border-radius: unset;
-    background: var(--pure-white);
-    margin: 20px;
-    box-shadow: 0 0 10px 0 #ccc;
-    border: none;
-    min-height: 460px;
-}
-
 .works-f-u-main-card-div p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 400;
 }
 
@@ -162,9 +152,7 @@
     padding: 1.5rem;
     border-radius: unset;
     background: var(--pure-white);
-    margin: 20px 15px;
     border: none;
-    min-height: 390px;
     border-bottom-right-radius: 65px;
     border-bottom: 2px solid var(--mustard);
     transition: all .5s ease;
@@ -181,7 +169,11 @@
     font-weight: 600;
     color: var(--black);
 }
-
+.pricing-bo-p1 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--black);
+}
 /* __________________________________________________________________________________________________ */
 /* ____________________________________________________ */
 /* MEDIA QUERY STARTS  */
@@ -274,15 +266,9 @@
 }
 
 @media (min-width:768px) and (max-width:1100px) {
-    .works-for-u-card {
-        padding: 1rem !important;
-        margin: 20px 0px !important;
-        min-height: 490px !important;
-    }
 
     .how-it-work-f-u-card {
         padding: 1rem !important;
-        margin: 20px 0px !important;
     }
 
     .works-f-u-main-card-div {
@@ -297,18 +283,6 @@
 
     .pricing-bo-p1 {
         padding: .8rem;
-    }
-}
-
-@media (min-width:768px) and (max-width:881px) {
-    .how-it-work-f-u-card {
-        min-height: 447px !important;
-    }
-}
-
-@media (min-width:882px) and (max-width:991px) {
-    .how-it-work-f-u-card {
-        min-height: 395px !important;
     }
 }
 
@@ -376,14 +350,6 @@
 
     .works-for-you-bo-section {
         padding: 1rem !important;
-    }
-
-    .works-for-u-card {
-        margin: 20px 0 !important;
-    }
-
-    .how-it-work-f-u-card {
-        margin: 20px 0px !important;
     }
 
     .real-bo-secondcol-div1 {
