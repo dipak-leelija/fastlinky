@@ -19,22 +19,22 @@
             <?php
             if($cusId == 0){
             ?>
-            <a href="<?php echo URL;?>/login.php" class="btn login-btn mobile_login_btn">
+            <a href="<?php echo URL;?>/login" class="btn login-btn mobile_login_btn">
                 <i class="pe-2 fa-solid fa-user-lock fa-fade"
                     style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6;color: darkgreen;"></i>Login
             </a>
             <?php
             }else {
             ?>
-            <!-- <a href="<?php echo URL;?>/dashboard.php" class="btn login-btn mobile_login_btn">Dashboard</a> -->
+            <!-- <a href="<?php echo URL;?>/dashboard" class="btn login-btn mobile_login_btn">Dashboard</a> -->
             <li class="nav-item dropdown dashboaard_button mobile_login_btn">
                 <button class=" dropdown  login-btn external-styling">My Account <i class="bi bi-chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu  external-drop-menu">
-                    <li> <a href="<?php echo URL;?>/dashboard.php" class="dropdown-item  external-lis"><i
+                    <li> <a href="<?php echo URL;?>/dashboard" class="dropdown-item  external-lis"><i
                                 class="fa fa-home pe-2"></i>Dashboard</a>
                     </li>
-                    <li><a class="dropdown-item external-lis" href="<?php echo URL;?>/logout.php"><i
+                    <li><a class="dropdown-item external-lis" href="<?php echo URL;?>/logout"><i
                                 class="fa-solid fa-arrow-right-from-bracket pe-2"></i>Logout</a></li>
                 </ul>
             </li>
@@ -74,41 +74,41 @@
 
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <li><a class="dropdown-item  producting-menues-lis"
-                                        href="<?php echo URL;?>/managed-link-building.php">MANAGED
+                                        href="<?php echo URL;?>/managed-link-building">MANAGED
                                         LINK BUILDING</a></li>
                                 <li><a class="dropdown-item  producting-menues-lis"
-                                        href="<?php echo URL;?>/white-label-link-building.php">WHITE LABEL LINK
+                                        href="<?php echo URL;?>/white-label-link-building">WHITE LABEL LINK
                                         BUILDING</a>
                                 </li>
                                 <li><a class="dropdown-item  producting-menues-lis"
-                                        href="<?php echo URL;?>/high-authority-backlinks.php">HIGH
+                                        href="<?php echo URL;?>/high-authority-backlinks">HIGH
                                         AUTHORITY BACKLINKS</a></li>
                                 <li><a class="dropdown-item  producting-menues-lis"
-                                        href="<?php echo URL;?>/country-specific-backlinks.php">COUNTRY SPECIFIC
+                                        href="<?php echo URL;?>/country-specific-backlinks">COUNTRY SPECIFIC
                                         BACKLINKS</a>
                                 </li>
 
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <li><a class="dropdown-item  producting-menues-lis"
-                                        href="<?php echo URL;?>/casino-backlinks.php">CASINO
+                                        href="<?php echo URL;?>/casino-backlinks">CASINO
                                         BACKLINKS</a></li>
                                 <li><a class="dropdown-item  producting-menues-lis"
-                                        href="<?php echo URL;?>/link-insertion-service.php">LINK
+                                        href="<?php echo URL;?>/link-insertion-service">LINK
                                         INSERTION SERVICE</a></li>
 
 
                                 <li><a class="dropdown-item   producting-menues-lis"
-                                        href="<?php echo URL;?>/blogger-outreach.php">BLOGGER
+                                        href="<?php echo URL;?>/blogger-outreach">BLOGGER
                                         OUTREACH</a></li>
                                 <li><a class="dropdown-item  producting-menues-lis"
-                                        href="<?php echo URL;?>/cannabis-backlinks.php">CANNABIS
+                                        href="<?php echo URL;?>/cannabis-backlinks">CANNABIS
                                         BACKLINKS</a></li>
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <li>
                                     <a class="dropdown-item  producting-menues-lis"
-                                        href="<?php echo URL;?>/guest-posting.php">GUEST
+                                        href="<?php echo URL;?>/guest-posting">GUEST
                                         POSTING</a>
                                 </li>
                             </div>
@@ -117,16 +117,16 @@
                     </ul>
                 </li>
                 <li class="nav-item mynav_item">
-                    <a class="nav-link li-style" href="<?php echo URL;?>/about.php">About</a>
+                    <a class="nav-link li-style" href="<?php echo URL;?>/about">About</a>
                 </li>
                 <li class="nav-item mynav_item">
-                    <a class="nav-link li-style" href="contact.php">Contact</a>
+                    <a class="nav-link li-style" href="contact">Contact</a>
                 </li>
             </ul>
             <?php
             if($cusId == 0){
             ?>
-            <a class="login-btn desktop-login-btn" href="<?php echo URL;?>/login.php">
+            <a class="login-btn desktop-login-btn" href="<?php echo URL;?>/login">
                 <i class="pe-2 fa-solid fa-user-lock fa-fade"
                     style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6;color: darkgreen;"></i>
                 Login</a>
@@ -138,10 +138,10 @@
                 <button class=" dropdown  login-btn external-styling ">My Account <i class="bi bi-chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu external-drop-menu">
-                    <li> <a href="<?php echo URL;?>/dashboard.php" class="dropdown-item  external-lis"><i
+                    <li> <a href="<?php echo URL;?>/dashboard" class="dropdown-item  external-lis"><i
                                 class="fa fa-home pe-2"></i>Dashboard</a>
                     </li>
-                    <li><a class="dropdown-item  external-lis" href="<?php echo URL;?>/logout.php"><i
+                    <li><a class="dropdown-item  external-lis" href="<?php echo URL;?>/logout"><i
                                 class="fa-solid fa-arrow-right-from-bracket pe-2"></i>Logout</a></li>
                 </ul>
             </li>
@@ -153,4 +153,3 @@
     </div>
 </nav>
 <!-- </header> -->
-<script src="js/jquery-2.2.3.min.js"></script>

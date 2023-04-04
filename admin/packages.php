@@ -112,7 +112,7 @@ $packageCats = $GPPackage->allPackagesCat();
                                             <thead>
                                                 <tr>
                                                     <th>
-                                                        SL.NO.
+                                                        ID
                                                     </th>
                                                     <th>
                                                         Package Name
@@ -127,12 +127,11 @@ $packageCats = $GPPackage->allPackagesCat();
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $i = 1;
                                                 foreach ($packageCats as $eachCat) {
                                                 ?>
                                                 <tr>
                                                     <td>
-                                                        <?php echo $i++; ?>
+                                                        <?php echo $eachCat['id']; ?>
                                                     </td>
                                                     <td>
                                                         <?php echo $eachCat['category_name']; ?>
@@ -218,16 +217,7 @@ $packageCats = $GPPackage->allPackagesCat();
                                                     <td>
                                                         <?php echo $eachPackage['price']; ?>
                                                     </td>
-                                                    <!-- <td>
-                                                        <?php //echo $dateUtil->printDate($eachPackage['added_on']); ?>
-                                                    </td> -->
                                                     <td>
-                                                        <!-- <a class="text-decoration-none mx-1" href="javascript:void(0)"
-                                                            data-toggle="modal" data-target="#mainModal"
-                                                            onclick="showModal('ajax/customer-view.php?cus_id=<?php //echo $eachPackage['id'];?>', 'show_modal_body')">
-                                                            <i class="fa-regular fa-eye"></i>
-                                                        </a> -->
-
                                                         <a href="javascript:void(0)" data-toggle="modal"
                                                             data-target="#mainModal"
                                                             onclick="showModal('show_modal_body', 'ajax/package-edit.ajax.php?data-id=<?php echo $eachPackage['id']; ?>')"

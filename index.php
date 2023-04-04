@@ -63,7 +63,6 @@ if(isset($_GET['seo_url']))
     <!-- Custom CSS -->
     <link href="css/leelija.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
     <link href="css/index.css" rel='stylesheet' type='text/css' />
     <link href="css/testimonials.css" rel="stylesheet">
     <link href="css/clientside-logo.css" rel="stylesheet">
@@ -102,7 +101,7 @@ if(isset($_GET['seo_url']))
                         </p>
 
                         <div class=" buttonsinfo ">
-                            <button class="btn indexpage-link-btn" onclick="goTo('customer-packages.php')"> Get Started
+                            <button class="btn indexpage-link-btn" onclick="goTo('customer-packages')"> Get Started
                                 Now</button>
                         </div>
                     </div>
@@ -140,7 +139,7 @@ if(isset($_GET['seo_url']))
                 </div>
 
                 <div class=" buttonsinfo ">
-                    <button type="button" onclick="goTo('customer-packages.php')" class="btn indexpage-link-btn ">Get
+                    <button type="button" onclick="goTo('customer-packages')" class="btn indexpage-link-btn ">Get
                         Your Links Now</button>
                 </div>
 
@@ -238,7 +237,7 @@ if(isset($_GET['seo_url']))
                 </div>
             </div>
             <div class="text-center">
-                <button type="button" onclick="goTo('customer-packages.php')" class="btn indexpage-link-btn ">Get
+                <button type="button" onclick="goTo('customer-packages')" class="btn indexpage-link-btn ">Get
                     Your
                     Links Now</button>
             </div>
@@ -271,7 +270,7 @@ if(isset($_GET['seo_url']))
                                 Get authoritative, high-quality links that lead to editorial content on real,
                                 traffic-generating websites.</p>
                             <div class="my-3">
-                                <a class="services-a-btn" href="blogger-outreach.php">Learn More <i
+                                <a class="services-a-btn" href="blogger-outreach">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
                             </div>
 
@@ -288,7 +287,7 @@ if(isset($_GET['seo_url']))
                                 accessible.
                             </p>
                             <div class="my-3">
-                                <a class="services-a-btn" href="white-label-link-building.php">Learn More <i
+                                <a class="services-a-btn" href="white-label-link-building">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
                             </div>
                         </div>
@@ -304,7 +303,7 @@ if(isset($_GET['seo_url']))
                             <p class="h-100">
                                 Improve SEO with <b>country-specific backlinks</b> from multilingual content.</p>
                             <div class="my-3">
-                                <a class="services-a-btn" href="country-specific-backlinks.php">Learn More <i
+                                <a class="services-a-btn" href="country-specific-backlinks">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
                             </div>
                         </div>
@@ -318,7 +317,7 @@ if(isset($_GET['seo_url']))
                             <p class="h-100">
                                 Direct your organic growth to search engines with high DR SaaS backlinks.</p>
                             <div class="my-3">
-                                <a class="services-a-btn" href="high-authority-backlinks.php">Learn More <i
+                                <a class="services-a-btn" href="high-authority-backlinks">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
                             </div>
                         </div>
@@ -333,7 +332,7 @@ if(isset($_GET['seo_url']))
                                 Get a variety of helpful and work-based backlinks from the previous posts.
                             </p>
                             <div class="my-3">
-                                <a class="services-a-btn" href="link-insertion-service.php">Learn More <i
+                                <a class="services-a-btn" href="link-insertion-service">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
                             </div>
                         </div>
@@ -349,7 +348,7 @@ if(isset($_GET['seo_url']))
                                 With FastLinky, you can organize regular links from high-ranking websites and set up
                                 monthly backlinking campaigns.</p>
                             <div class="my-3">
-                                <a class="services-a-btn" href="managed-link-building.php">Learn More <i
+                                <a class="services-a-btn" href="managed-link-building">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
                             </div>
                         </div>
@@ -418,7 +417,7 @@ if(isset($_GET['seo_url']))
                 <h1 class="only-catchy-headline mb-4">Are You Ready To Be Present On Google's Front Page?
                 </h1>
                 <div class=" buttonsinfo ">
-                    <button type="button" onclick="goTo('customer-packages.php')"
+                    <button type="button" onclick="goTo('customer-packages')"
                         class="btn indexpage-link-btn ">Outrank Your Competition</button>
                 </div>
 
@@ -618,8 +617,8 @@ if(isset($_GET['seo_url']))
             <!-- <h2>Have any query?</h2> -->
         </div>
         <div class="text-center mt-3 mt-lg-0">
-            <a href="contact.php" class="btn action-contact_btn mt-3 ms-2">Contact Us</a>
-            <a href="login.php" class="btn action-start_btn mt-3 ms-2">Get Started</a>
+            <a href="contact" class="btn action-contact_btn mt-3 ms-2">Contact Us</a>
+            <a href="login" class="btn action-start_btn mt-3 ms-2">Get Started</a>
         </div>
     </section>
 
