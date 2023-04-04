@@ -312,45 +312,45 @@ footer .thumb-content ::before {
                         <h5 class="widget-title">Services<span></span></h5>
                         <ul class="thumbnail-widget">
                             <li>
-                                <div class="thumb-content"><a href="managed-link-building.php">&nbsp;Managed Link
+                                <div class="thumb-content"><a href="managed-link-building">&nbsp;Managed Link
                                         Building</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="white-label-link-building.php">&nbsp;White Label
+                                <div class="thumb-content"><a href="white-label-link-building">&nbsp;White Label
                                         Link
                                         Building</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="high-authority-backlinks.php">&nbsp;High Authority
+                                <div class="thumb-content"><a href="high-authority-backlinks">&nbsp;High Authority
                                         Backlinks</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="country-specific-backlinks.php">&nbsp;Country
+                                <div class="thumb-content"><a href="country-specific-backlinks">&nbsp;Country
                                         Specific
                                         Backlinks</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="casino-backlinks.php">&nbsp;Casino Backlinks</a>
+                                <div class="thumb-content"><a href="casino-backlinks">&nbsp;Casino Backlinks</a>
                                 </div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="link-insertion-service.php">&nbsp;Link Insertion
+                                <div class="thumb-content"><a href="link-insertion-service">&nbsp;Link Insertion
                                         Service</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="blogger-outreach.php">&nbsp;Blogger
+                                <div class="thumb-content"><a href="blogger-outreach">&nbsp;Blogger
                                         Outreach</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="cannabis-backlinks.php">&nbsp;Cannabis
+                                <div class="thumb-content"><a href="cannabis-backlinks">&nbsp;Cannabis
                                         Backlinks</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="guest-posting.php">&nbsp;Guest Posting</a>
+                                <div class="thumb-content"><a href="guest-posting">&nbsp;Guest Posting</a>
                                 </div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="guest-post-offer.php">&nbsp;Exclusive Guest
+                                <div class="thumb-content"><a href="guest-post-offer">&nbsp;Exclusive Guest
                                         Posting</a></div>
                             </li>
                         </ul>
@@ -365,10 +365,10 @@ footer .thumb-content ::before {
                                 <div class="thumb-content"><a href="<?php echo URL; ?>">&nbsp;Home</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="<?php echo URL; ?>/about.php">&nbsp;About</a></div>
+                                <div class="thumb-content"><a href="<?php echo URL; ?>/about">&nbsp;About</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="<?php echo URL; ?>/contact.php">&nbsp;Contact</a>
+                                <div class="thumb-content"><a href="<?php echo URL; ?>/contact">&nbsp;Contact</a>
                                 </div>
                             </li>
                             <li>
