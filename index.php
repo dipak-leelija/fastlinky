@@ -353,6 +353,54 @@ if(isset($_GET['seo_url']))
                             </div>
                         </div>
                     </div>
+                    <div class="col my-2 my-md-4 px-md-3">
+                        <div class="card h-100 service-index-card-box pt-md-5">
+                            <div class=" pb-3 text-center text-md-start">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Cannabis Backlink
+                            </h4>
+                            <p class="h-100">
+                                With FastLinky, you can organize regular links from high-ranking websites and set up
+                                monthly backlinking campaigns.</p>
+                            <div class="my-3">
+                                <a class="services-a-btn" href="managed-link-building.php">Learn More <i
+                                        class="fa-solid fa-chevron-right ps-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col my-2 my-md-4 px-md-3">
+                        <div class="card h-100 service-index-card-box pt-md-5">
+                            <div class=" pb-3 text-center text-md-start">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Guest Posting
+                            </h4>
+                            <p class="h-100">
+                                With FastLinky, you can organize regular links from high-ranking websites and set up
+                                monthly backlinking campaigns.</p>
+                            <div class="my-3">
+                                <a class="services-a-btn" href="guest-posting">Learn More <i
+                                        class="fa-solid fa-chevron-right ps-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col my-2 my-md-4 px-md-3">
+                        <div class="card h-100 service-index-card-box pt-md-5">
+                            <div class=" pb-3 text-center text-md-start">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
+                            </div>
+                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Casino Backlinks
+                            </h4>
+                            <p class="h-100">
+                                With FastLinky, you can organize regular links from high-ranking websites and set up
+                                monthly backlinking campaigns.</p>
+                            <div class="my-3">
+                                <a class="services-a-btn" href="managed-link-building.php">Learn More <i
+                                        class="fa-solid fa-chevron-right ps-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

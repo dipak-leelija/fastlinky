@@ -48,47 +48,89 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!--____________________________________________________________________________________________ -->
     <!-- starting of managed-link-building main banner -->
     <section class="managed-link-building-main-banner">
-        <div class="container mlb-main-cntainer">
-            <div class="row mlb-main-start-row">
-                <div class="col-12 col-lg-7 col-md-7  px-0 px-md-4">
-                    <div class="mlb-wrapping">
-                        <h1 class="mlb-starting-main-h1">Managed <span>Link Building</span> Services </h1>
-                        <p class=" mt-3 mb-3 py-0 py-md-2 mlb-starting-main-p">Get high-quality backlinks to boost your
-                            website’s visibility and authority on search results.At FastLinky, our outreach specialists
-                            are very adept at managing link building. Managed link building is useful for increasing
-                            websites’ ranking and organic traffic from Google and other search engines.
+        <div class="row ">
+            <div class="col-md-6  px-0 px-md-3">
+                <div class="mlb-wrapping">
+                    <h1 class="mlb-starting-main-h1">Managed <span>Link Building</span> Services </h1>
+                    <p class=" mt-2 mb-md-0 mb-3 py-0 py-md-2 mlb-starting-main-p">Get high-quality backlinks to boost your
+                        website’s visibility and authority on search results.At FastLinky, our outreach specialists
+                        are very adept at managing link building. Managed link building is useful for increasing
+                        websites’ ranking and organic traffic from Google and other search engines.
 
-                        </p>
-                        <div>
-                            <ul>
-                                <li class="tick-check"> &#10004; <b class="tick-check-p">Quality over Quantity</b>
-                                </li>
-                                <li class="tick-check"> &#10004; <b class="tick-check-p">Relevant, White Hat Links
-                                    </b></li>
-                                <li class="tick-check"> &#10004; <b class="tick-check-p"> No paid links, No PBNs</b>
-                                </li>
-                                <li class="tick-check"> &#10004; <b class="tick-check-p">Inhouse team of experts</b>
-                                </li>
+                    </p>
+                    <div>
+                        <ul>
+                            <li class="tick-check"> &#10004; <b class="tick-check-p">Quality over Quantity</b>
+                            </li>
+                            <li class="tick-check"> &#10004; <b class="tick-check-p">Relevant, White Hat Links
+                                </b></li>
+                            <li class="tick-check"> &#10004; <b class="tick-check-p"> No paid links, No PBNs</b>
+                            </li>
+                            <li class="tick-check"> &#10004; <b class="tick-check-p">Inhouse team of experts</b>
+                            </li>
 
-                            </ul>
+                        </ul>
 
-                        </div>
-                        <div class=" buttonsinfo ">
-                            <a href="#pricing-cards">
-                                <button type="button" class="btn managed-link-btn ">Get Started</button>
-                            </a>
-                        </div>
+                    </div>
+                    <div class=" buttonsinfo ">
+                        <a href="#pricing-cards">
+                            <button type="button" class="btn managed-link-btn ">Get Started</button>
+                        </a>
                     </div>
                 </div>
-                <div class="col-12 col-lg-5 col-md-5 vid-col">
-                    <div class="mlb-wrapping">
-                        <img src="./images/Managed_Link_Building-banner.png" class="w-100" alt="">
-                    </div>
+            </div>
+            <div class="col-md-6 vid-col p-0">
+                <div class="mlb-wrapping">
+                    <img src="./images/Managed_Link_Building-banner.png" class="w-100" alt="">
                 </div>
             </div>
         </div>
     </section>
     <!-- end of managed-link-building main banner -->
+    <!-- ________________________________________________________________________________________ -->
+    <!-- Result-Driven Approach -->
+    <section class="a-brand-need-link-section mt-0 mb-0">
+        <div class="row ">
+            <div class="col-lg-6 col-md-6">
+                <div class="">
+                    <div>
+                        <img src="./images/growing-time.png" class="w-100 mb-4 " alt="">
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 a-brand-need-link-main-col-1">
+                <div class="a-brand-need-link-main-div">
+                    <h1 class="text-center a-brand-need-link-main-h1 mb-3"> <span> Result-Driven </span>Approach
+                    </h1>
+                </div>
+                <div>
+                    <div class="mt-2">
+                        <p class="need-link-text-p mb-3">To rank in search engines, you need a potential link-building
+                            strategy. We create a high-quality backlink management technique that boosts your brand's
+                            profitability and visibility. </p>
+                        <p class="need-link-text-p mb-3">FastLinky offers whitehat link building services to improve the
+                            SEO ranks, organic traffic, and revenue of your business website. </p>
+                        <p class="need-link-text-p mb-3">We provide a range of editorial link building packages
+                            depending on the client’s demand.
+
+                            Boost your organic ranks as much as possible. Let's collaborate.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class=" getyour-linkbtn mt-3 ">
+                        <a href="#pricing-cards">
+                            <button type="button" class="btn managed-link-btn d-flex justify-content-right">Get Your
+                                Links Now</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Result-Driven Approach end -->
     <!-- ------------------------------------------------------------------------- -->
     <!-- Why Does Your Brand Need Link Buildings? start -->
     <section class="a-brand-need-link-section mt-0">
@@ -139,56 +181,12 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-lg-6 col-md-6">
                 <div class="text-center">
 
-                    <img src="./images/Managed_Link_Building-strategy.png" class=" w-75  mb-4 " alt="">
+                    <img src="./images/Managed_Link_Building-strategy.png" class=" w-100  mb-4 " alt="">
                 </div>
             </div>
         </div>
     </section>
     <!-- Why Does Your Brand Need Link Buildings? end -->
-    <!-- ________________________________________________________________________________________ -->
-    <!-- Result-Driven Approach -->
-    <section class="a-brand-need-link-section mt-0 mb-0">
-        <div class="row ">
-            <div class="col-lg-6 col-md-6">
-                <div class="">
-                    <div>
-                        <img src="./images/growing-time.png" class="w-75  mb-4 " alt="">
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 a-brand-need-link-main-col-1">
-                <div class="a-brand-need-link-main-div">
-                    <h1 class="text-center a-brand-need-link-main-h1 mb-3"> <span> Result-Driven </span>Approach
-                    </h1>
-                </div>
-                <div>
-                    <div class="mt-2">
-                        <p class="need-link-text-p mb-3">To rank in search engines, you need a potential link-building
-                            strategy. We create a high-quality backlink management technique that boosts your brand's
-                            profitability and visibility. </p>
-                        <p class="need-link-text-p mb-3">FastLinky offers whitehat link building services to improve the
-                            SEO ranks, organic traffic, and revenue of your business website. </p>
-                        <p class="need-link-text-p mb-3">We provide a range of editorial link building packages
-                            depending on the client’s demand.
-
-                            Boost your organic ranks as much as possible. Let's collaborate.
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class=" getyour-linkbtn mt-3 ">
-                        <a href="#pricing-cards">
-                            <button type="button" class="btn managed-link-btn d-flex justify-content-right">Get Your
-                                Links Now</button>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- Result-Driven Approach end -->
     <!-- ________________________________________________________________________________________ -->
     <!-- pricing section -->
     <!-- ------------------------------------------- -->
@@ -196,8 +194,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 px-2">Link Building Pricing
         </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
-            DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as  per DA,
+            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>
@@ -297,8 +295,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="our-secrect-delvry-main pt-4">
                 <div class="row">
-                    <div class="col-md-6 col-xl-6 ">
-                        <div class="our-secret-delivering-main-card">
+                    <div class="col-md-6 my-2">
+                        <div class="our-secret-delivering-main-card h-100">
 
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
@@ -314,8 +312,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                     </div>
 
-                    <div class="col-md-6 col-xl-6">
-                        <div class="our-secret-delivering-main-card">
+                    <div class="col-md-6 my-2">
+                        <div class="our-secret-delivering-main-card h-100">
 
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
@@ -331,8 +329,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                     </div>
 
-                    <div class="col-md-6 col-xl-6">
-                        <div class="our-secret-delivering-main-card">
+                    <div class="col-md-6 my-2">
+                        <div class="our-secret-delivering-main-card h-100">
 
                             <div class="text-center pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img"
@@ -347,8 +345,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
 
                     </div>
-                    <div class="col-md-6 col-xl-6">
-                        <div class="our-secret-delivering-main-card">
+                    <div class="col-md-6 my-2">
+                        <div class="our-secret-delivering-main-card h-100">
 
                             <div class="text-center pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
@@ -390,8 +388,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="our-secrect-delvry-main">
                 <div class="row">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="our-secret-delivering-main-card2">
+                    <div class="col-md-6 col-xl-3 my-2">
+                        <div class="our-secret-delivering-main-card2 h-100">
 
                             <div class="text-chnging-css pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
@@ -400,15 +398,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <h4 class="how-fonts-h4 ">Target Market</h4>
                             <p class="">
                                 Customer satisfaction is our top goal. After you placed an order, we assigned a
-                                specialized specialist to your account. You'll consequently get responses to your
-                                questions and deliveries quickly.</p>
+                                specialized specialist to your account. </p>
 
                         </div>
 
                     </div>
 
-                    <div class="col-md-6 col-xl-3">
-                        <div class="our-secret-delivering-main-card2">
+                    <div class="col-md-6 col-xl-3 my-2">
+                        <div class="our-secret-delivering-main-card2 h-100">
 
                             <div class="text-chnging-css pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
@@ -423,8 +420,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                     </div>
 
-                    <div class="col-md-6 col-xl-3">
-                        <div class="our-secret-delivering-main-card2">
+                    <div class="col-md-6 col-xl-3 my-2">
+                        <div class="our-secret-delivering-main-card2 h-100">
 
                             <div class="text-chnging-css pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img"
@@ -438,8 +435,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
 
                     </div>
-                    <div class="col-md-6 col-xl-3">
-                        <div class="our-secret-delivering-main-card2">
+                    <div class="col-md-6 col-xl-3 my-2">
+                        <div class="our-secret-delivering-main-card2 h-100">
 
                             <div class="text-chnging-css pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
@@ -740,7 +737,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <div class="mt-4">
         <?php include('partials/seller-action.php') ?>
     </div>
-  <!-- --------------------------------------- -->
+    <!-- --------------------------------------- -->
     <!-- feedback form -->
     <?php require_once "partials/feedback.php"; ?>
     <!-- feedback form -->

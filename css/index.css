@@ -108,6 +108,7 @@ b{
 .service-index-h2 {
     font-weight: 600;
     color: var(--black);
+    font-size: 2.5rem;
 }
 
 .service-index-h2 span {
