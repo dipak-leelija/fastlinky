@@ -2171,15 +2171,6 @@ table .btn-explore-banner {
     color: var(--black);
 }
 
-
-/* .blogger-banner p{
-	text-align: justify;
-	padding-left: 230px;
-	padding-right: 230px;
-	margin-top: 20px;
-	font-size: 16px;
-} */
-
 .gp-heading-details-2 {
     width: 100%;
     text-align: center;
@@ -3429,115 +3420,6 @@ form.pack-form textarea {
     left: 64%;
     z-index: 2;
 }
-
-
-/* content-sarketing-strategy */
-
-
-/* .content-marketing-strategy-sec{
-
-	margin-top: 20px;
-
-
-
-}
-
-.content_marketing_strategy_img  img{
-
-	border-radius: 4px;
-}
-
-
-
-.content-marketing-strategy-details-head{
-
-margin-bottom: 15px;
-font-weight: 700;
-font-size: 25px
-
-}
-
-.content-marketing-strategy-details p{
- 
-	text-align: justify;
-	
-} */
-
-
-/* create_content_marketing_strategy-sec */
-
-
-/* .create_content_marketing_strategy-sec{
-
-	background: #F8F8F8;
-	padding: 10px;
-} */
-
-
-/* .create_content_marketing_strategy_intro{
-	text-align: center;
-	margin-top: 15px;
-	padding: 0px 230px 0px 230px;
-	font-size: 16px;
-	color: rgb(95, 94, 95);
-	font-weight: 600;
-} */
-
-
-/* .create_content_marketing_strategy-head{
-	font-weight: 700;
-}
-
-.create_content_marketing_strategy-head-img{
-	margin: 80px 0px 60px 0px;
-	margin-left: auto;
-} */
-
-
-/* create_content_marketing_strategy_details-content */
-
-
-/* .create_content_marketing_strategy_details-content p{
- text-align: justify;
- padding:  0px 30px 0px 30px;
- color: #5f5e5f;
- font-size: 14px;
- line-height: 25px;
- font-weight: 600;
-} */
-
-
-/* .create_content_marketing_strategy_details{
-
-	margin-top: 30px;
-
-} */
-
-
-/* .create_content_marketing_strategy_details-head{
-	color:#066DB1 ;
-	font-size: 17px;
-	font-weight: 700;
-} */
-
-
-/* .create_content_marketing_strategy_details-head span{
-	background: #2B4589;
-	padding: 10px;
-	font-size: 25px;
-	text-align: center;
-	border-radius: 50%;
-	margin-right: 5px;
-	font-weight: bold;
-	color: var(--pure-white);
-} */
-
-
-/* .create_content_marketing_strategy_details{
-	padding-top: 40px;
-}
-  */
-
 
 /* traning.php */
 
