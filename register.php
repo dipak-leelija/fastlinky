@@ -202,12 +202,13 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                         action="<?php echo $_SERVER['PHP_SELF'] ?>" name="regUserForm"
                                                         method="post" enctype="multipart/form-data" autocomplete="off"
                                                         id="regUserForm" novalidate>
-                                                        
+
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <div class="form-floating mb-2">
-                                                                    <input type="text" placeholder="firstname" minlength="3" id="firstName"
-                                                                        name="firstName" class="form-control" required>
+                                                                    <input type="text" placeholder="firstname"
+                                                                        minlength="3" id="firstName" name="firstName"
+                                                                        class="form-control" required>
                                                                     <label class="required-field">First Name</label>
                                                                     <div class="invalid-feedback">
                                                                         Please Enter First your Name!
@@ -219,8 +220,9 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="form-floating mb-2">
-                                                                    <input type="text" placeholder="lastname"   minlength="3" id="lastName"
-                                                                        name="lastName" class="form-control" required>
+                                                                    <input type="text" placeholder="lastname"
+                                                                        minlength="3" id="lastName" name="lastName"
+                                                                        class="form-control" required>
                                                                     <label class="required-field">Last Name</label>
                                                                     <div class="invalid-feedback">
                                                                         Please Enter your Last Name!
@@ -234,9 +236,11 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <div class="form-floating mb-2">
-                                                                    <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" minlength="10" pattern="[0-9]+" maxlength="10"  class="form-control"
-                                                                        id="mobNumber" placeholder=" " name="mobNumber"
-                                                                        required>
+                                                                    <input type="text"
+                                                                        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                                                        minlength="10" pattern="[0-9]+" maxlength="10"
+                                                                        class="form-control" id="mobNumber"
+                                                                        placeholder=" " name="mobNumber" required>
                                                                     <label for="floatingInput"> Contact Number </label>
                                                                     <div class="invalid-feedback">
                                                                         Please enter your contact number!
@@ -249,8 +253,9 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                             <div class="col-sm-6">
                                                                 <div class="form-floating mb-2">
                                                                     <input type="email" id="txtemail" name="txtemail"
-                                                                        placeholder="example@email.com" inputmode="email" autocomplete="false"
-                                                                        class="form-control" required> 
+                                                                        placeholder="example@email.com"
+                                                                        inputmode="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" autofill="off" autocomplete="false"
+                                                                        class="form-control" required>
                                                                     <label class="required-field">Email</label>
                                                                     <div class="invalid-feedback">
                                                                         Please enter your email!
@@ -324,9 +329,11 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <div class="form-floating mb-2">
                                                                     <input type="password" minlength="6"
                                                                         id="txtPassword" name="txtPassword"
-                                                                        placeholder="(username)123" class="form-control" autocomplete="false"
-                                                                        required>
-                                                                    <label class="required-field">Password</label>
+                                                                        placeholder="(username)123" class="form-control"
+                                                                        autocomplete="false" required>
+                                                                    <label class="required-field">Password <i
+                                                                            class="bi bi-eye-slash"
+                                                                            id="togglePassword"></i></label>
 
                                                                     <div class="invalid-feedback">
                                                                         Must be 6-20 characters long!
@@ -439,6 +446,18 @@ Ready website for business, High Quality website sales, High quality blogs sales
             // $('#txtPasswordConfirm').addClass('is-invalid');
         }
 
+    });
+
+
+    const togglePassword = document
+        .querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+    togglePassword.addEventListener('click', () => {
+        const type = password
+            .getAttribute('type') === 'password' ?
+            'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('bi-eye');
     });
     </script>
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>

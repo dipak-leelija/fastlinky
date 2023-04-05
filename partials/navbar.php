@@ -73,9 +73,7 @@
                         <div class="row producting-divs-main-row">
 
                             <div class="col-lg-4 col-md-6 col-sm-6">
-                                <li><a class="dropdown-item  producting-menues-lis"
-                                        href="<?php echo URL;?>/managed-link-building">MANAGED
-                                        LINK BUILDING</a></li>
+                               
                                 <li><a class="dropdown-item  producting-menues-lis"
                                         href="<?php echo URL;?>/white-label-link-building">WHITE LABEL LINK
                                         BUILDING</a>
@@ -90,9 +88,7 @@
 
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6">
-                                <li><a class="dropdown-item  producting-menues-lis"
-                                        href="<?php echo URL;?>/casino-backlinks">CASINO
-                                        BACKLINKS</a></li>
+                               
                                 <li><a class="dropdown-item  producting-menues-lis"
                                         href="<?php echo URL;?>/link-insertion-service">LINK
                                         INSERTION SERVICE</a></li>
@@ -106,11 +102,17 @@
                                         BACKLINKS</a></li>
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6">
+                            <li><a class="dropdown-item  producting-menues-lis"
+                                        href="<?php echo URL;?>/managed-link-building">MANAGED
+                                        LINK BUILDING</a></li>
                                 <li>
                                     <a class="dropdown-item  producting-menues-lis"
                                         href="<?php echo URL;?>/guest-posting">GUEST
                                         POSTING</a>
                                 </li>
+                                <li><a class="dropdown-item  producting-menues-lis"
+                                        href="<?php echo URL;?>/casino-backlinks">CASINO
+                                        BACKLINKS</a></li>
                             </div>
                         </div>
 
