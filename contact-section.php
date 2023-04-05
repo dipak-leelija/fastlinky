@@ -16,7 +16,8 @@
                         </a>
                         <a href="tel:+91 874224523" style="color:white;">
                             <li class="mb-4 pl-4">
-                                <span class="position-absolute"><i class="fas fa-phone"></i></span> <?php echo SITE_CONTACT_NO;?>
+                                <span class="position-absolute"><i class="fas fa-phone"></i></span>
+                                <?php echo SITE_CONTACT_NO;?>
                             </li>
                         </a>
                         <li class="mb-4 pl-4">
@@ -47,8 +48,8 @@
                             <div class="col-sm-6 mb-3">
                                 <div class="form-group">
                                     <label class="required-field" for="firstname">First Name</label>
-                                    <input type="text" minlength="4" class="form-control" id="firstname" name="firstname"
-                                        placeholder="Your First Name" required>
+                                    <input type="text" minlength="4" class="form-control" id="firstname"
+                                        name="firstname" placeholder="Your First Name" required>
                                     <div class="invalid-feedback">
                                         Please Enter your first Name!
                                     </div>
@@ -69,8 +70,9 @@
                             <div class="col-sm-6 mb-3">
                                 <div class="form-group">
                                     <label class="required-field" for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email"
-                                        placeholder="Your mail address" required>
+                                    <input type="email" inputmode="email"
+                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="email"
+                                        name="email" placeholder="Your mail address" required>
                                     <div class="invalid-feedback">
                                         Please enter your email!
                                     </div>
@@ -80,8 +82,9 @@
                             <div class="col-sm-6 mb-3">
                                 <div class="form-group">
                                     <label for="phone">Phone Number</label>
-                                    <input type="text" minlength="10" pattern="[0-9]+" maxlength="10" class="form-control" id="phone" name="phone"
-                                        placeholder="0123456789" required>
+                                    <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                        minlength="10" pattern="[0-9]+" maxlength="10" class="form-control" id="phone"
+                                        name="phone" placeholder="0123456789" required>
                                     <div class="invalid-feedback">
                                         Please enter valid phone Number!
                                     </div>

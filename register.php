@@ -213,9 +213,6 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                     <div class="invalid-feedback">
                                                                         Please Enter First your Name!
                                                                     </div>
-                                                                    <div class="valid-feedback">
-                                                                        Looks good!
-                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
@@ -226,9 +223,6 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                     <label class="required-field">Last Name</label>
                                                                     <div class="invalid-feedback">
                                                                         Please Enter your Last Name!
-                                                                    </div>
-                                                                    <div class="valid-feedback">
-                                                                        Looks good!
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -245,9 +239,6 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                     <div class="invalid-feedback">
                                                                         Please enter your contact number!
                                                                     </div>
-                                                                    <div class="valid-feedback">
-                                                                        Looks good!
-                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
@@ -261,9 +252,6 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                     <label class="required-field">Email</label>
                                                                     <div class="invalid-feedback">
                                                                         Please enter your email!
-                                                                    </div>
-                                                                    <div class="valid-feedback">
-                                                                        Looks good!
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -295,9 +283,6 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                     <div class="invalid-feedback">
                                                                         Please choose a profession!
                                                                     </div>
-                                                                    <div class="valid-feedback">
-                                                                        Looks good!
-                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
@@ -320,23 +305,20 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                     <div class="invalid-feedback">
                                                                         Please choose a country!
                                                                     </div>
-                                                                    <div class="valid-feedback">
-                                                                        Looks good!
-                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <div class="form-floating mb-2">
-                                                                    <input type="password" minlength="6"
+                                                                    <input type="password" minlength="8"
                                                                         id="txtPassword" name="txtPassword"
-                                                                        placeholder="(username)123"
+                                                                        placeholder="(username)123" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
                                                                         autocomplete="new-password" class="form-control"
                                                                         required>
                                                                     <label class="required-field">Password </label>
                                                                     <div class="invalid-feedback">
-                                                                        Must be 6-20 characters long!
+                                                                        Must be a combination of (A-Z),(a-z),(0-9),(!@#$%^&*=+-_) and >8 characters long!
                                                                     </div>
                                                                     <div class="valid-feedback">
                                                                         Strong password!
@@ -347,8 +329,8 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                             <div class="col-sm-6">
                                                                 <div class="form-floating mb-2">
                                                                     <input type="password" id="txtPasswordConfirm"
-                                                                        name="txtPasswordConfirm" minlength="6"
-                                                                        placeholder="Confirm Password"
+                                                                        name="txtPasswordConfirm" minlength="8"
+                                                                        placeholder="Confirm Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
                                                                         class="form-control " required>
                                                                     <label class="required-field">Confirm
                                                                         Password</label>
