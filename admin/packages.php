@@ -352,7 +352,7 @@ $packageCats = $GPPackage->allPackagesCat();
                         } else {
                             Swal.fire(
                                 'Failed to Delete!!!',
-                                '',
+                                response,
                                 'error'
                             )
                         }
