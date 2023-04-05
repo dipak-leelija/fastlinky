@@ -2,13 +2,20 @@
     --mustard:#FDA33B;
     --pure-white: #FFFFFF;
     --custom-blue: #407BFF;
+    --text-blue: #407BFF;
+    --dark-blue: #407BFF;
+    --btn-bg-blue: #EBF4FE;
     --black: #383a50;
+    --pure-green: #00FF00;
+    --pink: #FF0833;
 }
 
 .dark-blue-color {
     color: var(--custom-blue);
 }
-
+.text_dark_blue {
+    color: var(--dark-blue);
+}
 .dark-blue-color-bg {
     background: var(--custom-blue);
 }
