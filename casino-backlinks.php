@@ -523,6 +523,15 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
 
     <!-- extra details -->
     <!-- ================================================================================================ -->
+    <!-- Frequently Asked Questions starts -->
+    <!-- ================================================================================================ -->
+    <!-- new faq for indexpage -->
+
+    <?php require_once "partials/faqs-new.php"; ?>
+
+    <!-- ================================================================================================= -->
+    <!-- Frequently Asked Questions ends -->
+    <!-- ================================================================================================= -->
 
     <div class="mt-4">
         <?php include_once 'partials/seller-action.php'; ?>
