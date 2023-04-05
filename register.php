@@ -254,7 +254,9 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <div class="form-floating mb-2">
                                                                     <input type="email" id="txtemail" name="txtemail"
                                                                         placeholder="example@email.com"
-                                                                        inputmode="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" autofill="off" autocomplete="false"
+                                                                        inputmode="email"
+                                                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                                                        autofill="off" autocomplete="false"
                                                                         class="form-control" required>
                                                                     <label class="required-field">Email</label>
                                                                     <div class="invalid-feedback">
@@ -329,12 +331,10 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <div class="form-floating mb-2">
                                                                     <input type="password" minlength="6"
                                                                         id="txtPassword" name="txtPassword"
-                                                                        placeholder="(username)123" class="form-control"
-                                                                        autocomplete="false" required>
-                                                                    <label class="required-field">Password <i
-                                                                            class="bi bi-eye-slash"
-                                                                            id="togglePassword"></i></label>
-
+                                                                        placeholder="(username)123"
+                                                                        autocomplete="new-password" class="form-control"
+                                                                        required>
+                                                                    <label class="required-field">Password </label>
                                                                     <div class="invalid-feedback">
                                                                         Must be 6-20 characters long!
                                                                     </div>
@@ -343,6 +343,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                     </div>
                                                                 </div>
                                                             </div>
+
                                                             <div class="col-sm-6">
                                                                 <div class="form-floating mb-2">
                                                                     <input type="password" id="txtPasswordConfirm"
@@ -430,8 +431,6 @@ Ready website for business, High Quality website sales, High quality blogs sales
     <script>
     $('#txtPassword, #txtPasswordConfirm').on('keyup', function() {
         'use strict'
-
-
         $('.confirm-message').removeClass('success-message').removeClass('error-message');
         let password = $('#txtPassword').val();
         let confirm_password = $('#txtPasswordConfirm').val();
@@ -445,21 +444,10 @@ Ready website for business, High Quality website sales, High quality blogs sales
             $('.confirm-message').text("Password Doesn't Match!").addClass('error-message');
             // $('#txtPasswordConfirm').addClass('is-invalid');
         }
-
-    });
-
-
-    const togglePassword = document
-        .querySelector('#togglePassword');
-    const password = document.querySelector('#password');
-    togglePassword.addEventListener('click', () => {
-        const type = password
-            .getAttribute('type') === 'password' ?
-            'text' : 'password';
-        password.setAttribute('type', type);
-        this.classList.toggle('bi-eye');
     });
     </script>
+
+
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
     <!-- //Bootstrap Core JavaScript -->
     <!-- <script src="js/regUser.js"></script>
