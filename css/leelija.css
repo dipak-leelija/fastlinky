@@ -1,9 +1,6 @@
-/* 
-@import url('https://fonts.googleapis.com/css2?family=Charis+SIL&display=swap'); */
-
 @font-face {
     font-family: "Satoshi-BlackItalic";
-    src: url("fonts/Satoshi-BlackItalic.ttf") format("truetype");
+    src: url("../fonts/Satoshi-BlackItalic.ttf") format("truetype");
 }
 
 @font-face {
@@ -23,15 +20,15 @@
 }
 
 :root {
+    --mustard:#FDA33B;
     --pure-white: #FFFFFF;
-    --pure-green: #00FF00;
-    --btn-bg-blue: #EBF4FE;
     --custom-blue: #407BFF;
     --text-blue: #407BFF;
     --dark-blue: #407BFF;
-    --pink: #FF0833;
-    --mustard:#FDA33B;
+    --btn-bg-blue: #EBF4FE;
     --black: #383a50;
+    --pure-green: #00FF00;
+    --pink: #FF0833;
 }
 
 
@@ -154,9 +151,7 @@ p {
     }
 }
 
-.text_dark_blue {
-    color: var(--dark-blue);
-}
+
 
 .mons-font {
     font-family: 'Montserrat', sans-serif !important;

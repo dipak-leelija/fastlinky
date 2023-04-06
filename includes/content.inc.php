@@ -39,6 +39,8 @@
 
 	define('ERR_LINK', 					' Something is error with the provided link');
 
+	define('PACK_ORD',					'package');
+
 	
 	
 	

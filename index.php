@@ -71,12 +71,6 @@ if(isset($_GET['seo_url']))
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
     <link href="./plugins/sweetalert/sweetalert2.css" rel="stylesheet">
     <!-- //Custom Theme files -->
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
 
 </head>
 
