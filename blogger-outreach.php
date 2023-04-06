@@ -51,8 +51,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <div class="">
         <section class="blogger_outreach_banner">
             <div class="">
-                <div class="row ">
-                    <div class="col-md-7  px-0 px-md-4">
+                <div class="row w-100 m-auto">
+                    <div class="col-md-6  px-0 px-md-3">
                         <div class="bo-wrap">
                             <h1 class="blogout-main-h1">
                                 Genuine <span>Blogger Outreach</span> Services </h1>
@@ -68,7 +68,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5 p-0">
+                    <div class="col-md-6 p-0">
                         <div class="bo-wrap">
                             <img src="./images/freepik-img/blogger-outreach-banner.png" class="w-100" alt="">
                         </div>
@@ -83,13 +83,16 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- --------------------------------------------------------------------------------------------- -->
     <!-- paragraph_texts section start -->
     <section class="paragraph_texts">
-        <div class="row">
-            <div class="col-md-6 order-2 order-md-1">
+        <div class="row w-100 m-auto">
+            <div class="col-md-6 order-2 order-md-1 m-auto">
                 <div class="text-center">
-                    <img src="./images/freepik-img/livecenter-img-front.png" class="w-75 m-auto mb-md-4" alt="">
+                    <img src="./images/freepik-img/livecenter-img-front.png" class="w-100 m-auto mb-md-4" alt="">
                 </div>
             </div>
             <div class=" col-md-6 order-1 order-md-2">
+            <div>
+                        <h1 class="real-bo-text-h1 mb-3"> Backlinks for domain authority <span>with 100% responsibility </span> </h1>
+                    </div>
                 <div>
                     <p>Along with domain authority, our links evaluate past link performance, domain score, and
                         reliability connections. <b>Our blogger outreach services</b> offer additional capabilities, in
@@ -111,7 +114,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- _______________________________________________________________________________________________ -->
     <!-- real-blogger-outreach-section start -->
     <section class="real-bo-section">
-        <div class="row  real-bo-row1">
+        <div class="row  w-100 m-auto">
             <div class="col-lg-6 col-md-6 real-bo-col-first">
                 <div class="">
                     <div>
@@ -160,7 +163,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6 real-bo-col-second">
                 <div class="text-center">
-                    <img src="./images/freepik-img/blogger-outrech-Link-Building.png" class="w-75 mb-md-4" alt="">
+                    <img src="./images/freepik-img/blogger-outrech-Link-Building.png" class="w-100 mb-md-4" alt="">
                 </div>
 
                 <p class="real-bo-text-p mb-3 text-md-start">Fastlinky collaborates with multiple contributors to get
@@ -179,7 +182,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     <section class="real-bo-section">
 
-        <div class="row  real-bo-row1">
+        <div class="row  w-100 m-auto">
             <div class="col-lg-6 col-md-6 m-auto real-bo-col-second">
                 <div class="">
                     <div>
@@ -268,7 +271,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             Your Business?</span></h1>
                 </div>
                 <div class="works-f-u-main-card-div">
-                    <div class="row">
+                    <div class="row w-100 m-auto" >
                         <div class="col-md-4 col-xl-4">
                             <div class="card  how-it-work-f-u-card">
 
@@ -379,7 +382,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         Brand?</span></h2>
             </div>
             <div class="works-f-u-main-card-div">
-                <div class="row">
+                <div class="row w-100 m-auto">
                     <div class="col-md-4 col-xl-4 ">
                         <div class="card works-for-u-card">
 
@@ -446,7 +449,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- _______________________________________________________________________________________________ -->
     <!-- real-blogger-outreach-section start -->
     <section class="real-bo-section">
-        <div class="row  real-bo-row1">
+        <div class="row m-auto w-100">
             <div class="col-lg-6 col-md-6 real-bo-col-first">
                 <div class="">
                     <div>
@@ -470,7 +473,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6 real-bo-col-second">
                 <div class="text-center">
-                    <img src="./images/freepik-img/link-insertion-banner.png" class="w-75 mb-md-4" alt="">
+                    <img src="./images/freepik-img/link-insertion-banner.png" class="w-100 mb-md-4" alt="">
                 </div>
 
 
@@ -524,7 +527,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     content, and get new backlinks.
                 </p>
                 <div class="works-f-u-main-card-div">
-                    <div class="row">
+                    <div class="row w-100 m-auto">
                         <div class="col-md-4 col-xl-4">
                             <div class="card  how-it-work-f-u-card">
 

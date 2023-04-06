@@ -220,8 +220,8 @@ benefits of high domain authority website, domain authority rank" />
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 px-2 mt-5">High Authority Backlinks Pricing
         </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
-            DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as  per DA,
+            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>

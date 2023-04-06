@@ -39,7 +39,7 @@
     word-spacing: 0.1em;
     stroke: #000;
 }
-
+ 
 .mlb-starting-main-p {
     font-weight: 400;
     text-align: left;
@@ -84,8 +84,8 @@
 }
 
 .lbs-actually-matters-main-h1 {
-    font-size: 2rem;
-    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
     font-weight: 500;
     line-height: 1.2;
     color: var(--black) ;
@@ -98,7 +98,7 @@
 .lbs-actually-matters-main p {
     text-align: left;
     color: var(--black);
-    font-size: 19px;
+    font-size:1.2rem;
     font-weight: 400;
     margin-bottom: 1rem;
 }
@@ -141,7 +141,7 @@
 
 .high-autority-placement-div p {
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-align: justify;
     margin-bottom: 1rem;
 }
@@ -158,8 +158,8 @@
 }
 
 .pricing-bo-p1 {
-    font-size: 1.1rem;
-    font-weight: 300;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 /* _____________________________________________________________________________________________________ */
@@ -220,6 +220,7 @@
 .advantages-of-using-bos-section p {
     font-weight: 400;
     line-height: 1.5;
+    font-size: 1.2rem;
 }
 
 .advantages-of-using-bos-section h3 {
@@ -235,7 +236,7 @@
 .advantages-of-using-bos-section ul {
     text-align: left;
     color: var(--black);
-    font-size: 17px;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 2em;
     padding-left: 3rem;
@@ -256,6 +257,7 @@
 }
 
 .works-bo-h2 {
+    font-size: 2.5rem;
     font-weight: 600;
     color: var(--black);
 }
@@ -270,16 +272,6 @@
 
 .works-f-u-main-card-div {
     margin-top: 4rem;
-}
-
-.works-for-u-card {
-    padding: 1.5rem;
-    border-radius: unset;
-    background: var(--pure-white);
-    margin: 20px;
-    box-shadow: 0 0 10px 0 #ccc;
-    border: none;
-    min-height: 460px;
 }
 
 .works-f-u-main-card-div p {
@@ -511,9 +503,6 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
     .managed-link-btn {
         padding: 11px 19px 11px 25px !important;
     }
-    .mlb-starting-main-p {
-        font-size: 1.2rem !important;
-    }
     .pricing-bo-h1 {
         font-size: 1.7rem !important;
     }
@@ -547,9 +536,6 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
     .lbs-actually-matters-main-h1 {
         font-size: 1.8rem !important;
         text-align: center;
-    }
-    .sliderbar {
-        margin-top: 1rem !important;
     }
     .high-autority-placement-div {
         padding: 3rem 1rem;

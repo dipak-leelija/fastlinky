@@ -42,15 +42,13 @@
     font-weight: 700;
     line-height: 1.2em;
     color: var(--black);
-    word-spacing: 0.1em;
-    stroke: #000;
 }
 
 .mlb-starting-main-p {
-    font-weight: 400;
+    font-weight: 500;
     text-align: left;
-    font-size: 1.5rem;
-    color: #324A6D;
+    font-size: 1.3rem;
+    color: var(--black);
     line-height: 1.5em;
 }
 .managed-link-btn {
@@ -79,9 +77,9 @@
 }
 
 .tick-check-p {
-    color: #3F4450;
+    color: var(--black);
     font-family: "Satoshi-Variable";
-    font-size: 21px;
+    font-size: 1.3rem;
     font-weight: 500;
     line-height: 1;
     margin: 0 0 22px 0;
@@ -122,8 +120,8 @@
 
 .lbs-actually-matters-main p {
     text-align: left;
-    color: #3F4450;
-    font-size: 19px;
+    color: var(--black);
+    font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 1rem;
 }
@@ -181,8 +179,8 @@
 }
 
 .pricing-bo-p1 {
-    font-size: 1.1rem;
-    font-weight: 300;
+    font-size: 1.2rem;
+    font-weight: 500;
 
 }
 
@@ -208,6 +206,11 @@
 
 .how-it-works-main-section span {
     color: var(--mustard);
+}
+.img-country-div {
+    margin: auto;
+    min-height: 305px;
+    width: 79%;
 }
 
 .how-it-works-1st-img {
@@ -256,10 +259,7 @@
 
 .who-take-card {
     padding: 2.5rem 1.5rem 1rem;
-    background: #fff;
-    margin: 13px 0;
     border: none;
-    min-height: 470px;
 }
 
 .who-take-card:hover {
@@ -277,7 +277,7 @@
 
 .who-take-card h4 {
     text-align: center;
-    color: #171C30;
+    color: var(--black);
     font-size: 20px;
     font-weight: 700;
 }
@@ -293,7 +293,6 @@
 @media (min-width:768px) and (max-width:1100px) {
     .who-take-card {
         padding: 1rem !important;
-        margin: 20px 0px !important;
     }
 
 }
@@ -345,10 +344,6 @@
 }
 
 @media (max-width:991px) {
-    .who-take-card {
-        min-height: 300px;
-    }
-
     .who-can-take-section {
         padding: 2rem !important;
     }
@@ -356,11 +351,6 @@
     .mlb-starting-main-h1 {
         font-size: 2.3rem;
         font-weight: 500;
-    }
-
-    .mlb-starting-main-p {
-        font-weight: 400;
-        font-size: 1.445rem !important;
     }
 
     .lbs-actually-matters-main-h1 {
@@ -435,11 +425,6 @@
 @media (max-width:600px) {
     .who-can-take-section {
         padding: 1rem !important;
-    }
-
-    .who-take-card {
-        min-height: 300px;
-
     }
 
     .how-it-works-main-section h1 {
@@ -563,7 +548,6 @@
 
     .who-take-card {
         padding: 1rem !important;
-
     }
 
     .tick-check-p {
