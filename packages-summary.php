@@ -117,7 +117,7 @@ if (!isset($_SESSION[PACK_ORD])) {
                                                     <?php
                                                     // echo count(($_POST[0]));exit;
                                                     $totalCost = '00.00';
-                                                    foreach ($_SESSION['package'] as $index => $packId) {
+                                                    foreach ($_SESSION[PACK_ORD] as $index => $packId) {
 
                                                         $pack           = $GPPackage->packDetailsById($packId);
                                                         $packCat        = $GPPackage->packCatById($pack['category_id']);

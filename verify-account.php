@@ -13,8 +13,8 @@ require_once "classes/date.class.php";
 require_once "classes/error.class.php";
 require_once "classes/search.class.php";
 require_once "classes/customer.class.php";
+require_once "classes/login.class.php";
 
-require_once "classes/blog_mst.class.php";
 require_once "classes/utility.class.php";
 require_once "classes/utilityMesg.class.php";
 require_once "classes/utilityImage.class.php";
@@ -29,9 +29,7 @@ $myError 		= new MyError();
 $search_obj		= new Search();
 $customer		= new Customer();
 $PHPMailer		= new PHPMailer();
-
-//$ff				= new FrontPhoto();
-$blogMst		= new BlogMst();
+$Login          = new Login();
 $utility		= new Utility();
 $uMesg 			= new MesgUtility();
 $uImg 			= new ImageUtility();
@@ -86,6 +84,22 @@ if (isset($_GET['verify'])) {
                 $errorMsg = "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
             }
 
+            if (isset($_GET['action'])) {
+                $action    = $_GET['action'];
+                $actionId  = base64_decode($action);
+                
+			    $x_password = md5_decrypt($cusdata['password'], USER_PASS);
+
+                if(session_status() !== PHP_SESSION_ACTIVE){
+                    session_start();
+                    $_SESSION[PACK_ORD] = array($action);
+                }else{
+                    $_SESSION[PACK_ORD] = array($action);
+                }
+                
+                $logIn->validate($cusdata['email'], $x_password, 'email', 'password', 'customer', 'packages-summary.php');
+
+            }
         }
     }else {
         $verified = true;
@@ -133,7 +147,7 @@ if (isset($_GET['verify'])) {
                                 </div>
 
                                 <h1 class=""> Your Account is Verified!</h1>
-                                <p class="">Congratulations! Now you can <a href="<?php echo URL; ?>/login.php">Login</a> to your Account.
+                                <p class="">Congratulations! Now you can <a href="<?php echo URL; ?>/login">Login</a> to your Account.
                                     If you need any kind of help, feel free to Contact <a class="" style="color: coral;"
                                         href="contact.php"><?php echo COMPANY_FULL_NAME?></a>
                                 </p>
@@ -145,7 +159,7 @@ if (isset($_GET['verify'])) {
                                 </div>
                                 
                                 <h1 class=""> Failed to Verify!</h1>
-                                <p class="">Sorry! We can not verify your account, please try to verify again or Contact <a class="" style="color: coral;" href="<?php echo URL; ?>/contact.php"><?php echo COMPANY_FULL_NAME?></a>
+                                <p class="">Sorry! We can not verify your account, please try to verify again or Contact <a class="" style="color: coral;" href="<?php echo URL; ?>/contact"><?php echo COMPANY_FULL_NAME?></a>
                                 </p>
                                 <?php
                                 echo '<p class="text-center">'.$errorMsg.'<p>';
