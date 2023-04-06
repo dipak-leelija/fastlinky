@@ -1,5 +1,6 @@
 <?php
 require_once "includes/constant.inc.php";
+require_once "includes/content.inc.php";
 session_start();
 
 require_once ROOT_DIR."/_config/dbconnect.php";
@@ -40,7 +41,7 @@ $currentPage    = $utility->setCurrentPageSession();
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 
-if (!isset($_SESSION['package'])) {
+if (!isset($_SESSION[PACK_ORD])) {
     header('Location: customer-packages.php' );
     exit;   
 }

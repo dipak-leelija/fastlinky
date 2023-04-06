@@ -1,5 +1,6 @@
 <?php
 require_once "includes/constant.inc.php";
+require_once "includes/content.inc.php";
 session_start();
 
 require_once ROOT_DIR."/_config/dbconnect.php";

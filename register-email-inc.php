@@ -1,5 +1,6 @@
 <?php
 include_once __DIR__ . "/includes/constant.inc.php";
+include_once __DIR__ . "/includes/content.inc.php";
 include_once __DIR__ . "/includes/contact-us-email.inc.php";
 require_once __DIR__ . "/classes/encrypt.inc.php";
 
@@ -30,6 +31,11 @@ $utility		= new Utility();
 
 if(isset($_SESSION['vkey']) && isset($_SESSION['newCustomerSess']) && isset($_SESSION['fisrt-name']) && isset($_SESSION['last-name']) && isset($_SESSION['email'])){	
 
+	$regAction			= '';
+	if (isset($_SESSION[PACK_ORD])) {
+		$regAction		= strip_tags(trim($_SESSION[PACK_ORD][0]));
+	}
+
 	$verifyKey  	= strip_tags(trim($_SESSION['vkey'])); 
 	$custId 		= strip_tags(trim($_SESSION['newCustomerSess']));
 	$firstName 		= strip_tags(trim($_SESSION['fisrt-name']));
@@ -54,7 +60,8 @@ if(isset($_SESSION['vkey']) && isset($_SESSION['newCustomerSess']) && isset($_SE
 
 
 		$verifyKey = base64_encode($verifyKey);
-		$verificationUrl = URL.'/verify-account.php?verify='.$verifyKey;
+		$regAction = base64_encode($regAction);
+		$verificationUrl = URL.'/verify-account.php?action='.$regAction.'&verify='.$verifyKey;
 	
 		// Contact Data inser in contact table
 		$contact->addContact($firstName.' '.$lastName, $txtEmail, '', '');		
