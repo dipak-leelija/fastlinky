@@ -1,6 +1,7 @@
 <?php
 require_once "includes/constant.inc.php";
 require_once "includes/registration.inc.php";
+require_once "includes/content.inc.php";
 require_once "classes/encrypt.inc.php";
 
 // session_start();
@@ -84,21 +85,24 @@ if (isset($_GET['verify'])) {
                 $errorMsg = "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
             }
 
+            // cheaking action value in the url
             if (isset($_GET['action'])) {
-                $action    = $_GET['action'];
-                $actionId  = base64_decode($action);
                 
-			    $x_password = md5_decrypt($cusdata['password'], USER_PASS);
-
-                if(session_status() !== PHP_SESSION_ACTIVE){
-                    session_start();
-                    $_SESSION[PACK_ORD] = array($action);
-                }else{
-                    $_SESSION[PACK_ORD] = array($action);
-                }
+                if ($_GET['action'] != null || $_GET['action'] != '') {
+                    $action    = $_GET['action'];
+                    $actionId  = base64_decode($action);
                 
-                $logIn->validate($cusdata['email'], $x_password, 'email', 'password', 'customer', 'packages-summary.php');
+                    $x_password = md5_decrypt($cusdata['password'], USER_PASS);
 
+                    if(session_status() !== PHP_SESSION_ACTIVE){
+                        session_start();
+                        $_SESSION[PACK_ORD] = array($action);
+                    }else{
+                        $_SESSION[PACK_ORD] = array($action);
+                    }
+                    
+                    $LogIn->validate($cusdata['email'], $x_password, 'email', 'password', 'customer', 'packages-summary.php');
+                } 
             }
         }
     }else {

@@ -62,7 +62,6 @@ if(isset($_SESSION['vkey']) && isset($_SESSION['newCustomerSess']) && isset($_SE
 		$verifyKey = base64_encode($verifyKey);
 		$regAction = base64_encode($regAction);
 		$verificationUrl = URL.'/verify-account.php?action='.$regAction.'&verify='.$verifyKey;
-	
 		// Contact Data inser in contact table
 		$contact->addContact($firstName.' '.$lastName, $txtEmail, '', '');		
 
