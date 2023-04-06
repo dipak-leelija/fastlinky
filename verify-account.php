@@ -96,9 +96,9 @@ if (isset($_GET['verify'])) {
 
                     if(session_status() !== PHP_SESSION_ACTIVE){
                         session_start();
-                        $_SESSION[PACK_ORD] = array($action);
+                        $_SESSION[PACK_ORD] = array($actionId);
                     }else{
-                        $_SESSION[PACK_ORD] = array($action);
+                        $_SESSION[PACK_ORD] = array($actionId);
                     }
                     
                     $Login->validate($cusdata['email'], $x_password, 'email', 'password', 'customer', 'packages-summary.php');
