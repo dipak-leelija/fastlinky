@@ -3936,9 +3936,15 @@ form.pack-form textarea {
 
 .faq-acc-flush {
     max-height: 503px;
-    overflow: auto;
+    overflow-y: auto;
     /* width: 90%; */
 }
+.faq-acc-flush::-webkit-scrollbar {
+    width: 0.5rem;
+    opacity: 1;
+    overflow-y: auto;
+}
+
 .faq-acc-flush::-webkit-scrollbar-thumb {
     background: #f7f7f9 !important;
     border-radius: 2px;
@@ -3947,6 +3953,10 @@ form.pack-form textarea {
     box-shadow: none !important;
     border-radius: 2px;
 }
+.faq-acc-flush::-webkit-scrollbar-thumb:hover {
+    background: #dadadb !important;
+}
+
 .faq-acc-body {
     font-family: Helvetica, Poppins !important;
     font-size: 17px !important;
