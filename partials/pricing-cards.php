@@ -17,7 +17,10 @@
                                     <p class="package_type_category"><?php echo $eachPack['package_name']; ?></p>
                                     <div class="packHr"></div>
                                     <p class="price-box-title"><span class="dollar"><?php echo CURRENCY; ?></span><span
-                                            class="main-price"><?php echo $eachPack['price']; ?></span>
+                                            class="main-price"><?php echo $eachPack['price']; ?></span> 
+                                            <span class="fs-4">&#8725;</span>month
+                                           
+                                            
                                     </p>
                                     <p class="chooseNiche"></p>
                                     <ul class="price-box-ul">
