@@ -101,7 +101,7 @@ if (isset($_GET['verify'])) {
                         $_SESSION[PACK_ORD] = array($action);
                     }
                     
-                    $LogIn->validate($cusdata['email'], $x_password, 'email', 'password', 'customer', 'packages-summary.php');
+                    $Login->validate($cusdata['email'], $x_password, 'email', 'password', 'customer', 'packages-summary.php');
                 } 
             }
         }
