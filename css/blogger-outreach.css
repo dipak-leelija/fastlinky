@@ -25,19 +25,6 @@
     text-align: start;
 }
 
-.blog-1main-row {
-    padding: 5rem 0;
-}
-
-.bo-main-cntr {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-}
-
 .bo-wrap {
     align-content: center;
     align-items: center;
@@ -54,22 +41,18 @@
     font-weight: 700;
     line-height: 1.2em;
     color: var(--black);
-    word-spacing: 0.1em;
-    stroke: #000;
 }
 
 .blogout-main-p {
-    font-weight: 400;
+    font-weight: 500;
     text-align: left;
-    font-size: 1.5rem;
-    color: #324A6D;
-    line-height: 1.5em;
-
+    font-size: 1.3rem;
+    color: var(--black);
 }
 
 .blogger-btn {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: capitalize;
     color: #FFF;
     background-color: var(--mustard);
@@ -278,14 +261,8 @@
 
 
     .blogout-main-h1 {
-        font-size: 2.8rem;
+        font-size: 2.818rem;
         font-weight: 600;
-
-    }
-
-    .blogout-main-p {
-        font-weight: 300;
-        font-size: 1.5rem;
 
     }
 
@@ -300,23 +277,10 @@
 
 @media (max-width:991px) {
     .blogger_outreach_banner {
-        padding: 7rem 1rem;
+        padding: 7rem 1.5rem;
     }
-
     .paragraph_texts {
         padding: 1rem;
-    }
-
-    .blogout-main-h1 {
-        font-size: 2.3rem;
-        font-weight: 500;
-
-    }
-
-    .blogout-main-p {
-        font-weight: 300;
-        font-size: 1.3rem;
-
     }
 
     .real-bo-section {
@@ -333,11 +297,6 @@
     .blogger_outreach_banner {
         padding: 4rem 1rem 0rem;
     }
-
-    .blog-1main-row {
-        padding: 2rem 0;
-    }
-
     .getyour-linkbtn {
         display: flex;
         justify-content: center !important;

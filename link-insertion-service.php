@@ -52,7 +52,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 <div class="col-12 col-lg-6 col-md-6  px-0 px-md-2">
                     <div class="mlb-wrapping">
                         <h1 class="mlb-starting-main-h1">Link <span>insertion</span> service</h1>
-                        <p class=" mt-3 mb-4 py-0 py-md-2 mlb-starting-main-p"><b>Link insertion</b> is a unique way to
+                        <p class=" mt-2 mb-3  mlb-starting-main-p"><b>Link insertion</b> is a unique way to
                             make a positive impact on your backlink profile and increase your SERP ranking.
                         </p>
                         <div class="add-css-frleft">
@@ -99,7 +99,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        <strong>Proper Links </strong> <br>
+                        <strong>Proper Links:</strong> <br>
                         We always provide you with a natural link that is editorially related to the content.
                     </div>
                 </div>
@@ -108,7 +108,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <img src="./images/dummy-img/real-bo-ul-li-2.png" class="insertion-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        <strong>Anchor Text </strong> <br>
+                        <strong>Anchor Text: </strong> <br>
                         Anchor text is the key to your success but using the same keyword multiple times should harm
                         your SEO. We use up-to-date articles that bring useful information to your <b>niche edit
                             service. </b>
@@ -119,7 +119,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <img src="./images/dummy-img/real-bo-ul-li-3.png" class="insertion-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        <strong>Relevant Article </strong> <br>
+                        <strong>Relevant Article: </strong> <br>
                         Always place the backlinks on relevant blog posts with the right page authority.
                     </div>
                 </div>
@@ -128,7 +128,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        <strong>No Duplicity </strong> <br>
+                        <strong>No Duplicity: </strong> <br>
                         There are no duplicate link placements here, so you will get 100% unique ones.
                     </div>
                 </div>
@@ -137,7 +137,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
-                        <strong>Save Money</strong> <br>
+                        <strong>Save Money:</strong> <br>
                         An efficient way for us to build links for you that are more affordable to buy.
                     </div>
                 </div>
@@ -171,8 +171,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 mt-5">Niche Edits Pricing
         </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
-            DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
 
         <?php  require_once "partials/pricing-cards.php"; ?>
     </section>
@@ -194,19 +194,20 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row m-0">
             <div class="col-md-4 col-xl-4">
                 <div class="how-it-works-main-card-div">
-                    <div class=" ">
+                    <div class="img-country-div">
                         <img src="./images/dummy-img/link-insertion-service-howitwork1.png" class="w-100" alt="">
                     </div>
                     <h4>Real <span>Blog Post</span> </h4>
                     <p>
                         Choose anchor text in your <b>niche edit service</b>. At Fastlinky we search for real blog posts
                         on real websites to connect with site owners to get you suitable link placement on these posts.
-                        Be careful, otherwise, you can get links from low-quality sites that will damage your SEO. </p>
+                        <!-- Be careful, otherwise, you can get links from low-quality sites that will damage your SEO. -->
+                     </p>
                 </div>
             </div>
             <div class="col-md-4 col-xl-4">
                 <div class="how-it-works-main-card-div">
-                    <div class="">
+                    <div class="img-country-div">
                         <img src="./images/dummy-img/link-insertion-service-howitwork2.png" class="w-100" alt="">
                     </div>
                     <h4>Beneficial <span>Content</span> </h4>
@@ -217,7 +218,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-md-4 col-xl-4">
                 <div class="how-it-works-main-card-div">
-                    <div class="">
+                    <div class="img-country-div">
                         <img src="./images/dummy-img/link-insertion-service-howitwork3.png" class="w-100" alt="">
                     </div>
                     <h4>Valid <span>Report</span> </h4>
@@ -242,8 +243,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class=" mt-5">
                 <div class="row">
-                    <div class=" col-sm-6 col-md-6 col-lg-3">
-                        <div class="who-take-card">
+                    <div class=" col-sm-6  col-lg-3 my-2">
+                        <div class="who-take-card h-100">
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
@@ -255,8 +256,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
 
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3 ">
-                        <div class="who-take-card">
+                    <div class="col-sm-6 col-lg-3 my-2">
+                        <div class="who-take-card h-100">
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                             </div>
@@ -267,8 +268,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
 
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3">
-                        <div class="who-take-card">
+                    <div class="col-sm-6  col-lg-3 my-2">
+                        <div class="who-take-card h-100">
                             <div class="text-center pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
@@ -280,8 +281,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
 
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3">
-                        <div class="who-take-card">
+                    <div class="col-sm-6 col-lg-3 my-2">
+                        <div class="who-take-card h-100">
                             <div class="text-center pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
@@ -307,7 +308,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     <section class="lbs-actually-matters-main">
         <div class="row">
-            <div class=" col-xl-6 col-md-6">
+            <div class=" col-xl-6 col-md-6 m-auto">
                 <h1 class="lbs-actually-matters-main-h1 mb-3">
                 How Does 
                     <span> link insertion Boost SEO? </span>
@@ -315,6 +316,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                <p>
                When you add suitable links on your website to existing content on other websites, it is called <b>link insertion</b>. <b>Link insertion </b> is a backlink from another page to your page that helps provide extra knowledge to the reader of the original article. We provide you with an adequate link insertion service. This is also called the <b>Niche edit service</b> . At FastLinky, you can get the best service to insert your link.
                </p>
+               <div class=" buttonsinfo mt-4">
+            <a href="#pricing-cards">
+                <button type="button" class="btn managed-link-btn ">See Pricing</button>
+            </a>
+        </div>
             </div>
             <div class="col-xl-6 col-md-6 m-auto">
 
@@ -322,11 +328,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
   
             </div>
         </div>
-        <div class=" buttonsinfo mt-3">
-            <a href="#pricing-cards">
-                <button type="button" class="btn managed-link-btn ">See Pricing</button>
-            </a>
-        </div>
+        
     </section>
     <!-- Advantages Of Link Insert ends -->
     <!-- _________________________________________________________________________________________________ -->

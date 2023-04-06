@@ -201,8 +201,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="works-f-u-main-card-div">
                 <div class="row">
-                    <div class="col-md-4 col-xl-4">
-                        <div class="card  how-it-work-f-u-card">
+                    <div class="col-md-4 my-2 my-md-4">
+                        <div class="card  how-it-work-f-u-card h-100">
 
                             <div class="pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
@@ -219,8 +219,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                     </div>
 
-                    <div class="col-md-4 col-xl-4">
-                        <div class="card how-it-work-f-u-card">
+                    <div class="col-md-4 my-2 my-md-4">
+                        <div class="card how-it-work-f-u-card h-100">
 
                             <div class="pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
@@ -236,8 +236,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                     </div>
 
-                    <div class="col-md-4 col-xl-4">
-                        <div class="card how-it-work-f-u-card">
+                    <div class="col-md-4 my-2 my-md-4">
+                        <div class="card how-it-work-f-u-card h-100">
 
                             <div class=" pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
@@ -252,8 +252,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
 
                     </div>
-                    <div class="col-md-4 col-xl-4">
-                        <div class="card how-it-work-f-u-card">
+                    <div class="col-md-4 my-2 my-md-4">
+                        <div class="card how-it-work-f-u-card h-100">
 
                             <div class="pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
@@ -269,8 +269,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                     </div>
 
-                    <div class="col-md-4 col-xl-4">
-                        <div class="card how-it-work-f-u-card">
+                    <div class="col-md-4 my-2 my-md-4">
+                        <div class="card how-it-work-f-u-card h-100">
 
                             <div class="pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
@@ -286,8 +286,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                     </div>
 
-                    <div class="col-md-4 col-xl-4 ">
-                        <div class="card how-it-work-f-u-card">
+                    <div class="col-md-4 my-2 my-md-4 ">
+                        <div class="card how-it-work-f-u-card h-100">
 
                             <div class=" pb-3 text-center text-md-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"

@@ -159,7 +159,7 @@ if(isset($_POST['btnLogin'])){
 
                                                 <div class="form-group ">
                                                     <label>Password</label>
-                                                    <input type="password" autocomplete="new-password" placeholder="Valid Password" minlength="6"
+                                                    <input type="password" placeholder="Valid Password" minlength="6"
                                                         id="txtPass" name="txtPass" class="form-control" required>
                                                     <div class="invalid-feedback">
                                                         Please enter your Password!

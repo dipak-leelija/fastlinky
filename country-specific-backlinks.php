@@ -171,8 +171,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 px-2 mt-5">Country-Specific Outreach Pricing
         </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
-            DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as  per DA,
+            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>
@@ -201,7 +201,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="text-center text-sm-start">
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                     </div>
-                    <h3>Research</h3>
+                    <h3><b>Research</b> </h3>
                     <div class="text-start mb-5">
                         Our team of specialists thoroughly analyzes your website, the sector, and the competition. After
                         that, the optimum keywords and the engaged country are preferred for the ideal placements in
@@ -212,7 +212,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="text-center text-sm-start ">
                         <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                     </div>
-                    <h3>Outreach</h3>
+                    <h3><b> Outreach</b></h3>
                     <div class="text-start mb-5">
                         In order to get high-authority guest post services, we at Fastlinky create strong links with
                         multiple international bloggers and influencers. We guarantee our client that the link will be
@@ -223,7 +223,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="text-center text-sm-start ">
                         <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                     </div>
-                    <h3>Content That Is Available In Several Languages</h3>
+                    <h3><b>Content That Is Available In Several Languages</b> </h3>
                     <div class="text-start mb-5">
                         Our professional outreach staff collaborates with well-known authors to produce acceptable,
                         international content for link-building articles.
@@ -310,7 +310,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row ">
             <div class="col-lg-6 col-md-6">
                 <div>
-                    <h1 class="mb-4">Use Fastlinky To Buy Quality Backlinks In Australia
+                    <h1 class="mb-4">Use Fastlinky To Buy<br> <span> Quality Backlinks In Australia</span> 
                     </h1>
                 </div>
                 <div class="">
