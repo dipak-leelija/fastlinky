@@ -89,7 +89,7 @@
     text-align: center;
     align-items: center;
     padding: .5rem;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
 }
 
 /* second-half */
@@ -191,11 +191,9 @@
     padding: 1.5rem;
     border-radius: unset;
     background: #fff;
-    margin: 20px;
     box-shadow: 0 0 10px 0 #ccc;
     -webkit-box-shadow: 0 0 10px 0 #ccc;
     border: none;
-    min-height: 460px;
 }
 
 .works-f-u-main-card-div p {
@@ -209,15 +207,12 @@
 }
 
 .how-it-work-f-u-card {
-
     padding: 1.5rem;
     border-radius: unset;
     background: #fff;
-    margin: 20px 5px;
     box-shadow: 0 0 10px 0 #ccc;
     -webkit-box-shadow: 0 0 10px 0 #ccc;
     border: none;
-    min-height: 405px;
 }
 
 /* benifits */
@@ -348,13 +343,10 @@
 @media (min-width:768px) and (max-width:1100px) {
     .works-for-u-card {
         padding: 1rem !important;
-        margin: 20px 0px !important;
-        min-height: 490px !important;
     }
 
     .how-it-work-f-u-card {
         padding: 1rem !important;
-        margin: 20px 0px !important;
     }
 
     .how-its-wrok-bo-main-div {
@@ -466,46 +458,5 @@
 
     .works-for-you-bo-section {
         padding: 1rem !important;
-    }
-
-    .works-for-u-card {
-        margin: 20px 0 !important;
-    }
-
-    .how-it-work-f-u-card {
-        margin: 20px 0px !important;
-    }
-
-}
-
-@media (min-width:768px) and (max-width:800px) {
-    .how-it-work-f-u-card {
-        min-height: 605px !important;
-    }
-
-    .works-for-u-card {
-        min-height: 652px !important;
-    }
-}
-
-@media (min-width:801px) and (max-width:849px) {
-    .how-it-work-f-u-card {
-        min-height: 581px !important;
-    }
-
-    .works-for-u-card {
-        min-height: 573px !important;
-    }
-}
-
-@media (min-width:850px) and (max-width:1030px) {
-    .how-it-work-f-u-card {
-        min-height: 517px !important;
-    }
-}
-
-@media (min-width:1250px) and (max-width:1290px) {
-    .how-it-work-f-u-card {
-        min-height: 425px !important;
     }
 }

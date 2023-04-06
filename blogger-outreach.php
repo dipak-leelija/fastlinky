@@ -90,9 +90,12 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
             </div>
             <div class=" col-md-6 order-1 order-md-2">
-            <div>
-                        <h1 class="real-bo-text-h1 mb-3"> Backlinks for domain authority <span>with 100% responsibility </span> </h1>
-                    </div>
+                <div>
+                    <h1 class="real-bo-text-h1 mb-3">Crafting Quality Backlinks <br> <span>to Enhance Domain
+                            Authority</span>
+                        <!-- Backlinks for domain authority <span>with 100% responsibility </span> -->
+                    </h1>
+                </div>
                 <div>
                     <p>Along with domain authority, our links evaluate past link performance, domain score, and
                         reliability connections. <b>Our blogger outreach services</b> offer additional capabilities, in
@@ -177,6 +180,104 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     </section>
     <!-- real-blogger-outreach-section end -->
+        <!-- _________________________________________________________________________________ -->
+    <!-- ==================== Does-Blogger-Outreach Work For You starts ============================ -->
+    <section class="works-for-you-bo-section py-0">
+        <div class="custom-cntainr">
+            <div class="how-its-wrok-bo-main-div">
+                <div>
+                    <h1 class=" text-center mt-4 my-3 works-bo-h2">Why Use Fastlinky Blogger Outreach Service <span>For
+                            Your Business?</span></h1>
+                </div>
+                <div class="works-f-u-main-card-div">
+                    <div class="row w-100 m-auto">
+                        <div class="col-md-4 my-2 my-md-3">
+                            <div class="card  how-it-work-f-u-card h-100">
+                                <div class="pb-3 text-center text-sm-left">
+                                    <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
+                                        alt="">
+                                </div>
+                                <h4 class="how-fonts-h4  py-2">Relevance, Authority, And Influence Links</h4>
+                                <p class="">
+                                    Links that are relevant, authoritative, and influential are necessary if you want to
+                                    rank highly on search engines.For this, you should use the best <b>custom outreach
+                                        services</b> .
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 my-2 my-md-3">
+                            <div class="card how-it-work-f-u-card h-100">
+                                <div class="pb-3 text-center text-sm-left">
+                                    <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
+                                        alt="">
+                                </div>
+                                <h4 class="how-fonts-h4  py-2">Customized Outreach Plan For Your Website</h4>
+                                <p class="">
+                                    We base your website's niche on our outreach plan. Before implementing the plan, our
+                                    outreach specialists seek out high-quality websites with higher DA that are
+                                    pertinent to your topic. </p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 my-2 my-md-3">
+                            <div class="card how-it-work-f-u-card h-100">
+                                <div class="pb-3 text-center text-sm-left">
+                                    <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
+                                        alt="">
+                                </div>
+                                <h4 class="how-fonts-h4  py-2">No Duplication</h4>
+                                <p class="">
+                                    To ensure that there are no duplicate orders on partner domains, we keep track of
+                                    every order you place.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 my-2 my-md-3">
+                            <div class="card how-it-work-f-u-card h-100">
+                                <div class="pb-3 text-center text-sm-left">
+                                    <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
+                                        alt="">
+                                </div>
+                                <h4 class="how-fonts-h4  py-2">Domain Authority</h4>
+                                <p class="">
+                                    We maintain our outreach primarily to domains that have continuously high domain
+                                    authority in order to get you the finest stats for your site.</p>
+                            </div>
+                        </div>
+                      
+                        <div class="col-md-4 my-2 my-md-3">
+                            <div class="card how-it-work-f-u-card h-100">
+                                <div class=" pb-3 text-center text-sm-left">
+                                    <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
+                                        alt="">
+                                </div>
+                                <h4 class="how-fonts-h4  py-2">Native Content</h4>
+                                <p class="">
+                                    You hire smart authors to compose your content using your native language. Before
+                                    creating interesting content, factors like brand beliefs and other factors are
+                                    examined. These techniques guarantee that your links appear to be inserted naturally
+                                    and inside the content of the articles. </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 my-2 my-md-3 ">
+                            <div class="card how-it-work-f-u-card h-100">
+                                <div class=" pb-3 text-center text-sm-left">
+                                    <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
+                                        alt="">
+                                </div>
+                                <h4 class="how-fonts-h4  py-2">Reasonable Prices</h4>
+                                <p class="">
+                                    We are able to provide exceptional SEO services with highly competitive pricing
+                                    thanks to our SEO experience. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Does-Blogger-Outreach Work For You ends -->
+    <!-- _________________________________________________________________________________________ -->
     <!-- ---------------------------------------------------------------- -->
     <!-- AMAZING -blogger-outreach-section start -->
 
@@ -261,131 +362,15 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- _________________________________________________________________________________ -->
     <!-- ==================== Does-Blogger-Outreach Work For You starts ============================ -->
     <section class="works-for-you-bo-section">
-        <div class="">
-
-            <div class="how-its-wrok-bo-main-div">
-
-
-                <div>
-                    <h1 class=" text-center mt-4 my-3 works-bo-h2">Why Use Fastlinky Blogger Outreach Service <span>For
-                            Your Business?</span></h1>
-                </div>
-                <div class="works-f-u-main-card-div">
-                    <div class="row w-100 m-auto" >
-                        <div class="col-md-4 col-xl-4">
-                            <div class="card  how-it-work-f-u-card">
-
-                                <div class="pb-3 text-center text-sm-left">
-                                    <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
-                                        alt="">
-                                </div>
-                                <h4 class="how-fonts-h4  py-2">Relevance, Authority, And Influence Links</h4>
-                                <p class="">
-                                    Links that are relevant, authoritative, and influential are necessary if you want to
-                                    rank highly on search engines.For this, you should use the best <b>custom outreach
-                                        services</b> .
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-4 col-xl-4">
-                            <div class="card how-it-work-f-u-card">
-
-                                <div class="pb-3 text-center text-sm-left">
-                                    <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
-                                        alt="">
-                                </div>
-                                <h4 class="how-fonts-h4  py-2">Customized Outreach Plan For Your Website</h4>
-                                <p class="">
-                                    We base your website's niche on our outreach plan. Before implementing the plan, our
-                                    outreach specialists seek out high-quality websites with higher DA that are
-                                    pertinent to your topic. </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-4 col-xl-4">
-                            <div class="card how-it-work-f-u-card">
-
-                                <div class=" pb-3 text-center text-sm-left">
-                                    <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
-                                        alt="">
-                                </div>
-                                <h4 class="how-fonts-h4  py-2">Native Content</h4>
-                                <p class="">
-                                    You hire smart authors to compose your content using your native language. Before
-                                    creating interesting content, factors like brand beliefs and other factors are
-                                    examined. These techniques guarantee that your links appear to be inserted naturally
-                                    and inside the content of the articles. </p>
-
-                            </div>
-
-                        </div>
-                        <div class="col-md-4 col-xl-4">
-                            <div class="card how-it-work-f-u-card">
-
-                                <div class="pb-3 text-center text-sm-left">
-                                    <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
-                                        alt="">
-                                </div>
-                                <h4 class="how-fonts-h4  py-2">Domain Authority</h4>
-                                <p class="">
-                                    We maintain our outreach primarily to domains that have continuously high domain
-                                    authority in order to get you the finest stats for your site.</p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-4 col-xl-4">
-                            <div class="card how-it-work-f-u-card">
-
-                                <div class="pb-3 text-center text-sm-left">
-                                    <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
-                                        alt="">
-                                </div>
-                                <h4 class="how-fonts-h4  py-2">No Duplication</h4>
-                                <p class="">
-                                    To ensure that there are no duplicate orders on partner domains, we keep track of
-                                    every order you place.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-4 col-xl-4 ">
-                            <div class="card how-it-work-f-u-card">
-
-                                <div class=" pb-3 text-center text-sm-left">
-                                    <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
-                                        alt="">
-                                </div>
-                                <h4 class="how-fonts-h4  py-2">Reasonable Prices</h4>
-                                <p class="">
-                                    We are able to provide exceptional SEO services with highly competitive pricing
-                                    thanks to our SEO experience. </p>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
+        <div class="custom-cntainr">
             <div>
                 <h2 class=" text-center mt-4 my-3 works-bo-h2">How Does Blogger Outreach Service <span> Improve Your
                         Brand?</span></h2>
             </div>
             <div class="works-f-u-main-card-div">
                 <div class="row w-100 m-auto">
-                    <div class="col-md-4 col-xl-4 ">
-                        <div class="card works-for-u-card">
-
+                    <div class="col-md-4 my-2 my-md-3">
+                        <div class="card works-for-u-card h-100">
                             <div class="pb-3 text-center text-sm-left">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
@@ -397,14 +382,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 knowledgeable staff to manage the burden of constructing high-quality backlinks that
                                 will enhance your site's ranking. Hence, you can manage the more important aspects of
                                 running your business. </p>
-
                         </div>
-
                     </div>
-
-                    <div class="col-md-4 col-xl-4">
-                        <div class="card works-for-u-card">
-
+                    <div class="col-md-4 my-2 my-md-3">
+                        <div class="card works-for-u-card h-100">
                             <div class="pb-3 text-center text-sm-left">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                     alt="">
@@ -415,14 +396,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 blogger service is your go-to resource. We are not just masters in link-building, we
                                 also provide white-label research services without accepting any payment in exchange for
                                 our work. </p>
-
                         </div>
-
                     </div>
-
-                    <div class="col-md-4 col-xl-4">
-                        <div class="card works-for-u-card">
-
+                    <div class="col-md-4 my-2 my-md-3">
+                        <div class="card works-for-u-card h-100">
                             <div class=" pb-3 text-center text-sm-left">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                     alt="">
@@ -433,15 +410,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 strategy that is result-based. The simplest solution is to obtain enough high-quality
                                 links. Our knowledgeable crew is competent in this. You might concentrate on other
                                 crucial elements like inventive content and conversation improvement. </p>
-
                         </div>
-
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </section>
     <!-- Does-Blogger-Outreach Work For You ends -->
@@ -756,7 +728,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <?php include_once 'partials/seller-action.php'; ?>
     </div>
 
-  <!-- --------------------------------------- -->
+    <!-- --------------------------------------- -->
     <!-- feedback form -->
     <?php require_once "partials/feedback.php"; ?>
     <!-- feedback form -->
