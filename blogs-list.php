@@ -58,14 +58,15 @@ $blogDtls		= $blogMst->ShowBlogApprData();
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png"/>
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <title> Guest posting Blogs List | <?php echo COMPANY_S; ?></title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
-   
+
 
     <!-- New Files  -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
@@ -93,6 +94,7 @@ $blogDtls		= $blogMst->ShowBlogApprData();
     .list-group-item+.list-group-item {
         border-top-width: 1px;
     }
+
     .accordion {
         --bs-accordion-border-width: none;
         --bs-accordion-btn-focus-box-shadow: none;
@@ -127,8 +129,8 @@ $blogDtls		= $blogMst->ShowBlogApprData();
                         <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
 
                             <div class="client_profile_dashboard_left">
-                            <?php include("dashboard-inc.php");?>
-                            <hr class="myhrline">
+                                <?php include("dashboard-inc.php");?>
+                                <hr class="myhrline">
                             </div>
 
                         </div>
@@ -136,10 +138,12 @@ $blogDtls		= $blogMst->ShowBlogApprData();
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button collapsed text-primary  faq-acc-button border-0 fw-normal" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
-                                            aria-controls="collapseOne">
-                                            <i class="fa-solid fa-magnifying-glass-plus pe-2" style="font-size: 18px;"></i>
+                                        <button
+                                            class="accordion-button collapsed text-primary  faq-acc-button border-0 fw-normal"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                            aria-expanded="false" aria-controls="collapseOne">
+                                            <i class="fa-solid fa-magnifying-glass-plus pe-2"
+                                                style="font-size: 18px;"></i>
                                             Search Filter
                                         </button>
                                     </h2>
@@ -174,7 +178,10 @@ $blogDtls		= $blogMst->ShowBlogApprData();
 								                            foreach($BlogMst as $row){
                                                             ?>
                                                             <div class="list-group-item checkbox d-inline-block mt-1">
-                                                                <label><input type="checkbox" class="common_selector niche" value="<?php echo $row['niche_name']; ?>"> <?php echo $row['niche_name']; ?></label>
+                                                                <label><input type="checkbox"
+                                                                        class="common_selector niche"
+                                                                        value="<?php echo $row['niche_name']; ?>">
+                                                                    <?php echo $row['niche_name']; ?></label>
                                                             </div>
                                                             <?php
 								                            }
@@ -217,7 +224,7 @@ $blogDtls		= $blogMst->ShowBlogApprData();
         <script src="js/jquery-ui.js"></script>
         <script src="js/cart.js"></script>
         <script src="js/ajax.js" type="text/javascript"></script>
-       
+
         <script src="js/wishlist.js" type="text/javascript"></script>
         <script src="js/customerSwitchMode.js" type="text/javascript"></script>
 

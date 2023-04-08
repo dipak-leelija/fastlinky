@@ -49,12 +49,13 @@ $_SESSION['reorder-page'] = $utility->currentUrl();
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>View Cart: <?php echo COMPANY_S; ?></title>
     <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH; ?>" />
-    
+
     <meta name="keywords" content="Ready Website, Ready Blogs, Ready Websites Sales, Ready Blogs sales,
 	Domain selling, Low Budget Websites, Good Metrics ready blogs sales, web design" />
 
@@ -78,11 +79,11 @@ $_SESSION['reorder-page'] = $utility->currentUrl();
         <?php require_once "partials/navbar.php"; ?>
         <!-- //header -->
         <div class="container my-4">
-		<form method="post">
+            <form method="post">
 
-            <div class="row justify-content-evenly p-3 p-sm-0">
+                <div class="row justify-content-evenly p-3 p-sm-0">
 
-                <?php
+                    <?php
 				if(isset($_SESSION["domain"]))
 					{
 				?>
@@ -147,8 +148,8 @@ $_SESSION['reorder-page'] = $utility->currentUrl();
 								}
 								}
 							?>
-                <div class="border  rounded p-2 ">
-					<h4 class="text-end">$<?php if (isset($_SESSION["domain"] )) {
+                    <div class="border  rounded p-2 ">
+                        <h4 class="text-end">$<?php if (isset($_SESSION["domain"] )) {
 													if ($totalAmt > 0) {
 														echo $totalAmt; 
 													}
@@ -156,16 +157,17 @@ $_SESSION['reorder-page'] = $utility->currentUrl();
 														echo "00";
 													} 
 											?></h4>
-                    <div class="finalslect d-flex justify-content-between">
-                        <a href="domains.php" class="btn btn-info btn-block continue_atag"><i class="fa fa-angle-left"></i>Continue
-                            Shopping</a>
-                        <a href="checkout.php" class="btn btn-primary btn-block continue_atag">Checkout <i
-                                class="fa fa-angle-right"></i></a>
+                        <div class="finalslect d-flex justify-content-between">
+                            <a href="domains.php" class="btn btn-info btn-block continue_atag"><i
+                                    class="fa fa-angle-left"></i>Continue
+                                Shopping</a>
+                            <a href="checkout.php" class="btn btn-primary btn-block continue_atag">Checkout <i
+                                    class="fa fa-angle-right"></i></a>
+                        </div>
                     </div>
-                </div>
 
-            </div>
-			</form>
+                </div>
+            </form>
 
 
         </div>

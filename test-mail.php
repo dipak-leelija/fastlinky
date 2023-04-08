@@ -15,6 +15,7 @@ error_reporting(E_ALL);
 <html lang="en">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

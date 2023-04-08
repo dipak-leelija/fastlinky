@@ -33,9 +33,9 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, '*');
 
 ?>
 <!DOCTYPE HTML>
-<html lang="zxx">
-
+<html lang="en">
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />

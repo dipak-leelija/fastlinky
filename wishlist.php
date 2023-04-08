@@ -49,6 +49,7 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
 
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
@@ -82,6 +83,7 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
     }
     </style>
 </head>
+
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="home">
 
@@ -236,4 +238,5 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
         </script>
         <script src="js/customerSwitchMode.js"></script>
 </body>
+
 </html>

@@ -48,6 +48,7 @@ session_destroy();
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Verify your Email - <?php echo COMPANY_S; ?></title>
@@ -87,7 +88,7 @@ session_destroy();
                                 </div>
 
                                 <h1 class="">Verify Your Email!</h1>
-                                <p >We have sent an email to <?php echo $email;?></p>
+                                <p>We have sent an email to <?php echo $email;?></p>
                                 <p class="">
                                     You Need to verify Your email to continue.
                                     If you have not received the verification email, please check your "Spam" or "Bulk

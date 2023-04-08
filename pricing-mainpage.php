@@ -55,6 +55,7 @@ $packages = $GPPackage->packDetailsByCat(1);
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <link rel="icon" href="images/logo/favicon.png" type="image/png">
     <title>Order page - <?php echo COMPANY_S; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -137,8 +138,7 @@ $packages = $GPPackage->packDetailsByCat(1);
                                                     <div class="col-md-4 px-md-1 h-100">
                                                         <div class="card p-card" id="">
                                                             <input id="field_2_0" value="120" type="checkbox"
-                                                                name="field_2[0]" required=""
-                                                                class="d-none cart-input">
+                                                                name="field_2[0]" required="" class="d-none cart-input">
                                                             <div class="price-card-wrapper">
                                                                 <label for="field_2_0"
                                                                     class="item-details d-flex flex-column">
@@ -164,8 +164,7 @@ $packages = $GPPackage->packDetailsByCat(1);
                                                     <div class="col-md-4 px-md-1 h-100">
                                                         <div class="card p-card" id="">
                                                             <input id="field_2_1" value="76" type="checkbox"
-                                                                name="field_2[1]" required=""
-                                                                class="d-none cart-input">
+                                                                name="field_2[1]" required="" class="d-none cart-input">
                                                             <div class="price-card-wrapper">
                                                                 <label for="field_2_1"
                                                                     class="item-details d-flex flex-column">
@@ -191,8 +190,7 @@ $packages = $GPPackage->packDetailsByCat(1);
                                                     <div class="col-md-4 px-md-1 h-100">
                                                         <div class="card p-card" id="">
                                                             <input id="field_2_2" value="121" type="checkbox"
-                                                                name="field_2[2]" required=""
-                                                                class="d-none cart-input">
+                                                                name="field_2[2]" required="" class="d-none cart-input">
                                                             <div class="price-card-wrapper">
                                                                 <label for="field_2_2"
                                                                     class="item-details d-flex flex-column">

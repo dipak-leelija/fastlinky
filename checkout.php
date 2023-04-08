@@ -1,4 +1,3 @@
-
 <?php 
 require_once("includes/constant.inc.php");
 session_start();
@@ -186,15 +185,18 @@ if(isset($_POST['btnSubmit'])){
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CheckOut: <?php echo COMPANY_FULL_NAME; ?></title>
 
     <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH; ?>" />
-    
-    <meta name="description" content="LeeLija can Instantly find the Domain Name and Ready Blogs Or Websites that you have been looking for. Find the right Blog or Website today.">
-    <meta name="keywords" content="Precedence Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+    <meta name="description"
+        content="LeeLija can Instantly find the Domain Name and Ready Blogs Or Websites that you have been looking for. Find the right Blog or Website today.">
+    <meta name="keywords"
+        content="Precedence Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
@@ -503,16 +505,16 @@ if(isset($_POST['btnSubmit'])){
     <script src="js/cregistration.js"></script>
 
     <script>
-        $("#contact-no").keyup(function() {
-            num = $("#contact-no").val();
-            // alert(num.length);
-            if (num.length < 10) {
-                $("#noContact").html("Please verify the length");
-            }else{
+    $("#contact-no").keyup(function() {
+        num = $("#contact-no").val();
+        // alert(num.length);
+        if (num.length < 10) {
+            $("#noContact").html("Please verify the length");
+        } else {
 
-                $("#noContact").css("display", "none");
-            }
-        });
+            $("#noContact").css("display", "none");
+        }
+    });
     </script>
     <script>
     const checkForm = () => {
@@ -577,7 +579,7 @@ if(isset($_POST['btnSubmit'])){
         });
 
 
-        
+
         if (zipCo == '' || zipCo == '0') {
             $("#noZipCode").html("Please Enter Your Zip Code");
             alert("Please Enter Your Zip Code");
@@ -586,7 +588,7 @@ if(isset($_POST['btnSubmit'])){
         $("#billing-zip").keyup(function() {
             $("#noZipCode").css("display", "none");
         });
-        
+
         if (cntry == '') {
             alert("Please Enter Your Country");
             $("#noCntry").html("Please Enter Your Country")
@@ -704,7 +706,7 @@ if(isset($_POST['btnSubmit'])){
 
             document.getElementById('billingForm').action = "payments/itemPayment/ccAvenue-payment/payment.php";
             document.getElementById('billingForm').submit();
-            
+
 
         } else {
             document.getElementById('acceptForm').classList.remove('d-none');

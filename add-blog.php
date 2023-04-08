@@ -104,6 +104,7 @@ if(isset($_POST['btnAddDomain']))
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <title>Domain name with website or blogs ready for you | Add Blogs ::<?php echo COMPANY_S; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">

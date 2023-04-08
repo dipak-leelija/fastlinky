@@ -308,14 +308,16 @@ if(isset($_SESSION['orderId'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Success - Order Received | <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png"/>
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
-    
+
     <!-- <link rel="stylesheet" href="<?php echo URL ?>style/ansysoft.css" type="text/css" /> -->
     <link rel="stylesheet" href="<?php echo URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo URL ?>/plugins/fontawesome-6.1.1/css/all.css">
@@ -344,11 +346,11 @@ if(isset($_SESSION['orderId'])) {
                         receive email shortly in your account.</p>
                     <p><i class="fas fa-exclamation-circle fs-5 text-warning"></i> If you find any difficulty, drop an
                         email to <?php echo SITE_BILLING_EMAIL ?></p>
-					<?php
+                    <?php
 					// if ($mailSended) {
 					// 	?>
-					 	<!-- <p><small>Order details has been sent to your email.</small></p> -->
-					 	<?php
+                    <!-- <p><small>Order details has been sent to your email.</small></p> -->
+                    <?php
 					// }
 					?>
                 </div>
@@ -359,7 +361,7 @@ if(isset($_SESSION['orderId'])) {
             <div class="col-11 col-md-10 mb-3 mb-md-5 p-4 text-center">
                 <p>Your order status will updated to you, Now you can go back.</p>
                 <div class="mt-3">
-					<a class="btn btn-primary" href="app.client.php">My Account</a>
+                    <a class="btn btn-primary" href="app.client.php">My Account</a>
                     <a class="btn btn-primary" href="my-orders.php">My Orders</a>
                 </div>
             </div>

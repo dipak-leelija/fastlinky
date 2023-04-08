@@ -35,10 +35,11 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 <html lang="zxx">
 
 <head>
-    <title>My Order :: <?php echo COMPANY_S; ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/logo/favicon.png" type="image/png">
+    <title>My Order :: <?php echo COMPANY_S; ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
@@ -99,10 +100,12 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                             $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);  
                                     ?>
                                 <div class="col-md-12 m-auto">
-                                    <div class="card product_card  item_order_bx position-relative border rounded  mb-3">
+                                    <div
+                                        class="card product_card  item_order_bx position-relative border rounded  mb-3">
 
                                         <!-- ============== Order Status start ==============  -->
-                                        <div class="orderStatus orderStatus-history <?php echo $status[0]['orders_status_name'];?>">
+                                        <div
+                                            class="orderStatus orderStatus-history <?php echo $status[0]['orders_status_name'];?>">
                                             <p><?php echo $status[0]['orders_status_name'];?></p>
                                         </div>
                                         <!-- ============== Order Status end ==============  -->
@@ -301,4 +304,4 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 
 </body>
 
-</html> 
+</html>

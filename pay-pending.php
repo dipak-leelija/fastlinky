@@ -426,60 +426,65 @@ $statusCode	= $orderDetail[13];
 		
 		
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Payment Pending - Order Received</title>
-<link rel="stylesheet" href="<?php /*?><?php echo URL ?><?php */?>style/ansysoft.css" type="text/css" />
+    <meta name="robots" content="noindex,nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Payment Pending - Order Received</title>
+    <link rel="stylesheet" href="<?php /*?><?php echo URL ?><?php */?>style/ansysoft.css" type="text/css" />
 
-<!-- JavaScript -->
+    <!-- JavaScript -->
 
-<!-- eof JavaScript -->
+    <!-- eof JavaScript -->
 
 </head>
 
 
 <body>
 
-	<!-- Start  Header -->
-	<?php require_once('header.inc.php'); ?>
+    <!-- Start  Header -->
+    <?php require_once('header.inc.php'); ?>
     <!-- End  Header -->
-  
+
     <!-- Start  MainWrap -->
     <div id="mainWrap">
-		
-    	
-		<!-- Start header Image -->
+
+
+        <!-- Start header Image -->
         <div class="content-wrap">
-            
+
             <div class="divorce-title-description">
                 <h2>Thanking you for your payment</h2>
-                
+
                 <p class="padT20">
-                	Your Payment is in pending state. You will receive email shortly in your account.
-                    
+                    Your Payment is in pending state. You will receive email shortly in your account.
+
                 </p>
                 <p>
-                	If you find any difficulty, drop an email to <?php echo SITE_BILLING_EMAIL ?>
+                    If you find any difficulty, drop an email to <?php echo SITE_BILLING_EMAIL ?>
                 </p>
                 <div align="center" class="padT10">
-                    <a href="<?php echo URL ?>index.php" title="Return to Home" class="read-more" 
-                    href="javascript:void()" title="Read More">Return to Home</a>
+                    <a href="<?php echo URL ?>index.php" title="Return to Home" class="read-more"
+                        href="javascript:void()" title="Read More">Return to Home</a>
                 </div>
             </div>
-            
-            
-            
-		</div>
+
+
+
+        </div>
     </div>
     <div class="mainWrapBottom"></div>
     <!-- End  MainWrap -->
-    
+
     <!-- Start Foter -->
     <?php require_once('footer.inc.php'); ?>
-    
 
-	<!-- End Foter -->
+
+    <!-- End Foter -->
 </body>
+
 </html>

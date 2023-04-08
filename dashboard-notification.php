@@ -50,7 +50,7 @@ $mails = $Emails->ShowMailsbyCol('to_email', $_SESSION['USERcontinuecontent_ecom
 <html lang="zxx">
 
 <head>
-
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $cusDtl[0][5].' '.$cusDtl[0][6];?> - Notifications | <?php echo COMPANY_S; ?></title>
@@ -134,45 +134,45 @@ $mails = $Emails->ShowMailsbyCol('to_email', $_SESSION['USERcontinuecontent_ecom
                                         }
                                     ?>
 
-                                    <!-- notification-1 -->
-                                    <div class="notification-main-division my-2 item_order_bx coloring-cd"
-                                        data-bs-toggle="modal" data-bs-target="#notificationModal"
-                                        onclick="notificationAcive('<?php echo $eachMail['id'];?>')">
-                                        <div class="row">
-                                            <div
-                                                class="col-xl-1 ps-xl-1 col-lg-2 col-md-2 col-sm-2 col-3 m-auto image-column-div">
-                                                <div>
-                                                    <img src="<?php echo FAVCON_PATH; ?>"
-                                                        class="notify-person-img rounded me-2" alt="...">
-                                                </div>
+                                <!-- notification-1 -->
+                                <div class="notification-main-division my-2 item_order_bx coloring-cd"
+                                    data-bs-toggle="modal" data-bs-target="#notificationModal"
+                                    onclick="notificationAcive('<?php echo $eachMail['id'];?>')">
+                                    <div class="row">
+                                        <div
+                                            class="col-xl-1 ps-xl-1 col-lg-2 col-md-2 col-sm-2 col-3 m-auto image-column-div">
+                                            <div>
+                                                <img src="<?php echo FAVCON_PATH; ?>"
+                                                    class="notify-person-img rounded me-2" alt="...">
                                             </div>
-                                            <div class="col-xl-10 col-lg-8 col-md-8 col-sm-8 col-9 info-column-div">
-                                                <div class="notification-para">
-                                                    <p class="notify-body">
-                                                        <strong
-                                                            class="person-name"><?php echo $eachMail['subject']; ?></strong>
-                                                        <!-- created a new website. -->
-                                                    </p>
-                                                    <p class="notify-body">
-                                                        <?php
+                                        </div>
+                                        <div class="col-xl-10 col-lg-8 col-md-8 col-sm-8 col-9 info-column-div">
+                                            <div class="notification-para">
+                                                <p class="notify-body">
+                                                    <strong
+                                                        class="person-name"><?php echo $eachMail['subject']; ?></strong>
+                                                    <!-- created a new website. -->
+                                                </p>
+                                                <p class="notify-body">
+                                                    <?php
                                                         echo substr($dsc, 0, 200).'..';
 
                                                         ?></p>
-                                                    <p class="notify-body">
-                                                        <small class="notify-time"><?php echo $msgDate;?></small>
-                                                    </p>
-                                                </div>
-
+                                                <p class="notify-body">
+                                                    <small class="notify-time"><?php echo $msgDate;?></small>
+                                                </p>
                                             </div>
-                                            <!-- <div
+
+                                        </div>
+                                        <!-- <div
                                                 class="col-xl-1 col-lg-2 col-md-2 col-sm-2 d-sm-inline-block justify-content-end d-none m-auto">
                                                 <div style=" text-align: end;">
                                                     <img src="images/portfolio/2.jpg" class="notify-post-img rounded me-2"
                                                         alt="...">
                                                 </div>
                                             </div> -->
-                                        </div>
                                     </div>
+                                </div>
 
                                 <?php
                                     } 

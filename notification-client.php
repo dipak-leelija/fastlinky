@@ -45,15 +45,7 @@ if($cusDtl[0][0] == 3){
     <title>Seller Dashboard :: <?php echo COMPANY_S; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <script>
-    addEventListener("load", function() {
-        setTimeout(hideURLbar, 0);
-    }, false);
-
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    }
-    </script>
+    <meta name="robots" content="noindex,nofollow">
 
     <!-- Bootstrap Core CSS -->
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->

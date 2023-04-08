@@ -39,9 +39,10 @@ $cusId			= $utility->returnSess('userid', 0);
 
 ?>
 <!DOCTYPE HTML>
-<html lang="zxx">
+<html lang="en">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Account is not verified <?php echo COMPANY_S; ?></title>

@@ -66,6 +66,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
 <html lang="en">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -159,11 +160,9 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     </form>
 
 
-    <script src="https://www.paypal.com/sdk/js?client-id=Ad-k2bukRixHHQ6YLq08lkeobaQU8EJtuiiW6vuuthWJIOdqEpUlpz73mKZBxU_pvTPy9q086XgtFw2d&disable-funding=credit,card&currency=USD">
-        
-
-// Live Id = AVfNiFu9M4brh84SlYmeHtHJCtdjW1CUmWl5T0wLsU2JOm6VNB6pCRcxi8zKxBbCO9p0t54pPtF65Tim
-        
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=Ad-k2bukRixHHQ6YLq08lkeobaQU8EJtuiiW6vuuthWJIOdqEpUlpz73mKZBxU_pvTPy9q086XgtFw2d&disable-funding=credit,card&currency=USD">
+    // Live Id = AVfNiFu9M4brh84SlYmeHtHJCtdjW1CUmWl5T0wLsU2JOm6VNB6pCRcxi8zKxBbCO9p0t54pPtF65Tim
     </script>
     <!-- <script>paypal.Buttons().rander('#paypal-payment-button');</script> -->
     <script>
@@ -175,7 +174,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     let form = document.getElementById('send-data');
 
 
-    
+
 
     paypal.Buttons({
         style: {
@@ -205,7 +204,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
             });
         },
         onCancel: function(data) {
-            
+
             // console.log(data);
             sessionStorage.setItem('orderStatus', 'Cancled');
             if (sessionStorage.getItem('orderStatus') == 'Cancled') {

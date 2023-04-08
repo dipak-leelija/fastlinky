@@ -51,6 +51,7 @@ $typeM		= $utility->returnGetVar('typeM','');
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Payment Error - Order can not be processed</title>
     <link rel="stylesheet" href="<?php echo URL ?>style/ansysoft.css" type="text/css" />

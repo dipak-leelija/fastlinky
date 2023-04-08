@@ -43,6 +43,7 @@ $return_url		= "";
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login with <?php echo COMPANY_S; ?></title>
@@ -67,9 +68,11 @@ $return_url		= "";
         border: none;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
-.required-field{
-    color:  var(--black) !important;
-}
+
+    .required-field {
+        color: var(--black) !important;
+    }
+
     div.stars {
         display: flex;
         margin: auto;
@@ -85,7 +88,7 @@ $return_url		= "";
         padding: 2px 8px 0px !important;
         font-size: 30px;
         /* color: #4A148C; */
-        color:  var(--mustard) !important;
+        color: var(--mustard) !important;
         transition: all .2s;
     }
 
@@ -150,92 +153,98 @@ $return_url		= "";
 
         <div class="auto-popup-feedback">
             <div>
-            <div class="card feedback-main-card">
-                <div class="text-end">
-                    <i id="close" class="fa-sharp fa-solid fa-circle-xmark closing-icon pt-2"></i>
-                </div>
-                <div class="row no-gutters  m-auto">
-                    <div class="col pt-1">
-                        <form method="post" class="contact-form needs-validation" novalidate>
-                            <div class="row">
-                                <div class="col-sm-12 mb-0">
-                                    <div class="form-group">
-                                        <label class="required-field" for="firstname">How Satisfied were you with
-                                            your recent visit in the following areas?</label>
-                                        <div class="stars">
-                                            <form action="">
-                                                <div>
-                                                    <input class="star star-5" id="star-5" type="radio" name="star" />
-                                                    <label class="star star-5" for="star-5"></label>
-                                                    <input class="star star-4" id="star-4" type="radio" name="star" />
-                                                    <label class="star star-4" for="star-4"></label>
-                                                    <input class="star star-3" id="star-3" type="radio" name="star" />
-                                                    <label class="star star-3" for="star-3"></label>
-                                                    <input class="star star-2" id="star-2" type="radio" name="star" />
-                                                    <label class="star star-2" for="star-2"></label>
-                                                    <input class="star star-1" id="star-1" type="radio" name="star" />
-                                                    <label class="star star-1" for="star-1"></label>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 mb-0">
-                                    <div class="form-group">
-                                        <label class="required-field" for="firstname">Full Name</label>
-                                        <input type="text" minlength="4" class="form-control" id="firstname"
-                                            name="firstname" placeholder="John" required>
-                                        <div class="invalid-feedback">
-                                            Please Enter your first Name!
-                                        </div>
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-12 mb-0">
-                                    <div class="form-group">
-                                        <label class="required-field" for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email"
-                                            placeholder="example@gmail.com" required>
-                                        <div class="invalid-feedback">
-                                            Please enter your email!
-                                        </div>
-                                        <div class="valid-feedback">
-                                            Email is valid!
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 mb-0">
-                                    <div class="form-group">
-                                        <label class="required-field" for="message">What feature can we add to
-                                            improve?</label>
-                                        <textarea class="form-control mb-0" minlength="10" id="message" name="message"
-                                            rows="2" placeholder="Hi there, I would like to....." required></textarea>
-                                        <div class="invalid-feedback">
-                                            Please enter your queries!
-                                        </div>
-                                        <div class="valid-feedback">
-                                            We will solve this soon!
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 mb-0 submit-divclass text-center">
-                                    <a href="/">
-
-                                        <button class="my-buttons-hover bn21">Submit <i class="fas fa-comments"
-                                                style="font-size: 1.2rem;"></i></button>
-                                    </a>
-                                </div>
-                            </div>
-                        </form>
+                <div class="card feedback-main-card">
+                    <div class="text-end">
+                        <i id="close" class="fa-sharp fa-solid fa-circle-xmark closing-icon pt-2"></i>
                     </div>
+                    <div class="row no-gutters  m-auto">
+                        <div class="col pt-1">
+                            <form method="post" class="contact-form needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-sm-12 mb-0">
+                                        <div class="form-group">
+                                            <label class="required-field" for="firstname">How Satisfied were you with
+                                                your recent visit in the following areas?</label>
+                                            <div class="stars">
+                                                <form action="">
+                                                    <div>
+                                                        <input class="star star-5" id="star-5" type="radio"
+                                                            name="star" />
+                                                        <label class="star star-5" for="star-5"></label>
+                                                        <input class="star star-4" id="star-4" type="radio"
+                                                            name="star" />
+                                                        <label class="star star-4" for="star-4"></label>
+                                                        <input class="star star-3" id="star-3" type="radio"
+                                                            name="star" />
+                                                        <label class="star star-3" for="star-3"></label>
+                                                        <input class="star star-2" id="star-2" type="radio"
+                                                            name="star" />
+                                                        <label class="star star-2" for="star-2"></label>
+                                                        <input class="star star-1" id="star-1" type="radio"
+                                                            name="star" />
+                                                        <label class="star star-1" for="star-1"></label>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 mb-0">
+                                        <div class="form-group">
+                                            <label class="required-field" for="firstname">Full Name</label>
+                                            <input type="text" minlength="4" class="form-control" id="firstname"
+                                                name="firstname" placeholder="John" required>
+                                            <div class="invalid-feedback">
+                                                Please Enter your first Name!
+                                            </div>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <div class="col-sm-12 mb-0">
+                                        <div class="form-group">
+                                            <label class="required-field" for="email">Email</label>
+                                            <input type="email" class="form-control" id="email" name="email"
+                                                placeholder="example@gmail.com" required>
+                                            <div class="invalid-feedback">
+                                                Please enter your email!
+                                            </div>
+                                            <div class="valid-feedback">
+                                                Email is valid!
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 mb-0">
+                                        <div class="form-group">
+                                            <label class="required-field" for="message">What feature can we add to
+                                                improve?</label>
+                                            <textarea class="form-control mb-0" minlength="10" id="message"
+                                                name="message" rows="2" placeholder="Hi there, I would like to....."
+                                                required></textarea>
+                                            <div class="invalid-feedback">
+                                                Please enter your queries!
+                                            </div>
+                                            <div class="valid-feedback">
+                                                We will solve this soon!
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 mb-0 submit-divclass text-center">
+                                        <a href="/">
+
+                                            <button class="my-buttons-hover bn21">Submit <i class="fas fa-comments"
+                                                    style="font-size: 1.2rem;"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-            </div>
-            
+
         </div>
     </div>
 

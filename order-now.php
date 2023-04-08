@@ -83,6 +83,7 @@ if (isset($_SESSION['order-data'])) {
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $wishListsingleData[0]; ?> - Order | <?php echo COMPANY_S; ?></title>

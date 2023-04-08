@@ -1,2 +1,25 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /_config/
+Disallow: /admin/
+Disallow: /ajax/
+Disallow: /bootstrap/
+Disallow: /cheakout/
+Disallow: /classes/
+Disallow: /css/
+Disallow: /database-backup/
+Disallow: /db/
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /includes/
+Disallow: /mail-sending/
+Disallow: /mail-temp/
+Disallow: /mail-templates/
+Disallow: /partials/
+Disallow: /payments/
+Disallow: /plugins/
+Disallow: /style/
+Disallow: /tools/
+Disallow: /webfonts/
+
+

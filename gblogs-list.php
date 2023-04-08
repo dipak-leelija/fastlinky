@@ -38,21 +38,12 @@ $blogDtls		= $blogMst->ShowUserBlogData($cusDtl[0][2]);
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Guest posting Blogs List| :: <?php echo COMPANY_S; ?></title>
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
-
-    <!-- <script>
-    addEventListener("load", function() {
-        setTimeout(hideURLbar, 0);
-    }, false);
-
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    }
-    </script> -->
 
     <!-- Bootstrap Core CSS -->
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
@@ -92,14 +83,15 @@ $blogDtls		= $blogMst->ShowUserBlogData($cusDtl[0][2]);
 
                         </div>
                         <div class="col-md-9  ps-md-0 display-table-cell v-align ">
-                    
+
                             <div class="col-md-12 col-sm-12  display-table-cell v-align ">
                                 <!--Content sec start-->
                                 <div class="features your_blog_lists" id="features">
                                     <!--Features Content start-->
                                     <div class="wrap">
                                         <!--Wrap start-->
-                                        <h2 class="title color-blue font-weight-bold text-center text-uppercase pb-3 pt-3 pt-md-0">
+                                        <h2
+                                            class="title color-blue font-weight-bold text-center text-uppercase pb-3 pt-3 pt-md-0">
                                             Your Blogs List</h2>
 
                                         <div class="features_grids table-responsive">
@@ -191,7 +183,7 @@ $blogDtls		= $blogMst->ShowUserBlogData($cusDtl[0][2]);
                                 </div>
                                 <!--Features Content end-->
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>

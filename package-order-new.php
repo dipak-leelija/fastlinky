@@ -38,16 +38,7 @@ $faqs		    = new faqs();
 $typeM		= $utility->returnGetVar('typeM','');
 //user id
 $cusId		= $utility->returnSess('userid', 0);
-
-
-// if(isset($_GET['seo_url'])){
-	//  $seo_url			  		= $_GET['seo_url'];
-	// $return_url 	= base64_decode($_GET["return_url"]); //get return url
-// }
-
-$packages = $GPPackage->packDetailsByCat(1);
-// print_r($packages);
-// exit;
+$packages   = $GPPackage->packDetailsByCat(1);
 
 ?>
 
@@ -55,14 +46,12 @@ $packages = $GPPackage->packDetailsByCat(1);
 <html lang="zxx">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/logo/favicon.png" type="image/png">
     <title>Managed Link Building, Blogger Outreach: <?php echo COMPANY_S; ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="LeeLija provided Guest Post Service at reasonable prices on fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement  or more." />
-    <meta charset="utf-8">
-    <meta name="keywords"
-        content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
+    
 
 
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
