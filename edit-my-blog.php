@@ -1,4 +1,3 @@
-
 <?php
 require_once("includes/constant.inc.php");
 session_start();
@@ -97,6 +96,7 @@ if(isset($_POST['btnEditDomain']))
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Domain name with website or blogs ready for you | Domains :: w3layouts</title>
@@ -124,7 +124,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     <link href="css/leelija.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
     <link href="css/custom.css" rel='stylesheet' type='text/css' />
-	<link href="css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <!-- font-awesome icons -->
     <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
     <!-- //Custom Theme files -->

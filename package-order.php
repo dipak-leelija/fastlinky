@@ -136,6 +136,7 @@ query_posts('showposts=3');
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH; ?>" />
 
@@ -280,7 +281,7 @@ query_posts('showposts=3');
                         <div class="ifloggedIn">
                             <p class="price-box-title text-center billing-head">Billing Details</p>
 
-                            <form action="" method="post" id="billingForm" >
+                            <form action="" method="post" id="billingForm">
 
                                 <input type="hidden" name="btnSubmit" value="paypalData">
                                 <input type="hidden" name="paymentData" id="paymentData" value="">
@@ -300,7 +301,8 @@ query_posts('showposts=3');
                                 <div class="form-group">
                                     <label for="">Contact</label>
                                     <input type="number" name="contact-no" id="contact-no"
-                                        value="<?php if(!empty($cusDtl)){ echo $cusDtl[0][32]; }?>" class="form-control" maxlength="10" minlength="10">
+                                        value="<?php if(!empty($cusDtl)){ echo $cusDtl[0][32]; }?>" class="form-control"
+                                        maxlength="10" minlength="10">
                                     <p class="blnkReg text-danger" id="noContact"></p>
                                 </div>
 
@@ -504,7 +506,7 @@ query_posts('showposts=3');
             // alert(num.length);
             if (num.length < 10) {
                 $("#noContact").html("Please verify the length");
-            }else{
+            } else {
 
                 $("#noContact").css("display", "none");
             }
@@ -580,11 +582,10 @@ query_posts('showposts=3');
 
 
     <script
-        src="https://www.paypal.com/sdk/js?client-id=Ad-k2bukRixHHQ6YLq08lkeobaQU8EJtuiiW6vuuthWJIOdqEpUlpz73mKZBxU_pvTPy9q086XgtFw2d&disable-funding=credit,card&currency=USD" data-sdk-integration-source="button-factory">
-    
+        src="https://www.paypal.com/sdk/js?client-id=Ad-k2bukRixHHQ6YLq08lkeobaQU8EJtuiiW6vuuthWJIOdqEpUlpz73mKZBxU_pvTPy9q086XgtFw2d&disable-funding=credit,card&currency=USD"
+        data-sdk-integration-source="button-factory">
     //  Sandbox: Key Ad-k2bukRixHHQ6YLq08lkeobaQU8EJtuiiW6vuuthWJIOdqEpUlpz73mKZBxU_pvTPy9q086XgtFw2d
     // LiveKey: AVfNiFu9M4brh84SlYmeHtHJCtdjW1CUmWl5T0wLsU2JOm6VNB6pCRcxi8zKxBbCO9p0t54pPtF65Tim
-
     </script>
     <script>
     let totalAmount = document.getElementById('singlePackagePrice').innerText;

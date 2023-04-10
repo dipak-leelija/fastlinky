@@ -53,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
@@ -185,7 +186,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                     class="item-details d-flex flex-column">
                                                     <p class="pricing-title"><?php echo $packFullName;?> (5 Links)</p>
                                                     <ul class="">
-                                                        <li> <strong><?php echo $eachPack['blog_post'];?> Per Month</strong> </li>
+                                                        <li> <strong><?php echo $eachPack['blog_post'];?> Per
+                                                                Month</strong> </li>
                                                         <?php
                                                         foreach ($features as $eachfeature) {
                                                             echo '<li>'. $eachfeature['features'].'</li>';

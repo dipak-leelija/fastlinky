@@ -37,9 +37,10 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
 
 ?>
 <!DOCTYPE HTML>
-<html lang="zxx">
+<html lang="en">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Orders | <?php echo COMPANY_S; ?></title>
@@ -183,8 +184,9 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                         <div class="p-textdiv-card">
                                             <a href="guest-post-article-submit.php?order=<?php echo base64_encode(urlencode($order['order_id'])); ?>"
                                                 class="text-dark">
-                                                <h3 class="product-title maining-title"> <span class="order-md-1 order-2 "><?php echo $order['clientOrderedSite']; ?></span>
-                                                    
+                                                <h3 class="product-title maining-title"> <span
+                                                        class="order-md-1 order-2 "><?php echo $order['clientOrderedSite']; ?></span>
+
                                                     <span
                                                         class="badge fs_p8 order-md-2 order-1 <?php echo $status[0]['orders_status_name'];?>"><?php echo $status[0]['orders_status_name'];?></span>
                                                 </h3>
@@ -193,7 +195,8 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                                         <b>
                                                             ORDER ID
                                                         </b>
-                                                        : #<?php echo $order['order_id'].'<b> || </b>'.$DateUtil->dateTimeNum2($order['added_on'], '-'); ?>
+                                                        :
+                                                        #<?php echo $order['order_id'].'<b> || </b>'.$DateUtil->dateTimeNum2($order['added_on'], '-'); ?>
                                                     </small>
                                                 </div>
 
@@ -256,4 +259,5 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
         <script src="<?php echo URL;?>/js/customerSwitchMode.js"></script>
 
 </body>
+
 </html>

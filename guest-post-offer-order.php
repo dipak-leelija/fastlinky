@@ -57,6 +57,7 @@ query_posts('showposts=3');
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <link rel="icon" href="images/logo/favicon.png" type="image/png">
     <title>Blogger Outreach Services, Guest Post Service: <?php echo COMPANY_S; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -51,22 +51,14 @@ $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
 
 ?>
 <!DOCTYPE HTML>
-<html lang="zxx">
+<html lang="en">
 
 <head>
-    <title>User Dashboard | Dashboard :: <?php echo COMPANY_S; ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
-    <script>
-    addEventListener("load", function() {
-        setTimeout(hideURLbar, 0);
-    }, false);
-
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    }
-    </script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Dashboard | Dashboard :: <?php echo COMPANY_S; ?></title>
+    
     <!-- Bootstrap Core CSS -->
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />

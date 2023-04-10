@@ -83,7 +83,7 @@ query_posts('showposts=3');
 <html lang="zxx">
 
 <head>
-
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Guest Post Offers Service, Blogger Outreach Services - <?php echo COMPANY_S; ?></title>
@@ -386,7 +386,7 @@ query_posts('showposts=3');
     <!-- Frequently Asked Questions ends -->
     <!-- ================================================================================================ -->
 
-   <!-- --------------------------------------- -->
+    <!-- --------------------------------------- -->
     <!-- feedback form -->
     <?php require_once "partials/feedback.php"; ?>
     <!-- feedback form -->

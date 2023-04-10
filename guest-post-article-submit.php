@@ -47,6 +47,7 @@ $thisPage =  $utility->currentUrl();
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Order Details | <?php echo COMPANY_S; ?></title>
@@ -185,7 +186,7 @@ if (isset($_POST['changesReq'])) {
 
                         </div>
                         <div class="col-md-9 ps-md-0 display-table-cell v-align ">
-                            <div class="div-border-css" >
+                            <div class="div-border-css">
                                 <!-- Details section Start  -->
                                 <div class="p-3 p-kage-de-tails">
                                     <div class="row">

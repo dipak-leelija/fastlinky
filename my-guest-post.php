@@ -50,6 +50,7 @@ require_once ROOT_DIR."/includes/check-seller-login.inc.php";
 <html lang="zxx">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>All Orders | <?php echo COMPANY_S; ?></title>
@@ -86,6 +87,7 @@ require_once ROOT_DIR."/includes/check-seller-login.inc.php";
     }
     </style>
 </head>
+
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="home">
         <!-- header -->

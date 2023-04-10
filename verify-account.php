@@ -96,12 +96,12 @@ if (isset($_GET['verify'])) {
 
                     if(session_status() !== PHP_SESSION_ACTIVE){
                         session_start();
-                        $_SESSION[PACK_ORD] = array($action);
+                        $_SESSION[PACK_ORD] = array($actionId);
                     }else{
-                        $_SESSION[PACK_ORD] = array($action);
+                        $_SESSION[PACK_ORD] = array($actionId);
                     }
                     
-                    $LogIn->validate($cusdata['email'], $x_password, 'email', 'password', 'customer', 'packages-summary.php');
+                    $Login->validate($cusdata['email'], $x_password, 'email', 'password', 'customer', 'packages-summary.php');
                 } 
             }
         }
@@ -113,9 +113,10 @@ if (isset($_GET['verify'])) {
 
 ?>
 <!DOCTYPE HTML>
-<html lang="zxx">
+<html lang="en">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Verification Status - <?php echo COMPANY_S; ?></title>
@@ -151,7 +152,8 @@ if (isset($_GET['verify'])) {
                                 </div>
 
                                 <h1 class=""> Your Account is Verified!</h1>
-                                <p class="">Congratulations! Now you can <a href="<?php echo URL; ?>/login">Login</a> to your Account.
+                                <p class="">Congratulations! Now you can <a href="<?php echo URL; ?>/login">Login</a> to
+                                    your Account.
                                     If you need any kind of help, feel free to Contact <a class="" style="color: coral;"
                                         href="contact.php"><?php echo COMPANY_FULL_NAME?></a>
                                 </p>
@@ -161,9 +163,11 @@ if (isset($_GET['verify'])) {
                                 <div class=" mt-5 text-center">
                                     <img class="pending-img" src="<?php echo URL; ?>/images/icons/error.png">
                                 </div>
-                                
+
                                 <h1 class=""> Failed to Verify!</h1>
-                                <p class="">Sorry! We can not verify your account, please try to verify again or Contact <a class="" style="color: coral;" href="<?php echo URL; ?>/contact"><?php echo COMPANY_FULL_NAME?></a>
+                                <p class="">Sorry! We can not verify your account, please try to verify again or Contact
+                                    <a class="" style="color: coral;"
+                                        href="<?php echo URL; ?>/contact"><?php echo COMPANY_FULL_NAME?></a>
                                 </p>
                                 <?php
                                 echo '<p class="text-center">'.$errorMsg.'<p>';
