@@ -10,7 +10,7 @@
                         $cusDtl			= $customer->getCustomerData($cusId);
                         echo "Hi, ".$cusDtl[0][5];
                     }else {
-                        echo SITE_EMAIL;
+                        echo INFO_MAIL;
                     }
                 ?>
             </div>
