@@ -3,6 +3,10 @@ const reloadPage = () =>{
     location.reload();
 }
 
+const goback = () =>{
+    history.back()
+}
+
 //delete an html eliment by id
 const deleteElement = (elemId) =>{
     document.getElementById(elemId).remove();

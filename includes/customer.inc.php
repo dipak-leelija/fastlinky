@@ -5,9 +5,6 @@
 	define('ERCUST201', " Customer name is empty");
 	define('ERCUST202', " No Customer has been added so far.");
 	
-	
-	
-	
 	//define('ERCUST203', " category name is empty");
 	
 	
@@ -20,6 +17,10 @@
 	define('ERCUST301', " category has content, please delete the content before deleting the category ");
 	define('ERCUST302', " category has subcategory(ies), please delete the subcategory(ies) before deleting the category");
 					
+	
+
+	################################## SUCCESS CONSTANTS ##################################
+
 	
 	define('SUCUST201', " Customer name has been entered.");
 	define('SUCUST202', " The Customer Has been Updated");

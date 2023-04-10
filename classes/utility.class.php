@@ -2862,22 +2862,19 @@ class Utility extends DatabaseConnection{
 		$query		= $this->conn->query($select);
 		$rows 		= $query->num_rows;
 		
-		if($rows > 0)
-		{
-			while($result	= 	$query->fetch_array())
-			{
+		if($rows > 0){
+
+			while($result	= 	$query->fetch_array()){
+				
 				$data_id	= $result[$idColumn];
-				if($data_id == $selected)
-				{
+				
+				if($data_id == $selected){
 					$select_string = 'selected';
-				}
-				else
-				{
+				}else{
 					$select_string = '';
 				}
 				
-				echo "<option value='".$data_id."' class='menuText' ".$select_string.">".
-				$result[$populate]."</option>";
+				echo "<option value='".$data_id."' ".$select_string.">".$result[$populate]."</option>";
 				
 			}
 		}	
@@ -2940,7 +2937,6 @@ class Utility extends DatabaseConnection{
 
 		$select		= "SELECT * FROM ".$table." WHERE ".$foreign_key." = ".$key_value.
 		" ORDER BY ".$populate."";
-		// echo $select;
 		// exit;
 		$query		= $this->conn->query($select);
 		
