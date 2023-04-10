@@ -45,44 +45,71 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <?php require_once "partials/navbar.php"; ?>
     <!--____________________________________________________________________________________________ -->
     <!-- Cannabis Backlinks main banner starting -->
-    <section class="managed-link-building-main-banner">
-        <div class="container mlb-main-cntainer">
-            <div class="row mlb-main-start-row">
-                <div class="col-12 col-lg-5 col-md-5  p-2 p-md-0">
+    <section class="cannabis-back-banner">
+        <div class="">
+            <div class="row m-auto w-100">
+                
+                <div class="col-12 col-lg-6 col-md-7  px-0 px-md-4">
                     <div class="">
-                        <img src="./images/freepik-img/cannabis-banner.png" class="w-100" alt="">
-                    </div>
-                </div>
-                <div class="col-12 col-lg-7 col-md-7  px-0 px-md-4">
-                    <div class="mlb-wrapping">
                         <h1 class="mlb-starting-main-h1">Link building services for <span>cannabis & CBD </span> website
                             SEO</h1>
-                        <p class=" mt-5 mb-4 py-0 py-md-2 mlb-starting-main-p">Rank top on the SERP, manage certified
+                        <p class=" mt-2 mb-4 py-0 py-md-2 mlb-starting-main-p">Rank top on the SERP, manage certified
                             traffic to your website, get powerful backlinks for <b>cannabis and CBD link-building
                                 services</b> ,
                             and attention to our website. We promote effective <b>CBD link-building services</b> .
                         </p>
-                        <!-- <div>
-                            <ul>
-                                <li class="tick-check"> &#10004; <b class="tick-check-p">We are the one-stop solution
-                                        with <br> cannabis and CBD link-building services.
-                                    </b> </li>
-
-                            </ul>
-                        </div> -->
-                        <div class=" buttonsinfo mt-5 mb-0">
+                        <div class=" buttonsinfo mt-3 mb-0">
                             <a href="#pricing-cards">
                                 <button type="button" class="btn managed-link-btn ">Get Started</button>
                             </a>
                         </div>
                     </div>
                 </div>
-
+                <div class="col-12 col-lg-6 col-md-5  px-2 p-md-0">
+                    <div class="">
+                        <img src="./images/freepik-img/cannabis-banner.png" class="w-100" alt="">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     <!-- end of Cannabis Backlinks main banner -->
     <!-- --------------------------------------------------------------------------------------------- -->
+        <!-- Cannabis & CBD Link Building Service starts -->
+    <!-- _________________________________________________________________________________________________ -->
+
+    <section class="lbs-actually-matters-main">
+        <div class="row">
+            <div class="col-xl-6 col-md-6 m-auto text-center">
+                <div class="">
+                    <div>
+                        <img src="./images/freepik-img/cbd-services.png" class=" w-100  mb-4 " alt="">
+                    </div>
+                </div>
+            </div>
+            <div class=" col-xl-6 col-md-6">
+                <h1 class="cannabis-cbd-service-h1 ">Cannabis & CBD <br>
+                    <span>link building service</span>
+                </h1>
+                <p class="mb-5">With an enlarged number of hemp businesses and connected products, <b>Cannabis</b> is
+                    the
+                    fastest growing business in highly competitive, all over the world. </p>
+
+
+                <div class=" buttonsinfo mt-3">
+                    <a href="#pricing-cards">
+                        <button type="button" class="btn managed-link-btn ">View Pricing</button>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- Cannabis & CBD Link Building Service ends -->
+    <!-- _________________________________________________________________________________________________ -->
     <!-- _______________________________________________________________________________________________ -->
     <!-- Collaboration opportunity-cb start -->
 
@@ -124,45 +151,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     </section>
     <!-- Collaboration opportunity-cb ends -->
     <!-- _________________________________________________________________________________________________ -->
-
-
-    <!-- Cannabis & CBD Link Building Service starts -->
-    <!-- _________________________________________________________________________________________________ -->
-
-    <section class="lbs-actually-matters-main">
-        <div class="row">
-            <div class="col-xl-6 col-md-6 m-auto text-center">
-                <div class="">
-                    <div>
-                        <img src="./images/freepik-img/cbd-services.png" class=" w-100  mb-4 " alt="">
-                    </div>
-                </div>
-            </div>
-            <div class=" col-xl-6 col-md-6">
-                <h1 class="cannabis-cbd-service-h1 ">Cannabis & CBD <br>
-                    <span>link building service</span>
-                </h1>
-                <p class="mb-5">With an enlarged number of hemp businesses and connected products, <b>Cannabis</b> is
-                    the
-                    fastest growing business in highly competitive, all over the world. </p>
-
-
-                <div class=" buttonsinfo mt-3">
-                    <a href="#pricing-cards">
-                        <button type="button" class="btn managed-link-btn ">View Pricing</button>
-                    </a>
-                </div>
-            </div>
-
-
-        </div>
-
-    </section>
-
-    <!-- Cannabis & CBD Link Building Service ends -->
-    <!-- _________________________________________________________________________________________________ -->
-
-
     <!--========= Cannabis Link Building Or Regular Link Building-  Start =========-->
     <section class="cannabis-clb-rlb-section">
         <div class="cannabis-clb-rlb-main-div ">
@@ -251,8 +239,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="mt-sm-5 mt-0">
         <h1 class="text-center pricing-bo-h1 mb-3 px-2">Cannabis backlinks pricing
         </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
-            DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as  per DA,
+            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>

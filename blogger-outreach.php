@@ -193,7 +193,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="row w-100 m-auto">
                         <div class="col-md-4 my-2 my-md-3">
                             <div class="card  how-it-work-f-u-card h-100">
-                                <div class="pb-3 text-center text-sm-left">
+                                <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -207,7 +207,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
                         <div class="col-md-4 my-2 my-md-3">
                             <div class="card how-it-work-f-u-card h-100">
-                                <div class="pb-3 text-center text-sm-left">
+                                <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -221,7 +221,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
                         <div class="col-md-4 my-2 my-md-3">
                             <div class="card how-it-work-f-u-card h-100">
-                                <div class="pb-3 text-center text-sm-left">
+                                <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -234,7 +234,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
                         <div class="col-md-4 my-2 my-md-3">
                             <div class="card how-it-work-f-u-card h-100">
-                                <div class="pb-3 text-center text-sm-left">
+                                <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -247,7 +247,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                       
                         <div class="col-md-4 my-2 my-md-3">
                             <div class="card how-it-work-f-u-card h-100">
-                                <div class=" pb-3 text-center text-sm-left">
+                                <div class=" pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -261,7 +261,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
                         <div class="col-md-4 my-2 my-md-3 ">
                             <div class="card how-it-work-f-u-card h-100">
-                                <div class=" pb-3 text-center text-sm-left">
+                                <div class=" pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -361,7 +361,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- AMAZING-blogger-outreach-section end -->
     <!-- _________________________________________________________________________________ -->
     <!-- ==================== Does-Blogger-Outreach Work For You starts ============================ -->
-    <section class="works-for-you-bo-section">
+    <section class="works-for-you-bo-section py-0">
         <div class="custom-cntainr">
             <div>
                 <h2 class=" text-center mt-4 my-3 works-bo-h2">How Does Blogger Outreach Service <span> Improve Your
@@ -371,7 +371,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 <div class="row w-100 m-auto">
                     <div class="col-md-4 my-2 my-md-3">
                         <div class="card works-for-u-card h-100">
-                            <div class="pb-3 text-center text-sm-left">
+                            <div class="pb-3 text-center text-sm-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
@@ -386,7 +386,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                     <div class="col-md-4 my-2 my-md-3">
                         <div class="card works-for-u-card h-100">
-                            <div class="pb-3 text-center text-sm-left">
+                            <div class="pb-3 text-center text-sm-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
@@ -400,7 +400,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                     <div class="col-md-4 my-2 my-md-3">
                         <div class="card works-for-u-card h-100">
-                            <div class=" pb-3 text-center text-sm-left">
+                            <div class=" pb-3 text-center text-sm-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
@@ -472,8 +472,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 mt-5">Blogger Outreach Pricing
         </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
-            DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>
@@ -483,12 +483,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- ------------------------------------------- -->
     <!-- _________________________________________________________________________________ -->
     <!-- ==================== Does-Blogger-Outreach Work For You starts ============================ -->
-    <section class="works-for-you-bo-section">
-        <div class="">
-
+    <section class="works-for-you-bo-section py-0">
+        <div class="custom-cntainr">
             <div class="how-its-wrok-bo-main-div">
-
-
                 <div>
                     <h1 class=" text-center mt-4 my-3 works-bo-h2">How Does <span>The FastLinky Blogger Outreach Service
                         </span>Work?</h1>
@@ -500,10 +497,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </p>
                 <div class="works-f-u-main-card-div">
                     <div class="row w-100 m-auto">
-                        <div class="col-md-4 col-xl-4">
-                            <div class="card  how-it-work-f-u-card">
-
-                                <div class="pb-3 text-center text-sm-left">
+                        <div class="col-md-4 my-2 my-md-3">
+                            <div class="card  how-it-work-f-u-card h-100">
+                                <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -513,15 +509,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     ways to drive relevant traffic to your website. We make sure you receive the best
                                     blogs and the proper link placements. .
                                 </p>
-
                             </div>
-
                         </div>
-
-                        <div class="col-md-4 col-xl-4">
-                            <div class="card how-it-work-f-u-card">
-
-                                <div class="pb-3 text-center text-sm-left">
+                        <div class="col-md-4 my-2 my-md-3">
+                            <div class="card how-it-work-f-u-card h-100">
+                                <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -530,15 +522,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     We aim to create permanent links for you with selected admin,publishers that are
                                     well-established in your domain.We relieve you of such a load, despite the fact that
                                     it could be a difficult job. </p>
-
                             </div>
-
                         </div>
-
-                        <div class="col-md-4 col-xl-4">
-                            <div class="card how-it-work-f-u-card">
-
-                                <div class=" pb-3 text-center text-sm-left">
+                        <div class="col-md-4 my-2 my-md-3">
+                            <div class="card how-it-work-f-u-card h-100">
+                                <div class=" pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -548,14 +536,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     creative content ideas, recommend them to the authors of those blogs, and keep you
                                     informed of any advances. This is done with consideration for the entire blogger
                                     outreach service. </p>
-
                             </div>
-
                         </div>
-                        <div class="col-md-4 col-xl-4">
-                            <div class="card how-it-work-f-u-card">
-
-                                <div class="pb-3 text-center text-sm-left">
+                        <div class="col-md-4 my-2 my-md-3">
+                            <div class="card how-it-work-f-u-card h-100">
+                                <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -565,15 +550,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     intended to be promotional and can be seamlessly incorporated into any production.
                                     Many blogs with high Page Authority quickly review and publish these excellent
                                     posts.</p>
-
                             </div>
-
                         </div>
-
-                        <div class="col-md-4 col-xl-4">
-                            <div class="card how-it-work-f-u-card">
-
-                                <div class="pb-3 text-center text-sm-left">
+                        <div class="col-md-4  my-2 my-md-3">
+                            <div class="card how-it-work-f-u-card h-100">
+                                <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -582,15 +563,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     We offer custom outreach services for clients with genre-specific conditions to get
                                     links to blogs that support their tasks and vision.
                                 </p>
-
                             </div>
-
                         </div>
-
-                        <div class="col-md-4 col-xl-4 ">
-                            <div class="card how-it-work-f-u-card">
-
-                                <div class=" pb-3 text-center text-sm-left">
+                        <div class="col-md-4 my-2 my-md-3">
+                            <div class="card how-it-work-f-u-card h-100">
+                                <div class=" pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -600,7 +577,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     paying attention to quality and deadlines. You receive reports that are
                                     white-labeled for your clients, and as a result, you own the links that we create.
                                 </p>
-
                             </div>
                         </div>
                     </div>
