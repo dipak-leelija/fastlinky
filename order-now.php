@@ -167,13 +167,20 @@ if (isset($_SESSION['order-data'])) {
                             <!-- contentPlacement start here -->
                             <div class="contentPlacement">
                                 <form method="post" id="orderForm" name="contentPlacementForm">
+
+                                   
+
+                                   
                                     <div class="form-group">
-                                        <label for="">Your Content<span class="warning">*</span> (Must be a minimum of
+                                        <label for="">Your Content<span class="warning">*</span> (Must be a minimum
+                                            of
                                             500 words) Don't have a content, get one here
-                                            Place your content here. In your content, you can include up to 2 links They
+                                            Place your content here. In your content, you can include up to 2 links
+                                            They
                                             can be in the form of URLs and anchors. In the "URL" and "Anchor text"
                                             fields below,
-                                            please insert the same URLs and anchors. <span class="warning">(Don't add
+                                            please insert the same URLs and anchors. <span class="warning">(Don't
+                                                add
                                                 any images in your article)</span></label>
                                         <div class="form-group">
                                             <textarea class="form-control" name="clientContent1" id="" rows="9"
@@ -192,11 +199,13 @@ if (isset($_SESSION['order-data'])) {
                                     <div class="form-group">
                                         <label for="clientAnchorText1">
                                             <h5>Anchor Text<span class="warning"> *</span></h5>
-                                            <p> Enter the anchor text that you have included in your content above.</p>
+                                            <p> Enter the anchor text that you have included in your content above.
+                                            </p>
                                         </label>
                                         <input type="text" class="form-control" placeholder="Enter Your Anchor Text"
                                             name="clientAnchorText1" value="<?php echo $SESSclientAnchorText; ?>">
                                     </div>
+
                                     <div class="form-group">
                                         <label for="clientRequirement1">
                                             <h5>Special requirements</h5>
@@ -437,6 +446,13 @@ if (isset($_SESSION['order-data'])) {
         document.getElementById("tid2").value = d;
     };
     </script>
+
+    <!-- <script>
+    function hideTextfields() {
+        var element = document.getElementById("mytextfields_group");
+        element.style.display = "none";
+    }
+    </script> -->
 </body>
 
 </html>
