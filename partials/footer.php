@@ -372,7 +372,7 @@ footer .thumb-content ::before {
                                 </div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="<?php echo URL; ?>">&nbsp;Privacy Policy</a></div>
+                                <div class="thumb-content"><a href="<?php echo URL; ?>/privacy-policy">&nbsp;Privacy Policy</a></div>
                             </li>
                             <li>
                                 <div class="thumb-content"><a href="<?php echo URL; ?>">&nbsp;Terms of Use</a></div>

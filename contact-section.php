@@ -94,10 +94,10 @@
                             <div class="col-sm-12 mb-3">
                                 <div class="form-group">
                                     <label class="required-field" for="message">How can we help?</label>
-                                    <textarea class="form-control" minlength="10" id="message" name="message" rows="4"
+                                    <textarea class="form-control" minlength="255" id="message" name="message" rows="4"
                                         placeholder="Write here....." required></textarea>
                                     <div class="invalid-feedback">
-                                        Please enter your queries!
+                                        Please enter your queries minimum 255 characters!
                                     </div>
                                 </div>
                             </div>

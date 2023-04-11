@@ -168,7 +168,7 @@ if (isset($_SESSION['order-data'])) {
                             <div class="contentPlacement">
                                 <form method="post" id="orderForm" name="contentPlacementForm">
 
-                                    <div class="mb-3">
+                                    <div class="form-group">
                                         <label for="formFile" class="form-label">
                                             <h5>Content Upload <span class="warning">*</span></h5>
                                         </label>
@@ -455,7 +455,6 @@ if (isset($_SESSION['order-data'])) {
         document.getElementById("tid2").value = d;
     };
     </script>
-    
     <script>
     function hideTextfields() {
         var element = document.getElementById("mytextfields_group");
