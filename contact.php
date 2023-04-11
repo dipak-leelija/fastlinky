@@ -72,7 +72,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
 		
 			//send email
 			$subjectEmail 	= "Contact from ".$fullName." - ". $DateUtil->todayWithTime('.');
-			$to 			= COMPANY_S. "<webtechhelp.org@gmail.com>";			
+			$to 			= COMPANY_S. "<rahulmajumdar400@gmail.com>";			
 			$from 			= $fullName. "<".$txtEmail.">";
 			
 			 
