@@ -77,18 +77,18 @@ if(isset($_GET['seo_url']))
 <body>
     <?php require_once "partials/navbar.php"; ?>
     <section class="privacy-main-banner-section">
-        <!-- 1 para -->
+        <!-- 1 para------------- Privacy Policy main headline -->
         <div>
             <h1>Privacy Policy </h1>
         </div>
-        <!-- 2 para -->
+        <!-- 2 para---------- What Kind Of Data Do We Collect? -->
         <div class="mb-3">
             <h3>What Kind Of Data Do We Collect?</h3>
             <p>Welcome to browse our website privately. At FastLinky, we receive information from you when you make an
                 order or take a consideration. Depending on the situation, you might be required to submit your name,
                 email address, or credit card information when placing an order or registering on our site. </p>
         </div>
-        <!-- 3 para -->
+        <!-- 3 para---------- What Do We Do With Your Data? -->
         <div class="mb-3">
             <h3>What Do We Do With Your Data?</h3>
             <p>The information we collect from you may be operated in one of such following ways: </p>
@@ -119,7 +119,7 @@ if(isset($_GET['seo_url']))
 
             </ul>
         </div>
-        <!-- 4 para -->
+        <!-- 4 para---- How Do We Protect Your Information? -->
         <div class="mb-3">
             <h3>How Do We Protect Your Information?</h3>
             <p>When you make an order, submit, or access your personal information, we’ll take several security measures
@@ -130,7 +130,7 @@ if(isset($_GET['seo_url']))
             <p>Your personal information—including credit card numbers, social security numbers, financial details,
                 etc.—won't be composed on our servers after a transaction. </p>
         </div>
-        <!-- 5 para -->
+        <!-- 5 para----Do We Use Cookies? -->
         <div class="mb-3">
             <h3>Do We Use Cookies?</h3>
             <p>Yes, we use cookies to remember and process the products to gather total information about site traffic
@@ -138,7 +138,7 @@ if(isset($_GET['seo_url']))
             <p>Cookies enable the website's or service provider's strategies to identify your browser and record and
                 recover particular information. </p>
         </div>
-        <!-- 6 para -->
+        <!-- 6 para---Do We Reveal Any Information To Outside Parties? -->
         <div class="mb-3">
             <h3>Do We Reveal Any Information To Outside Parties?</h3>
             <p>Your private details are never sold, traded, or otherwise transferred to irrelevant third parties.
@@ -147,24 +147,25 @@ if(isset($_GET['seo_url']))
             <p>However, user data that cannot be used to identify an individual may still be shared with third parties
                 for marketing, advertising, or other purposes. </p>
         </div>
-        <!-- 7 para -->
+        <!-- 7 para--- Your Support -->
         <div class="mb-3">
             <h3>Your Support:</h3>
             <p>Accept our internet privacy policy by using our site. </p>
         </div>
-        <!-- 8 para -->
+        <!-- 8 para---Modifications To Our Privacy Policy -->
         <div class="mb-3">
             <h3>Modifications To Our Privacy Policy:</h3>
             <p>We will update this website if we decide to make changes to our privacy policy. </p>
         </div>
-        
+
     </section>
+    <!-- 8 para--- Contact Us -->
     <div class="contact-us-privacy-section bg_mustard mb-0">
         <h3>Contact Us</h3>
-            <h4>If you have any concerns about this privacy statement,
-             please feel free to <a href="contact">contact</a>
-                us </h4>
-        </div>
+        <h4>If you have any concerns about this privacy statement,
+            please feel free to <a href="contact">contact</a>
+            us </h4>
+    </div>
     <!-- =---------------------------------------------------------------------------------------------- -->
     <!-- Footer -->
     <?php require_once "partials/footer.php"; ?>
