@@ -213,8 +213,8 @@ class Customer extends Utility{
 	*	@return string
 	*/
 	function addCusAddress($customer_id, $address1, $address2, $address3, $town, $province, $postal_code, $countries_id, 
-							$phone1, $phone2, $fax, $mobile)
-	{
+							$phone1, $phone2, $fax, $mobile){
+
 		$customer_id	= addslashes(trim($customer_id)); 
 		$address1		= addslashes(trim($address1));  
 		$town			= addslashes(trim($town)); 
@@ -235,12 +235,9 @@ class Customer extends Utility{
 		
 		
 		$result = '';
-		if(!$query)
-		{
+		if(!$query){
 			$result = 'ER101';
-		}
-		else
-		{
+		}else{
 			$result = 'SU101';
 		}
 		return $result;
@@ -271,13 +268,13 @@ class Customer extends Utility{
 	*	@return null
 	*/
 	
-	function updateCusAddress($id, $address1, $address2, $address3, $city, $state, $postal_code, $countries_id, $phone1, $phone2, $fax, $mobile){
+	function updateCusAddress($cusid, $address1, $address2, $address3, $city, $state, $postal_code, $countries_id, $phone1, $phone2, $fax, $mobile){
 		//add security
 		$address1				= addslashes(trim($address1)); 
 		$address2				= addslashes(trim($address2));
 		$address3				= addslashes(trim($address3));
 		$city					= addslashes(trim($city));
-		$state				= addslashes(trim($state)); 
+		$state					= addslashes(trim($state)); 
 		$postal_code			= addslashes(trim($postal_code));
 		$phone1					= addslashes(trim($phone1));
 		$phone2					= addslashes(trim($phone2));
@@ -292,15 +289,15 @@ class Customer extends Utility{
         			address2				 =	'$address2',																
 					address3				 =	'$address3',
 					town	            	 =	'$city',
-					province				 =	'$state',																
+					province				 =	'$state',					
 					postal_code	        	 =	'$postal_code',					
-					countries_id		     =  '$countries_id',	
-					phone1					 =  '$phone1',															
+					countries_id		     =  '$countries_id',
+					phone1					 =  '$phone1',														
         			phone2					 =	'$phone2',
 					fax				         =	'$fax',
-					mobile					 =	'$mobile'															
+					mobile					 =	'$mobile'														
 					WHERE
-			    	customer_id				 =  $id
+			    	customer_id				 =  $cusid
 					";
 				 
 				// echo $sql.mysql_error();exit;
@@ -366,6 +363,55 @@ class Customer extends Utility{
 		return $query;
 		
 	}//eof
+
+	function updateAddrDuringPackOrd($cusid, $fname, $lname, $city, $pincode, $state, $country, $mobile){
+
+		$fname		= addslashes(trim($fname));
+		$lname		= addslashes(trim($lname));
+		$city		= addslashes(trim($city));
+		$pincode	= addslashes(trim($pincode));
+		$state		= addslashes(trim($state));
+		$country	= addslashes(trim($country));
+		$mobile		= addslashes(trim($mobile));
+
+		$cusSql = "UPDATE customer 
+				SET
+				fname 				= '$fname',
+				lname 				= '$lname'
+				WHERE
+				customer_id 		= $cusid
+				";
+		
+		$query1	= $this->conn->query($cusSql);
+
+		$addrSql = "UPDATE customer_address 
+				SET
+				town			= '$city',
+				province		= '$state',
+				postal_code		= '$pincode',
+				countries_id	= '$country',
+				mobile			= '$mobile'
+				WHERE
+				customer_id 	= $cusid
+				";
+		$query2	= $this->conn->query($addrSql);
+		
+		$res = '';
+		if ($query1 == 1) {
+			if ($query2 == 1) {
+				$res = 'SUU010';
+				return $res;
+			}else {
+				$res = 'ERU300';
+				return $res;
+			}
+		}else {
+			$res = 'ERU007';
+			return $res;
+		}
+		
+		
+	}
 	
 
 	/**
@@ -492,7 +538,7 @@ class Customer extends Utility{
 				  WHERE 	customer_id  = '$cus_id'";
 				  
 		//execute query		  
-		$query	= mysql_query($sql);
+		$query	= $this->conn->query($sql);
 		
 		//make the query
 		if(!$query){
@@ -506,73 +552,7 @@ class Customer extends Utility{
 		
 	}//eof
 	
-	
-	
-	/**
-	*	Update a customer address
-	*	
-	*	@param
-	*			$cus_id		Customer id
-	*			$add1		Address 1
-	*			$add2		Address 2
-	*			$add3		Address 3
-	*			$t_id		Town id
-	*			$c_id		County id
-	*			$p_id		Province id
-	*			$p_code		Postal Code
-	*			$ph1		Phone 1
-	*			$ph2		Phone 2
-	*			$ph3		Phone 3
-	*			$fax		Fax
-	*			$mobile		Mobile phone number
-	*			$country	Country's Id
-	*
-	*	@return string
-	*/
-	
-	function updateCustomerAddr($cus_id, $add1, $add2, $add3, $cityId, $stateId, $pinCode, $ph1, $ph2, $fax, $mobile, $country){
-		$add1		= addslashes(trim($add1));
-		$add2		= addslashes(trim($add2)); 
-		$add3		= addslashes(trim($add3)); 
-		$t_id		= addslashes(trim($t_id)); 
-		$p_id		= addslashes(trim($p_id)); 
-		$p_code		= addslashes(trim($p_code)); 
-		$ph1		= addslashes(trim($ph1)); 
-		$ph2		= addslashes(trim($ph2)); 
-		$fax		= addslashes(trim($fax)); 
-		$mobile		= addslashes(trim($mobile));
-		$country	= (int)$country;
-		
-		//update directory address
-		$sql	= "UPDATE customer_address SET
-				  address1 			='$add1',
-				  address2 			='$add2',
-				  address3 			='$add3',
-				  town		 		='$cityId',				
-				  province	 		='$stateId',
-				  postal_code 		='$pinCode',
-				  phone1 			='$ph1',
-				  phone2 			='$ph2',
-				  fax 				='$fax',
-				  mobile 			='$mobile',
-				  countries_id 		='$country'
-				  WHERE 
-				  customer_id 	= '$cus_id'
-				  ";
-		$query	= $this->conn->query($sql);
-		//echo $sql.mysql_error();exit;
-		$result = '';
-		if(!$query){
-			$result = "ER102";
-		}else{
-			$result = "SU102";
-		}
-		
-		//return the result
-		return $result;
-		
-	}//eof
-	
+
 	
 	/**
 	*	Change the user password. As changing password is done by User, so he doesn't 
@@ -586,7 +566,7 @@ class Customer extends Utility{
 		//$x_password = md5_encrypt($password,USER_PASS);
 		$x_password = md5_encrypt($password,USER_PASS);
 		$update = "UPDATE customer SET password= '$x_password' WHERE customer_id='$id'";
-		$query  = mysql_query($update);
+		$query  = $this->conn->query($update);
 	}//eof
 	
 	/**
@@ -633,34 +613,34 @@ class Customer extends Utility{
 	*
 	*	@return array
 	*/
-	function getAllCustomerId()
-	{
-		//Declare array
-		$data	= array();
+	// function getAllCustomerId()
+	// {
+	// 	//Declare array
+	// 	$data	= array();
 		
-		//
-		$sql	= "SELECT 		C.customer_id 
-				   FROM 		customer C, customer_info CI
-				   WHERE		C.customer_id = CI.customer_id
-				   ORDER BY 	CI.added_on 
-				   DESC";
+	// 	//
+	// 	$sql	= "SELECT 		C.customer_id 
+	// 			   FROM 		customer C, customer_info CI
+	// 			   WHERE		C.customer_id = CI.customer_id
+	// 			   ORDER BY 	CI.added_on 
+	// 			   DESC";
 		
-		//execute query
-		$query	= mysql_query($sql);
+	// 	//execute query
+	// 	$query	= mysql_query($sql);
 		
-		//fetch the data
-		if(mysql_num_rows($query) > 0)
-		{
-			while($result = mysql_fetch_object($query))
-			{
-				$data[] = $result->customer_id;
-			}
-		}
+	// 	//fetch the data
+	// 	if(mysql_num_rows($query) > 0)
+	// 	{
+	// 		while($result = mysql_fetch_object($query))
+	// 		{
+	// 			$data[] = $result->customer_id;
+	// 		}
+	// 	}
 		
-		//return data
-		return $data;
+	// 	//return data
+	// 	return $data;
 		
-	}//eof
+	// }//eof
 	
 	
 	/**
@@ -1083,38 +1063,38 @@ class Customer extends Utility{
 	*
 	*	@return	string
 	*/
-	function getListOfUnverifiedcustomer($startDate, $endDate)
-	{
-		//declare vars
-		$cIds		= array();
-		$contList	= '';
+	// function getListOfUnverifiedcustomer($startDate, $endDate)
+	// {
+	// 	//declare vars
+	// 	$cIds		= array();
+	// 	$contList	= '';
 		
-		//list of customer 
-		$cIds		= $this->getcustomerBySEDate($startDate, $endDate);
+	// 	//list of customer 
+	// 	$cIds		= $this->getcustomerBySEDate($startDate, $endDate);
 		
-		if(count($cIds) > 0)
-		{
-			//start listing
-			$contList  .= "<ul>";
+	// 	if(count($cIds) > 0)
+	// 	{
+	// 		//start listing
+	// 		$contList  .= "<ul>";
 			
-			foreach($cIds as $z)
-			{
-				//get the contrator detail
-				$cusDtl	= $this->showRegInfo($z);
+	// 		foreach($cIds as $z)
+	// 		{
+	// 			//get the contrator detail
+	// 			$cusDtl	= $this->showRegInfo($z);
 				
-				$contList  .= "<li>".$cusDtl[0]." ".$cusDtl[1]."</li>";
-			}
+	// 			$contList  .= "<li>".$cusDtl[0]." ".$cusDtl[1]."</li>";
+	// 		}
 			
-			//end listing
-			$contList  .= "</ul>";
+	// 		//end listing
+	// 		$contList  .= "</ul>";
 			
-		}//if
+	// 	}//if
 		
 		
-		//return the string
-		return $contList;
+	// 	//return the string
+	// 	return $contList;
 		
-	}//eof
+	// }//eof
 	
 	
 	
@@ -1126,31 +1106,31 @@ class Customer extends Utility{
 	*
 	*	@return string
 	*/
-	function getPasswordName($email)
-	{
-		//declare vars
-		$data  = array();
+	// function getPasswordName($email)
+	// {
+	// 	//declare vars
+	// 	$data  = array();
 		
-		//statement
-		$sql = "SELECT password, fname FROM customer WHERE email='$email'";
+	// 	//statement
+	// 	$sql = "SELECT password, fname FROM customer WHERE email='$email'";
 		
-		//execute query
-		$query = mysql_query($sql);
+	// 	//execute query
+	// 	$query = mysql_query($sql);
 		
-		//check and fetch data
-		if(mysql_num_rows($query) > 0)
-		{
-			//result
-			$result = mysql_fetch_array($query);
+	// 	//check and fetch data
+	// 	if(mysql_num_rows($query) > 0)
+	// 	{
+	// 		//result
+	// 		$result = mysql_fetch_array($query);
 			
-			//hold in array
-			$data   = array($result['password'], $result['fname']);
-		}
+	// 		//hold in array
+	// 		$data   = array($result['password'], $result['fname']);
+	// 	}
 		
-		//return data
-		return $data;
+	// 	//return data
+	// 	return $data;
 		
-	}//end of getting password
+	// }//end of getting password
 	
 	
 	/**
@@ -1165,20 +1145,20 @@ class Customer extends Utility{
 	*
 	*	@return null
 	*/
-	function updateReferece($cusId, $refId, $refWeb)
-	{
-		//statement
-		$sql	= "UPDATE customer SET
-				   parent_id = '$refId',
-				   referred_website = '$refWeb'
-				   WHERE 
-				   customer_id = '$cusId'
-				   ";
+	// function updateReferece($cusId, $refId, $refWeb)
+	// {
+	// 	//statement
+	// 	$sql	= "UPDATE customer SET
+	// 			   parent_id = '$refId',
+	// 			   referred_website = '$refWeb'
+	// 			   WHERE 
+	// 			   customer_id = '$cusId'
+	// 			   ";
 				   
-		//execute query
-		$query	= mysql_query($sql);
+	// 	//execute query
+	// 	$query	= mysql_query($sql);
 		
-	}//eof
+	// }//eof
 	
 	
 	/**

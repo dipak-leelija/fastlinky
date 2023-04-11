@@ -2,6 +2,7 @@
 session_start();
 
 require_once dirname(__DIR__)."/includes/constant.inc.php";
+require_once ROOT_DIR."/includes/content.inc.php";
 require_once ROOT_DIR."/includes/paypal.inc.php";
 require_once ROOT_DIR."/includes/user.inc.php";
 
@@ -34,35 +35,35 @@ $cusDtl		= $customer->getCustomerData($cusId);
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
-if (!isset($_SESSION['package'])) {
+if (!isset($_SESSION[PACK_ORD])) {
     header('Location: ../customer-packages.php' );
     exit;   
 }
 
 
-// cheaking email existance
-if ($cusDtl[0][3] == null || $cusDtl[0][3] == NULL) {
-    header('Location: ../edit-profile.php?action='.ERU113 );
-    exit;
-}
+// // cheaking email existance
+// if ($cusDtl[0][3] == null || $cusDtl[0][3] == NULL) {
+//     header('Location: ../edit-profile.php?action='.ERU113 );
+//     exit;
+// }
 
-// cheaking mobile existance
-if ($cusDtl[0][34] == null || $cusDtl[0][34] == NULL) {
-    header('Location: ../edit-profile.php?action='.ERU132 );
-    exit;
-}
+// // cheaking mobile existance
+// if ($cusDtl[0][34] == null || $cusDtl[0][34] == NULL) {
+//     header('Location: ../edit-profile.php?action='.ERU132 );
+//     exit;
+// }
 
-// cheaking city id existance
-if ($cusDtl[0][27] == null || $cusDtl[0][27] == NULL || $cusDtl[0][27] == 0) {
-    header('Location: ../edit-profile.php?action='.ERU124 );
-    exit;
-}
+// // cheaking city id existance
+// if ($cusDtl[0][27] == null || $cusDtl[0][27] == NULL || $cusDtl[0][27] == 0) {
+//     header('Location: ../edit-profile.php?action='.ERU124 );
+//     exit;
+// }
 
-// cheaking country id existance
-if ($cusDtl[0][30] == null || $cusDtl[0][30] == NULL) {
-    header('Location: ../edit-profile.php?action='.ERU131 );
-    exit;
-}
+// // cheaking country id existance
+// if ($cusDtl[0][30] == null || $cusDtl[0][30] == NULL) {
+//     header('Location: ../edit-profile.php?action='.ERU131 );
+//     exit;
+// }
 
 
 $customerName       = $cusDtl[0][5].' '.$cusDtl[0][6];

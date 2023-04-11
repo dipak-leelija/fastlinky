@@ -420,8 +420,7 @@ footer .thumb-content ::before {
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <p>©All Rights Reserved 2023 - <i
-                                style="text-decoration: underline;"><?php echo COMPANY_FULL_NAME; ?></i> .
+                        <p>©All Rights Reserved 2023 - <a href="<?= URL ?>" class="text-decoration-underline"><?php echo COMPANY_FULL_NAME; ?></a> Powered by <a href="http://www.leelija.com/" target="_blank" class="text-decoration-underline">Leelija.com</a> 
                         </p>
                     </div>
                 </div>

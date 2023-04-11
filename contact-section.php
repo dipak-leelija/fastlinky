@@ -8,10 +8,10 @@
                     <h3 class="color--white mb-5">Get in Touch</h3>
 
                     <ul class="contact-info__list list-style--none position-relative z-index-101">
-                        <a href="mailto:<?php echo SITE_EMAIL; ?>" style="color:white;">
+                        <a href="mailto:<?php echo CONTACT_MAIL; ?>" style="color:white;">
                             <li class="mb-4 pl-4">
                                 <span class="position-absolute"><i class="fas fa-envelope"></i></span>
-                                <?php echo SITE_EMAIL;?>
+                                <?php echo CONTACT_MAIL;?>
                             </li>
                         </a>
                         <a href="tel:+91 874224523" style="color:white;">
@@ -21,13 +21,12 @@
                             </li>
                         </a>
                         <li class="mb-4 pl-4">
-                            <span class="position-absolute"><i class="fas fa-map-marker-alt"></i></span> Barasat,
-                            Kolkata, West Bengal, India, Pincode- 700125
-                            <br> Barasat, koyra Kadambagachi
-                            <br> Near Raceon Workshop, Barasat , Kolkata
-
+                            <span class="position-absolute"><i class="fas fa-map-marker-alt"></i></span>
+                            Taki Road, Pirgacha, Barasat
+                            <br>Kolkata, West Bengal, India
+                            <br>Pincode- 700124
                             <div class="mt-3">
-                                <a href="https://www.google.com/maps" target="_blank"
+                                <a href="https://goo.gl/maps/AKCsxmTbJcdta2YKA" target="_blank"
                                     class="text-link link--right-icon text-white">Get directions <i
                                         class="link__icon fa fa-directions"></i></a>
                             </div>

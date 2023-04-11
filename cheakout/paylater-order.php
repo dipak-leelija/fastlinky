@@ -2,6 +2,7 @@
 session_start();
 
 require_once dirname(__DIR__)."/includes/constant.inc.php";
+require_once dirname(__DIR__)."/includes/content.inc.php";
 require_once ROOT_DIR."/_config/dbconnect.php";
 
 require_once ROOT_DIR."/classes/customer.class.php";
@@ -29,15 +30,9 @@ $typeM		= $utility->returnGetVar('typeM','');
 $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 
-if($cusId == 0){
-	header("Location: ".URL);
-}
+require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
-if($cusDtl[0][0] == 2){ 
-	header("Location: dashboard.php");
-}
-if (!isset($_SESSION['package'])) {
-    // print_r($_SESSION['package']);
+if (!isset($_SESSION[PACK_ORD])) {
     header('Location: ../customer-packages.php' );
     exit;   
 }

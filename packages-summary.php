@@ -34,17 +34,34 @@ $faqs		    = new faqs();
 $typeM		    = $utility->returnGetVar('typeM','');
 //user id
 $cusId		    = $utility->returnSess('userid', 0);
-$cusDtl         = $customer->getCustomerData($cusId);
 $currentPage    = $utility->setCurrentPageSession();
-
-
-require_once ROOT_DIR."/includes/check-customer-login.inc.php";
-
 
 if (!isset($_SESSION[PACK_ORD])) {
     header('Location: customer-packages.php' );
     exit;   
 }
+
+$response = '';
+if (isset($_POST['update-address'])) {
+    // print_r($_POST);exit;
+    
+    $fname      = $_POST["firstname"];
+    $lname      = $_POST["lastName"];
+    $city       = $_POST["city"];
+    $state      = $_POST["state"];
+    $mobile     = $_POST["mob-no"];
+    $pincode    = $_POST["pin-code"];
+    $country    = $_POST["country"];
+   
+    $response = $customer->updateAddrDuringPackOrd($cusId, $fname, $lname, $city, $pincode, $state, $country, $mobile);
+
+}
+
+$cusDtl         = $customer->getCustomerData($cusId);
+require_once ROOT_DIR."/includes/check-customer-login.inc.php";
+
+
+
 
 ?>
 
@@ -57,7 +74,7 @@ if (!isset($_SESSION[PACK_ORD])) {
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <title>Managed Link Building, Blogger Outreach: <?php echo COMPANY_S; ?></title>
-    <meta name="description"content="" />
+    <meta name="description" content="" />
     <meta name="keywords" content="" />
 
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
@@ -67,7 +84,7 @@ if (!isset($_SESSION[PACK_ORD])) {
     <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
     <link href="css/package-summary.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
-   
+
 
     <!-- font-awesome icons -->
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
@@ -82,10 +99,17 @@ if (!isset($_SESSION[PACK_ORD])) {
             <div class="container">
 
                 <div class="row">
-                    <div class="col-lg-7 client-details-left">
+                    <div class="col-lg-7 p-4">
                         <div class="">
-                            <form action="">
+                            <?php
+                            if ($response != '' ) {
+                                echo $response;
+                            }
+                            ?>
+                            <form id="addressForm" name="addressForm" action="<?php $_SERVER['PHP_SELF']?>"
+                                method="POST">
                                 <div class="row">
+                                    <h4 class="pb-2">Billing Details:</h4>
                                     <div class="col-sm-6 mb-3">
                                         <div class="form-group">
                                             <label class="required-field" for="firstname">First Name</label>
@@ -102,14 +126,77 @@ if (!isset($_SESSION[PACK_ORD])) {
                                         </div>
                                     </div>
 
-                                    <div class="col-sm-12 mb-3">
+                                    <div class="col-sm-6 mb-3">
                                         <div class="form-group">
                                             <label class="required-field" for="email">Email</label>
                                             <input type="email" class="form-control" id="email" name="email"
-                                                value="<?php echo $cusDtl[0][3]; ?>" required>
+                                                value="<?php echo $cusDtl[0][3]; ?>" disabled required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="form-group">
+                                            <label class="required-field" for="mob-no">Mob No</label>
+                                            <input type="number" class="form-control" id="mob-no" name="mob-no"
+                                                value="<?php echo $cusDtl[0][34]; ?>" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="form-group">
+                                            <label class="required-field" for="city">City</label>
+                                            <select class="form-control" name="city" id="city" required>
+                                                <option value="" disabled selected>Select City</option>
+                                                <?php
+												    $utility->populateDropDown($cusDtl[0][27], 'id', 'city', 'cities');
+												?>
+                                                <option value="0">Others</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="form-group">
+                                            <label class="required-field" for="pin-code">PIN Code</label>
+                                            <input type="number" class="form-control" id="pin-code" name="pin-code"
+                                                value="<?php echo $cusDtl[0][29]; ?>" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="form-group">
+                                            <label class="required-field" for="state">State</label>
+                                            <select class="form-control" name="state" id="state" required>
+                                                <option value="" disabled selected>Select State</option>
+                                                <?php
+                                                    // $utility->populateDropDown2($cusDtl[0][28], 'state_id', 'state_name', 'country_id', $cusDtl[0][30], 'states');
+												    $utility->populateDropDown($cusDtl[0][28], 'state_id', 'state_name', 'states');
+                                                ?>
+                                                <option value="0">Others</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="form-group">
+                                            <label class="required-field" for="country">Country</label>
+                                            <select class="form-control" name="country" id="" required>
+                                                <option value="" disabled selected>Select Country</option>
+                                                <?php
+												    $utility->populateDropDown($cusDtl[0][30], 'id', 'country_name', 'countries');
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 mb-3">
+                                        <small class="fw-normal">
+                                            Please ensure that you provide accurate and complete information to
+                                            avoid any
+                                            delays or issues with your order. Once you have reviewed and submitted
+                                            your
+                                            details you can place order.
+                                        </small>
+                                        <div class="d-flex justify-content-evenly p-4">
+                                            <button type="button" class="btn btn-secondary" onclick="goback()">Previous Page</button>
+                                            <button type="submit" class="btn btn-secondary" name="update-address">Update
+                                                Address</button>
+                                        </div>
+
                                         <div class="form-group">
                                             <div class="">
                                                 <div class="row row justify-content-evenly">
@@ -129,26 +216,21 @@ if (!isset($_SESSION[PACK_ORD])) {
                                                         $packsCosts[]       = $pack['price'];
                                                         $totalCost += $pack['price'];
                                                     ?>
-                                                    <div class="col-md-4 px-md-2">
-                                                        <div class="card price-card-wrapper" id="">
+                                                    <!-- <div class="col-md-4 px-md-2"> -->
+                                                    <!-- <div class="card price-card-wrapper" id=""> -->
 
-                                                            <p class="pricing-title"><?php echo $packFullName; ?></p>
-                                                            <ul class="">
-                                                                <li> <strong><?php echo $pack['blog_post'];?> Blog Post</strong> </li>
-                                                                <?php
-                                                                foreach ($features as $eachfeature) {
-                                                                    echo '<li>'. $eachfeature['features'].'</li>';
-                                                                }
+                                                    <p class="pricing-title"><?php //echo $packFullName; ?></p>
+                                                    <!-- <ul class=""> -->
+                                                    <!-- <li> <strong><?php //echo $pack['blog_post'];?> Blog Post</strong> </li> -->
+                                                    <?php
+                                                                // foreach ($features as $eachfeature) {
+                                                                //     echo '<li>'. $eachfeature['features'].'</li>';
+                                                                // }
                                                                 ?>
 
-                                                            </ul>
-                                                            <div class="item-price">
-                                                                <div class="default-price">
-                                                                    <?php echo CURRENCY.$pack['price']; ?>/Package
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <!-- </ul> -->
+                                                    <!-- </div> -->
+                                                    <!-- </div> -->
                                                     <?php
                                                     }
                                                     ?>
@@ -163,7 +245,7 @@ if (!isset($_SESSION[PACK_ORD])) {
                     </div>
                     <div class="col-lg-5 order-details-right">
                         <div>
-                            <form id="paymentForm" action="cheakout/paypal-pay.php" method="POST">
+                            <form id="paymentForm" action="" method="POST">
                                 <div class="">
                                     <div class="invoice-items" id="preview">
                                         <h2 class="mb-4">Summary</h2>
@@ -183,7 +265,7 @@ if (!isset($_SESSION[PACK_ORD])) {
                                                     </div>
                                                 </div>
                                                 <div class="text-right text-500">
-                                                <?php echo CURRENCY.$packsCosts[$i]; ?>
+                                                    <?php echo CURRENCY.$packsCosts[$i]; ?>
                                                 </div>
                                             </div>
                                             <?php
@@ -210,7 +292,7 @@ if (!isset($_SESSION[PACK_ORD])) {
                                         <div class="bx_width_40">
                                             <input type="hidden" name="order-name" id="order-name">
                                             <div class="form-group myformgrp">
-                                                <button type="submit" onclick="paypalOrder2()" class="paypalBtn">
+                                                <button type="button" onclick="paypalOrder()" class="paypalBtn">
                                                     <span class="paypal_logo"><img src="images/payments/paypal-logo.png"
                                                             alt=""></span>
                                                     <span class="pay">Pay</span><span class="pal">Pal</span>
@@ -229,8 +311,9 @@ if (!isset($_SESSION[PACK_ORD])) {
                                             </div> -->
 
                                             <div class="form-group myformgrp">
-                                                <button type="submit" class="payLaterBtn" onclick="payLaterOrder()">
-                                                    <span class="paylater_logo"><img src="images/payments/pay-later.png"></span>
+                                                <button type="button" class="payLaterBtn" onclick="payLaterOrder()">
+                                                    <span class="paylater_logo"><img
+                                                            src="images/payments/pay-later.png"></span>
                                                     <span> PayLater</span>
                                                 </button>
                                             </div>
@@ -249,37 +332,35 @@ if (!isset($_SESSION[PACK_ORD])) {
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/orderNow.js"></script>
     <script>
     const paypalOrder = () => {
-
-        document.getElementById("order-name").value = "onlyPlacement";
-        // document.getElementById("orderForm").action = "order-details.php";
-        document.getElementById("orderForm").action = "payments/paypal-order-details.php";
-
-        if (validateForm1() != false) {
-            document.getElementById("orderForm").submit();
+        document.getElementById("paymentForm").action = "cheakout/paypal-pay.php";
+        if (checkAddress("addressForm") != false) {
+            document.getElementById("paymentForm").submit();
         }
-
     }
-    // const ccAvenueOrder = () => {
-
-    //     document.getElementById("order-name").value = "ccAvOrder";
-    //     document.getElementById("orderForm").action = "payments/gpwishlistOrder/payment.php";
-
-    //     if (validateForm1() != false) {
-    //         document.getElementById("orderForm").submit();
-    //     }
-
-    // }
 
     const payLaterOrder = () => {
         document.getElementById("paymentForm").action = "cheakout/paylater-order.php";
-        // document.getElementById("orderForm").submit();
-        if (validateForm1() != false) {
-            document.getElementById("orderForm").submit();
+        if (checkAddress("addressForm") != false) {
+            document.getElementById("paymentForm").submit();
         }
+    }
 
+
+
+    const checkAddress = (formName) => {
+        var elements = document.forms[formName].elements;
+        for (i = 0; i < elements.length; i++) {
+            let type = elements[i].type;
+            if (type != 'button' && type != 'submit') {
+                if (elements[i].value == '') {
+                    alert('Please Fill The Complete Biling Address!');
+                    return false;
+                }
+            }
+
+        }
     }
     </script>
 </body>

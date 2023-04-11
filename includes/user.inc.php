@@ -16,7 +16,7 @@
 	define('ERU004', ' Your first name');
 	define('ERU005', ' Your last name');
 	define('ERU006', ' Your business or organization');
-	
+	define('ERU007', ' Name not found.');
 	
 	define('ERU108', ' First name is empty.');
 	define('ERU109', ' Last name is empty.');
@@ -56,10 +56,11 @@
 	define('ERU119', ' Please select an image');
 	
 	//password error
-	define('ERU105', ' Password is short.'); 
-	define('ERU106', ' Password is not verified.');
-	define('ERU107', ' Passwords do not match.');
-	define('ERU117', ' Password is short, it should be minimum 6 character long.');
+	define('ERU105', 		'Password is short.'); 
+	define('ERU106', 		'Password is not verified.');
+	define('ERU107', 		'Passwords do not match.');
+	define('ERU117', 		'Password is short, it should be minimum 6 character long.');
+	define('ERU300', 		'Failed to update details !');
 	
 	
 	define('ERUVERF003', 'Not Verified.');
@@ -68,31 +69,32 @@
 	define('ERU200', ' Invalid username or password.'); 
 	
 	//success message
-	define('SUU001', ' New user registration is successful');
-	define('SUU002', ' User has been deleted from the system');
-	define('SUU003', ' User information edited successfully');
-	define('SUU004', ' Thanking you for your registration. ');
-					  
-	define('SUU005', ' You have changed your email address. A mail has sent to your new email address.	');
-					   
-	define('SUU006', ' Your password has been changed. A mail has sent to your email address regarding the new changes.');
-	define('SUU007', ' Your information has been edited successfully');
-	define('SUU008', ' Client has been added to the system');
-	define('SUU009', ' Image successfully uploaded');		
-	
+	define('SUU001', 		'New user registration is successful');
+	define('SUU002', 		'User has been deleted from the system');
+	define('SUU003', 		'User information edited successfully');
+	define('SUU004', 		'Thanking you for your registration. ');
+
+	define('SUU005', 		'You have changed your email address. A mail has sent to your new email address.	');
+
+	define('SUU006', 		'Your password has been changed. A mail has sent to your email address regarding the new changes.');
+	define('SUU007', 		'Your information has been edited successfully');
+	define('SUU008', 		'Client has been added to the system');
+	define('SUU009', 		'Image successfully uploaded');
+	define('SUU010', 		'Details Updated!');	
+
 	#######################################################################################
 	
 	/**
 	*	Admin related alert, error and success messages
 	*/			
-	define('ERADM001', ' There is no administrator found');
-	define('ERADM002', ' Username contain empty spaces or it is very short');
-	define('ERADM003', ' None of the advertiser is selected');
+	define('ERADM001', 		'There is no administrator found');
+	define('ERADM002', 		'Username contain empty spaces or it is very short');
+	define('ERADM003', 		'None of the advertiser is selected');
 	
-	define('SUADM001', ' New administrative user has been created.');
-	define('SUADM002', ' Administrative user information has been updated');
-	define('SUADM003', ' Administrative user has been deleted.');
-	define('SUADM004', ' Administrative user password has been changed.');
+	define('SUADM001', 		'New administrative user has been created.');
+	define('SUADM002', 		'Administrative user information has been updated');
+	define('SUADM003', 		'Administrative user has been deleted.');
+	define('SUADM004', 		'Administrative user password has been changed.');
 	
 	
 	#######################################################################################
