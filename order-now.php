@@ -167,13 +167,23 @@ if (isset($_SESSION['order-data'])) {
                             <!-- contentPlacement start here -->
                             <div class="contentPlacement">
                                 <form method="post" id="orderForm" name="contentPlacementForm">
-
-                                    <div class="form-group">
-                                        <label for="formFile" class="form-label">
-                                            <h5>Content Upload <span class="warning">*</span></h5>
-                                        </label>
-                                        <input class="form-control" onclick="hideTextfields()" type="file"
-                                            id="formFile">
+                                    <div class="ffile-upload">
+                                        <div class="image-upload-wrap">
+                                            <input class="file-upload-input" type='file' onchange="readURL(this);"
+                                                accept=".xlsx,.xls,.doc, .docx," />
+                                            <div class="drag-text">
+                                                <p><i class="fa-sharp fa-solid fa-file-arrow-up"></i> <br>
+                                                    Drag and drop a file or select add Image</p>
+                                            </div>
+                                        </div>
+                                        <div class="file-upload-content">
+                                            <img class="file-upload-image" src="#" alt="your image" />
+                                            <div class="image-title-wrap">
+                                                <button type="button" onclick="removeUpload()"
+                                                    class="remove-image">Remove <span class="image-title">Uploaded
+                                                        Image</span></button>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div id="mytextfields_group">
                                         <div class="bg_mustard p-2 my-4 mx-0 text-light"
@@ -460,6 +470,44 @@ if (isset($_SESSION['order-data'])) {
         var element = document.getElementById("mytextfields_group");
         element.style.display = "none";
     }
+    </script>
+    <script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('.image-upload-wrap').hide();
+
+                $('.file-upload-image').attr('src', e.target.result);
+                $('.file-upload-content').show();
+                var element = document.getElementById("mytextfields_group");
+                element.style.display = "none";
+
+                $('.image-title').html(input.files[0].name);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+        } else {
+            removeUpload();
+        }
+    }
+
+    function removeUpload() {
+        $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+        var element = document.getElementById("mytextfields_group");
+        element.style.display = "block";
+        $('.file-upload-content').hide();
+        $('.image-upload-wrap').show();
+    }
+    $('.image-upload-wrap').bind('dragover', function() {
+        $('.image-upload-wrap').addClass('image-dropping');
+    });
+    $('.image-upload-wrap').bind('dragleave', function() {
+        $('.image-upload-wrap').removeClass('image-dropping');
+    });
     </script>
 </body>
 
