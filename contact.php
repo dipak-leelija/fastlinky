@@ -58,7 +58,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
     $errMsg = ERLEADGEN003;
     $alertMsg  = 'alert-warning';
 
-	}else if($txtPhone == ''){
+	}else if($txtPhone == '' || $txtPhone < 10){
 
     $errMsg = ERLEADGEN004;
     $alertMsg  = 'alert-warning';
