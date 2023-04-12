@@ -74,37 +74,26 @@ $ContactDtl 	= $Contact->showContactInfo($_GET['id']);
                         <div class="ml-3 mb-3">
                             <h2>Contact View</h2>
                         </div>
-                        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']."?id=".$_GET['id'].""?>"
-                            class="row ml-3 mr-3 bg-white text-dark rounded">
                             <input type="hidden" class="form-control" value="<?php echo $showid; ?>" name="id">
                             <div class="col-12 m-3">
-                                <label for="inputAddress" class="form-label">Full Name</label>
-                                <input type="text" name="question" class="form-control w-75" id="inputAddress"
-                                value="<?php echo $ContactDtl[1]; ?>" placeholder="">
+                                <label for="full-name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control w-75" id="full-name"
+                                value="<?php echo $ContactDtl[1]; ?>">
                             </div>
                             <div class="col-12 m-3">
-                                <label for="inputAddress2" class="form-label">E-Mail</label>
-                                <input type="text" name="ans" class="form-control w-75" id="inputAddress2"
-                                value="<?php echo $ContactDtl[2]; ?>"  placeholder="ANS">
+                                <label for="email" class="form-label">E-Mail</label>
+                                <input type="text" class="form-control w-75" id="email"
+                                value="<?php echo $ContactDtl[2]; ?>">
+                            </div>
+                            <div class="col-12 m-3">
+                                <label for="contact-number" class="form-label">Contact No.</label>
+                                <input type="text" class="form-control w-75" id="contact-number" value="<?php echo $ContactDtl[3]; ?>">
+                            </div>
+                            <div class="col-12 m-3">
+                                <label for="contact-message" class="form-label">Message</label>
+                                <textarea class="form-control w-75" rows="6" cols="30" id="contact-message"><?php echo $ContactDtl[4]; ?></textarea>
                             </div>
 
-
-                            <div class="col-12 m-3">
-                                <label for="inputAddress2" class="form-label">Message</label>
-                                <input type="text" name="page" class="form-control w-75" id="inputAddress2"
-                                value="<?php echo $ContactDtl[4]; ?>"  placeholder="Apartment, studio, or floor">
-                            </div>
-
-                            <div class="col-12 m-3">
-                                <label for="inputAddress2" class="form-label">phone No.</label>
-                                <input type="text" name="page" class="form-control w-75" id="inputAddress2"
-                                value="<?php echo $ContactDtl[3]; ?>"  placeholder="Apartment, studio, or floor">
-                            </div>
-                            <div class="col-12 m-3">
-                                <label for="inputAddress2" class="form-label">Created On</label>
-                                <input type="text" name="page" class="form-control w-75" id="inputAddress2"
-                                value="<?php echo $ContactDtl[5]; ?>"  placeholder="Apartment, studio, or floor">
-                            </div>
                             <div class="col-12 m-3">
                                 <input  type="button"  onclick="location.href='contact.php';" class="btn btn-primary" value="Go Back" />
 

@@ -16,7 +16,7 @@ class Contact extends DatabaseConnection{
 						 VALUES
 						('$contact_name', '$contact_email', '$contact_phone', '$message', now())";
 		$query	= $this->conn->query($sql); 
-		if ($query == TRUE) {
+		if ($query == 1) {
 			return $query;
 		}
 
