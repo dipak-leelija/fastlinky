@@ -86,7 +86,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row w-100 m-auto">
             <div class="col-md-6 order-2 order-md-1 m-auto">
                 <div class="text-center">
-                    <img src="./images/freepik-img/livecenter-img-front.png" class="w-100 m-auto mb-md-4" alt="">
+                    <img src="./images/freepik-img/livecenter-img-front.webp" class="w-100 m-auto mb-md-4" alt="">
                 </div>
             </div>
             <div class=" col-md-6 order-1 order-md-2">
@@ -166,7 +166,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6 real-bo-col-second">
                 <div class="text-center">
-                    <img src="./images/freepik-img/blogger-outrech-Link-Building.png" class="w-100 mb-md-4" alt="">
+                    <img src="./images/freepik-img/blogger-outrech-Link-Building.webp" class="w-100 mb-md-4" alt="">
                 </div>
 
                 <p class="real-bo-text-p mb-3 text-md-start">Fastlinky collaborates with multiple contributors to get
@@ -445,7 +445,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6 real-bo-col-second">
                 <div class="text-center">
-                    <img src="./images/freepik-img/link-insertion-banner.png" class="w-100 mb-md-4" alt="">
+                    <img src="./images/freepik-img/link-insertion-banner.webp" class="w-100 mb-md-4" alt="">
                 </div>
 
 

@@ -75,7 +75,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
                 <div class="col-12 col-lg-6 col-md-6  p-0">
                     <div class="mlb-wrapping">
-                        <img src="./images/freepik-img/link-insertion-banner.png " class="img-fluid"
+                        <img src="./images/freepik-img/link-insertion-banner.webp" class="img-fluid"
                             style="background-image: linear-gradient(120deg, #FDA33B 50%, #FA8273 80%); border-radius: 4rem;"
                             alt="">
                     </div>
@@ -145,7 +145,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-xl-6 col-md-6 m-auto">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/livecenter-img-front.png" class=" w-100  my-4 " alt="">
+                        <img src="./images/freepik-img/livecenter-img-front.webp" class=" w-100  my-4 " alt="">
                     </div>
                 </div>
             </div>
@@ -324,7 +324,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-xl-6 col-md-6 m-auto">
 
-                        <img src="./images/freepik-img/guest-posting-imgs-3.png" class=" w-100  my-4 " alt="">
+                        <img src="./images/freepik-img/guest-posting-imgs-3.webp" class=" w-100  my-4 " alt="">
   
             </div>
         </div>

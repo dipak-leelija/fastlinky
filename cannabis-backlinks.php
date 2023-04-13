@@ -83,7 +83,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-xl-6 col-md-6 m-auto text-center">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/cbd-services.png" class=" w-100  mb-4 " alt="">
+                        <img src="./images/freepik-img/cbd-services.webp" class=" w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-xl-6 col-md-6 m-auto text-center">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/cbd-collab.png" class=" w-100  mb-4 " alt="">
+                        <img src="./images/freepik-img/cbd-collab.webp" class=" w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
@@ -188,7 +188,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-xl-6 col-md-6 m-auto text-center">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/cbd-imgs1.png" class=" w-100  mb-4 " alt="">
+                        <img src="./images/freepik-img/cbd-imgs1.webp" class=" w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
@@ -258,7 +258,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-xl-6 col-md-6 m-auto text-center">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/cbd-img-2.png" class=" w-100  mb-4 " alt="">
+                        <img src="./images/freepik-img/cbd-img-2.webp" class=" w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
@@ -316,7 +316,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-xl-6 col-md-6 m-auto text-center">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/cbd-img-3.png" class=" w-100  mb-4 " alt="">
+                        <img src="./images/freepik-img/cbd-img-3.webp" class=" w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
@@ -332,7 +332,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-xl-6 col-md-6 m-auto text-center">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/cbd-services.png" class=" w-100  mb-4 " alt="">
+                        <img src="./images/freepik-img/cbd-services.webp" class=" w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>

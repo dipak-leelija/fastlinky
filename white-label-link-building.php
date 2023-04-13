@@ -80,7 +80,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row">
             <div class="col-md-6 order-2 order-md-1">
                 <div class="text-center">
-                    <img src="./images/freepik-img/guest-posting-imgs-4.png" class="w-100 m-auto mb-4" alt="">
+                    <img src="./images/freepik-img/guest-posting-imgs-4.webp" class="w-100 m-auto mb-4" alt="">
                 </div>
             </div>
             <div class=" col-md-6 order-1 order-md-2 m-auto">
@@ -848,7 +848,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-lg-6 col-md-6 m-auto">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/how-do-organic-links-benefit.png" class="w-100 mb-4" alt="">
+                        <img src="./images/freepik-img/how-do-organic-links-benefit.webp" class="w-100 mb-4" alt="">
                     </div>
 
                 </div>
@@ -875,7 +875,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6 m-auto">
                 <div class="text-center">
-                    <img src="./images/freepik-img/guest-posting-imgs-6.png" class="w-100 mb-4 m-auto" alt="">
+                    <img src="./images/freepik-img/guest-posting-imgs-6.webp" class="w-100 mb-4 m-auto" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">

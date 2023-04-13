@@ -50,7 +50,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row ">
             <div class="col-12 col-lg-6 px-2 px-md-0 col-md-5 ">
                 <div class="">
-                    <img src="./images/freepik-img/multilingual-website-setup.png" class="w-100" alt="">
+                    <img src="./images/freepik-img/multilingual-website-setup.webp" class="w-100" alt="">
                 </div>
             </div>
             <div class="col-12 col-lg-6 col-md-7  px-2 px-md-4">
@@ -109,7 +109,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6 m-auto">
                 <div>
-                    <img src="./images/freepik-img/country-spc-research.png" class=" w-100  mb-4 " alt="">
+                    <img src="./images/freepik-img/country-spc-research.webp" class=" w-100  mb-4 " alt="">
                 </div>
             </div>
 
@@ -244,7 +244,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     What Do We Have To Offer In <br> <span>Terms Of Outreaching International Multilingual Links?</span>
                 </h2>
                 <div class="text-center">
-                    <img src="./images/freepik-img/country-reach-outreach.png" class=" w-100  mb-4 " alt="">
+                    <img src="./images/freepik-img/country-reach-outreach.webp" class=" w-100  mb-4 " alt="">
                 </div>
             </div>
             <div class=" col-xl-6 col-md-6">

@@ -169,7 +169,7 @@ if(isset($_GET['seo_url']))
                         development in mind.
                     </p>
                     <div>
-                        <img src="./images/freepik-img/country-reach-outreach.png" class="w-100 " alt="">
+                        <img src="./images/freepik-img/country-reach-outreach.webp " class="w-100 " alt="">
                     </div>
                 </div>
                 <div class="col-xl-7 col-md-7 mt-3 mt-md-0">
@@ -414,7 +414,7 @@ if(isset($_GET['seo_url']))
             <div class="col-lg-6 col-md-6">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/country-spc-research.png" class="w-100 " alt="">
+                        <img src="./images/freepik-img/country-spc-research.webp" class="w-100 " alt="">
                     </div>
                 </div>
             </div>

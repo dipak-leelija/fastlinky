@@ -83,7 +83,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
                 <div class="col-12 col-lg-5 col-md-5 vid-col">
                     <div class="mlb-wrapping">
-                        <img src="./images/freepik-img/guest-posting-imgs-3.png" class="w-100" alt="">
+                        <img src="./images/freepik-img/guest-posting-imgs-3.webp" class="w-100" alt="">
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-lg-6 col-md-6">
                 <div class="text-center">
 
-                    <img src="./images/freepik-img/guest-posting-imgs-4.png" class=" w-100  mb-4 " alt="">
+                    <img src="./images/freepik-img/guest-posting-imgs-4.webp" class=" w-100  mb-4 " alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 ">

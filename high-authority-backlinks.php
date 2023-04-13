@@ -67,7 +67,7 @@ benefits of high domain authority website, domain authority rank" />
             </div>
             <div class="col-12 col-lg-6 col-md-5 m-auto">
                 <div class="text-center m-auto">
-                    <img src="./images/freepik-img/guest-posting-imgs8.png" class="w-100" alt="">
+                    <img src="./images/freepik-img/guest-posting-imgs8.webp" class="w-100" alt="">
                 </div>
             </div>
         </div>
@@ -454,7 +454,7 @@ benefits of high domain authority website, domain authority rank" />
             <div class="col-xl-6 col-md-6 m-auto">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/guest-posting-roi.png" class="w-100 mb-4" alt="">
+                        <img src="./images/freepik-img/guest-posting-roi.webp" class="w-100 mb-4" alt="">
                     </div>
                 </div>
             </div>
@@ -589,7 +589,7 @@ benefits of high domain authority website, domain authority rank" />
             </div>
             <div class="col-xl-6 col-md-6 m-auto">
                 <div class="text-center">
-                    <img src="./images/freepik-img/guest-posting-imgs-2.png" class="w-100  mb-4 " alt="">
+                    <img src="./images/freepik-img/guest-posting-imgs-2.webp" class="w-100  mb-4 " alt="">
                 </div>
             </div>
         </div>
@@ -605,7 +605,7 @@ benefits of high domain authority website, domain authority rank" />
             <div class="col-xl-6 col-md-6 m-auto">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/guest-posting-seo.png" class="w-100 mb-4" alt="">
+                        <img src="./images/freepik-img/guest-posting-seo.webp" class="w-100 mb-4" alt="">
                     </div>
                 </div>
             </div>
