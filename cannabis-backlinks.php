@@ -332,7 +332,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-xl-6 col-md-6 m-auto text-center">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/cbd-services.webp" class=" w-100  mb-4 " alt="">
+                        <img src="./images/freepik-img/home_img-01.webp" class=" w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
