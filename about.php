@@ -53,9 +53,6 @@ $cusId		= $utility->returnSess('userid', 0);
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/about-us.css" rel='stylesheet' type='text/css' />
-    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
-
-
 
 </head>
 
