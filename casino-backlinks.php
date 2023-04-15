@@ -180,7 +180,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
             </div>
             <div class="col-lg-6 col-md-6 m-auto">
                 <div class="text-center">
-                    <img src="./images/freepik-img/casino-img-3.jpg" class=" w-100  mb-4 " alt="">
+                    <img src="./images/freepik-img/casino-img-3.png" class=" w-100  mb-4 " alt="">
                 </div>
             </div>
         </div>
@@ -195,8 +195,8 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
     <section class="my-sm-5 my-2 ">
         <h1 class="text-center pricing-bo-h1 mb-3">Casino Backlinks Pricing
         </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
-            DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>

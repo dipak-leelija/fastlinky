@@ -115,7 +115,7 @@
     color: var(--mustard);
 }
 .best-blogs-best-result-main-p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.5em;
     text-align: justify;
@@ -200,8 +200,8 @@
 }
 
 .pricing-bo-p1 {
-    font-size: 1.1rem;
-    font-weight: 400;
+    font-size: 1.2rem;
+    font-weight: 500;
     color: var(--black);
 }
 /* -------------------------------- */

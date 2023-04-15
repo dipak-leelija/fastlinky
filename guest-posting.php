@@ -151,8 +151,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 mt-5 px-2">Guest posting pricing
         </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
-            DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>
