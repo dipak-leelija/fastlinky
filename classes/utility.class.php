@@ -2953,8 +2953,7 @@ class Utility extends DatabaseConnection{
 					$select_string = '';
 				}
 				
-				echo "<option value='".$data_id."' class='menuText' ".$select_string.">".
-				$result[$populate]."</option>";
+				echo "<option value='".$data_id."' ".$select_string.">".$result[$populate]."</option>";
 				
 			}
 		}	

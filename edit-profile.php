@@ -84,8 +84,21 @@ if(isset($_POST['addressUpdate'])){
 	$customer->updateCusAddress($cusId, $address1, $address2, $cusDtl[0][26], $cityId, $stateId, $postalCode, $countryId, $phone1, $phone2, $cusDtl[0][33], $cusDtl[0][34]);
 
 }
+//Edit Address
+if(isset($_POST['passUpdate'])){
+    print_r($_POST);
+    // $address1       = $_POST['address1'];
+    // $address2       = $_POST['address2'];
+    // $cityId         = $_POST['cityId'];
+	// $stateId       	= $_POST['stateId'];
+	// $postalCode	    = $_POST['postal_code'];
+	// $countryId		= $_POST['countryId'];
+	// $phone1	        = $_POST['phone1'];
+	// $phone2      	= $_POST['phone2'];
 
+	// $customer->updateCusAddress($cusId, $address1, $address2, $cusDtl[0][26], $cityId, $stateId, $postalCode, $countryId, $phone1, $phone2, $cusDtl[0][33], $cusDtl[0][34]);
 
+}
 
 if(isset($_POST['btnCancel'])){
 	//forward
@@ -242,6 +255,7 @@ if(isset($_POST['btnCancel'])){
                                                     password</button>
                                             </li>
                                         </ul>
+
                                         <div class="tab-content" id="myTabContent">
                                             <div class="tab-pane overviews-div fade active show " id="Overview"
                                                 role="tabpanel" aria-labelledby="Overview-tab">
@@ -314,7 +328,7 @@ if(isset($_POST['btnCancel'])){
                                                                         }
 
                                                                         if (!empty($cusDtl[0][30])) {
-                                                                            echo $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
+                                                                            echo $Location->getCountyDataByCountyId($cusDtl[0][30])['name'];
                                                                         }
 
                                                                         if (!empty($cusDtl[0][29])) {
@@ -359,43 +373,44 @@ if(isset($_POST['btnCancel'])){
                                                     </div>
                                                 </div>
                                             </div>
+
+
                                             <div class="tab-pane fade profiles_tediting-div" id="profile"
                                                 role="tabpanel" aria-labelledby="profile-tab">
                                                 <div class="row ">
                                                     <div class="col-sm-6">
                                                         <div class="form-floating mb-3">
                                                             <input type="text" maxlength="25" class="form-control"
-                                                                id="floatingInput" placeholder=" " name="fname"
-                                                                value="<?php echo $cusDtl[0][5]; ?>" required>
-                                                            <label for="floatingInput"> First Name </label>
+                                                                name="fname" value="<?php echo $cusDtl[0][5]; ?>"
+                                                                required>
+                                                            <label> First Name </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-floating mb-3">
                                                             <input type="text" maxlength="25" class="form-control"
-                                                                id="floatingInput" placeholder=" " name="lname"
-                                                                value="<?php echo $cusDtl[0][6]; ?>" required>
-                                                            <label for="floatingInput"> Last Name </label>
+                                                                name="lname" value="<?php echo $cusDtl[0][6]; ?>"
+                                                                required>
+                                                            <label> Last Name </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row ">
                                                     <div class="col-sm-6">
                                                         <div class="form-floating mb-3">
-                                                            <input type="email" maxlength="25" class="form-control"
-                                                                id="floatingInput" placeholder=" " name="email_id"
-                                                                value="<?php echo $cusDtl[0][3]; ?>" required>
-                                                            <label for="floatingInput"> Email Id </label>
+                                                            <input type="email" maxlength="100" class="form-control"
+                                                                name="email_id" value="<?php echo $cusDtl[0][3]; ?>"
+                                                                required>
+                                                            <label> Email Id </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-floating mb-3">
                                                             <input type="number"
                                                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                                                maxlength="10" class="form-control" id="floatingInput"
-                                                                placeholder=" " name="mobNumber"
+                                                                maxlength="10" class="form-control" name="mobNumber"
                                                                 value="<?php echo $cusDtl[0][34]; ?>" required>
-                                                            <label for="floatingInput"> Contact Number </label>
+                                                            <label> Contact Number </label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -430,7 +445,7 @@ if(isset($_POST['btnCancel'])){
                                                             <select class="form-select text-capitalize"
                                                                 id="floatingSelectGrid"
                                                                 aria-label="Floating label select example" name="gender"
-                                                                required="">
+                                                                required>
                                                                 <option value="<?php echo $cusDtl[0][7];?>"
                                                                     selected="selected">
                                                                     <?php echo $cusDtl[0][7];?>
@@ -466,18 +481,17 @@ if(isset($_POST['btnCancel'])){
                                                     <div class="col-sm-6">
                                                         <div class="form-floating mb-3">
                                                             <input type="text" maxlength="25" class="form-control"
-                                                                id="floatingInput" name="organization"
+                                                                name="organization"
                                                                 value="<?php echo $cusDtl[0][12]; ?>" readonly>
-                                                            <label for="floatingInput"> Organization </label>
+                                                            <label> Organization </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-floating mb-3">
                                                             <input type="text" maxlength="25" class="form-control"
-                                                                id="floatingInput" name="discount"
-                                                                value="<?php echo $cusDtl[0][19]; ?>" readonly>
-                                                            <label for="floatingInput"> Discount
-                                                                Offered </label>
+                                                                name="discount" value="<?php echo $cusDtl[0][19]; ?>"
+                                                                readonly>
+                                                            <label> Discount Offered </label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -485,9 +499,9 @@ if(isset($_POST['btnCancel'])){
                                                     <div class="col-sm-6">
                                                         <div class="form-floating mb-3">
                                                             <input type="text" maxlength="25" class="form-control"
-                                                                id="floatingInput" name="featured"
-                                                                value="<?php echo $cusDtl[0][13]; ?>" readonly>
-                                                            <label for="floatingInput"> Organization </label>
+                                                                name="featured" value="<?php echo $cusDtl[0][13]; ?>"
+                                                                readonly>
+                                                            <label> Organization </label>
                                                         </div>
                                                     </div>
 
@@ -501,201 +515,206 @@ if(isset($_POST['btnCancel'])){
                                                 <div class="form-group">
                                                 </div>
                                             </div>
-
-                                            <div class="tab-pane fade chnge_tab_div" id="address_edit" role="tabpanel"
-                                                aria-labelledby="address_edit-tab">
-
-                                                <div class="row ">
-                                                    <div class="col-sm-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="text" maxlength="25" class="form-control"
-                                                                id="address1" name="address1"
-                                                                value="<?php echo $cusDtl[0][24]; ?>" required>
-                                                            <label for="address1"> Address1 </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="text" maxlength="25" class="form-control"
-                                                                id="address2" name="address2"
-                                                                value="<?php echo $cusDtl[0][25]; ?>" required>
-                                                            <label for="address2"> Address2 </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <fieldset class="row ">
-                                                    <div class="col-sm-6">
-                                                        <div class="form-floating mb-3">
-                                                            <select id="city" class="form-select " name="cityId"
-                                                                required>
-                                                                <option value="" selected disabled>
-                                                                    Select City
-                                                                </option>
-                                                                <?php
-                                                                           $utility->populateDropDown($cusDtl[0][27], 'id', 'city', 'cities')
-                                                                           ?>
-                                                            </select>
-                                                            <label for="City">City</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="number"
-                                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                                                maxlength="6" class="form-control" id="floatingInput"
-                                                                name="postal_code" value="<?php echo $cusDtl[0][29]; ?>"
-                                                                required>
-                                                            <label for="floatingInput"> Postal Code </label>
-                                                        </div>
-                                                    </div>
-                                                </fieldset>
-                                                <fieldset class="row ">
-                                                    <div class="col-sm-6">
-                                                        <div class="form-floating mb-3">
-                                                            <select id="stateId" class="form-select " name="stateId"
-                                                                required>
-                                                                <option value="" selected disabled>
-                                                                    Select State
-                                                                </option>
-                                                                <?php
-                                                                             $utility->populateDropDown($cusDtl[0][28], 'state_id', 'state_name', 'states')
-                                                                            ?>
-                                                            </select>
-                                                            <label for="stateId">State</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-6 ">
-                                                        <div class="form-floating mb-3">
-                                                            <select id="country" class="form-select " name="countryId"
-                                                                required>
-                                                                <option value="" selected disabled>
-                                                                    Select Country
-                                                                </option>
-                                                                <?php
-                                                                             $utility->populateDropDown($cusDtl[0][30], 'id', 'country_name', 'countries')
-                                                                               ?>
-                                                            </select>
-                                                            <label for="country">Country </label>
-                                                        </div>
-                                                    </div>
-                                                </fieldset>
-                                                <div class="row ">
-                                                    <div class="col-sm-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="number"
-                                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                                                maxlength="10" class="form-control" id="phone1"
-                                                                name="phone1" value="<?php echo $cusDtl[0][31]; ?>"
-                                                                required>
-                                                            <label for="phone1"> Phone1 </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="number"
-                                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                                                maxlength="10" class="form-control" id="phone2"
-                                                                name="phone2" value="<?php echo $cusDtl[0][32]; ?>"
-                                                                required>
-                                                            <label for="phone2"> Phone2 </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="d-grid gap-2   d-md-flex col-12 col-md-3 mx-auto my-3">
-                                                    <button type="submit" name="btnCancel"
-                                                        class="btn botton-midle btn-danger">Cancel</button>
-                                                    <button type="submit" name="addressUpdate"
-                                                        class="btn botton-midle btn-primary">Update</button>
-                                                </div>
-                                                <div class="form-group">
-                                                </div>
-
-                                            </div>
-
-                                            <div class="tab-pane fade chnge_tab_div" id="change" role="tabpanel"
-                                                aria-labelledby="change-tab">
-                                                <form class="form-horizontal mt-4" role="form"
-                                                    action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"
-                                                    enctype="multipart/form-data" autocomplete="off">
-
-                                                    <div class="form-floating mb-3">
-                                                        <input type="password" class="form-control"
-                                                            id="floatingPassword" placeholder="Password">
-                                                        <label for="floatingPassword"> Recent Password</label>
-                                                    </div>
-                                                    <div class="form-floating mb-3">
-                                                        <input type="password" class="form-control"
-                                                            id="floatingPassword" placeholder="Password">
-                                                        <label for="floatingPassword"> Change New Password</label>
-                                                    </div>
-                                                    <div class="form-floating mb-3">
-                                                        <input type="password" class="form-control"
-                                                            id="floatingPassword" placeholder="Password">
-                                                        <label for="floatingPassword">Confirm New Password</label>
-                                                    </div>
-
-                                                    <div class="d-grid gap-2   d-md-flex col-12 col-md-3 mx-auto my-3">
-                                                        <button type="submit" name="btnCancel"
-                                                            class="btn botton-midle btn-danger">Cancel</button>
-                                                        <button type="submit" name="addressUpdate"
-                                                            class="btn botton-midle btn-primary">Update</button>
-                                                    </div>
-                                                    <div class="form-group">
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
                                     </form>
 
+                                    <!-- address tab panel start  -->
+                                    <div class="tab-pane fade chnge_tab_div" id="address_edit" role="tabpanel"
+                                        aria-labelledby="address_edit-tab">
+                                        <form class="form-horizontal" role="form"
+                                            action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"
+                                            enctype="multipart/form-data" autocomplete="off">
+                                            <div class="row ">
+                                                <div class="col-sm-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" maxlength="25" class="form-control"
+                                                            id="address1" name="address1"
+                                                            value="<?php echo $cusDtl[0][24]; ?>" required>
+                                                        <label for="address1"> Address1 </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" maxlength="25" class="form-control"
+                                                            id="address2" name="address2"
+                                                            value="<?php echo $cusDtl[0][25]; ?>" required>
+                                                        <label for="address2"> Address2 </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <fieldset class="row ">
+                                                <div class="col-sm-6">
+                                                    <div class="form-floating mb-3">
+                                                        <select id="city" class="form-select " name="cityId" required>
+                                                            <option value="" selected disabled>
+                                                                Select City
+                                                            </option>
+                                                            <option value="" disabled selected>Select State First</option>
+                                                            <?php
+                                                            $utility->populateDropDown2($cusDtl[0][27], 'id', 'name', 'state_id', $cusDtl[0][28], 'cities')
+                                                                ?>
+                                                        </select>
+                                                        <label for="City">City</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="number"
+                                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                            maxlength="6" class="form-control" id="floatingInput"
+                                                            name="postal_code" value="<?php echo $cusDtl[0][29]; ?>"
+                                                            required>
+                                                        <label for="floatingInput"> Postal Code </label>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="row ">
+                                                <div class="col-sm-6">
+                                                    <div class="form-floating mb-3">
+                                                        <select id="stateId" class="form-select " name="stateId"
+                                                            required onchange="getCitiesList(this)">
+                                                            <option value="" selected disabled>
+                                                                Select Country First
+                                                            </option>
+                                                            <?php
+                                                                $utility->populateDropDown2($cusDtl[0][28], 'id', 'name', 'country_id', $cusDtl[0][30], 'states')
+                                                            ?>
+                                                        </select>
+                                                        <label for="stateId">State</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 ">
+                                                    <div class="form-floating mb-3">
+                                                        <select id="country" class="form-select " name="countryId"
+                                                            onchange="getStateList(this)" required>
+                                                            <option value="" selected disabled>Select Country </option>
+                                                            <?php
+                                                                $utility->populateDropDown($cusDtl[0][30], 'id', 'name', 'countries')
+                                                                ?>
+                                                        </select>
+                                                        <label for="country">Country </label>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <div class="row ">
+                                                <div class="col-sm-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="number"
+                                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                            maxlength="10" class="form-control" id="phone1"
+                                                            name="phone1" value="<?php echo $cusDtl[0][31]; ?>"
+                                                            required>
+                                                        <label for="phone1"> Phone1 </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="number"
+                                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                                            maxlength="10" class="form-control" id="phone2"
+                                                            name="phone2" value="<?php echo $cusDtl[0][32]; ?>"
+                                                            required>
+                                                        <label for="phone2"> Phone2 </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-grid gap-2   d-md-flex col-12 col-md-3 mx-auto my-3">
+                                                <button type="submit" name="btnCancel"
+                                                    class="btn botton-midle btn-danger">Cancel</button>
+                                                <button type="submit" name="addressUpdate"
+                                                    class="btn botton-midle btn-primary">Update</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- address tab panel end  -->
+
+                                    <!-- password tab panel start  -->
+                                    <div class="tab-pane fade chnge_tab_div" id="change" role="tabpanel"
+                                        aria-labelledby="change-tab">
+                                        <form class="form-horizontal mt-4" role="form"
+                                            action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"
+                                            autocomplete="off">
+
+                                            <div class="form-floating mb-3">
+                                                <input type="password" class="form-control" id="recentPassword"
+                                                    placeholder="Password">
+                                                <label for="recentPassword" required> Recent Password</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="password" class="form-control" id="newPassword"
+                                                    placeholder="Password">
+                                                <label for="newPassword" required> Change New Password</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="password" class="form-control" id="confirmPassword"
+                                                    placeholder="Password" required>
+                                                <label for="confirmPassword">Confirm New Password</label>
+                                            </div>
+
+                                            <!-- <div class="d-grid gap-2   d-md-flex col-12 col-md-3 mx-auto my-3">
+                                                <button type="submit" name="btnCancel"
+                                                    class="btn botton-midle btn-danger">Cancel</button>
+                                                <button type="submit" name="passUpdate"
+                                                    class="btn botton-midle btn-primary">Update</button>
+                                            </div> -->
+                                            <div class="form-group">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- password tab panel end -->
+
                                 </div>
-                                <!--end from div-->
                             </div>
-                        </section>
+                            <!--end from div-->
                     </div>
+                    </section>
                 </div>
             </div>
         </div>
-        <!-- js-->
-        <script src="plugins/jquery-3.6.0.min.js"></script>
-        <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-        <script src="js/customerSwitchMode.js"></script>
+    </div>
+    <!-- js-->
+    <script src="plugins/jquery-3.6.0.min.js"></script>
+    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="js/customerSwitchMode.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 
-        <script>
-        $(document).ready(function() {
-            var readURL = function(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
+    <script>
+    $(document).ready(function() {
+        var readURL = function(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
 
-                    reader.onload = function(e) {
-                        $('.profile-pic').attr('src', e.target.result);
-                    }
-
-                    reader.readAsDataURL(input.files[0]);
-                    alert('Go to Edit Profile and Update the Changes');
+                reader.onload = function(e) {
+                    $('.profile-pic').attr('src', e.target.result);
                 }
+
+                reader.readAsDataURL(input.files[0]);
+                alert('Go to Edit Profile and Update the Changes');
             }
-
-
-            $(".file-upload").on('change', function() {
-                readURL(this);
-            });
-
-            $(".upload-button").on('click', function() {
-                $(".file-upload").click();
-            });
-        });
-        </script>
-
-        <script>
-        document.getElementById('buttonid').addEventListener('click', openDialog);
-
-        function openDialog() {
-            document.getElementById('fileid').click();
         }
-        </script>
-        <!-- <script>
+
+
+        $(".file-upload").on('change', function() {
+            readURL(this);
+        });
+
+        $(".upload-button").on('click', function() {
+            $(".file-upload").click();
+        });
+    });
+    </script>
+
+    <script>
+    document.getElementById('buttonid').addEventListener('click', openDialog);
+
+
+    function openDialog() {
+        document.getElementById('fileid').click();
+    }
+    </script>
+    <!-- <script>
         function thisFileUpload() {
             document.getElementById("file").click();
         };

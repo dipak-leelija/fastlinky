@@ -1,6 +1,7 @@
 <?php
 require_once "includes/constant.inc.php";
 require_once "includes/content.inc.php";
+require_once "includes/registration.inc.php";
 session_start();
 
 require_once ROOT_DIR."/_config/dbconnect.php";
@@ -42,19 +43,8 @@ if (!isset($_SESSION[PACK_ORD])) {
 }
 
 $response = '';
-if (isset($_POST['update-address'])) {
-    // print_r($_POST);exit;
-    
-    $fname      = $_POST["firstname"];
-    $lname      = $_POST["lastName"];
-    $city       = $_POST["city"];
-    $state      = $_POST["state"];
-    $mobile     = $_POST["mob-no"];
-    $pincode    = $_POST["pin-code"];
-    $country    = $_POST["country"];
-   
-    $response = $customer->updateAddrDuringPackOrd($cusId, $fname, $lname, $city, $pincode, $state, $country, $mobile);
-
+if (isset($_GET['msg'])) {
+    $response = $_GET['msg'];
 }
 
 $cusDtl         = $customer->getCustomerData($cusId);
@@ -98,110 +88,117 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
         <section class="order-summary-section pb-4">
             <div class="container">
 
-                <div class="row">
-                    <div class="col-lg-7 p-4">
-                        <div class="">
+                <form id="paymentForm" name="paymentForm" action="" method="POST">
+                    <div class="row">
+                        <div class="col-lg-7 p-4">
                             <?php
-                            if ($response != '' ) {
-                                echo $response;
-                            }
-                            ?>
-                            <form id="addressForm" name="addressForm" action="<?php $_SERVER['PHP_SELF']?>"
-                                method="POST">
-                                <div class="row">
-                                    <h4 class="pb-2">Billing Details:</h4>
-                                    <div class="col-sm-6 mb-3">
-                                        <div class="form-group">
-                                            <label class="required-field" for="firstname">First Name</label>
-                                            <input type="text" minlength="4" class="form-control" id="firstname"
-                                                name="firstname" value="<?php echo $cusDtl[0][5]; ?>" required>
-                                        </div>
+                                if ($response != '' ) {
+                                    echo 
+                                    "<div class=\"border border-danger text-center fw-bold text-danger py-2 mb-2\">
+                                    {$response}
+                                    </div>";
+                                }
+                                ?>
+                            <!-- <form id="addressForm" name="addressForm" action="<?php $_SERVER['PHP_SELF']?>" -->
+                            <!-- method="POST"> -->
+                            <div class="row">
+                                <h4 class="pb-2">Billing Details:</h4>
+                                <div class="col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="required-field" for="firstname">First Name</label>
+                                        <input type="text" minlength="4" class="form-control" id="firstname"
+                                            name="firstname" value="<?php echo $cusDtl[0][5]; ?>" required>
                                     </div>
+                                </div>
 
-                                    <div class="col-sm-6 mb-3">
-                                        <div class="form-group">
-                                            <label for="lastName">Last Name</label>
-                                            <input type="text" minlength="4" class="form-control" id="lastName"
-                                                name="lastName" value="<?php echo $cusDtl[0][6]; ?>" required>
-                                        </div>
+                                <div class="col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" minlength="4" class="form-control" id="lastName"
+                                            name="lastName" value="<?php echo $cusDtl[0][6]; ?>" required>
                                     </div>
+                                </div>
 
-                                    <div class="col-sm-6 mb-3">
-                                        <div class="form-group">
-                                            <label class="required-field" for="email">Email</label>
-                                            <input type="email" class="form-control" id="email" name="email"
-                                                value="<?php echo $cusDtl[0][3]; ?>" disabled required>
-                                        </div>
+                                <div class="col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="required-field" for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            value="<?php echo $cusDtl[0][3]; ?>" disabled required>
                                     </div>
-                                    <div class="col-sm-6 mb-3">
-                                        <div class="form-group">
-                                            <label class="required-field" for="mob-no">Mob No</label>
-                                            <input type="number" class="form-control" id="mob-no" name="mob-no"
-                                                value="<?php echo $cusDtl[0][34]; ?>" required>
-                                        </div>
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="required-field" for="mob-no">Mob No</label>
+                                        <input type="number" class="form-control" id="mob-no" name="mob-no"
+                                            value="<?php echo $cusDtl[0][34]; ?>" required>
                                     </div>
-                                    <div class="col-sm-6 mb-3">
-                                        <div class="form-group">
-                                            <label class="required-field" for="city">City</label>
-                                            <select class="form-control" name="city" id="city" required>
-                                                <option value="" disabled selected>Select City</option>
-                                                <?php
-												    $utility->populateDropDown($cusDtl[0][27], 'id', 'city', 'cities');
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="required-field" for="city">City</label>
+                                        <select class="form-control" name="city" id="city" required>
+                                            <option value="" disabled selected>Select City</option>
+                                            <?php
+                                                if ($cusDtl[0][28] != '') {
+                                                    $utility->populateDropDown2($cusDtl[0][27], 'id', 'name', 'state_id', $cusDtl[0][28], 'cities');
+                                                }
 												?>
-                                                <option value="0">Others</option>
-                                            </select>
-                                        </div>
+                                        </select>
                                     </div>
-                                    <div class="col-sm-6 mb-3">
-                                        <div class="form-group">
-                                            <label class="required-field" for="pin-code">PIN Code</label>
-                                            <input type="number" class="form-control" id="pin-code" name="pin-code"
-                                                value="<?php echo $cusDtl[0][29]; ?>" required>
-                                        </div>
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="required-field" for="pin-code">PIN Code</label>
+                                        <input type="number" class="form-control" id="pin-code" name="pin-code"
+                                            value="<?php echo $cusDtl[0][29]; ?>" required>
                                     </div>
-                                    <div class="col-sm-6 mb-3">
-                                        <div class="form-group">
-                                            <label class="required-field" for="state">State</label>
-                                            <select class="form-control" name="state" id="state" required>
-                                                <option value="" disabled selected>Select State</option>
-                                                <?php
-                                                    // $utility->populateDropDown2($cusDtl[0][28], 'state_id', 'state_name', 'country_id', $cusDtl[0][30], 'states');
-												    $utility->populateDropDown($cusDtl[0][28], 'state_id', 'state_name', 'states');
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="required-field" for="state">State</label>
+                                        <select class="form-control" name="state" id="stateId"
+                                            onchange="getCitiesList(this)" required>
+                                            <option value="" disabled selected>Select Country First</option>
+                                            <?php
+                                                if ($cusDtl[0][30] != '') {
+                                                    $utility->populateDropDown2($cusDtl[0][28], 'id', 'name', 'country_id', $cusDtl[0][30], 'states');
+                                                }
                                                 ?>
-                                                <option value="0">Others</option>
-                                            </select>
-                                        </div>
+                                        </select>
                                     </div>
-                                    <div class="col-sm-6 mb-3">
-                                        <div class="form-group">
-                                            <label class="required-field" for="country">Country</label>
-                                            <select class="form-control" name="country" id="" required>
-                                                <option value="" disabled selected>Select Country</option>
-                                                <?php
-												    $utility->populateDropDown($cusDtl[0][30], 'id', 'country_name', 'countries');
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="required-field" for="country">Country</label>
+                                        <select class="form-control" name="country" id="" onchange="getStateList(this)"
+                                            required>
+                                            <option value="" disabled selected>Select Country</option>
+                                            <?php
+												    $utility->populateDropDown($cusDtl[0][30], 'id', 'name', 'countries');
                                                 ?>
-                                            </select>
-                                        </div>
+                                        </select>
                                     </div>
-                                    <div class="col-sm-12 mb-3">
-                                        <small class="fw-normal">
-                                            Please ensure that you provide accurate and complete information to
-                                            avoid any
-                                            delays or issues with your order. Once you have reviewed and submitted
-                                            your
-                                            details you can place order.
-                                        </small>
-                                        <div class="d-flex justify-content-evenly p-4">
-                                            <button type="button" class="btn btn-secondary" onclick="goback()">Previous Page</button>
-                                            <button type="submit" class="btn btn-secondary" name="update-address">Update
-                                                Address</button>
-                                        </div>
+                                </div>
+                                <div class="col-sm-12 mb-3">
+                                    <small class="fw-normal">
+                                        Please ensure that you provide accurate and complete information to
+                                        avoid any
+                                        delays or issues with your order. Once you have reviewed and submitted
+                                        your
+                                        details you can place order.
+                                    </small>
+                                    <div class="d-flex justify-content-start p-4">
+                                        <button type="button" class="btn btn-secondary" onclick="goback()">Previous
+                                            Page</button>
+                                        <!-- <button type="submit" class="btn btn-secondary" name="update-address">Update
+                                                Address</button> -->
+                                    </div>
 
-                                        <div class="form-group">
-                                            <div class="">
-                                                <div class="row row justify-content-evenly">
-                                                    <!-- card 1 -->
-                                                    <?php
+                                    <div class="form-group">
+                                        <div class="">
+                                            <div class="row row justify-content-evenly">
+                                                <!-- card 1 -->
+                                                <?php
                                                     // echo count(($_POST[0]));exit;
                                                     $totalCost = '00.00';
                                                     foreach ($_SESSION[PACK_ORD] as $index => $packId) {
@@ -216,36 +213,20 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                                         $packsCosts[]       = $pack['price'];
                                                         $totalCost += $pack['price'];
                                                     ?>
-                                                    <!-- <div class="col-md-4 px-md-2"> -->
-                                                    <!-- <div class="card price-card-wrapper" id=""> -->
-
-                                                    <p class="pricing-title"><?php //echo $packFullName; ?></p>
-                                                    <!-- <ul class=""> -->
-                                                    <!-- <li> <strong><?php //echo $pack['blog_post'];?> Blog Post</strong> </li> -->
-                                                    <?php
-                                                                // foreach ($features as $eachfeature) {
-                                                                //     echo '<li>'. $eachfeature['features'].'</li>';
-                                                                // }
-                                                                ?>
-
-                                                    <!-- </ul> -->
-                                                    <!-- </div> -->
-                                                    <!-- </div> -->
-                                                    <?php
+                                                <?php
                                                     }
                                                     ?>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                            <!-- </form> -->
 
-                    </div>
-                    <div class="col-lg-5 order-details-right">
-                        <div>
-                            <form id="paymentForm" action="" method="POST">
+                        </div>
+                        <div class="col-lg-5 order-details-right">
+                            <div>
+                                <!-- <form id="paymentForm" action="" method="POST"> -->
                                 <div class="">
                                     <div class="invoice-items" id="preview">
                                         <h2 class="mb-4">Summary</h2>
@@ -290,7 +271,7 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
                                     <div class="box-payment-btn">
                                         <div class="bx_width_40">
-                                            <input type="hidden" name="order-name" id="order-name">
+                                            <!-- <input type="hidden" name="order-name" id="order-name"> -->
                                             <div class="form-group myformgrp">
                                                 <button type="button" onclick="paypalOrder()" class="paypalBtn">
                                                     <span class="paypal_logo"><img src="images/payments/paypal-logo.png"
@@ -298,17 +279,6 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                                     <span class="pay">Pay</span><span class="pal">Pal</span>
                                                 </button>
                                             </div>
-
-                                            <!-- <div class="form-group myformgrp">
-                                                <button type="submit" class="cardBtn" id="orderNowCcavenue"
-                                                    onclick="ccAvenueOrder2()">
-                                                    <span class="masterCard"><img
-                                                            src="images/payments/masterCard.png"></span>
-                                                    <span class="visaCard"><img
-                                                            src="images/payments/visaCard.png"></span>
-                                                    <span> Credit or Debit Card</span>
-                                                </button>
-                                            </div> -->
 
                                             <div class="form-group myformgrp">
                                                 <button type="button" class="payLaterBtn" onclick="payLaterOrder()">
@@ -321,11 +291,12 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
-
                     </div>
-                </div>
+                </form>
+            </div>
+
         </section>
     </div>
     <!-- /Footer -->
@@ -335,14 +306,14 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
     <script>
     const paypalOrder = () => {
         document.getElementById("paymentForm").action = "cheakout/paypal-pay.php";
-        if (checkAddress("addressForm") != false) {
+        if (checkAddress("paymentForm") != false) {
             document.getElementById("paymentForm").submit();
         }
     }
 
     const payLaterOrder = () => {
         document.getElementById("paymentForm").action = "cheakout/paylater-order.php";
-        if (checkAddress("addressForm") != false) {
+        if (checkAddress("paymentForm") != false) {
             document.getElementById("paymentForm").submit();
         }
     }
@@ -352,6 +323,7 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
     const checkAddress = (formName) => {
         var elements = document.forms[formName].elements;
         for (i = 0; i < elements.length; i++) {
+            console.log(elements[i]);
             let type = elements[i].type;
             if (type != 'button' && type != 'submit') {
                 if (elements[i].value == '') {
