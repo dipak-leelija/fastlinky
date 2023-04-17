@@ -79,7 +79,7 @@ body {
 .contact-info__list span.position-absolute {
     left: 0
 }
- ul{
+.contact-info__wrapper ul{
     padding-left: 2rem !important;
 }
 .z-index-101 {
