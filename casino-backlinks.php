@@ -25,25 +25,11 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <!-- Custom CSS -->
-    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
     <link href="css/casino-backlinks.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/partials.css">
-
-
     <!-- font-awesome icons -->
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
     <!-- //Custom Theme files -->
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
-
-
-
 </head>
 
 <body data-scrollbar>
@@ -194,7 +180,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
             </div>
             <div class="col-lg-6 col-md-6 m-auto">
                 <div class="text-center">
-                    <img src="./images/freepik-img/casino-img-3.jpg" class=" w-100  mb-4 " alt="">
+                    <img src="./images/freepik-img/casino-img-3.png" class=" w-100  mb-4 " alt="">
                 </div>
             </div>
         </div>
@@ -209,8 +195,8 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
     <section class="my-sm-5 my-2 ">
         <h1 class="text-center pricing-bo-h1 mb-3">Casino Backlinks Pricing
         </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as <br> per DA,
-            DR, or organic traffic. Below is the pricing <br> for All 3 models.</p>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>
@@ -456,72 +442,11 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
     <!-- ------------------------------------------------------------------ -->
     <!-- Benefits Of Online Gaming And Casino Link Building- ending -->
     <!-- _______________________________________________________________________________________________ -->
-    <!-- extra details -->
-    <div class="features-sec">
-        <div class="features">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Real Ranking Sites
-                            </p>
-                            <p class="features-sec-details">
-                                Manual outreach on 100% real sites ranking in Google
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-th"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Customize Your Criteria
-                            </p>
-                            <p class="features-sec-details">
-                                Choose between Domain Authority or Publisher Traffic
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-truck"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Fast Deliverables
-                            </p>
-                            <p class="features-sec-details">
-                                7-day turnaround time guaranteed for your Guest Post
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-users"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Reseller Friendly
-                            </p>
-                            <p class="features-sec-details">
-                                Reseller friendly white-label reports to share with your clients
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- extra details -->
+      <!-- ______________________________________________________________________________________________________ -->
+    <!-- features-section start -->
+    <?php require_once "partials/features-section.php"; ?>
+    <!-- features-section ends -->
+    <!-- __________________________________________________________________________________________ -->
     <!-- ================================================================================================ -->
     <!-- Frequently Asked Questions starts -->
     <!-- ================================================================================================ -->

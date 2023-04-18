@@ -17,30 +17,16 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <meta name="keywords"
         content="managed link building, monthly link building service, monthly backlink building service, backlink management, link management, link building management, link building packages, whitehat link building services, best link building company," />
 
-
-    <!-- <link href=" css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <!-- Custom CSS -->
-    <link href="css/leelija.css" rel="stylesheet" />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
     <link href="css/managed-link-building.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/clientside-logo.css">
-
     <!-- font-awesome icons -->
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
     <!-- //Custom Theme files -->
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
-
-
-
 </head>
 
 <body data-scrollbar>
@@ -654,74 +640,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     <!-- What Makes Us A Dependable Supplier? ends -->
     <!-- ______________________________________________________________________________________________ -->
-
-
-    <!-- extra details -->
-    <div class="features-sec">
-        <div class="features">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Real Ranking Sites
-                            </p>
-                            <p class="features-sec-details">
-                                Manual outreach on 100% real sites ranking in Google
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-th"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Customize Your Criteria
-                            </p>
-                            <p class="features-sec-details">
-                                Choose between Domain Authority or Publisher Traffic
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-truck"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Fast Deliverables
-                            </p>
-                            <p class="features-sec-details">
-                                7-day turnaround time guaranteed for your Guest Post
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-users"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Reseller Friendly
-                            </p>
-                            <p class="features-sec-details">
-                                Reseller friendly white-label reports to share with your clients
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- extra details -->
+    <!-- ______________________________________________________________________________________________________ -->
+    <!-- features-section start -->
+    <?php require_once "partials/features-section.php"; ?>
+    <!-- features-section ends -->
+    <!-- __________________________________________________________________________________________ -->
 
     <!-- ================================================================================================= -->
     <!-- Frequently Asked Questions starts -->

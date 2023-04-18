@@ -25,24 +25,13 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <!-- Custom CSS -->
-    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/white-label-link-building.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/testimonials.css">
 
-
     <!-- font-awesome icons -->
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
     <!-- //Custom Theme files -->
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
-
-
-
 </head>
 
 <body data-scrollbar>
@@ -80,7 +69,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row">
             <div class="col-md-6 order-2 order-md-1">
                 <div class="text-center">
-                    <img src="./images/freepik-img/guest-posting-imgs-4.png" class="w-100 m-auto mb-4" alt="">
+                    <img src="./images/freepik-img/guest-posting-imgs-4.webp" class="w-100 m-auto mb-4" alt="">
                 </div>
             </div>
             <div class=" col-md-6 order-1 order-md-2 m-auto">
@@ -200,7 +189,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         For Your Agency?</span></h2>
             </div>
             <div class="works-f-u-main-card-div">
-                <div class="row">
+                <div class="row custom-cntainr">
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card  how-it-work-f-u-card h-100">
 
@@ -250,7 +239,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 requirements. </p>
 
                         </div>
-
                     </div>
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card how-it-work-f-u-card h-100">
@@ -266,9 +254,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 your hands on it or let us deliver it. </p>
 
                         </div>
-
                     </div>
-
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card how-it-work-f-u-card h-100">
 
@@ -520,7 +506,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
-    </section>
+    </section>  
 
     <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
@@ -848,7 +834,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-lg-6 col-md-6 m-auto">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/how-do-organic-links-benefit.png" class="w-100 mb-4" alt="">
+                        <img src="./images/freepik-img/how-do-organic-links-benefit.webp" class="w-100 mb-4" alt="">
                     </div>
 
                 </div>
@@ -875,7 +861,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6 m-auto">
                 <div class="text-center">
-                    <img src="./images/freepik-img/guest-posting-imgs-6.png" class="w-100 mb-4 m-auto" alt="">
+                    <img src="./images/freepik-img/guest-posting-imgs-6.webp" class="w-100 mb-4 m-auto" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -950,74 +936,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     </section>
     <!-- Things To Consider Before Selecting-section end -->
     <!-- _______________________________________________________________________________________________ -->
-
-    <!-- _________________________________________________________________________________________________ -->
-    <!-- extra details -->
-    <div class="features-sec">
-        <div class="features">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Real Ranking Sites
-                            </p>
-                            <p class="features-sec-details">
-                                Manual outreach on 100% real sites ranking in Google
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-th"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Customize Your Criteria
-                            </p>
-                            <p class="features-sec-details">
-                                Choose between Domain Authority or Publisher Traffic
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-truck"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Fast Deliverables
-                            </p>
-                            <p class="features-sec-details">
-                                7-day turnaround time guaranteed for your Guest Post
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-users"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Reseller Friendly
-                            </p>
-                            <p class="features-sec-details">
-                                Reseller friendly white-label reports to share with your clients
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- extra details -->
-    <!-- _______________________________________________________________________________________________ -->
+    <!-- ______________________________________________________________________________________________________ -->
+    <!-- features-section start -->
+    <?php require_once "partials/features-section.php"; ?>
+    <!-- features-section ends -->
+    <!-- __________________________________________________________________________________________ -->
     <!-- ================================================================================================= -->
     <!-- Frequently Asked Questions starts -->
     <!-- ================================================================================================ -->

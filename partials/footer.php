@@ -233,7 +233,7 @@ footer #subscribe-box .emailfield-for-outreach {
     margin: auto;
 }
 
-footer input[type="text"] {
+footer input[type="email"] {
     /* background: rgba(255, 255, 255, 0.075); */
     padding: 10px 15px;
     /* color: #aaa ; */
@@ -349,10 +349,10 @@ footer .thumb-content ::before {
                                 <div class="thumb-content"><a href="guest-posting">&nbsp;Guest Posting</a>
                                 </div>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <div class="thumb-content"><a href="guest-post-offer">&nbsp;Exclusive Guest
                                         Posting</a></div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -406,7 +406,7 @@ footer .thumb-content ::before {
                             simply subscribe with your email
                             address.</p>
                         <div class="emailfield-for-outreach">
-                            <input type="text" name="email" id="subscriberEmail" placeholder="Email">
+                            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="subscriberEmail" placeholder="Email" required>
                             <input class="submitbutton ripplelink" type="submit" onclick="saveItem('subscriberEmail')"
                                 value="Subscribe">
                         </div>

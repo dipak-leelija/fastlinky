@@ -5,7 +5,10 @@ body {
 .contact-us-section {
     margin-top: 3rem;
 }
-
+.form-group {
+    position: relative;
+    padding-bottom: 0px !important;
+}
 .contact-us-section h1 {
     font-size: 3rem;
     color: coral;
@@ -76,7 +79,9 @@ body {
 .contact-info__list span.position-absolute {
     left: 0
 }
-
+.contact-info__wrapper ul{
+    padding-left: 2rem !important;
+}
 .z-index-101 {
     z-index: 101;
 }

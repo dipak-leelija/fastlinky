@@ -59,7 +59,7 @@
     text-transform: capitalize;
     color: #FFF;
     background-image: linear-gradient(120deg, var(--mustard) 0%, #FA8273 100%);
-    border:1px solid var(--mustard);
+    border:1px solid var(--mustard) !important;
     border-radius: 50px 50px 50px 50px;
     padding: 13px 40px 13px 40px;
 }
@@ -115,7 +115,7 @@
     color: var(--mustard);
 }
 .best-blogs-best-result-main-p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.5em;
     text-align: justify;
@@ -200,8 +200,8 @@
 }
 
 .pricing-bo-p1 {
-    font-size: 1.1rem;
-    font-weight: 400;
+    font-size: 1.2rem;
+    font-weight: 500;
     color: var(--black);
 }
 /* -------------------------------- */

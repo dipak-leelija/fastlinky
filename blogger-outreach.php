@@ -23,25 +23,13 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <!-- Custom CSS -->
-    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
     <link href="css/blogger-outreach.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/clientside-logo.css">
-
     <!-- font-awesome icons -->
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
     <!-- //Custom Theme files -->
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
-
-
-
 </head>
 
 <body data-scrollbar>
@@ -86,7 +74,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row w-100 m-auto">
             <div class="col-md-6 order-2 order-md-1 m-auto">
                 <div class="text-center">
-                    <img src="./images/freepik-img/livecenter-img-front.png" class="w-100 m-auto mb-md-4" alt="">
+                    <img src="./images/freepik-img/livecenter-img-front.webp" class="w-100 m-auto mb-md-4" alt="">
                 </div>
             </div>
             <div class=" col-md-6 order-1 order-md-2">
@@ -166,7 +154,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6 real-bo-col-second">
                 <div class="text-center">
-                    <img src="./images/freepik-img/blogger-outrech-Link-Building.png" class="w-100 mb-md-4" alt="">
+                    <img src="./images/freepik-img/blogger-outrech-Link-Building.webp" class="w-100 mb-md-4" alt="">
                 </div>
 
                 <p class="real-bo-text-p mb-3 text-md-start">Fastlinky collaborates with multiple contributors to get
@@ -445,7 +433,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6 real-bo-col-second">
                 <div class="text-center">
-                    <img src="./images/freepik-img/link-insertion-banner.png" class="w-100 mb-md-4" alt="">
+                    <img src="./images/freepik-img/link-insertion-banner.webp" class="w-100 mb-md-4" alt="">
                 </div>
 
 
