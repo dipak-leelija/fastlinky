@@ -65,7 +65,6 @@ require_once ROOT_DIR."/includes/check-seller-login.inc.php";
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/order-table.css">
-    <link rel="stylesheet" href="css/leelija.css">
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/order-list.css" rel='stylesheet' type='text/css' />
     <link href="css/my-orders.css" rel='stylesheet' type='text/css' />

@@ -63,8 +63,6 @@ $mails = $Emails->ShowMailsbyCol('to_email', $_SESSION['USERcontinuecontent_ecom
 
     <!-- Custom CSS -->
     <link href="css/my-orders.css" rel='stylesheet' type='text/css' />
-    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/partials.css">
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <!-- <link href="css/form.css" rel='stylesheet' type='text/css' /> -->
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />

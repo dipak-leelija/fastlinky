@@ -50,7 +50,6 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
 
     <!-- Custom CSS -->
     <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/leelija.css" rel="stylesheet" type='text/css'>
     <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/order-list.css" rel='stylesheet' type='text/css' />

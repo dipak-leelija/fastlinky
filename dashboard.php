@@ -49,7 +49,6 @@ $mostSelling    = $BlogMst->mostSellingBlogs($cusId);
     <link href="<?php echo URL;?>/plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
 
     <!-- Custom CSS -->
-    <link href="<?php echo URL;?>/css/leelija.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/form.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />

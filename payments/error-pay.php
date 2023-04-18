@@ -34,7 +34,6 @@ $cusId	= $utility->returnSess('userid', 0);
 
     <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="../plugins/fontawesome-6.1.1/css/all.css">
-    <link rel="stylesheet" href="../css/leelija.css">
     <link rel="stylesheet" href="../css/style.css">
 
 </head>

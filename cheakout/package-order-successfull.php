@@ -51,7 +51,7 @@ if (!isset($_SESSION['updatedOrders'])) {
     <link rel="stylesheet" href="<?php echo URL; ?>/style/ansysoft.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo URL; ?>/plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/plugins/fontawesome-6.1.1/css/all.css">
-    <link rel="stylesheet" href="<?php echo URL; ?>/css/leelija.css">
+    <link rel="stylesheet" href="<?php echo URL; ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/css/payment-status.css">
 
 </head>

@@ -61,10 +61,8 @@ $cusDtl		= $customer->getCustomerData($cusId);
     <title>User Dashboard - <?php echo COMPANY_S; ?></title>
 
     <!-- Bootstrap Core CSS -->
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-
-    <!-- Custom CSS -->
+    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />

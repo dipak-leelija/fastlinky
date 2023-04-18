@@ -64,8 +64,6 @@ $_SESSION['reorder-page'] = $utility->currentUrl();
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
 
     <!-- Custom CSS -->
-
-    <link rel="stylesheet" href="css/leelija.css">
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/shoppingcart.css" rel='stylesheet' type='text/css' />
 

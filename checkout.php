@@ -202,7 +202,6 @@ if(isset($_POST['btnSubmit'])){
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/leelija.css">
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/cheakout.css" type='text/css'>
 

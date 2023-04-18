@@ -128,7 +128,6 @@ $lastUpdateTime = $dateUtil->dateTimeNum($lastUpdate['updated_on'], '/');
     <link href="css/order-view-update.css" rel='stylesheet' type='text/css' />
     <link href="css/order-list.css" rel='stylesheet' type='text/css' />
     <link href="css/my-orders.css" rel='stylesheet' type='text/css' />
-    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
     <!-- font-awesome icons -->
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
     <!-- //Custom Theme files -->

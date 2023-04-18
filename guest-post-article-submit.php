@@ -54,7 +54,6 @@ $thisPage =  $utility->currentUrl();
     <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="css/my-orders.css" rel='stylesheet' type='text/css' />
     <link href="css/order-list.css" rel='stylesheet' type='text/css' />

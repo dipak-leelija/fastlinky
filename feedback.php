@@ -57,7 +57,6 @@ $return_url		= "";
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
 
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/leelija.css">
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
 

@@ -77,7 +77,6 @@ $blogDtls		= $blogMst->ShowBlogApprData();
     <!-- End New Files  -->
 
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/leelija.css">
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="css/blog-list.css" rel='stylesheet' type='text/css' />
     <link href="../css/jquery-ui.css" rel="stylesheet">
