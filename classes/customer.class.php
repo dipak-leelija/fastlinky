@@ -815,13 +815,32 @@ class Customer extends Utility{
 		$query = $this->conn->query($sql);
 		$rows = $query->num_rows;
 		// echo $rows;exit;
+
 		//fetch the rows
 		if ($rows > 0) {
 			while($result = $query->fetch_assoc()){
 					$data	=	$result;
 			}
 			return $data;
-		}//if
+		}else {
+			//create the statement
+			$sql2 = "SELECT * FROM customer C, customer_info CI, customer_address CD
+			WHERE C.customer_id = CI.customer_id
+				AND	C.customer_id = CD.customer_id
+				AND C.username = '$email'";
+
+			$query2 = $this->conn->query($sql2);
+			$rows2 = $query->num_rows;
+			// echo $rows;exit;
+
+			//fetch the rows
+			if ($rows2 > 0) {
+				while($result2 = $query2->fetch_assoc()){
+						$data2	=	$result2;
+				}
+				return $data2;
+			}
+		}
 
 	}//	eof
 

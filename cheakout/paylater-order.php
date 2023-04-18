@@ -3,6 +3,9 @@ session_start();
 
 require_once dirname(__DIR__)."/includes/constant.inc.php";
 require_once dirname(__DIR__)."/includes/content.inc.php";
+require_once dirname(__DIR__)."/includes/registration.inc.php";
+require_once dirname(__DIR__)."/includes/user.inc.php";
+
 require_once ROOT_DIR."/_config/dbconnect.php";
 
 require_once ROOT_DIR."/classes/customer.class.php";
@@ -37,11 +40,32 @@ if (!isset($_SESSION[PACK_ORD])) {
     exit;   
 }
 
+if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['mob-no']) && isset($_POST['city']) && isset($_POST['pin-code']) && isset($_POST['state']) && isset($_POST['country'])) {
+    
+    $fname      = $_POST["firstname"];
+    $lname      = $_POST["lastName"];
+    $city       = $_POST["city"];
+    $state      = $_POST["state"];
+    $mobile     = $_POST["mob-no"];
+    $pincode    = $_POST["pin-code"];
+    $country    = $_POST["country"];
+   
+    $response = $customer->updateAddrDuringPackOrd($cusId, $fname, $lname, $city, $pincode, $state, $country, $mobile);
+    if (preg_match("/ERU300/i", $response)) {
+        header('Location: ../packages-summary.php?msg='.ERU300);
+        exit;
+    }
+    if (preg_match("/ERU007/i", $response)) {
+        header('Location: ../packages-summary.php?msg='.ERU007);
+        exit;
+    }
+}
+
 $customerName       = $cusDtl[0][5].' '.$cusDtl[0][6];
 $customerEmail      = $cusDtl[0][3];
 $customerMobile     = $cusDtl[0][34];
-$customerCity       = $Location->getCityDataById($cusDtl[0][27])['city'];
-$customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
+$customerCity       = $Location->getCityDataById($cusDtl[0][27])['name'];
+$customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])['name'];
 
 
 ?>

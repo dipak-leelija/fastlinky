@@ -50,38 +50,20 @@ if (!isset($_POST)) {
 	exit;
 }
 
-if (!isset($_SESSION['domainName']) && !isset($_SESSION['clientOrderPrice']) && !isset($_SESSION['order-data'])) {
+if (!isset($_SESSION['domainName']) && !isset($_SESSION['clientOrderPrice']) && !isset($_SESSION['order-data']) && !isset($_SESSION['orderId']) ) {
 	header("Location: my-orders.php");
 	exit;
 }else {
 	
 	$clientUserId       = $_SESSION['userid'];
 	$clientName         = $cusDtl[0][5].' '.$cusDtl[0][6];
-	$clientEmail        = $cusDtl[0][3];
+	$clientEmail        = $_SESSION[USR_SESS];
 
 	// Order Data
 	$clientOrderedSite 	= $_SESSION['domainName'];
 	$clientOrderPrice	= $_SESSION['clientOrderPrice'];
-	$orderData 			= $_SESSION['order-data'];
+	$contentData 			= $_SESSION['content-data'];
 	
-	$clientContent		= $orderData['clientContent'];
-	$clientTargetUrl	= $orderData['clientTargetUrl'];
-	$clientAnchorText 	= $orderData['clientAnchorText'];
-	$clientRequirement	= $orderData['clientRequirement'];
-	
-				
-        /**
-         * 
-         * ORDER STATUS CODE
-         * 1 = Delivered
-         * 2 = Pending
-         * 3 = Processing
-         * 4 = Oedered
-         * 
-         *  */ 
-		$clientOrderData = $ContentOrder->contentOrderDetails($clientUserId, $clientName, $clientEmail, $clientOrderedSite,$clientTargetUrl, $clientAnchorText, $clientContent, $clientRequirement, $clientOrderPrice, 2);
-
-		$_SESSION['orderId'] = $clientOrderData ;
 		$domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
     	$itemAmount = $domain[9]+$domain[16]; // cost + ext_cost
 		
@@ -128,8 +110,13 @@ if (isset($_POST['data']) && isset($_POST['blogId'])) {
 		 * 4 = Oedered
 		 * 
 		 *  */ 
-		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], $_SESSION['trxn_id'], $trxnStatus, 4);
-		$ContentOrder->addOrderTransection($_SESSION['orderId'], $_SESSION['trxn_id'], "Paypal", $itemAmount, 0, $paid_amount, $t_date, $clientEmail);
+		// $ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], $_SESSION['trxn_id'], $trxnStatus, 4);
+		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], 4);
+
+		// $ContentOrder->addOrderTransection($_SESSION['orderId'], $_SESSION['trxn_id'], "Paypal", $itemAmount, 0, $paid_amount, $t_date, $clientEmail);
+		$ContentOrder->addOrderTransection($_SESSION['orderId'], $trxnId, "Paypal", $trxnStatus, $itemAmount, $clientOrderPrice, $paid_amount, $clientEmail);
+
+
 
 		$ContentOrder->addOrderUpdate($_SESSION['orderId'], 'Order Placed', '', $cusDtl[0][0]);
 		$BlogMst->incrBlogSoldQty($blogId, 1);
@@ -157,7 +144,7 @@ if(isset($_SESSION['orderId'])) {
 	
 
 	//order status
-	$statusCode	= $orderDetail[0]['clientOrderStatus'];
+	$statusCode	= $orderDetail[0]['order_status'];
 	$statusName 		= $OrderStatus->getOrdStatName($statusCode);
 
 
@@ -170,6 +157,9 @@ if(isset($_SESSION['orderId'])) {
 
 	$seller = $customer->getCustomerByemail($sellerEmail);
 
+	// transection details
+	$txn = $ContentOrder->showTrxnByOrderId($_SESSION['orderId']);
+
 	// ===================================================================================================================
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
 	// ===================================================================================================================
@@ -178,80 +168,80 @@ if(isset($_SESSION['orderId'])) {
 	$addedOn 	= date('l, jS \of F Y, h:i a', strtotime($orderDetail[0]['added_on']));
 
 
-	// customer details 
-	$cusDtls_arr = array(
-					'CUSTOMER NAME',		//0
-					'CUSTOMER EMAIL', 		//1
-					'BUSINESS NAME', 		//2
-					'CITY',					//3
-					'STATE',				//4
-					'POSTAL CODE',			//5
-					'PHONE',				//6
-					'PLACED ON'				//7
-					);
+	// // customer details 
+	// $cusDtls_arr = array(
+	// 				'CUSTOMER NAME',		//0
+	// 				'CUSTOMER EMAIL', 		//1
+	// 				'BUSINESS NAME', 		//2
+	// 				'CITY',					//3
+	// 				'STATE',				//4
+	// 				'POSTAL CODE',			//5
+	// 				'PHONE',				//6
+	// 				'PLACED ON'				//7
+	// 				);
 
-	$cusData_arr = array(
-						$orderDetail[0]['clientName'], 		//0
-						$orderDetail[0]['clientEmail'],		//1
-						$client[0][12],						//2
-						$client[0][27],						//3
-						$client[0][28],						//4
-						$client[0][29],						//5
-						$client[0][34],						//6
-						$addedOn							//7
-					);
+	// $cusData_arr = array(
+	// 					$clientName,				 		//0
+	// 					$orderDetail[0]['clientEmail'],		//1
+	// 					$client[0][12],						//2
+	// 					$client[0][27],						//3
+	// 					$client[0][28],						//4
+	// 					$client[0][29],						//5
+	// 					$client[0][34],						//6
+	// 					$addedOn							//7
+	// 				);
 
 
 
 	
-	// order details 
-	$orddtls_arr = array(
-						'NAME', 		//0
-						'SERVICE',		//1
-						'SITE',			//2
-						'CITY', 		//3
-						'ZIP CODE', 	//4
-						'COUNTRY', 		//5
-						'PHONE', 		//6
-						'EMAIL', 		//7
-						'STATUS', 		//8
-						'PLACED ON',	//9
-					);
+	// // order details 
+	// $orddtls_arr = array(
+	// 					'NAME', 		//0
+	// 					'SERVICE',		//1
+	// 					'SITE',			//2
+	// 					'CITY', 		//3
+	// 					'ZIP CODE', 	//4
+	// 					'COUNTRY', 		//5
+	// 					'PHONE', 		//6
+	// 					'EMAIL', 		//7
+	// 					'STATUS', 		//8
+	// 					'PLACED ON',	//9
+	// 				);
 
-	$orddata_arr = array(
-						$orderDetail[0]['clientName'],	//0 
-						'Guest Posting', 				//1
-						$clientOrderedSite,				//2
-						$client[0][27],		 			//3
-						$client[0][29], 				//4
-						$client[0][30], 				//5
-						$client[0][34], 				//6
-						$orderDetail[0]['clientEmail'], //7
-						$statusName,					//8
-						$addedOn
-					);
+	// $orddata_arr = array(
+	// 					$clientName,					//0 
+	// 					'Guest Posting', 				//1
+	// 					$clientOrderedSite,				//2
+	// 					$client[0][27],		 			//3
+	// 					$client[0][29], 				//4
+	// 					$client[0][30], 				//5
+	// 					$client[0][34], 				//6
+	// 					$orderDetail[0]['clientEmail'], //7
+	// 					$statusName,					//8
+	// 					$addedOn
+	// 				);
 	
 
 
 
-	// transection details 
-	$txndtls_arr = array(
-						'ORDER ID',			//0
-						'TRANSECTION ID', 	//1
-						'AMOUNT', 			//2
-						'PAYMENT MODE',		//3
-						'PAYMENT STATUS',	//4
-						'PLACED ON'			//5
-					);
+	// // transection details 
+	// $txndtls_arr = array(
+	// 					'ORDER ID',			//0
+	// 					'TRANSECTION ID', 	//1
+	// 					'AMOUNT', 			//2
+	// 					'PAYMENT MODE',		//3
+	// 					'PAYMENT STATUS',	//4
+	// 					'PLACED ON'			//5
+	// 				);
 
-	$txndata_arr = array(
-						'#'.$orderDetail[0]['order_id'], 			//0
-						'#'.$orderDetail[0]['clientTransactionId'],	//1
-						'$'.$orderDetail[0]['clientOrderPrice'],	//2
-						'Paypal',									//3
-						$orderDetail[0]['paymentStatus'],			//4
-						$addedOn
-					);
+	// $txndata_arr = array(
+	// 					'#'.$orderDetail[0]['order_id'], 			//0
+	// 					'#'.$txn['transection_id'],					//1
+	// 					'$'.$txn['item_amount'],					//2
+	// 					'Paypal',									//3
+	// 					$txn['transection_status'],					//4
+	// 					$addedOn
+	// 				);
 	
 	
 
@@ -259,10 +249,6 @@ if(isset($_SESSION['orderId'])) {
 	// $fromMail_admin 		=	SITE_EMAIL;
 	// $toMail_admin		=	SITE_BILLING_EMAIL;
 	// $toName_admin		= 	SITE_BILLING_NAME;
-
-	$fromMail_admin 	=	SITE_EMAIL;
-	$toMail_admin		=	'rahulmajumdar400@gmail.com';
-	$toName_admin		= 	'Leelija Admin';
 
 	// adminOrderPlacedMail($fromMail_admin, $toMail_admin, $toName_admin, $cusDtls_arr, $cusData_arr,  $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
 
@@ -274,9 +260,9 @@ if(isset($_SESSION['orderId'])) {
 	// =========================================		SEND MAIL TO CLIENT		 =========================================
 	// ===================================================================================================================
 
-	$fromMail       = SITE_BILLING_EMAIL;
-	$toMail         = $orderDetail[0]['clientEmail'];
-	$toName         = $orderDetail[0]['clientName'];
+	// $fromMail       = SITE_BILLING_EMAIL;
+	// $toMail         = $orderDetail[0]['clientEmail'];
+	// $toName         = $clientName;
 	
 
 	// $mailSended = customerOrderPlacedMail($fromMail, $toMail, $toName, $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
@@ -288,10 +274,10 @@ if(isset($_SESSION['orderId'])) {
 	// =========================================		SEND MAIL TO SELLER		 =========================================
 	// ===================================================================================================================
 
-	$fromMail       = SITE_BILLING_EMAIL;
-	$blogName		= $clientOrderedSite;
-	$sellerMail     = $sellerEmail;
-	$sellerName     = $seller['fname'].' '.$seller['lname'];
+	// $fromMail       = SITE_BILLING_EMAIL;
+	// $blogName		= $clientOrderedSite;
+	// $sellerMail     = $sellerEmail;
+	// $sellerName     = $seller['fname'].' '.$seller['lname'];
 	
 
 	// sellerOrderinformMail($fromMail, $sellerMail, $sellerName, $blogName, $orddtls_arr, $orddata_arr, $addedOn);
@@ -302,6 +288,7 @@ if(isset($_SESSION['orderId'])) {
 	//session array
 	$sess_arr = array('domainName', 'clientOrderPrice', 'order-data', 'orderId', 'trxn_id', 'pay_success');
 	$utility->delSessArr($sess_arr);
+	unset($_SESSION['content-data']);
 	unset($_POST);
 }
 		

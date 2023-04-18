@@ -176,7 +176,7 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                     if (count($myOrders) > 0 ) {
                                         $showItems = 0;
                                         foreach ($myOrders as $order) {
-                                            $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);  
+                                            $status = $OrderStatus->singleOrderStatus($order['order_status']);  
                                 ?>
 
                                     <div class="card product_card  position-relative border rounded  mb-3">
@@ -201,10 +201,10 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
 
                                                 <div>
                                                     <span><i class="fa fa-angle-double-right me-1"></i>Ancor Text:
-                                                        <?php echo $order['clientAnchorText'];?></span>
+                                                        <?php //echo $order['clientAnchorText'];?></span>
                                                     <br>
                                                     <span><i class="fa fa-angle-double-right me-1"></i>Target URL:
-                                                        <?php echo $order['clientTargetUrl'];?></span>
+                                                        <?php //echo $order['clientTargetUrl'];?></span>
                                                 </div>
                                             </a>
                                         </div>

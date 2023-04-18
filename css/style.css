@@ -29,6 +29,7 @@
     --black: #383a50;
     --pure-green: #00FF00;
     --pink: #FF0833;
+    --red: #dc3545;
 }
 
 body {
@@ -633,7 +634,9 @@ body::-webkit-scrollbar-thumb {
 .bg_mustard {
     background: var(--mustard) !important;
 }
-
+.bg_red{
+    background: var(--red);
+}
 /* font sizes  */
 .fs_p8 {
     font-size: 0.8rem !important;

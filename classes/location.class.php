@@ -34,39 +34,6 @@ class Location extends DatabaseConnection{
 		return $result;
 	}//eof
 	
-	/**
-	*	Delete a province. Check whether there are county added under this province
-	*	@param $id	Province id
-	*	@return string
-	*/
-	function deleteProvince($id)
-	{
-		$cIds = $this->getCountyId($id);
-		
-		if(count($cIds) > 0)
-		{
-			//if counties are exists, don't delete
-			$result = "ER103";
-		}
-		else
-		{
-			//deleting from province
-			$sql	= "DELETE FROM province WHERE province_id='$id'";
-			$query	= mysql_query($sql);
-			
-			$result = '';
-			if(!$query)
-			{
-				$result = "ER103";
-			}
-			else
-			{
-				$result = "SU103";
-			}
-		}
-		//return the result
-		return $result;
-	}//eof
 	
 	/**
 	*	Update province
@@ -124,7 +91,7 @@ class Location extends DatabaseConnection{
 
 		$data	= array();
 
-		$sql	= "SELECT * FROM states WHERE state_id='$id'";
+		$sql	= "SELECT * FROM states WHERE id='$id'";
 		$query	= $this->conn->query($sql);
 		
 		if($query->num_rows == 1){
@@ -477,11 +444,11 @@ class Location extends DatabaseConnection{
 	}//eof
 	
 	
-		/////////////////////////////////////////////////////////////////////////////////////
-	//
-	//				********** COUNTY ***********
-	//
-	////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+	//																					//
+	//							  ********** COUNTRY ***********						//
+	//																					//
+	//////////////////////////////////////////////////////////////////////////////////////
 	
 	/**
 	* 	Create a county
@@ -663,7 +630,7 @@ class Location extends DatabaseConnection{
 	*			$id		id of the county
 	*
 	*/
-	function getCountyDataByCountyId($id)
+	function getCountyById($id)
 	{
 		$data	= array();
 		$sql	= 	"SELECT * 
@@ -673,15 +640,9 @@ class Location extends DatabaseConnection{
 		
 		if($query->num_rows == 1)
 		{
-			$result = $query->fetch_array();
+			$result = $query->fetch_assoc();
 			
-			$data = array(
-						 
-						 $result['id'],				//0
-						 $result['country_name'],	//1
-						 $result['country_code']	//2
-
-						 );
+			$data = $result;
 						
 		} 
 		return $data;

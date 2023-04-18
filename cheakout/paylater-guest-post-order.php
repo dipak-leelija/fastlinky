@@ -31,8 +31,10 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 ######################################################################################################################
 
-$todayDate      = $DateUtil->todayDate("/");
-$clientName     = $_SESSION['name'];
+$todayDate          = $DateUtil->todayDate("/");
+$clientUserId       = $_SESSION['userid'];
+$clientName         = $_SESSION['name'];
+$clientEmail        = $_SESSION[USR_SESS];
 
 if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     
@@ -40,33 +42,103 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     $clientOrderedSite        = $_SESSION['domainName'];
     $clientOrderedSiteNos     = count( (array) $_SESSION['domainName']);
 
-
     if (isset($_POST['order-name'])) {
-        if($_POST['order-name'] == "onlyPlacement" ){
+        
+        // ==============================================================================================================
+        // ==============================================================================================================
+        // ==============================================================================================================
+
+        if($_POST['order-name'] == "onlyPlacementWithFile" ){
 
             $clientOrderPrice         = $_SESSION['sitePrice'];
             $_SESSION['clientOrderPrice'] = $clientOrderPrice;
             unset($_SESSION['sitePrice']);
             unset($_SESSION['ConetntCreationPlacementPrice']);
 
-            $clientContent      = $_POST['clientContent1'];
-            $clientTargetUrl    = $_POST['clientTargetUrl1'];
+            $content_type       = 'doc';
+            $clientContentTitle = $_POST['clientContentTitle1'];
+
             $clientAnchorText   = $_POST['clientAnchorText1'];
+            $clientTargetUrl    = $_POST['clientTargetUrl1'];
+
+            $refAnc1    = $_POST['reference-anchor1'];
+            $refUrl1    = $_POST['reference-url1'];
+            $refAnc2    = $_POST['reference-anchor2'];
+            $refUrl2    = $_POST['reference-url2'];
+
+
             $clientRequirement  = $_POST['clientRequirement1'];
             $blogId             = $_POST['blogId'];
-            $tid                = $_POST['tid'];
             
-            $_SESSION['order-data'] = array(
-                            "clientContent"=>$clientContent,
-                            "clientTargetUrl"=>$clientTargetUrl,
-                            "clientAnchorText"=>$clientAnchorText,
-                            "clientRequirement"=>$clientRequirement
-                        );
+            
+            $filename   = basename($_FILES['content-file']['name']);
+            
+            $contentInfo = 'Content Type: '.pathinfo($filename, PATHINFO_EXTENSION);
 
-            $contentLength = 'Content Length: '.str_word_count($clientContent).' Words';
-            
+            $uploadedPath = $Utility->fileUploadWithRename($_FILES['content-file'], CONT_DIR);
+            if ($uploadedPath != false) {
+
+                $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, 7);
+                
+                $_SESSION['orderId']    = $orderId;
+
+                $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle, $uploadedPath);
+
+                $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1,$refAnc2, $refUrl2);
+            }
+
+            $_SESSION['order-data'] = array();
+
+            $_SESSION['content-data'] = array(
+                'contentTitle'      => $clientContentTitle,
+                'contentFile'       => $_FILES['content-file'],
+                'clientAnchorText'  => $clientAnchorText,
+                'clientTargetUrl'   => $clientTargetUrl,
+                'reference-anchor1' => $refAnc1,
+                'reference-url1'    => $refUrl1,
+                'reference-anchor2' => $refAnc2,
+                'reference-url2'    => $refUrl2,
+                'clientRequirement' => $clientRequirement
+            );
         }
+        // exit;
+
+
+
+        // ==============================================================================================================
+        // ==============================================================================================================
+        // ==============================================================================================================
+
+        
+        // if($_POST['order-name'] == "onlyPlacement" ){
+
+        //     $clientOrderPrice         = $_SESSION['sitePrice'];
+        //     $_SESSION['clientOrderPrice'] = $clientOrderPrice;
+        //     unset($_SESSION['sitePrice']);
+        //     unset($_SESSION['ConetntCreationPlacementPrice']);
+
+        //     $clientContentTitle = $_POST['clientContentTitle1'];
+        //     $clientContent      = $_POST['clientContent1'];
+        //     $clientTargetUrl    = $_POST['clientTargetUrl1'];
+        //     $clientAnchorText   = $_POST['clientAnchorText1'];
+        //     $clientRequirement  = $_POST['clientRequirement1'];
+        //     $blogId             = $_POST['blogId'];
+            
+        //     $_SESSION['order-data'] = array(
+        //                     "clientContentTitle"=>$clientContentTitle,
+        //                     "clientContent"=>$clientContent,
+        //                     "clientTargetUrl"=>$clientTargetUrl,
+        //                     "clientAnchorText"=>$clientAnchorText,
+        //                     "clientRequirement"=>$clientRequirement
+        //                 );
+
+        //     $contentLength = 'Content Length: '.str_word_count($clientContent).' Words';
+            
+        // }
     }
+
+    // print_r($_POST);
+    // exit;
 
     if (isset($_POST['order-name2'])) {
         if($_POST['order-name2'] == "placementWithArticle" ){
@@ -77,20 +149,62 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
             unset($_SESSION['ConetntCreationPlacementPrice']);
 
 
-            $clientContent      = '';
-            $clientTargetUrl    = $_POST['clientTargetUrl2'];
+            // $clientContent      = '';
+            // $clientTargetUrl    = $_POST['clientTargetUrl2'];
+            // $clientAnchorText   = $_POST['clientAnchorText2'];
+            // $clientRequirement  = $_POST['clientRequirement2'];
+            // $blogId             = $_POST['blogId'];
+            
+            // $_SESSION['order-data'] = array(
+            //                 "clientContent"=>$clientContent,
+            //                 "clientTargetUrl"=>$clientTargetUrl,
+            //                 "clientAnchorText"=>$clientAnchorText,
+            //                 "clientRequirement"=>$clientRequirement
+            //             );
+            // $contentLength = 'Content Will be publish by '. COMPANY_S;
+
+
+
+            $content_type       = '';
+            $clientContentTitle = $_POST['clientContentTitle2'];
+
             $clientAnchorText   = $_POST['clientAnchorText2'];
+            $clientTargetUrl    = $_POST['clientTargetUrl2'];
+
+            $refAnc1    = $_POST['reference-anchor1'];
+            $refUrl1    = $_POST['reference-url1'];
+            $refAnc2    = $_POST['reference-anchor2'];
+            $refUrl2    = $_POST['reference-url2'];
+
+
             $clientRequirement  = $_POST['clientRequirement2'];
             $blogId             = $_POST['blogId'];
-            $tid                = $_POST['tid2'];
             
-            $_SESSION['order-data'] = array(
-                            "clientContent"=>$clientContent,
-                            "clientTargetUrl"=>$clientTargetUrl,
-                            "clientAnchorText"=>$clientAnchorText,
-                            "clientRequirement"=>$clientRequirement
-                        );
-            $contentLength = 'Content Will be publish by '. COMPANY_S;
+            
+            
+            $contentInfo = 'Content Will be uploaded by '. COMPANY_S;
+
+                $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, 7);
+                
+                $_SESSION['orderId']    = $orderId;
+
+                $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle);
+
+                $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1,$refAnc2, $refUrl2);
+
+            $_SESSION['order-data'] = array();
+
+            $_SESSION['content-data'] = array(
+                'contentTitle'      => $clientContentTitle,
+                'clientAnchorText'  => $clientAnchorText,
+                'clientTargetUrl'   => $clientTargetUrl,
+                'reference-anchor1' => $refAnc1,
+                'reference-url1'    => $refUrl1,
+                'reference-anchor2' => $refAnc2,
+                'reference-url2'    => $refUrl2,
+                'clientRequirement' => $clientRequirement
+            );
+
         }
     }
 
@@ -108,14 +222,13 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Summary | <?php echo COMPANY_S; ?></title>
 
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png"/>
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
@@ -143,7 +256,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
                             <p><label><?php echo $clientName;?></label></p>
                             <p><label>Anchor Text : <?php echo $clientAnchorText; ?></label></p>
                             <p><label>Target Url : <?php echo $clientTargetUrl;?> </label></p>
-                            <span class="badge text-bg-info p-2"><?php echo $contentLength; ?></span>
+                            <span class="badge text-bg-info p-2"><?php echo $contentInfo; ?></span>
                         </div>
                     </div>
                 </div>
@@ -154,7 +267,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
                             <p><label>Invoice No: </label></p>
                             <p><label>Invoice Date : <?php echo $todayDate; ?> </label></p>
                             <p><label>Due Date : <?php echo $todayDate; ?><label></p>
-                            <p><label>Payment Mode : Paypal<label></p>
+                            <p><label>Payment Mode : PayLater<label></p>
                         </div>
                     </div>
                 </div>
@@ -201,7 +314,8 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
                                         <td>
                                             <div class="row">
                                                 <div class="col-6">Subtotal</div>
-                                                <div class="col-6" style="text-align: end;"><?php echo CURRENCY.$clientOrderPrice; ?></div>
+                                                <div class="col-6" style="text-align: end;">
+                                                    <?php echo CURRENCY.$clientOrderPrice; ?></div>
                                             </div>
 
                                         </td>
@@ -210,7 +324,8 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
                                         <td>
                                             <div class="row">
                                                 <div class="col-6">Total</div>
-                                                <div class="col-6" style="text-align: end;"><?php echo CURRENCY.$clientOrderPrice; ?></div>
+                                                <div class="col-6" style="text-align: end;">
+                                                    <?php echo CURRENCY.$clientOrderPrice; ?></div>
                                             </div>
 
                                         </td>
@@ -227,10 +342,14 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
                                         <td>
                                             <div class="row">
                                                 <div class="col-12 text-end">
-                                                    <button type="submit" class="btn btn-primary rounded-pill w-100 fw-semibold">Place Order</button>
+                                                    <button type="submit"
+                                                        class="btn btn-primary rounded-pill w-100 fw-semibold">Place
+                                                        Order</button>
                                                 </div>
                                                 <div class="col-12 text-end">
-                                                    <button type="button" class="btn btn-danger rounded-pill w-100 fw-semibold mt-2" onclick="history.back()">Cancel</button>
+                                                    <button type="button"
+                                                        class="btn btn-danger rounded-pill w-100 fw-semibold mt-2"
+                                                        onclick="history.back()">Cancel</button>
                                                 </div>
                                             </div>
                                         </td>

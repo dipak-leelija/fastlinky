@@ -2,6 +2,43 @@
 
 class ContentOrder extends DatabaseConnection{
 
+      #######################################################################################################################
+      #                                                                                                                     #
+      #                                                     ORDER DETAILS                                                   #
+      #                                                                                                                     #
+      #######################################################################################################################
+
+
+      public function addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, $orderStatus){
+
+            $clientRequirement      = addslashes(trim($clientRequirement));
+
+            $sql = "INSERT INTO `order_details` (
+                                    `clientUserId`,
+                                    `clientEmail`,	
+                                    `clientOrderedSite`,	
+                                    `clientRequirement`,	
+                                    `order_price`,
+                                    `order_status`,	
+                                    `added_on`                                            
+                                    ) VALUES (            
+                                    '$clientUserId',
+                                    '$clientEmail',
+                                    '$clientOrderedSite',
+                                    '$clientRequirement',
+                                    '$clientOrderPrice',
+                                    '$orderStatus',
+                                    now()
+                                    )";
+            // echo $sql;
+            $query = $this->conn->query($sql);
+            $insert_id= $this->conn->insert_id;
+
+            return $insert_id;
+
+      }//eof
+
+
 
 
       function showOrderdContentsByCol($column, $value, $andCol, $andvalue){
@@ -31,7 +68,7 @@ class ContentOrder extends DatabaseConnection{
       function activeOrders(){
 
             $data = array();
-            $sql  = "SELECT * FROM `order_details` WHERE `clientOrderStatus` >=0";
+            $sql  = "SELECT * FROM `order_details` WHERE `order_status` >=0";
             // echo $sql;
             $res  = $this->conn->query($sql);
             $rows = $res->num_rows;
@@ -48,7 +85,7 @@ class ContentOrder extends DatabaseConnection{
       function pendingOrders($userId){
 
             $data = array();
-            $sql  = "SELECT * FROM `order_details` WHERE `clientUserId` = '$userId' AND `clientOrderStatus` = 2 OR `clientOrderStatus` = 'pending' OR `clientOrderStatus` = 'Pending'";
+            $sql  = "SELECT * FROM `order_details` WHERE `clientUserId` = '$userId' AND `order_status` = 2 OR `order_status` = 'pending' OR `order_status` = 'Pending'";
             // echo $sql;
             $res  = $this->conn->query($sql);
             $rows = $res->num_rows;
@@ -66,7 +103,7 @@ class ContentOrder extends DatabaseConnection{
       function ordersByStatus($userId, $statusId){
 
             $data = array();
-            $sql  = "SELECT * FROM `order_details` WHERE `clientUserId` = '$userId' AND `clientOrderStatus` = $statusId";
+            $sql  = "SELECT * FROM `order_details` WHERE `clientUserId` = '$userId' AND `order_status` = $statusId";
             // echo $sql;
             $res  = $this->conn->query($sql);
             $rows = $res->num_rows;
@@ -163,51 +200,22 @@ class ContentOrder extends DatabaseConnection{
 
 
       /**
-       * @param $contentsId    = table `id`
-       * @param $tranId        = table `clientTransactionId`
-       * @param $pymntStatus   = table `paymentStatus`
-       * @param $orderStatus   = table `clientOrderStatus`
-       * 
+       * @param $orderId      = table `id`
+       * @param $orderStatus  = table `order_status`
        */
-      function contentOrderStatusUpdate($orderId, $tranId, $pymntStatus, $orderStatus){
+      function contentOrderStatusUpdate($orderId, $orderStatus){
 
             $sql= "UPDATE `order_details`
                   SET
-                  `clientTransactionId`   = '$tranId',
-                  `paymentStatus`         = '$pymntStatus',
-                  `clientOrderStatus`     = '$orderStatus'
+                  `order_status`     = '$orderStatus'
                   WHERE `order_id` = '$orderId' ";
-            // echo $sql.$this->conn->error;
             $query = $this->conn->query($sql);
+            
+            if ($query != 1) {
+                  echo $sql.$this->conn->error;
+            }
 
             return $query;
-
-      }//eof
-
-
-
-
-      // ========================================================================================================================
-      // ========================================================================================================================
-      // ========================================================================================================================
-      // ========================================================================================================================
-      // ========================================================================================================================
-
-
-
-      public function contentOrderDetails($clientUserId, $clientName, $clientEmail, $clientOrderedSite, $clientTargetUrl, $clientAnchorText, $clientContent, $clientRequirement, $clientOrderPrice, $orderStatus){
-
-            $clientAnchorText       = addslashes(trim($clientAnchorText));
-            $clientContent          = addslashes(trim($clientContent));
-            $clientRequirement      = addslashes(trim($clientRequirement));
-
-
-            $sql = "INSERT INTO `order_details` ( `clientUserId`, `clientName`, `clientEmail`, `clientOrderedSite`, `clientTargetUrl`, `clientAnchorText`, `clientContent`, `clientRequirement`,`clientOrderPrice`, `clientOrderStatus`) VALUES ('$clientUserId','$clientName','$clientEmail','$clientOrderedSite','$clientTargetUrl','$clientAnchorText','$clientContent','$clientRequirement','$clientOrderPrice', '$orderStatus')";
-            // echo $sql;
-            $query = $this->conn->query($sql);
-            $insert_id= $this->conn->insert_id;
-
-            return $insert_id;
 
       }//eof
 
@@ -235,57 +243,6 @@ class ContentOrder extends DatabaseConnection{
 
 
 
-      public function ClientOrderDetailsUpdate($id, $tranId, $tranStatus){
-
-            $sql= "UPDATE `order_details`
-                                    SET
-                                    `clientTransactionId`   ='$tranId',
-                                    `clientOrderStatus`     ='$tranStatus'
-                                    WHERE
-                                    `order_id`  = '$id' ";
-            // echo $sql.$this->conn->error;
-            $query = $this->conn->query($sql);
-
-            return $query;
-
-      }//eof
-
-
-
-      function ClientOrderContentUpdate($orderId, $clientAnchorText, $clientTargetUrl, $clientContent, $clientRequirement){
-
-            $clientAnchorText       = addslashes(trim($clientAnchorText));
-            $clientContent          = addslashes(trim($clientContent));
-            $clientRequirement      = addslashes(trim($clientRequirement));
-
-            if ($clientContent == '') {
-                  $sql= "UPDATE `order_details` 
-                                    SET 
-                                    `clientAnchorText`      ='$clientAnchorText',
-                                    `clientTargetUrl`       ='$clientTargetUrl',
-                                    `clientRequirement`     ='$clientRequirement'
-                                    WHERE 
-                                    `order_id`= '$orderId'";
-                  // echo $sql.$this->conn->error;
-                  $query = $this->conn->query($sql);
-            }else {
-                  $sql= "UPDATE `order_details` 
-                                    SET 
-                                    `clientAnchorText`      ='$clientAnchorText',
-                                    `clientTargetUrl`       ='$clientTargetUrl',
-                                    `clientContent`         ='$clientContent',
-                                    `clientRequirement`     ='$clientRequirement'
-                                    WHERE 
-                                    `order_id`= '$orderId'";
-                  // echo $sql.$this->conn->error;
-                  $query = $this->conn->query($sql);
-
-            }
-            return $query;
-
-      }//eof
-
-
 
       function ClientOrderOrderUpdate($orderId, $orderStatus, $column, $columnData ){
 
@@ -293,7 +250,7 @@ class ContentOrder extends DatabaseConnection{
                   
                   $sql= "UPDATE `order_details` 
                                           SET 
-                                          `clientOrderStatus`      ='$orderStatus'
+                                          `order_status`      ='$orderStatus'
                                           WHERE 
                                           `order_id`= '$orderId'";
                   $query = $this->conn->query($sql);
@@ -302,7 +259,7 @@ class ContentOrder extends DatabaseConnection{
             }else {
                   $sql= "UPDATE `order_details` 
                                           SET 
-                                          `clientOrderStatus`      ='$orderStatus',
+                                          `order_status`      ='$orderStatus',
                                           `$column`                ='$columnData'
                                           WHERE 
                                           `order_id`= '$orderId'";
@@ -315,18 +272,84 @@ class ContentOrder extends DatabaseConnection{
 
 
 
-      public function ClientOrderDetails2($clientUserId,$clientName,$clientEmail,$clientOrderedSite,$clientTargetUrl,$clientAnchorText,$clientRequirement,$clientOrderPrice){
+      ######################################################################################################################
+      #                                                                                                                    #
+      #                                                    ORDER CONTENTS                                                  #
+      #                                                                                                                    #
+      ######################################################################################################################
+      
+      
 
-            $sql= "INSERT INTO `order-details2`( `clientUserId`, `clientName`, `clientEmail`, `clientOrderedSite`, `clientTargetUrl`, `clientAnchorText`, `clientRequirement`, `clientOrderPrice`) VALUES ('$clientUserId','$clientName','$clientEmail','$clientOrderedSite','$clientTargetUrl','$clientAnchorText','$clientRequirement','$clientOrderPrice')";
-           
-            $query= $this->conn->query($sql);
-            // $insert_id= $this->conn->insert_id;
+      function addContent($orderId, $content_type, $title, $path="", $content=""){
 
-               return $query;
+            $title       = addslashes(trim($title));
+            $path        = addslashes(trim($path));
+            $content     = addslashes(trim($content));
 
-         }//eof
+            if ($content_type == 'doc') {
+                  $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `path`, `added_on`)
+                                                VALUES
+                                                ('$orderId', '$content_type', '$title', '$path', now())";
+            }else {
+                  $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `content`, `added_on`)
+                                                VALUES
+                                                ('$orderId', '$content_type', '$title', '$content', now())";
+            }
+
+            if($this->conn->query($sql) != 1){
+                  return false;
+            }else {
+                  $insert_id= $this->conn->insert_id;
+                  return $insert_id;
+            }
+
+      }//eof
 
 
+
+      ######################################################################################################################
+      #                                                                                                                    #
+      #                                                    ORDER HYPERLINK                                                 #
+      #                                                                                                                    #
+      ######################################################################################################################
+
+      function addContentHyperlink($contentId, $client_anchor, $client_url, $reference_anchor1, $reference_url1, $reference_anchor2, $reference_url2){
+
+            $client_anchor     = addslashes(trim($client_anchor));
+            $reference_anchor1        = addslashes(trim($reference_anchor1));
+            $reference_anchor2        = addslashes(trim($reference_anchor2));
+
+            $sql= "INSERT INTO `ordered_content_hyperlinks`  
+                              (`content_id`,
+                              `client_anchor`,
+                              `client_url`,
+                              `reference_anchor1`,
+                              `reference_url1`,
+                              `reference_anchor2`,
+                              `reference_url2`,
+                              `added_on`)
+                              VALUES
+                              ('$contentId', '$client_anchor', '$client_url', '$reference_anchor1', '$reference_url1','$reference_anchor2', '$reference_url2', now())";
+
+            // echo $sql.$this->conn->error;
+            $query = $this->conn->query($sql);
+
+            return $query;
+
+      }//eof
+
+
+
+      function delContentHyperlink($id){
+
+		$sql = "DELETE FROM ordered_content_hyperlinks WHERE id = '$id'";
+
+            // echo $sql.$this->conn->error;
+            $query = $this->conn->query($sql);
+            
+            return $query;
+
+      }//eof
 
 
       ######################################################################################################################
@@ -336,14 +359,33 @@ class ContentOrder extends DatabaseConnection{
       ######################################################################################################################
 
 
-      function addOrderTransection($order_id, $transection_id, $transection_mode, $item_amount, $due_amount, $paid_amount, $t_date, $transection_by){
+      public function showTrxnByOrderId($order_id){
+
+            $sql= "SELECT * FROM  `order_transections` WHERE `order_id`  = '$order_id' ";
+            // echo $sql.$this->conn->error;
+            $query = $this->conn->query($sql);
+            if ($query->num_rows > 0) {
+                  while ($data = $query->fetch_assoc()) {
+                       $res = $data;
+                  }
+            }else {
+                  $res = false;
+            }
+
+            return $res;
+
+      }//eof
+
+
+      function addOrderTransection($order_id, $trxn_id, $trxn_mode, $trxn_status, $item_amount, $due_amount, $paid_amount, $transection_by){
             
-            $transection_mode = addslashes(trim($transection_mode));
+            $trxn_mode = addslashes(trim($trxn_mode));
 
             $sql = "INSERT INTO `order_transections` 
-                        (`order_id`, `transection_id`, `transection_mode`, `item_amount`, `due_amount`, `paid_amount`, `t_date`, `transection_by`)
+                        (`order_id`, `transection_id`, `transection_mode`, `transection_status`, `item_amount`, `due_amount`, `paid_amount`, `transection_by`, `updated_on`)	
                         VALUES
-                        ('$order_id','$transection_id','$transection_mode','$item_amount', '$due_amount', '$paid_amount','$t_date','$transection_by')";
+                        ('$order_id', '$trxn_id', '$trxn_mode', '$trxn_status', '$item_amount', '$due_amount', '$paid_amount','$transection_by', now())";
+            // echo $sql.$this->conn->error;
             
             $query = $this->conn->query($sql);
             // $insert_id= $this->conn->insert_id;

@@ -80,3 +80,32 @@ const copyText = (fieldId) => {
 // }
 
 
+const getStateList = (t) => {
+    let countryId = t.value;
+    $.ajax({
+        url: "ajax/location.ajax.php",
+        type: "POST",
+        data: {
+            countryId: countryId
+        },
+        success: function(response) {
+            // console.log(response);
+            document.getElementById('stateId').innerHTML = response;
+        }
+    });
+}
+
+const getCitiesList = (t) => {
+    let stateId = t.value;
+    $.ajax({
+        url: "ajax/location.ajax.php",
+        type: "POST",
+        data: {
+            stateId: stateId
+        },
+        success: function(response) {
+            // console.log(response);
+            document.getElementById('city').innerHTML = response;
+        }
+    });
+}

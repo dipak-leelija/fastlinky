@@ -290,10 +290,10 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                         <?php
 												                           if(isset($_SESSION['userid'])){
 												                            
-												                               $utility->populateDropDown($cusDtl[24], 'id', 'country_name', 'countries');
+												                               $utility->populateDropDown($cusDtl[24], 'id', 'name', 'countries');
 												                                }else{
 												                             
-												                                $utility->populateDropDown(0, 'id', 'country_name', 'countries');
+												                                $utility->populateDropDown(0, 'id', 'name', 'countries');
 												                               }
 												                             ?>
                                                                     </select>

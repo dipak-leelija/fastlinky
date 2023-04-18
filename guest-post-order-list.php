@@ -96,7 +96,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                     if (count($myOrders) > 0 ) {
                                         $showItems = 0;
                                         foreach ($myOrders as $order) {
-                                            $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);  
+                                            $status = $OrderStatus->singleOrderStatus($order['order_status']);  
                                     ?>
                                 <div class="col-md-12 m-auto">
                                     <div
@@ -120,7 +120,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                                     <b>
                                                         TRANSECTION
                                                     </b>
-                                                    :<?php echo $order['clientTransactionId'].' || '.$order['added_on'] ?>
+                                                    :<?php // echo $order['clientTransactionId'].' || '.$order['added_on'] ?>
                                                 </small>
                                                 <small>
                                                     <b>
@@ -130,24 +130,24 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                                 </small>
                                                 <div>
                                                     <span><i class="fa fa-angle-double-right me-1"></i>Ancor Text:
-                                                        <?php echo $order['clientAnchorText'];?></span>
+                                                        <?php //echo $order['clientAnchorText'];?></span>
                                                     <br>
                                                     <span><i class="fa fa-angle-double-right me-1"></i>Target URL:
-                                                        <?php echo $order['clientTargetUrl'];?></span>
+                                                        <?php //echo $order['clientTargetUrl'];?></span>
                                                 </div>
                                                 <div class="d-flex justify-content-between pt-2">
                                                     <!-- <div class="col-6 text-end"> -->
                                                     <?php
                                                         //============== payment Status start ============== 
-                                                        if($order['paymentStatus'] != ''){
-                                                            if ($order['paymentStatus'] == "Completed") 
-                                                                $payStatus = 'complete-status';
-                                                            else
-                                                                $payStatus = '';
+                                                        // if($order['paymentStatus'] != ''){
+                                                        //     if ($order['paymentStatus'] == "Completed") 
+                                                        //         $payStatus = 'complete-status';
+                                                        //     else
+                                                        //         $payStatus = '';
 
 
-                                                            echo '<p class="'.$payStatus.'">Payment : '.$order['paymentStatus'].'</p>';
-                                                        }
+                                                        //     echo '<p class="'.$payStatus.'">Payment : '.$order['paymentStatus'].'</p>';
+                                                        // }
                                                         //============== payment Status end ============== 
                                                 ?>
                                                 </div>
