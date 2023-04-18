@@ -209,8 +209,8 @@ benefits of high domain authority website, domain authority rank" />
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 px-2 mt-5">High Authority Backlinks Pricing
         </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as  per DA,
-            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>
@@ -240,14 +240,13 @@ benefits of high domain authority website, domain authority rank" />
                 <h2 class=" text-center mt-4 my-3 works-bo-h2">Why Choose <span>
                         FastLinky?</span></h2>
             </div>
-            <div class="works-f-u-main-card-div">
-                <div class="row row-cols-1 row-cols-md-3">
+            <div class="works-f-u-main-card-div custom-cntainr">
+                <div class="row row-cols-1 row-cols-md-3 ">
                     <div class="col my-2 my-md-0">
                         <div class="card h-100 how-it-work-f-u-card">
 
                             <div class="pb-3 text-center text-md-start">
-                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class=""
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Significant Growth In Ranking:</h4>
                             <p class="lbp-texting">
@@ -263,8 +262,7 @@ benefits of high domain authority website, domain authority rank" />
                         <div class="card h-100 how-it-work-f-u-card">
 
                             <div class="pb-3 text-center text-md-start">
-                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class=""
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Backlink Strategy:</h4>
                             <p class="lbp-texting">
@@ -285,8 +283,7 @@ benefits of high domain authority website, domain authority rank" />
                         <div class="card h-100 how-it-work-f-u-card">
 
                             <div class=" pb-3 text-center text-md-start">
-                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class=""
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Comprehensive Backlinks Database:
                             </h4>
@@ -485,14 +482,13 @@ benefits of high domain authority website, domain authority rank" />
                 <h2 class=" text-center mt-4 my-3 works-bo-h2">What Are <span>
                         Our Plans?</span></h2>
             </div>
-            <div class="works-f-u-main-card-div">
+            <div class="works-f-u-main-card-div custom-cntainr">
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col my-2 my-md-0">
                         <div class="card h-100 how-it-work-f-u-card">
 
                             <div class="pb-3 text-center text-md-start">
-                                <img src="./images/dummy-img/real-bo-ul-li-2.png" 
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Analysis Of Backlinks:</h4>
                             <p class="lbp-texting">
@@ -508,8 +504,7 @@ benefits of high domain authority website, domain authority rank" />
                         <div class="card h-100 how-it-work-f-u-card">
 
                             <div class="pb-3 text-center text-md-start">
-                                <img src="./images/dummy-img/real-bo-ul-li-1.png" 
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Reverse Link Strategy:</h4>
                             <p class="lbp-texting">
@@ -527,8 +522,7 @@ benefits of high domain authority website, domain authority rank" />
                         <div class="card h-100 how-it-work-f-u-card">
 
                             <div class=" pb-3 text-center text-md-start">
-                                <img src="./images/dummy-img/real-bo-ul-li-3.png" 
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" alt="">
                             </div>
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Contribution Of Backlinks:
                             </h4>
@@ -626,76 +620,12 @@ benefits of high domain authority website, domain authority rank" />
     </section>
     <!-- Fastlinky Will Raise Your Domain Authority And Enhance  ends -->
     <!-- _________________________________________________________________________________________________ -->
+
     <!-- ______________________________________________________________________________________________________ -->
-
+    <!-- features-section start -->
+    <?php require_once "partials/features-section.php"; ?>
+    <!-- features-section ends -->
     <!-- __________________________________________________________________________________________ -->
-    <!-- extra details -->
-    <div class="features-sec">
-        <div class="features">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Real Ranking Sites
-                            </p>
-                            <p class="features-sec-details">
-                                Manual outreach on 100% real sites ranking in Google
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-th"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Customize Your Criteria
-                            </p>
-                            <p class="features-sec-details">
-                                Choose between Domain Authority or Publisher Traffic
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-truck"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Fast Deliverables
-                            </p>
-                            <p class="features-sec-details">
-                                7-day turnaround time guaranteed for your Guest Post
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <p class="features-sec-head-icon">
-                            <i class="fas fa-users"></i>
-                        </p>
-                        <div class="features-sec-all-details">
-                            <p class="features-sec-head">
-                                Reseller Friendly
-                            </p>
-                            <p class="features-sec-details">
-                                Reseller friendly white-label reports to share with your clients
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- extra details -->
-
     <!-- ================================================================================================= -->
     <!-- Frequently Asked Questions starts -->
     <!-- ================================================================================================ -->
@@ -713,7 +643,7 @@ benefits of high domain authority website, domain authority rank" />
     <div class="mt-4">
         <?php include_once 'partials/seller-action.php'; ?>
     </div>
-     <!-- --------------------------------------- -->
+    <!-- --------------------------------------- -->
     <!-- feedback form -->
     <?php require_once "partials/feedback.php"; ?>
     <!-- feedback form -->
