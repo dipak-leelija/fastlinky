@@ -57,11 +57,11 @@ session_destroy();
 
     <!-- Bootstrap Core CSS -->
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
-    <link rel="stylesheet" href="css/verification-email-sent.css">
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="css/verification-email-sent.css">
     <!-- //Custom Theme files -->
     <!--webfonts-->
     <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">

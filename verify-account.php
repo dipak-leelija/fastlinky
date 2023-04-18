@@ -124,12 +124,11 @@ if (isset($_GET['verify'])) {
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
-    <link rel="stylesheet" href="css/verified-account.css">
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
-
+    <link rel="stylesheet" href="css/verified-account.css">
 </head>
 
 <body id="page-top" class="pt-0" data-spy="scroll" data-target=".navbar-fixed-top">
