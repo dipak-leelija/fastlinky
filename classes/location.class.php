@@ -91,7 +91,7 @@ class Location extends DatabaseConnection{
 
 		$data	= array();
 
-		$sql	= "SELECT * FROM states WHERE state_id='$id'";
+		$sql	= "SELECT * FROM states WHERE id='$id'";
 		$query	= $this->conn->query($sql);
 		
 		if($query->num_rows == 1){
@@ -444,11 +444,11 @@ class Location extends DatabaseConnection{
 	}//eof
 	
 	
-		/////////////////////////////////////////////////////////////////////////////////////
-	//
-	//				********** COUNTY ***********
-	//
-	////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////
+	//																					//
+	//							  ********** COUNTRY ***********						//
+	//																					//
+	//////////////////////////////////////////////////////////////////////////////////////
 	
 	/**
 	* 	Create a county
@@ -630,7 +630,7 @@ class Location extends DatabaseConnection{
 	*			$id		id of the county
 	*
 	*/
-	function getCountyDataByCountyId($id)
+	function getCountyById($id)
 	{
 		$data	= array();
 		$sql	= 	"SELECT * 

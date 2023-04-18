@@ -17,11 +17,16 @@ function WordCount(str) {
 
 
 function validateForm1() {
+    let contentTitle = document.forms["contentPlacementForm"]["clientContentTitle1"].value;
     let content = document.forms["contentPlacementForm"]["clientContent1"].value;
-    let tatgetUrl = document.forms["contentPlacementForm"]["clientTargetUrl1"].value;
+    let targetUrl = document.forms["contentPlacementForm"]["clientTargetUrl1"].value;
     let AnchorText = document.forms["contentPlacementForm"]["clientAnchorText1"].value;
     // let x = document.forms["contentPlacementForm"]["clientRequirement1"].value;
 
+    if (contentTitle == "") {
+        alert("Please add the title!");
+        return false;
+    }
 
     if (content == "") {
         alert("Content Field Can Not Be Blank!");
@@ -35,13 +40,13 @@ function validateForm1() {
     }
 
 
-    if (tatgetUrl == "") {
+    if (targetUrl == "") {
         alert("Url can not be blank!");
         return false;
     } else {
         let url;
         try {
-            url = new URL(tatgetUrl);
+            url = new URL(targetUrl);
         } catch (_) {
             alert("Invalid Url Provided")
             return false;

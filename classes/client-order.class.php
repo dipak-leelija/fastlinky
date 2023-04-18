@@ -1,9 +1,11 @@
 <?php 
 
 class ClientOrder extends DatabaseConnection{
-      public function ClientOrderDetails($clientUserId,$clientName,$clientEmail,$clientOrderedSite,$clientTargetUrl,$clientAnchorText,$clientContent,$clientRequirement,$clientOrderPrice){
+      public function ClientOrderDetails($clientUserId,$clientName,$clientEmail,$clientOrderedSite,$clientRequirement,$clientOrderPrice){
 
-         $sql= "INSERT INTO `order_details`( `clientUserId`, `clientName`, `clientEmail`, `clientOrderedSite`, `clientTargetUrl`, `clientAnchorText`, `clientContent`, `clientRequirement`,`clientOrderPrice`) VALUES ('$clientUserId','$clientName','$clientEmail','$clientOrderedSite','$clientTargetUrl','$clientAnchorText','$clientContent','$clientRequirement','$clientOrderPrice')";
+         $sql= "INSERT INTO `order_details` ( `clientUserId`, `clientName`, `clientEmail`, `clientOrderedSite`,
+                                                `clientRequirement`,`clientOrderPrice`)
+                                    VALUES ('$clientUserId','$clientName','$clientEmail','$clientOrderedSite','$clientRequirement','$clientOrderPrice')";
         //execute query
         $query     = $this->conn->query($sql);
         $insert_id = $this->conn->insert_id;

@@ -158,7 +158,7 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                                             <?php
                                                                 $showItems = 1;
                                                                 foreach ($myOrders as $order) {
-                                                                    $status = $OrderStatus->singleOrderStatus($order['clientOrderStatus']);
+                                                                    $status = $OrderStatus->singleOrderStatus($order['order_status']);
                                                                     echo '
                                                                     
                                                                     <tr>

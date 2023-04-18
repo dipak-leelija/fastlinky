@@ -141,14 +141,53 @@ class Utility extends DatabaseConnection{
 	*
 	*	@return string
 	*/
-	function fileUpload($fileName, $fileIndex ,$path, $id, $column_file, $column_id, $table)
-	{
+	// function fileUpload($fileName, $fileIndex ,$path, $id, $column_file, $column_id, $table)
+	// {
+	// 	/*GENERATING UNIQUE NAME*/
+	// 	$timestamp = time();
+	// 	$randNum = $this->randomkeys(8);
+		
+	// 	if(isset($fileName['name']))
+	// 	{
+	// 		$file = explode('.',$fileName['name']);
+	// 		$file_name = $file[0];
+			
+	// 		//count the number of element in array
+	// 		$num = (int)count($file);
+			
+	// 		//Getting the file extentions, applicable when the user put 2 or 3 dots before 
+	// 		//the extension like 1.jpg.jpg
+	// 		$file_extension = $file[$num - 1];
+			
+	// 		//replace the file name with teh unique name
+	// 		$newName = $fileIndex."_".$timestamp."_".$randNum.".".$file_extension;
+			
+	// 		if (move_uploaded_file($fileName['tmp_name'], $path.$newName)) 
+	// 		{
+	// 			$msg = "File is valid, and was successfully uploaded. ";
+	// 		}
+			
+	// 		$update = "UPDATE ".$table." SET ".$column_file."='$newName' WHERE ".$column_id."='$id' ";
+	// 		$query  = mysql_query($update);
+			
+	// 		if(!$query)
+	// 		{
+	// 			return mysql_error();
+	// 		}
+	// 		else
+	// 		{
+	// 			return $fileName['tmp_name']." ".$path.$newName;
+	// 		} 
+	// 	}
+		
+	// }//eof
+	function fileUploadWithRename($fileName, $path){
+
 		/*GENERATING UNIQUE NAME*/
-		$timestamp = time();
 		$randNum = $this->randomkeys(8);
 		
-		if(isset($fileName['name']))
-		{
+		if(isset($fileName['name'])){
+
 			$file = explode('.',$fileName['name']);
 			$file_name = $file[0];
 			
@@ -160,27 +199,18 @@ class Utility extends DatabaseConnection{
 			$file_extension = $file[$num - 1];
 			
 			//replace the file name with teh unique name
-			$newName = $fileIndex."_".$timestamp."_".$randNum.".".$file_extension;
+			$newName = $file_name."-".$randNum.".".$file_extension;
 			
-			if (move_uploaded_file($fileName['tmp_name'], $path.$newName)) 
-			{
-				$msg = "File is valid, and was successfully uploaded. ";
-			}
-			
-			$update = "UPDATE ".$table." SET ".$column_file."='$newName' WHERE ".$column_id."='$id' ";
-			$query  = mysql_query($update);
-			
-			if(!$query)
-			{
-				return mysql_error();
-			}
-			else
-			{
-				return $fileName['tmp_name']." ".$path.$newName;
+			if (move_uploaded_file($fileName['tmp_name'], $path.$newName)) {
+				return $path.$newName;
+			}else {
+				return false;
 			} 
 		}
 		
 	}//eof
+
+	
 	
 	/**
 	*	Upload a file in the server. Before uploading it rename the file. This is advanced

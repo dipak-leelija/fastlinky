@@ -30,7 +30,10 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 ######################################################################################################################
 
 
-$clientName               = $_SESSION['name'];
+$todayDate          = $DateUtil->todayDate("/");
+$clientUserId       = $_SESSION['userid'];
+$clientName         = $_SESSION['name'];
+$clientEmail        = $_SESSION[USR_SESS];
 
 if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_SESSION['ConetntCreationPlacementPrice'])) {
 
@@ -40,6 +43,76 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
 
 
     if (isset($_POST['order-name'])) {
+
+
+
+        // ==============================================================================================================
+        // ==============================================================================================================
+        // ==============================================================================================================
+
+        if($_POST['order-name'] == "onlyPlacementWithFile" ){
+
+            $clientOrderPrice         = $_SESSION['sitePrice'];
+            $_SESSION['clientOrderPrice'] = $clientOrderPrice;
+            // unset($_SESSION['sitePrice']);
+            // unset($_SESSION['ConetntCreationPlacementPrice']);
+
+            $content_type       = 'doc';
+            $clientContentTitle = $_POST['clientContentTitle1'];
+
+            $clientAnchorText   = $_POST['clientAnchorText1'];
+            $clientTargetUrl    = $_POST['clientTargetUrl1'];
+
+            $refAnc1    = $_POST['reference-anchor1'];
+            $refUrl1    = $_POST['reference-url1'];
+            $refAnc2    = $_POST['reference-anchor2'];
+            $refUrl2    = $_POST['reference-url2'];
+
+
+            $clientRequirement  = $_POST['clientRequirement1'];
+            $blogId             = $_POST['blogId'];
+            
+            
+            $filename   = basename($_FILES['content-file']['name']);
+            
+            $contentInfo = 'Content Type: '.pathinfo($filename, PATHINFO_EXTENSION);
+
+            $uploadedPath = $Utility->fileUploadWithRename($_FILES['content-file'], CONT_DIR);
+            if ($uploadedPath != false) {
+
+                $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, 7);
+                
+                $_SESSION['orderId']    = $orderId;
+
+                $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle, $uploadedPath);
+
+                $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1,$refAnc2, $refUrl2);
+            }
+
+            $_SESSION['order-data'] = array();
+
+            $_SESSION['content-data'] = array(
+                'contentTitle'      => $clientContentTitle,
+                'contentFile'       => $_FILES['content-file'],
+                'clientAnchorText'  => $clientAnchorText,
+                'clientTargetUrl'   => $clientTargetUrl,
+                'reference-anchor1' => $refAnc1,
+                'reference-url1'    => $refUrl1,
+                'reference-anchor2' => $refAnc2,
+                'reference-url2'    => $refUrl2,
+                'clientRequirement' => $clientRequirement
+            );
+        }
+        // exit;
+
+
+
+        // ==============================================================================================================
+        // ==============================================================================================================
+        // ==============================================================================================================
+
+        
+
         if($_POST['order-name'] == 'onlyPlacement' ){
         
             $clientOrderPrice         = $_SESSION['sitePrice'];
@@ -139,7 +212,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                             <p><label><?php echo $clientName;?></label></p>
                             <p><label>Anchor Text : <?php echo $clientAnchorText; ?></label></p>
                             <p><label>Target Url : <?php echo $clientTargetUrl;?> </label></p>
-                            <p><label><?php echo  $contentLength; ?></label></p>
+                            <span class="badge text-bg-info p-2" ><?php echo  $contentInfo; ?></span>
                         </div>
                     </div>
                 </div>
@@ -252,7 +325,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
 
 
     <script
-        src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_LIVE_ID; ?>&disable-funding=credit,card&currency=USD">
+        src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_SANDBOX_ID; ?>&disable-funding=credit,card&currency=USD">
     // Live Id = AVfNiFu9M4brh84SlYmeHtHJCtdjW1CUmWl5T0wLsU2JOm6VNB6pCRcxi8zKxBbCO9p0t54pPtF65Tim
     </script>
     <!-- <script>paypal.Buttons().rander('#paypal-payment-button');</script> -->

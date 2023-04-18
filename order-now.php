@@ -39,7 +39,7 @@ $_SESSION['reorder-page'] = $utility->currentUrl();
 
 if($cusId == 0){
     $_SESSION['orderNow']= 'orderNow';
-    $_SESSION['orderNowId']= 'orderNow';  
+    $_SESSION['orderNowId']= $id;  
     header("Location: login.php");
     exit;
 }
@@ -54,7 +54,6 @@ $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
 
 $wishListsingleData = $blogMst->showBlog($id);
 
-$currency  = "$";
 $contetCreation= 15;
 
 $contentPlacementPrice = $wishListsingleData[9]+$wishListsingleData[16];
@@ -66,17 +65,38 @@ $_SESSION['ConetntCreationPlacementPrice']  = $contetCreationPlacementPrice;
 
 
 // Variable decleared to fetch content from session  
-$SESSclientContent      ='';
-$SESSclientAnchorText   ='';
-$SESSclientTargetUrl    ='';
-$SESSclientRequirement  ='';
-// cheaking session id to fetch content if exists  
-if (isset($_SESSION['order-data'])) {
-    $SESSclientContent      = $_SESSION['order-data']['clientContent'];
-    $SESSclientAnchorText   =  $_SESSION['order-data']['clientAnchorText'];
-    $SESSclientTargetUrl    =  $_SESSION['order-data']['clientTargetUrl'];
-    $SESSclientRequirement  =  $_SESSION['order-data']['clientRequirement'];
+$SESSclientContentTitle = '';
 
+$SESSclientContent      = '';
+$SESScontentText        = '';
+
+$SESSclientAnchorText   = '';
+$SESSclientTargetUrl    = '';
+
+$SESSreferenceAnchor1   = '';
+$SESSreferenceUrl1      = '';
+$SESSreferenceAnchor2   = '';
+$SESSreferenceUrl2      = '';
+
+$SESSclientRequirement  = '';
+
+// cheaking session id to fetch content if exists  
+if (isset($_SESSION['content-data'])) {
+    
+    $SESSclientContentTitle = $_SESSION['content-data']['contentTitle'];
+    $SESSclientAnchorText   = $_SESSION['content-data']['clientAnchorText'];
+    $SESSclientTargetUrl    = $_SESSION['content-data']['clientTargetUrl'];
+    $SESSreferenceAnchor1   = $_SESSION['content-data']['reference-anchor1'];
+    $SESSreferenceUrl1      = $_SESSION['content-data']['reference-url1'];
+    $SESSreferenceAnchor2   = $_SESSION['content-data']['reference-anchor2'];
+    $SESSreferenceUrl2      = $_SESSION['content-data']['reference-url2'];
+    $SESSclientRequirement  = $_SESSION['content-data']['clientRequirement'];
+
+    
+    if (isset($_SESSION['content-data']['clientContent'])) {
+        $SESScontentText      = $_SESSION['content-data']['clientContent'];
+    
+    }
 }
 ?>
 <!DOCTYPE HTML>
@@ -102,7 +122,7 @@ if (isset($_SESSION['order-data'])) {
     <link href="css/order-now.css" rel='stylesheet' type='text/css' />
 
     <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
 
     <!--webfonts-->
     <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
@@ -166,66 +186,130 @@ if (isset($_SESSION['order-data'])) {
 
                             <!-- contentPlacement start here -->
                             <div class="contentPlacement">
-                                <form method="post" id="orderForm" name="contentPlacementForm">
-                                    <div class="ffile-upload">
-                                        <div class="image-upload-wrap">
-                                            <input class="file-upload-input" type='file' onchange="readURL(this);"
-                                                accept=".xlsx,.xls,.doc, .docx," />
+                                <form method="post" id="orderForm" name="contentPlacementForm"
+                                    enctype="multipart/form-data">
+
+                                    <div class="form-group">
+                                        <label for="clientContentTitle1">
+                                            <h5>Title</h5>
+                                        </label>
+                                        <input type="text" class="form-control" placeholder="Enter the article title"
+                                            name="clientContentTitle1" value="<?php echo $SESSclientContentTitle; ?>">
+                                    </div>
+
+                                    <!-- content upload section start -->
+                                    <div class="content-upload">
+                                        <div class="content-upload-wrap">
+                                            <input class="file-upload-input" name="content-file" type='file'
+                                                onchange="readURL(this);" accept=".doc, .docx" />
                                             <div class="drag-text">
                                                 <p><i class="fa-sharp fa-solid fa-file-arrow-up"></i> <br>
-                                                    Drag and drop a file or select add Image</p>
+                                                    Drag and Drop Your Content File</p>
                                             </div>
                                         </div>
                                         <div class="file-upload-content">
                                             <img class="file-upload-image" src="#" alt="your image" />
                                             <div class="image-title-wrap">
                                                 <button type="button" onclick="removeUpload()"
-                                                    class="remove-image">Remove <span class="image-title">Uploaded
-                                                        Image</span></button>
+                                                    class="remove-image d-flex justify-content-between px-3">
+                                                    <span class="image-title">Uploaded Image</span>
+                                                    <span><i class="fa-sharp fa-solid fa-xmark fs-5"></i></span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="mytextfields_group">
-                                        <div class="bg_mustard p-2 my-4 mx-0 text-light"
-                                            style="border: 1px solid gainsboro;">
-                                            <h3 class="text-center mb-0">OR</h3>
-                                        </div>
-                                        <div class="form-group">
+                                    <!-- content upload section end -->
+
+                                    <!-- OR DIVIDER STARTED -->
+                                    <div id="or-divider" class="bg_mustard p-2 my-4 mx-0 text-light d-none"
+                                        style="border: 1px solid gainsboro;">
+                                        <h5 class="text-center mb-0">OR</h5>
+                                    </div>
+                                    <!-- OR DIVIDER ENDED -->
+
+                                    <!-- content text section start -->
+                                    <div id="content-text">
+                                        <div class="form-group d-none">
                                             <label for="">Your Content<span class="warning">*</span> (Must be a minimum
-                                                of
-                                                500 words) Don't have a content, get one here
+                                                of 500 words) Don't have a content, get one here
                                                 Place your content here. In your content, you can include up to 2 links
-                                                They
-                                                can be in the form of URLs and anchors. In the "URL" and "Anchor text"
-                                                fields below,
-                                                please insert the same URLs and anchors. <span class="warning">(Don't
-                                                    add
-                                                    any images in your article)</span></label>
+                                                They can be in the form of URLs and anchors. In the "URL" and "Anchor
+                                                text"
+                                                fields below, please insert the same URLs and anchors. <span
+                                                    class="warning">(Don't add any images in your
+                                                    article)</span></label>
                                             <div class="form-group">
                                                 <textarea class="form-control" name="clientContent1" id="" rows="9"
-                                                    placeholder="Put your content here"><?php echo $SESSclientContent; ?></textarea>
+                                                    placeholder="Write or paste your content here"
+                                                    onkeyup="checkContent(this)"><?php echo $SESScontentText; ?></textarea>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="clientTargetUrl1">
-                                                <h5>Target Url<span class="warning">*</span></h5>
-                                                <p>Enter the URL that you have included in your content above</p>
-                                            </label>
-                                            <input type="text" class="form-control" aria-describedby="Target Url"
-                                                placeholder="Enter Your Target URL" name="clientTargetUrl1"
-                                                value="<?php echo $SESSclientTargetUrl; ?>">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="clientAnchorText1">
-                                                <h5>Anchor Text<span class="warning"> *</span></h5>
-                                                <p> Enter the anchor text that you have included in your content above.
-                                                </p>
-                                            </label>
-                                            <input type="text" class="form-control" placeholder="Enter Your Anchor Text"
-                                                name="clientAnchorText1" value="<?php echo $SESSclientAnchorText; ?>">
-                                        </div>
                                     </div>
-                                    <div class="form-group">
+                                    <!-- content text section end -->
+
+                                    <!-- hyperLinks section start -->
+                                    <div class="mt-3" id="hyperLinks">
+                                        <div class="row">
+
+                                            <div class="col-md-6">
+                                                <h5>Anchor Text</h5>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <h5>Target Url</h5>
+                                            </div>
+                                            <!-- <div class="col-md-2">
+                                                <h5>Action</h5>
+                                            </div> -->
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter the anchor text for client url"
+                                                    name="clientAnchorText1"
+                                                    value="<?php echo $SESSclientAnchorText; ?>">
+                                            </div>
+
+                                            <div class="col-md-6 mb-2">
+                                                <input type="text" class="form-control" aria-describedby="Target Url"
+                                                    placeholder="Enter the client url" name="clientTargetUrl1"
+                                                    value="<?php echo $SESSclientTargetUrl; ?>">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter the reference anchor text"
+                                                    name="reference-anchor1"
+                                                    value="<?php echo $SESSreferenceAnchor1; ?>">
+                                            </div>
+
+                                            <div class="col-md-6 mb-2">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter the reference URL" name="reference-url1"
+                                                    value="<?php echo $SESSreferenceUrl1; ?>">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter the reference anchor text"
+                                                    name="reference-anchor2"
+                                                    value="<?php echo $SESSreferenceAnchor2; ?>">
+                                            </div>
+
+                                            <div class="col-md-6 mb-2">
+                                                <input type="text" class="form-control" aria-describedby="Target Url"
+                                                    placeholder="Enter the reference URL" name="reference-url2"
+                                                    value="<?php echo $SESSreferenceUrl2; ?>">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- hyperLinks section start -->
+
+                                    <div class="form-group mt-3">
                                         <label for="clientRequirement1">
                                             <h5>Special requirements</h5>
                                             <p>If necessary, Write all your task requirements here, e. g., content
@@ -235,9 +319,7 @@ if (isset($_SESSION['order-data'])) {
                                         <textarea class="form-control" rows="6"
                                             name="clientRequirement1"><?php echo $SESSclientRequirement; ?></textarea>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="tid" name="tid" value="">
-                                    </div>
+
                                     <div class="form-group">
                                         <input type="text" class="form-control d-none" id="blogId" name="blogId"
                                             value="<?php echo $_GET['id']?>">
@@ -269,46 +351,86 @@ if (isset($_SESSION['order-data'])) {
                                         </div> -->
 
                                         <div class="form-group">
-                                            <button type="submit" class="payLaterBtn" onclick="payLaterOrder()">
-                                                <span class="paylater_logo"><img
-                                                        src="images/payments/pay-later.png"></span>
+                                            <button type="button" class="payLaterBtn" onclick="payLaterOrder()">
+                                                <span class="paylater_logo"><img src="images/payments/pay-later.png"></span>
                                                 <span> PayLater</span>
                                             </button>
                                         </div>
                                     </div>
-
                                 </div>
-
-
                             </div>
                             <!-- contentPlacement end here -->
+
 
                             <!-- contentCreationPlacement start here -->
                             <div class="contentCreationPlacement">
                                 <form method="post" name="contentCreationPlacementForm" id="orderForm2">
 
-                                    <!-- action="order-details2.php?domainName2=<?php echo $wishListsingleData[0];?>&sitePrice2=<?php echo $contetCreationPlacement; ?>" -->
-
                                     <div class="form-group">
-                                        <label for="clientTargetUrl2">
-                                            <h5>Target Url<span class="warning"> *</span></h5>
-                                            <p>Enter The URL That You Have Included In Your Content Above</p>
+                                        <label for="clientContentTitle2">
+                                            <h5>Title</h5>
                                         </label>
-                                        <input type="text" class="form-control" aria-describedby="clientTargetUrl2"
-                                            placeholder="Enter Your Target URL" name="clientTargetUrl2"
-                                            value="<?php echo $SESSclientTargetUrl; ?>">
+                                        <input type="text" class="form-control" placeholder="Enter the article title"
+                                            name="clientContentTitle2" value="<?php echo $SESSclientContentTitle; ?>">
                                     </div>
 
+                                    <!-- hyperLinks section start -->
+                                    <div class="mt-3" id="hyperLinks">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5>Anchor Text</h5>
+                                            </div>
 
-                                    <div class="form-group">
-                                        <label for="clientAnchorText2">
-                                            <h5>Anchor Text<span class="warning">*</span></h5>
-                                            <p> Enter the anchor text that you have included in your content above.</p>
-                                        </label>
-                                        <input type="text" class="form-control" aria-describedby="clientAnchorText2"
-                                            placeholder="Enter the Anchor text" name="clientAnchorText2"
-                                            value="<?php echo $SESSclientAnchorText; ?>">
+                                            <div class="col-md-6">
+                                                <h5>Target Url</h5>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter the anchor text for client url"
+                                                    name="clientAnchorText2"
+                                                    value="<?php echo $SESSclientAnchorText; ?>">
+                                            </div>
+
+                                            <div class="col-md-6 mb-2">
+                                                <input type="text" class="form-control" name="clientTargetUrl2"
+                                                    placeholder="Enter the client url"
+                                                    value="<?php echo $SESSclientTargetUrl; ?>">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter the reference anchor text"
+                                                    name="reference-anchor1"
+                                                    value="<?php echo $SESSreferenceAnchor1; ?>">
+                                            </div>
+
+                                            <div class="col-md-6 mb-2">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter the reference URL" name="reference-url1"
+                                                    value="<?php echo $SESSreferenceUrl1; ?>">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter the reference anchor text"
+                                                    name="reference-anchor2"
+                                                    value="<?php echo $SESSreferenceAnchor2; ?>">
+                                            </div>
+
+                                            <div class="col-md-6 mb-2">
+                                                <input type="text" class="form-control" aria-describedby="Target Url"
+                                                    placeholder="Enter the reference URL" name="reference-url2"
+                                                    value="<?php echo $SESSreferenceUrl2; ?>">
+                                            </div>
+                                        </div>
+
                                     </div>
+                                    <!-- hyperLinks section start -->
 
                                     <div class="form-group">
                                         <label for="clientRequirement2">If necessary, Write all your task
@@ -319,9 +441,6 @@ if (isset($_SESSION['order-data'])) {
                                             name="clientRequirement2"><?php echo $SESSclientRequirement; ?></textarea>
                                     </div>
 
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="tid2" name="tid2" value="">
-                                    </div>
 
                                     <input type="hidden" name="order-name2" id="order-name2">
 
@@ -355,7 +474,7 @@ if (isset($_SESSION['order-data'])) {
                                         </div> -->
 
                                         <div class="form-group">
-                                            <button type="submit" class="payLaterBtn" onclick="payLaterOrder2()">
+                                            <button type="button" class="payLaterBtn" onclick="payLaterOrder2()">
                                                 <span class="paylater_logo"><img
                                                         src="images/payments/pay-later.png"></span>
                                                 <span> PayLater</span>
@@ -390,36 +509,92 @@ if (isset($_SESSION['order-data'])) {
     <script>
     const paypalOrder = () => {
 
+        let orderForm = document.getElementById("orderForm");
+        let orderName = document.getElementById("order-name");
+
         document.getElementById("order-name").value = "onlyPlacement";
-        // document.getElementById("orderForm").action = "order-details.php";
-        document.getElementById("orderForm").action = "payments/paypal-order-details.php";
+        orderForm.action = "cheakout/paypal-guest-post-order-summary.php";
+        // orderForm.action = "payments/paypal-order-details.php";
 
-        if (validateForm1() != false) {
-            document.getElementById("orderForm").submit();
+        // if (validateForm1() != false) {
+        //     document.getElementById("orderForm").submit();
+        // }
+
+
+        let contentFile = document.getElementsByName("content-file");
+        let clientContent1 = document.getElementsByName("clientContent1");
+
+        // execute if content not exists 
+        if (contentFile[0].value == '' && clientContent1[0].value == '') {
+            alert('Content Not Avilable');
+            return false;
         }
 
-    }
-    const ccAvenueOrder = () => {
+        // execute if content file uploded 
+        if (contentFile[0].value != '' && clientContent1[0].value == '') {
+            // console.log('Content file exists');
+            orderName.value = "onlyPlacementWithFile";
 
-        document.getElementById("order-name").value = "ccAvOrder";
-        document.getElementById("orderForm").action = "payments/gpwishlistOrder/payment.php";
-
-        if (validateForm1() != false) {
-            document.getElementById("orderForm").submit();
         }
 
+        // execute if content pasted 
+        if (contentFile[0].value == '' && clientContent1[0].value != '') {
+            console.log('Content file exists');
+            if (WordCount(contentFile[0].value) < 500) {
+                alert('Your content Should contain minimum 500words');
+            } else {
+                orderName.value = "onlyPlacementWithText";
+            }
+        }
+
+        orderForm.submit();
+
     }
+
+    // const ccAvenueOrder = () => {
+
+    //     document.getElementById("order-name").value = "ccAvOrder";
+    //     document.getElementById("orderForm").action = "payments/gpwishlistOrder/payment.php";
+
+    //     if (validateForm1() != false) {
+    //         document.getElementById("orderForm").submit();
+    //     }
+
+    // }
 
     const payLaterOrder = () => {
-        // alert('Hi');
+        let orderForm = document.getElementById("orderForm");
+        let orderName = document.getElementById("order-name");
 
-        document.getElementById("order-name").value = "onlyPlacement";
+        orderForm.action = "./cheakout/paylater-guest-post-order.php";
 
-        document.getElementById("orderForm").action = "payments/paylater-payment.php";
-        // document.getElementById("orderForm").submit();
-        if (validateForm1() != false) {
-            document.getElementById("orderForm").submit();
+        let contentFile = document.getElementsByName("content-file");
+        let clientContent1 = document.getElementsByName("clientContent1");
+
+        // execute if content not exists 
+        if (contentFile[0].value == '' && clientContent1[0].value == '') {
+            alert('Content Not Avilable');
+            return false;
         }
+
+        // execute if content file uploded 
+        if (contentFile[0].value != '' && clientContent1[0].value == '') {
+            // console.log('Content file exists');
+            orderName.value = "onlyPlacementWithFile";
+
+        }
+
+        // execute if content pasted 
+        if (contentFile[0].value == '' && clientContent1[0].value != '') {
+            console.log('Content file exists');
+            if (WordCount(contentFile[0].value) < 500) {
+                alert('Your content Should contain minimum 500words');
+            } else {
+                orderName.value = "onlyPlacementWithText";
+            }
+        }
+
+        orderForm.submit();
 
     }
 
@@ -438,52 +613,54 @@ if (isset($_SESSION['order-data'])) {
 
 
     const payLaterOrder2 = () => {
-        // alert('Hi');
 
-        document.getElementById("order-name2").value = "placementWithArticle";
+        let orderForm = document.getElementById("orderForm2");
+        let orderName = document.getElementById("order-name2");
 
-        document.getElementById("orderForm2").action = "payments/paylater-payment.php";
-        // document.getElementById("orderForm").submit();
-        if (validateForm2() != false) {
-            document.getElementById("orderForm2").submit();
+        orderName.value = "placementWithArticle";
+        orderForm.action = "./cheakout/paylater-guest-post-order.php";
+
+        let clientAnchorText2 = document.getElementsByName("clientAnchorText2");
+        let clientTargetUrl2 = document.getElementsByName("clientTargetUrl2");
+
+
+        if (clientAnchorText2[0].value != '' && clientTargetUrl2[0].value != '') {
+            orderForm.submit();
+        } else {
+            alert('Please enter the client url and anchor');
         }
 
     }
     </script>
 
+    <script>
+    // function hideTextfields() {
+    //     var element = document.getElementById("content-text");
+    //     var orDivider = document.getElementById("or-divider");
 
+    //     element.style.display = "none";
+    //     orDivider.style.display = "none";
+    // }
+    </script>
+    <script>
+    const readURL = (input) => {
+        var element = document.getElementById("content-text");
+        var orDivider = document.getElementById("or-divider");
 
-    <script>
-    window.onload = function() {
-        var d = new Date().getTime();
-        document.getElementById("tid").value = d;
-    };
-    </script>
-    <script>
-    window.onload = function() {
-        var d = new Date().getTime();
-        document.getElementById("tid2").value = d;
-    };
-    </script>
-    <script>
-    function hideTextfields() {
-        var element = document.getElementById("mytextfields_group");
-        element.style.display = "none";
-    }
-    </script>
-    <script>
-    function readURL(input) {
         if (input.files && input.files[0]) {
 
             var reader = new FileReader();
 
             reader.onload = function(e) {
-                $('.image-upload-wrap').hide();
+                $('.content-upload-wrap').hide();
 
                 $('.file-upload-image').attr('src', e.target.result);
                 $('.file-upload-content').show();
-                var element = document.getElementById("mytextfields_group");
+
                 element.style.display = "none";
+                orDivider.style.display = "none";
+
+                // document.getElementById("content-text").remove();
 
                 $('.image-title').html(input.files[0].name);
             };
@@ -496,18 +673,69 @@ if (isset($_SESSION['order-data'])) {
     }
 
     function removeUpload() {
+        // remove uploded file
+        let contentFile = document.getElementsByName("content-file");
+        contentFile[0].value = '';
+
         $('.file-upload-input').replaceWith($('.file-upload-input').clone());
-        var element = document.getElementById("mytextfields_group");
+        var element = document.getElementById("content-text");
+        var orDivider = document.getElementById("or-divider");
+
         element.style.display = "block";
+        orDivider.style.display = "block";
+
         $('.file-upload-content').hide();
-        $('.image-upload-wrap').show();
+        $('.content-upload-wrap').show();
     }
-    $('.image-upload-wrap').bind('dragover', function() {
-        $('.image-upload-wrap').addClass('image-dropping');
+
+    // drag and drop events
+    $('.content-upload-wrap').bind('dragover', function() {
+        $('.content-upload-wrap').addClass('image-dropping');
     });
-    $('.image-upload-wrap').bind('dragleave', function() {
-        $('.image-upload-wrap').removeClass('image-dropping');
+    $('.content-upload-wrap').bind('dragleave', function() {
+        $('.content-upload-wrap').removeClass('image-dropping');
     });
+
+    const checkContent = (t) => {
+        var contentUpload = document.querySelector(".content-upload");
+        var orDivider = document.getElementById("or-divider");
+
+        if (t.value.length > 0) {
+            contentUpload.style.display = "none";
+            orDivider.style.display = "none";
+        } else {
+            contentUpload.style.display = "block";
+            orDivider.style.display = "block";
+        }
+    }
+
+    // const addHyperLink = (sectionId) => {
+    //     let sec = document.getElementById(sectionId);
+    //     let newsec = `
+    //                 <div class="row">
+    //                     <div class="col-md-5 mb-2">
+    //                         <input type="text" class="form-control" placeholder="Enter the anchor text that you have included in above content" name="clientAnchorText1[]">
+    //                     </div>
+
+    //                     <div class="col-md-5 mb-2">
+    //                         <input type="text" class="form-control" aria-describedby="Target Url" placeholder="Enter the URL that you have included in your content" name="clientTargetUrl1[]">
+    //                     </div>
+    //                     <div class="col-md-2 col-md-2 d-flex align-items-center justify-content-evenly mb-2">
+    //                         <span class="badge text-bg-danger cursor_pointer" onclick="removeHyperLink(this)">Remove</span>
+    //                         <span class="badge text-bg-primary cursor_pointer" onclick="addHyperLink('${sectionId}')">Add New</span>
+    //                     </div>
+    //                 </div>`;
+    //     sec.insertAdjacentHTML('beforeend', newsec);
+    // }
+
+    // const removeHyperLink = (t) => {
+    //     let existingNodes = t.parentNode.parentNode.parentNode.children.length;
+    //     if (existingNodes == 2 || existingNodes < 2) {
+    //         alert(`You Have to add minimum 1 link`);
+    //     } else {
+    //         t.parentNode.parentNode.remove();
+    //     }
+    // }
     </script>
 </body>
 

@@ -17,7 +17,6 @@ require_once ROOT_DIR . "/classes/error.class.php";
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/content-order.class.php";
 require_once ROOT_DIR . "/classes/wishList.class.php";
-require_once ROOT_DIR . "/classes/countries.class.php";
 require_once ROOT_DIR . "/classes/location.class.php";
 
 require_once ROOT_DIR . "/classes/utility.class.php"; 
@@ -31,7 +30,6 @@ $OrderStatus	= new OrderStatus();
 $error			= new MyError();
 $ContentOrder	= new ContentOrder();
 $WishList		= new WishList();
-$Countries		= new Countries();
 $Location		= new Location();
 
 $dateUtil		= new DateUtil();
@@ -45,6 +43,10 @@ $typeM		= $utility->returnGetVar('typeM','');
 $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 
+
+
+// $clientName = $cusDtl[0][5].' '.$cusDtl[0][5];
+
 ###############################################################################################
 
 
@@ -54,7 +56,7 @@ if (!isset($_POST)) {
 }
 
 
-if (!isset($_SESSION['domainName']) && !isset($_SESSION['sitePrice']) && !isset($_SESSION['order-data'])) {
+if (!isset($_SESSION['domainName']) && !isset($_SESSION['sitePrice']) && !isset($_SESSION['order-data']) && !isset($_SESSION['orderId'])) {
 	header("Location: ".URL . "/my-orders.php");
 	exit;
 }else {
@@ -66,27 +68,8 @@ if (!isset($_SESSION['domainName']) && !isset($_SESSION['sitePrice']) && !isset(
 	// Order Data
 	$clientOrderedSite 	= $_SESSION['domainName'];
 	$clientOrderPrice	= $_SESSION['clientOrderPrice'];
-	$orderData 			= $_SESSION['order-data'];
+	$contentData 		= $_SESSION['content-data'];
 	
-	$clientContent		= $orderData['clientContent'];
-	$clientTargetUrl	= $orderData['clientTargetUrl'];
-	$clientAnchorText 	= $orderData['clientAnchorText'];
-	$clientRequirement	= $orderData['clientRequirement'];
-	
-				
-        /**
-         * 
-         * ORDER STATUS CODE
-         * 1 = Delivered
-         * 2 = Pending
-         * 3 = Processing
-         * 4 = Oedered
-         * 
-         *  */ 
-		$clientOrderData = $ContentOrder->contentOrderDetails($clientUserId, $clientName, $clientEmail, $clientOrderedSite,$clientTargetUrl, $clientAnchorText, $clientContent, $clientRequirement, $clientOrderPrice, 2);
-
-		$_SESSION['orderId'] = $clientOrderData;
-
 		$domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
     	$itemAmount = $domain[9]+$domain[16]; // cost + ext_cost
 		
@@ -103,11 +86,12 @@ if ( isset($_POST['blogId'])) {
 	$amount 				= 00;
 	$paid_amount 			= 00;   // paid ammount
 	$trxnId 				= '';	//geting the transection id 
-	$trxnStatus 			= 'Pay Later';	//geting the transection status
+	$trxnStatus 			= 'Completed';	//geting the transection status
 	$t_date 				= date('Y-m-d H:i:s');
 	$_SESSION['trxn_id']	= $trxnId;
+	
 
-	if ($trxnStatus == "Pay Later") {
+	if ($trxnStatus == "Completed") {
 		
 		$_SESSION['pay_success']  = true;
 
@@ -122,9 +106,10 @@ if ( isset($_POST['blogId'])) {
 		 * 4 = Oedered
 		 * 
 		 *  */ 
-		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], $_SESSION['trxn_id'], $trxnStatus, 4);
-		$ContentOrder->addOrderTransection($_SESSION['orderId'], $_SESSION['trxn_id'], "Pay Later", $itemAmount, $clientOrderPrice, $paid_amount, $t_date, $clientEmail);
-
+		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], 4);
+		
+		$ContentOrder->addOrderTransection($_SESSION['orderId'], $trxnId, "Pay Later", $trxnStatus, $itemAmount, $clientOrderPrice, $paid_amount, $clientEmail);
+		
 		$ContentOrder->addOrderUpdate($_SESSION['orderId'], 'Order Placed', '', $cusDtl[0][0]);
 		$BlogMst->incrBlogSoldQty($blogId, 1);
 
@@ -151,7 +136,7 @@ if(isset($_SESSION['orderId'])) {
 	
 
 	//order status
-	$statusCode	= $orderDetail[0]['clientOrderStatus'];
+	$statusCode			= $orderDetail[0]['order_status'];
 	$statusName 		= $OrderStatus->getOrdStatName($statusCode);
 
 
@@ -159,8 +144,8 @@ if(isset($_SESSION['orderId'])) {
 	$client		= $customer->getCustomerData($orderDetail[0]['clientUserId']);
 
 	//country details
-	$countryDetails = $Countries->showCountry($client[0][30]);
-	$countryName   	= $countryDetails[0];
+	$countryDetails = $Location->getCountyById($client[0][30]);
+	$countryName   	= $countryDetails['name'];
 
 	//city details
 	$cityDetails 	= $Location->getCityDataById($client[0][27]);
@@ -179,8 +164,12 @@ if(isset($_SESSION['orderId'])) {
 
 	$domainDetails = $BlogMst->showBlogbyDomain($orderDetail[0]['clientOrderedSite']);
 	$sellerEmail = $domainDetails[19];
-
+	
 	$seller = $customer->getCustomerByemail($sellerEmail);
+	
+	// transection details
+	$txn = $ContentOrder->showTrxnByOrderId($_SESSION['orderId']);
+	
 
 	// ===================================================================================================================
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
@@ -203,7 +192,7 @@ if(isset($_SESSION['orderId'])) {
 					);
 
 	$cusData_arr = array(
-						$orderDetail[0]['clientName'], 		//0
+						$clientName,						//0
 						$orderDetail[0]['clientEmail'],		//1
 						$client[0][12],						//2
 						$cityName,							//3
@@ -231,7 +220,7 @@ if(isset($_SESSION['orderId'])) {
 					);
 
 	$orddata_arr = array(
-						$orderDetail[0]['clientName'],	//0 
+						$clientName,					//0 
 						'Guest Posting', 				//1
 						$clientOrderedSite,				//2
 						$cityName,			 			//3
@@ -257,7 +246,7 @@ if(isset($_SESSION['orderId'])) {
 					);
 
 	$orddata_arr_seller = array(
-						$orderDetail[0]['clientName'],	//0 
+						$clientName,					//0 
 						'Guest Posting', 				//1
 						$clientOrderedSite,				//2
 						$cityName,			 			//3
@@ -281,19 +270,19 @@ if(isset($_SESSION['orderId'])) {
 
 	$txndata_arr = array(
 						'#'.$orderDetail[0]['order_id'], 			//0
-						'#'.$orderDetail[0]['clientTransactionId'],	//1
-						'$'.$orderDetail[0]['clientOrderPrice'],	//2
+						'#'.$txn['transection_id'],					//1
+						'$'.$txn['item_amount'],					//2
 						'PayLater',									//3
-						$orderDetail[0]['paymentStatus'],			//4
+						$txn['transection_status'],					//4
 						$addedOn
 					);
 	
 	
 
 
-	$fromMail_admin 	=	SITE_ADMIN_EMAIL;
-	$toMail_admin		=	SITE_EMAIL;
-	$toName_admin		= 	SITE_ADMIN_NAME;
+	// $fromMail_admin 	=	SITE_ADMIN_EMAIL;
+	// $toMail_admin		=	SITE_EMAIL;
+	// $toName_admin		= 	SITE_ADMIN_NAME;
 
 	// adminOrderPlacedMail($fromMail_admin, $toMail_admin, $toName_admin, $cusDtls_arr, $cusData_arr,  $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
 
@@ -305,9 +294,9 @@ if(isset($_SESSION['orderId'])) {
 	// =========================================		SEND MAIL TO CLIENT		 =========================================
 	// ===================================================================================================================
 
-	$fromMail       = SITE_EMAIL;
-	$toMail         = $orderDetail[0]['clientEmail'];
-	$toName         = $orderDetail[0]['clientName'];
+	// $fromMail       = SITE_EMAIL;
+	// $toMail         = $orderDetail[0]['clientEmail'];
+	// $toName         = $clientName;
 	
 
 	// $mailSended = customerOrderPlacedMail($fromMail, $toMail, $toName, $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
@@ -319,10 +308,10 @@ if(isset($_SESSION['orderId'])) {
 	// =========================================		SEND MAIL TO SELLER		 =========================================
 	// ===================================================================================================================
 
-	$fromMail       = SITE_EMAIL;
-	$blogName		= $clientOrderedSite;
-	$sellerMail     = $sellerEmail;
-	$sellerName     = $seller['fname'].' '.$seller['lname'];
+	// $fromMail       = SITE_EMAIL;
+	// $blogName		= $clientOrderedSite;
+	// $sellerMail     = $sellerEmail;
+	// $sellerName     = $seller['fname'].' '.$seller['lname'];
 	
 
 	// sellerOrderinformMail($fromMail, $sellerMail, $sellerName, $blogName, $orddtls_arr_seller, $orddata_arr_seller, $addedOn);
@@ -334,6 +323,7 @@ if(isset($_SESSION['orderId'])) {
 	//session array
 	$sess_arr = array('domainName', 'sitePrice', 'order-data', 'orderId', 'trxn_id', 'pay_success');
 	$utility->delSessArr($sess_arr);
+	unset($_SESSION['content-data']);
 	unset($_POST);
 }
 		
