@@ -1,15 +1,14 @@
 <?php
-require_once "includes/constant.inc.php";
 session_start();
+require_once __DIR__ . "/includes/constant.inc.php";
+require_once ROOT_DIR . "/_config/dbconnect.php";
 
-require_once("_config/dbconnect.php");
-
-require_once "classes/customer.class.php";
-require_once "classes/content-order.class.php";
-require_once "classes/orderStatus.class.php";
-require_once "classes/location.class.php";
-require_once "classes/utility.class.php";
-require_once "classes/utilityMesg.class.php";
+require_once ROOT_DIR . "/classes/customer.class.php";
+require_once ROOT_DIR . "/classes/content-order.class.php";
+require_once ROOT_DIR . "/classes/orderStatus.class.php";
+require_once ROOT_DIR . "/classes/location.class.php";
+require_once ROOT_DIR . "/classes/utility.class.php";
+require_once ROOT_DIR . "/classes/utilityMesg.class.php";
 
 /* INSTANTIATING CLASSES */
 $customer		= new Customer();
@@ -24,13 +23,8 @@ $typeM		= $utility->returnGetVar('typeM','');
 $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 
-if($cusId == 0){
-    header("Location: index.php");
-}
+require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
-if($cusDtl[0][0] == 2){
-    header("Location: dashboard.php");
-}
 if(isset($_GET['order'])){
     $orderId			  		= urldecode(base64_decode($_GET['order']));
 
@@ -205,15 +199,15 @@ if (isset($_POST['changesReq'])) {
                                                 <li> Order Id : <?php echo "#".$showOrder[0]['order_id']; ?>
                                                 </li>
                                                 <?php
-                                            if ($showOrder[0]['clientTransactionId'] != null) {
-                                                echo '<li> Transection Id : '.$showOrder[0]['clientTransactionId'];
+                                            if ($ordTxn['transection_id'] != null) {
+                                                echo '<li> Transection Id : '.$ordTxn['transection_id'];
                                             }
                                             ?>
                                                 </li>
-                                                <li> Price : <?php echo '$'.$showOrder[0]['clientOrderPrice']; ?></li>
-                                                <?php  $statusName = $OrderStatus->singleOrderStatus($showOrder[0]['clientOrderStatus']) ?>
+                                                <li> Price : <?php echo '$'.$ordTxn['item_amount']; ?></li>
+                                                <?php  $statusName = $OrderStatus->singleOrderStatus($showOrder[0]['order_status']) ?>
                                                 <li> Order : <?php echo $statusName[0][1]; ?></li>
-                                                <li> Payment : <?php echo $showOrder[0]['paymentStatus']; ?></li>
+                                                <li> Payment : <?php echo $ordTxn['transection_status']; ?></li>
                                                 <li> Date :
                                                     <?php echo date('l jS \of F Y h:i:s A', strtotime($showOrder[0]['added_on'])); ?>
                                                 </li>
@@ -234,8 +228,8 @@ if (isset($_POST['changesReq'])) {
                                                     <?php echo $buyer[0][29]; ?></li>
                                                 <li>
                                                     <?php
-                                                $country = $Location->getCountyDataByCountyId($buyer[0][30]);
-                                                echo $country[1];
+                                                $country = $Location->getCountyById($buyer[0][30]);
+                                                echo $country['name'];
                                                 ?>
                                                 </li>
                                             </ul>
@@ -248,11 +242,11 @@ if (isset($_POST['changesReq'])) {
 
                                 <?php
                                 $delivered = false;
-                                if($showOrder[0]['clientOrderStatus'] == 4 ){
+                                if($showOrder[0]['order_status'] == 4 ){
                                     $fieldStatus = '';
-                                }elseif($showOrder[0]['clientOrderStatus'] == 3 ){
+                                }elseif($showOrder[0]['order_status'] == 3 ){
                                     $fieldStatus = '';
-                                }elseif($showOrder[0]['clientOrderStatus'] == 1 || $showOrder[0]['clientOrderStatus'] == 5 ){
+                                }elseif($showOrder[0]['order_status'] == 1 || $showOrder[0]['order_status'] == 5 ){
                                     $fieldStatus = 'disabled';
                                     $delivered = true;
                                 }else {
@@ -286,12 +280,12 @@ if (isset($_POST['changesReq'])) {
                                                     $dueDate = date_format($dueDate, "l jS \of F Y h:i:s A");
 
                                                     
-                                            if ($showOrder[0]['paymentStatus'] == "Pay Later") {
+                                            if ($ordTxnd['transection_status'] == "Pay Later") {
                                                 echo '<small class="d-block text-danger fw-bold my-1">Pay Before '.$dueDate.'</small>';
                                             }
                                             
                                             
-                                            if ($showOrder[0]['paymentStatus'] == "Pay Later") {
+                                            if ($ordTxn['transection_status'] == "Pay Later") {
                                                 echo '<a class="btn btn-primary text-center" href="payments/paylater-pay-now.php?order='.base64_encode($orderId).'">Pay Now</a>';
                                             }
                                             

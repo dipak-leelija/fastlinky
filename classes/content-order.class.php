@@ -425,7 +425,7 @@ class ContentOrder extends DatabaseConnection{
             $sql = "SELECT * FROM `order_transections` WHERE `order_id` = '$order_id'";
             $query = $this->conn->query($sql);
             if ($query->num_rows > 0) {
-                  while ($result = $query->fetch_array()) {
+                  while ($result = $query->fetch_assoc()) {
                         $data = $result;
                   }
             }
