@@ -129,7 +129,6 @@ if (isset($_GET['verify'])) {
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <link rel="stylesheet" href="css/verified-account.css">
     <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/leelija.css">
 
 </head>
 

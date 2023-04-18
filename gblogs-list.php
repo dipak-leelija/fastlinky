@@ -52,7 +52,6 @@ $blogDtls		= $blogMst->ShowUserBlogData($cusDtl[0][2]);
     <link rel="stylesheet" href="plugins/data-table/style.css">
 
     <!-- Custom CSS -->
-    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <!-- <link href="css/form.css" rel='stylesheet' type='text/css' /> -->
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />

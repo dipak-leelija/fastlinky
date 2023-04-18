@@ -62,7 +62,6 @@ session_destroy();
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <link rel="stylesheet" href="css/verification-email-sent.css">
     <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/leelija.css">
     <!-- //Custom Theme files -->
     <!--webfonts-->
     <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">

@@ -71,7 +71,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Summary | <?php echo COMPANY_S; ?></title>
-
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="css/fontawesome-all.min.css">
 

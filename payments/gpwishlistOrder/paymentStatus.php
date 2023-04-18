@@ -164,7 +164,7 @@ $utility		= new Utility();
     <link rel="stylesheet" href="../../plugins/fontawesome-6.1.1/css/all.css">
 
     <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <link rel="stylesheet" href="../../css/leelija.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/payment-status.css">
 
 </head>

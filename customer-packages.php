@@ -68,7 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
 
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/leelija.css">
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <!-- <link href="css/blog-list.css" rel='stylesheet' type='text/css' /> -->
     <link href="css/pricing-mainpage.css" rel='stylesheet' type='text/css' />

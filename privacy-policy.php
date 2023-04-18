@@ -61,7 +61,6 @@ if(isset($_GET['seo_url']))
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
     <!-- Custom CSS -->
-    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/privacy-policy.css" rel='stylesheet' type='text/css' />
     <link href="css/testimonials.css" rel="stylesheet">
