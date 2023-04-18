@@ -1,6 +1,6 @@
 <?php
-require_once("../includes/constant.inc.php");
 session_start();
+require_once("../includes/constant.inc.php");
 include_once('checkSession.php');
 
 require_once "../_config/dbconnect.php";
@@ -186,8 +186,8 @@ if(isset($_POST['btnUpdateCustomer'])){
 
 
 		// Update Customer Address
-		$customer->updateCustomerAddr($cus_id, $txtAddress1, $txtAddress2, $txtAddress3, $txtTownId, $txtProvinceId,  $txtPostalCode,  $txtPhone1, '', $txtFax, $txtMobile, $txtCountriesId);
-														   
+		$customer->updateCusAddress($cus_id, $txtAddress1, $txtAddress2, $txtAddress3, $txtTownId, $txtProvinceId,  $txtPostalCode,  $txtCountriesId, $txtPhone1, '', $txtFax, $txtMobile);
+		   
 		//add to the mass email system
 		if(isset($_POST['checkNews']) && ($_POST['checkNews'] == 'yes')){
 
@@ -389,11 +389,11 @@ if(isset($_POST['btnUpdateCustomer'])){
                 
                     if(isset($_SESSION['txtProvinceId']) && ((int)$_SESSION['txtProvinceId'] > 0)){
                                 
-                        $utility->populateDropDown($_SESSION['txtProvinceId'], 'id', 'country_name', 'countries');
+                        $utility->populateDropDown($_SESSION['txtProvinceId'], 'id', 'name', 'countries');
 
                     }else{
 
-                        $utility->populateDropDown($cusDetail[0][30], 'id', 'country_name', 'countries');
+                        $utility->populateDropDown($cusDetail[0][30], 'id', 'name', 'countries');
 
                     }
                 
@@ -415,10 +415,10 @@ if(isset($_POST['btnUpdateCustomer'])){
                         if($cusDetail[0][30] > 0){
                             if(isset($_SESSION['txtProvinceId']) && ((int)$_SESSION['txtProvinceId'] > 0)){
                                 
-                                $utility->populateDropDown2($_SESSION['txtProvinceId'], 'state_id', 'state_name', 'country_id', $cusDetail[0][30], 'states');
+                                $utility->populateDropDown2($_SESSION['txtProvinceId'], 'id', 'name', 'country_id', $cusDetail[0][30], 'states');
 
                             }else{
-                                $utility->populateDropDown2($cusDetail[0][28], 'state_id', 'state_name',  'country_id', $cusDetail[0][30], 'states');
+                                $utility->populateDropDown2($cusDetail[0][28], 'id', 'name',  'country_id', $cusDetail[0][30], 'states');
                             }
                         }
                 ?>
@@ -436,12 +436,12 @@ if(isset($_POST['btnUpdateCustomer'])){
 
                         if(isset($_SESSION['txtTownId']) && ((int)$_SESSION['txtTownId'] > 0)){
 
-                            $utility->populateDropDown($_SESSION['txtTownId'], 'id', 'city', 'cities');
+                            $utility->populateDropDown($_SESSION['txtTownId'], 'id', 'name', 'cities');
 
                         }else{
 
                             // $utility->populateDropDown($cusDetail[0][27], 'id', 'city', 'cities');
-                            $utility->populateDropDown2($cusDetail[0][27], 'id', 'city',  'state_id', $cusDetail[0][28], 'cities');
+                            $utility->populateDropDown2($cusDetail[0][27], 'id', 'name',  'state_id', $cusDetail[0][28], 'cities');
 
                         }
                 }

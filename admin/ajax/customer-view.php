@@ -13,7 +13,6 @@ require_once("../../classes/date.class.php");
 require_once("../../classes/error.class.php");  
 require_once("../../classes/customer.class.php"); 
 require_once("../../classes/location.class.php"); 
-include_once("../../classes/countries.class.php");
 require_once("../../classes/subscriber.class.php");
 require_once("../../classes/pagination.class.php");
 require_once("../../classes/search.class.php");
@@ -29,8 +28,7 @@ $adminLogin 	= new adminLogin();
 $dateUtil      	= new DateUtil();
 $error 			= new Error();
 $customer		= new Customer();
-$lc		 		= new Location();
-$country		= new Countries();
+$Location		= new Location();
 $subscribe		= new EmailSubscriber();
 $pages			= new Pagination();
 $search_obj		= new Search();
@@ -211,27 +209,27 @@ $typeM		= $utility->returnGetVar('typeM','');
                                 <p>Organization : <?php echo $cusDtl[0][12]; ?></p>
                                 <p>Address : <?php echo $cusDtl[0][24]; ?></p>
                                 <p>Phone 1 : <?php echo $cusDtl[0][31]; ?></p>
-                                <p>Phone 2 : 5858584434</p>
+                                <p>Phone 2 : </p>
                                 <p>Fax : <?php echo $cusDtl[0][33]; ?></p>
                                 <p>Town/City : <?php
-                                                    $city = $lc->getCityDataById($cusDtl[0][27]);
+                                                    $city = $Location->getCityDataById($cusDtl[0][27]);
                                                     if (count($city) > 0) {
-                                                        echo $city[1];
+                                                        echo $city['name'];
                                                     }
                                                 ?>
                                 </p>
                                 <p>Province : <?php
-                                                    $state = $lc->getStateData($cusDtl[0][28]);
+                                                    $state = $Location->getStateData($cusDtl[0][28]);
                                                     if (count($state) > 0) {
-                                                        echo $state[0];
+                                                        echo $state['name'];
                                                     }
                                                 ?>
 
                                 </p>
                                 <p>Country : <?php 
-                                                $countryDtl= $country->showCountry($cusDtl[0][30]);
-                                                if ($countryDtl != NULL) {
-                                                    echo $countryDtl[0][0];
+                                                $country = $Location->getCountyById($cusDtl[0][30]);
+                                                if ($country != NULL) {
+                                                    echo $country['name'];
                                                 }
                                             ?>
 
