@@ -86,14 +86,10 @@ if ( isset($_POST['blogId'])) {
 	$amount 				= 00;
 	$paid_amount 			= 00;   // paid ammount
 	$trxnId 				= '';	//geting the transection id 
-	$trxnStatus 			= 'Completed';	//geting the transection status
+	$trxnStatus 			= 'Pending';	//geting the transection status
 	$t_date 				= date('Y-m-d H:i:s');
-	$_SESSION['trxn_id']	= $trxnId;
-	
-
-	if ($trxnStatus == "Completed") {
-		
-		$_SESSION['pay_success']  = true;
+	$_SESSION['trxn_id']	= $trxnId;	
+	$_SESSION['pay_success']  = true;
 
 
 
@@ -114,11 +110,6 @@ if ( isset($_POST['blogId'])) {
 		$BlogMst->incrBlogSoldQty($blogId, 1);
 
 
-	}else {
-
-		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], $_SESSION['trxn_id'], $trxnStatus, 2);
-		
-	}
 	
 }//end of post request data cheaking
 
