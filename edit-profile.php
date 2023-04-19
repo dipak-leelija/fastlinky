@@ -327,7 +327,7 @@ if(isset($_POST['btnCancel'])){
                                                                         }
 
                                                                         if (!empty($cusDtl[0][30])) {
-                                                                            echo $Location->getCountyDataByCountyId($cusDtl[0][30])['name'];
+                                                                            echo $Location->getCountyById($cusDtl[0][30])['name'];
                                                                         }
 
                                                                         if (!empty($cusDtl[0][29])) {
