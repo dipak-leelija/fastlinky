@@ -31,20 +31,7 @@
     line-height: 1.5em;
 }
 
-.blogger-btn {
-    font-size: 20px;
-    font-weight: 500;
-    text-transform: capitalize;
-    color: var(--pure-white);
-    background-color: var(--mustard);
-    border: 1px solid var(--mustard);
-    border-radius: 100px 100px 100px 100px;
-    padding: 13px 55px 13px 55px;
-}
 
-.blogger-btn:hover {
-    color: var(--mustard) !important;
-}
 
 /*      ending of white lebel links building main banner  */
 
@@ -102,10 +89,6 @@
 
 /*  Our Work Procedure-section start */
 
-.getyour-linkbtn {
-    display: flex;
-    justify-content: right;
-}
 
 .work-procedure-white-lebel-text-h1 {
     text-align: center;
@@ -231,12 +214,6 @@
     .white_lebel_link_banner {
         padding: 3rem 1rem 0rem;
     }
-
-    .getyour-linkbtn {
-        display: flex;
-        justify-content: center !important;
-    }
-
     .blogout-main-h1 {
         text-align: center;
         margin-top: .7rem;
@@ -245,15 +222,6 @@
     .white-lebel-main-p {
         text-align: center;
         justify-content: center;
-    }
-
-    .blogger-btn {
-        padding: 11px 34px 9px 34px;
-    }
-
-    .buttonsinfo {
-        text-align: center;
-        margin-bottom: 3rem;
     }
 
     .trustworthy-white-lebel-text-h1 {

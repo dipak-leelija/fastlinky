@@ -49,9 +49,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 niche to provide excellent
                                 links and brand honors. Take your company to the next level to outrank your competitors.
                             </p>
-                            <div class=" buttonsinfo ">
+                            <div class=" text-center text-md-start mb-5  mb-md-0 ">
                                 <a href="#pricing-cards">
-                                    <button type="button" class="btn blogger-btn ">Get Started</button>
+                                    <button type="button" class="btn srvc-common-btn ">Get Started</button>
                                 </a>
                             </div>
                         </div>
@@ -89,9 +89,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         reliability connections. <b>Our blogger outreach services</b> offer additional capabilities, in
                         addition, to support for problems such as thorough article layout,quantity and quality of
                         backlinks, customer requirements, and comment management.</p>
-                    <div class=" buttonsinfo mt-md-5 text-md-end">
+                    <div class=" text-center mb-5 mb-md-0 mt-5 text-md-end">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn blogger-btn">Get Your Links Now</button>
+                            <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                         </a>
                     </div>
                 </div>
@@ -143,9 +143,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </div>
                         </div>
 
-                        <div class=" buttonsinfo ">
+                        <div class=" text-center text-md-start mb-5 mb-md-0 ">
                             <a href="#pricing-cards">
-                                <button type="button" class="btn blogger-btn ">Get Your Links Now</button>
+                                <button type="button" class="btn srvc-common-btn ">Get Your Links Now</button>
                             </a>
                         </div>
                     </div>
@@ -337,9 +337,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
 
             </div>
-            <div class=" getyour-linkbtn ">
+            <div class=" text-center text-md-end">
                 <a href="#pricing-cards">
-                    <button type="button" class="btn blogger-btn d-flex justify-content-right">Get Your
+                    <button type="button" class="btn srvc-common-btn ">Get Your
                         Links Now</button>
                 </a>
             </div>
@@ -422,9 +422,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         websites so that clients can feel hassle-free in their link building target. This could be less
                         time and energy consuming for them going forwards.</p>
 
-                    <div class=" buttonsinfo ">
+                    <div class=" text-center text-md-start mb-5 mb-md-0">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn blogger-btn ">Get Your Links Now</button>
+                            <button type="button" class="btn srvc-common-btn ">Get Your Links Now</button>
                         </a>
                     </div>
 

@@ -41,9 +41,9 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
             <h1 class=""> Link Building & Quality Backlinks <br> <span>For igaming & Casino</span></h1>
             <p class=" ">Work with Online Gambling And Casino Link Building Specialists to gain a commercial advantage.
             </p>
-            <div class="casino-btn-div mt-5">
+            <div class=" mt-5">
                 <a href="#pricing-cards">
-                    <button type="button" class="btn managed-link-btn ">Get Started</button>
+                    <button type="button" class="btn srvc-common-btn ">Get Started</button>
                 </a>
             </div>
         </div>
@@ -61,7 +61,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
     <!-- -------------------------------------------------------------- -->
     <section class="challenges-casino-section mt-0">
         <div class="row">
-            <div class="col-lg-6 col-md-6 ">
+            <div class="col-lg-6 col-md-6 order-2 order-md-1">
                 <div class="">
                     <div>
                         <h1 class="">The Challenges <br> <span>Casino Backlinks</span>
@@ -95,20 +95,21 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
 
                     </div>
                 </div>
+                <div class=" text-center text-md-start mb-3 mb-md-0">
+                <a href="#pricing-cards">
+                    <button type="button" class="btn srvc-common-btn ">See Pricing</button>
+
+                </a>
             </div>
-            <div class="col-lg-6 col-md-6">
+            </div>
+            <div class="col-lg-6 col-md-6 order-1 order-md-2 ">
                 <div class="">
                     <div>
                         <img src="./images/freepik-img/casino-img-2.png" class=" w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
-            <div class=" buttonsinfo ">
-                <a href="#pricing-cards">
-                    <button type="button" class="btn blogger-btn ">See Pricing</button>
-
-                </a>
-            </div>
+            
         </div>
     </section>
     <!-- ---------------------------------------------------------------------------------------- -->
@@ -143,7 +144,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
 
                     <div class=" text-center text-md-end mt-md-5 my-4">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn blogger-btn ">Get Started</button>
+                            <button type="button" class="btn srvc-common-btn ">Get Started</button>
                         </a>
                     </div>
                 </div>
@@ -171,9 +172,9 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
                         simply ordinary links from other websites. This specialty has a number of limitations and
                         differences since link-building is more challenging. </p>
 
-                    <div class=" buttonsinfo mt-5">
+                    <div class="text-center text-md-start mt-5">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn blogger-btn ">Get Started</button>
+                            <button type="button" class="btn srvc-common-btn ">Get Started</button>
                         </a>
                     </div>
                 </div>
@@ -355,7 +356,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
                         backlinks to help you make the most of your money. </p>
                     <div class="text-center text-md-end mt-md-3 my-4 ">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn blogger-btn ">Get Started</button>
+                            <button type="button" class="btn srvc-common-btn ">Get Started</button>
                         </a>
                     </div>
                 </div>

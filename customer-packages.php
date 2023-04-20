@@ -87,17 +87,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         border-top: none;
         font-family: sans-serif;
         padding: 5px 5px 5px 15px;
-        max-height: 10rem;
+        max-height: 10.4rem;
         overflow-y: auto;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
-
+    .form-control:focus {
+   
+    box-shadow:none !important;
+}
     #packageList option {
         background-color: white;
         padding: 4px;
-        color: blue;
         margin-bottom: 1px;
-        font-size: 18px;
+        font-size: 15px;
         cursor: pointer;
     }
 

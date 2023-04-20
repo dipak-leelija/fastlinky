@@ -70,11 +70,13 @@ body::-webkit-scrollbar {
     opacity: 1;
     overflow-y: auto;
 }
+
 /* Track */
 body::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.671) !important;
     border-radius: 2px;
 }
+
 /* Handle */
 
 body::-webkit-scrollbar-thumb {
@@ -634,9 +636,11 @@ body::-webkit-scrollbar-thumb {
 .bg_mustard {
     background: var(--mustard) !important;
 }
-.bg_red{
+
+.bg_red {
     background: var(--red);
 }
+
 /* font sizes  */
 .fs_p8 {
     font-size: 0.8rem !important;
@@ -968,6 +972,7 @@ ul.callbacks_tabs {
     background: #EBF4FE;
     color: #407BFF;
 }
+
 .start-selling-banner-bottom {
     height: 80px;
     width: auto;
@@ -1882,6 +1887,7 @@ h5.blog-title {
 .blue_btn:hover {
     color: var(--custom-blue);
 }
+
 .purple-text {
     background: var(--custom-blue);
     -webkit-background-clip: text;
@@ -3098,9 +3104,11 @@ form.pack-form textarea {
     .fa-check-circle {
         font-size: 20px;
     }
+
     .features-sec-head {
         font-size: 15px;
     }
+
     .row>* {
         font-size: 17px;
     }
@@ -3300,6 +3308,7 @@ form.pack-form textarea {
         padding: 13px;
     }
 }
+
 /*============================================ Seller Action Start============================================*/
 
 .explore_btn {
@@ -3405,7 +3414,7 @@ form.pack-form textarea {
 
 .features-sec-details {
     color: #888a89;
-    font-size: 14px;
+    font-size: 14px !important;
 }
 
 /* domain-page css added by rozy */
@@ -3591,6 +3600,7 @@ strong {
         margin: auto;
     }
 }
+
 /* ========================================= */
 /* PRICE BOX FOR ALL SERVICES PAGE */
 /* =========================================== */
@@ -3674,8 +3684,43 @@ strong {
     list-style: square;
     text-transform: capitalize;
 }
+
+.srvc-common-btn {
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFF;
+    background-image: linear-gradient(120deg, var(--mustard) 0%, #FA8273 100%);
+    border: 1px solid #F7A546 !important;
+    border-radius: 50px 50px 50px 50px;
+    padding: 13px 40px 13px 40px;
+}
+
+.srvc-common-btn:hover {
+    color: white !important;
+    background-image: linear-gradient(120deg, #FA8273 0%, var(--mustard) 100%);
+}
+
 @media screen and (max-width: 767px) {
     .price-box-content {
         margin: 1rem;
+    }
+
+    .srvc-common-btn {
+        padding: 11px 34px 9px 34px;
+    }
+
+}
+
+@media (min-width:200px) and (max-width:312px) {
+    .indexpage-starting-main-h1 {
+        font-size: 1.55rem;
+    }
+
+    .sec_heading {
+        font-size: 1.6rem !important;
+    }
+
+    .srvc-common-btn {
+        padding: 7px 19px 7px 25px !important;
     }
 }

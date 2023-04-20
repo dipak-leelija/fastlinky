@@ -42,12 +42,12 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!--____________________________________________________________________________________________ -->
     <!-- starting of high quality guestposting main banner -->
     <section class="high-quality-gp-banner">
-        <div class="container mlb-main-cntainer">
-            <div class="row guest-posting-hq-main-row">
-                <div class="col-12 col-lg-7 col-md-7  px-0 px-md-4">
+        <div class="">
+            <div class="row w-100 m-auto">
+                <div class=" col-md-6 order-2 order-md-1 px-0 px-md-3">
                     <div class="mlb-wrapping">
                         <h1 class="high-quality-gp-heading-main">High quality <span>guest posting </span> service </h1>
-                        <p class=" mt-3 mb-4 py-0 py-md-2 high-quality-gp-main-p">Effective backlinks and content links
+                        <p class="  mb-3 py-0  high-quality-gp-main-p">Effective backlinks and content links
                             that raise the organic growth of your website.
                         </p>
                         <div>
@@ -66,15 +66,15 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </ul>
 
                         </div>
-                        <div class=" buttonsinfo mt-md-5">
+                        <div class=" text-center text-md-start mb-4 mb-md-0 mt-md-5">
                             <a href="#pricing-cards">
-                                <button type="button" class="btn high-quality-gp-btn">See
+                                <button type="button" class="btn srvc-common-btn">See
                                     Pricing</button>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-5 col-md-5 vid-col">
+                <div class=" col-md-6 order-1 order-md-2 mb-4 mb-md-0">
                     <div class="mlb-wrapping">
                         <img src="./images/freepik-img/guest-posting-imgs-3.webp" class="w-100" alt="">
                     </div>
@@ -118,9 +118,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         improves your website traffic.
                     </p>
 
-                    <div class=" buttonsinfo mt-5">
+                    <div class="text-center text-md-end  mt-md-5">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn high-quality-gp-btn">View Pricing</button>
+                            <button type="button" class="btn srvc-common-btn">View Pricing</button>
                         </a>
                     </div>
 
@@ -345,9 +345,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                 </div>
                 <a href="#pricing-cards">
-                    <div class="d-flex justify-content-end">
+                    <div class="">
                         <button type="button"
-                            class="btn high-quality-gp-btn d-flex justify-content-center external-css-fr-size ">Get Your
+                            class="btn srvc-common-btn  external-css-fr-size ">Get Your
                             Links Now</button>
                     </div>
                 </a>

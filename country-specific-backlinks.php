@@ -51,7 +51,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </p>
                     <div class="text-md-end text-center mt-0">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn blogger-btn ">Get Started</button>
+                            <button type="button" class="btn srvc-common-btn">Get Started Now</button>
                         </a>
                     </div>
                 </div>
@@ -89,9 +89,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         find your company online.
                     </p>
                 </div>
-                <div class=" buttonsinfo mt-4">
+                <div class=" text-md-start mb-md-0 mb-5 text-center mt-4">
                     <a href="#pricing-cards">
-                        <button type="button" class="btn blogger-btn ">Get Your Links Now</button>
+                        <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                     </a>
                 </div>
             </div>
@@ -312,9 +312,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </p>
 
                 </div>
-                <div class=" buttonsinfo mt-4">
+                <div class=" text-md-start text-center mt-4">
                     <a href="#pricing-cards">
-                        <button type="button" class="btn blogger-btn ">Get Your Links Now</button>
+                        <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                     </a>
                 </div>
             </div>

@@ -47,9 +47,9 @@ benefits of high domain authority website, domain authority rank" />
                         to your niche.
                     </p>
 
-                    <div class=" buttonsinfo ">
+                    <div class=" text-center text-md-start mb-5 mb-md-0 ">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn managed-link-btn ">Get Started</button>
+                            <button type="button" class="btn srvc-common-btn">Get Started</button>
                         </a>
                     </div>
                 </div>
@@ -71,7 +71,7 @@ benefits of high domain authority website, domain authority rank" />
                     <img src="./images/link-pushing.png " class="w-100 m-auto mb-md-4" alt="">
                 </div>
             </div>
-            <div class=" col-md-6 order-1 order-md-2">
+            <div class=" col-md-6 order-1 order-md-2 m-auto">
                 <div>
                     <p>We offer a wide range of reliable <b>high domain authority backlinks</b> from our selected
                         websites. We can offer any kind of specialized website. With ten thousand serious website
@@ -80,9 +80,9 @@ benefits of high domain authority website, domain authority rank" />
                     <p>Inform our professionals about your SEO concerns right away. Get high domain authority backlinks
                         and SEO link building services to boost the visibility of your brand on search engines. Our
                         excellent SEO services will significantly improve your search engine rankings. </p>
-                    <div class=" buttonsinfo mt-3 text-md-end">
+                    <div class=" text-center mb-5 mb-md-0  mt-3 text-md-end">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn managed-link-btn ">Get Your Links Now</button>
+                            <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                         </a>
                     </div>
                 </div>
@@ -116,9 +116,9 @@ benefits of high domain authority website, domain authority rank" />
 
 
 
-                <div class=" buttonsinfo mt-3">
+                <div class=" text-center text-md-start mb-5 mb-md-0  mt-5">
                     <a href="#pricing-cards">
-                        <button type="button" class="btn managed-link-btn ">Get Your Links Now</button>
+                        <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                     </a>
                 </div>
             </div>
@@ -135,7 +135,7 @@ benefits of high domain authority website, domain authority rank" />
     <!-- _______________________________________________________________________________________________ -->
     <!-- Relevant Topics, Value Adding Content- start -->
 
-    <section class="lbs-actually-matters-main">
+    <section class="lbs-actually-matters-main pt-0">
         <div class="row">
             <div class="col-xl-6 col-md-6 m-auto">
                 <div class="text-center  ">
@@ -144,7 +144,7 @@ benefits of high domain authority website, domain authority rank" />
                     </div>
                 </div>
             </div>
-            <div class=" col-xl-6 col-md-6">
+            <div class=" col-xl-6 col-md-6 m-auto">
                 <h1 class="lbs-actually-matters-main-h1 ">Relevant Topics, <br>
                     <span>Value Adding Content-</span>
                 </h1>
@@ -159,9 +159,9 @@ benefits of high domain authority website, domain authority rank" />
 
 
 
-                <div class=" buttonsinfo text-md-end mt-3">
+                <div class=" text-center  mb-5 mb-md-0  text-md-end mt-3">
                     <a href="#pricing-cards">
-                        <button type="button" class="btn managed-link-btn ">Get Your Links Now</button>
+                        <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                     </a>
                 </div>
             </div>
@@ -189,9 +189,9 @@ benefits of high domain authority website, domain authority rank" />
                 the links we supply.
             </p>
             <h2> <strong>Hassle-Free Link Building Just For You</strong> </h2>
-            <div class=" buttonsinfo mt-5 text-center ">
+            <div class="mt-3 mt-md-5 text-center ">
                 <a href="#pricing-cards">
-                    <button type="button" class="btn managed-link-btn ">View Pricing</button>
+                    <button type="button" class="btn srvc-common-btn">View Pricing</button>
                 </a>
             </div>
         </div>
@@ -416,9 +416,9 @@ benefits of high domain authority website, domain authority rank" />
 
 
 
-                <div class=" buttonsinfo mt-3">
+                <div class=" text-center text-md-start  mt-3">
                     <a href="#pricing-cards">
-                        <button type="button" class="btn managed-link-btn ">Get Your Links Now</button>
+                        <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                     </a>
                 </div>
             </div>
@@ -460,9 +460,9 @@ benefits of high domain authority website, domain authority rank" />
 
 
 
-                <div class=" buttonsinfo text-md-end mt-3">
+                <div class=" text-center  text-md-end mt-3">
                     <a href="#pricing-cards">
-                        <button type="button" class="btn managed-link-btn ">Get Your Links Now</button>
+                        <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                     </a>
                 </div>
             </div>
@@ -564,9 +564,9 @@ benefits of high domain authority website, domain authority rank" />
                     "poor" to the outcome of a domain authority or page authority check. Take a look at what it is
                     saying about the metrics you find important.</p>
 
-                <div class=" buttonsinfo mt-3">
+                <div class=" text-center text-md-start  mt-3">
                     <a href="#pricing-cards">
-                        <button type="button" class="btn managed-link-btn ">Get Your Links Now</button>
+                        <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                     </a>
                 </div>
             </div>
@@ -608,9 +608,9 @@ benefits of high domain authority website, domain authority rank" />
 
 
 
-                <div class=" buttonsinfo text-md-end mt-3">
+                <div class=" text-center  text-md-end mt-3">
                     <a href="#pricing-cards">
-                        <button type="button" class="btn managed-link-btn ">Get Your Links Now</button>
+                        <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                     </a>
                 </div>
             </div>

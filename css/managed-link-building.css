@@ -206,12 +206,6 @@
     text-align: end;
 }
 
-.getyour-linkbtn-for-lbs-matter {
-    display: flex;
-    justify-content: left;
-
-}
-
 .external-css-fr-size {
     width: 50%;
 }
@@ -357,11 +351,6 @@
     line-height: 25px;
 }
 
-.getyour-linkbtn {
-    display: flex;
-    justify-content: right;
-}
-
 .css-beats {
     --fa-beat-fade-opacity: 0.67 !important;
     --fa-beat-fade-scale: 1.075 !important;
@@ -441,11 +430,6 @@
         margin-bottom: 0rem !important;
     }
 
-    .getyour-linkbtn {
-        display: flex;
-        justify-content: center !important;
-    }
-
     .mlb-starting-main-h1 {
         font-size: 2.3rem;
         font-weight: 600;
@@ -465,11 +449,6 @@
         padding: 11px 34px 9px 34px;
     }
 
-    .buttonsinfo {
-        text-align: center;
-        margin-bottom: 3rem;
-    }
-
     .a-brand-need-link-main-h1 {
         text-align: center;
     }
@@ -480,11 +459,7 @@
     }
 
     .why-choose-fastlinky-mains {
-        margin: 1rem !important;
-    }
-
-    .getyour-linkbtn-for-lbs-matter {
-        margin-top: 1rem;
+        margin: 3rem 1rem !important;
     }
 }
 
