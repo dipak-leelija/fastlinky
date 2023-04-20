@@ -221,13 +221,13 @@ class ContentOrder extends DatabaseConnection{
 
 
 
-      function orderSingleDataUpdate($ord_id, $colName, $colData, $updatedBy){
+      function orderSingleDataUpdate($ord_id, $colName, $colVal, $updatedBy){
 
-            $colData = addslashes(trim($colData));
+            $colVal = addslashes(trim($colVal));
 
             $sql= "UPDATE `order_details`
                                     SET
-                                    `$colName`   ='$colData',
+                                    `$colName`        ='$colVal',
                                     `modified_by`     ='$updatedBy',
                                     `modified_on`     =now()
                                     WHERE
@@ -306,6 +306,32 @@ class ContentOrder extends DatabaseConnection{
       }//eof
 
 
+      function titleUpdate($orderId, $title){
+
+            $update = "UPDATE order_contents
+                              SET
+                              title             = '$title',
+                              updated_on        = now()
+                              WHERE	
+                              order_id	      = '$orderId'";
+            $query = $this->conn->query($update);
+            return $query;
+      }
+
+      function getOrderContent($orderId){
+
+            $select = "SELECT * FROM order_contents WHERE order_id = $orderId";
+            $query  = $this->conn->query($select);
+            if ($query->num_rows > 0) {
+                  while ($data = $query->fetch_assoc()) {
+                        $res = $data;
+                  }
+                  return $res;
+            }else{
+                  return false;
+            }
+      }
+
 
       ######################################################################################################################
       #                                                                                                                    #
@@ -339,6 +365,37 @@ class ContentOrder extends DatabaseConnection{
       }//eof
 
 
+
+      function updateHyperLinks($contentId, $client_anchor, $client_url, $reference_anchor1, $reference_url1, $reference_anchor2, $reference_url2){
+            $update = "UPDATE ordered_content_hyperlinks SET
+                              client_anchor     = '$client_anchor',
+                              client_url        = '$client_url',
+                              reference_anchor1 = '$reference_anchor1',
+                              reference_url1    = '$reference_url1',
+                              reference_anchor2 = '$reference_anchor2',
+                              reference_url2    = '$reference_url2',
+                              added_on          = now()
+                              WHERE 
+                              content_id        = $contentId";
+
+            $query = $this->conn->query($update);
+
+            return $query;
+      }
+
+      function getContentHyperLinks($content_id){
+            
+            $res    = false;
+            $select = "SELECT * FROM ordered_content_hyperlinks WHERE content_id = $content_id";
+            $query  = $this->conn->query($select);
+            if ($query->num_rows > 0) {
+                  while ($data = $query->fetch_assoc()) {
+                        $res = $data;
+                  }
+            }
+            return $res;
+      }
+      
 
       function delContentHyperlink($id){
 
@@ -421,7 +478,7 @@ class ContentOrder extends DatabaseConnection{
 
 
       function showTransectionByOrder($order_id){
-            
+            $data = false;
             $sql = "SELECT * FROM `order_transections` WHERE `order_id` = '$order_id'";
             $query = $this->conn->query($sql);
             if ($query->num_rows > 0) {

@@ -1,12 +1,14 @@
 <?php
 session_start();
 require_once __DIR__ . "/includes/constant.inc.php";
+require_once __DIR__ . "/includes/order-constant.inc.php";
 require_once ROOT_DIR . "/_config/dbconnect.php";
 
 require_once ROOT_DIR . "/classes/customer.class.php";
 require_once ROOT_DIR . "/classes/content-order.class.php";
 require_once ROOT_DIR . "/classes/orderStatus.class.php";
 require_once ROOT_DIR . "/classes/location.class.php";
+require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php";
 require_once ROOT_DIR . "/classes/utilityMesg.class.php";
 
@@ -15,12 +17,13 @@ $customer		= new Customer();
 $ContentOrder   = new ContentOrder();
 $OrderStatus    = new OrderStatus();
 $Location       = new Location();
-$utility		= new Utility();
+$DateUtil       = new DateUtil();
+$Utility		= new Utility();
 $uMesg          = new MesgUtility();
 ######################################################################################################################
-$typeM		= $utility->returnGetVar('typeM','');
+$typeM		= $Utility->returnGetVar('typeM','');
 //user id
-$cusId		= $utility->returnSess('userid', 0);
+$cusId		= $Utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
@@ -32,7 +35,8 @@ if(isset($_GET['order'])){
     header("Location: my-orders.php");
 }
 
-$thisPage =  $utility->currentUrl();
+$thisPage =  $Utility->currentUrl();
+$updatedBy =  $_SESSION[USR_SESS];
 
 ?>
 
@@ -44,14 +48,19 @@ $thisPage =  $utility->currentUrl();
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Order Details | <?php echo COMPANY_S; ?></title>
+    <title>My Order Details - <?php echo COMPANY_S; ?></title>
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- Bootstrap Core CSS -->
     <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <!-- font-awesome icons -->
-    <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
+    <!-- <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' /> -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-light.css">
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
@@ -69,52 +78,82 @@ $thisPage =  $utility->currentUrl();
     <?php
 
 if (isset($_POST['articleSubmit'])) {
-    
-    $orderId            = $_POST['orderId'];
-    $clientTargetUrl    = $_POST['clientTargetUrl'];
-    $clientAnchorText   = $_POST['clientAnchorText'];
+    // print_r($_REQUEST);
+    // exit;
+
+    $contentId              = $_POST['content-id'];
+
+    $clientContentTitle     = $_POST['clientContentTitle'];
+
+    $clientAnchorText       = $_POST['clientAnchorText'];
+    $clientTargetUrl        = $_POST['clientTargetUrl'];
+
+    $refAnc1                = $_POST['reference-anchor1'];
+    $refUrl1                = $_POST['reference-url1'];
+    $refAnc2                = $_POST['reference-anchor2'];
+    $refUrl2                = $_POST['reference-url2'];
+
+
     $clientRequirement  = $_POST['clientRequirement'];
 
+    $titleUpdate = $ContentOrder->titleUpdate($orderId, $clientContentTitle);
+    $LinksUpdate = $ContentOrder->updateHyperLinks($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1, $refAnc2, $refUrl2);
+    $reqUpdate   = $ContentOrder->orderSingleDataUpdate($orderId, 'clientRequirement', $clientRequirement, $updatedBy);
 
-    if (isset($_POST['clientContent'])) {
+    $checkArray = array($titleUpdate, $LinksUpdate, $reqUpdate);
+    if (!in_array(false, $checkArray) || !in_array(0, $checkArray)) {
+       ?>
+    <script>
+    Swal.fire({
+        title: 'Updated!',
+        text: 'Contents Updated',
+        icon: 'success',
+        confirmButtonText: 'Continue'
+    })
+    </script>
+    <?php
+    }
+    // exit;
+    // if (isset($_POST['clientContent'])) {
         
-        $clientContent      = $_POST['clientContent'];
+    //     $clientContent      = $_POST['clientContent'];
 
-        $updated = $ContentOrder->ClientOrderContentUpdate($orderId, $clientAnchorText, $clientTargetUrl, $clientContent, $clientRequirement);
+    //     $updated = $ContentOrder->ClientOrderContentUpdate($orderId, $clientAnchorText, $clientTargetUrl, $clientContent, $clientRequirement);
 
-        if ($updated) {
-            $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Content Updated', '', $cusDtl[0][0]);
+    //     if ($updated) {
+    //         $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Content Updated', '', $cusDtl[0][0]);
 
-    ?>
-    <script>
-    Swal.fire({
-        title: 'Updated!',
-        text: 'Contents Updated',
-        icon: 'success',
-        confirmButtonText: 'Continue'
-    })
+    // ?>
+    // <script>
+    //         Swal.fire({
+    //             title: 'Updated!',
+    //             text: 'Contents Updated',
+    //             icon: 'success',
+    //             confirmButtonText: 'Continue'
+    //         })
+    //         
     </script>
-    <?php
-        }
-    }
-    else {
-            $updated = $ContentOrder->ClientOrderContentUpdate($orderId, $clientAnchorText, $clientTargetUrl, '', $clientRequirement);
+    // <?php
+    //     }
+    // }else {
+    //         $updated = $ContentOrder->ClientOrderContentUpdate($orderId, $clientAnchorText, $clientTargetUrl, '', $clientRequirement);
 
-            if ($updated) {
-            $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Content Updated', '', $cusDtl[0][0]);
+    //         if ($updated) {
+    //         $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Content Updated', '', $cusDtl[0][0]);
 
-    ?>
-    <script>
-    Swal.fire({
-        title: 'Updated!',
-        text: 'Contents Updated',
-        icon: 'success',
-        confirmButtonText: 'Continue'
-    })
+    // ?>
+    // <script>
+    // Swal.fire({
+    //     title: 'Updated!',
+    //     text: 'Contents Updated',
+    //     icon: 'success',
+    //     confirmButtonText: 'Continue'
+    // })
+    // 
     </script>
-    <?php
-            }
-    }
+    // <?php
+    //         }
+    // }
 
 }
 
@@ -154,7 +193,54 @@ if (isset($_POST['changesReq'])) {
 
 }
 
+$txnStatus  ='';
+$txnMode    = '';
+$itemAmount ='';
+$paidAmount ='';
+$transectionId  =   '';
 
+#####################################################################
+
+
+$showOrder                  = $ContentOrder->clientOrderById($orderId);
+    $orderStatusCode        = $showOrder[0]['order_status'];
+    $statusName             = $OrderStatus->singleOrderStatus($orderStatusCode);
+        $orderStatusName    = $statusName[0]['orders_status_name'];
+
+    $orderDate              = $DateUtil->dateTimeText($showOrder[0]['added_on']);
+
+
+
+
+$orderContent   = $ContentOrder->getOrderContent($orderId);
+    $orderContentId = $orderContent['id'];
+$contentLink    = $ContentOrder->getContentHyperLinks($orderContentId);
+
+$ordTxn         = $ContentOrder->showTransectionByOrder($orderId);
+if ($ordTxn != false) {
+    $txnMode            = $ordTxn['transection_mode'];
+    
+    if ($ordTxn['transection_id'] != null) {
+        $transectionId = $ordTxn['transection_id'];
+    }
+
+    if ($ordTxn['transection_status'] != null) {
+        $txnStatus = $ordTxn['transection_status'];
+    }
+
+    if ($ordTxn['item_amount'] != null) {
+        $itemAmount = $ordTxn['item_amount'];
+    }
+
+    if ($ordTxn['paid_amount'] != null) {
+        $paidAmount = $ordTxn['paid_amount'];
+    }
+}
+
+
+
+$buyer          = $customer->getCustomerData($showOrder[0]['clientUserId']);
+$customerName   = $buyer[0][5].' '.$buyer[0][6];
 
 ?>
 
@@ -185,31 +271,35 @@ if (isset($_POST['changesReq'])) {
                                     <div class="row">
                                         <!-- Order Details Start -->
                                         <div class="col-md-6 ">
-                                            <?php
-                                            $showOrder  = $ContentOrder->clientOrderById($orderId);
-                                            $ordTxn = $ContentOrder->showTransectionByOrder($orderId);
-                                            $buyer = $customer->getCustomerData($showOrder[0]['clientUserId']);
-                                        ?>
-                                            <h5 class="pkage-title border-bottom pb-2">Order Details:</h5>
+                                            <h5 class="pkage-title border-bottom pb-2">
+                                                Order Details: <span
+                                                    class="badge text-bg-primary"><?= $orderStatusName; ?></span>
+                                            </h5>
                                             <h5 class="pkage-headline pt-2">
                                                 <?php echo $showOrder[0]['clientOrderedSite']; ?></h5>
-                                            <!-- <p class="fs-6 fw-semibold"><?php echo $showOrder[0]['niche']; ?></p> -->
                                             <ul class="listing-adrs">
-                                                <li> Order Id : <?php echo "#".$showOrder[0]['order_id']; ?>
-                                                </li>
+                                                <li> Order Id : <?= "#".$orderId; ?></li>
+
                                                 <?php
-                                            if ($ordTxn['transection_id'] != null) {
-                                                echo '<li> Transection Id : '.$ordTxn['transection_id'];
-                                            }
-                                            ?>
-                                                </li>
-                                                <li> Price : <?php echo '$'.$ordTxn['item_amount']; ?></li>
-                                                <?php  $statusName = $OrderStatus->singleOrderStatus($showOrder[0]['order_status']) ?>
-                                                <li> Order : <?php echo $statusName[0][1]; ?></li>
-                                                <li> Payment : <?php echo $ordTxn['transection_status']; ?></li>
-                                                <li> Date :
-                                                    <?php echo date('l jS \of F Y h:i:s A', strtotime($showOrder[0]['added_on'])); ?>
-                                                </li>
+                                                if ($transectionId != null) {
+                                                    echo '<li> Transection Id : '.$transectionId.'</li>';
+                                                }
+                                                
+                                                if ($orderStatusCode != INCOMPLETECODE) {
+                                                ?>
+                                                <li> Item Amount : <?= CURRENCY.$itemAmount ?></li>
+                                                <li> Paid Amount : <?= CURRENCY.$paidAmount ?></li>
+                                                <li> Transection Mode : <?= $txnMode; ?></li>
+                                                <?php
+                                                }
+                                                ?>
+
+                                                <?php
+                                                if ($txnStatus  != null) {
+                                                    echo '<li> Payment Status : '.$txnStatus.'</li>';
+                                                }
+                                                ?>
+                                                <li> Date : <?= $orderDate; ?></li>
                                             </ul>
                                         </div>
                                         <!-- Order Details End -->
@@ -219,7 +309,7 @@ if (isset($_POST['changesReq'])) {
                                         <div class="col-md-6 pkagerow">
                                             <h5 class="pkage-title border-bottom pb-2">Customer Details:</h5>
                                             <h5 class="pkage-headline pt-2 pb-1">
-                                                <?php echo $buyer[0][5].' '.$buyer[0][6]; ?></h5>
+                                                <?=  $customerName ?></h5>
 
                                             <ul class="listing-adrs">
                                                 <li> Email : <?php echo $buyer[0][3]; ?></li>
@@ -241,15 +331,19 @@ if (isset($_POST['changesReq'])) {
 
                                 <?php
                                 $delivered = false;
-                                if($showOrder[0]['order_status'] == 4 ){
+                                $fieldStatus = '';
+                                
+                                // if($orderStatusCode == ORDEREDCODE || $orderStatusCode == PROCESSINGCODE || $orderStatusCode == INCOMPLETECODE){
+                                //     $fieldStatus = '';
+                                // }
+                                $validStatusCodes = [ORDEREDCODE, PROCESSINGCODE, INCOMPLETECODE];
+                                if (in_array($orderStatusCode, $validStatusCodes)) {
                                     $fieldStatus = '';
-                                }elseif($showOrder[0]['order_status'] == 3 ){
-                                    $fieldStatus = '';
-                                }elseif($showOrder[0]['order_status'] == 1 || $showOrder[0]['order_status'] == 5 ){
+                                }
+                                
+                                if($orderStatusCode == FAILEDCODE || $orderStatusCode == COMPLETEDCODE ){
                                     $fieldStatus = 'disabled';
                                     $delivered = true;
-                                }else {
-                                    $fieldStatus = 'disabled';
                                 }
 
                                 if ($delivered) {
@@ -295,91 +389,114 @@ if (isset($_POST['changesReq'])) {
                              ?>
                                 <form action="" method="post" class="mt-4" id="orderForm">
                                     <div class="row px-3" id="row1">
+                                        <?php
+                                        // cheacking if the content is avilable 
+                                        if ($orderContent != false) {
+                                        ?>
+                                        <!-- ================================================================ -->
+                                        <!-- ================================================================ -->
+
                                         <div class="form-group">
-                                            <label for="content">
-                                                <h5>Content<span class="warning">*</span></h5>
-                                                <p class="caution-abouts">Your Content<span class="warning">*</span>
-                                                    (Must
-                                                    be a
-                                                    minimum of
-                                                    500 words) Don't have a content, get one here
-                                                    Place your content here. In your content, you can include up to 2
-                                                    links
-                                                    They
-                                                    can be in the form of URLs and anchors. In the "URL" and "Anchor
-                                                    text"
-                                                    fields below,
-                                                    please insert the same URLs and anchors. <span
-                                                        class="warning">(Don't
-                                                        add
-                                                        any images in your article)</span></p>
-                                            </label>
-                                            <?php
-                                        if ($showOrder[0]['clientOrderPrice'] > $ordTxn['item_amount']) {
-                                            if ($showOrder[0]['clientContent'] == null ) {
-                                        ?>
-                                            <p class="text-light bg-info fw-bold text-center my-5 py-5">Contents Will Be
-                                                Updated Soon.</p>
-                                            <?php
-                                            }else {
-                                        ?>
+
                                             <div class="form-group">
-                                                <textarea class="form-control" name="clientContent" id="content"
-                                                    rows="9" placeholder="Put your content here"
-                                                    disabled><?php echo $showOrder[0]['clientContent']; ?></textarea>
+                                                <label for="clientContentTitle">
+                                                    <h5>Title</h5>
+                                                </label>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter the article title" name="clientContentTitle"
+                                                    id="clientContentTitle" value="<?= $orderContent['title']?>">
+                                            </div>
+                                        </div>
+                                        <!-- ================================================================ -->
+                                        <!-- ================================================================ -->
+
+                                        <div class="form-group">
+                                            <?php
+                                                if ($orderContent['content_type'] == '') {
+                                                    echo 'Content Wll Be Uploded By ' . COMPANY_S;
+                                                }elseif ($orderContent['content_type'] == 'doc') {
+                                                ?>
+                                            <div class="bg-primary rounded d-flex justify-content-between w-100 p-2">
+                                                <span
+                                                    class="fw-bold text-light"><?= basename($orderContent['path']) ?></span>
+
+                                                <a href="content-download.php?data='<?=base64_encode(urlencode($orderId))?>"
+                                                    target="_blank" rel="noopener noreferrer"><span
+                                                        class="badge text-bg-info text-light">Download <i
+                                                            class="fa-sharp fa-regular fa-file-arrow-down"></i></span></a>
                                             </div>
                                             <?php
-                                            }
-                                        }else{
-                                        ?>
-                                            <div class="form-group">
-                                                <textarea class="form-control" name="clientContent" id="content"
-                                                    rows="9" placeholder="Put your content here"
-                                                    <?php echo $fieldStatus; ?>><?php
-                                            if ($showOrder[0]['clientContent'] != null ) {
-                                                echo $showOrder[0]['clientContent'];
-                                            }
-                                            ?></textarea>
+                                                }
+                                            ?>
+                                        </div>
+
+                                        <!-- ================================================================ -->
+                                        <!-- ================================================================ -->
+
+                                        <!-- hyperLinks section start -->
+                                        <div class="mt-3" id="hyperLinks">
+                                            <div class="row">
+
+                                                <div class="col-md-6">
+                                                    <h5>Anchor Text</h5>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <h5>Target Url</h5>
+                                                </div>
                                             </div>
-                                            <?php
-                                        }
-                                        ?>
+
+                                            <div class="row">
+                                                <div class="col-md-6 mb-2">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Enter the anchor text for client url"
+                                                        name="clientAnchorText"
+                                                        value="<?= $contentLink['client_anchor']?>">
+                                                </div>
+
+                                                <div class="col-md-6 mb-2">
+                                                    <input type="text" class="form-control"
+                                                        aria-describedby="Target Url" placeholder="Enter the client url"
+                                                        name="clientTargetUrl" value="<?= $contentLink['client_url']?>">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-2">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Enter the reference anchor text"
+                                                        name="reference-anchor1"
+                                                        value="<?= $contentLink['reference_anchor1']?>">
+                                                </div>
+
+                                                <div class="col-md-6 mb-2">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Enter the reference URL" name="reference-url1"
+                                                        value="<?= $contentLink['reference_url1']?>">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-2">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Enter the reference anchor text"
+                                                        name="reference-anchor2"
+                                                        value="<?= $contentLink['reference_anchor2']?>">
+                                                </div>
+
+                                                <div class="col-md-6 mb-2">
+                                                    <input type="text" class="form-control"
+                                                        aria-describedby="Target Url"
+                                                        placeholder="Enter the reference URL" name="reference-url2"
+                                                        value="<?= $contentLink['reference_url2']?>">
+                                                </div>
+                                            </div>
+
                                         </div>
-                                        <div class="form-group">
-                                            <label for="target-url">
-                                                <h5>Target Url<span class="warning">*</span></h5>
-                                                <p class="caution-abouts">Enter The URL That You Have Included In Your
-                                                    Content Above</p>
-                                            </label>
-                                            <input type="text" class="form-control" id="target-url"
-                                                aria-describedby="emailHelp" placeholder="Enter Your Target URL"
-                                                name="clientTargetUrl" value="<?php
-                                            if ($showOrder[0]['clientTargetUrl'] != null ) {
-                                                echo $showOrder[0]['clientTargetUrl'];
-                                            }
-                                            ?>" <?php echo $fieldStatus; ?>>
-                                        </div>
+                                        <!-- hyperLinks section ended -->
 
-                                        <div class="form-group">
+                                        <!-- ================================================================ -->
+                                        <!-- ================================================================ -->
 
-                                            <label for="anchor-text">
-                                                <h5>Anchor Text<span class="warning"> *</span></h5>
-                                                <p class="caution-abouts">Enter The Anchor Text That You Have Included
-                                                    In
-                                                    Your Content Above.</p>
-                                            </label>
-
-                                            <input type="text" class="form-control" id="anchor-text"
-                                                placeholder="Enter Your Anchor Text" name="clientAnchorText" value="<?php
-                                            if ($showOrder[0]['clientAnchorText'] != null ) {
-                                                echo $showOrder[0]['clientAnchorText'];
-                                            }
-                                            ?>" <?php echo $fieldStatus; ?>>
-
-                                        </div>
-
-
-                                        <div class="form-group">
+                                        <div class="form-group mt-3">
                                             <label for="special-requirements">
                                                 <h5>Special requirements</h5>
                                                 <p class="caution-abouts">If necessary, Write all your task requirements
@@ -395,33 +512,52 @@ if (isset($_POST['changesReq'])) {
                                             }
                                             ?></textarea>
                                         </div>
+                                        <?php
+                                        }
+                                        // content is avilablity cheacking end 
+                                        ?>
+
+                                        <!-- ================================================================ -->
+                                        <!-- ================================================================ -->
+
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="tid" name="orderId"
-                                                value="<?php echo $orderId; ?>">
+                                            <input type="text" class="form-control" id="tid" name="content-id"
+                                                value="<?= $orderContentId; ?>">
                                         </div>
                                         <div class="text-center">
 
                                             <?php
-                                            if($showOrder[0]['clientOrderStatus'] == 4){
+                                            if($orderStatusCode == ORDEREDCODE){
                                                 
-                                                echo '<button class="btn btn-primary" name="articleSubmit" type="submit">Update</button>';
+                                                echo '<button class="btn btn-primary" name="articleSubmit" id="updateButton" type="button" >Update</button>';
+                                            }
 
-                                            }else if($showOrder[0]['clientOrderStatus'] == 3){
+                                            if($orderStatusCode == PROCESSINGCODE){
                                                 
                                                 echo '<button class="btn apply-button" name="changesReq" type="submit">Request for Changes</button>';
                                             
-                                            }else if($showOrder[0]['clientOrderStatus'] == 6){
+                                            }
+                                            
+                                            if($orderStatusCode == HOLDCODE){
                                                 
                                                 echo '<p class="text-light bg-danger">'.$statusName[0][1].' Order\'s Contents can\'t be uploded</p>';
                                             
-                                            }else{
-                                                if ($delivered) {
-                                                    echo '<p class="text-light bg-primary fw-bold fs-4"> Order '.$statusName[0][1].' </p>';
-                                                }else{
-                                                    echo '<p class="text-light bg-danger">'.$statusName[0][1].' Order\'s Contents can\'t be uploded</p>';
-                                                }
                                             }
-                                        ?>
+
+                                            if($orderStatusCode == INCOMPLETECODE){
+                                                
+                                                echo '<a class="btn btn-primary" >Complete The Order now</a>';
+                                            
+                                            }
+
+                                            // else{
+                                            //     if ($delivered) {
+                                            //         echo '<p class="text-light bg-primary fw-bold fs-4"> Order '.$statusName[0][1].' </p>';
+                                            //     }else{
+                                            //         echo '<p class="text-light bg-danger">'.$statusName[0][1].' Order\'s Contents can\'t be uploded</p>';
+                                            //     }
+                                            // }
+                                            ?>
                                         </div>
                                     </div>
                                 </form>
@@ -446,7 +582,7 @@ if (isset($_POST['changesReq'])) {
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <input type="hidden" name="return-page" value="<?php echo $utility->currentUrl()?>">
+                            <input type="hidden" name="return-page" value="<?php echo $Utility->currentUrl()?>">
                             <input type="hidden" name="order-id" value="<?php echo $orderId?>">
                             <div class="modal-body" id="update-modal-body">
 
@@ -518,6 +654,43 @@ if (isset($_POST['changesReq'])) {
                                 <textarea class="form-control"  name="changes-req" rows="6" required></textarea>`;
 
         }
+
+        document.getElementById("updateButton").addEventListener("click", function() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "Update Title and Hyperlinks ?",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, Update'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('orderForm').submit();
+
+                } else {
+                    return false;
+                }
+            })
+        });
+        // const formConfirm = () => {
+        //     Swal.fire({
+        //         title: 'Are you sure?',
+        //         text: "Order Completed!",
+        //         icon: 'question',
+        //         showCancelButton: true,
+        //         confirmButtonColor: '#3085d6',
+        //         cancelButtonColor: '#d33',
+        //         confirmButtonText: 'Yes, Completed'
+        //     }).then((result) => {
+        //         if (result.isConfirmed) {
+        //             document.getElementById('orderForm').submit();
+
+        //         } else {
+        //             return false;
+        //         }
+        //     })
+        // }
         </script>
 
 </body>
