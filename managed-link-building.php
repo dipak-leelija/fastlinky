@@ -35,7 +35,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- starting of managed-link-building main banner -->
     <section class="managed-link-building-main-banner">
         <div class="row ">
-            <div class="col-md-6  px-0 px-md-3">
+            <div class="col-md-6 order-2 order-md-1 px-0 px-md-3">
                 <div class="mlb-wrapping">
                     <h1 class="mlb-starting-main-h1">Managed <span>Link Building</span> Services </h1>
                     <p class=" mt-2 mb-md-0 mb-3 py-0 py-md-2 mlb-starting-main-p">Get high-quality backlinks to boost your
@@ -58,16 +58,16 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </ul>
 
                     </div>
-                    <div class=" buttonsinfo ">
+                    <div class=" text-center text-md-start  ">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn managed-link-btn ">Get Started</button>
+                            <button type="button" class="btn srvc-common-btn">Get Started</button>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 vid-col p-0">
+            <div class="col-md-6 order-1 order-md-2 vid-col p-0">
                 <div class="mlb-wrapping">
-                    <img src="./images/Managed_Link_Building-banner.png" class="w-100" alt="">
+                    <img src="./images/process-showing-fastlinky.png" class="w-100" alt="">
                 </div>
             </div>
         </div>
@@ -105,9 +105,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
                 <div>
-                    <div class=" getyour-linkbtn mt-3 ">
+                    <div class=" text-center text-md-end mt-3 ">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn managed-link-btn d-flex justify-content-right">Get Your
+                            <button type="button" class="btn srvc-common-btn ">Get Your
                                 Links Now</button>
                         </a>
                     </div>
@@ -156,9 +156,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </ul>
                         </div>
 
-                        <div class=" buttonsinfo mt-md-5">
+                        <div class="text-center text-md-start mb-5 mb-md-0  mt-md-5">
                             <a href="#pricing-cards">
-                                <button type="button" class="btn managed-link-btn ">Get Your Links Now</button>
+                                <button type="button" class="btn srvc-common-btn ">Get Your Links Now</button>
                             </a>
                         </div>
                     </div>
@@ -254,9 +254,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             improved ROI, and SERP progress.
                         </div>
                     </div>
-                    <div class=" getyour-linkbtn mt-5 ">
+                    <div class=" mt-5 ">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn managed-link-btn d-flex justify-content-center w-100 ">Get
+                            <button type="button" class="btn srvc-common-btn  w-100 ">Get
                                 Your
                                 Links Now</button>
                         </a>
@@ -537,9 +537,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                         </div>
 
-                        <div class=" getyour-linkbtn ">
+                        <div class="text-center text-md-end  ">
                             <a href="#pricing-cards">
-                                <button type="button" class="btn managed-link-btn d-flex justify-content-center ">Get
+                                <button type="button" class="btn srvc-common-btn ">Get
                                     Your
                                     Links Now</button>
                             </a>
@@ -629,9 +629,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
                 <a href="#pricing-cards">
-                    <div class=" getyour-linkbtn-for-lbs-matter  ">
+                    <div class="  text-center text-md-start ">
                         <button type="button"
-                            class="btn managed-link-btn d-flex justify-content-center external-css-fr-size ">Get Your
+                            class="btn srvc-common-btn  external-css-fr-size ">Get Your
                             Links Now</button>
                     </div>
                 </a>

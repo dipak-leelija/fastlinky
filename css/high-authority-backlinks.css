@@ -49,21 +49,6 @@
     margin-top: 2.5rem;
 }
 
-.managed-link-btn {
-    font-size: 20px;
-    font-weight: 500;
-    text-transform: capitalize;
-    color: var(--pure-white);
-    background-color: var(--mustard);
-    border:1px solid var(--mustard) !important;
-    border-radius: 100px 100px 100px 100px;
-    padding: 13px 55px 13px 55px;
-}
-
-.managed-link-btn:hover {
-    color: var(--mustard) !important;
-}
-
 .paragraph_texts{
     padding :0rem 5rem 2rem;
   }
@@ -102,12 +87,6 @@
     font-weight: 400;
     margin-bottom: 1rem;
 }
-
-.getyour-linkbtn {
-    display: flex;
-    justify-content: right;
-}
-
 
 /* __________________________________________________________________________________________________ */
 /* Backlinks From High Authority And High Traffic Website  ends */
@@ -401,13 +380,7 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
         text-align: justify;
         justify-content: center;
     }
-    .managed-link-btn {
-        padding: 11px 34px 9px 34px;
-    }
-    .buttonsinfo {
-        margin-bottom: 3rem;
-        text-align: center;
-    }
+
     .lbs-actually-matters-main-h1 {
         font-size: 2.3rem !important;
         text-align: center;
@@ -499,9 +472,6 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
     }
     .how-it-works-main-section h1 {
         font-size: 30px !important;
-    }
-    .managed-link-btn {
-        padding: 11px 19px 11px 25px !important;
     }
     .pricing-bo-h1 {
         font-size: 1.7rem !important;

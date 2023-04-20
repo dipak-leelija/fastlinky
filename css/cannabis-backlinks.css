@@ -33,22 +33,6 @@
     line-height: 1.5em;
 }
 
-.managed-link-btn {
-    font-size: 20px;
-    font-weight: 500;
-    text-transform: capitalize;
-    color: var(--pure-white);
-    background-color: var(--mustard);
-    border: 1px solid var(--mustard);
-    border-radius: 100px 100px 100px 100px;
-    padding: 13px 55px 13px 55px;
-}
-
-.managed-link-btn:hover {
-    color: var(--mustard) !important;
-
-}
-
 .tick-check {
     content: "\2714";
     font-family: Segoe UI Emoji;
@@ -470,18 +454,6 @@
 
     }
 
-    .real-bo-btn {
-        padding: 11px 34px 9px 34px !important;
-    }
-
-    .managed-link-btn {
-        padding: 11px 34px 9px 34px;
-    }
-
-    .buttonsinfo {
-        margin-bottom: 3rem;
-    }
-
     .lbs-actually-matters-main-h1 {
         font-size: 2.3rem !important;
         text-align: center;
@@ -568,10 +540,6 @@
 
     .how-it-works-main-section h1 {
         font-size: 30px !important;
-    }
-
-    .managed-link-btn {
-        padding: 11px 19px 11px 25px !important;
     }
 
     .mlb-starting-main-p {

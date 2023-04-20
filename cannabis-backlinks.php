@@ -38,7 +38,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="">
             <div class="row m-auto w-100">
                 
-                <div class="col-12 col-lg-6 col-md-7  px-0 px-md-4">
+                <div class="col-12 col-lg-6 col-md-7 order-2 order-md-1 px-0 px-md-4">
                     <div class="">
                         <h1 class="mlb-starting-main-h1">Link building services for <span>cannabis & CBD </span> website
                             SEO</h1>
@@ -47,14 +47,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 services</b> ,
                             and attention to our website. We promote effective <b>CBD link-building services</b> .
                         </p>
-                        <div class=" buttonsinfo mt-3 mb-0">
+                        <div class=" text-center text-md-start  mb-4 mb-md-0 mt-3">
                             <a href="#pricing-cards">
-                                <button type="button" class="btn managed-link-btn ">Get Started</button>
+                                <button type="button" class="btn srvc-common-btn ">Get Started</button>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6 col-md-5  px-2 p-md-0">
+                <div class="col-12 col-lg-6 col-md-5 order-1 order-md-2 px-2 p-md-0 mt-3 mt-md-0">
                     <div class="">
                         <img src="./images/freepik-img/cannabis-banner.png" class="w-100" alt="">
                     </div>
@@ -69,14 +69,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     <section class="lbs-actually-matters-main">
         <div class="row">
-            <div class="col-xl-6 col-md-6 m-auto text-center">
+            <div class="col-xl-6 col-md-6 m-auto text-center ">
                 <div class="">
                     <div>
                         <img src="./images/freepik-img/cbd-services.webp" class=" w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
-            <div class=" col-xl-6 col-md-6">
+            <div class=" col-xl-6 col-md-6 ">
                 <h1 class="cannabis-cbd-service-h1 ">Cannabis & CBD <br>
                     <span>link building service</span>
                 </h1>
@@ -85,9 +85,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     fastest growing business in highly competitive, all over the world. </p>
 
 
-                <div class=" buttonsinfo mt-3">
+                <div class=" text-center text-md-end mt-md-3">
                     <a href="#pricing-cards">
-                        <button type="button" class="btn managed-link-btn ">View Pricing</button>
+                        <button type="button" class="btn srvc-common-btn ">View Pricing</button>
                     </a>
                 </div>
             </div>
@@ -121,9 +121,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         about cannabis in full detail, <b>FastLinky</b> is the best site to know. </i>
                 </p>
 
-                <div class=" buttonsinfo mt-3">
+                <div class=" text-center text-md-start  mb-4 mb-md-0 mt-3">
                     <a href="#pricing-cards">
-                        <button type="button" class="btn managed-link-btn ">View Pricing</button>
+                        <button type="button" class="btn srvc-common-btn ">View Pricing</button>
                     </a>
                 </div>
             </div>
@@ -158,9 +158,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     ranking
                     of your website. </li>
             </ul>
-            <div class=" buttonsinfo mt-5 justify-content-center cannabis-for-smallsizing">
+            <div class=" text-center  mb-0 mb-md-0 mt-5  cannabis-for-smallsizing">
                 <a href="#pricing-cards">
-                    <button type="button" class="btn managed-link-btn ">View Pricing</button>
+                    <button type="button" class="btn srvc-common-btn ">View Pricing</button>
                 </a>
             </div>
         </div>
@@ -208,9 +208,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                 </ul>
 
-                <div class=" buttonsinfo ">
+                <div class=" text-center text-md-end  mb-4 mb-md-0 ">
                     <a href="#pricing-cards">
-                        <button type="button" class="btn managed-link-btn ">View Pricing</button>
+                        <button type="button" class="btn srvc-common-btn ">View Pricing</button>
                     </a>
                 </div>
             </div>
@@ -338,9 +338,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </p>
 
 
-                <div class=" buttonsinfo mt-3">
+                <div class=" text-center text-md-start  mb-4 mb-md-0 mt-3">
                     <a href="#pricing-cards">
-                        <button type="button" class="btn managed-link-btn ">View Pricing</button>
+                        <button type="button" class="btn srvc-common-btn ">View Pricing</button>
                     </a>
                 </div>
             </div>

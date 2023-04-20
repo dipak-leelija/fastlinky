@@ -61,9 +61,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <li class="tick-check"> &#10004; <b class="tick-check-p">No PBNs</b></li>
                             </ul>
                         </div>
-                        <div class=" buttonsinfo ">
+                        <div class=" text-center text-md-start mb-4 mb-md-0">
                             <a href="#pricing-cards">
-                                <button type="button" class="btn managed-link-btn ">Get Started</button>
+                                <button type="button" class="btn srvc-common-btn ">Get Started</button>
                             </a>
                         </div>
                     </div>
@@ -85,13 +85,21 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     <section class="lbs-actually-matters-main">
         <div class="row">
-            <div class=" col-xl-6 col-md-6">
+            <div class="col-xl-6 col-md-6 m-auto order-md-1 order-2">
+                <div class="">
+                    <div>
+                        <img src="./images/freepik-img/livecenter-img-front.webp" class=" w-100  my-4 " alt="">
+                    </div>
+                </div>
+            </div>
+            <div class=" col-xl-6 col-md-6 order-md-2 order-1">
                 <h1 class="lbs-actually-matters-main-h1 mb-3">
                     <span> Benefits Of </span>Our Link Insertion Service
                 </h1>
                 <div class="actually-card-div1">
                     <div class="  actually-card-inn-img-div">
-                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img" alt="">
+                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img"
+                            alt="">
                     </div>
                     <div class="lbp-texting">
                         <strong>Proper Links:</strong> <br>
@@ -100,7 +108,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
                 <div class="actually-card-div1">
                     <div class="  actually-card-inn-img-div">
-                        <img src="./images/dummy-img/real-bo-ul-li-2.png" class="insertion-page-second-ul-li-img" alt="">
+                        <img src="./images/dummy-img/real-bo-ul-li-2.png" class="insertion-page-second-ul-li-img"
+                            alt="">
                     </div>
                     <div class="lbp-texting">
                         <strong>Anchor Text: </strong> <br>
@@ -111,7 +120,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
                 <div class="actually-card-div1 ">
                     <div class="  actually-card-inn-img-div">
-                        <img src="./images/dummy-img/real-bo-ul-li-3.png" class="insertion-page-second-ul-li-img" alt="">
+                        <img src="./images/dummy-img/real-bo-ul-li-3.png" class="insertion-page-second-ul-li-img"
+                            alt="">
                     </div>
                     <div class="lbp-texting">
                         <strong>Relevant Article: </strong> <br>
@@ -120,7 +130,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
                 <div class="actually-card-div1">
                     <div class="  actually-card-inn-img-div">
-                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img" alt="">
+                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img"
+                            alt="">
                     </div>
                     <div class="lbp-texting">
                         <strong>No Duplicity: </strong> <br>
@@ -129,7 +140,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
                 <div class="actually-card-div1">
                     <div class="  actually-card-inn-img-div">
-                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img" alt="">
+                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img"
+                            alt="">
                     </div>
                     <div class="lbp-texting">
                         <strong>Save Money:</strong> <br>
@@ -137,17 +149,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
             </div>
-            <div class="col-xl-6 col-md-6 m-auto">
-                <div class="">
-                    <div>
-                        <img src="./images/freepik-img/livecenter-img-front.webp" class=" w-100  my-4 " alt="">
-                    </div>
-                </div>
-            </div>
+
         </div>
-        <div class=" buttonsinfo mt-3">
+        <div class=" text-center text-md-end mb-3 mb-md-0 mt-3">
             <a href="#pricing-cards">
-                <button type="button" class="btn managed-link-btn ">See Pricing</button>
+                <button type="button" class="btn srvc-common-btn ">See Pricing</button>
             </a>
         </div>
     </section>
@@ -167,7 +173,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <h1 class="text-center pricing-bo-h1 mb-3 mt-5">Niche Edits Pricing
         </h1>
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
-            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
         <?php  require_once "partials/pricing-cards.php"; ?>
     </section>
@@ -197,7 +203,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         Choose anchor text in your <b>niche edit service</b>. At Fastlinky we search for real blog posts
                         on real websites to connect with site owners to get you suitable link placement on these posts.
                         <!-- Be careful, otherwise, you can get links from low-quality sites that will damage your SEO. -->
-                     </p>
+                    </p>
                 </div>
             </div>
             <div class="col-md-4 col-xl-4">
@@ -298,37 +304,41 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     </section>
 
 
-        <!-- _______________________________________________________________________________________________ -->
+    <!-- _______________________________________________________________________________________________ -->
     <!-- Advantages Of Link Insert start -->
 
     <section class="lbs-actually-matters-main">
         <div class="row">
             <div class=" col-xl-6 col-md-6 m-auto">
                 <h1 class="lbs-actually-matters-main-h1 mb-3">
-                How Does 
+                    How Does
                     <span> link insertion Boost SEO? </span>
                 </h1>
-               <p>
-               When you add suitable links on your website to existing content on other websites, it is called <b>link insertion</b>. <b>Link insertion </b> is a backlink from another page to your page that helps provide extra knowledge to the reader of the original article. We provide you with an adequate link insertion service. This is also called the <b>Niche edit service</b> . At FastLinky, you can get the best service to insert your link.
-               </p>
-               <div class=" buttonsinfo mt-4">
-            <a href="#pricing-cards">
-                <button type="button" class="btn managed-link-btn ">See Pricing</button>
-            </a>
-        </div>
+                <p>
+                    When you add suitable links on your website to existing content on other websites, it is called
+                    <b>link insertion</b>. <b>Link insertion </b> is a backlink from another page to your page that
+                    helps provide extra knowledge to the reader of the original article. We provide you with an adequate
+                    link insertion service. This is also called the <b>Niche edit service</b> . At FastLinky, you can
+                    get the best service to insert your link.
+                </p>
+                <div class=" text-center text-md-start mt-4">
+                    <a href="#pricing-cards">
+                        <button type="button" class="btn srvc-common-btn ">See Pricing</button>
+                    </a>
+                </div>
             </div>
             <div class="col-xl-6 col-md-6 m-auto">
 
-                        <img src="./images/freepik-img/guest-posting-imgs-3.webp" class=" w-100  my-4 " alt="">
-  
+                <img src="./images/freepik-img/guest-posting-imgs-3.webp" class=" w-100  my-4 " alt="">
+
             </div>
         </div>
-        
+
     </section>
     <!-- Advantages Of Link Insert ends -->
     <!-- _________________________________________________________________________________________________ -->
     <!-- __________________________________________________________________________________________ -->
-     <!-- ______________________________________________________________________________________________________ -->
+    <!-- ______________________________________________________________________________________________________ -->
     <!-- features-section start -->
     <?php require_once "partials/features-section.php"; ?>
     <!-- features-section ends -->
@@ -350,7 +360,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <?php include_once 'partials/seller-action.php'; ?>
     </div>
     <!-- ============================================================== -->
-  <!-- --------------------------------------- -->
+    <!-- --------------------------------------- -->
     <!-- feedback form -->
     <?php require_once "partials/feedback.php"; ?>
     <!-- feedback form -->

@@ -30,19 +30,7 @@
     line-height: 1.5em;
 }
 
-.blogger-btn {
-    font-size: 20px;
-    font-weight: 500;
-    text-transform: capitalize;
-    color: var(--pure-white);
-    background-color:var(--mustard);
-    border: 1px solid var(--mustard);
-    border-radius: 100px 100px 100px 100px;
-    padding: 13px 55px 13px 55px;
-}
-.blogger-btn:hover{
-    color: var(--mustard) !important;
-}
+
 
 @media (max-width:1050px) {
     .country-specific-main-banner {
@@ -318,10 +306,6 @@
         margin-top: 3rem;
     }
 
-    .blogger-btn {
-        padding: 11px 34px 9px 34px;
-    }
-
     .reach-your-audience-globally-section {
         margin: 3rem 1rem 0 !important;
     }
@@ -345,10 +329,6 @@
     .country-specific-banner-p {
         text-align: center;
         justify-content: center;
-    }
-
-    .buttonsinfo {
-        margin-bottom: 3rem;
     }
 
     .country-specific-international-section-h2 {

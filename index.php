@@ -94,7 +94,7 @@ if(isset($_GET['seo_url']))
                         </p>
 
                         <div class=" buttonsinfo ">
-                            <button class="btn indexpage-link-btn" onclick="goTo('customer-packages')"> Get Started
+                            <button class="btn srvc-common-btn" onclick="goTo('customer-packages')"> Get Started
                                 Now</button>
                         </div>
                     </div>
@@ -132,7 +132,7 @@ if(isset($_GET['seo_url']))
                 </div>
 
                 <div class=" buttonsinfo ">
-                    <button type="button" onclick="goTo('customer-packages')" class="btn indexpage-link-btn ">Get
+                    <button type="button" onclick="goTo('customer-packages')" class="btn srvc-common-btn ">Get
                         Your Links Now</button>
                 </div>
 
@@ -230,7 +230,7 @@ if(isset($_GET['seo_url']))
                 </div>
             </div>
             <div class="text-center">
-                <button type="button" onclick="goTo('customer-packages')" class="btn indexpage-link-btn ">Get
+                <button type="button" onclick="goTo('customer-packages')" class="btn srvc-common-btn ">Get
                     Your
                     Links Now</button>
             </div>
@@ -406,7 +406,7 @@ if(isset($_GET['seo_url']))
                 </h1>
                 <div class=" buttonsinfo ">
                     <button type="button" onclick="goTo('customer-packages')"
-                        class="btn indexpage-link-btn ">Outrank Your Competition</button>
+                        class="btn srvc-common-btn ">Outrank Your Competition</button>
                 </div>
 
             </div>

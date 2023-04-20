@@ -47,9 +47,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         leaders as a background partner in <b>white label link building</b> to bring outcomes to our
                         prominent clients.
                     </p>
-                    <div class=" buttonsinfo ">
+                    <div class=" text-md-start text-center ">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn blogger-btn ">Get Started</button>
+                            <button type="button" class="btn srvc-common-btn ">Get Started</button>
                         </a>
                     </div>
                 </div>
@@ -86,9 +86,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         needs to
                         succeed. Our white hat link development techniques are based on genuine, high-quality links that
                         produce benefits for you.</p>
-                    <div class=" buttonsinfo mt-5 text-md-end">
+                    <div class=" text-center mb-5 mt-5 text-md-end">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn blogger-btn">Get Your Links Now</button>
+                            <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                         </a>
                     </div>
                 </div>
@@ -161,9 +161,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
                     </div>
 
-                    <div class=" buttonsinfo ">
+                    <div class=" text-center text-md-start">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn blogger-btn">Get Your Links Now</button>
+                            <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                         </a>
                     </div>
                 </div>
@@ -358,7 +358,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="text-center ">
                 <a href="#pricing-cards">
-                    <button type="button" class="btn blogger-btn">Get Your Links Now</button>
+                    <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                 </a>
             </div>
         </div>
@@ -485,9 +485,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
             </div>
-            <div class=" buttonsinfo  text-center">
+            <div class=" text-center">
                 <a href="#pricing-cards">
-                    <button type="button" class="btn blogger-btn">Get Your Links Now</button>
+                    <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                 </a>
             </div>
         </div>
@@ -570,7 +570,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class=" text-center ">
                 <a href="#pricing-cards">
-                    <button type="button" class="btn blogger-btn">Get Your Links Now</button>
+                    <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                 </a>
             </div>
         </div>
@@ -650,9 +650,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
                     </div>
 
-                    <div class=" buttonsinfo ">
+                    <div class=" text-center text-md-start">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn blogger-btn">Get Your Links Now</button>
+                            <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                         </a>
                     </div>
                 </div>
@@ -841,7 +841,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="text-center">
                 <a href="#pricing-cards">
-                    <button type="button" class="btn blogger-btn">Get Your Links Now</button>
+                    <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                 </a>
             </div>
         </div>
@@ -927,9 +927,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
             </div>
-            <div class=" buttonsinfo text-center">
+            <div class=" text-center">
                 <a href="#pricing-cards">
-                    <button type="button" class="btn blogger-btn">Get Your Links Now</button>
+                    <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                 </a>
             </div>
         </div>
