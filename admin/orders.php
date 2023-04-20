@@ -23,7 +23,7 @@ require_once ROOT_DIR . "/classes/utilityNum.class.php";
 $adminLogin 	= new adminLogin();
 $dateUtil      	= new DateUtil();
 $error 			= new Error();
-$client		    = new Customer();
+$Customer		    = new Customer();
 $ContentOrder	= new ContentOrder();
 // $product		= new Product();
 $search_obj		= new Search();
@@ -58,8 +58,8 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'search')){
 
   // echo $user_id.'----'.$status;exit;
 	$allOrders	= $ContentOrder->showAllOrderdContents($user_id, $status);
-  // print_r($allOrders);
-  // exit;
+//   print_r($allOrders);
+//   exit;
 	
 }
 ?>
@@ -144,53 +144,75 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'search')){
                                             </thead>
                                             <tbody>
                                                 <?php
-                                              foreach ($allOrders as $order) {
-                                              ?>
 
-                                                <tr>
-                                                    <td>
-                                                        <?php echo '#'.$order['order_id']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $order['clientName']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <!-- <div class="progress">
-                                                            <div class="progress-bar bg-success" role="progressbar"
-                                                                style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                                                                aria-valuemax="100"></div>
-                                                        </div> -->
-                                                        <?php echo $order['clientOrderedSite']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $order['clientOrderPrice']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $order['clientOrderPrice']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php $ordStatus = $OrderStatus->getOrdStatName($order['clientOrderStatus']); ?>
-                                                        <label class="badge <?php echo $ordStatus;?>">
-                                                            <?php echo $ordStatus;?>
-                                                        </label>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $dateUtil->dateTimeNumber($order['added_on']); ?>
-                                                    </td>
-                                                    <td>
-                                                        <a class="text-decoration-none mx-1"
-                                                            href="order-details.php?ord_id=<?php echo $order['order_id']; ?>">
-                                                            <i class="fa-regular fa-eye"></i>
-                                                        </a>
-                                                        <a href="" class="text-decoration-none mx-1">
-                                                            <i class="fa-regular fa-pen-to-square mx-1"></i>
-                                                        </a>
-                                                        <a href="" class="text-decoration-none mx-1">
-                                                            <i
-                                                                class="fa-regular fa-trash-can-xmark text-danger mx-1"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
+                                                $itemAmount     = 00;
+                                                $paid_amount    = 00;
+
+                                                foreach ($allOrders as $order) {
+
+                                                    $orderId        = $order['order_id'];
+                                                    $ordStatusCode  = $order['order_status'];
+                                                    $addedOn        = $order['added_on'];
+                                                    $clientUserId   = $order['clientUserId'];
+                                                    
+                                                    $customer       = $Customer->getCustomerData($clientUserId);
+                                                    $customerName   = $customer[0][5].' '.$customer[0][6];
+                                                    
+                                                    
+                                                    $ordTxn         = $ContentOrder->showTrxnByOrderId($orderId);
+                                                    if ($ordTxn != false) {
+                                                        $itemAmount     = $ordTxn['item_amount'];
+                                                        $paid_amount    = $ordTxn['paid_amount'];
+                                                    }
+                                                    
+                                                    $ordStatusName = $OrderStatus->getOrdStatName($ordStatusCode);
+                                                    $orderDate     = $dateUtil->dateTimeNumber($addedOn);
+
+                                                ?>
+
+                                                    <tr>
+                                                        <td>
+                                                            <?= '#'.$orderId; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?= $customerName; ?>
+                                                        </td>
+                                                        <td>
+                                                            <!-- <div class="progress">
+                                                                <div class="progress-bar bg-success" role="progressbar"
+                                                                    style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
+                                                            </div> -->
+                                                            <?php echo $order['clientOrderedSite']; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?= CURRENCY.$itemAmount; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?=  CURRENCY.$paid_amount; ?>
+                                                        </td>
+                                                        <td>
+                                                            <label class="badge <?php echo $ordStatordStatusNameus;?>">
+                                                                <?php echo $ordStatusName;?>
+                                                            </label>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $orderDate; ?>
+                                                        </td>
+                                                        <td>
+                                                            <a class="text-decoration-none mx-1"
+                                                                href="order-details.php?ord_id=<?php echo $order['order_id']; ?>">
+                                                                <i class="fa-regular fa-eye"></i>
+                                                            </a>
+                                                            <a href="" class="text-decoration-none mx-1">
+                                                                <i class="fa-regular fa-pen-to-square mx-1"></i>
+                                                            </a>
+                                                            <a href="" class="text-decoration-none mx-1">
+                                                                <i
+                                                                    class="fa-regular fa-trash-can-xmark text-danger mx-1"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
                                                 <?php
                                               }
                                               ?>

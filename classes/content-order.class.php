@@ -126,7 +126,7 @@ class ContentOrder extends DatabaseConnection{
             $res  = $this->conn->query($sql);
             $rows = $res->num_rows;
             if ($rows > 0 ) {
-                  while ($result = $res->fetch_array()) {
+                  while ($result = $res->fetch_assoc()) {
                         $data[] = $result;
                   }
             }
