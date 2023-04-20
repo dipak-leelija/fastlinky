@@ -356,6 +356,78 @@ class Utility extends DatabaseConnection{
 		//echo $select." <br />".$sql;exit;
 	}//eof
 	
+
+
+	function read_file_docx($filename){
+
+		$striped_content = '';
+		$content = '';
+	
+		if(!$filename || !file_exists($filename)) return false;
+	
+		$zip = zip_open($filename);
+	
+		if (!$zip || is_numeric($zip)) return false;
+	
+		while ($zip_entry = zip_read($zip)) {
+	
+			if (zip_entry_open($zip, $zip_entry) == FALSE) continue;
+	
+			if (zip_entry_name($zip_entry) != "word/document.xml") continue;
+	
+			$content .= zip_entry_read($zip_entry, zip_entry_filesize($zip_entry));
+	
+			zip_entry_close($zip_entry);
+		}// end while
+	
+		zip_close($zip);
+	
+		//echo $content;
+		//echo "<hr>";
+		//file_put_contents('1.xml', $content);
+	
+		$content = str_replace('</w:r></w:p></w:tc><w:tc>', " ", $content);
+		$content = str_replace('</w:r></w:p>', "\r\n", $content);
+		$striped_content = strip_tags($content);
+	
+		return $striped_content;
+	}
+	
+
+
+	function read_doc_file($filename) {
+		if(file_exists($filename))
+	   {
+		   if(($fh = fopen($filename, 'r')) !== false ) 
+		   {
+			  $headers = fread($fh, 0xA00);
+   
+			  // 1 = (ord(n)*1) ; Document has from 0 to 255 characters
+			  $n1 = ( ord($headers[0x21C]) - 1 );
+   
+			  // 1 = ((ord(n)-8)*256) ; Document has from 256 to 63743 characters
+			  $n2 = ( ( ord($headers[0x21D]) - 8 ) * 256 );
+   
+			  // 1 = ((ord(n)*256)*256) ; Document has from 63744 to 16775423 characters
+			  $n3 = ( ( ord($headers[0x21E]) * 256 ) * 256 );
+   
+			  // 1 = (((ord(n)*256)*256)*256) ; Document has from 16775424 to 4294965504 characters
+			  $n4 = ( ( ( ord($headers[0x21F]) * 256 ) * 256 ) * 256 );
+   
+			  // Total length of text in the document
+			  $textLength = ($n1 + $n2 + $n3 + $n4);
+   
+			  $extracted_plaintext = fread($fh, $textLength);
+   
+			  // simple print character stream without new lines
+			  //echo $extracted_plaintext;
+   
+			  // if you want to see your paragraphs in a new line, do this
+			  return nl2br($extracted_plaintext);
+			  // need more spacing after each paragraph use another nl2br
+		   }
+	   }   
+	   }
 	
 	/**
 	*	This function will allow user to download a file with file name, located in different
@@ -376,30 +448,43 @@ class Utility extends DatabaseConnection{
 	{
 		$sql	= "SELECT ".$fileCol." FROM ".$table." WHERE ".$keyCol." = '".$keyId."'";
 		
-		$query	= mysql_query($sql);
+		$query	= $this->conn->query($sql);
 		
-		if(mysql_num_rows($query) > 0)
-		{
-			$result		= mysql_fetch_array($query);
+		if($query->num_rows > 0){
+
+			$result		= $query->fetch_array();
 			$fileVal	= $result[$fileCol];
 			
-			if(file_exists($path.$fileVal))
-			{
-				header("Content-Disposition: attachment; filename=$fileVal");
-				header("Content-Length: " . filesize($path.$fileVal));
-				header("Content-Type: " . filetype($path.$fileVal));
-				readfile($path.$fileVal);
-				echo "<javascript>
-					  document.write('Please wait, while download is in process.');
-					  
-					  document.write('Closing window.');
-					  this.window.close();
-					  </javascript>";
-					  //
-
+			if ($path == '') {
+				$path = $fileVal;
+			}else {
+				$path = $path.$fileVal;
 			}
-			else
-			{
+
+			ob_clean();
+			if(file_exists($path)){
+
+				// header("Content-Disposition: attachment; filename=". basename($fileVal));
+				// header("Content-Length: " . filesize($path));
+				// header("Content-Type: " . filetype($path));
+				
+				header($_SERVER["SERVER_PROTOCOL"] . " 200 OK");
+				header("Cache-Control: public"); // needed for internet explorer
+				header('Content-type: application/vnd.openxmlformats- officedocument.wordprocessingml.document');
+				header("Content-Transfer-Encoding: Binary");
+				header("Content-Length:".filesize($path));
+				header("Content-Disposition: attachment; filename=" .  basename($fileVal));
+				readfile($path);
+				die();        
+
+				// readfile($path);
+				echo "<javascript>
+						document.write('Please wait, while download is in process.'); 
+						document.write('Closing window.');
+						this.window.close();
+					  </javascript>";
+			}else{
+				
 				echo "<javascript>document.write('No file found. Closing window.');
 					  this.window.close();</javascript>";
 			}
@@ -2316,23 +2401,25 @@ class Utility extends DatabaseConnection{
 	}//eof
 	
 	/**
-	*	This function update the status of a id associated with a table. 
-	*	Useful when you want to change the status of any ads.
+	*	This function update the value of a id associated with a table. 
+	*	Useful when you want to change the status/single value of any table.
 	*
 	*	@param
 	*			$key_val	Primary key value
 	*			$key_col	Primary key column name
-	*			$stat_col	Status column name
-	*			$status		Status value of the column
+	*			$set_col	column name
+	*			$col_val	value of the column
 	*			$table		Table name
 	*
 	*	@return NULL
 	*/
-	function updStatus($key_val, $key_col, $status, $stat_col, $table)
-	{
-		$sql	= "UPDATE ".$table." SET ".$stat_col."='".$status."' WHERE ".$key_col." = ".$key_val."";
-		$query	= mysql_query($sql);
-		//echo $sql.mysql_error();exit;
+	function updSingleData($key_val, $key_col, $col_val, $set_col, $table){
+
+		$col_val	= addslashes(trim($col_val));
+		$sql	= "UPDATE {$table} SET {$set_col} ='{$col_val}' WHERE {$key_col}  = {$key_val}";
+		$query	= $this->conn->query($sql);
+	
+		return $query; 
 		
 	}//eof
 	
