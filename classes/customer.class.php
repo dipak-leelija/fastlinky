@@ -769,6 +769,30 @@ class Customer extends Utility{
 
 	}//	eof
 
+	/**
+	*	Show registration data
+	*
+	*	@param
+	*	$customer_id		Customer identity
+	*
+	*	@return array
+	*/
+	function getCustomerAvatar($customer_id){	
+		
+		$select		=   "SELECT image FROM	customer WHERE customer_id = '$customer_id'";
+	
+		// echo $select.$this->conn->error;exit;
+		$query = $this->conn->query($select);
+
+		if ($query->num_rows > 0) {
+			while($result = $query->fetch_assoc()){
+					$data	=	$result['image'];
+			}
+			return $data;
+		}//if
+
+	}//	eof
+
 
 	/**
 	*	Show registration data

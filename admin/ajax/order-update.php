@@ -1,6 +1,7 @@
 <?php
-require_once "../../includes/constant.inc.php";
 session_start();
+require_once "../../includes/constant.inc.php";
+require_once "../../includes/order-constant.inc.php";
 include_once('checkSession.php');
 
 
@@ -40,13 +41,13 @@ if (isset($_POST['add-content'])) {
 
 if (isset($_GET['cancel-order'])) {
     
-    $orderStatus    = 7; // Cancelled 
+    $orderStatus    = REJECTEDCODE; 
 
     $cancelled = $ContentOrder->ClientOrderOrderUpdate($_GET['cancel-order'], $orderStatus, '', '');
     if ($cancelled) {
-        $updated = $ContentOrder->addOrderUpdate($_GET['cancel-order'], 'Cancelled', '', 0);
+        $updated = $ContentOrder->addOrderUpdate($_GET['cancel-order'], 'Rejected', '', 0);
         if ($updated) {
-            $uMesg->showSuccessT('success', 0, '', '../orders.php', "Order Cancelled", 'SUCCESS');
+            $uMesg->showSuccessT('success', 0, '', '../orders.php', "Order Rejected", 'SUCCESS');
         }
     }
 }
@@ -118,7 +119,7 @@ if(isset($_POST["changes-request"])){
     $orderStatus    = 6; // Hold 
 
     $showOrder  = $ContentOrder->clientOrderById($orderId);
-    $completed  = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'changesReq', $showOrder[0]['changesReq']+1 );
+    $completed  = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'changesReq', $showOrder['changesReq']+1 );
     if ($completed) {
         $updated = $ContentOrder->addOrderUpdate($orderId, 'Requested for changes', $changesOf, $updatedBy);
         if ($updated) {
@@ -134,13 +135,13 @@ if(isset($_POST["changesOrder"])){
 
     $orderId = $_POST["changesOrder"];
     
-    $showOrder  = $ContentOrder->clientOrderById($orderId);
-    $orderStatus    = $showOrder[0]['clientOrderStatus']; // status as it is 
-    $noOfChanges = $showOrder[0]['changesReq']-1;
+    $showOrder      = $ContentOrder->clientOrderById($orderId);
+    $orderStatus    = $showOrder['order_status']; // status as it is 
+    $noOfChanges    = $showOrder['changesReq']-1;
     if ($noOfChanges == 0) {
         $orderStatus = 3; // processing
     }
-    $completed  = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'changesReq', $showOrder[0]['changesReq']-1 );
+    $completed  = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'changesReq', $noOfChanges);
     if ($completed) {
         $updated = $ContentOrder->addOrderUpdate($orderId, 'Changes Updated', '', $updatedBy);
         if ($updated) {

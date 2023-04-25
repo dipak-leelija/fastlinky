@@ -142,13 +142,13 @@ class ContentOrder extends DatabaseConnection{
        */
       function clientOrderById($id){
 
-            $data = array();
+            $data = false;
             $sql  = "SELECT * FROM `order_details` WHERE `order_id` = '$id'";
             $res  = $this->conn->query($sql);
             $rows = $res->num_rows;
             if ($rows > 0 ) {
                   while ($result = $res->fetch_array()) {
-                        $data[] = $result;
+                        $data = $result;
                   }
             }
             return $data;
@@ -244,30 +244,21 @@ class ContentOrder extends DatabaseConnection{
 
 
 
-      function ClientOrderOrderUpdate($orderId, $orderStatus, $column, $columnData ){
+      function ClientOrderOrderUpdate($orderId, $orderStatus, $column='', $columnData='' ){
 
-            if ($column == null) {
+            if ($column == '' || $columnData == '') {
                   
-                  $sql= "UPDATE `order_details` 
-                                          SET 
-                                          `order_status`      ='$orderStatus'
-                                          WHERE 
-                                          `order_id`= '$orderId'";
-                  $query = $this->conn->query($sql);
-                  
-                  return $query;
+                  $sql= "UPDATE `order_details` SET  `order_status`      ='$orderStatus'
+                                                WHERE 
+                                                `order_id`= '$orderId'";
             }else {
-                  $sql= "UPDATE `order_details` 
-                                          SET 
-                                          `order_status`      ='$orderStatus',
-                                          `$column`                ='$columnData'
-                                          WHERE 
-                                          `order_id`= '$orderId'";
-                                          // echo $sql;
-                  $query = $this->conn->query($sql);
-                  
-                  return $query;
+                  $sql= "UPDATE `order_details` SET  `order_status` = '$orderStatus', `$column` = '$columnData'
+                                                WHERE 
+                                                `order_id`= '$orderId'";
             }
+
+            $query = $this->conn->query($sql);
+            return $query;
       }
 
 
@@ -317,6 +308,28 @@ class ContentOrder extends DatabaseConnection{
             $query = $this->conn->query($update);
             return $query;
       }
+
+      // function orderedContentUpdate($orderId, $title){
+
+      //       $content     = addslashes(trim($content));
+
+      //       if ($content_type == 'doc') {
+      //             $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `path`, `added_on`)
+      //                                           VALUES
+      //                                           ('$orderId', '$content_type', '$title', '$path', now())";
+      //       }else {
+      //             $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `content`, `added_on`)
+      //                                           VALUES
+      //                                           ('$orderId', '$content_type', '$title', '$content', now())";
+      //       }
+
+      //       if($this->conn->query($sql) != 1){
+      //             return false;
+      //       }else {
+      //             $insert_id= $this->conn->insert_id;
+      //             return $insert_id;
+      //       }
+      // }
 
       function getOrderContent($orderId){
 
