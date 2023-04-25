@@ -573,10 +573,10 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
                                                     <div class="col-12 mt-3">
                                                         <?php
-                                                    if ($orderContent['path'] == '') {
+                                                        if ($orderContent['path'] == '') {
 
-                                                        if ($showOrder[0]['clientTargetUrl'] > $ordTxn['item_amount']) {
-                                                        ?>
+                                                            if ($orderContent['content_type'] == '') {
+                                                            ?>
                                                         <p class="text-primary font-weight-bold">
                                                             Content
                                                             <span class="text-danger font-weight-light">
@@ -584,44 +584,102 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                     <?php echo COMPANY_S;?></small>
                                                             </span>
                                                         </p>
-                                                        <div class="border rounded text-center py-4" data-toggle="modal"
+
+                                                        <!-- content upload section start -->
+                                                        <div class="content-upload">
+                                                            <div class="content-upload-wrap">
+                                                                <input class="file-upload-input" name="content-file"
+                                                                    type='file' onchange="readURL(this);"
+                                                                    accept=".doc, .docx" />
+                                                                <div class="drag-text">
+                                                                    <p>
+                                                                        <i
+                                                                            class="fa-sharp fa-solid fa-file-arrow-up"></i>
+                                                                        <br>
+                                                                        Drag and Drop Your Content File
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="file-upload-content">
+                                                                <img class="file-upload-image" src="#"
+                                                                    alt="your image" />
+                                                                <div class="image-title-wrap">
+                                                                    <button type="button" onclick="removeUpload()"
+                                                                        class="remove-image d-flex justify-content-between px-3">
+                                                                        <span class="image-title">Uploaded Image</span>
+                                                                        <span><i
+                                                                                class="fa-sharp fa-solid fa-xmark fs-5"></i></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- content upload section end -->
+
+                                                        <!-- OR DIVIDER STARTED -->
+                                                        <div id="or-divider"
+                                                            class="bg_mustard p-2 my-4 mx-0 text-light d-none"
+                                                            style="border: 1px solid gainsboro;">
+                                                            <h5 class="text-center mb-0">OR</h5>
+                                                        </div>
+                                                        <!-- OR DIVIDER ENDED -->
+
+                                                        <!-- content text section start -->
+                                                        <div id="content-text">
+                                                            <div class="form-group d-none">
+                                                                <label for="">Your Content<span class="warning">*</span>
+                                                                    (Must be a minimum
+                                                                    of 500 words) Don't have a content, get one here
+                                                                    Place your content here. In your content, you can
+                                                                    include up to 2 links
+                                                                    They can be in the form of URLs and anchors. In the
+                                                                    "URL" and "Anchor
+                                                                    text"
+                                                                    fields below, please insert the same URLs and
+                                                                    anchors. <span class="warning">(Don't add any images
+                                                                        in your
+                                                                        article)</span></label>
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" name="clientContent1"
+                                                                        id="" rows="9"
+                                                                        placeholder="Write or paste your content here"
+                                                                        onkeyup="checkContent(this)"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- content text section end -->
+
+                                                        <!-- <div class="border rounded text-center py-4" data-toggle="modal"
                                                             data-target="#updateModal">
                                                             <button class="btn btn-sm btn-primary my-4"
                                                                 onclick="updateSingle()">Upload Content</button>
-                                                        </div>
+                                                        </div> -->
                                                         <?php
-                                                        } else {
-                                                        ?>
+                                                            } else {
+                                                            ?>
                                                         <p
                                                             class="text-light bg-info font-weight-bold text-center w-100 my-5 py-5">
                                                             Contents Will Be Updated Soon.
                                                         </p>
 
                                                         <?php
-                                                        }
-                                                    }else {
+                                                            }
+                                                        }else {
                                                         ?>
                                                         <h5 class="text-primary font-weight-bold">
                                                             Content
                                                             <span class="text-danger font-weight-light">
                                                                 <small>
-                                                                    Drag the right down corner of the textarea to get
-                                                                    the complete content
+                                                                    You can View or Download the content by clicking on
+                                                                    the respective button
                                                                 </small>
                                                             </span>
                                                         </h5>
                                                         <div class="bg-primary text-light rounded p-2">
                                                             <?= basename($orderContent['path']); ?>
                                                         </div>
-                                                        <!-- <div class="text-wrap">
-
-                                                                <textarea class="form-control" id="content"
-                                                                    rows="6"><?php echo $orderContent['path']; ?></textarea>
-                                                                <div id="copyContent" class="clipboard icon"></div>
-                                                            </div> -->
                                                         <?php
-                                                    }
-                                                    ?>
+                                                        }
+                                                        ?>
                                                     </div>
 
 
@@ -732,7 +790,8 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                 <!-- ============ if order rejected ============ -->
                                                 <?php if ($ordStatCode == REJECTEDCODE): ?>
                                                 <div class="bg-danger font-weight-bold mt-1">
-                                                    <p class="text-light text-center py-2">Order Has Been <?= REJECTED ?>
+                                                    <p class="text-light text-center py-2">Order Has Been
+                                                        <?= REJECTED ?>
                                                     </p>
                                                 </div>
                                                 <?php endif ?>
@@ -748,12 +807,13 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                             $chngMsg = 'There is Some Request for Changes!';
                                                         endif;
                                                     ?>
-                                                        <div class="text-center mt-2">
-                                                            <p class="text-danger font-weight-bold"><?= $chngMsg; ?></p>
-                                                            <button class="btn btn-sm btn-primary"
-                                                                onclick="changesUpdate(<?= $orderId; ?>)">Chnages Updated ?</button>
-                                                        </div>
-                                                    <?php } else {
+                                                <div class="text-center mt-2">
+                                                    <p class="text-danger font-weight-bold"><?= $chngMsg; ?></p>
+                                                    <button class="btn btn-sm btn-primary"
+                                                        onclick="changesUpdate(<?= $orderId; ?>)">Chnages Updated
+                                                        ?</button>
+                                                </div>
+                                                <?php } else {
 
                                                     echo '
                                                     <div class="text-center py-4">
@@ -788,13 +848,14 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                 $chngMsg = 'There is Some Request for Changes!';
                                                             endif;
                                                             ?>
-                                                            <div class="text-center mt-2">
-                                                                <p class="text-danger font-weight-bold"><?= $chngMsg; ?></p>
-                                                                <button class="btn btn-sm btn-primary"
-                                                                    onclick="changesUpdate(<?= $orderId; ?>)">Chnages Updated ?</button>
-                                                            </div>
+                                                <div class="text-center mt-2">
+                                                    <p class="text-danger font-weight-bold"><?= $chngMsg; ?></p>
+                                                    <button class="btn btn-sm btn-primary"
+                                                        onclick="changesUpdate(<?= $orderId; ?>)">Chnages Updated
+                                                        ?</button>
+                                                </div>
 
-                                                            <?php } else {
+                                                <?php } else {
 
                                                             echo '
                                                             <div class="d-flex justify-content-center my-3">
@@ -994,6 +1055,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     <script src="../plugins/main.js"></script>
     <script src="../plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
     <script src="../js/ajax.js" type="text/javascript"></script>
+    <script src="../js/content-upload.js"></script>
 
 
     <script>
