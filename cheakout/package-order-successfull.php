@@ -10,7 +10,6 @@ require_once ROOT_DIR."/classes/gp-package.class.php";
 require_once ROOT_DIR."/classes/gp-order.class.php";
 require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/location.class.php";
-require_once ROOT_DIR."/classes/countries.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
 
 
@@ -21,7 +20,6 @@ $GPPackage      = new GuestPostpackage();
 $PackageOrder   = new PackageOrder();
 $customer		= new Customer();
 $Location       = new Location();
-$Countries      = new Countries();
 $utility		= new Utility();
 
 ############################################################################################

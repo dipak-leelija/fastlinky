@@ -119,9 +119,6 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                 <?php
                                                 $ordStatus = $OrderStatus->singleOrderStatus($order['order_status']); 
                                                 $payStatus = $OrderStatus->singleOrderStatus($order['status']);
-                                                // foreach($packFeatures as $feature){
-                                                //     echo $feature['features'];
-                                                // }
                                                     ?>
                                                 <li> Order : <?php echo $ordStatus[0][1]; ?></li>
                                                 <li> Payment : <?php echo $payStatus[0][1]; ?></li>
@@ -145,8 +142,8 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                     <?php echo $buyer[0][29]; ?></li>
                                                 <li>
                                                     <?php
-                                                $country = $Location->getCountyDataByCountyId($buyer[0][30]);
-                                                echo $country[1];
+                                                $country = $Location->getCountyById($buyer[0][30]);
+                                                echo $country['name'];
                                                 ?>
                                                 </li>
                                             </ul>
