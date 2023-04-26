@@ -77,42 +77,11 @@ $updatedBy =  $_SESSION[USR_SESS];
 
     <?php
 
+// print_r($_REQUEST);
+// exit;
 if (isset($_POST['articleSubmit'])) {
-    // print_r($_REQUEST);
-    // exit;
 
-    $contentId              = $_POST['content-id'];
-
-    $clientContentTitle     = $_POST['clientContentTitle'];
-
-    $clientAnchorText       = $_POST['clientAnchorText'];
-    $clientTargetUrl        = $_POST['clientTargetUrl'];
-
-    $refAnc1                = $_POST['reference-anchor1'];
-    $refUrl1                = $_POST['reference-url1'];
-    $refAnc2                = $_POST['reference-anchor2'];
-    $refUrl2                = $_POST['reference-url2'];
-
-
-    $clientRequirement  = $_POST['clientRequirement'];
-
-    $titleUpdate = $ContentOrder->titleUpdate($orderId, $clientContentTitle);
-    $LinksUpdate = $ContentOrder->updateHyperLinks($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1, $refAnc2, $refUrl2);
-    $reqUpdate   = $ContentOrder->orderSingleDataUpdate($orderId, 'clientRequirement', $clientRequirement, $updatedBy);
-
-    $checkArray = array($titleUpdate, $LinksUpdate, $reqUpdate);
-    if (!in_array(false, $checkArray) || !in_array(0, $checkArray)) {
-       ?>
-    <script>
-    Swal.fire({
-        title: 'Updated!',
-        text: 'Contents Updated',
-        icon: 'success',
-        confirmButtonText: 'Continue'
-    })
-    </script>
-    <?php
-    }
+    
     // exit;
     // if (isset($_POST['clientContent'])) {
         
@@ -123,7 +92,7 @@ if (isset($_POST['articleSubmit'])) {
     //     if ($updated) {
     //         $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Content Updated', '', $cusDtl[0][0]);
 
-    // ?>
+    ?>
     // <script>
     //         Swal.fire({
     //             title: 'Updated!',
@@ -160,22 +129,33 @@ if (isset($_POST['articleSubmit'])) {
 
 if (isset($_POST['changesReq'])) {
 
-    // $orderStatus    = 6; // Hold 
+    $contentId              = $_POST['content-id'];
 
-    $orderId            = $_POST['orderId'];
-    $clientContent      = $_POST['clientContent'];
-    $clientTargetUrl    = $_POST['clientTargetUrl'];
-    $clientAnchorText   = $_POST['clientAnchorText'];
-    $clientRequirement  = $_POST['clientRequirement'];
+    $clientContentTitle     = $_POST['clientContentTitle'];
 
-    $orderStatus        = 3; // Processesing
+    $clientAnchor           = $_POST['clientAnchorText'];
+    $clientTargetUrl        = $_POST['clientTargetUrl'];
 
-    $updated = $ContentOrder->ClientOrderContentUpdate($orderId, $clientAnchorText, $clientTargetUrl, $clientContent, $clientRequirement);
-    
+    $refAnchor1             = $_POST['reference-anchor1'];
+    $refUrl1                = $_POST['reference-url1'];
+    $refAnchor2             = $_POST['reference-anchor2'];
+    $refUrl2                = $_POST['reference-url2'];
+
+    $clientRequirement      = $_POST['clientRequirement'];
+
+    $orderStatus        = PROCESSINGCODE; // Processesing
+
+    $updatedTitle = $ContentOrder->titleUpdate($orderId, $clientContentTitle);
+
+    $updatedLinks = $ContentOrder->updateHyperLinks($contentId, $clientAnchor, $clientTargetUrl, $refAnchor1, $refUrl1, $refAnchor2, $refUrl2);
+
+
     $showOrder  = $ContentOrder->clientOrderById($orderId);
-    $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'changesReq', $showOrder[0]['changesReq']+1 );
+    $updated    = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'changesReq', $showOrder['changesReq']+1 );
 
-    if ($updated) {
+    $updateResponse  = [$updatedTitle, $updatedLinks, $updated];
+
+    if (!in_array(false, $updateResponse) || !in_array(0, $updateResponse)) {
         $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Changes Request', '', $cusDtl[0][0]);
         if ($statusUpdated) {        
     ?>
@@ -201,13 +181,15 @@ $transectionId  =   '';
 
 #####################################################################
 
-
 $showOrder                  = $ContentOrder->clientOrderById($orderId);
-    $orderStatusCode        = $showOrder[0]['order_status'];
-    $statusName             = $OrderStatus->singleOrderStatus($orderStatusCode);
-        $orderStatusName    = $statusName[0]['orders_status_name'];
+if ($showOrder == false) {
+    header("Location: my-orders.php");
+    exit;
+}
+    $orderStatusCode        = $showOrder['order_status'];
+    $orderStatusName             = $OrderStatus->getOrdStatName($orderStatusCode);
 
-    $orderDate              = $DateUtil->dateTimeText($showOrder[0]['added_on']);
+    $orderDate              = $DateUtil->dateTimeText($showOrder['added_on']);
 
 
 
@@ -239,7 +221,7 @@ if ($ordTxn != false) {
 
 
 
-$buyer          = $customer->getCustomerData($showOrder[0]['clientUserId']);
+$buyer          = $customer->getCustomerData($showOrder['clientUserId']);
 $customerName   = $buyer[0][5].' '.$buyer[0][6];
 
 ?>
@@ -276,7 +258,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                                     class="badge text-bg-primary"><?= $orderStatusName; ?></span>
                                             </h5>
                                             <h5 class="pkage-headline pt-2">
-                                                <?php echo $showOrder[0]['clientOrderedSite']; ?></h5>
+                                                <?php echo $showOrder['clientOrderedSite']; ?></h5>
                                             <ul class="listing-adrs">
                                                 <li> Order Id : <?= "#".$orderId; ?></li>
 
@@ -333,60 +315,70 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                 $delivered = false;
                                 $fieldStatus = '';
                                 
-                                // if($orderStatusCode == ORDEREDCODE || $orderStatusCode == PROCESSINGCODE || $orderStatusCode == INCOMPLETECODE){
-                                //     $fieldStatus = '';
-                                // }
                                 $validStatusCodes = [ORDEREDCODE, PROCESSINGCODE, INCOMPLETECODE];
                                 if (in_array($orderStatusCode, $validStatusCodes)) {
                                     $fieldStatus = '';
                                 }
                                 
-                                if($orderStatusCode == FAILEDCODE || $orderStatusCode == COMPLETEDCODE ){
+                                if($orderStatusCode == FAILEDCODE || $orderStatusCode == DELIVEREDCODE || $orderStatusCode == COMPLETEDCODE ){
                                     $fieldStatus = 'disabled';
                                     $delivered = true;
                                 }
+                                ?>
 
-                                if ($delivered) {
-                                    echo '<div class="delivered_sec container mt-4">
-                                            <h3>Your ordered article link is: </h3>
-                                            <div class="text-wrap">
-                                                    <input type="text" class="form-control" id="articleLink" value="'. rawurldecode($showOrder [0]['deliveredLink']).'">
-                                                    <div onclick="copyText(\'articleLink\')" class="clipboard icon"></div>
-                                                </div>
-                                            </div>';
+                                <?php if ($delivered){ ?>
 
-                                        if ( $showOrder[0]['clientOrderStatus'] != 5 ) {
-                                            echo '
-                                            <div class="btn_bx text-center mt-3">
-                                                <button class="btn btn-sm btn-primary" onclick="finishedOrder('.$orderId.')">Finished</button>
-                                                <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="changeRequest('.$orderId.')">Change Request</button>
-                                            </div>';
-                                        }else {
-                                            $ordUpdate = $ContentOrder->lastUpdate($orderId);
-                                            $updateDate = date('l jS \of F Y h:i:s A', strtotime($ordUpdate['updated_on']));
-                                            echo '
-                                                <div class="text-center">
-                                                    <p class="text-center fw-bold my-3">Order Completed on '.$updateDate.'</p>';
+                                <div class="delivered_sec container mt-4">
+                                    <h3>Your ordered article link is: </h3>
+                                    <div class="text-wrap">
+                                        <input type="text" class="form-control" id="articleLink"
+                                            value="<?= rawurldecode($showOrder['deliveredLink']) ?>">
+                                        <div onclick="copyText('articleLink')" class="clipboard icon"></div>
+                                    </div>
+                                </div>
 
-                                                    $dueDate = date_create($ordUpdate['updated_on']);
-                                                    date_add($dueDate, date_interval_create_from_date_string("2 days"));
-                                                    $dueDate = date_format($dueDate, "l jS \of F Y h:i:s A");
 
-                                                    
-                                            if ($ordTxnd['transection_status'] == "Pay Later") {
-                                                echo '<small class="d-block text-danger fw-bold my-1">Pay Before '.$dueDate.'</small>';
+                                <?php if ( $orderStatusCode == DELIVEREDCODE ):?>
+                                <div class="btn_bx text-center mt-3">
+                                    <button class="btn btn-sm btn-primary"
+                                        onclick="finishedOrder(<?= $orderId ?>)">Finished</button>
+                                    <button class="btn btn-sm btn-info" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" onclick="changeRequest(<?= $orderId ?>)">Change
+                                        Request</button>
+                                </div>
+                                <?php endif; ?>
+
+
+                                <?php if( $orderStatusCode == COMPLETEDCODE):
+                                        $ordUpdate = $ContentOrder->lastUpdate($orderId);
+                                        $updateDate = date('l jS \of F Y h:i:s A', strtotime($ordUpdate['updated_on']));
+                                        echo '
+                                        <div class="text-center">
+                                            <p class="text-center fw-bold my-3">Order Completed on '.$updateDate.'</p>';
+
+                                            $dueDate = date_create($ordUpdate['updated_on']);
+                                            date_add($dueDate, date_interval_create_from_date_string("2 days"));
+                                            $dueDate = date_format($dueDate, "l jS \of F Y h:i:s A");
+
+
+                                            if ($ordTxn['transection_status'] == PENDING) {
+                                            echo '<small class="d-block text-capitalize text-danger fw-bold my-1">Pay Before
+                                                '.$dueDate.'</small>';
                                             }
-                                            
-                                            
-                                            if ($ordTxn['transection_status'] == "Pay Later") {
-                                                echo '<a class="btn btn-primary text-center" href="payments/paylater-pay-now.php?order='.base64_encode($orderId).'">Pay Now</a>';
+
+
+                                            if ($ordTxn['transection_status'] == PENDING) {
+                                            echo '<a class="btn btn-primary text-center"
+                                                href="payments/paylater-pay-now.php?order='.base64_encode($orderId).'">Pay
+                                                Now</a>';
                                             }
-                                            
-                                            echo '</div>';
-                                        }
+
+                                            echo '
+                                        </div>';
+                                        endif;
 
                                 }
-                             ?>
+                                ?>
                                 <form action="" method="post" class="mt-4" id="orderForm">
                                     <div class="row px-3" id="row1">
                                         <?php
@@ -507,8 +499,8 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                             </label>
                                             <textarea class="form-control" id="special-requirements" rows="6"
                                                 name="clientRequirement" <?php echo $fieldStatus; ?>><?php
-                                            if ($showOrder[0]['clientRequirement'] != null ) {
-                                                echo $showOrder[0]['clientRequirement'];
+                                            if ($showOrder['clientRequirement'] != null ) {
+                                                echo $showOrder['clientRequirement'];
                                             }
                                             ?></textarea>
                                         </div>
@@ -521,42 +513,32 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                         <!-- ================================================================ -->
 
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="tid" name="content-id"
-                                                value="<?= $orderContentId; ?>">
+                                            <input type="number" id="tid" name="content-id" value="<?= $orderContentId; ?>">
+                                            <input type="number" id="tid" name="order-id" value="<?= $orderId; ?>">
+                                            <input type="number" class="d-none" id="formAction" name="updateBeforeProcess">
                                         </div>
                                         <div class="text-center">
 
                                             <?php
                                             if($orderStatusCode == ORDEREDCODE){
-                                                
-                                                echo '<button class="btn btn-primary" name="articleSubmit" id="updateButton" type="button" >Update</button>';
+                                                echo '<button class="btn btn-primary" id="updateButton" type="button" >Update</button>';
                                             }
 
                                             if($orderStatusCode == PROCESSINGCODE){
-                                                
                                                 echo '<button class="btn apply-button" name="changesReq" type="submit">Request for Changes</button>';
-                                            
                                             }
                                             
                                             if($orderStatusCode == HOLDCODE){
-                                                
-                                                echo '<p class="text-light bg-danger">'.$statusName[0][1].' Order\'s Contents can\'t be uploded</p>';
-                                            
+                                                echo '<p class="text-light bg-danger">'.HOLD.' Order\'s Contents can\'t be uploded</p>';
                                             }
 
                                             if($orderStatusCode == INCOMPLETECODE){
-                                                
                                                 echo '<a class="btn btn-primary" >Complete The Order now</a>';
-                                            
                                             }
 
-                                            // else{
-                                            //     if ($delivered) {
-                                            //         echo '<p class="text-light bg-primary fw-bold fs-4"> Order '.$statusName[0][1].' </p>';
-                                            //     }else{
-                                            //         echo '<p class="text-light bg-danger">'.$statusName[0][1].' Order\'s Contents can\'t be uploded</p>';
-                                            //     }
-                                            // }
+                                            if($orderStatusCode == REJECTEDCODE){
+                                                echo '<p class="text-light bg-danger py-2">This Order Has Been '.REJECTED.'</p>';
+                                            }
                                             ?>
                                         </div>
                                     </div>
@@ -666,7 +648,27 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                 confirmButtonText: 'Yes, Update'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    document.getElementById('orderForm').submit();
+                    document.getElementById('formAction').value = 'updateBeforeProcess';
+                    event.preventDefault();
+                    // document.getElementById('orderForm').submit();
+                    $.ajax({
+                        url: "ajax/order-update.ajax.php",
+                        type: "POST",
+                        data:  $('#orderForm').serialize(),
+                        success: function(data) {
+                            console.log(data);
+                            if (data.includes('updated')) {
+                                location.reload();
+                            } else {
+                                Swal.fire(
+                                    'failed!',
+                                    'Failed to Complete Order!! 😥.',
+                                    'error'
+                                )
+                            }
+
+                        }
+                    });
 
                 } else {
                     return false;

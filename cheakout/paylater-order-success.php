@@ -3,6 +3,7 @@ session_start();
 require_once dirname(__DIR__) .  "/includes/constant.inc.php";
 
 require_once ROOT_DIR . "/includes/user.inc.php";
+require_once ROOT_DIR . "/includes/order-constant.inc.php";
 require_once ROOT_DIR . "/includes/email.inc.php";
 require_once ROOT_DIR . "/includes/registration.inc.php";
 require_once ROOT_DIR . "/includes/mail-functions.php";
@@ -68,7 +69,10 @@ if (!isset($_SESSION['domainName']) && !isset($_SESSION['sitePrice']) && !isset(
 	// Order Data
 	$clientOrderedSite 	= $_SESSION['domainName'];
 	$clientOrderPrice	= $_SESSION['clientOrderPrice'];
+	$sitePrice 			= $_SESSION['sitePrice'];
+	$contetPrice 		= $_SESSION['contetPrice'];
 	$contentData 		= $_SESSION['content-data'];
+
 	
 		$domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
     	$itemAmount = $domain[9]+$domain[16]; // cost + ext_cost
@@ -86,8 +90,7 @@ if ( isset($_POST['blogId'])) {
 	$amount 				= 00;
 	$paid_amount 			= 00;   // paid ammount
 	$trxnId 				= '';	//geting the transection id 
-	$trxnStatus 			= 'Pending';	//geting the transection status
-	$t_date 				= date('Y-m-d H:i:s');
+	$trxnStatus 			= PENDING;	//geting the transection status
 	$_SESSION['trxn_id']	= $trxnId;	
 	$_SESSION['pay_success']  = true;
 
@@ -102,9 +105,9 @@ if ( isset($_POST['blogId'])) {
 		 * 4 = Oedered
 		 * 
 		 *  */ 
-		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], 4);
+		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], ORDEREDCODE);
 		
-		$ContentOrder->addOrderTransection($_SESSION['orderId'], $trxnId, "Pay Later", $trxnStatus, $itemAmount, $clientOrderPrice, $paid_amount, $clientEmail);
+		$ContentOrder->addOrderTransection($_SESSION['orderId'], $trxnId, "Pay Later", $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice,$clientOrderPrice, $paid_amount, $clientEmail);
 		
 		$ContentOrder->addOrderUpdate($_SESSION['orderId'], 'Order Placed', '', $cusDtl[0][0]);
 		$BlogMst->incrBlogSoldQty($blogId, 1);

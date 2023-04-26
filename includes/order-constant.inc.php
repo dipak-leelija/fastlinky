@@ -21,7 +21,7 @@ foreach ($allStatus as $value) {
         define('DELIVEREDCODE',             $value['orders_status_id']);
     }
 
-    if ($statusname == 'PENDING') {
+    if ($statusname == 'Pending') {
         define('PENDING',                   $statusname);
         define('PENDINGCODE',               $value['orders_status_id']);
     }
@@ -58,4 +58,7 @@ foreach ($allStatus as $value) {
     }
 
 }
+
+define("CONTENTPRICE",                      15);
+
 ?>

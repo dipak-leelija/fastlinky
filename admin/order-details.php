@@ -1,6 +1,8 @@
 <?php
-require_once "../includes/constant.inc.php";
 session_start();
+require_once dirname(__DIR__) . "/includes/constant.inc.php";
+require_once ROOT_DIR . "/includes/order-constant.inc.php";
+
 include_once ADM_DIR . 'checkSession.php';
 
 require_once ROOT_DIR . "/_config/dbconnect.php";
@@ -8,28 +10,27 @@ require_once ROOT_DIR . "/_config/dbconnect.php";
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/error.class.php";
 require_once ROOT_DIR . "/classes/customer.class.php";
-require_once ROOT_DIR . "/classes/countries.class.php";
 require_once ROOT_DIR . "/classes/location.class.php";
 
 require_once ROOT_DIR . "/classes/blog_mst.class.php";
-require_once ROOT_DIR . "/classes/utility.class.php";
-require_once ROOT_DIR . "/classes/utilityMesg.class.php";
 
 require_once ROOT_DIR . "/classes/content-order.class.php";
 require_once ROOT_DIR . "/classes/orderStatus.class.php";
 
+require_once ROOT_DIR . "/classes/date.class.php";
+require_once ROOT_DIR . "/classes/utility.class.php";
+require_once ROOT_DIR . "/classes/utilityMesg.class.php";
 
 /* INSTANTIATING CLASSES */
 $dateUtil          = new DateUtil();
 $error             = new Error();
 $customer        = new Customer();
-$Countries      = new Countries();
 $Location       = new Location();
 
 $BlogMst        = new BlogMst();
 $ContentOrder   = new ContentOrder();
 $OrderStatus    = new OrderStatus();
-
+$DateUtil       = new DateUtil();
 $utility        = new Utility();
 $uMesg             = new MesgUtility();
 ######################################################################################################################
@@ -52,9 +53,6 @@ if (isset($_POST['delivered'])) {
     }
 }
 
-$order = $ContentOrder->clientOrderById($orderId);
-
-
 
 ######################################################################################################################
 
@@ -64,6 +62,14 @@ $keyword        = $utility->returnGetVar('keyword', '');
 $type            = $utility->returnGetVar('type', '');
 $mode            = $utility->returnGetVar('mode', '');
 $noOfOrd        = array();
+
+
+
+$transectionId  = '';
+$itemAmount     = '00';
+$paidAmount     = '00';
+
+
 
 if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     $link    = "&btnSearch=search&keyword=" . $_GET['keyword'] . "&mode=&type=" . $_GET['type'];
@@ -78,28 +84,52 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
         $status        = 'all';
     }
 
-    // echo $user_id.'----'.$status;exit;
-    $allOrders    = $ContentOrder->showAllOrderdContents($user_id, $status);
-    // print_r($allOrders);
-    // exit;
-
+    
     //order details
-    $showOrder  = $ContentOrder->clientOrderById($orderId);
+    $showOrder      = $ContentOrder->clientOrderById($orderId);
+    
+    if ($showOrder == false) {
+        header("Location: orders.php");
+        exit;
+    }
+
+    $orderDate      = $showOrder['added_on'];
+    $ordStatCode    = $showOrder['order_status'];
+    
+    // order status names
+    $statusName = $OrderStatus->getOrdStatName($ordStatCode);
 
     //transection details
     $ordTxn     = $ContentOrder->showTransectionByOrder($orderId);
 
+    if ($ordTxn != false) {
+        $transectionId  = $ordTxn['transection_id'];
+        $paymentMode    = $ordTxn['transection_mode'];
+        $paymentStatus  = $ordTxn['transection_status'];
+        $itemAmount     = $ordTxn['item_amount'];
+        $paidAmount     = $ordTxn['paid_amount'];
+        $paymentTime    = $ordTxn['updated_on'];
+    }
+    // $ordTxn['transection_id'];
+
+
+    // contents of the order
+    $orderContent   = $ContentOrder->getOrderContent($orderId);
+        $orderContentId = $orderContent['id'];
+    $contentLink    = $ContentOrder->getContentHyperLinks($orderContentId);
+
+
+
     //blog details
-    $item       = $BlogMst->showBlogbyDomain($showOrder[0]['clientOrderedSite']);
+    $item       = $BlogMst->showBlogbyDomain($showOrder['clientOrderedSite']);
 
     //blog creator / seller
     $seller     = $customer->getCustomerByemail($item[19]);
 
     //customer / buyer
-    $buyer      = $customer->getCustomerData($showOrder[0]['clientUserId']);
+    $buyer      = $customer->getCustomerData($showOrder['clientUserId']);
+    $buyerName  = $buyer[0][5].' '.$buyer[0][6];
 
-    // order status names
-    $statusName = $OrderStatus->singleOrderStatus($showOrder[0]['clientOrderStatus']);
 }
 ?>
 
@@ -107,24 +137,23 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php echo $showOrder[0]['clientOrderedSite']; ?> - Order Details | <?php echo COMPANY_FULL_NAME; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
-    
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <title><?= $showOrder['clientOrderedSite']; ?> - Order Details | <?php echo COMPANY_FULL_NAME; ?></title>
+    <link rel="shortcut icon" href="<?= FAVCON_PATH?>" type="image/png" />
+    <link rel="apple-touch-icon" href="<?= FAVCON_PATH?>" />
+
+    <link rel="stylesheet" href="<?= ADM_URL?>vendors/css/vendor.bundle.base.css">
     <!-- <link rel="stylesheet" href="../plugins/data-table/style.css"> -->
-    <link rel="stylesheet" href="../plugins/sweetalert/sweetalert2.css">
+    <link rel="stylesheet" href="<?= URL?>/plugins/sweetalert/sweetalert2.css">
 
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
 
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-    <link rel="stylesheet" href="../css/order-now.css">
+    <link rel="stylesheet" href="<?= ADM_URL?>css/vertical-layout-light/style.css">
+    <link rel="stylesheet" href="<?= URL?>/css/order-now.css">
     <!-- <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css"> -->
     <!-- endinject -->
     <link rel="shortcut icon" href="images/favicon.png" />
@@ -157,26 +186,27 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div>
-                                                    <h5 class="pkage-title border-bottom border-primary py-2">Order
-                                                        Details:</h5>
+                                                    <h5 class="pkage-title border-bottom border-primary py-2">
+                                                        Order Details:
+                                                    </h5>
                                                     <h5 class="pkage-headline pt-1">
-                                                        <?php echo $showOrder[0]['clientOrderedSite']; ?><span
-                                                            class="ms-2 badge <?php echo $statusName[0][1]; ?>"><?php echo $statusName[0][1]; ?></span>
+                                                        <?php echo $showOrder['clientOrderedSite']; ?><span
+                                                            class="ms-2 badge <?php echo $statusName; ?>"><?php echo $statusName; ?></span>
                                                     </h5>
                                                     <table class="ordered-details-table-css ">
                                                         <tr>
                                                             <td>Order Id</td>
                                                             <td>:</td>
-                                                            <td><?php echo "#" . $showOrder[0]['order_id']; ?></td>
+                                                            <td><?php echo "#" . $showOrder['order_id']; ?></td>
                                                         </tr>
                                                         <?php
-                                                        if ($showOrder[0]['clientTransactionId'] != null) {
+                                                        if ($transectionId != null) {
                                                         ?>
                                                         <tr>
                                                             <td>Transection Id</td>
                                                             <td>:</td>
                                                             <td style="word-break: break-word;">
-                                                                <?php echo "#" . $showOrder[0]['clientTransactionId']; ?>
+                                                                <?php echo "#" . $transectionId; ?>
                                                             </td>
                                                         </tr>
                                                         <?php
@@ -185,7 +215,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                         <tr>
                                                             <td>Payment</td>
                                                             <td>:</td>
-                                                            <td><?php echo date('l jS \of F Y h:i:s A', strtotime($showOrder[0]['added_on'])); ?>
+                                                            <td><?php echo $DateUtil->dateTimeText($orderDate); ?>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -200,45 +230,53 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                         Payment Details:
                                                     </h5>
                                                     <table class="ordered-details-table-css ">
-                                                        <tr>
-                                                            <td>Current Price</td>
-                                                            <td>:</td>
-                                                            <td><?php echo "$" . $showOrder[0]['clientOrderPrice']; ?>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Order Price</td>
-                                                            <td>:</td>
-                                                            <td><?php echo "$" . $ordTxn['item_amount']; ?>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Total Amount</td>
-                                                            <td>:</td>
-                                                            <td><?php echo "$" . $ordTxn['paid_amount']; ?>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Payment Mode</td>
-                                                            <td>:</td>
-                                                            <td><?php echo $ordTxn['transection_mode']; ?>
-                                                            </td>
-                                                        </tr>
                                                         <?php
-                                                        if ($ordTxn['transection_id'] != null) {
+                                                        if ($transectionId != null) {
                                                         ?>
                                                         <tr>
-                                                            <td>Payment</td>
+                                                            <td>Transection Id </td>
                                                             <td>:</td>
-                                                            <td><?php echo $ordTxn['transection_id']; ?></td>
+                                                            <td style="word-break: break-word;">
+                                                                <?php echo "#" . $transectionId; ?>
+                                                            </td>
                                                         </tr>
                                                         <?php
                                                         }
                                                         ?>
                                                         <tr>
-                                                            <td>Time </td>
+                                                            <td>Item Price </td>
                                                             <td>:</td>
-                                                            <td><?php echo date('l jS \of F Y h:i:s A', strtotime($ordTxn['t_date'])); ?>
+                                                            <td>
+                                                                <?= CURRENCY.$itemAmount; ?>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Paid Amount </td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <?= CURRENCY.$paidAmount; ?>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Payment Mode </td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <?= $paymentMode; ?>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Payment Status </td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <?= $paymentStatus; ?>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>Payment Time </td>
+                                                            <td>:</td>
+                                                            <td>
+                                                                <?= $DateUtil->dateTimeText($paymentTime); ?>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -249,43 +287,46 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                             <!-- customer details start  -->
                                             <div class="col-md-6">
                                                 <div>
-                                                    <h5 class="pkage-title border-bottom border-primary py-2">Customer
-                                                        Details:</h5>
+                                                    <h5 class="pkage-title border-bottom border-primary py-2">
+                                                        Customer Details:
+                                                    </h5>
                                                     <table class="ordered-details-table-css ">
                                                         <tr>
                                                             <td>Customer Name</td>
                                                             <td>:</td>
-                                                            <td><?php echo $showOrder[0]['clientName']; ?></td>
+                                                            <td>
+                                                                <?= $buyerName; ?>
+                                                            </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Email</td>
                                                             <td>:</td>
                                                             <td style="word-break: break-word;">
-                                                                <?php echo $buyer[0][2]; ?>
+                                                                <?= $buyer[0][2]; ?>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Contact</td>
                                                             <td>:</td>
-                                                            <td><?php echo $buyer[0][31]; ?>
+                                                            <td><?= $buyer[0][31]; ?>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Secendary Contact</td>
                                                             <td>:</td>
-                                                            <td><?php echo $buyer[0][32]; ?>
+                                                            <td><?= $buyer[0][32]; ?>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Mobile</td>
                                                             <td>:</td>
-                                                            <td><?php echo $buyer[0][34]; ?>
+                                                            <td><?= $buyer[0][34]; ?>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Fax</td>
                                                             <td>:</td>
-                                                            <td><?php echo $buyer[0][33]; ?>
+                                                            <td><?= $buyer[0][33]; ?>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -315,7 +356,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                 <?php
                                                                 $city = $Location->getCityDataById($buyer[0][27]);
                                                                 if ($city != null) {
-                                                                    echo $city[1];
+                                                                    echo $city['name'];
                                                                 }
                                                                 ?>
                                                             </td>
@@ -327,7 +368,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                 <?php
                                                                 $state = $Location->getStateData($buyer[0][28]);
                                                                 if ($state != null) {
-                                                                    echo $state[0];
+                                                                    echo $state['name'];
                                                                 }
                                                                 ?>
                                                             </td>
@@ -343,9 +384,9 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                             <td>:</td>
                                                             <td>
                                                                 <?php
-                                                                $country = $Countries->showCountry($buyer[0][30]);
+                                                                $country = $Location->getCountyById($buyer[0][30]);
                                                                 // print_r($country);
-                                                                echo $country[0];
+                                                                echo $country['name'];
                                                                 ?>
                                                             </td>
                                                         </tr>
@@ -424,7 +465,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                 <?php
                                                                 $city = $Location->getCityDataById($seller['town']);
                                                                 if ($city != null) {
-                                                                    echo $city[1];
+                                                                    echo $city['name'];
                                                                 }
                                                                 ?>
                                                             </td>
@@ -436,7 +477,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                 <?php
                                                                 $state = $Location->getStateData($seller['province']);
                                                                 if ($state != null) {
-                                                                    echo $state[0];
+                                                                    echo $state['name'];
                                                                 }
                                                                 ?>
                                                             </td>
@@ -452,8 +493,8 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                             <td>:</td>
                                                             <td>
                                                                 <?php
-                                                                $country = $Countries->showCountry($seller['countries_id']);
-                                                                echo $country[0];
+                                                                $country = $Location->getCountyById($seller['countries_id']);
+                                                                echo $country['name'];
                                                                 ?>
                                                             </td>
                                                         </tr>
@@ -468,125 +509,239 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                 <!-- Details section End -->
 
                                 <?php
+                                
                                 $delivered = false;
-                                if ($showOrder[0]['clientOrderStatus'] == 4) {
+
+                                if ($ordStatCode == PROCESSINGCODE || $ordStatCode == ORDEREDCODE) {
                                     $fieldStatus = '';
-                                } elseif ($showOrder[0]['clientOrderStatus'] == 3) {
-                                    $fieldStatus = '';
-                                } elseif ($showOrder[0]['clientOrderStatus'] == 1 || $showOrder[0]['clientOrderStatus'] == 5) {
-                                    $fieldStatus = 'disabled';
-                                    $delivered = true;
-                                } else {
-                                    $fieldStatus = 'disabled';
-                                }
-
-                                if ($delivered) {
-                                    echo '<div class="delivered_sec rounded-1r border shadow mt-4 p-4">
-                                                        <h3>Your ordered article link is: </h3>
-                                                        <div class="text-wrap">
-                                                            <input type="text" class="form-control" id="articleLink" value="' . rawurldecode($showOrder[0]['deliveredLink']) . '">
-                                                            <div id="copyArticleLink" class="clipboard icon"></div>
-                                                        </div>';
-
-                                    if ($showOrder[0]['clientOrderStatus'] != 5) {
-                                        echo '
-                                                            <div class="btn_bx text-center mt-3">
-                                                                <button class="btn btn-sm btn-primary" onclick="finishedOrder(\''.$orderId.'\')">Finished</button>
-                                                                <button class="btn btn-sm btn-danger"  data-toggle="modal"
-                                                                data-target="#updateModal" onclick="changeRequest()">Need to Change</button>
-                                                            </div>';
-                                    } else {
-                                        $ordUpdate = $ContentOrder->lastUpdate($orderId);
-                                        echo '<p class="text-center font-weight-bold my-3">Order Completed on ' . date('l jS \of F Y h:i:s A', strtotime($ordUpdate['updated_on'])) . '</p>';
-                                    }
-
-                                    echo '</div>';
                                 }
                                 
+                                
+                                if ($ordStatCode == DELIVEREDCODE || $ordStatCode == COMPLETEDCODE) {
+                                    $fieldStatus = 'disabled';
+                                    $delivered = true;
+                                }
+                                ?>
+
+                                <?php if ($delivered):
+                                    echo '<div class="delivered_sec rounded-1r border mt-4 p-4">
+                                            <h3>Your ordered article link is: </h3>
+                                            <div class="text-wrap">
+                                                <input type="text" class="form-control" id="articleLink"
+                                                value="'.rawurldecode($showOrder['deliveredLink']) . '">
+                                                <div id="copyArticleLink" class="clipboard icon"></div>
+                                            </div>';
+
+                                        if ($ordStatCode == DELIVEREDCODE) {
+                                            echo '
+                                                                <div class="btn_bx text-center mt-3">
+                                                                    <button class="btn btn-sm btn-primary" onclick="finishedOrder(\''.$orderId.'\')">Finished</button>
+                                                                    <button class="btn btn-sm btn-danger"  data-toggle="modal"
+                                                                    data-target="#updateModal" onclick="changeRequest()">Need to Change</button>
+                                                                </div>';
+                                        } else {
+                                            $ordUpdate = $ContentOrder->lastUpdate($orderId);
+                                            echo '<p class="text-center font-weight-bold my-3">Order Completed on ' . $DateUtil->dateTimeText($ordUpdate['updated_on']). '</p>';
+                                        }
+
+                                    echo '</div>';
+                                
+                                endif;
                                 ?>
 
                                 <div class="row">
 
-
-
                                     <div class="col-md-8">
                                         <div class="card rounded-1r border shadow mt-4">
                                             <div class="card-body">
+
+                                                <!-- row start -->
                                                 <div class="row">
-                                                    <div class="col-6">
-                                                        <h5 class="text-primary font-weight-bold">Anchor Text</h5>
+
+                                                    <!-- title section start  -->
+                                                    <div class="col-12">
+                                                        <h5 class="text-primary font-weight-bold">Title</h5>
+
                                                         <div class="text-wrap">
                                                             <input type="text" class="form-control" id="anchor-text"
-                                                                value="<?php echo $order[0]['clientAnchorText']; ?>">
+                                                                value="<?= $orderContent['title'] ?>">
+                                                            <div id="copyAnchorText" class="clipboard icon">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- title section end  -->
+
+                                                    <div class="col-12 mt-3">
+                                                        <?php
+                                                        if ($orderContent['path'] == '') {
+
+                                                            if ($orderContent['content_type'] == '') {
+                                                            ?>
+                                                        <p class="text-primary font-weight-bold">
+                                                            Content
+                                                            <span class="text-danger font-weight-light">
+                                                                <small> Content Required By
+                                                                    <?php echo COMPANY_S;?></small>
+                                                            </span>
+                                                        </p>
+
+                                                        <!-- content upload section start -->
+                                                        <div class="content-upload">
+                                                            <div class="content-upload-wrap">
+                                                                <input class="file-upload-input" name="content-file"
+                                                                    type='file' onchange="readURL(this);"
+                                                                    accept=".doc, .docx" />
+                                                                <div class="drag-text">
+                                                                    <p>
+                                                                        <i
+                                                                            class="fa-sharp fa-solid fa-file-arrow-up"></i>
+                                                                        <br>
+                                                                        Drag and Drop Your Content File
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="file-upload-content">
+                                                                <img class="file-upload-image" src="#"
+                                                                    alt="your image" />
+                                                                <div class="image-title-wrap">
+                                                                    <button type="button" onclick="removeUpload()"
+                                                                        class="remove-image d-flex justify-content-between px-3">
+                                                                        <span class="image-title">Uploaded Image</span>
+                                                                        <span><i
+                                                                                class="fa-sharp fa-solid fa-xmark fs-5"></i></span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- content upload section end -->
+
+                                                        <!-- OR DIVIDER STARTED -->
+                                                        <div id="or-divider"
+                                                            class="bg_mustard p-2 my-4 mx-0 text-light d-none"
+                                                            style="border: 1px solid gainsboro;">
+                                                            <h5 class="text-center mb-0">OR</h5>
+                                                        </div>
+                                                        <!-- OR DIVIDER ENDED -->
+
+                                                        <!-- content text section start -->
+                                                        <div id="content-text">
+                                                            <div class="form-group d-none">
+                                                                <label for="">Your Content<span class="warning">*</span>
+                                                                    (Must be a minimum
+                                                                    of 500 words) Don't have a content, get one here
+                                                                    Place your content here. In your content, you can
+                                                                    include up to 2 links
+                                                                    They can be in the form of URLs and anchors. In the
+                                                                    "URL" and "Anchor
+                                                                    text"
+                                                                    fields below, please insert the same URLs and
+                                                                    anchors. <span class="warning">(Don't add any images
+                                                                        in your
+                                                                        article)</span></label>
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" name="clientContent1"
+                                                                        id="" rows="9"
+                                                                        placeholder="Write or paste your content here"
+                                                                        onkeyup="checkContent(this)"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- content text section end -->
+
+                                                        <!-- <div class="border rounded text-center py-4" data-toggle="modal"
+                                                            data-target="#updateModal">
+                                                            <button class="btn btn-sm btn-primary my-4"
+                                                                onclick="updateSingle()">Upload Content</button>
+                                                        </div> -->
+                                                        <?php
+                                                            } else {
+                                                            ?>
+                                                        <p
+                                                            class="text-light bg-info font-weight-bold text-center w-100 my-5 py-5">
+                                                            Contents Will Be Updated Soon.
+                                                        </p>
+
+                                                        <?php
+                                                            }
+                                                        }else {
+                                                        ?>
+                                                        <h5 class="text-primary font-weight-bold">
+                                                            Content
+                                                            <span class="text-danger font-weight-light">
+                                                                <small>
+                                                                    You can View or Download the content by clicking on
+                                                                    the respective button
+                                                                </small>
+                                                            </span>
+                                                        </h5>
+                                                        <div class="bg-primary text-light rounded p-2">
+                                                            <?= basename($orderContent['path']); ?>
+                                                        </div>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </div>
+
+
+                                                    <!-- anchor texts start  -->
+                                                    <div class="col-6 mt-3">
+                                                        <h5 class="text-primary font-weight-bold">Anchor Text</h5>
+
+                                                        <div class="text-wrap mb-2">
+                                                            <input type="text" class="form-control" id="anchor-text"
+                                                                value="<?= $contentLink['client_anchor'] ?>">
+                                                            <div id="copyAnchorText" class="clipboard icon">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="text-wrap mb-2">
+                                                            <input type="text" class="form-control" id="anchor-text"
+                                                                value="<?= $contentLink['reference_anchor1'] ?>">
+                                                            <div id="copyAnchorText" class="clipboard icon">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="text-wrap mb-2">
+                                                            <input type="text" class="form-control" id="anchor-text"
+                                                                value="<?= $contentLink['reference_anchor2'] ?>">
                                                             <div id="copyAnchorText" class="clipboard icon">
                                                             </div>
                                                         </div>
 
                                                     </div>
-                                                    <div class="col-6">
+                                                    <!-- anchor texts end -->
+
+                                                    <!-- anchor links start -->
+                                                    <div class="col-6 mt-3">
                                                         <h5 class="text-primary font-weight-bold">Target URL</h5>
-                                                        <div class="text-wrap">
+
+                                                        <div class="text-wrap mb-2">
+                                                            <input type="text" class="form-control" id="anchor-text"
+                                                                value="<?= $contentLink['client_url'] ?>">
+                                                            <div id="copyAnchorText" class="clipboard icon">
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-wrap mb-2">
                                                             <input type="text" class="form-control" id="target-url"
-                                                                value="<?php echo $order[0]['clientTargetUrl']; ?>">
+                                                                value="<?= $contentLink['reference_url1']; ?>">
+                                                            <div id="copyTargetUrl" class="clipboard icon">
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-wrap mb-2">
+                                                            <input type="text" class="form-control" id="target-url"
+                                                                value="<?= $contentLink['reference_url1']; ?>">
                                                             <div id="copyTargetUrl" class="clipboard icon">
                                                             </div>
                                                         </div>
                                                     </div>
-
-                                                    <?php
-                                                    if ($order[0]['clientContent'] == '') {
-
-                                                        if ($order[0]['clientTargetUrl'] > $ordTxn['item_amount']) {
-                                                        ?>
-                                                            <div class="col-12 mt-3">
-                                                                <p class="text-primary font-weight-bold">
-                                                                    Content
-                                                                    <span class="text-danger font-weight-light">
-                                                                        <small> Content Required By <?php echo COMPANY_S;?></small>
-                                                                    </span>
-                                                                </p>
-                                                                <div class="border rounded text-center py-4" data-toggle="modal"
-                                                                    data-target="#updateModal">
-                                                                    <button class="btn btn-sm btn-primary my-4"
-                                                                        onclick="updateSingle()">Upload Content</button>
-                                                                </div>
-                                                            </div>
-
-                                                        <?php
-                                                        } else {
-                                                        ?>
-
-                                                            <p class="text-light bg-info font-weight-bold text-center w-100 my-5 py-5">
-                                                                Contents Will Be Updated Soon.
-                                                            </p>
-
-                                                        <?php
-                                                            }
-                                                    } else {
-                                                        ?>
-                                                    <div class="col-12 mt-3">
-                                                        <h5 class="text-primary font-weight-bold">Content <span
-                                                                class="text-danger font-weight-light"><small> Drag the
-                                                                    right down corner of
-                                                                    the textarea to get the complete
-                                                                    content</small></span></h5>
-                                                        <div class="text-wrap">
-
-                                                            <textarea class="form-control" id="content"
-                                                                rows="6"><?php echo $order[0]['clientContent']; ?></textarea>
-                                                            <div id="copyContent" class="clipboard icon"></div>
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                    }
-                                                    ?>
+                                                    <!-- anchor links end -->
 
                                                     <div class="col-12 mt-3">
                                                         <h5 class="text-primary font-weight-bold">Special Requirements
                                                         </h5>
                                                         <div class="text-wrap">
                                                             <textarea class="form-control" id="special-requirements"
-                                                                rows="6"><?php echo $order[0]['clientRequirement']; ?></textarea>
+                                                                rows="6"><?php echo $showOrder['clientRequirement']; ?></textarea>
                                                             <div id="copyRequirements" class="clipboard icon">
                                                             </div>
                                                         </div>
@@ -595,13 +750,11 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
 
                                                 </div>
+                                                <!-- row end -->
 
 
                                                 <!--========== if Order status is Ordered  ==========-->
-                                                <?php
-
-                                                if ($order[0]['clientOrderStatus'] == 4) {
-                                                ?>
+                                                <?php if ($ordStatCode == ORDEREDCODE):?>
                                                 <div class="container p-4">
                                                     <p class="text-danger text-center">It's Seller turn to take action
                                                     </p>
@@ -612,72 +765,97 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                             onclick="rejectOrder()">Reject</button>
 
                                                         <button class="btn btn-primary w-25" name="accept-order"
-                                                            onclick="acceptOrder(<?php echo $orderId; ?>)">Accept</button>
+                                                            onclick="acceptOrder(<?= $orderId; ?>)">Accept</button>
                                                     </div>
                                                 </div>
-                                                <?php
-                                                }
-                                                ?>
+                                                <?php endif;?>
+                                                <!--==========/ if Order status is Ordered  ==========-->
 
 
 
-                                                <!--========== if Order is Processesing  ==========-->
-
-
-
-
-                                                <!--========== if Order is Cancelled  ==========-->
-                                                <?php
-                                                if ($order[0]['clientOrderStatus'] == 7) {
-                                                ?>
+                                                <!--========== if Order is Incomplete  ==========-->
+                                                <?php if ($ordStatCode == INCOMPLETECODE):?>
                                                 <div class="d-flex justify-content-around p-4 p-md-5">
-
                                                     <button class="btn btn-primary w-25">Contact Customer</button>
-
                                                     <button class="btn btn-primary w-25" name="accept-order">Contact
                                                         Seller</button>
 
                                                 </div>
-                                                <?php
-                                                }
-                                                ?>
+                                                <?php endif; ?>
+                                                <!--==========/ if Order is Incomplete  ==========-->
 
 
 
 
-                                                <?php
+                                                <!-- ============ if order rejected ============ -->
+                                                <?php if ($ordStatCode == REJECTEDCODE): ?>
+                                                <div class="bg-danger font-weight-bold mt-1">
+                                                    <p class="text-light text-center py-2">Order Has Been
+                                                        <?= REJECTED ?>
+                                                    </p>
+                                                </div>
+                                                <?php endif ?>
+                                                <!-- ============/ if order rejected ============ -->
 
-                                                // ======== if order rejected ======== 
-                                                if ($order[0]['clientOrderStatus'] == 10) { //if Rejected
+
+                                                <!-- =============== if order is Hold =============== -->
+                                                <?php if ($ordStatCode == HOLDCODE):
+                                                    if ($showOrder['changesReq'] > 0) {
+
+                                                        $chngMsg = 'There is a Request for Changes!';
+                                                        if ($showOrder['changesReq'] > 1):
+                                                            $chngMsg = 'There is Some Request for Changes!';
+                                                        endif;
+                                                    ?>
+                                                <div class="text-center mt-2">
+                                                    <p class="text-danger font-weight-bold"><?= $chngMsg; ?></p>
+                                                    <button class="btn btn-sm btn-primary"
+                                                        onclick="changesUpdate(<?= $orderId; ?>)">Chnages Updated
+                                                        ?</button>
+                                                </div>
+                                                <?php } else {
+
                                                     echo '
-                                                <p class="text-danger text-center">Order Has Been Rejected</p>
-                                                <div class="d-flex justify-content-center">
-                                                    <a href="contact.php" class="btn w-50 contact_button text-center"
-                                                        name="">Contact' . COMPANY_S . '</a>
-                                                </div>';
-                                                }
+                                                    <div class="text-center py-4">
+                                                        <button class="btn w-50 btn-primary" data-bs-toggle="modal"
+                                                            data-bs-target="#deliverModal">Update Deliver</button>
+                                                    </div>';
+                                                    }
+                                                endif;
+                                                ?>
+                                                <!-- ===============/ if order is Hold =============== -->
+
+                                                <!-- =============== if order is delivered =============== -->
+                                                <?php if ($ordStatCode == DELIVEREDCODE): ?>
+                                                <div class="text-center py-4">
+                                                    <p class="text-light bg-primary fs-4 font-weight-bold">
+                                                        Order Delivered.
+                                                    </p>
+                                                </div>
+                                                <?php endif; ?>
+                                                <!-- =============== if order is delivered =============== -->
 
 
-                                                // if order is processing
-                                                if ($order[0]['clientOrderStatus'] == 3) {
-                                                    if ($order[0]['clientContent'] != '') {
+                                                <!-- ============ if order is processing ============-->
+                                                <?php
+                                                if ($ordStatCode == PROCESSINGCODE) {
+                                                    if ($orderContent['path'] != '') {
 
+                                                        if ($showOrder['changesReq'] > 0) {
+                                                            
+                                                            $chngMsg = 'There is a Request for Changes!';
+                                                            if ($showOrder['changesReq'] > 1):
+                                                                $chngMsg = 'There is Some Request for Changes!';
+                                                            endif;
+                                                            ?>
+                                                <div class="text-center mt-2">
+                                                    <p class="text-danger font-weight-bold"><?= $chngMsg; ?></p>
+                                                    <button class="btn btn-sm btn-primary"
+                                                        onclick="changesUpdate(<?= $orderId; ?>)">Chnages Updated
+                                                        ?</button>
+                                                </div>
 
-                                                        if ($order[0]['changesReq'] > 0) {
-                                                            echo '<div class="text-center">
-                                                                <p class="text-danger font-weight-bold">Did You Cheaked the changes
-                                                                    request?</p>
-                                                                <button class="btn btn-primary"
-                                                                    onclick="changesUpdate(' . $orderId . ')">Yes
-                                                                    (' . $order[0]['changesReq'] . ')</button>
-                                                            </div>';
-                                                            } else {
-            
-                                                            // echo '
-                                                            // <div class="text-center py-4">
-                                                            //     <button class="btn w-50 btn-primary" data-bs-toggle="modal"
-                                                            //         data-bs-target="#deliverModal">Update Deliver</button>
-                                                            // </div>';
+                                                <?php } else {
 
                                                             echo '
                                                             <div class="d-flex justify-content-center my-3">
@@ -692,191 +870,175 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                         <div class="d-flex justify-content-center">
                                                             <a href="contact.php" class="btn w-50 contact_button text-center"
                                                                 name="">Contact '.COMPANY_S.'</a>
-                                            </div>';
-                                            }
-                                            }
-
-
-                                            // if order is Hold
-                                            if ($order[0]['clientOrderStatus'] == 6) {
-                                                if ($order[0]['changesReq'] > 0) {
-                                                echo '<div class="text-center">
-                                                    <p class="text-danger font-weight-bold">Did You Cheaked the changes
-                                                        request?</p>
-                                                    <button class="btn btn-primary"
-                                                        onclick="changesUpdate(' . $orderId . ')">Yes
-                                                        (' . $order[0]['changesReq'] . ')</button>
-                                                </div>';
-                                                } else {
-
-                                                echo '
-                                                <div class="text-center py-4">
-                                                    <button class="btn w-50 btn-primary" data-bs-toggle="modal"
-                                                        data-bs-target="#deliverModal">Update Deliver</button>
-                                                </div>';
-                                                }
-                                            }
-
-
-                                            if ($order[0]['clientOrderStatus'] == 1) { // if delivered
-                                            ?>
-                                            <div class="text-center py-4">
-                                                <p class="text-light bg-primary fs-4 font-weight-bold">Order
-                                                    Delivered.</p>
-                                            </div>
-                                            <?php
+                                                    </div>';
+                                                    }
                                                 }
                                                 ?>
+                                                <!-- ============/ if order is processing ============-->
 
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
 
-                                <!-- start of updates  -->
-                                <div class="col-md-4">
-                                    <div class="stretch-card grid-margin mt-4">
-                                        <div class="card status_card rounded-1r border shadow">
-                                            <div class="card-body">
-                                                <p class="card-title">Updates</p>
-                                                <ul class="icon-data-list">
-                                                    <?php
-                                                    $ordUpdates = $ContentOrder->showOrderUpdateById($showOrder[0]['order_id'], 'ASC');
+                                    <!-- start of updates  -->
+                                    <div class="col-md-4">
+                                        <div class="stretch-card grid-margin mt-4">
+                                            <div class="card status_card rounded-1r border shadow">
+                                                <div class="card-body">
+                                                    <p class="card-title">Updates</p>
+                                                    <ul class="icon-data-list">
+                                                        <?php
+                                                    $ordUpdates = $ContentOrder->showOrderUpdateById($showOrder['order_id'], 'ASC');
                                                     // print_r($ordUpdates);
                                                     foreach ($ordUpdates as $ordUpdate) {
                                                         $updateCustomer = $customer->getCustomerByTypeId($ordUpdate['updated_by']);
+
+                                                        $avatar = $customer->getCustomerAvatar($showOrder['clientUserId']);
+                                                        if ($avatar == '') {
+                                                            $avatar = DFAULT_AVATAR_PATH;
+                                                        }else{
+                                                            $avatar = USER_IMG_PATH.$avatar;
+                                                        }
+
+                                                        if ($ordUpdate['updated_by'] == 0) {
+                                                            $updateBy = COMPANY_S;
+                                                            $userImg  = FAVCON_PATH;
+                                                        } else {
+                                                            $updateBy = $updateCustomer[0]['cus_type'];
+                                                            $userImg  = $avatar;
+                                                        }
+
+                                                         
                                                     ?>
 
-                                                    <li>
-                                                        <div class="d-flex">
-                                                            <img src="images/faces/face1.jpg" alt="user">
-                                                            <div>
-                                                                <p class="text-info mb-1">
-                                                                    <?php echo $ordUpdate['subject']; ?></p>
-                                                                <p class="mb-0">
-                                                                    <?php
+                                                        <li>
+                                                            <div class="d-flex">
+                                                                <img src="<?= $userImg ?>" alt="user">
+                                                                <div>
+                                                                    <p class="text-info mb-0">
+                                                                        <?php echo $ordUpdate['subject']; ?></p>
+                                                                    <p class="mb-0">
+                                                                        <?php
                                                                         if ($ordUpdate['dsc'] != null) {
                                                                             echo $ordUpdate['dsc'] . '<br>';
                                                                         }
-                                                                        if ($ordUpdate['updated_by'] == 0) {
-                                                                            echo '<small>By ' . COMPANY_S . '</small>';
-                                                                        } else {
-                                                                            echo '<small>By ' . $updateCustomer[0]['cus_type'] . '</small>';
-                                                                        }
-
                                                                         ?>
-                                                                </p>
-                                                                <small><?php echo $ordUpdate['updated_on']; ?></small>
+                                                                        <small>By <?= $updateBy ?></small>
+                                                                    </p>
+                                                                    <small><?php echo $ordUpdate['updated_on']; ?></small>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </li>
-                                                    <?php
+                                                        </li>
+                                                        <?php
                                                     }
                                                     ?>
 
 
-                                                </ul>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- end of updates  -->
+
                                 </div>
-
-                                <!-- end of updates  -->
-
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
 
-            <!-- Start Reject Modal -->
-            <div class="modal fade" id="rejectModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- Start Reject Modal -->
+                <div class="modal fade" id="rejectModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="POST">
+                                    <div class="mb-3">
+                                        <label for="cancellation-reason" class="form-label">Reason
+                                            of cancellation</label>
+                                        <textarea class="form-control" id="cancellation-reason"
+                                            name="cancellation-reason" rows="3"></textarea>
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn btn-sm btn-danger" name="reject-order">Reject</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                            <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="POST">
-                                <div class="mb-3">
-                                    <label for="cancellation-reason" class="form-label">Reason
-                                        of cancellation</label>
-                                    <textarea class="form-control" id="cancellation-reason" name="cancellation-reason"
-                                        rows="3"></textarea>
+                    </div>
+                </div>
+                <!-- End Reject Modal  -->
+
+
+                <!-- Update Modal -->
+                <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form action="ajax/order-update.php" method="POST" id="updateForm">
+                                <div class="modal-header px-4 py-3">
+                                    <h5 class="modal-title" id="updateModalLabel"></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
-                                <div class="text-center">
-                                    <button class="btn btn-sm btn-danger" name="reject-order">Reject</button>
+                                <input type="hidden" name="return-page" value="<?php echo $utility->currentUrl() ?>">
+                                <input type="hidden" name="order-id" value="<?php echo $orderId ?>">
+                                <div class="modal-body p-3" id="updateModalBody">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary" id="action-btn"
+                                        name="add-content">Save
+                                        changes</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- End Reject Modal  -->
+                <!-- Update Modal End -->
 
-
-            <!-- Update Modal -->
-            <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <form action="ajax/order-update.php" method="POST" id="updateForm">
-                            <div class="modal-header px-4 py-3">
-                                <h5 class="modal-title" id="updateModalLabel"></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <input type="hidden" name="return-page" value="<?php echo $utility->currentUrl() ?>">
-                            <input type="hidden" name="order-id" value="<?php echo $orderId ?>">
-                            <div class="modal-body p-3" id="updateModalBody">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" id="action-btn" name="add-content">Save
-                                    changes</button>
-                            </div>
-                        </form>
+                <!-- Deliver Modal -->
+                <div class="modal fade" id="deliverModal" tabindex="-1" aria-labelledby="deliverModallLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form action="ajax/order-update.php" method="POST" onsubmit="return validateForm()">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Successfull Delivery Link</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <input type="hidden" name="return-page" value="<?php echo $utility->currentUrl() ?>">
+                                <input type="hidden" name="order-id" value="<?php echo $orderId ?>">
+                                <div class="modal-body p-2" id="deliverModalBody">
+                                    <input type="text" class="form-control" name="deliver-link" id="deliver-link"
+                                        placeholder="Paste the link here">
+                                    <span class="text-danger d-block" id="blank-msg"></span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary" name="deliver-order">Update</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
+                <!-- Update Modal End -->
+                <!-- partial -->
             </div>
-            <!-- Update Modal End -->
-
-            <!-- Deliver Modal -->
-            <div class="modal fade" id="deliverModal" tabindex="-1" aria-labelledby="deliverModallLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <form action="ajax/order-update.php" method="POST" onsubmit="return validateForm()">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Successfull Delivery Link</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <input type="hidden" name="return-page" value="<?php echo $utility->currentUrl() ?>">
-                            <input type="hidden" name="order-id" value="<?php echo $orderId ?>">
-                            <div class="modal-body p-2" id="deliverModalBody">
-                                <input type="text" class="form-control" name="deliver-link" id="deliver-link"
-                                    placeholder="Paste the link here">
-                                <span class="text-danger d-block" id="blank-msg"></span>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-primary" name="deliver-order">Update</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- Update Modal End -->
-            <!-- partial -->
+            <!-- main-panel ends -->
         </div>
-        <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
+        <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
@@ -893,6 +1055,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     <script src="../plugins/main.js"></script>
     <script src="../plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
     <script src="../js/ajax.js" type="text/javascript"></script>
+    <script src="../js/content-upload.js"></script>
 
 
     <script>
@@ -1004,7 +1167,8 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
         // alert('Hi');
         document.getElementById('updateModalLabel').innerText = 'What to change?';
         document.getElementById('action-btn').name = 'changes-request';
-        document.getElementById('updateModalBody').innerHTML = `<textarea class="form-control"  name="changes-req" rows="6" required></textarea>`;
+        document.getElementById('updateModalBody').innerHTML =
+            `<textarea class="form-control"  name="changes-req" rows="6" required></textarea>`;
 
     }
 
@@ -1028,7 +1192,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                         changesOrder: ordId
                     },
                     success: function(data) {
-                        alert(data);
+                        // alert(data);
                         if (data.includes('updated')) {
                             location.reload();
                         } else {
