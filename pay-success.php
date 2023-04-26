@@ -4,6 +4,7 @@ require_once "includes/constant.inc.php";
 
 require_once ROOT_DIR."/_config/dbconnect.php";
 
+require_once ROOT_DIR."/includes/order-constant.inc.php";
 require_once ROOT_DIR."/includes/user.inc.php";
 require_once ROOT_DIR."/includes/email.inc.php";
 require_once ROOT_DIR."/includes/registration.inc.php";
@@ -62,13 +63,16 @@ if (!isset($_SESSION['domainName']) && !isset($_SESSION['clientOrderPrice']) && 
 	// Order Data
 	$clientOrderedSite 	= $_SESSION['domainName'];
 	$clientOrderPrice	= $_SESSION['clientOrderPrice'];
-	$contentData 			= $_SESSION['content-data'];
+	$contetPrice		= $_SESSION['contetPrice'];
+	$contentData 		= $_SESSION['content-data'];
 	
-		$domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
-    	$itemAmount = $domain[9]+$domain[16]; // cost + ext_cost
-		
-		// $sess_arr = array('domainName','sitePrice','order-data');
-		// $utility->delSessArr($sess_arr);
+	$domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
+    $itemAmount = $domain[9]+$domain[16]; // cost + ext_cost
+	
+	$dueAmount = 00;
+
+	$sess_arr = array('domainName','sitePrice','order-data');
+	$utility->delSessArr($sess_arr);
 
 }
 
@@ -92,7 +96,6 @@ if (isset($_POST['data']) && isset($_POST['blogId'])) {
 	$trxnId 	= $captures['id'];		//geting the transection id 
 	$trxnStatus = $captures['status'];	//geting the transection status
 
-	$t_date = date('Y-m-d H:i:s');
 
 	if ($trxnStatus == "COMPLETED") {
 		
@@ -110,11 +113,9 @@ if (isset($_POST['data']) && isset($_POST['blogId'])) {
 		 * 4 = Oedered
 		 * 
 		 *  */ 
-		// $ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], $_SESSION['trxn_id'], $trxnStatus, 4);
-		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], 4);
+		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], ORDEREDCODE);
 
-		// $ContentOrder->addOrderTransection($_SESSION['orderId'], $_SESSION['trxn_id'], "Paypal", $itemAmount, 0, $paid_amount, $t_date, $clientEmail);
-		$ContentOrder->addOrderTransection($_SESSION['orderId'], $trxnId, "Paypal", $trxnStatus, $itemAmount, $clientOrderPrice, $paid_amount, $clientEmail);
+		$ContentOrder->addOrderTransection($_SESSION['orderId'], $trxnId, "Paypal", $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice, $dueAmount, $paid_amount, $clientEmail);
 
 
 
@@ -124,7 +125,7 @@ if (isset($_POST['data']) && isset($_POST['blogId'])) {
 
 	}else {
 
-		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], $_SESSION['trxn_id'], $trxnStatus, 2);
+		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], PENDINGCODE);
 		
 	}
 	
@@ -286,9 +287,8 @@ if(isset($_SESSION['orderId'])) {
 	
 
 	//session array
-	$sess_arr = array('domainName', 'clientOrderPrice', 'order-data', 'orderId', 'trxn_id', 'pay_success');
+	$sess_arr = array('content-data', 'domainName', 'clientOrderPrice', 'order-data', 'orderId', 'trxn_id', 'pay_success');
 	$utility->delSessArr($sess_arr);
-	unset($_SESSION['content-data']);
 	unset($_POST);
 }
 		

@@ -600,9 +600,8 @@ if (isset($_SESSION['content-data'])) {
 
     const paypalOrder2 = () => {
         document.getElementById("order-name2").value = "placementWithArticle";
-        // document.getElementById("orderForm2").action = "order-details-with-creation.php";
-        // document.getElementById("orderForm2").action = "order-details.php";
-        document.getElementById("orderForm2").action = "payments/paypal-order-details.php";
+        document.getElementById("orderForm2").action = "cheakout/paypal-guest-post-order-summary.php";
+
 
         if (validateForm2() != false) {
             document.getElementById("orderForm2").submit();

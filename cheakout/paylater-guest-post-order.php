@@ -40,14 +40,17 @@ $clientEmail        = $_SESSION[USR_SESS];
 if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     
     
-    $clientOrderedSite        = $_SESSION['domainName'];
-    $clientOrderedSiteNos     = count( (array) $_SESSION['domainName']);
+    $clientOrderedSite              = $_SESSION['domainName'];
+    $clientOrderedSiteNos           = count( (array) $_SESSION['domainName']);
+    $sitePrice                      = $_SESSION['sitePrice'];
 
     if (isset($_POST['order-name'])) {
         
-        // ==============================================================================================================
-        // ==============================================================================================================
-        // ==============================================================================================================
+        /*-------------------------------------------------------------------------------
+        |                                                                               |
+        |                These Functions are used for order with content file           |
+        |                                                                               |
+        |------------------------------------------------------------------------------*/
 
         if($_POST['order-name'] == "onlyPlacementWithFile" ){
 
@@ -55,7 +58,6 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
             $_SESSION['contetPrice']        = 00;
             $_SESSION['clientOrderPrice']   = $clientOrderPrice;
 
-            unset($_SESSION['sitePrice']);
             unset($_SESSION['ConetntCreationPlacementPrice']);
 
             $content_type       = 'doc';
@@ -103,26 +105,24 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
                 'reference-url2'    => $refUrl2,
                 'clientRequirement' => $clientRequirement
             );
-        }
-        // exit;
-
-
-
-        // ==============================================================================================================
-        // ==============================================================================================================
-        // ==============================================================================================================
-
-   
+        }        
+        
     }
-
-    // print_r($_POST);
-    // exit;
+    
+    // ==============================================================================================================
+    // ==============================================================================================================
 
     if (isset($_POST['order-name2'])) {
+
+        /*-------------------------------------------------------------------------------
+        |                                                                               |
+        |                These Functions are used for order without content             |
+        |                                                                               |
+        |------------------------------------------------------------------------------*/
+
         if($_POST['order-name2'] == "placementWithArticle" ){
 
             $clientOrderPrice               = $_SESSION['ConetntCreationPlacementPrice'];
-            $sitePrice                      = $_SESSION['sitePrice'];
             $_SESSION['contetPrice']        = CONTENTPRICE;
             
             $_SESSION['clientOrderPrice']   = $clientOrderPrice;
@@ -256,12 +256,15 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
                                 <td><?php echo CURRENCY.$sitePrice; ?></td>
                                 <td><?php echo CURRENCY.$sitePrice; ?></td>
                             </tr>
+
+                            <?php if(isset($_POST['order-name2'])): ?>
                             <tr>
                                 <td><b><?= 'Content' ?></b> </td>
                                 <td><?= 1; ?></td>
                                 <td><?php echo CURRENCY.CONTENTPRICE; ?></td>
                                 <td><?php echo CURRENCY.CONTENTPRICE; ?></td>
                             </tr>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                     <!-- </div> -->
