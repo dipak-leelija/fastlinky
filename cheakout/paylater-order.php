@@ -1,19 +1,19 @@
 <?php
 session_start();
-
 require_once dirname(__DIR__)."/includes/constant.inc.php";
-require_once dirname(__DIR__)."/includes/content.inc.php";
-require_once dirname(__DIR__)."/includes/registration.inc.php";
-require_once dirname(__DIR__)."/includes/user.inc.php";
 
 require_once ROOT_DIR."/_config/dbconnect.php";
+
+require_once ROOT_DIR."/includes/order-constant.inc.php";
+require_once ROOT_DIR."/includes/content.inc.php";
+require_once ROOT_DIR."/includes/registration.inc.php";
+require_once ROOT_DIR."/includes/user.inc.php";
 
 require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/gp-package.class.php";
 require_once ROOT_DIR."/classes/gp-order.class.php";
 require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/location.class.php";
-require_once ROOT_DIR."/classes/countries.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
 
 
@@ -24,7 +24,6 @@ $GPPackage      = new GuestPostpackage();
 $PackageOrder   = new PackageOrder();
 $customer		= new Customer();
 $Location       = new Location();
-$Countries      = new Countries();
 $utility		= new Utility();
 
 ############################################################################################
@@ -65,7 +64,7 @@ $customerName       = $cusDtl[0][5].' '.$cusDtl[0][6];
 $customerEmail      = $cusDtl[0][3];
 $customerMobile     = $cusDtl[0][34];
 $customerCity       = $Location->getCityDataById($cusDtl[0][27])['name'];
-$customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])['name'];
+$customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
 
 
 ?>
@@ -150,7 +149,7 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])['name']
                                 $totalCost      += $pack['price'];
 
                                 
-                                $orderIds[] = $PackageOrder->addPackageOrder($packId, '', $cusId, $customerName, $customerEmail, $pack['price'], $pack['price'], 'PayLater', '', '2', '2');
+                                $orderIds[] = $PackageOrder->addPackageOrder($packId, '', $cusId, $customerName, $customerEmail, $pack['price'], $pack['price'], 'PayLater', '', PENDINGCODE, INCOMPLETECODE);
                             ?>
                         <tr>
                             <td class="text-start fw-semibold"><?php echo $packFullName; ?></td>
