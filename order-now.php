@@ -1,18 +1,18 @@
 <?php
-require_once "includes/constant.inc.php";
 session_start();
+require_once __DIR__ . "/includes/constant.inc.php";
 
-require_once "_config/dbconnect.php";
-
-require_once "classes/date.class.php";
-require_once "classes/error.class.php";
-require_once "classes/search.class.php";
-require_once "classes/customer.class.php";
-require_once "classes/blog_mst.class.php";
-require_once "classes/utility.class.php";
-require_once "classes/utilityMesg.class.php";
-require_once "classes/utilityImage.class.php";
-require_once "classes/utilityNum.class.php";
+require_once ROOT_DIR . "/_config/dbconnect.php";
+require_once ROOT_DIR . "/includes/order-constant.inc.php";
+require_once ROOT_DIR . "/classes/date.class.php";
+require_once ROOT_DIR . "/classes/error.class.php";
+require_once ROOT_DIR . "/classes/search.class.php";
+require_once ROOT_DIR . "/classes/customer.class.php";
+require_once ROOT_DIR . "/classes/blog_mst.class.php";
+require_once ROOT_DIR . "/classes/utility.class.php";
+require_once ROOT_DIR . "/classes/utilityMesg.class.php";
+require_once ROOT_DIR . "/classes/utilityImage.class.php";
+require_once ROOT_DIR . "/classes/utilityNum.class.php";
 
 /* INSTANTIATING CLASSES */
 
@@ -54,13 +54,11 @@ $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
 
 $wishListsingleData = $blogMst->showBlog($id);
 
-$contetCreation= 15;
-
 $contentPlacementPrice = $wishListsingleData[9]+$wishListsingleData[16];
-$contetCreationPlacementPrice = $contetCreation +  $contentPlacementPrice;
+$contetCreationPlacementPrice = CONTENTPRICE +  $contentPlacementPrice;
 
-$_SESSION['domainName'] = $wishListsingleData[0];
-$_SESSION['sitePrice']  = $contentPlacementPrice;
+$_SESSION['domainName']     = $wishListsingleData[0];
+$_SESSION['sitePrice']      = $contentPlacementPrice;
 $_SESSION['ConetntCreationPlacementPrice']  = $contetCreationPlacementPrice;
 
 
@@ -162,20 +160,20 @@ if (isset($_SESSION['content-data'])) {
                             <div class="row">
                                 <div class="col-sm-6">
                                     <button class="btn btn-primary" id="contentPlaceMent">
-                                        Content Placement(<?php echo $contentPlacementPrice;?>)
+                                        Content Placement(<?= $contentPlacementPrice;?>)
                                     </button>
 
                                     <div class="siteName">
-                                        <p><?php echo  $wishListsingleData[0];  ?></p>
+                                        <p><?= $wishListsingleData[0];  ?></p>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <button class="btn btn-primary" id="contentCreationPlacement">
-                                        Content Creation And Placement(<?php echo $contetCreationPlacementPrice;?>)
+                                        Content Creation And Placement(<?= $contetCreationPlacementPrice;?>)
                                     </button>
                                     <div>
                                         <p class="estimatedDate">Estimated completion:
-                                            <?php echo date('jS M Y',strtotime("+3 day"));?></p>
+                                            <?= date('jS M Y',strtotime("+3 day"));?></p>
                                         <p class="deviveryDt">Approx 3 days after order confirmation</p>
                                     </div>
                                 </div>
@@ -194,7 +192,7 @@ if (isset($_SESSION['content-data'])) {
                                             <h5>Title</h5>
                                         </label>
                                         <input type="text" class="form-control" placeholder="Enter the article title"
-                                            name="clientContentTitle1" value="<?php echo $SESSclientContentTitle; ?>">
+                                            name="clientContentTitle1" value="<?= $SESSclientContentTitle; ?>">
                                     </div>
 
                                     <!-- content upload section start -->

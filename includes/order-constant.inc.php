@@ -58,4 +58,7 @@ foreach ($allStatus as $value) {
     }
 
 }
+
+define("CONTENTPRICE",                      15);
+
 ?>

@@ -447,14 +447,14 @@ class ContentOrder extends DatabaseConnection{
       }//eof
 
 
-      function addOrderTransection($order_id, $trxn_id, $trxn_mode, $trxn_status, $item_amount, $due_amount, $paid_amount, $transection_by){
-            
-            $trxn_mode = addslashes(trim($trxn_mode));
+      function addOrderTransection($order_id, $trxn_id, $trxn_mode, $trxn_status, $item_amount, $content_price, $order_amount, $due_amount, $paid_amount, $transection_by){
 
+            $trxn_mode = addslashes(trim($trxn_mode));	
+	
             $sql = "INSERT INTO `order_transections` 
-                        (`order_id`, `transection_id`, `transection_mode`, `transection_status`, `item_amount`, `due_amount`, `paid_amount`, `transection_by`, `updated_on`)	
+                        (`order_id`, `transection_id`, `transection_mode`, `transection_status`, `item_amount`, `content_price`, `order_amount`, `due_amount`, `paid_amount`, `transection_by`, `updated_on`)	
                         VALUES
-                        ('$order_id', '$trxn_id', '$trxn_mode', '$trxn_status', '$item_amount', '$due_amount', '$paid_amount','$transection_by', now())";
+                        ('$order_id', '$trxn_id', '$trxn_mode', '$trxn_status', '$item_amount', '$content_price', '$order_amount', '$due_amount', '$paid_amount','$transection_by', now())";
             // echo $sql.$this->conn->error;
             
             $query = $this->conn->query($sql);

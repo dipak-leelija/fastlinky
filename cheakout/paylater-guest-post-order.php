@@ -4,6 +4,7 @@ require_once dirname(__DIR__) . "/includes/constant.inc.php";
 
 require_once ROOT_DIR . "/_config/dbconnect.php";
 
+require_once ROOT_DIR . "/includes/order-constant.inc.php";
 require_once ROOT_DIR . "/includes/paypal.inc.php";
 
 require_once ROOT_DIR . "/classes/customer.class.php";
@@ -50,8 +51,10 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
 
         if($_POST['order-name'] == "onlyPlacementWithFile" ){
 
-            $clientOrderPrice         = $_SESSION['sitePrice'];
-            $_SESSION['clientOrderPrice'] = $clientOrderPrice;
+            $clientOrderPrice               = $_SESSION['sitePrice'];
+            $_SESSION['contetPrice']        = 00;
+            $_SESSION['clientOrderPrice']   = $clientOrderPrice;
+
             unset($_SESSION['sitePrice']);
             unset($_SESSION['ConetntCreationPlacementPrice']);
 
@@ -78,7 +81,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
             $uploadedPath = $Utility->fileUploadWithRename($_FILES['content-file'], CONT_DIR);
             if ($uploadedPath != false) {
 
-                $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, 7);
+                $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
                 
                 $_SESSION['orderId']    = $orderId;
 
@@ -109,32 +112,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
         // ==============================================================================================================
         // ==============================================================================================================
 
-        
-        // if($_POST['order-name'] == "onlyPlacement" ){
-
-        //     $clientOrderPrice         = $_SESSION['sitePrice'];
-        //     $_SESSION['clientOrderPrice'] = $clientOrderPrice;
-        //     unset($_SESSION['sitePrice']);
-        //     unset($_SESSION['ConetntCreationPlacementPrice']);
-
-        //     $clientContentTitle = $_POST['clientContentTitle1'];
-        //     $clientContent      = $_POST['clientContent1'];
-        //     $clientTargetUrl    = $_POST['clientTargetUrl1'];
-        //     $clientAnchorText   = $_POST['clientAnchorText1'];
-        //     $clientRequirement  = $_POST['clientRequirement1'];
-        //     $blogId             = $_POST['blogId'];
-            
-        //     $_SESSION['order-data'] = array(
-        //                     "clientContentTitle"=>$clientContentTitle,
-        //                     "clientContent"=>$clientContent,
-        //                     "clientTargetUrl"=>$clientTargetUrl,
-        //                     "clientAnchorText"=>$clientAnchorText,
-        //                     "clientRequirement"=>$clientRequirement
-        //                 );
-
-        //     $contentLength = 'Content Length: '.str_word_count($clientContent).' Words';
-            
-        // }
+   
     }
 
     // print_r($_POST);
@@ -143,26 +121,13 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     if (isset($_POST['order-name2'])) {
         if($_POST['order-name2'] == "placementWithArticle" ){
 
-            $clientOrderPrice         = $_SESSION['ConetntCreationPlacementPrice'];
-            $_SESSION['clientOrderPrice'] = $clientOrderPrice;
-            unset($_SESSION['sitePrice']);
-            unset($_SESSION['ConetntCreationPlacementPrice']);
-
-
-            // $clientContent      = '';
-            // $clientTargetUrl    = $_POST['clientTargetUrl2'];
-            // $clientAnchorText   = $_POST['clientAnchorText2'];
-            // $clientRequirement  = $_POST['clientRequirement2'];
-            // $blogId             = $_POST['blogId'];
+            $clientOrderPrice               = $_SESSION['ConetntCreationPlacementPrice'];
+            $sitePrice                      = $_SESSION['sitePrice'];
+            $_SESSION['contetPrice']        = CONTENTPRICE;
             
-            // $_SESSION['order-data'] = array(
-            //                 "clientContent"=>$clientContent,
-            //                 "clientTargetUrl"=>$clientTargetUrl,
-            //                 "clientAnchorText"=>$clientAnchorText,
-            //                 "clientRequirement"=>$clientRequirement
-            //             );
-            // $contentLength = 'Content Will be publish by '. COMPANY_S;
-
+            $_SESSION['clientOrderPrice']   = $clientOrderPrice;
+            
+            unset($_SESSION['ConetntCreationPlacementPrice']);
 
 
             $content_type       = '';
@@ -184,7 +149,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
             
             $contentInfo = 'Content Will be uploaded by '. COMPANY_S;
 
-                $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, 7);
+                $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
                 
                 $_SESSION['orderId']    = $orderId;
 
@@ -209,8 +174,6 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     }
 
     $domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
-    // print_r($domain);
-    $totalDomainCost = $domain[9]+$domain[16]; // cost + ext_cost
 }else {
     $redirectTo = "../order-now.php?id=".$_POST['blogId'];
     header('Location: '.$redirectTo);
@@ -290,8 +253,14 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
                             <tr>
                                 <td><b><?php echo $clientOrderedSite; ?></b> </td>
                                 <td><?php echo $clientOrderedSiteNos; ?></td>
-                                <td><?php echo CURRENCY.$totalDomainCost; ?></td>
-                                <td><?php echo CURRENCY.$clientOrderPrice; ?></td>
+                                <td><?php echo CURRENCY.$sitePrice; ?></td>
+                                <td><?php echo CURRENCY.$sitePrice; ?></td>
+                            </tr>
+                            <tr>
+                                <td><b><?= 'Content' ?></b> </td>
+                                <td><?= 1; ?></td>
+                                <td><?php echo CURRENCY.CONTENTPRICE; ?></td>
+                                <td><?php echo CURRENCY.CONTENTPRICE; ?></td>
                             </tr>
                         </tbody>
                     </table>
