@@ -101,7 +101,7 @@ if(isset($_GET['seo_url']))
                 </div>
                 <div class="col-12 col-lg-6 col-md-6 p-0">
                     <div class="p-0 ">
-                        <img src="./images/fast-linky-outreach.png" class="w-100" alt="">
+                        <img src="./images/fast-linky-outreach.webp" class="w-100" alt="">
                     </div>
                 </div>
             </div>
@@ -140,7 +140,7 @@ if(isset($_GET['seo_url']))
             <div class="col-lg-6 col-md-6">
                 <div class="">
                     <div>
-                        <img src="./images/boost-blog.png" class="w-100  mb-4 " alt="">
+                        <img src="./images/boost-blog.webp" class="w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
