@@ -1,14 +1,15 @@
 <?php
-require_once "../includes/constant.inc.php";
 session_start();
+require_once "../includes/constant.inc.php";
 include_once ADM_DIR . 'checkSession.php';
 
 require_once ROOT_DIR . "/_config/dbconnect.php";
+require_once ROOT_DIR . "/includes/constant.inc.php";
+require_once ROOT_DIR . "/includes/order-constant.inc.php";
 
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/error.class.php";
 require_once ROOT_DIR . "/classes/customer.class.php";
-require_once ROOT_DIR . "/classes/countries.class.php";
 require_once ROOT_DIR . "/classes/location.class.php";
 
 require_once ROOT_DIR . "/classes/gp-package.class.php";
@@ -20,18 +21,17 @@ require_once ROOT_DIR . "/classes/orderStatus.class.php";
 
 
 /* INSTANTIATING CLASSES */
-$DateUtil          = new DateUtil();
-$error             = new Error();
-$customer        = new Customer();
-$Countries      = new Countries();
-$Location       = new Location();
+$DateUtil           = new DateUtil();
+$error              = new Error();
+$customer           = new Customer();
+$Location           = new Location();
 
-$GPPackage        = new GuestPostpackage();
-$PackageOrder   = new PackageOrder();
-$OrderStatus    = new OrderStatus();
+$GPPackage          = new GuestPostpackage();
+$PackageOrder       = new PackageOrder();
+$OrderStatus        = new OrderStatus();
 
-$utility        = new Utility();
-$uMesg             = new MesgUtility();
+$utility            = new Utility();
+$uMesg              = new MesgUtility();
 ######################################################################################################################
 
 $currentUrl = $utility->currentUrl();
@@ -64,9 +64,15 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     }
 
 
+
+
     //order details
-    $showOrder  = $PackageOrder->gpOrderById($orderId);
-    // print_r($showOrder);
+    $showOrder   = $PackageOrder->gpOrderById($orderId);
+    $orderStatus = $showOrder['order_status'];
+    $paymentMode    = $showOrder['payment_type'];
+    $txnId          = $showOrder['transection_id'];
+
+
     // exit;
 
     $buyer          = $customer->getCustomerData($showOrder['customer_id']);
@@ -75,7 +81,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     $packFeatures   = $GPPackage->featureByPackageId($showOrder['package_id']);
 
     // order status names
-    $statusName = $OrderStatus->singleOrderStatus($showOrder['order_status']);
+    $statusName = $OrderStatus->singleOrderStatus($orderStatus);
 
     $updates = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
 
@@ -143,44 +149,38 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                     <tr>
                                                         <td>Order Id</td>
                                                         <td>:</td>
-                                                        <td><?php echo "#" . $showOrder['order_id']; ?></td>
+                                                        <td><?php echo "#" . $orderId; ?></td>
                                                     </tr>
-                                                    <?php
-                                                        if ($showOrder['status'] != null) {
-                                                        ?>
+
+                                                    <?php if ($txnId != null) { ?>
                                                     <tr>
                                                         <td>Transection Id</td>
                                                         <td>:</td>
                                                         <td style="word-break: break-word;">
-                                                            <?php echo "#" . $showOrder['transection_id']; ?>
+                                                            <?= "#" . $txnId; ?>
                                                         </td>
                                                     </tr>
-                                                    <?php
-                                                        }
-                                                        ?>
-                                                    <tr>
-                                                        <td>Payment Mode</td>
-                                                        <td>:</td>
-                                                        <td><?php echo $showOrder['payment_type']; ?>
-                                                        </td>
-                                                    </tr>
+                                                    <?php } ?>
+                                                    
                                                     <tr>
                                                         <td>Order Price</td>
                                                         <td>:</td>
-                                                        <td><?php echo CURRENCY . $showOrder['price']; ?>
-                                                        </td>
+                                                        <td><?php echo CURRENCY . $showOrder['price']; ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Total Amount</td>
                                                         <td>:</td>
-                                                        <td><?php echo CURRENCY . $showOrder['paid_amount']; ?>
-                                                        </td>
+                                                        <td><?php echo CURRENCY . $showOrder['paid_amount']; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Payment Mode</td>
+                                                        <td>:</td>
+                                                        <td><?php echo $paymentMode; ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Payment</td>
                                                         <td>:</td>
-                                                        <td><?php echo $DateUtil->fullDateTimeText($showOrder['date']); ?>
-                                                        </td>
+                                                        <td><?php echo $DateUtil->fullDateTimeText($showOrder['date']); ?></td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -202,8 +202,8 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                         <?php echo $buyer[0][29]; ?></li>
                                                     <li>
                                                         <?php
-                                                            $country = $Location->getCountyDataByCountyId($buyer[0][30]);
-                                                            echo $country[1];
+                                                            $country = $Location->getCountyById($buyer[0][30]);
+                                                            echo $country['name'];
                                                             ?>
                                                     </li>
                                                 </ul>
@@ -219,10 +219,10 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
 
                             <!-- cheaking the order status to procced -->
-                            <?php
-                                // 4 is the code of ordered status 
-                                if ($showOrder['order_status'] == 4) {
-                                    ?>
+
+                            <!-- // if the status is ordered  -->
+                            <?php if ($orderStatus == ORDEREDCODE) { ?>
+
                             <div class="rounded mt-3" style="background: aliceblue;">
                                 <div class="d-flex justify-content-center py-3">
                                     <button class="btn btn-sm btn-danger mx-2" data-toggle="modal"
@@ -231,9 +231,9 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                         onClick="acceptOrder('<?php echo $orderId;?>')">Accept Order</button>
                                 </div>
                             </div>
-                            <?php
-                                }elseif ($showOrder['order_status'] == 10) {
-                                    ?>
+
+                            <?php  }elseif ($orderStatus == REJECTEDCODE) { ?>
+
                             <div class="rounded bg-danger mt-3 text-center">
                                 <div class="d-flex justify-content-center pt-3">
                                     <h4 class="font-weight-bold"> Order Rejected </h4>
@@ -252,11 +252,11 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <p class="card-title">Updates</p>
+                                            <?php require_once ADM_DIR . 'partials/_package-order-updates.php'; ?>
+
+                                            <!-- <p class="card-title">Updates</p>
                                             <ul class="icon-data-list">
-                                                <?php
-                                                    foreach ($updates as $ordUpdate) {
-                                                    ?>
+                                                <?php //foreach ($updates as $ordUpdate) { ?>
 
                                                 <li>
                                                     <div class="d-flex">
@@ -264,29 +264,29 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                         <div>
                                                             <p class="text-info mb-1">
                                                                 <?php
-                                                                $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
-                                                                echo $updateShow[0][1];
+                                                                // $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
+                                                                // echo $updateShow[0][1];
                                                                 ?>
                                                             </p>
                                                             <p class="mb-0">
                                                                 <?php
-                                                                        if ($ordUpdate['dsc'] != null) {
-                                                                            echo $ordUpdate['dsc'] . '<br>';
-                                                                        }
+                                                                        // if ($ordUpdate['dsc'] != null) {
+                                                                        //     echo $ordUpdate['dsc'] . '<br>';
+                                                                        // }
 
-                                                                        if ($ordUpdate['updator'] != null) {
-                                                                            echo '<small>By ' . $ordUpdate['updator'] . '</small>';
-                                                                        }
+                                                                        // if ($ordUpdate['updator'] != null) {
+                                                                        //     echo '<small>By ' . $ordUpdate['updator'] . '</small>';
+                                                                        // }
                                                                         ?>
                                                             </p>
-                                                            <small><?php echo $ordUpdate['added_on']; ?></small>
+                                                            <small><?php //echo $ordUpdate['added_on']; ?></small>
                                                         </div>
                                                     </div>
                                                 </li>
                                                 <?php
-                                                    }
+                                                    //}
                                                     ?>
-                                            </ul>
+                                            </ul> -->
                                         </div>
                                         <div class="modal-footer">
                                         </div>
@@ -294,16 +294,14 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                 </div>
                             </div>
 
-                            <?php
-                                }else {
-                                    ?>
+                            <?php }else { ?>
 
                             <!-- start row  -->
-                            <div class="row">
-                                <div class="col-md-6 mt-4">
+                            <div class="row row justify-content-around">
+                                <div class="col-md-6 m-auto">
                                     <div class="action_box">
-                                        <h5 class="fw-bold">Upload Links</h5>
                                         <?php
+                                        // echo $package['blog_post'];
                                             for ($i=1; $i <= $package['blog_post']; $i++) { 
                                                 $links = $PackageOrder->getPackOrdLinks($showOrder['order_id'], $i);
                                                 $publishedStatus = $PackageOrder->getPackPubUrl($showOrder['order_id'], $i);
@@ -321,7 +319,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                     $btnIcon = 'fa-solid fa-circle-exclamation px-3 text-warning';
 
 
-                                                echo "<button class='d-block d_border border-primary mt-2 px-5 py-2 w-50 ".$btnBg."' data-toggle='modal' data-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
+                                                echo "<button class='d-block d_border border-primary mt-2 px-5 py-2 w-100 ".$btnBg."' data-toggle='modal' data-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
 
                                             ?>
                                         <!-- Modal start -->
@@ -330,9 +328,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                             <div class="modal-dialog modal-lg modal-dialog-scrollable">
                                                 <div class="modal-content px-md-4">
 
-                                                    <?php
-                                                        if ($pulished) {
-                                                        ?>
+                                                    <?php if ($pulished) { ?>
 
                                                     <form action="ajax/package-posting-update.ajax.php" method="POST"
                                                         name="urlsForm-<?php echo $i; ?>">
@@ -359,9 +355,9 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                 data-dismiss="modal">Update</button>
                                                         </div>
                                                     </form>
-                                                    <?php
-                                                            }else {
-                                                                ?>
+
+                                                    <?php }else { ?>
+
                                                     <form action="ajax/package-posting-update.ajax.php" method="POST"
                                                         name="urlsForm-<?php echo $i; ?>">
                                                         <div class="modal-header">
@@ -453,64 +449,71 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                 onclick="validateForm('urlsForm-<?php echo $i; ?>', '<?php echo $i; ?>')">Update</button>
                                                         </div>
                                                     </form>
-                                                    <?php
-                                                        }
-                                                        ?>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- Modal end -->
-                                        <?php
+                                        <?php } ?>
+                                        <!-- end of for loop  -->
+
+                                        <?php 
+                                        $publishedLinks = $PackageOrder->getPublishedUrlNo($orderId);
+                                        if ($publishedLinks == $package['blog_post']):
+                                        ?>
+
+
+                                        <!--========== if the order is not delivered or not completed yet ==========-->
+                                        <?php if ($orderStatus != DELIVEREDCODE && $orderStatus != COMPLETEDCODE): ?>
+                                        <div class="rounded mt-3" style="background: aliceblue;">
+                                            <div class="d-flex justify-content-center py-3">
+                                                <button class="btn btn-sm btn-danger mx-2">Contact Customer</button>
+
+                                                <button class="btn btn-sm btn-primary mx-2"
+                                                    onClick="deliveredOrder('<?= $orderId;?>')">
+                                                    Delivere Order
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <?php endif; ?>
+
+
+
+                                        <!--========== if the order is delivered ==========-->
+                                        <?php if ($orderStatus == DELIVEREDCODE): ?>
+                                        <p class="font-weight-bold text-center text-light bg-primary py-2 mt-4">
+                                            Please wait for customer response
+                                        </p>
+                                        <?php endif; ?>
+
+
+                                        <!--========== if the order is completed ==========-->
+                                        <?php if ($orderStatus == COMPLETEDCODE):    
+                                            $LastUpdate = $PackageOrder->getLastUpdateTime($orderId);
+                                            $LastUpdate = $DateUtil->fullDateTimeText($LastUpdate);
+                                        ?>
+                                                <div class="font-weight-bold text-center text-light bg-primary py-2 mt-4">
+                                                    <p class="fw-bold text-center mt-3">Order Completed On <?= $LastUpdate ?></p>
+                                                </div>
+                                        <?php 
+                                            if ($paymentMode == PAYLATER) {
+                                                echo '<div class="text-center mt-2">
+                                                    <button class="btn btn-sm btn-primary w-25">Ask for Payment</button>
+                                                </div>';
                                             }
-                                            ?>
+                                        endif;
+                                        ?>
+
+
+                                        <?php endif; ?>
+
                                     </div>
                                 </div>
 
 
                                 <!-- start of updates  -->
                                 <div class="col-md-4">
-                                    <div class="mt-4">
-                                        <p class="card-title mb-2">Updates</p>
-                                        <div class="card status_card rounded border">
-                                            <div class="card-body">
-                                                <ul class="icon-data-list">
-
-                                                    <?php
-                                                    foreach ($updates as $ordUpdate) {
-                                                    ?>
-
-                                                    <li>
-                                                        <div class="d-flex">
-                                                            <img src="images/faces/face1.jpg" alt="user">
-                                                            <div>
-                                                                <p class="text-info mb-1">
-                                                                    <?php
-                                                                $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
-                                                                echo $updateShow[0][1];
-                                                                ?>
-                                                                </p>
-                                                                <p class="mb-0">
-                                                                    <?php
-                                                                        if ($ordUpdate['dsc'] != null) {
-                                                                            echo $ordUpdate['dsc'] . '<br>';
-                                                                        }
-
-                                                                        if ($ordUpdate['updator'] != null) {
-                                                                            echo '<small>By ' . $ordUpdate['updator'] . '</small>';
-                                                                        }
-                                                                        ?>
-                                                                </p>
-                                                                <small><?php echo $ordUpdate['added_on']; ?></small>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <?php
-                                                    }
-                                                    ?>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php require_once ADM_DIR . 'partials/_package-order-updates.php'; ?>
                                 </div>
                                 <!-- end of updates  -->
                             </div>
@@ -725,6 +728,40 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
     }
 
+    const deliveredOrder = (orderId) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            // text: "Changes Completed!",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Delivered'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "ajax/package-status-updates.ajax.php",
+                    type: "POST",
+                    data: {
+                        deliveredOrder: orderId,
+                    },
+                    success: function(response) {
+                        // console.log(response);
+                        if (response.includes('delivered!')) {
+                            location.reload();
+                        } else {
+                            Swal.fire(
+                                'Failed!',
+                                response,
+                                'error'
+                            )
+                        }
+
+                    }
+                });
+            }
+        })
+    }
 
     const addField = (secId, curSecNumsField = '', maxSec) => {
         curentNumSec = incrFieldValue(curSecNumsField, maxSec);

@@ -1,16 +1,5 @@
 <?php 
-	/**
-	*	Constants defined for static content of the website.
-	*
-	*	@author		Himadri Shekhar Roy
-	*	@date		April 22, 2008
-	*	@version	1.0
-	*	@copyright	Analyze System
-	*	@url		http://www.ansysoft.com
-	*	@email		himadri.s.roy@ansysoft.com
-	* 
-	*/
-	
+
 	//Constant for Advertiser
 	define('ERSTCON001', ' No static has created so far');
 	define('ERSTCON002', ' Static content title can not be empty');
@@ -35,6 +24,8 @@
 	define('ORDS001', 					' Order Placed successfully');
 	define('ORD_SUC', 					' Article Published Successfully');
 	define('ORD_ACPT', 					' Order Accepted');
+	define('ORD_DEL', 					' Order has been delivered!');
+	define('ORD_COMP', 					' Order has been completed!');
 
 
 	define('ERR_LINK', 					' Something is error with the provided link');

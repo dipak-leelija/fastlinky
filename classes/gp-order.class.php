@@ -3,12 +3,14 @@ class PackageOrder extends DatabaseConnection{
 
 
 
-  function addPackageOrder($packageId, $niche, $customerID, $name, $email, $price, $paid_amount, $paymentType, $transection_id, $status, $orderStatus){
+  function addPackageOrder($packageId, $niche, $customerID, $name, $email, $price, $due_amount, $paid_amount, $paymentType, $transection_id, $status, $orderStatus){
     
-    $sql ="INSERT INTO `gp_package_order`(`package_id`, `niche`, `customer_id`, `name`,	`email`, `price`, `paid_amount`, `payment_type`,
-                                          `transection_id`, `status`, `order_status`, `date`)
-                                  VALUES ('$packageId', '$niche', '$customerID', '$name', '$email', '$price', '$paid_amount', '$paymentType',
-                                          '$transection_id', '$status', '$orderStatus', now())";
+    $sql ="INSERT INTO gp_package_order 
+                        (`package_id`, `niche`, `customer_id`, `name`,	`email`, `price`, `due_amount`, `paid_amount`,
+                        `payment_type`, `transection_id`, `status`, `order_status`, `date`)
+                        VALUES
+                        ('$packageId', '$niche', '$customerID', '$name', '$email', '$price', '$due_amount', '$paid_amount',
+                        '$paymentType', '$transection_id', '$status', '$orderStatus', now())";
         $data  = $this->conn->query($sql);
         if ($data) {
           $id = $this->conn->insert_id;
@@ -55,7 +57,10 @@ class PackageOrder extends DatabaseConnection{
 
     function updatePackOrdersStatus($orderId, $statusId, $updatedBy){
 
-      $sql  = "UPDATE `gp_package_order`
+      if ($orderId =='') {
+        return false;
+      }else {
+        $sql  = "UPDATE `gp_package_order`
                 SET
                 `order_status` = '$statusId',
                 `updated_by`   = '$updatedBy'
@@ -67,6 +72,7 @@ class PackageOrder extends DatabaseConnection{
       }else {
         return false;
       }
+    }
   
     }//eof
 
@@ -245,14 +251,17 @@ class PackageOrder extends DatabaseConnection{
 
 
   function addPackOrderDtls($orderId, $statusId, $dsc, $added_by, $updator){
-
-    $dsc = addslashes(trim($dsc));
-
+    if ($orderId == '') {
+      return false;
+    }else {
+      $dsc = addslashes(trim($dsc));
+      
       $query =  "INSERT INTO `gp_package_order_details`(`order_id`, `status`, `dsc`, `added_by`, `updator`, `added_on`)
                                               VALUES ('$orderId', '$statusId', '$dsc', '$added_by', '$updator', now())";
       $res = $this->conn->query($query);
       // $count = $this->conn->insert_id();
       return $res;
+    }
   }
 
 
@@ -272,6 +281,19 @@ class PackageOrder extends DatabaseConnection{
 
   }
 
+  function getLastUpdateTime($orderId){
+
+    $data     = array();
+    $query    = "SELECT added_on FROM `gp_package_order_details` 
+                WHERE order_id = '$orderId' ORDER BY id DESC LIMIT 1";
+    $res      = $this->conn->query($query);
+    while ($result = $res->fetch_assoc()) {
+      $data = $result['added_on'];
+    }
+    return $data;
+
+  }
+
   // function deletePackOrdDtls($orderId, $forPost){
   //   $res      = $this->conn->query("DELETE FROM `gp_package_order_details` WHERE order_id = '$orderId' AND for_post = '$forPost'");
   //   return $res;
@@ -282,7 +304,7 @@ class PackageOrder extends DatabaseConnection{
 
   ##############################################################################################################
   #                                                                                                            #
-  #                                         GP PACKAGE ORDER DETAILS                                           #
+  #                                      GP PACKAGE ORDER PUBLISHED LINKS                                      #
   #                                                                                                            #
   ##############################################################################################################
 
@@ -318,7 +340,19 @@ class PackageOrder extends DatabaseConnection{
 
   }
 
-  // 
+
+
+  function getPublishedUrlNo($orderId){
+
+    $data     = array();
+    $query    = "SELECT COUNT(*) as published FROM `package_publish_links` WHERE order_id = '$orderId'";
+    $res      = $this->conn->query($query);
+    while ($result = $res->fetch_object()) {
+      $data = $result->published;
+    }
+    return $data;
+
+  }
 
 
 }
