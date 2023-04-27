@@ -7,7 +7,7 @@ require_once ROOT_DIR ."/_config/dbconnect.php";
 
 require_once ROOT_DIR . "/classes/customer.class.php";
 require_once ROOT_DIR . "/classes/content-order.class.php";
-require_once ROOT_DIR . "/classes/countries.class.php";
+require_once ROOT_DIR . "/classes/location.class.php";
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php";
 
@@ -16,7 +16,7 @@ include "../Crypto.php";
 
 $ContentOrder     = new ContentOrder();
 $Customer         = new Customer();
-$Countries        = new Countries();
+$Location         = new Location();
 $DateUtil         = new DateUtil();
 $Utility		  = new Utility();
 
@@ -36,10 +36,14 @@ $orderId = base64_decode($_GET['order']);
 // exit;
 
 $showOrder  = $ContentOrder->clientOrderById($orderId);
-$orderPrice         = $showOrder[0]['clientOrderPrice'];
-$paymentStatus      = $showOrder[0]['paymentStatus'];
-$clientOrderedSite  = $showOrder[0]['clientOrderedSite'];
-$orderDate          = $showOrder[0]['added_on'];
+$orderPrice         = $showOrder['order_price'];
+$clientOrderedSite  = $showOrder['clientOrderedSite'];
+$orderDate          = $showOrder['added_on'];
+
+
+$ordTxn     = $ContentOrder->showTrxnByOrderId($orderId);
+$paymentStatus      = $ordTxn['transection_mode'];
+
 
 
 if ($paymentStatus != "Pay Later") {
@@ -47,7 +51,7 @@ if ($paymentStatus != "Pay Later") {
 }
 
 $ordTxn = $ContentOrder->showTransectionByOrder($orderId);
-$buyer = $Customer->getCustomerData($showOrder[0]['clientUserId']);
+$buyer = $Customer->getCustomerData($showOrder['clientUserId']);
 
 $_SESSION['payment-process'] = true;
 ?>
@@ -128,8 +132,8 @@ $_SESSION['payment-process'] = true;
                         <p class="mb-0">
                             <?php
                                 if($buyer[0][30] != null){
-                                    $country = $Countries->showCountry($buyer[0][30]);
-                                        echo $country[0];
+                                    $country = $Location->getCountyById($buyer[0][30]);
+                                        echo $country['name'];
                                     }
                             ?>
                         </p>
@@ -150,8 +154,8 @@ $_SESSION['payment-process'] = true;
                             <tr>
                                 <th scope="col">Order Id</th>
                                 <th scope="col">Site Name</th>
-                                <th scope="col">Amount $</th>
-                                <th scope="col">Payable $</th>
+                                <th scope="col">Amount <?= CURRENCY ?></th>
+                                <th scope="col">Payable <?= CURRENCY ?></th>
                             </tr>
                         </thead>
                         <tbody>

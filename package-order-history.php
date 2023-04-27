@@ -1,8 +1,9 @@
 <?php
-require_once "includes/constant.inc.php";
 session_start();
+require_once "includes/constant.inc.php";
 
 require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/includes/order-constant.inc.php";
 
 require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/gp-order.class.php";
@@ -38,6 +39,9 @@ if(isset($_GET['order'])){
 }
 
 $order          = $PackageOrder->gpOrderById($orderId);
+$orderStatus    = $order['order_status'];
+$paymentMode    = $order['payment_type'];
+$orderPrice     = $order['price'];
 $buyer          = $customer->getCustomerData($order['customer_id']);
 $package        = $GPPackage->packDetailsById($order['package_id']);
 $packageCat     = $GPPackage->packCatById($package['category_id']);
@@ -50,6 +54,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
 
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
@@ -115,9 +120,9 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                             }
                                             ?>
                                                 </li>
-                                                <li> Price : <?php echo '$'.$order['price']; ?></li>
+                                                <li> Price : <?php echo '$'.$orderPrice; ?></li>
                                                 <?php
-                                                $ordStatus = $OrderStatus->singleOrderStatus($order['order_status']); 
+                                                $ordStatus = $OrderStatus->singleOrderStatus($orderStatus); 
                                                 $payStatus = $OrderStatus->singleOrderStatus($order['status']);
                                                     ?>
                                                 <li> Order : <?php echo $ordStatus[0][1]; ?></li>
@@ -159,28 +164,29 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                             <div class="action_box">
                                                 <h5 class="fw-bold text-center ">Upload Links</h5>
                                                 <?php
-                                            for ($i=1; $i <= $package['blog_post']; $i++) { 
-                                                $links = $PackageOrder->getPackOrdLinks($order['order_id'], $i);
-                                                $publishedStatus = $PackageOrder->getPackPubUrl($order['order_id'], $i);
-                                                $pulished = false;
-                                                $btnBg = '';
+                                                for ($i=1; $i <= $package['blog_post']; $i++) { 
+                                                    $links = $PackageOrder->getPackOrdLinks($order['order_id'], $i);
+                                                    $publishedStatus = $PackageOrder->getPackPubUrl($order['order_id'], $i);
+                                                    $pulished = false;
+                                                    $btnBg = '';
 
-                                                if (count($publishedStatus) > 0) {
-                                                    $pulished = true;
-                                                    $btnBg = 'bg_mustard';
-                                                }
-                                                
-                                                $existLinksNo = count($links);
-                                                if ($existLinksNo > 0) 
-                                                    $btnIcon = 'fa-regular fa-circle-check px-3 text-primary';
-                                                else
-                                                    $btnIcon = 'fa-solid fa-circle-exclamation px-3 text-warning';
+                                                    if (count($publishedStatus) > 0) {
+                                                        $pulished = true;
+                                                        $btnBg = 'bg_mustard';
+                                                    }
+                                                    
+                                                    $existLinksNo = count($links);
+                                                    if ($existLinksNo > 0) 
+                                                        $btnIcon = 'fa-regular fa-circle-check px-3 text-primary';
+                                                    else
+                                                        $btnIcon = 'fa-solid fa-circle-exclamation px-3 text-warning';
 
 
-                                                echo "<button class='d-block  d_border mt-2 px-3 py-2  w-75 m-auto   ".$btnBg."' data-bs-toggle='modal' data-bs-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
+                                                    echo "<button class='d-block  d_border mt-2 px-3 py-2  w-75 m-auto   ".$btnBg."' data-bs-toggle='modal' data-bs-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
 
-                                            ?>
-                                                <!-- Modal -->
+                                                ?>
+
+                                                <!-- Modal start -->
                                                 <div class="modal fade" id="exampleModal-<?php echo $i; ?>"
                                                     tabindex="-1" aria-labelledby="exampleModalLabel"
                                                     aria-hidden="true">
@@ -300,8 +306,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                     $addBtnDispaly = 'd-none';
                                                                 }else {
                                                                     $addBtnDispaly = 'd-block';
-                                                                }
-                                                                ?>
+                                                                } ?>
                                                                     <div class="text-end <?php echo $addBtnDispaly; ?>">
                                                                         <button type="button"
                                                                             class="btn btn-sm btn-primary"
@@ -324,16 +329,44 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <?php
-                                            }
-                                            ?>
+                                                <!-- modal end  -->
+
+                                                <?php } ?>
+                                                <!-- for loop end  -->
+
+                                                <?php if ($orderStatus == DELIVEREDCODE): ?>
+
+                                                <div class="d-flex justify-content-evenly p-4 ">
+                                                    <button class="btn btn-danger w-25">Raise Issue</button>
+                                                    <button class="btn btn-primary w-25"
+                                                        onclick="finishOrder(<?= $orderId; ?>)">Finish</button>
+                                                </div>
+
+                                                <?php endif; ?>
+
+
+                                                <?php if ($orderStatus == COMPLETEDCODE){
+                                                    $LastUpdate = $PackageOrder->getLastUpdateTime($orderId);
+                                                    $LastUpdate = $DateUtil->fullDateTimeText($LastUpdate);
+                                                    
+                                                    echo '<p class="fw-bold text-center mt-3">Order Completed On '.$LastUpdate.'</p>';
+                                                    
+                                                    if ($paymentMode == PAYLATER) {
+                                                        
+                                                        echo '<div class="text-center mt-2">
+                                                                <button class="btn btn-sm btn-primary w-25">Pay Now</button>
+                                                            </div>';
+
+                                                    }
+
+                                                } ?>
                                             </div>
                                         </div>
-
                                         <!-- right col start  -->
                                         <div class="col-12 col-md-6">
                                             <div class="stretch-card grid-margin">
-                                                <h5 class="fw-bold mt-3 mt-md-0 mb-2 text-center text-md-start">Updates</h5>
+                                                <h5 class="fw-bold mt-3 mt-md-0 mb-2 text-center text-md-start">Updates
+                                                </h5>
 
                                                 <div class="card status_card extra-scroll-add">
                                                     <div class="card-body p-0">
@@ -379,8 +412,9 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                 </div>
 
                                                 <div class="">
-                                                    <button type="button" class="btn btn-primary w-100" style="    border-radius:0px 0px 0.375rem 0.375rem; border-top:none;"data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">View
+                                                    <button type="button" class="btn btn-primary w-100"
+                                                        style="    border-radius:0px 0px 0.375rem 0.375rem; border-top:none;"
+                                                        data-bs-toggle="modal" data-bs-target="#exampleModal">View
                                                         More</button>
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="exampleModal" tabindex="-1"
@@ -389,21 +423,23 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                             <div class="modal-content px-0 px-md-4">
                                                                 <div class="modal-header">
                                                                     <h1 class="modal-title fs-5" id="exampleModalLabel">
-                                                                    Updates</h1>
+                                                                        Updates
+                                                                    </h1>
                                                                     <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal"
-                                                                        aria-label="Close"></button>
+                                                                        data-bs-dismiss="modal" aria-label="Close">
+                                                                    </button>
                                                                 </div>
                                                                 <div class="modal-body p-2">
                                                                     <div class="col-12 ">
                                                                         <div class="stretch-card grid-margin">
-                                                                            <div class="card status_card " style="   overflow-y: scroll; max-height: 500px;">
+                                                                            <div class="card status_card "
+                                                                                style="   overflow-y: scroll; max-height: 500px;">
                                                                                 <div class="card-body p-0">
                                                                                     <ul class="icon-data-list">
 
                                                                                         <?php
-                                              foreach ($updates as $ordUpdate) {
-                                              ?>
+                                                                                        foreach ($updates as $ordUpdate) {
+                                                                                        ?>
                                                                                         <li>
                                                                                             <div class="d-flex">
                                                                                                 <img src="<?php echo URL?>/images/user/default-user-icon.png"
@@ -412,20 +448,20 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                                                     <h5
                                                                                                         class="text-info mb-0">
                                                                                                         <?php
-                                                                $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
-                                                                echo $updateShow[0][1];
-                                                                ?>
+                                                                                                        $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
+                                                                                                        echo $updateShow[0][1];
+                                                                                                        ?>
                                                                                                     </h5>
                                                                                                     <p class="mb-0">
                                                                                                         <?php
-                                                                        if ($ordUpdate['dsc'] != null) {
-                                                                            echo $ordUpdate['dsc'] . '<br>';
-                                                                        }
+                                                                                                        if ($ordUpdate['dsc'] != null) {
+                                                                                                            echo $ordUpdate['dsc'] . '<br>';
+                                                                                                        }
 
-                                                                        if ($ordUpdate['updator'] != null) {
-                                                                            echo '<small>By ' . $ordUpdate['updator'] . '</small> <br>';
-                                                                        }
-                                                                        ?>
+                                                                                                        if ($ordUpdate['updator'] != null) {
+                                                                                                            echo '<small>By ' . $ordUpdate['updator'] . '</small> <br>';
+                                                                                                        }
+                                                                                                        ?>
                                                                                                         <small><?php echo $ordUpdate['added_on']; ?></small>
                                                                                                     </p>
                                                                                                 </div>
@@ -493,6 +529,63 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
             let curentNumSec = nums.value = Number(currentNum) + 1;
             return curentNumSec;
         }
+
+
+
+
+
+        const finishOrder = (orderId) => {
+            Swal.fire({
+                title: 'Are you sure?',
+                // text: "Changes Completed!",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, Finish'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    $.ajax({
+                        url: "admin/ajax/package-status-updates.ajax.php",
+                        type: "POST",
+                        data: {
+                            finishOrder: orderId,
+                        },
+                        success: function(response) {
+                            // console.log(response);
+                            if (response.includes('finished!')) {
+                                location.reload();
+                            } else {
+                                Swal.fire(
+                                    'Failed!',
+                                    response,
+                                    'error'
+                                )
+                            }
+
+                        }
+                    });
+
+                }
+            })
+        }
+
+
+
+        // if(request.status == 200)
+        // {
+        // 	var xmlResponse = request.responseText;
+
+        // 	document.getElementById("edit-file").innerHTML = xmlResponse;
+        // 	$("#editfile-form").on('submit',(function(e) {
+
+        // 	}));
+        // }
+        // else if(request.status == 404)
+        // {
+        // 	alert("Request page doesn't exist");
+        // }
         </script>
 
 </body>

@@ -61,4 +61,7 @@ foreach ($allStatus as $value) {
 
 define("CONTENTPRICE",                      15);
 
+define("PAYLATER",                          'PayLater');
+
+
 ?>

@@ -149,7 +149,7 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
                                 $totalCost      += $pack['price'];
 
                                 
-                                $orderIds[] = $PackageOrder->addPackageOrder($packId, '', $cusId, $customerName, $customerEmail, $pack['price'], $pack['price'], 'PayLater', '', PENDINGCODE, INCOMPLETECODE);
+                                $orderIds[] = $PackageOrder->addPackageOrder($packId, '', $cusId, $customerName, $customerEmail, $pack['price'], $pack['price'], 00, 'PayLater', '', PENDINGCODE, INCOMPLETECODE);
                             ?>
                         <tr>
                             <td class="text-start fw-semibold"><?php echo $packFullName; ?></td>
