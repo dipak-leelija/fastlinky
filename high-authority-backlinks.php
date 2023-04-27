@@ -124,7 +124,7 @@ benefits of high domain authority website, domain authority rank" />
             </div>
             <div class="col-xl-6 col-md-6 m-auto">
                 <div class="text-center m-auto">
-                    <img src="./images/boost-blog.png" class="w-100   mb-4 " alt="">
+                    <img src="./images/boost-blog.webp" class="w-100   mb-4 " alt="">
                 </div>
             </div>
         </div>

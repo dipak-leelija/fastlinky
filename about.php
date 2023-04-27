@@ -66,7 +66,7 @@ $cusId		= $utility->returnSess('userid', 0);
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="about-avatar">
-                        <img class="about-banner-img" src="./images/portfolio/pexels-pixabay-267507.jpg" title=""
+                        <img class="about-banner-img" src="./images/about-us-banner.png" title=""
                             alt="">
 
                     </div>
@@ -202,7 +202,7 @@ $cusId		= $utility->returnSess('userid', 0);
                 </div>
                 <div class="col-lg-4 d-none d-lg-block">
                     <div class="why-choose-center-image">
-                        <img src="./images/About-Page-intro-pic.png" alt="..." class="rounded-circle">
+                        <img src="./images/About-Page-intro-pic.jpg" alt="..." class="rounded-circle">
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
