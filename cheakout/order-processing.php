@@ -2,16 +2,16 @@
 session_start();
 
 require_once dirname(__DIR__)."/includes/constant.inc.php";
+require_once ROOT_DIR."/_config/dbconnect.php";
 
 require_once ROOT_DIR."/includes/content.inc.php";
-require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/includes/order-constant.inc.php";
 
 require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/gp-package.class.php";
 require_once ROOT_DIR."/classes/gp-order.class.php";
 require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/location.class.php";
-require_once ROOT_DIR."/classes/countries.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
 
 /* INSTANTIATING CLASSES */
@@ -21,7 +21,6 @@ $customer		= new Customer();
 $GPPackage      = new GuestPostpackage();
 $PackageOrder   = new PackageOrder();
 $Location       = new Location();
-$Countries      = new Countries();
 $utility		= new Utility();
 
 
@@ -60,12 +59,12 @@ if (isset($_POST['paymentdata']) && isset($_POST['pppamn'])) {
             
             if (isset($_SESSION['orderIds'])) {
                 foreach ($_SESSION['orderIds'] as $eachOrderId) {
-                    $updated[] = $PackageOrder->updatePayment($eachOrderId, $trxnId, 'Paypal', 5, 4);
+                    $updated[] = $PackageOrder->updatePayment($eachOrderId, $trxnId, 'Paypal', COMPLETEDCODE, ORDEREDCODE);
                 }
                 
                 $falseExist =  in_array(false, $updated, true);
                 if (!$falseExist) {
-                    $added = $PackageOrder->addPackOrderDtls($eachOrderId, 4, ORDS001, $cusDtl[0][2], $cusDtl[0][2]);
+                    $added = $PackageOrder->addPackOrderDtls($eachOrderId, ORDEREDCODE, ORDS001, $cusDtl[0][2], $cusDtl[0][2]);
                     if ($added) {
                         $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
                         unset($_SESSION['orderIds']);
@@ -94,12 +93,12 @@ if (isset($_POST['paylaterForm'])) {
             unset($_SESSION['package']);
         if (isset($_SESSION['orderIds'])) {
             foreach ($_SESSION['orderIds'] as $eachOrderId) {
-                    $updated[] = $PackageOrder->updatePayment($eachOrderId, '', 'PayLater', 2, 4);
+                    $updated[] = $PackageOrder->updatePayment($eachOrderId, '', 'PayLater', PENDINGCODE, ORDEREDCODE);
             }
 
             $falseExist =  in_array(false, $updated, true);
             if (!$falseExist) {
-                $added = $PackageOrder->addPackOrderDtls($eachOrderId, 4, ORDS001, $cusDtl[0][2], $cusDtl[0][2]);
+                $added = $PackageOrder->addPackOrderDtls($eachOrderId, ORDEREDCODE, ORDS001, $cusDtl[0][2], $cusDtl[0][2]);
                 if ($added) {
                     $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
                     unset($_SESSION['orderIds']);

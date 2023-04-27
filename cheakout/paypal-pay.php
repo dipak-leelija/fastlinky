@@ -1,19 +1,20 @@
 <?php
 session_start();
-
 require_once dirname(__DIR__)."/includes/constant.inc.php";
+
+require_once ROOT_DIR."/_config/dbconnect.php";
+
+require_once ROOT_DIR."/includes/order-constant.inc.php";
 require_once ROOT_DIR."/includes/content.inc.php";
 require_once ROOT_DIR."/includes/paypal.inc.php";
 require_once ROOT_DIR."/includes/user.inc.php";
 
-require_once ROOT_DIR."/_config/dbconnect.php";
 
 require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/gp-package.class.php";
 require_once ROOT_DIR."/classes/gp-order.class.php";
 require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/location.class.php";
-require_once ROOT_DIR."/classes/countries.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
 
 
@@ -24,7 +25,6 @@ $GPPackage      = new GuestPostpackage();
 $PackageOrder   = new PackageOrder();
 $customer		= new Customer();
 $Location       = new Location();
-$Countries      = new Countries();
 $utility		= new Utility();
 
 ############################################################################################
@@ -40,37 +40,11 @@ if (!isset($_SESSION[PACK_ORD])) {
     exit;   
 }
 
-
-// // cheaking email existance
-// if ($cusDtl[0][3] == null || $cusDtl[0][3] == NULL) {
-//     header('Location: ../edit-profile.php?action='.ERU113 );
-//     exit;
-// }
-
-// // cheaking mobile existance
-// if ($cusDtl[0][34] == null || $cusDtl[0][34] == NULL) {
-//     header('Location: ../edit-profile.php?action='.ERU132 );
-//     exit;
-// }
-
-// // cheaking city id existance
-// if ($cusDtl[0][27] == null || $cusDtl[0][27] == NULL || $cusDtl[0][27] == 0) {
-//     header('Location: ../edit-profile.php?action='.ERU124 );
-//     exit;
-// }
-
-// // cheaking country id existance
-// if ($cusDtl[0][30] == null || $cusDtl[0][30] == NULL) {
-//     header('Location: ../edit-profile.php?action='.ERU131 );
-//     exit;
-// }
-
-
 $customerName       = $cusDtl[0][5].' '.$cusDtl[0][6];
 $customerEmail      = $cusDtl[0][3];
 $customerMobile     = $cusDtl[0][34];
-$customerCity       = $Location->getCityDataById($cusDtl[0][27])['city'];
-$customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
+$customerCity       = $Location->getCityDataById($cusDtl[0][27])['name'];
+$customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
 
 
 ?>
@@ -88,8 +62,8 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
 
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/payment-summary-style.css">
+    <link rel="stylesheet" href="<?= URL; ?>/plugins/bootstrap-5.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= URL; ?>/css/payment-summary-style.css">
 </head>
 
 <body>
@@ -97,7 +71,7 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
         <!-- logo codes -->
         <div class="logos-section">
             <div class="text-center">
-                <img src="<?php echo LOGO_WITH_PATH; ?>" alt="<?php echo COMPANY_FULL_NAME; ?>" class="main_logo">
+                <img src="<?php echo LOGO_WITH_PATH; ?>" alt="<?= COMPANY_FULL_NAME; ?>" class="main_logo">
             </div>
         </div>
         <!-- cards for customers details -->
@@ -158,7 +132,7 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
                                 $totalCost      += $pack['price'];
 
                                 
-                                $orderIds[] = $PackageOrder->addPackageOrder($packId, '', $cusId, $customerName, $customerEmail, $pack['price'], $pack['price'], 'PayLater', '', '2', '2');
+                                $orderIds[] = $PackageOrder->addPackageOrder($packId, '', $cusId, $customerName, $customerEmail, $pack['price'], $pack['price'], 'Paypal', '', PENDINGCODE, INCOMPLETECODE);
                             ?>
                             <tr>
                                 <td class="text-start fw-semibold"><?php echo $packFullName; ?> </td>
@@ -232,7 +206,7 @@ $customerCountry    = $Location->getCountyDataByCountyId($cusDtl[0][30])[1];
     </section>
 
     <script
-        src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_LIVE_ID?>&disable-funding=credit,card,paylater&currency=USD">
+        src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_SANDBOX_ID?>&disable-funding=credit,card,paylater&currency=USD">
     </script>
     <script>
 
