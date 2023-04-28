@@ -206,7 +206,7 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
     </section>
 
     <script
-        src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_SANDBOX_ID?>&disable-funding=credit,card,paylater&currency=USD">
+        src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_CLIENT_ID ?>&disable-funding=credit,card,paylater&currency=USD">
     </script>
     <script>
 

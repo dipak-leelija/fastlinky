@@ -1,18 +1,14 @@
 <?php
 session_start();
-
-require_once "../_config/dbconnect.php";
-require_once "../_config/dbconnect.trait.php";
-
 require_once "../includes/constant.inc.php";
-require_once "../classes/gp-order.class.php";
+require_once "../_config/dbconnect.php";
+
 require_once "../classes/customer.class.php";
 require_once "../classes/utility.class.php";
 
 
 $utility	= new Utility();
 $customer   = new Customer();
-$gp 		= new Gporder();
 
 
 $typeM		= $utility->returnGetVar('typeM','');
@@ -103,7 +99,7 @@ $cusId	= $utility->returnSess('userid', 0);
                         }
                         ?>
                         
-                        <a class="cancel_btn" href="<?php echo CLIENT_AREA;?>">My Account</a>
+                        <a class="cancel_btn" href="<?php echo BUYER_AREA ;?>">My Account</a>
                     </div>
                     
                 </div>
