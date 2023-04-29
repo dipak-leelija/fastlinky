@@ -339,7 +339,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
 
 
     <script
-        src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_SANDBOX_ID; ?>&disable-funding=credit,card&currency=USD">
+        src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_CLIENT_ID; ?>&disable-funding=credit,card&currency=USD">
     // Live Id = AVfNiFu9M4brh84SlYmeHtHJCtdjW1CUmWl5T0wLsU2JOm6VNB6pCRcxi8zKxBbCO9p0t54pPtF65Tim
     </script>
     <!-- <script>paypal.Buttons().rander('#paypal-payment-button');</script> -->

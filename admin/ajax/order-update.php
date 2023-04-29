@@ -38,6 +38,16 @@ if (isset($_POST['add-content'])) {
     }
 }
 
+// if (isset($_POST['contentUpload'])) {
+    // print_r($_FILES);
+    // echo 'Hi';
+    // $updated = $ContentOrder->orderSingleDataUpdate($_POST['order-id'], 'clientContent', $_POST['content'], $updatedBy);
+    // if ($updated) {
+    //     header('Location: '.$_POST['return-page']);
+    //     exit;
+    // }
+// }
+
 
 if (isset($_GET['cancel-order'])) {
     

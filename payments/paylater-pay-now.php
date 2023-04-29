@@ -190,7 +190,7 @@ $_SESSION['payment-process'] = true;
     </form>
 
 
-    <script src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_LIVE_ID?>&disable-funding=credit,card&currency=USD"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_CLIENT_ID ?>&disable-funding=credit,card&currency=USD"></script>
     <script>
     let customerName = document.getElementById("customer-name").innerText;
     let waitingBox = document.getElementById("waiting-box");
