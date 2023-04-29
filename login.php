@@ -123,7 +123,7 @@ if(isset($_POST['btnLogin'])){
 
                                         <div class="account-block rounded-right">
 
-                                            <img src="./images/login.png" width="400px" height="400px">
+                                            <img src="./images/login.webp" width="400px" height="400px">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">

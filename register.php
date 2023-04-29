@@ -185,6 +185,13 @@ Ready website for business, High Quality website sales, High quality blogs sales
                         <div class="card border-0" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
                             <div class="card-body p-0">
                                 <div class="row no-gutters " style="background: #ff9a44;">
+                                <div class="col-lg-5 d-none d-lg-inline-block m-auto text-center">
+
+                                        <div class=" m-auto text-center">
+
+                                            <img src="./images/signup-img.webp" style="width: 90%;">
+                                        </div>
+                                    </div>
                                     <div class="col-lg-7"
                                         style="background: #fff; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
                                         <div class="reg-div-below-card ">
@@ -369,13 +376,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5 d-none d-lg-inline-block m-auto text-center">
-
-                                        <div class=" m-auto text-center">
-
-                                            <img src="./images/signup.png" style="width: 100%;">
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
