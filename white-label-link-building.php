@@ -54,9 +54,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
             </div>
-            <div class=" col-md-6  p-0">
+            <div class=" col-md-6 text-center p-0">
                 <div class="bo-wrap p-0">
-                    <img src="./images/white-label-link-building.png" class="w-100" alt="">
+                    <img src="./images/white-label-link-building.webp"  alt="">
                 </div>
 
             </div>
@@ -171,7 +171,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6  m-auto">
                 <div class="text-center">
-                    <img src="./images/process-showing-fastlinky.png" class="w-100 mb-4 m-auto" alt="">
+                    <img src="./images/process-showing-fastlinky.png" class=" mb-4 m-auto" alt="">
                 </div>
             </div>
         </div>
