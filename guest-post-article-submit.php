@@ -405,7 +405,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                         <div class="form-group">
                                             <?php
                                                 if ($orderContent['content_type'] == '') {
-                                                    echo 'Content Wll Be Uploded By ' . COMPANY_S;
+                                                    echo '<p class="bg_mustard text-light rounded fw-bold py-2 ps-2">Content Wll Be Uploded By ' . COMPANY_S.'</p>';
                                                 }elseif ($orderContent['content_type'] == 'doc') {
                                                 ?>
                                             <div class="bg-primary rounded d-flex justify-content-between w-100 p-2">
@@ -429,16 +429,19 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                         <div class="mt-3" id="hyperLinks">
                                             <div class="row">
 
-                                                <div class="col-md-6">
+                                                <div class="col-md-6 d-none d-md-block">
                                                     <h5>Anchor Text</h5>
                                                 </div>
 
-                                                <div class="col-md-6">
+                                                <div class="col-md-6 d-none d-md-block">
                                                     <h5>Target Url</h5>
                                                 </div>
+
+                                                <h5 class="d-md-none">Anchor Text And URL</h5>
+                                                
                                             </div>
 
-                                            <div class="row">
+                                            <div class="row mb-3 mb-md-0">
                                                 <div class="col-md-6 mb-2">
                                                     <input type="text" class="form-control"
                                                         placeholder="Enter the anchor text for client url"
@@ -452,7 +455,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                                         name="clientTargetUrl" value="<?= $contentLink['client_url']?>">
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row mb-3 mb-md-0">
                                                 <div class="col-md-6 mb-2">
                                                     <input type="text" class="form-control"
                                                         placeholder="Enter the reference anchor text"
@@ -466,7 +469,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                                         value="<?= $contentLink['reference_url1']?>">
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row mb-3 mb-md-0">
                                                 <div class="col-md-6 mb-2">
                                                     <input type="text" class="form-control"
                                                         placeholder="Enter the reference anchor text"

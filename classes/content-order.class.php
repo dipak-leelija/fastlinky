@@ -309,6 +309,20 @@ class ContentOrder extends DatabaseConnection{
             return $query;
       }
 
+
+      function contentUpdate($orderId, $fileType, $path){
+
+            $update = "UPDATE order_contents
+                              SET
+                              path             = '$path',
+                              content_type     = '$fileType',
+                              updated_on        = now()
+                              WHERE	
+                              order_id	      = '$orderId'";
+            $query = $this->conn->query($update);
+            return $query;
+      }
+
       // function orderedContentUpdate($orderId, $title){
 
       //       $content     = addslashes(trim($content));

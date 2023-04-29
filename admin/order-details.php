@@ -1,11 +1,13 @@
 <?php
 session_start();
 require_once dirname(__DIR__) . "/includes/constant.inc.php";
-require_once ROOT_DIR . "/includes/order-constant.inc.php";
+require_once ROOT_DIR . "/_config/dbconnect.php";
 
 include_once ADM_DIR . 'checkSession.php';
 
-require_once ROOT_DIR . "/_config/dbconnect.php";
+require_once ROOT_DIR . "/includes/order-constant.inc.php";
+require_once ROOT_DIR . "/includes/content.inc.php";
+
 
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/error.class.php";
@@ -53,6 +55,19 @@ if (isset($_POST['delivered'])) {
     }
 }
 
+if (isset($_FILES['content-file'])) {
+
+    $uploadedPath = $utility->fileUploadWithRename($_FILES['content-file'], CONT_DIR);
+    if ($uploadedPath != false ) {
+        $ContentOrder->contentUpdate($orderId, 'doc', $uploadedPath);
+        $ContentOrder->addOrderUpdate($orderId, 'Content Updated', CONT_UPDT, 0);
+    }
+    ?>
+<script>
+alert('Content Uploded');
+</script>
+<?php
+}
 
 ######################################################################################################################
 
@@ -116,6 +131,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     // contents of the order
     $orderContent   = $ContentOrder->getOrderContent($orderId);
         $orderContentId = $orderContent['id'];
+        $contentPath    = $orderContent['path'];
     $contentLink    = $ContentOrder->getContentHyperLinks($orderContentId);
 
 
@@ -534,11 +550,10 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
                                         if ($ordStatCode == DELIVEREDCODE) {
                                             echo '
-                                                                <div class="btn_bx text-center mt-3">
-                                                                    <button class="btn btn-sm btn-primary" onclick="finishedOrder(\''.$orderId.'\')">Finished</button>
-                                                                    <button class="btn btn-sm btn-danger"  data-toggle="modal"
-                                                                    data-target="#updateModal" onclick="changeRequest()">Need to Change</button>
-                                                                </div>';
+                                                    <div class="btn_bx text-center mt-3">
+                                                        <button class="btn btn-sm btn-primary" onclick="finishedOrder(\''.$orderId.'\')">Finished</button>
+                                                        <button class="btn btn-sm btn-danger"  data-toggle="modal" data-target="#updateModal" onclick="changeRequest()">Need to Change</button>
+                                                    </div>';
                                         } else {
                                             $ordUpdate = $ContentOrder->lastUpdate($orderId);
                                             echo '<p class="text-center font-weight-bold my-3">Order Completed on ' . $DateUtil->dateTimeText($ordUpdate['updated_on']). '</p>';
@@ -573,7 +588,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
                                                     <div class="col-12 mt-3">
                                                         <?php
-                                                        if ($orderContent['path'] == '') {
+                                                        if ($contentPath == '') {
 
                                                             if ($orderContent['content_type'] == '') {
                                                             ?>
@@ -587,10 +602,13 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
                                                         <!-- content upload section start -->
                                                         <div class="content-upload">
-                                                            <div class="content-upload-wrap">
-                                                                <input class="file-upload-input" name="content-file"
-                                                                    type='file' onchange="readURL(this);"
-                                                                    accept=".doc, .docx" />
+                                                            <div class="content-upload-wrap border">
+                                                                <form action="" method="post" id="content-form"
+                                                                    enctype="multipart/form-data">
+                                                                    <input class="file-upload-input" name="content-file"
+                                                                        type='file' onchange="readURL(this);"
+                                                                        accept=".doc, .docx" />
+                                                                </form>
                                                                 <div class="drag-text">
                                                                     <p>
                                                                         <i
@@ -611,6 +629,8 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                                 class="fa-sharp fa-solid fa-xmark fs-5"></i></span>
                                                                     </button>
                                                                 </div>
+                                                                <button class="btn btn-sm btn-primary"
+                                                                    onclick="uploadContent()">Update Content</button>
                                                             </div>
                                                         </div>
                                                         <!-- content upload section end -->
@@ -674,8 +694,19 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                 </small>
                                                             </span>
                                                         </h5>
-                                                        <div class="bg-primary text-light rounded p-2">
-                                                            <?= basename($orderContent['path']); ?>
+                                                        <div
+                                                            class="bg-primary text-light rounded d-flex justify-content-between w-100 p-2">
+                                                            <?= basename($contentPath); ?>
+
+                                                            <a href="<?= URL ?>/content-download.php?data='<?=base64_encode(urlencode($orderId))?>"
+                                                                target="_blank" rel="noopener noreferrer">
+                                                                <span class="badge text-bg-info text-light">
+                                                                    Download
+                                                                    <i
+                                                                        class="fa-sharp fa-regular fa-file-arrow-down"></i>
+                                                                </span>
+                                                            </a>
+
                                                         </div>
                                                         <?php
                                                         }
@@ -839,7 +870,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                 <!-- ============ if order is processing ============-->
                                                 <?php
                                                 if ($ordStatCode == PROCESSINGCODE) {
-                                                    if ($orderContent['path'] != '') {
+                                                    if ($contentPath != '') {
 
                                                         if ($showOrder['changesReq'] > 0) {
                                                             
@@ -848,6 +879,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                 $chngMsg = 'There is Some Request for Changes!';
                                                             endif;
                                                             ?>
+
                                                 <div class="text-center mt-2">
                                                     <p class="text-danger font-weight-bold"><?= $chngMsg; ?></p>
                                                     <button class="btn btn-sm btn-primary"
@@ -855,7 +887,8 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                         ?</button>
                                                 </div>
 
-                                                <?php } else {
+                                                <?php 
+                                                        } else {
 
                                                             echo '
                                                             <div class="d-flex justify-content-center my-3">
@@ -866,11 +899,8 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
                                                             }
                                                     } else {
-                                                        echo '
-                                                        <div class="d-flex justify-content-center">
-                                                            <a href="contact.php" class="btn w-50 contact_button text-center"
-                                                                name="">Contact '.COMPANY_S.'</a>
-                                                    </div>';
+                                                        echo '<p class="text-danger font-weight-bold text-center mt-2">Please Upload The Content First</p>';
+
                                                     }
                                                 }
                                                 ?>
@@ -1208,6 +1238,31 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
             }
         })
         return false;
+    }
+
+    const uploadContent = () => {
+        document.getElementById('content-form').submit();
+        // $.ajax({
+        //     url: "ajax/order-update.php",
+        //     type: "POST",
+        //     data: {
+        //         // contentUpload: <?= $orderId; ?>
+        //         contentUpload  : $("#content-form").serialize()
+        //     },
+        //     success: function(response) {
+        //         console.log(response);
+        //         // if (data.includes('finished')) {
+        //         //     location.reload();
+        //         // } else {
+        //         //     Swal.fire(
+        //         //         'failed!',
+        //         //         'Failed to Complete Order!! 😥.',
+        //         //         'error'
+        //         //     )
+        //         // }
+
+        //     }
+        // });
     }
     </script>
 

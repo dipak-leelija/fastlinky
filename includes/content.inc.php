@@ -26,6 +26,7 @@
 	define('ORD_ACPT', 					' Order Accepted');
 	define('ORD_DEL', 					' Order has been delivered!');
 	define('ORD_COMP', 					' Order has been completed!');
+	define('CONT_UPDT', 				' Content file is successfully updated!');
 
 
 	define('ERR_LINK', 					' Something is error with the provided link');
