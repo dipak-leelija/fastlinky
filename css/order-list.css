@@ -48,7 +48,8 @@
 
 .Failed,
 .Rejected,
-.Cancelled {
+.Cancelled,
+.Incomplete {
     background-color: rgb(245, 41, 41) !important;
     color: #fff !important;
 }

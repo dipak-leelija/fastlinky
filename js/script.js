@@ -7,6 +7,10 @@ const goback = () =>{
     history.back()
 }
 
+const goTo = (url) => {
+    location.href = url;
+}
+
 //delete an html eliment by id
 const deleteElement = (elemId) =>{
     document.getElementById(elemId).remove();
