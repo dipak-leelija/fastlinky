@@ -96,9 +96,19 @@ const getStateList = (t) => {
         success: function(response) {
             console.log(response);
             document.getElementById('stateId').innerHTML = response;
+        }, error: function (error) {
+            alert(error);
         }
     });
+        //AJAX SETUP "error"//
+        $.ajaxSetup({
+            "error": function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest + ' ' + textStatus + ' ' + errorThrown); //however you want
+            }
+        })
 }
+
+
 
 const getCitiesList = (t) => {
     let stateId = t.value;
