@@ -93,7 +93,7 @@ const getStateList = (t) => {
             countryId: countryId
         },
         success: function(response) {
-            // console.log(response);
+            console.log(response);
             document.getElementById('stateId').innerHTML = response;
         }
     });
