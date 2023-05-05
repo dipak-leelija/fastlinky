@@ -86,6 +86,7 @@ const copyText = (fieldId) => {
 
 const getStateList = (t) => {
     let countryId = t.value;
+    console.log(`countryId ${countryId}`);
     $.ajax({
         url: "ajax/location.ajax.php",
         type: "POST",
