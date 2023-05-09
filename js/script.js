@@ -85,7 +85,6 @@ const copyText = (fieldId) => {
 
 
 const getStateList = (t) => {
-    var countryId = t.value;
     alert(`countryId ${countryId}`);
     $.ajax({
         type: "POST",
@@ -96,7 +95,7 @@ const getStateList = (t) => {
             document.getElementById('stateId').innerHTML = response.trim();
         },
         error:function(error) {
-            alert(error);
+            alert(`Error => ${error}`);
         }
     });
 }
