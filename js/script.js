@@ -85,19 +85,17 @@ const copyText = (fieldId) => {
 
 
 const getStateList = (t) => {
-    let countryId = t.value;
+    var countryId = t.value;
     alert(`countryId ${countryId}`);
     $.ajax({
-        url: "ajax/location.ajax.php",
         type: "POST",
-        data: {
-            countryId: countryId
+        url: 'ajax/location.ajax.php',
+        data: { countryId: countryId },
+        success:function(response){
+            alert(response.trim());
+            document.getElementById('stateId').innerHTML = response.trim();
         },
-        success: function(response) {
-            alert(response);
-            document.getElementById('stateId').innerHTML = response;
-        },
-        error: function (error) {
+        error:function(error) {
             alert(error);
         }
     });
