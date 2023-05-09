@@ -94,7 +94,7 @@ const getStateList = (t) => {
             countryId: countryId
         },
         success: function(response) {
-            console.log(response);
+            alert(response);
             document.getElementById('stateId').innerHTML = response;
         }, error: function (error) {
             alert(error);
