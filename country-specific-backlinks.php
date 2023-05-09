@@ -279,7 +279,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
                 <div class="actually-card-div1">
                     <div class="  actually-card-inn-img-div">
-                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
+                        <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
                     <div class="lbp-texting">
                         <b>Reporting In Detail :</b> A complete report that provides all necessary information on the

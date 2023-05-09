@@ -105,7 +105,7 @@
     padding: 5rem;
 }
 .work-to-improve-vision-main-sec p{
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
 }
 .work-vision-h1{
@@ -119,7 +119,7 @@
 .lbp-texting {
     text-align: justify;
     color: #747880;
-    font-size: 17px;
+    font-size: 1.2rem;
     line-height: 1.625em;
 }
 
@@ -274,7 +274,7 @@
 .tipsto-get-best-gps p{
     text-align: start;
     color: var(--black);
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 400;
     line-height: 1.4;
 }
@@ -299,7 +299,7 @@
 .definition-gp-div p{
     text-align: start;
     color: var(--black);
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 400;
     line-height: 1.4;
 }

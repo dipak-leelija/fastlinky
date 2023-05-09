@@ -76,7 +76,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
                 <div class=" col-md-6 order-1 order-md-2 mb-4 mb-md-0">
                     <div class="mlb-wrapping">
-                        <img src="./images/freepik-img/guest-posting-imgs-3.webp" class="w-100" alt="">
+                        <img src="./images/freepik-img/guest-posting-imgs-3.png" class="w-100" alt="">
                     </div>
                 </div>
             </div>
