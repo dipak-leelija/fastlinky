@@ -7,6 +7,10 @@ const goback = () =>{
     history.back()
 }
 
+const goTo = (url) => {
+    location.href = url;
+}
+
 //delete an html eliment by id
 const deleteElement = (elemId) =>{
     document.getElementById(elemId).remove();
@@ -82,6 +86,7 @@ const copyText = (fieldId) => {
 
 const getStateList = (t) => {
     let countryId = t.value;
+    alert(`countryId ${countryId}`);
     $.ajax({
         url: "ajax/location.ajax.php",
         type: "POST",
@@ -89,11 +94,21 @@ const getStateList = (t) => {
             countryId: countryId
         },
         success: function(response) {
-            // console.log(response);
+            console.log(response);
             document.getElementById('stateId').innerHTML = response;
+        }, error: function (error) {
+            alert(error);
         }
     });
+        //AJAX SETUP "error"//
+        $.ajaxSetup({
+            "error": function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest + ' ' + textStatus + ' ' + errorThrown); //however you want
+            }
+        })
 }
+
+
 
 const getCitiesList = (t) => {
     let stateId = t.value;

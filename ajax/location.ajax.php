@@ -5,6 +5,8 @@ require_once ROOT_DIR . "../classes/utility.class.php";
 
 $Utility    = new Utility();
 
+print_r($_REQUEST);
+
 if (isset($_POST['countryId'])) {
     echo '<option value="" selected disabled>Select State </option>';
     echo $Utility->populateDropDown2('', 'id', 'name', 'country_id', $_POST['countryId'], 'states');
