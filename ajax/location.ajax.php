@@ -1,13 +1,9 @@
 <?php
 require_once dirname(__DIR__) . "/includes/constant.inc.php";
-echo ROOT_DIR;
 require_once ROOT_DIR . "/_config/dbconnect.php";
-echo 'Line is here.';
 require_once ROOT_DIR . "/classes/utility.class.php";
 
 $Utility    = new Utility();
-
-print_r($_REQUEST);
 
 if (isset($_POST['countryId'])) {
     echo '<option value="" selected disabled>Select State </option>';
