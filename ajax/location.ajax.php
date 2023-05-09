@@ -1,5 +1,6 @@
 <?php
 require_once dirname(__DIR__) . "/includes/constant.inc.php";
+echo ROOT_DIR;
 require_once ROOT_DIR . "../_config/dbconnect.php";
 echo 'Line is here.';
 require_once ROOT_DIR . "../classes/utility.class.php";
