@@ -70,7 +70,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
                 <div class="col-12 col-lg-6 col-md-6  p-0">
                     <div class="mlb-wrapping">
-                        <img src="./images/freepik-img/link-insertion-banner.webp" class="img-fluid"
+                        <img src="./images/freepik-img/link-insertion-banner.png" class="img-fluid"
                             style="background-image: linear-gradient(120deg, #FDA33B 50%, #FA8273 80%); border-radius: 4rem;"
                             alt="">
                     </div>
@@ -140,7 +140,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
                 <div class="actually-card-div1">
                     <div class="  actually-card-inn-img-div">
-                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img"
+                        <img src="./images/dummy-img/real-bo-ul-li-2.png" class="insertion-page-second-ul-li-img"
                             alt="">
                     </div>
                     <div class="lbp-texting">
@@ -209,17 +209,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-md-4 col-xl-4">
                 <div class="how-it-works-main-card-div">
                     <div class="img-country-div">
-                        <img src="./images/dummy-img/link-insertion-service-howitwork2.png" class="w-100" alt="">
-                    </div>
-                    <h4>Beneficial <span>Content</span> </h4>
-                    <p>
-                        Our professional team strives to improve these blog posts perfectly. They ensure that your link
-                        is naturally included in the content.</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-xl-4">
-                <div class="how-it-works-main-card-div">
-                    <div class="img-country-div">
                         <img src="./images/dummy-img/link-insertion-service-howitwork3.png" class="w-100" alt="">
                     </div>
                     <h4>Valid <span>Report</span> </h4>
@@ -229,6 +218,18 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         your dashboard. </p>
                 </div>
             </div>
+            <div class="col-md-4 col-xl-4">
+                <div class="how-it-works-main-card-div">
+                    <div class="img-country-div">
+                        <img src="./images/dummy-img/link-insertion-service-howitwork2.png" class="w-100" alt="">
+                    </div>
+                    <h4>Beneficial <span>Content</span> </h4>
+                    <p>
+                        Our professional team strives to improve these blog posts perfectly. They ensure that your link
+                        is naturally included in the content.</p>
+                </div>
+            </div>
+            
         </div>
     </section>
 
@@ -285,7 +286,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-sm-6 col-lg-3 my-2">
                         <div class="who-take-card h-100">
                             <div class="text-center pb-3">
-                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
                             <h4 class="how-fonts-h4  ">Contextual Link Building </h4>
                             <p class="">
@@ -329,7 +330,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-xl-6 col-md-6 m-auto">
 
-                <img src="./images/freepik-img/guest-posting-imgs-3.webp" class=" w-100  my-4 " alt="">
+                <img src="./images/freepik-img/guest-posting-imgs-3.png" class=" w-100  my-4 " alt="">
 
             </div>
         </div>

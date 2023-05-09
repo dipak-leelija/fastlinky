@@ -105,7 +105,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
             <div class="col-lg-6 col-md-6 order-1 order-md-2 ">
                 <div class="">
                     <div>
-                        <img src="./images/freepik-img/casino-img-2.png" class=" w-100  mb-4 " alt="">
+                        <img src="./images/freepik-img/casino-img-2.webp" class=" w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
@@ -121,7 +121,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
         <div class="row ">
             <div class="col-lg-6 col-md-6 m-auto">
                 <div>
-                    <img src="./images/freepik-img/casino-img1.png" class=" w-100  mb-4 " alt="">
+                    <img src="./images/freepik-img/casino-img1.webp" class=" w-100  mb-4 " alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -144,7 +144,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
 
                     <div class=" text-center text-md-end mt-md-5 my-4">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn srvc-common-btn ">Get Started</button>
+                            <button type="button" class="btn srvc-common-btn ">Get Your Links Now</button>
                         </a>
                     </div>
                 </div>
@@ -174,14 +174,14 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
 
                     <div class="text-center text-md-start mt-5">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn srvc-common-btn ">Get Started</button>
+                            <button type="button" class="btn srvc-common-btn ">See Pricing</button>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 m-auto">
                 <div class="text-center">
-                    <img src="./images/freepik-img/casino-img-3.png" class=" w-100  mb-4 " alt="">
+                    <img src="./images/freepik-img/casino-img-3.webp" class=" w-100  mb-4 " alt="">
                 </div>
             </div>
         </div>
@@ -332,7 +332,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
         <div class="row ">
             <div class="col-lg-6 col-md-6 m-auto">
                 <div class="text-center">
-                    <img src="./images/freepik-img/casino-5.jpg" class=" w-100  mb-4 " alt="">
+                    <img src="./images/freepik-img/casino-5.webp" class=" w-100  mb-4 " alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -356,7 +356,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
                         backlinks to help you make the most of your money. </p>
                     <div class="text-center text-md-end mt-md-3 my-4 ">
                         <a href="#pricing-cards">
-                            <button type="button" class="btn srvc-common-btn ">Get Started</button>
+                            <button type="button" class="btn srvc-common-btn ">Get Your Links Now</button>
                         </a>
                     </div>
                 </div>

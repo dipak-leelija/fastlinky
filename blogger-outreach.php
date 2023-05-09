@@ -210,7 +210,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <div class="col-md-4 my-2 my-md-3">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class="pb-3 text-center text-sm-start">
-                                    <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
+                                    <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
                                 <h4 class="how-fonts-h4  py-2">No Duplication</h4>
@@ -223,7 +223,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <div class="col-md-4 my-2 my-md-3">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class="pb-3 text-center text-sm-start">
-                                    <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
+                                    <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
                                 <h4 class="how-fonts-h4  py-2">Domain Authority</h4>
@@ -236,7 +236,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <div class="col-md-4 my-2 my-md-3">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class=" pb-3 text-center text-sm-start">
-                                    <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
+                                    <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
                                 <h4 class="how-fonts-h4  py-2">Native Content</h4>
@@ -250,7 +250,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <div class="col-md-4 my-2 my-md-3 ">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class=" pb-3 text-center text-sm-start">
-                                    <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
+                                    <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
                                 <h4 class="how-fonts-h4  py-2">Reasonable Prices</h4>
@@ -433,7 +433,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6 real-bo-col-second">
                 <div class="text-center">
-                    <img src="./images/freepik-img/link-insertion-banner.webp" class="w-100 mb-md-4" alt="">
+                    <img src="./images/freepik-img/link-insertion-banner.png" class="w-100 mb-md-4" alt="">
                 </div>
 
 
