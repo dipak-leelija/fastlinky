@@ -96,16 +96,11 @@ const getStateList = (t) => {
         success: function(response) {
             alert(response);
             document.getElementById('stateId').innerHTML = response;
-        }, error: function (error) {
+        },
+        error: function (error) {
             alert(error);
         }
     });
-        //AJAX SETUP "error"//
-        $.ajaxSetup({
-            "error": function (XMLHttpRequest, textStatus, errorThrown) {
-                alert(XMLHttpRequest + ' ' + textStatus + ' ' + errorThrown); //however you want
-            }
-        })
 }
 
 
