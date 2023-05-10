@@ -40,7 +40,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- starting of white lebel links building main banner    -->
     <section class="white_lebel_link_banner">
         <div class="row">
-            <div class="d-flex flex-column justify-content-center col-md-6  px-0 px-md-4">
+            <div class="d-flex flex-column justify-content-center col-md-6 order-2 order-md-1  px-0 px-md-4">
                 <div class="bo-wrap">
                     <h1 class="blogout-main-h1">White Label Link Building Services </h1>
                     <p class=" mt-3 mb-4 py-0 py-md-2 white-lebel-main-p">FastLinky collaborates with many company
@@ -54,9 +54,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
             </div>
-            <div class=" col-md-6 text-center p-0">
+            <div class=" col-md-6 text-center order-1 order-md-2 p-0">
                 <div class="bo-wrap p-0">
-                    <img src="./images/white-label-link-building.webp"  alt="">
+                    <img src="./images/white-label-link-building.webp" class="w-100" alt="">
                 </div>
 
             </div>
@@ -67,12 +67,12 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- paragraph_texts section start -->
     <section class="paragraph_texts">
         <div class="row">
-            <div class="col-md-6 order-2 order-md-1">
+        <div class="col-md-6 ">
                 <div class="text-center">
                     <img src="./images/freepik-img/guest-posting-imgs-4.webp" class="w-100 m-auto mb-4" alt="">
                 </div>
             </div>
-            <div class=" col-md-6 order-1 order-md-2 m-auto">
+            <div class=" col-md-6  m-auto">
                 <div>
                     <p>The greatest time to start making a plan is right now. Your SEO approach must include <b>white
                             hat link building service</b> , and our team is ready to listen to your concerns, offer
@@ -94,6 +94,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
 
             </div>
+            
 
         </div>
     </section>
@@ -171,7 +172,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6  m-auto">
                 <div class="text-center">
-                    <img src="./images/process-showing-fastlinky.png" class=" mb-4 m-auto" alt="">
+                    <img src="./images/process-showing-fastlinky.png" class="w-100 mb-4 m-auto" alt="">
                 </div>
             </div>
         </div>

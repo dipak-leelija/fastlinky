@@ -70,9 +70,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
                 <div class="col-12 col-lg-6 col-md-6  p-0">
                     <div class="mlb-wrapping">
-                        <img src="./images/freepik-img/link-insertion-banner.png" class="img-fluid"
-                            style="background-image: linear-gradient(120deg, #FDA33B 50%, #FA8273 80%); border-radius: 4rem;"
-                            alt="">
+                        <img src="./images/freepik-img/link-insertion-banner.png" class="img-fluid banner-ext-style"
+                           alt="">
                     </div>
                 </div>
             </div>

@@ -8,6 +8,11 @@
     background-size: cover;
 }
 
+.banner-ext-style {
+    background-image: linear-gradient(120deg, #FDA33B 50%, #FA8273 80%);
+    border-radius: 4rem;
+}
+
 @media(max-width:766px) {
     .managed-link-building-main-banner {
         background-position: inherit;
@@ -137,12 +142,10 @@
 
 .actually-card-div1:hover {
     transition: all .9s ease;
-    background-color: #FFF0;
     box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
-    background-image: url('../images/dummy-img/card-hover-bg-img-removebg-preview.jpg');
+    background-image: url('../images/dummy-img/card-hover-bg-image.png');
     background-position: top right;
     background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .getyour-linkbtn {
@@ -179,6 +182,7 @@
 /* --------------------------------------------------------------------------------------------- */
 .how-it-works-main-section {
     padding: 6rem;
+    background: #3a8e9129;
 }
 
 .how-it-works-main-section h1 {
@@ -193,9 +197,9 @@
 .how-it-works-main-section span {
     color: var(--mustard);
 }
+
 .img-country-div {
     margin: auto;
-    min-height: 305px;
     width: 79%;
 }
 
@@ -252,13 +256,9 @@
     box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
     -webkit-box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
     transition: all .9s ease;
-    background-color: #FFF0;
-    background-image: url(../images/dummy-img/card-hover-bg-img-removebg-preview.jpg);
+    background-image: url('../images/dummy-img/card-hover-bg-image.png');
     background-position: top right;
     background-repeat: no-repeat;
-    background-size: cover;
-    /* border-top-right-radius: 65px;
-    border-top: 2px solid var(--mustard); */
 }
 
 .who-take-card h4 {
@@ -393,7 +393,7 @@
     }
 
     .how-it-works-1st-img {
-        width: 490px !important;
+        display: none;
 
     }
 }
@@ -437,20 +437,12 @@
         font-size: 2.6rem !important;
     }
 
-    .how-it-works-1st-img {
-        width: 460px !important;
-
-    }
 }
 
 @media (min-width:336px) and (max-width:535px) {
 
     .pricing-bo-h1 {
         font-size: 2.2rem !important;
-    }
-
-    .how-it-works-1st-img {
-        width: 300px !important;
     }
 }
 
@@ -553,5 +545,19 @@
     .add-css-frleft {
         text-align: left;
         padding-left: 1rem;
+    }
+}
+
+@media (max-width:500px) {
+    .actually-card-div1:hover {
+        background-size: contain;
+    }
+
+    .who-take-card:hover {
+        background-size: contain;
+    }
+    .banner-ext-style {
+        background-image: linear-gradient(120deg, #FDA33B 50%, #FA8273 80%);
+        border-radius: 1.5rem;
     }
 }

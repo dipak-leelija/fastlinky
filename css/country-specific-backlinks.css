@@ -321,7 +321,12 @@
     .img-country-div {
         min-height: 200px;
     }
-
+    .how-itsworks-main-div-casino h1 {
+        font-size: 2rem;
+    }
+    .how-itsworks-main-div-casino h3{
+        text-align: center;
+    }
     .country-specific-banner-h1 {
         text-align: center;
     }

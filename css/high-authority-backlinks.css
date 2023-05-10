@@ -395,7 +395,7 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
         padding: 5rem 3rem !important;
     }
     .how-it-works-1st-img {
-        width: 490px !important;
+      display: none;
     }
     .advantages-of-using-bos-section ul {
         padding-left: 2rem;
@@ -437,17 +437,11 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
     .pricing-bo-h1 {
         font-size: 2.2rem !important;
     }
-    .how-it-works-1st-img {
-        width: 460px !important;
-    }
 }
 
 @media (min-width:336px) and (max-width:535px) {
     .pricing-bo-h1 {
         font-size: 1.9rem !important;
-    }
-    .how-it-works-1st-img {
-        width: 300px !important;
     }
 }
 
@@ -461,9 +455,6 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
     .pricing-bo-h1 {
         font-size: 1.9rem !important;
     }
-    .how-it-works-1st-img {
-        width: 285px !important;
-    }
 }
 
 @media (min-width:200px) and (max-width:312px) {
@@ -475,9 +466,6 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
     }
     .pricing-bo-h1 {
         font-size: 1.7rem !important;
-    }
-    .how-it-works-1st-img {
-        width: 253px !important;
     }
     .advantages-of-using-bos-section h3 {
         font-size: 23px;

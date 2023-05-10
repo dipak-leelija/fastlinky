@@ -10,6 +10,10 @@
     padding: 7rem 6rem;
 }
 
+.img-extra-csss {
+    width: 85%;
+}
+
 @media(max-width:766px) {
     .managed-link-building-main-banner {
         background-position: inherit;
@@ -42,6 +46,7 @@
     color: #324A6D;
     line-height: 1.5em;
 }
+
 .managed-link-btn {
     font-size: 20px;
     font-weight: 500;
@@ -61,7 +66,7 @@
 .tick-check {
     content: "\2714";
     font-family: Segoe UI Emoji;
-    font-size:1.3rem;
+    font-size: 1.3rem;
     font-weight: 500;
     line-height: 1;
     margin: 0 0 22px 0;
@@ -194,12 +199,10 @@
 
 .actually-card-div1:hover {
     transition: all .9s ease;
-    background-color: #FFF0;
     box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
-    background-image: url(../images/dummy-img/card-hover-bg-img-removebg-preview.jpg);
+    background-image: url('../images/dummy-img/card-hover-bg-image.png');
     background-position: top right;
     background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .textttting {
@@ -329,11 +332,9 @@
     box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
     -webkit-box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
     transition: all .9s ease;
-    background-color: #FFF0;
-    background-image: url(../images/dummy-img/card-hover-bg-img-removebg-preview.jpg);
+    background-image: url('../images/dummy-img/card-hover-bg-image.png');
     background-position: top right;
     background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .our-secret-delivering-main-card2 h4 {
@@ -421,6 +422,7 @@
     .managed-link-building-main-banner {
         padding: 4rem 1rem;
     }
+
     .external-css-fr-size {
         width: 100%;
     }
@@ -554,6 +556,7 @@
     .managed-link-building-main-banner {
         padding: 3rem 1rem;
     }
+
     .mlb-starting-main-p {
         font-size: 1.2rem !important;
     }
@@ -608,9 +611,6 @@
         text-align: center;
     }
 
-
-
-
     .actually-card-div1 {
         display: inline-block !important;
         padding: 1.5rem 1rem !important;
@@ -624,5 +624,15 @@
         padding-left: 0rem !important;
         padding-bottom: 1rem;
         text-align: center;
+    }
+}
+
+@media (max-width:500px) {
+    .actually-card-div1:hover {
+        background-size: contain;
+    }
+
+    .our-secret-delivering-main-card2:hover {
+        background-size: contain;
     }
 }

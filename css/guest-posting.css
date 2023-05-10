@@ -143,12 +143,10 @@
 
 .actually-card-div1:hover {
     transition: all .9s ease;
-    background-color: #FFF0;
     box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
-    background-image: url(../images/dummy-img/card-hover-bg-img-removebg-preview.jpg);
+    background-image: url('../images/dummy-img/card-hover-bg-image.png');
     background-position: top right;
     background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .external-css-fr-size {
@@ -454,6 +452,9 @@
 
     .who-can-take-section {
         padding: 1rem !important;
+    }
+    .actually-card-div1:hover {
+       background-size: contain;
     }
 }
 

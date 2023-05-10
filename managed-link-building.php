@@ -67,7 +67,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-md-6 order-1 order-md-2 text-center p-0">
                 <div class="mlb-wrapping">
-                    <img src="./images/process-showing-fastlinky.png" class="" alt="">
+                    <img src="./images/process-showing-fastlinky.png" class="img-extra-csss" alt="">
                 </div>
             </div>
         </div>

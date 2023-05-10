@@ -318,14 +318,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     <section class="lbs-actually-matters-main">
         <div class="row">
-            <div class="col-xl-6 col-md-6 m-auto text-center">
+            <div class="col-xl-6 col-md-6 m-auto text-center order-2 order-sm-1">
                 <div class="">
                     <div>
                         <img src="./images/freepik-img/home_img-01.webp" class=" w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
-            <div class=" col-xl-6 col-md-6">
+            <div class=" col-xl-6 col-md-6 order-1 order-sm-2">
                 <h1 class="cannabis-cbd-service-h1 ">
                     <span>CBD SEO company </span>
                 </h1>
