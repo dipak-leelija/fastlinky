@@ -153,9 +153,10 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
     <link href="css/contact-us.css" rel='stylesheet' type='text/css' />
     <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
     <!-- Bootstrap Core CSS -->
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
+    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
@@ -228,8 +229,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
                             <?php
                           }
                           ?>
-                            <form method="post" action="contact"
-                                class="contact-form needs-validation" novalidate>
+                            <form method="post" action="contact" class="contact-form needs-validation" novalidate>
                                 <div class="row">
                                     <div class="col-sm-6 mb-3">
                                         <div class="form-group">

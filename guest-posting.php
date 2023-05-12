@@ -45,7 +45,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="">
             <div class="row w-100 m-auto">
                 <div class=" col-md-6 order-2 order-md-1 px-0 px-md-3">
-                    <div class="mlb-wrapping">
+                    <div class="">
                         <h1 class="high-quality-gp-heading-main">High quality <span>guest posting </span> service </h1>
                         <p class="  mb-3 py-0  high-quality-gp-main-p">Effective backlinks and content links
                             that raise the organic growth of your website.

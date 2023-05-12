@@ -48,8 +48,10 @@ $cusId		= $utility->returnSess('userid', 0);
     <!-- Bootstrap Core CSS -->
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/about-us.css" rel='stylesheet' type='text/css' />
@@ -66,8 +68,7 @@ $cusId		= $utility->returnSess('userid', 0);
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="about-avatar">
-                        <img class="about-banner-img" src="./images/about-us-banner.png" title=""
-                            alt="">
+                        <img class="about-banner-img" src="./images/about-us-banner.png" title="" alt="">
 
                     </div>
                 </div>
@@ -188,7 +189,9 @@ $cusId		= $utility->returnSess('userid', 0);
                                     class="rounded-circle ">
                             </div>
                             <h4 class="sub-info">Quality above quantity</h4>
-                            <p class="display-30 mb-0">Instead of simply aiming to get more backlinks, we concentrate on providing high-quality backlinks from reliable and respected domains. This will raise your website's credibility and dependability in the results of search engines.</p>
+                            <p class="display-30 mb-0">Instead of simply aiming to get more backlinks, we concentrate on
+                                providing high-quality backlinks from reliable and respected domains. This will raise
+                                your website's credibility and dependability in the results of search engines.</p>
                         </div>
                         <div class="text-center text-sm-right">
                             <div class="mb-4">
@@ -196,7 +199,9 @@ $cusId		= $utility->returnSess('userid', 0);
                                     class="rounded-circle ">
                             </div>
                             <h4 class="sub-info">Personalized strategy</h4>
-                            <p class="display-30 mb-0">We are aware that every firm is distinct and has certain requirements. Because of this, we take a personalized approach to backlink development, making sure to adjust our plans to suit your unique objectives and requirements.</p>
+                            <p class="display-30 mb-0">We are aware that every firm is distinct and has certain
+                                requirements. Because of this, we take a personalized approach to backlink development,
+                                making sure to adjust our plans to suit your unique objectives and requirements.</p>
                         </div>
                     </div>
                 </div>
@@ -213,7 +218,10 @@ $cusId		= $utility->returnSess('userid', 0);
                                     class="rounded-circle ">
                             </div>
                             <h4 class="sub-info">Knowledge and practice</h4>
-                            <p class="display-30 mb-0">Our team of professionals has years of backlink-building expertise and is well-versed in the complexities of the market. We thoroughly choose the greatest backlinks for your company and make sure they are of the highest caliber using our knowledge.</p>
+                            <p class="display-30 mb-0">Our team of professionals has years of backlink-building
+                                expertise and is well-versed in the complexities of the market. We thoroughly choose the
+                                greatest backlinks for your company and make sure they are of the highest caliber using
+                                our knowledge.</p>
                         </div>
 
                         <div class="text-center text-sm-left">
@@ -222,7 +230,9 @@ $cusId		= $utility->returnSess('userid', 0);
                                     class="rounded-circle ">
                             </div>
                             <h4 class="sub-info">Thorough information</h4>
-                            <p class="display-30 mb-0">We offer clear information so you can observe how your backlink development activities are progressing and comprehend the effects they are making on the accessibility and rankings of your website.</p>
+                            <p class="display-30 mb-0">We offer clear information so you can observe how your backlink
+                                development activities are progressing and comprehend the effects they are making on the
+                                accessibility and rankings of your website.</p>
                         </div>
                     </div>
                 </div>
@@ -323,7 +333,9 @@ $cusId		= $utility->returnSess('userid', 0);
                         </div>
                         <div class="content mt-4">
                             <h5 class="title">Complete Accountability</h5>
-                            <p class="text-muted mt-3 mb-0">At our website, we bear full responsibility for the outcomes we produce. We are dedicated to giving your firm a return on its money spent on backlink building since we recognize that it is an investment.</p>
+                            <p class="text-muted mt-3 mb-0">At our website, we bear full responsibility for the outcomes
+                                we produce. We are dedicated to giving your firm a return on its money spent on backlink
+                                building since we recognize that it is an investment.</p>
                             <div class="mt-3">
                                 <!-- <a href="javascript:void(0)" class="text-custom">Read More <i
                                         class="mdi mdi-chevron-right"></i></a> -->
@@ -358,14 +370,16 @@ $cusId		= $utility->returnSess('userid', 0);
                         </div>
                         <div class="content mt-4">
                             <h5 class="title">Competitive costs</h5>
-                            <p class="text-muted mt-3 mb-0">We provide backlink-building services at cheap prices, making it feasible for companies of all sizes to increase their online visibility and connect with their target market.</p>
+                            <p class="text-muted mt-3 mb-0">We provide backlink-building services at cheap prices,
+                                making it feasible for companies of all sizes to increase their online visibility and
+                                connect with their target market.</p>
                             <div class="mt-3">
                                 <!-- <a href="javascript:void(0)" class="text-custom">Read More <i
                                         class="mdi mdi-chevron-right"></i></a> -->
                             </div>
                         </div>
                         <div class="big-icon h1 text-custom">
-                            <span class="uim-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            <span class="uim-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     width="1em">
                                     <path class="uim-primary"
                                         d="M12,6a.99974.99974,0,0,1,1,1v4.42249l2.09766,1.2113a1.00016,1.00016,0,0,1-1,1.73242l-2.59766-1.5A1.00455,1.00455,0,0,1,11,12V7A.99974.99974,0,0,1,12,6Z">
@@ -382,7 +396,7 @@ $cusId		= $utility->returnSess('userid', 0);
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
                     <div class="card service-wrapper rounded border-0 shadow p-4">
                         <div class="icon text-center text-custom h1 shadow rounded bg-white">
-                            <span class="uim-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            <span class="uim-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     width="1em">
                                     <path class="uim-quaternary"
                                         d="M6,23H2a.99974.99974,0,0,1-1-1V16a.99974.99974,0,0,1,1-1H6a.99974.99974,0,0,1,1,1v6A.99974.99974,0,0,1,6,23Z">
@@ -397,14 +411,16 @@ $cusId		= $utility->returnSess('userid', 0);
                         </div>
                         <div class="content mt-4">
                             <h5 class="title">Contemporary Work Processes</h5>
-                            <p class="text-muted mt-3 mb-0">In order to give the finest outcomes to our clients, we have adopted a modern workflow. To provide the greatest outcomes for our clients, we are always searching for methods to streamline our processes and procedures..</p>
+                            <p class="text-muted mt-3 mb-0">In order to give the finest outcomes to our clients, we have
+                                adopted a modern workflow. To provide the greatest outcomes for our clients, we are
+                                always searching for methods to streamline our processes and procedures..</p>
                             <div class="mt-3">
                                 <!-- <a href="javascript:void(0)" class="text-custom">Read More <i
                                         class="mdi mdi-chevron-right"></i></a> -->
                             </div>
                         </div>
                         <div class="big-icon h1 text-custom">
-                            <span class="uim-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            <span class="uim-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     width="1em">
                                     <path class="uim-quaternary"
                                         d="M6,23H2a.99974.99974,0,0,1-1-1V16a.99974.99974,0,0,1,1-1H6a.99974.99974,0,0,1,1,1v6A.99974.99974,0,0,1,6,23Z">
@@ -424,7 +440,7 @@ $cusId		= $utility->returnSess('userid', 0);
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
                     <div class="card service-wrapper rounded border-0 shadow p-4">
                         <div class="icon text-center text-custom h1 shadow rounded bg-white">
-                            <span class="uim-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            <span class="uim-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     width="1em">
                                     <path class="uim-tertiary"
                                         d="M20 11a.99018.99018 0 0 1-.71-.29 1.16044 1.16044 0 0 1-.21-.33008.94107.94107 0 0 1 0-.75976A1.02883 1.02883 0 0 1 19.29 9.29a1.04667 1.04667 0 0 1 1.41992 0 1.14718 1.14718 0 0 1 .21.33008.94107.94107 0 0 1 0 .75976 1.16044 1.16044 0 0 1-.21.33008A.99349.99349 0 0 1 20 11zM19 6.5a1.0032 1.0032 0 0 1 1-1h0a1.0032 1.0032 0 0 1 1 1h0a1.0032 1.0032 0 0 1-1 1h0A1.0032 1.0032 0 0 1 19 6.5zM20 4a.98979.98979 0 0 1-.91992-1.37988A1.02883 1.02883 0 0 1 19.29 2.29a1.04669 1.04669 0 0 1 1.41992 0 1.02883 1.02883 0 0 1 .21.33008A.98919.98919 0 0 1 20.71 3.71a1.16044 1.16044 0 0 1-.33008.21A.9994.9994 0 0 1 20 4zM7.03027 6.24023a.99364.99364 0 0 1 .7295-1.21h0a.9907.9907 0 0 1 1.21.7295h0a.99891.99891 0 0 1-.7295 1.21h0A.96451.96451 0 0 1 8 7H8A.99122.99122 0 0 1 7.03027 6.24023zm4-1a.99364.99364 0 0 1 .7295-1.21h0a.9907.9907 0 0 1 1.21.7295h0a.99891.99891 0 0 1-.7295 1.21h0A.96451.96451 0 0 1 12 6h0A1.00294 1.00294 0 0 1 11.03027 5.24023zm4-1a.99816.99816 0 0 1 .7295-1.21h0a1.00272 1.00272 0 0 1 1.21.7295h0a.99891.99891 0 0 1-.7295 1.21h0A.96451.96451 0 0 1 16 5h0A.99122.99122 0 0 1 15.03027 4.24023zM4 8A.99042.99042 0 0 1 3 7a.83154.83154 0 0 1 .08008-.37988A1.02883 1.02883 0 0 1 3.29 6.29 1.04669 1.04669 0 0 1 4.71 6.29a1.02883 1.02883 0 0 1 .21.33008A.99013.99013 0 0 1 4 8zM4 11a.99018.99018 0 0 1-.71-.29 1.16044 1.16044 0 0 1-.21-.33008.94107.94107 0 0 1 0-.75976A1.14718 1.14718 0 0 1 3.29 9.29 1.04667 1.04667 0 0 1 4.71 9.29a1.14718 1.14718 0 0 1 .21.33008.94107.94107 0 0 1 0 .75976 1.16044 1.16044 0 0 1-.21.33008A.99349.99349 0 0 1 4 11zM15 10a1.0032 1.0032 0 0 1 1-1h0a1.0032 1.0032 0 0 1 1 1h0a1.0032 1.0032 0 0 1-1 1h0A1.0032 1.0032 0 0 1 15 10zm-4 0a1.0032 1.0032 0 0 1 1-1h0a1.0032 1.0032 0 0 1 1 1h0a1.0032 1.0032 0 0 1-1 1h0A1.0032 1.0032 0 0 1 11 10zM7 10A1.0032 1.0032 0 0 1 8 9H8a1.0032 1.0032 0 0 1 1 1H9a1.0032 1.0032 0 0 1-1 1H8A1.0032 1.0032 0 0 1 7 10z">
@@ -437,14 +453,15 @@ $cusId		= $utility->returnSess('userid', 0);
                         </div>
                         <div class="content mt-4">
                             <h5 class="title">Personalized strategy</h5>
-                            <p class="text-muted mt-3 mb-0">To provide the greatest outcomes for our clients, we are always searching for methods to streamline our processes and procedures..</p>
+                            <p class="text-muted mt-3 mb-0">To provide the greatest outcomes for our clients, we are
+                                always searching for methods to streamline our processes and procedures..</p>
                             <div class="mt-3">
                                 <!-- <a href="javascript:void(0)" class="text-custom">Read More <i
                                         class="mdi mdi-chevron-right"></i></a> -->
                             </div>
                         </div>
                         <div class="big-icon h1 text-custom">
-                            <span class="uim-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            <span class="uim-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     width="1em">
                                     <path class="uim-tertiary"
                                         d="M20 11a.99018.99018 0 0 1-.71-.29 1.16044 1.16044 0 0 1-.21-.33008.94107.94107 0 0 1 0-.75976A1.02883 1.02883 0 0 1 19.29 9.29a1.04667 1.04667 0 0 1 1.41992 0 1.14718 1.14718 0 0 1 .21.33008.94107.94107 0 0 1 0 .75976 1.16044 1.16044 0 0 1-.21.33008A.99349.99349 0 0 1 20 11zM19 6.5a1.0032 1.0032 0 0 1 1-1h0a1.0032 1.0032 0 0 1 1 1h0a1.0032 1.0032 0 0 1-1 1h0A1.0032 1.0032 0 0 1 19 6.5zM20 4a.98979.98979 0 0 1-.91992-1.37988A1.02883 1.02883 0 0 1 19.29 2.29a1.04669 1.04669 0 0 1 1.41992 0 1.02883 1.02883 0 0 1 .21.33008A.98919.98919 0 0 1 20.71 3.71a1.16044 1.16044 0 0 1-.33008.21A.9994.9994 0 0 1 20 4zM7.03027 6.24023a.99364.99364 0 0 1 .7295-1.21h0a.9907.9907 0 0 1 1.21.7295h0a.99891.99891 0 0 1-.7295 1.21h0A.96451.96451 0 0 1 8 7H8A.99122.99122 0 0 1 7.03027 6.24023zm4-1a.99364.99364 0 0 1 .7295-1.21h0a.9907.9907 0 0 1 1.21.7295h0a.99891.99891 0 0 1-.7295 1.21h0A.96451.96451 0 0 1 12 6h0A1.00294 1.00294 0 0 1 11.03027 5.24023zm4-1a.99816.99816 0 0 1 .7295-1.21h0a1.00272 1.00272 0 0 1 1.21.7295h0a.99891.99891 0 0 1-.7295 1.21h0A.96451.96451 0 0 1 16 5h0A.99122.99122 0 0 1 15.03027 4.24023zM4 8A.99042.99042 0 0 1 3 7a.83154.83154 0 0 1 .08008-.37988A1.02883 1.02883 0 0 1 3.29 6.29 1.04669 1.04669 0 0 1 4.71 6.29a1.02883 1.02883 0 0 1 .21.33008A.99013.99013 0 0 1 4 8zM4 11a.99018.99018 0 0 1-.71-.29 1.16044 1.16044 0 0 1-.21-.33008.94107.94107 0 0 1 0-.75976A1.14718 1.14718 0 0 1 3.29 9.29 1.04667 1.04667 0 0 1 4.71 9.29a1.14718 1.14718 0 0 1 .21.33008.94107.94107 0 0 1 0 .75976 1.16044 1.16044 0 0 1-.21.33008A.99349.99349 0 0 1 4 11zM15 10a1.0032 1.0032 0 0 1 1-1h0a1.0032 1.0032 0 0 1 1 1h0a1.0032 1.0032 0 0 1-1 1h0A1.0032 1.0032 0 0 1 15 10zm-4 0a1.0032 1.0032 0 0 1 1-1h0a1.0032 1.0032 0 0 1 1 1h0a1.0032 1.0032 0 0 1-1 1h0A1.0032 1.0032 0 0 1 11 10zM7 10A1.0032 1.0032 0 0 1 8 9H8a1.0032 1.0032 0 0 1 1 1H9a1.0032 1.0032 0 0 1-1 1H8A1.0032 1.0032 0 0 1 7 10z">
@@ -462,7 +479,7 @@ $cusId		= $utility->returnSess('userid', 0);
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
                     <div class="card service-wrapper rounded border-0 shadow p-4">
                         <div class="icon text-center text-custom h1 shadow rounded bg-white">
-                            <span class="uim-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            <span class="uim-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     width="1em">
                                     <path class="uim-quaternary"
                                         d="M12,22a.99974.99974,0,0,1-1-1V3a1,1,0,0,1,2,0V21A.99974.99974,0,0,1,12,22Z">
@@ -478,14 +495,15 @@ $cusId		= $utility->returnSess('userid', 0);
                         </div>
                         <div class="content mt-4">
                             <h5 class="title">Process improvement</h5>
-                            <p class="text-muted mt-3 mb-0">In order to give our clients the best outcomes possible, we are always searching for methods to streamline our tasks and procedures.</p>
+                            <p class="text-muted mt-3 mb-0">In order to give our clients the best outcomes possible, we
+                                are always searching for methods to streamline our tasks and procedures.</p>
                             <div class="mt-3">
                                 <!-- <a href="javascript:void(0)" class="text-custom">Read More <i
                                         class="mdi mdi-chevron-right"></i></a> -->
                             </div>
                         </div>
                         <div class="big-icon h1 text-custom">
-                            <span class="uim-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            <span class="uim-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     width="1em">
                                     <path class="uim-quaternary"
                                         d="M12,22a.99974.99974,0,0,1-1-1V3a1,1,0,0,1,2,0V21A.99974.99974,0,0,1,12,22Z">
@@ -506,7 +524,7 @@ $cusId		= $utility->returnSess('userid', 0);
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
                     <div class="card service-wrapper rounded border-0 shadow p-4">
                         <div class="icon text-center text-custom h1 shadow rounded bg-white">
-                            <span class="uim-svg" ><svg xmlns="http://www.w3.org/2000/svg"
+                            <span class="uim-svg"><svg xmlns="http://www.w3.org/2000/svg"
                                     enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="1em">
                                     <path class="uim-quaternary"
                                         d="M15,2c-3.3772,0.00142-6.27155,2.41462-6.88025,5.73651c2.90693-1.59074,6.553-0.52375,8.14374,2.38317c0.98206,1.79462,0.98206,3.96594,0,5.76057c3.8013-0.69634,6.31837-4.3424,5.62202-8.14369C21.27662,4.41261,18.37925,1.99872,15,2z">
@@ -519,14 +537,15 @@ $cusId		= $utility->returnSess('userid', 0);
                         </div>
                         <div class="content mt-4">
                             <h5 class="title">Fresh Designs</h5>
-                            <p class="text-muted mt-3 mb-0">Our backlink website has a clean, contemporary design that is intended to be user-friendly and simple to explore.</p>
+                            <p class="text-muted mt-3 mb-0">Our backlink website has a clean, contemporary design that
+                                is intended to be user-friendly and simple to explore.</p>
                             <div class="mt-3">
                                 <!-- <a href="javascript:void(0)" class="text-custom">Read More <i
                                         class="mdi mdi-chevron-right"></i></a> -->
                             </div>
                         </div>
                         <div class="big-icon h1 text-custom">
-                            <span class="uim-svg" ><svg xmlns="http://www.w3.org/2000/svg"
+                            <span class="uim-svg"><svg xmlns="http://www.w3.org/2000/svg"
                                     enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="1em">
                                     <path class="uim-quaternary"
                                         d="M15,2c-3.3772,0.00142-6.27155,2.41462-6.88025,5.73651c2.90693-1.59074,6.553-0.52375,8.14374,2.38317c0.98206,1.79462,0.98206,3.96594,0,5.76057c3.8013-0.69634,6.31837-4.3424,5.62202-8.14369C21.27662,4.41261,18.37925,1.99872,15,2z">
@@ -562,7 +581,7 @@ $cusId		= $utility->returnSess('userid', 0);
     <!-- ..................................................... -->
     <!-- get started wrok with us ends -->
     <!-- ............................. -->
-  <!-- --------------------------------------- -->
+    <!-- --------------------------------------- -->
     <!-- feedback form -->
     <?php //require_once "partials/feedback.php"; ?>
     <!-- feedback form -->

@@ -159,18 +159,14 @@ Ready website for business, High Quality website sales, High quality blogs sales
     }
     </script>
 
-<link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
+    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/register.css">
     <!-- //Custom Theme files -->
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <!--//webfonts-->
-
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
 </head>
 
 <body id="page-top" class="pt-0" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -184,15 +180,15 @@ Ready website for business, High Quality website sales, High quality blogs sales
                     <div class="col-xl-12">
                         <div class="card border-0" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
                             <div class="card-body p-0">
-                                <div class="row no-gutters " >
-                                <div class="col-lg-5 d-none d-lg-inline-block m-auto text-center">
+                                <div class="row no-gutters ">
+                                    <div class="col-lg-5 d-none d-lg-inline-block m-auto text-center">
 
                                         <div class=" m-auto text-center">
 
                                             <img src="./images/signup-img.webp" style="width: 90%;">
                                         </div>
                                     </div>
-                                    <div class="col-lg-7" >
+                                    <div class="col-lg-7">
                                         <div class="reg-div-below-card ">
                                             <div class="mb-3 mt-2">
                                                 <h3 class="h4 font-weight-bold text-theme reg-heading">
@@ -315,12 +311,15 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <div class="form-floating mb-2">
                                                                     <input type="password" minlength="8"
                                                                         id="txtPassword" name="txtPassword"
-                                                                        placeholder="(username)123" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
+                                                                        placeholder="(username)123"
+                                                                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
                                                                         autocomplete="new-password" class="form-control"
                                                                         required>
                                                                     <label class="required-field">Password </label>
                                                                     <div class="invalid-feedback">
-                                                                        Must be a combination of (A-Z),(a-z),(0-9),(!@#$%^&*=+-_) and >8 characters long!
+                                                                        Must be a combination of
+                                                                        (A-Z),(a-z),(0-9),(!@#$%^&*=+-_) and >8
+                                                                        characters long!
                                                                     </div>
                                                                     <div class="valid-feedback">
                                                                         Strong password!
@@ -332,7 +331,8 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <div class="form-floating mb-2">
                                                                     <input type="password" id="txtPasswordConfirm"
                                                                         name="txtPasswordConfirm" minlength="8"
-                                                                        placeholder="Confirm Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
+                                                                        placeholder="Confirm Password"
+                                                                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
                                                                         class="form-control " required>
                                                                     <label class="required-field">Confirm
                                                                         Password</label>
@@ -375,7 +375,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>

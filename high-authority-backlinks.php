@@ -23,12 +23,14 @@ benefits of high domain authority website, domain authority rank" />
 
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
+    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/high-authority-backlinks.css" rel='stylesheet' type='text/css' />
     <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
     <!-- //Custom Theme files -->
 </head>
 
@@ -394,7 +396,7 @@ benefits of high domain authority website, domain authority rank" />
     <!-- -------------------------------------- -->
     <!-- How does it work? ends -->
 
-     <!-- _______________________________________________________________________________________________ -->
+    <!-- _______________________________________________________________________________________________ -->
     <!-- Your Rankings Are Carefully Monitored By Us start -->
 
     <section class="lbs-actually-matters-main">
@@ -473,7 +475,7 @@ benefits of high domain authority website, domain authority rank" />
     </section>
     <!-- Our High Authority Backlinks Approach Includes ends -->
     <!-- _________________________________________________________________________________________________ -->
-   
+
     <!-- _______________________________________________________________________________________________ -->
 
     <!-- __________________________________________________________________________________________ -->
@@ -583,7 +585,7 @@ benefits of high domain authority website, domain authority rank" />
     </section>
     <!-- Fastlinky Will Raise Your Domain Authority And Enhance  ends -->
     <!-- _________________________________________________________________________________________________ -->
-        <!-- _______________________________________________________________________________________________ -->
+    <!-- _______________________________________________________________________________________________ -->
     <!-- Does A Domain Authority Checker Affect Page Authority? start -->
 
     <section class="lbs-actually-matters-main">

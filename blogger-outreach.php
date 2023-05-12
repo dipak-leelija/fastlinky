@@ -106,7 +106,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- real-blogger-outreach-section start -->
     <section class="real-bo-section">
         <div class="row  w-100 m-auto">
-            <div class="col-lg-6 col-md-6 real-bo-col-first">
+            <div class="col-lg-6 col-md-6 real-bo-col-first px-0">
                 <div class="">
                     <div>
                         <h1 class="real-bo-text-h1">Real Contributors, Real Links, <span>And Real Outcomes</span> </h1>

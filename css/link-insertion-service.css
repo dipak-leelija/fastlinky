@@ -189,7 +189,6 @@
     text-align: center;
     margin: 0 0 3rem 0;
     font-size: 36px;
-    line-height: 48px;
     font-weight: 600;
     color: var(--black);
 }
@@ -405,6 +404,7 @@
 
     .how-it-works-main-section h1 {
         margin: 0 !important;
+        font-size: 29px !important;
     }
 
     .how-it-works-main-section {
@@ -474,11 +474,12 @@
     }
 
     .how-it-works-main-section h1 {
-        font-size: 30px !important;
+        font-size: 23px !important;
     }
 
     .mlb-starting-main-p {
         font-size: 1.2rem !important;
+        font-weight: 400;
     }
 
     .pricing-bo-h1 {
@@ -519,7 +520,7 @@
     }
 
     .lbs-actually-matters-main-h1 {
-        font-size: 1.9rem !important;
+        font-size: 1.73rem !important;
         text-align: center;
     }
 

@@ -101,18 +101,20 @@ if(isset($_POST['btnLogin'])){
     <meta name="keywords" content="" />
 
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
+    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
     <link rel="stylesheet" href="css/login.css">
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
 </head>
 
-<body class="pt-0">
+<body id="page-top" class="pt-0" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="home">
         <!-- header -->
         <?php require_once "partials/navbar.php"; ?>
         <!-- //header -->
-        <section class="" style="margin-top: 2.9rem">
+        <section class="login-mainsectn">
             <div id="main-wrapper" class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
@@ -190,11 +192,11 @@ if(isset($_POST['btnLogin'])){
     <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 
     <!-- ==== js for smooth scrollbar ==== -->
-    <script src="plugins/smooth-scrollbar.js"></script>
+    <!-- <script src="plugins/smooth-scrollbar.js"></script>
     <script>
     var Scrollbar = window.Scrollbar;
     Scrollbar.init(document.querySelector('body'));
-    </script>
+    </script> -->
     <!-- ==== js for smooth scrollbar End ==== -->
     <!-- //Bootstrap Core JavaScript -->
 

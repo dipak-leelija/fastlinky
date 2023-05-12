@@ -1573,10 +1573,6 @@ h5.blog-title {
         font-size: 1.2em;
     }
 
-    p {
-        font-size: 1rem !important;
-    }
-
     h3.stat-title {
         font-size: 1.8em;
     }
@@ -3412,7 +3408,7 @@ form.pack-form textarea {
 }
 
 .features-sec-head {
-    font-weight: 800;
+    font-weight: 800 !important;
 }
 
 .features-sec-details {
@@ -3579,6 +3575,9 @@ form.pack-form textarea {
     .index-faq-section {
         padding: 3rem 1rem;
     }
+    .features-sec-head {
+        font-weight: 700 !important;
+    }
 }
 
 @media (max-width:575px) {
@@ -3709,7 +3708,8 @@ strong {
     }
 
     .srvc-common-btn {
-        padding: 11px 34px 9px 34px;
+        font-size: 17px;
+        padding: 6px 12px 6px 12px;
     }
 
 }
@@ -3718,12 +3718,20 @@ strong {
     .indexpage-starting-main-h1 {
         font-size: 1.55rem;
     }
-
+    .index-faq-section h1 {
+        font-size: 1.4rem;
+    }
+    p {
+        font-size: 1.1rem !important;
+        font-weight: 400 !important;
+    }
     .sec_heading {
         font-size: 1.6rem !important;
     }
-
     .srvc-common-btn {
-        padding: 7px 19px 7px 25px !important;
+        font-size: 15px;
+    }
+    ul{
+        font-size: 1.07rem !important;
     }
 }

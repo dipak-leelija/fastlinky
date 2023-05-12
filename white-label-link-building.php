@@ -23,14 +23,16 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
+    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/white-label-link-building.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/testimonials.css">
 
     <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
     <!-- //Custom Theme files -->
 </head>
 
@@ -67,7 +69,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- paragraph_texts section start -->
     <section class="paragraph_texts">
         <div class="row">
-        <div class="col-md-6 ">
+            <div class="col-md-6 ">
                 <div class="text-center">
                     <img src="./images/freepik-img/guest-posting-imgs-4.webp" class="w-100 m-auto mb-4" alt="">
                 </div>
@@ -94,7 +96,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
 
             </div>
-            
+
 
         </div>
     </section>
@@ -507,7 +509,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
-    </section>  
+    </section>
 
     <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->

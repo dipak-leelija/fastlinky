@@ -156,44 +156,6 @@ b{
     color: var(--mustard);
     font-weight: 600;
 }
-
-.lbp-texting {
-    text-align: justify;
-    color: #747880;
-    font-size: 17px;
-    line-height: 1.625em;
-}
-
-.lbp-texting b {
-    margin: 0 0 11px 0;
-    padding: 0 0 0 0;
-    color: var(--black);
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.1em;
-}
-
-.actually-card-inn-img-div {
-    padding-right: 1rem;
-    padding-left: 1rem;
-}
-
-.actually-card-div1 {
-    display: flex;
-    padding: 2.5rem 1.5rem;
-    border-radius: unset;
-    border: none;
-    min-height: 200px;
-}
-
-.actually-card-div1:hover {
-    transition: all .9s ease;
-    box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
-    -webkit-box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
-    background-image: url('../images/dummy-img/card-hover-bg-image.png') !important;
-    background-position: top right;
-    background-repeat: no-repeat;
-}
 /* _____________________________________________________________________________________________________ */
 /* Effective and Transparent Link Building Process starts */
 /* _____________________________________________________________________________________________________ */
@@ -209,14 +171,6 @@ b{
 
 .our-secret-d-h2 span {
     color: var(--mustard);
-}
-
-.our-secrect-delvry-main-card {
-    margin-top: 4rem;
-}
-
-.our-secrect-delvry-main-card p {
-    font-size: .95rem;
 }
 
 .our-secret-delivering-main-card {
@@ -470,9 +424,6 @@ b{
         padding: 1rem !important;
     }
 
-    .our-secrect-delvry-main-card {
-        margin-top: 0rem !important;
-    }
 }
 
 @media (max-width:600px) {
@@ -546,12 +497,11 @@ b{
 }
 
 @media (min-width:250px) and (max-width:451px) {
+    .only-catchy-headline {
+        font-size: 20px;
+    }
     .indexpage-main-banner {
         padding: 3rem 1rem;
-    }
-
-    .our-secrect-delvry-main-card {
-        margin-top: 1rem !important;
     }
 
     .our-secret-delivering-main-sec {
@@ -571,30 +521,9 @@ b{
         text-align: center;
     }
 
-    .actually-card-div1 {
-        display: inline-block !important;
-        padding: 1.5rem 1rem !important;
-        border-radius: unset;
-        border: none;
-        min-height: 200px;
-    }
-
-    .actually-card-inn-img-div {
-        text-align: center;
-        padding-right: 0rem !important;
-        padding-left: 0rem !important;
-        padding-bottom: 1rem;
-    }
-
 }
 
-
-
-
 @media (max-width:500px) {
-    .actually-card-div1:hover {
-        background-size: contain;
-    }
     .our-secret-delivering-main-card2:hover {
         background-size: contain;
     }

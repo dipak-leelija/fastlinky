@@ -21,12 +21,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
+    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/cannabis-backlinks.css" rel='stylesheet' type='text/css' />
     <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
     <!-- //Custom Theme files -->
 </head>
 
@@ -37,7 +39,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="cannabis-back-banner">
         <div class="">
             <div class="row m-auto w-100">
-                
+
                 <div class="col-12 col-lg-6 col-md-7 order-2 order-md-1 px-0 px-md-4">
                     <div class="">
                         <h1 class="mlb-starting-main-h1">Link building services for <span>cannabis & CBD </span> website
@@ -64,7 +66,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     </section>
     <!-- end of Cannabis Backlinks main banner -->
     <!-- --------------------------------------------------------------------------------------------- -->
-        <!-- Cannabis & CBD Link Building Service starts -->
+    <!-- Cannabis & CBD Link Building Service starts -->
     <!-- _________________________________________________________________________________________________ -->
 
     <section class="lbs-actually-matters-main">
@@ -228,8 +230,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="mt-sm-5 mt-0">
         <h1 class="text-center pricing-bo-h1 mb-3 px-2">Cannabis backlinks pricing
         </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as  per DA,
-            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>
@@ -318,14 +320,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     <section class="lbs-actually-matters-main">
         <div class="row">
-            <div class="col-xl-6 col-md-6 m-auto text-center order-2 order-sm-1">
+            <div class="col-xl-6 col-md-6 m-auto text-center order-2 order-md-1">
                 <div class="">
                     <div>
                         <img src="./images/freepik-img/home_img-01.webp" class=" w-100  mb-4 " alt="">
                     </div>
                 </div>
             </div>
-            <div class=" col-xl-6 col-md-6 order-1 order-sm-2">
+            <div class=" col-xl-6 col-md-6 order-1 order-md-2">
                 <h1 class="cannabis-cbd-service-h1 ">
                     <span>CBD SEO company </span>
                 </h1>
@@ -352,7 +354,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     <!-- Cannabis & CBD Link Building Service ends -->
     <!-- _________________________________________________________________________________________________ -->
-      <!-- ______________________________________________________________________________________________________ -->
+    <!-- ______________________________________________________________________________________________________ -->
     <!-- features-section start -->
     <?php require_once "partials/features-section.php"; ?>
     <!-- features-section ends -->

@@ -16,7 +16,6 @@
 }
 
 .mlb-starting-main-h1 {
-    font-family: "Helvetica", "Satoshi-Variable";
     font-size: 3rem;
     font-weight: 700;
     line-height: 1.2em;
@@ -96,33 +95,10 @@
     line-height: 1.625em;
 }
 
-.actually-card-inn-img-div {
-    padding-right: 1rem;
-    padding-left: 1rem;
-}
 
-.actually-card-div1 {
-    display: flex;
-    padding: 1.5rem;
-    border-radius: unset;
-    border: none;
-    min-height: 145px;
-}
 
-.actually-card-div1:hover {
-    transition: all .9s ease;
-    background-color: #FFF0;
-    box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
-    background-image: url(../images/dummy-img/card-hover-bg-img-removebg-preview.jpg);
-    background-position: top right;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-.getyour-linkbtn {
-    display: flex;
-    justify-content: right;
-}
+
 .cannabis-cbd-service-h1{
     font-size: 3.5rem;
     margin-bottom: 3rem;
@@ -437,32 +413,15 @@
         margin-top: 0rem !important;
         margin-bottom: 0rem !important;
     }
-
-    .getyour-linkbtn {
-        display: flex;
-        justify-content: center !important;
-    }
-
     .mlb-starting-main-h1 {
         padding-top: 3rem !important;
         text-align: center;
     }
-
-    .mlb-starting-main-p {
-        text-align: center;
-        justify-content: center;
-
-    }
-
     .lbs-actually-matters-main-h1 {
         font-size: 2.3rem !important;
         text-align: center;
     }
 
-    .lbs-actually-matters-main p {
-        text-align: center !important;
-
-    }
 
     .cannabis-clb-rlb-main-div ul {
         text-align: start;
@@ -515,10 +474,7 @@
     .pricing-bo-h1 {
         font-size: 2.2rem !important;
     }
-
-
 }
-
 
 
 @media (min-width:312px) and (max-width:335px) {
@@ -526,16 +482,21 @@
     .pricing-bo-h1 {
         font-size: 1.9rem !important;
     }
-
 }
 
-@media (min-width:200px) and (max-width:312px) {
-
+@media (min-width:200px) and (max-width:321px) {
+    .mlb-starting-main-h1 {
+        font-size: 1.4rem !important;
+        font-weight: 600;
+    }
+    h1  {
+        font-size: 1.6rem !important;
+    }
     .cbd-business-main-section-h1 {
         font-size: 1.6rem;
     }
     .lbs-actually-matters-main-h1 {
-        font-size: 1.6rem !important;
+        font-size: 1.4rem !important;
     }
 
     .how-it-works-main-section h1 {
@@ -547,7 +508,7 @@
     }
 
     .pricing-bo-h1 {
-        font-size: 1.7rem !important;
+        font-size: 1.6rem !important;
     }
 
 
@@ -584,32 +545,9 @@
     .cannabis-clb-rlb-main-div ul {
         font-size: 19px;
     }
-
-    .lbs-actually-matters-main-h1 {
-        font-size: 1.8rem !important;
-        text-align: center;
-    }
-
     .sliderbar {
         margin-top: 1rem !important;
     }
-
-    .actually-card-div1 {
-        display: inline-block !important;
-        padding: 1.5rem 1rem !important;
-        border-radius: unset;
-        /* background: #fff; */
-        /* margin: 20px 0; */
-        border: none;
-        min-height: 200px;
-    }
-
-    .actually-card-inn-img-div {
-        padding-right: 0rem !important;
-        padding-left: 0rem !important;
-        padding-bottom: 1rem;
-    }
-
     .cannabis-clb-rlb-main-div {
         padding: 3rem 1rem;
     }
