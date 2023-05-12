@@ -48,7 +48,10 @@ $blogDtls		= $blogMst->ShowUserBlogData($cusDtl[0][2]);
     <!-- Bootstrap Core CSS -->
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css" />
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css" />
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
+        type='text/css' />
+    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css" /> -->
     <link rel="stylesheet" href="plugins/data-table/style.css">
 
     <!-- Custom CSS -->

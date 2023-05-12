@@ -94,7 +94,10 @@ if(isset($_POST['btnCancel']))
     <link href="css/form.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
+        type='text/css' />
+    <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
     <!-- //Custom Theme files -->
     <!--webfonts-->
     <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">

@@ -43,7 +43,9 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 
     <!-- Bootstrap Core CSS -->
     <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
+        type='text/css' />
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
@@ -86,7 +88,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                         </div>
                         <div class="col-md-9 mt-4 ps-md-0  display-table-cell v-align ">
                             <!-- Guest Post Orders  Section-->
-                            <div class="row">
+                            <div class="row m-0 w-100">
                                 <div class="mb-3">
                                     <h3 class="fw-bold text-center py-2">Guest Posts:</h3>
                                 </div>
@@ -163,7 +165,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                         }else {
                                         ?>
                                 <div
-                                    class="product_card col-lg-5 text-center border border border-danger  border-1 rounded shadow py-4 mb-3">
+                                    class="product_card col-lg-5 m-auto text-center border border border-danger  border-1 rounded shadow py-4 mb-3">
                                     <h3 class="product-title text-danger m-auto">No Orders</h3>
                                     <a href="blogs-list.php" class="btn btn-sm btn-primary  w-25 mt-4">Explore</a>
                                 </div>

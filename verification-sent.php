@@ -58,7 +58,10 @@ session_destroy();
     <!-- Bootstrap Core CSS -->
     <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
+        type='text/css' />
+    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/verification-email-sent.css">

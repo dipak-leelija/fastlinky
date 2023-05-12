@@ -116,9 +116,11 @@ if(isset($_POST['btnCancel'])){
     <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
 
     <!-- Bootstrap Core CSS -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
+        type='text/css' />
+    <!-- <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' /> -->
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />

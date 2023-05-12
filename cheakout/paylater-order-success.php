@@ -334,7 +334,10 @@ if(isset($_SESSION['orderId'])) {
 
     <link rel="stylesheet" href="<?php echo URL ?>style/ansysoft.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css">
-	<link rel="stylesheet" href="<?php echo URL ?>/plugins/fontawesome-6.1.1/css/all.css">
+	<link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
+        type='text/css' />
+	<!-- <link rel="stylesheet" href="<?php echo URL ?>/plugins/fontawesome-6.1.1/css/all.css"> -->
 	<link rel="stylesheet" href="<?php echo URL; ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo URL ?>/css/payment-status.css">
 

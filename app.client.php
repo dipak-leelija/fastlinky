@@ -46,8 +46,10 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo URL;?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
-
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
+        type='text/css' />
+    <!-- <link href="<?php echo URL;?>/plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' /> -->
     <!-- Custom CSS -->
     <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
@@ -125,7 +127,8 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                             <a href="my-orders.php">
                                                 <div class="dboard-cd-box mt-md-0 ">
                                                     <div class="inner">
-                                                        <h3><?php echo count($pendingContOrd) +  count($pendingPackOrd); ?></h3>
+                                                        <h3><?php echo count($pendingContOrd) +  count($pendingPackOrd); ?>
+                                                        </h3>
                                                         <p>Pending Order</p>
                                                     </div>
                                                     <div class="dboard-icn_font" aria-hidden="true">
@@ -141,20 +144,20 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                     <div class=" col-lg-6 ">
                                         <div class=" table-responsive py-3 p-1">
                                             <h4>Guest Posting Details</h4>
-                                                <div class="card table-responsive db_shadow border-0 p-2">
-                                                    <?php
+                                            <div class="card table-responsive db_shadow border-0 p-2">
+                                                <?php
                                                     if (count($myOrders) > 0 ) {
                                                     ?>
-                                                    <table class="table  table-hover">
-                                                        <thead class="table-light">
-                                                            <tr>
-                                                                <th scope="col">Order Id</th>
-                                                                <th scope="col">Domain/Service</th>
-                                                                <th scope="col">Status</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <?php
+                                                <table class="table  table-hover">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th scope="col">Order Id</th>
+                                                            <th scope="col">Domain/Service</th>
+                                                            <th scope="col">Status</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php
                                                                 $showItems = 1;
                                                                 foreach ($myOrders as $order) {
                                                                     $status = $OrderStatus->singleOrderStatus($order['order_status']);
@@ -171,14 +174,14 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                                                     }
                                                                 }
                                                             ?>
-                                                        </tbody>
-                                                    </table>
-                                                    <?php
+                                                    </tbody>
+                                                </table>
+                                                <?php
                                                     }else {
                                                         echo 'No Orders';
                                                     }
                                                     ?>
-                                                </div>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -186,8 +189,7 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                         <a href="notifications.php">
                                             <div class="pt-3 pb-0 p-0">
                                                 <h4 class="text-dark">Recent Notification</h4>
-                                                <div class="alert alert-warning db_shadow"
-                                                    role="alert">
+                                                <div class="alert alert-warning db_shadow" role="alert">
                                                     <strong> No Notifications</strong>
                                                 </div>
                                             </div>

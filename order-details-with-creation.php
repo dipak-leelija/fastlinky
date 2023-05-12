@@ -73,7 +73,10 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     <title>Order Summary | <?php echo COMPANY_S; ?></title>
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <!-- <link rel="stylesheet" href="css/fontawesome-all.min.css"> -->
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
+        type='text/css' />
 
 </head>
 

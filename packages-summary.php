@@ -68,7 +68,10 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
     <meta name="keywords" content="" />
 
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
+        type='text/css' />
+    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
@@ -129,8 +132,10 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                 <div class="col-sm-6 mb-3">
                                     <div class="form-group">
                                         <label class="required-field" for="mob-no">Mob No</label>
-                                        <input type="number" class="form-control" id="mob-no" name="mob-no"
-                                            value="<?php echo $cusDtl[0][34]; ?>" required>
+                                        <input type="text"
+                                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                            minlength="10" pattern="[0-9]+" maxlength="10" class="form-control"
+                                            id="mob-no" name="mob-no" value="<?php echo $cusDtl[0][34]; ?>" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 mb-3">
@@ -149,8 +154,11 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                 <div class="col-sm-6 mb-3">
                                     <div class="form-group">
                                         <label class="required-field" for="pin-code">PIN Code</label>
-                                        <input type="number" class="form-control" id="pin-code" name="pin-code"
-                                            value="<?php echo $cusDtl[0][29]; ?>" required>
+                                        <input type="text"
+                                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                            minlength="6" pattern="[0-9]+" maxlength="6" class="form-control"
+                                            id="pin-code" name="pin-code" value="<?php echo $cusDtl[0][29]; ?>"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 mb-3">
