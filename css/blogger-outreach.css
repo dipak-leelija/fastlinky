@@ -25,16 +25,6 @@
     text-align: start;
 }
 
-.bo-wrap {
-    align-content: center;
-    align-items: center;
-
-}
-
-.bo-wrap span {
-    color: var(--mustard);
-}
-
 .blogout-main-h1 {
     font-family: "Helvetica", "Satoshi-Variable";
     font-size: 3.8rem;
@@ -42,7 +32,9 @@
     line-height: 1.2em;
     color: var(--black);
 }
-
+.blogout-main-h1 span{
+    color: var(--mustard);
+}
 .blogout-main-p {
     font-weight: 500;
     text-align: left;
@@ -279,13 +271,6 @@
         text-align: center;
 
     }
-
-    .blogout-main-p {
-        text-align: center;
-        justify-content: center;
-
-    }
-
     .real-bo-section {
         margin: 3rem 1rem 1rem !important;
     }
@@ -338,13 +323,6 @@
         font-size: 2rem;
 
     }
-
-    .bo-wrap {
-        padding: 0 .65rem;
-        align-content: center;
-        align-items: center;
-    }
-
     .pricing-bo-p1 {
         padding: .8rem;
     }
@@ -380,7 +358,9 @@
     .blogout-main-h1 {
         font-size: 1.6rem;
     }
-
+    .real-bo-secondcol-div1 {
+        font-size: 1.1rem;
+    }
     .real-bo-text-h1 {
         font-size: 1.53rem !important;
         font-weight: 500;

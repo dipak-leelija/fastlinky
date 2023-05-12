@@ -41,7 +41,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
             <h1 class=""> Link Building & Quality Backlinks <br> <span>For igaming & Casino</span></h1>
             <p class=" ">Work with Online Gambling And Casino Link Building Specialists to gain a commercial advantage.
             </p>
-            <div class=" mt-5">
+            <div class=" mt-2 mt-md-5">
                 <a href="#pricing-cards">
                     <button type="button" class="btn srvc-common-btn ">Get Started</button>
                 </a>

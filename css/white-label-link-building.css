@@ -196,11 +196,6 @@
         font-weight: 500;
     }
 
-    .white-lebel-main-p {
-        font-weight: 300;
-        font-size: 1.3rem;
-    }
-
     .trustwhite-section {
         margin: 5rem 1rem !important;
     }
@@ -219,10 +214,10 @@
         margin-top: .7rem;
     }
 
-    .white-lebel-main-p {
+    /* .white-lebel-main-p {
         text-align: center;
         justify-content: center;
-    }
+    } */
 
     .trustworthy-white-lebel-text-h1 {
         text-align: center;
@@ -284,6 +279,7 @@
 
     .white-lebel-main-p {
         font-size: 1.1rem !important;
+        text-align: justify;
     }
 
     .pricing-bo-h1 {

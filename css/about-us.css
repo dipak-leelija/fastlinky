@@ -571,7 +571,9 @@
     .about-banner_section {
         padding: 0px;
     }
-
+    .dark-color {
+        font-size: 2.5rem;
+    }
     .about-text h3 {
         font-size: 25px !important;
     }
@@ -597,7 +599,12 @@
         font-size: 1.2rem;
 
     }
-
+    .why-choose-us-section h2 {
+        font-size: 1.9rem !important;
+    }
+    .dark-color {
+        font-size: 2rem;
+    }
     .my-a-btn:hover {
         background: var(--pure-white) !important;
     }

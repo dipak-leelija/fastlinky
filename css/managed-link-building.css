@@ -509,41 +509,7 @@
     }
 }
 
-@media (min-width:200px) and (max-width:312px) {
-    .mlb-starting-main-h1 {
-        font-size: 1.79rem;
-    }
 
-    .lbs-actually-matters-main-h1 {
-        font-size: 1.6rem !important;
-    }
-
-    .managed-link-btn {
-        padding: 11px 19px 11px 25px !important;
-    }
-
-    .a-brand-need-link-main-h1 {
-        font-size: 1.53rem !important;
-        font-weight: 500;
-    }
-
-    .mlb-starting-main-p {
-        font-size: 1.2rem !important;
-    }
-
-    .pricing-bo-h1 {
-        font-size: 1.7rem !important;
-    }
-
-    .how-fonts-h4 {
-        font-size: 1.19rem;
-        font-weight: 700 !important;
-    }
-
-    .why-fastlinky-h1 {
-        font-size: 2.3rem !important;
-    }
-}
 
 @media (min-width:313px) and (max-width:399px) {
     .mlb-starting-main-h1 {
@@ -626,7 +592,53 @@
         text-align: center;
     }
 }
+@media (min-width:200px) and (max-width:312px) {
+    .lbp-texting {
+        font-size: 1.1rem;
+    }
+    .mlb-starting-main-h1 {
+        font-size: 1.79rem;
+    }
+    .square-box-p {
+        font-size: 1.1rem;
+    }
+    .lbs-actually-matters-main-h1 {
+        font-size: 1.6rem !important;
+    }
 
+    .managed-link-btn {
+        padding: 11px 19px 11px 25px !important;
+    }
+
+    .a-brand-need-link-main-h1 {
+        font-size: 1.53rem !important;
+        font-weight: 500;
+    }
+
+    .mlb-starting-main-p {
+        font-size: 1.2rem !important;
+    }
+
+    .pricing-bo-h1 {
+        font-size: 1.6rem !important;
+    }
+
+    .how-fonts-h4 {
+        font-size: 1.19rem;
+        font-weight: 700 !important;
+    }
+
+    .why-fastlinky-h1 {
+        font-size: 1.48rem !important;
+        font-weight: 500;
+    }
+    .lbp-texting b {
+        font-size: 19px;
+    }
+ strong {
+        font-size: 17px;
+    }
+}
 @media (max-width:500px) {
     .actually-card-div1:hover {
         background-size: contain;

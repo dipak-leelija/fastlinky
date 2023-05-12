@@ -86,3 +86,21 @@
 
     }
 }
+.login-mainsectn{
+    margin-top: 5.5rem;
+}
+@media(max-width:575px) {
+    .login-mainsectn{
+        margin-top: 4.5rem;
+    }
+}
+@media(min-width:1130px) {
+    .login-mainsectn{
+        margin-top: 5.3rem;
+    }
+}
+@media(min-width:1430px) {
+    .login-mainsectn{
+        margin-top: 7.5rem;
+    }
+}
