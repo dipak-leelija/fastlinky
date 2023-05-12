@@ -114,7 +114,7 @@ if(isset($_POST['btnLogin'])){
         <!-- header -->
         <?php require_once "partials/navbar.php"; ?>
         <!-- //header -->
-        <section class="login-mainsectn">
+        <section class="login-mainsectn" >
             <div id="main-wrapper" class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
