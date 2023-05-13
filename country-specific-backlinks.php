@@ -18,7 +18,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         content="Fastlinky Enhances Your Website's Online Visibility with High-Quality Country-Specific Backlinks Services. Our Experts Will Help You To buy high-quality backlinks USA, Australia, U.K, etc in reasonable price." />
     <meta name="keywords"
         content="country specific backlinks,buy backlinks usa cheap,buy backlinks usa,buy high quality backlinks usa,buy quality backlinks Australia," />
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
     <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
     <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
@@ -28,7 +27,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <link href="css/country-specific-backlinks.css" rel='stylesheet' type='text/css' />
     <!-- font-awesome icons -->
     <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
-    <!-- //Custom Theme files -->
 
 </head>
 
