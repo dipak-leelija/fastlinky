@@ -170,9 +170,9 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     <!-- inject:css -->
     <link rel="stylesheet" href="<?= ADM_URL?>css/vertical-layout-light/style.css">
     <link rel="stylesheet" href="<?= URL?>/css/order-now.css">
-    <!-- <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="<?php echo URL; ?>/css/order-list.css">
+
     <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
 </head>
 
 <body>
@@ -688,7 +688,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                         <h5 class="text-primary font-weight-bold">
                                                             Content
                                                             <span class="text-danger font-weight-light">
-                                                                <small>
+                                                                <small class="text-capitalize">
                                                                     You can View or Download the content by clicking on
                                                                     the respective button
                                                                 </small>

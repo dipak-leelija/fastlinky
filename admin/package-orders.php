@@ -78,8 +78,8 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'search')){
     <!-- plugins:css -->
     <link rel="stylesheet" href="<?php echo ADM_URL?>vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/plugins/data-table/style.css">
-    <link rel="stylesheet" href="<?php echo URL; ?>css/order-list.css">
-    <link rel="stylesheet" href="<?php echo URL; ?>css/order-table.css">
+    <link rel="stylesheet" href="<?php echo URL; ?>/css/order-list.css">
+    <link rel="stylesheet" href="<?php echo URL; ?>/css/order-table.css">
 
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
