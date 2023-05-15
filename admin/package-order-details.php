@@ -92,25 +92,17 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
-    <title><?php echo $packageCat['category_name'].' '.$package['package_name']; ?> Order Details -
-        <?php echo COMPANY_FULL_NAME; ?></title>
-
-    <link rel="stylesheet" href="<?php echo ADM_URL ?>vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="<?php echo URL ?>/plugins/sweetalert/sweetalert2.css">
-
-    <!-- font-awesome icons -->
-    <link href="<?= URL?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?= URL?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet' type='text/css' />
+    <?php require_once ADM_DIR . "incs/admin-common-headers.php" ?>
+    <title>
+        <?php echo $packageCat['category_name'].' '.$package['package_name']; ?> Order Details -
+        <?php echo COMPANY_FULL_NAME; ?>
+    </title>
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="<?php echo ADM_URL ?>css/vertical-layout-light/style.css">
     <link rel="stylesheet" href="<?php echo URL ?>/css/order-now.css">
     <link rel="stylesheet" href="<?php echo URL ?>/css/order-list.css">
+
+    <link rel="stylesheet" href="<?php echo URL ?>/plugins/sweetalert/sweetalert2.css">
 
 </head>
 
@@ -163,7 +155,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                         </td>
                                                     </tr>
                                                     <?php } ?>
-                                                    
+
                                                     <tr>
                                                         <td>Order Price</td>
                                                         <td>:</td>
@@ -182,7 +174,8 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                     <tr>
                                                         <td>Payment</td>
                                                         <td>:</td>
-                                                        <td><?php echo $DateUtil->fullDateTimeText($showOrder['date']); ?></td>
+                                                        <td><?php echo $DateUtil->fullDateTimeText($showOrder['date']); ?>
+                                                        </td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -494,9 +487,10 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                             $LastUpdate = $PackageOrder->getLastUpdateTime($orderId);
                                             $LastUpdate = $DateUtil->fullDateTimeText($LastUpdate);
                                         ?>
-                                                <div class="font-weight-bold text-center text-light bg-primary py-2 mt-4">
-                                                    <p class="fw-bold text-center mt-3">Order Completed On <?= $LastUpdate ?></p>
-                                                </div>
+                                        <div class="font-weight-bold text-center text-light bg-primary py-2 mt-4">
+                                            <p class="fw-bold text-center mt-3">Order Completed On <?= $LastUpdate ?>
+                                            </p>
+                                        </div>
                                         <?php 
                                             if ($paymentMode == PAYLATER) {
                                                 echo '<div class="text-center mt-2">

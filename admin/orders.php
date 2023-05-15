@@ -68,25 +68,16 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'search')){
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
+
     <title>All Orders | <?php echo COMPANY_FULL_NAME; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- plugins:css -->
-    <link rel="stylesheet" href="<?php echo ADM_URL?>vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/plugins/data-table/style.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/css/order-list.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/css/order-table.css">
 
-    <!-- font-awesome icons -->
-    <link href="<?= URL?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?= URL?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet' type='text/css' />
-
-    <!-- inject:css -->
-    <link rel="stylesheet" href="<?php echo ADM_URL?>css/vertical-layout-light/style.css">
 </head>
 
 <body>

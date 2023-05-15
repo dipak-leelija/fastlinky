@@ -62,27 +62,13 @@ $userDetail = $adminLogin->getUserDetail($_GET['id']);
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
+    
+    <title><?php echo $userDetail[0] .' '.$userDetail[1] .' Profile Edit - '. COMPANY_S ?></title>
+
     <!-- plugins:css -->
-    <link rel="stylesheet" href="vendors/feather/feather.css">
-    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-    <!-- <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css"> -->
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../plugins/data-table/style.css">
+    <!-- <link rel="stylesheet" href="vendors/feather/feather.css"> -->
 
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
 
 </head>
 
@@ -112,7 +98,7 @@ $userDetail = $adminLogin->getUserDetail($_GET['id']);
                             <div class="col-12 m-3">
                                 <label for="inputAddress" class="form-label">User Name</label>
                                 <input type="text" name="niche_name" class="form-control w-75" id="inputAddress"
-                                    value="<?php echo $_GET['id']; ?>" readonly>
+                                    value="<?= $_GET['id']; ?>" readonly>
                             </div>
                             <div class="col-12 m-3">
                                 <label for="inputAddress2" class="form-label">Image</label>
@@ -128,12 +114,12 @@ $userDetail = $adminLogin->getUserDetail($_GET['id']);
                             <div class="col-12 m-3">
                                 <label for="inputAddress2" class="form-label">First Name</label>
                                 <input type="text" name="txtFName" class="form-control w-75"
-                                    value="<?php echo $userDetail[0]; ?>">
+                                    value="<?= $userDetail[0]; ?>">
                             </div>
                             <div class="col-12 m-3">
                                 <label for="inputAddress2" class="form-label">Surname</label>
                                 <input type="text" name="txtSurname" class="form-control w-75"
-                                    value="<?php echo $userDetail[1]; ?>">
+                                    value="<?= $userDetail[1]; ?>">
                             </div>
 
                             <div class="col-12 m-3">
