@@ -259,7 +259,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                                 Order Details: <span
                                                     class="badge text-bg-primary"><?= $orderStatusName; ?></span>
                                             </h5>
-                                            <h5 class="pkage-headline pt-2">
+                                            <h5 class="pkage-headline text-lowercase pt-2">
                                                 <?php echo $showOrder['clientOrderedSite']; ?></h5>
                                             <ul class="listing-adrs">
                                                 <li> Order Id : <?= "#".$orderId; ?></li>

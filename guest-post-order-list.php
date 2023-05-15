@@ -39,7 +39,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/logo/favicon.png" type="image/png">
-    <title>My Order :: <?php echo COMPANY_S; ?></title>
+    <title>Guest Post Orders List - <?php echo COMPANY_S; ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
@@ -116,7 +116,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 
 
 
-                                                <h3 class="product-title maining-title">
+                                                <h3 class="product-title maining-title text-lowercase">
                                                     <?php echo $order['clientOrderedSite']; ?></h3>
                                                 <small>
                                                     <b>
