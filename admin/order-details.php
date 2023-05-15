@@ -163,14 +163,14 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     <!-- <link rel="stylesheet" href="../plugins/data-table/style.css"> -->
     <link rel="stylesheet" href="<?= URL?>/plugins/sweetalert/sweetalert2.css">
 
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
+    <!-- font-awesome icons -->
+    <link href="<?= URL?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet' type='text/css' />
 
     <!-- inject:css -->
     <link rel="stylesheet" href="<?= ADM_URL?>css/vertical-layout-light/style.css">
     <link rel="stylesheet" href="<?= URL?>/css/order-now.css">
-    <link rel="stylesheet" href="<?php echo URL; ?>/css/order-list.css">
+    <link rel="stylesheet" href="<?= URL?>/css/order-list.css">
 
     <!-- endinject -->
 </head>
