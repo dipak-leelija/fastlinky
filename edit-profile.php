@@ -55,19 +55,23 @@ if(isset($_POST['btnSubmit'])){
 
 	$customer->editCustomer($cusId, $txtFname, $txtLname, $txtGender, $txtBrief, $txtDesc, $txtorganization, $cusDtl[0][13], $txtProfession, $cusDtl[0][15], $cusDtl[0][13], $cusDtl[0][19]);
 
-
-		//uploading images
-		if($_FILES['fileImg']['name'] != ''){
-			//rename the file
-			$newName = $utility->getNewName4($_FILES['fileImg'], '', $cusId);
-			//upload and crop the file
-			$uImg->imgCropResize($_FILES['fileImg'], '', $newName, 'images/user/', 200, 200, $cusId, 'image', 'customer_id','customer');
-		}
-
-		$utility->delSessArr($sess_arr);
+	$utility->delSessArr($sess_arr);
 
 }
 
+if (isset($_POST['picture-update'])) {
+    //uploading images
+	if($_FILES['profile-picture']['name'] != ''){
+        
+        // delete old image 
+        $utility->deleteFile($cusId, 'customer_id', 'images/user/', 'image', 'customer');
+
+		//rename the file
+		$newName = $utility->getNewName4($_FILES['profile-picture'], '', $cusId);
+		//upload and crop the file
+		$uImg->imgCropResize($_FILES['profile-picture'], '', $newName, 'images/user/', 200, 200, $cusId, 'image', 'customer_id','customer');
+	}
+}
 
 //Edit Address
 if(isset($_POST['addressUpdate'])){
@@ -117,10 +121,8 @@ if(isset($_POST['btnCancel'])){
 
     <!-- Bootstrap Core CSS -->
     <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
-    <!-- <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' /> -->
+
+    <?php require_once ROOT_DIR . "/plugins/font-awsome/font-awsome.php" ?>
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -137,7 +139,7 @@ if(isset($_POST['btnCancel'])){
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
     <div id="home">
         <!-- header -->
         <?php require_once "partials/navbar.php"; ?>
@@ -208,15 +210,25 @@ if(isset($_POST['btnCancel'])){
                                                         </div>
 
                                                         <div class="input-group mt-2">
-                                                            <input type="file" class="form-control file-upload"
-                                                                id="inputGroupFile02"
-                                                                style=" visibility: hidden; display: none;"
-                                                                name="fileImg" id="fileImg" accept="image/*">
-                                                            <label class="input-group-text label_design_as_btn"
-                                                                for="inputGroupFile02">
-                                                                <i class="fa fa-fw fa-camera pe-2"></i>
-                                                                Change Photo
-                                                            </label>
+                                                            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post"
+                                                                enctype="multipart/form-data">
+                                                                <input type="file"
+                                                                    class="form-control file-upload d-none"
+                                                                    id="img-select" name="profile-picture" id="fileImg"
+                                                                    accept="image/*">
+                                                                <label class="input-group-text btn btn-primary rounded"
+                                                                    for="img-select">
+                                                                    <i class="fa fa-fw fa-camera pe-2"></i>
+                                                                    Change Photo
+                                                                </label>
+
+                                                                <button id="upload-btn" type="submit"
+                                                                    name="picture-update"
+                                                                    class="input-group-text btn btn-info rounded text-light fw-semibold ms-2 d-none">
+                                                                    <i class="fa-regular fa-upload pe-1"></i>
+                                                                    Upload
+                                                                </button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                     <div class="text-center text-sm-right order-sm-2 order-1">
@@ -380,7 +392,7 @@ if(isset($_POST['btnCancel'])){
                                                 role="tabpanel" aria-labelledby="profile-tab">
                                                 <form class="form-horizontal" role="form"
                                                     action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"
-                                                    enctype="multipart/form-data" autocomplete="off">
+                                                    autocomplete="off">
                                                     <div class="row ">
                                                         <div class="col-sm-6">
                                                             <div class="form-floating mb-3">
@@ -688,49 +700,30 @@ if(isset($_POST['btnCancel'])){
         <script src="plugins/jquery-3.6.0.min.js"></script>
         <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
         <script src="js/customerSwitchMode.js"></script>
-        <script type="text/javascript" src="js/ajax.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
+        <script src="js/ajax.js" type="text/javascript"></script>
+        <script src="js/script.js" type="text/javascript"></script>
 
         <script>
-        $(document).ready(function() {
-            var readURL = function(input) {
+        document.addEventListener("DOMContentLoaded", () => {
+            var readURL = (input) => {
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
 
-                    reader.onload = function(e) {
-                        $('.profile-pic').attr('src', e.target.result);
+                    reader.onload = (e) => {
+                        document.querySelector(".profile-pic").src = e.target.result;
                     }
 
                     reader.readAsDataURL(input.files[0]);
-                    alert('Go to Edit Profile and Update the Changes');
+                    document.querySelector("#upload-btn").classList.remove("d-none");
                 }
-            }
+            };
 
 
-            $(".file-upload").on('change', function() {
+            document.querySelector("#img-select").addEventListener("change", function() {
                 readURL(this);
-            });
-
-            $(".upload-button").on('click', function() {
-                $(".file-upload").click();
             });
         });
         </script>
-
-        <script>
-        document.getElementById('buttonid').addEventListener('click', openDialog);
-
-
-        function openDialog() {
-            document.getElementById('fileid').click();
-        }
-        </script>
-        <!-- <script>
-        function thisFileUpload() {
-            document.getElementById("file").click();
-        };
-        </script> -->
-
 </body>
 
 </html>

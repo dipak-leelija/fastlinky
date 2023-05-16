@@ -1,4 +1,5 @@
 blog/
-uploads/contents
 includes/constant.inc.php
+uploads/contents
+images/user
 *.zip
