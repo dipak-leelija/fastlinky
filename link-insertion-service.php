@@ -20,21 +20,17 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
 
 
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-     <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
-    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/link-insertion-service.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/testimonials.css">
-    <!-- font-awesome icons -->
-    <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
-  
 </head>
 
-<body data-scrollbar>
+<body>
     <?php require_once "partials/navbar.php"; ?>
     <!--____________________________________________________________________________________________ -->
     <!-- Link Insertion Services main banner starting -->
@@ -68,7 +64,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 <div class="col-12 col-lg-6 col-md-6  p-0">
                     <div class="mlb-wrapping">
                         <img src="./images/freepik-img/link-insertion-banner.png" class="img-fluid banner-ext-style"
-                           alt="">
+                            alt="">
                     </div>
                 </div>
             </div>
@@ -225,7 +221,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         is naturally included in the content.</p>
                 </div>
             </div>
-            
+
         </div>
     </section>
 

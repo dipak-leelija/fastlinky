@@ -198,12 +198,10 @@ if(isset($_POST['btnSubmit'])){
     <meta name="keywords"
         content="Precedence Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
-    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/cheakout.css" type='text/css'>
@@ -214,8 +212,7 @@ if(isset($_POST['btnSubmit'])){
     <!-- <script src="js/ajax.js"></script> -->
 
 </head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
     <div id="home">
         <!-- header -->
         <?php require_once "partials/navbar.php"; ?>

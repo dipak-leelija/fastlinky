@@ -1,6 +1,6 @@
 <?php
-require_once "includes/constant.inc.php";
 session_start();
+require_once "includes/constant.inc.php";
 
 require_once("_config/dbconnect.php");
 
@@ -41,19 +41,15 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
     <link rel="icon" href="images/logo/favicon.png" type="image/png">
     <title>Guest Post Orders List - <?php echo COMPANY_S; ?></title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/my-orders.css" rel='stylesheet' type='text/css' />
     <link href="css/order-list.css" rel='stylesheet' type='text/css' />
-
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
 
     <!-- Datatable CSS  -->
     <link rel="stylesheet" href="plugins/data-table/style.css">

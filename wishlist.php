@@ -1,6 +1,6 @@
 <?php
-require_once "includes/constant.inc.php";
 session_start();
+require_once "includes/constant.inc.php";
 
 require_once("_config/dbconnect.php");
 
@@ -56,13 +56,9 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <title>Wishlist | <?php echo COMPANY_S; ?></title>
 
-
-    <!-- Bootstrap Core CSS -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
-    <!-- <link href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css" rel='stylesheet' type='text/css' /> -->
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
 
     <!-- Custom CSS -->
@@ -70,11 +66,9 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="css/wishlist.css" rel='stylesheet' type='text/css' />
 
-
-
     <!--//webfonts-->
-
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
+    
     <style>
     @media (min-width:768px) {
         .table-responsive {
@@ -84,8 +78,7 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
     }
     </style>
 </head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
     <div id="home">
 
         <!-- navbar start -->

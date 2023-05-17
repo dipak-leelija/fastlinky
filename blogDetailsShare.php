@@ -60,15 +60,14 @@ $cusDtl		= $customer->getCustomerData($cusId);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>User Dashboard - <?php echo COMPANY_S; ?></title>
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- plugins  files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+    
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
+
     <!--webfonts-->
     <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
     <!--//webfonts-->

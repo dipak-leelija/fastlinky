@@ -305,20 +305,15 @@ if(isset($_SESSION['orderId'])) {
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <!-- <link rel="stylesheet" href="<?php echo URL ?>style/ansysoft.css" type="text/css" /> -->
-    <link rel="stylesheet" href="<?php echo URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css">
-	<link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
-    <!-- <link rel="stylesheet" href="<?php echo URL ?>/plugins/fontawesome-6.1.1/css/all.css"> -->
-	<link href="css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="<?php echo URL ?>/css/payment-status.css">
 
 </head>
-
-
 <body>
-
     <!-- Start  Header -->
     <?php require_once "partials/navbar.php"; ?>
     <!-- End  Header -->

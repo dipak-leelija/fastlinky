@@ -29,7 +29,6 @@ $uImg 			= new ImageUtility();
 $uNum 			= new NumUtility();
 $faqs		    = new faqs();
 
-// $GPPackage      = new GuestPostpackage();
 ######################################################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
 //user id
@@ -58,20 +57,17 @@ if(isset($_GET['seo_url']))
         content="seo services, local seo services, seo company, seo agency, Link Building services agency, link building, backlink building, seo link building, what is a backlink ,link building services, seo link building services, best link building services, back link building services, link building seo services" />
 
 
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
-    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
+    <!-- plugins  files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+    <link href="./plugins/sweetalert/sweetalert2.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/index.css" rel='stylesheet' type='text/css' />
     <link href="css/testimonials.css" rel="stylesheet">
     <link href="css/clientside-logo.css" rel="stylesheet">
 
-    <!-- font-awesome icons -->
-    <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
-    <link href="./plugins/sweetalert/sweetalert2.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
 
 </head>
 

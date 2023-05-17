@@ -19,20 +19,18 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
 
 
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- plugins  files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/blogger-outreach.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/clientside-logo.css">
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
-</head>
 
-<body data-scrollbar>
+</head>
+<body>
     <?php require_once "partials/navbar.php"; ?>
     <!--___________________________________________________________________________________________________ -->
     <!-- starting of blogger-outreach main banner -->
@@ -168,7 +166,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     </section>
     <!-- real-blogger-outreach-section end -->
-        <!-- _________________________________________________________________________________ -->
+    <!-- _________________________________________________________________________________ -->
     <!-- ==================== Does-Blogger-Outreach Work For You starts ============================ -->
     <section class="works-for-you-bo-section py-0">
         <div class="custom-cntainr">
@@ -232,7 +230,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     authority in order to get you the finest stats for your site.</p>
                             </div>
                         </div>
-                      
+
                         <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class=" pb-3 text-center text-sm-start">
@@ -461,7 +459,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <h1 class="text-center pricing-bo-h1 mb-3 mt-5">Blogger Outreach Pricing
         </h1>
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
-            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>

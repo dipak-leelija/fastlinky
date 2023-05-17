@@ -1,7 +1,7 @@
 <?php
+session_start();
 require_once "includes/constant.inc.php";
 require_once "includes/registration.inc.php";
-session_start();
 
 require_once("_config/dbconnect.php");
 
@@ -149,27 +149,17 @@ if(isset($_POST['btnSubmit'])){
         content="Client register for buy ready web products or guest post services Or Reseller can register for sell his/her web products or guest post services">
     <meta name="keywords" content="Web Design, Web Development, Apps Development, SEO Services, Guest Post Services, Domain name with Ready Website,
 Ready website for business, High Quality website sales, High quality blogs sales, expired domain sales" />
-    <script>
-    addEventListener("load", function() {
-        setTimeout(hideURLbar, 0);
-    }, false);
 
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    }
-    </script>
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
-    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/register.css">
     <!-- //Custom Theme files -->
 </head>
-
-<body id="page-top" class="pt-0" data-spy="scroll" data-target=".navbar-fixed-top">
+<body class="pt-0">
     <div id="home">
         <!-- header -->
         <?php require_once 'partials/navbar.php'; ?>

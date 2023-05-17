@@ -1,6 +1,6 @@
 <?php
-require_once "includes/constant.inc.php";
 session_start();
+require_once "includes/constant.inc.php";
 
 require_once ROOT_DIR."/_config/dbconnect.php";
 
@@ -43,12 +43,10 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, '*');
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <title>Package order history - <?php echo COMPANY_S; ?></title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="<?php echo URL;?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
-    <!-- <link href="<?php echo URL;?>/plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' /> -->
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+    
     <!-- Custom CSS -->
     <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />

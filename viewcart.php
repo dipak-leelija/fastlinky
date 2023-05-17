@@ -1,6 +1,6 @@
 <?php
-require_once("includes/constant.inc.php");
 session_start();
+require_once("includes/constant.inc.php");
 require_once "_config/dbconnect.php";
 
 require_once("classes/date.class.php");
@@ -59,12 +59,9 @@ $_SESSION['reorder-page'] = $utility->currentUrl();
     <meta name="keywords" content="Ready Website, Ready Blogs, Ready Websites Sales, Ready Blogs sales,
 	Domain selling, Low Budget Websites, Good Metrics ready blogs sales, web design" />
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
-    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -73,8 +70,7 @@ $_SESSION['reorder-page'] = $utility->currentUrl();
     <!--//webfonts-->
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
 </head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
     <div id="home">
         <!-- header -->
         <?php require_once "partials/navbar.php"; ?>

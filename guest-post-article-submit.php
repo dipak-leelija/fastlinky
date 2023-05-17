@@ -52,12 +52,9 @@ $updatedBy =  $_SESSION[USR_SESS];
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <!-- Bootstrap Core CSS -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    
-    <!-- font-awesome icons -->
-    <link href="<?= URL?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?= URL?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet' type='text/css' />
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -70,8 +67,7 @@ $updatedBy =  $_SESSION[USR_SESS];
     <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
 
 </head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
 
     <?php
 

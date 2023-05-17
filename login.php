@@ -100,10 +100,10 @@ if(isset($_POST['btnLogin'])){
     <meta name="description" content="">
     <meta name="keywords" content="" />
 
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
-    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <link rel="stylesheet" href="css/login.css">
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
@@ -114,7 +114,7 @@ if(isset($_POST['btnLogin'])){
         <!-- header -->
         <?php require_once "partials/navbar.php"; ?>
         <!-- //header -->
-        <section class="login-mainsectn" >
+        <section class="login-mainsectn">
             <div id="main-wrapper" class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-10">

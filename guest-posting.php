@@ -9,35 +9,36 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <link rel="icon" href="images/logo/favicon.png" type="image/png">
-    <title>Quality White hat guest post & Blogger outreach service - <?php echo COMPANY_S; ?></title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
+    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
+    
+    <title>Quality White hat guest post & Blogger outreach service - <?php echo COMPANY_S; ?></title>
     <meta name="description"
         content="Fastlinky enriches your ranking with High Quality White hat guest post & Blogger outreach services from Regular basis updated high authority blog sites list." />
-    <meta charset="utf-8">
     <meta name="keywords"
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
 
 
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/guest-posting.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/clientside-logo.css">
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
+    
     <!--webfonts-->
     <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
     <!--//webfonts-->
 </head>
-
-<body data-scrollbar>
+<body>
     <?php require_once "partials/navbar.php"; ?>
     <!--____________________________________________________________________________________________ -->
     <!-- starting of high quality guestposting main banner -->

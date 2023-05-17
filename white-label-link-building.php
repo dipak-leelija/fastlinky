@@ -21,22 +21,16 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
 
 
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
-    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/white-label-link-building.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/testimonials.css">
-
-    <!-- font-awesome icons -->
-    <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
-    <!-- //Custom Theme files -->
 </head>
-
-<body data-scrollbar>
+<body>
     <?php require_once "partials/navbar.php"; ?>
     <!--___________________________________________________________________________________________________ -->
     <!-- starting of white lebel links building main banner    -->

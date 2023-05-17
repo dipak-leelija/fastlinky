@@ -63,16 +63,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="description" content="" />
 
 
-    <!-- New Files  -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
-    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
 
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <!-- <link href="css/blog-list.css" rel='stylesheet' type='text/css' /> -->
     <link href="css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
 
     <!--webfonts-->
@@ -94,10 +91,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         overflow-y: auto;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
+
     .form-control:focus {
-   
-    box-shadow:none !important;
-}
+
+        box-shadow: none !important;
+    }
+
     #packageList option {
         background-color: white;
         padding: 4px;

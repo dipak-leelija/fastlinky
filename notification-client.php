@@ -1,6 +1,6 @@
 <?php
-require_once("includes/constant.inc.php");
 session_start();
+require_once("includes/constant.inc.php");
 
 require_once("_config/dbconnect.php");
 
@@ -47,13 +47,9 @@ if($cusDtl[0][0] == 3){
     <meta charset="utf-8">
     <meta name="robots" content="noindex,nofollow">
 
-    <!-- Bootstrap Core CSS -->
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
-    <!-- <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' /> -->
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
     <link href="css/my-orders.css" rel='stylesheet' type='text/css' />
@@ -61,12 +57,12 @@ if($cusDtl[0][0] == 3){
     <link href="css/form.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="css/notification-client.css" rel='stylesheet' type='text/css' />
-    <!-- //Custom Theme files -->
+
     <!--webfonts-->
     <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <!--//webfonts-->
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
+    <!--//webfonts-->
 
     <style>
     .toast:not(.show) {

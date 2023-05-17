@@ -47,13 +47,9 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <!-- Bootstrap Core CSS -->
-    <link href="<?php echo URL;?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
-    <!-- <link href="<?php echo URL;?>/plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' /> -->
-    <!-- Custom CSS -->
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
@@ -63,11 +59,8 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
 
     <!--//webfonts-->
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-
-
 </head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
     <div id="home">
         <!-- header -->
         <?php  require_once ROOT_DIR."/partials/navbar.php" ?>
@@ -197,7 +190,8 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                                 onclick="goTo('guest-post-article-submit.php?order=<?= base64_encode(urlencode($gpOrderId)) ?>')">
                                                 <td>#<?= $gpOrderId;?></td>
                                                 <td><?= $order['clientOrderedSite']; ?></td>
-                                                <td><span class="badge <?= $statusName;?>"><?= $statusName;?></span></td>
+                                                <td><span class="badge <?= $statusName;?>"><?= $statusName;?></span>
+                                                </td>
                                                 <td><?= $payMode['transection_mode'];?></td>
                                                 <td><?= $DateUtil->printDate2($order['added_on']); ?></td>
                                             </tr>
