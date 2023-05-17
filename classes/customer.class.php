@@ -93,6 +93,7 @@ class Customer extends Utility{
 		//get the primary key
 		$id		= 	$this->conn->insert_id;
 		//echo $sql.mysql_error();exit;
+
 		// inserting into customer info table
 		$sql2	=   "INSERT INTO customer_info
 			(last_logon, no_logon, added_on, customer_id)
@@ -2301,7 +2302,7 @@ class Customer extends Utility{
 	*	This function will return all the product according to wishlist
 	*
 	*	@param
-	*			$cusId			User Id
+	*	$cusId			User Id
 	*
 	*	@return array
 	*	
@@ -2651,211 +2652,16 @@ class Customer extends Utility{
 	#																															#
 	#############################################################################################################################
 
+	function updateLastLogin($customer_id){
 
-	/**
-	*	Register a new Member.
-	*
-	*
-	*	@param
-	*			$first_name				First name of the member
-	*			$last_name				last name of the member
-	*			$email					email of the member
-	*			$address				address of the member
-	*			$province_id			province id
-	*			$town					town of the member
-	*			$post_code				post code
-	*			$favourite_resturant	favorite resturant of member
-	*			$description			Description of the member
-	*
-	*	@return int, 
-	*/
-	function addMember($first_name, $last_name, $email, $address, $province_id, $town, $post_code, $favourite_resturant, $description) 	  
-	{
-		//declare var
-		$id	= 0;
-		
-		
-		//get all email id to check if it is registered or not
-		$select = "SELECT * FROM club_member WHERE email = '$email'";
-		
-		//execute query
-		$query	= mysql_query($select);
-			
-		if(mysql_num_rows($query) > 0)
-		{
-			header("Location: ".$_SERVER['PHP_SELF']."?action=join_club&message=Email already exists&typeM=ERROR#joinClub");
-		}
-		else
-		{
-			//statement
-			$sql	 = 	 "INSERT INTO club_member 
-						 (first_name, last_name, email, address, province_id, town, post_code, favourite_resturant,  description, added_on)
-						 VALUES
-						 ('$first_name','$last_name', '$email', '$address', '$province_id', '$town', '$post_code', '$favourite_resturant',
-						 '$description',  now())";
-						 
-			//execute query
-			$query	= 	mysql_query($sql);
-			
-			//get the primary key
-			$id		= 	mysql_insert_id();
-						
-		
-		}
-		
-		//return id
-		return $id;
-		
-	}//eof
-	
-	/**
-	*	Edit club member
-	*	
-	*	@param
-	*			$member_id				Id of the member
-	*			$first_name				First name of the member
-	*			$last_name				last name of the member
-	*			$email					email of the member
-	*			$address				address of the member
-	*			$province_id			province id
-	*			$town					town of the member
-	*			$post_code				post code
-	*			$favourite_resturant	favorite resturant of member
-	*			$description			Description of the member
-	*
-	*	@return	null
-	*/
-	function editMember($member_id, $first_name, $last_name, $email, $address, $province_id, $town, $post_code, $favourite_resturant,
-						$description)
-	{
-	
-		
-		//statement
-		$sql	 = 		"UPDATE club_member 
-						SET
-						first_name				= '$first_name',
-						last_name 				= '$last_name',
-						email 					= '$email',
-						address 				= '$address',
-						province_id 			= '$province_id',
-						town 					= '$town',
-						post_code				= '$post_code',
-						favourite_resturant		= '$favourite_resturant',
-						description				= '$description',
-						modified_on				= now()
-						WHERE 
-						member_id		 		= $member_id
-						";
-			
-		//execute query			
-		$query	= mysql_query($sql);
-		//echo $sql.mysql_error();exit;
-		
-	}//eof
-	
-	/*
-	*	This funcion will return all the member id
-	*	
-	*	@param
-	*			$orderby		Order by clause in runtime
-	*			$orderType		Order type, either ascending or descending
-	*
-	*	@return array
-	*/
-	function getAllMemberId($orderby, $orderbyType)
-	{
-		//declare var
-		$data	= array();
-		
-		//statement
-		if($orderby == '' || $orderbyType == '')
-		{
-			$select	= "SELECT member_id FROM club_member";
-		}
-		else
-		{
-			$select	= "SELECT member_id FROM club_member
-				   	   ORDER BY ".$orderby." ".$orderbyType."";
-		}
-				   
-		//execute query
-		$query	= mysql_query($select);
-		
-		//fetch and hold the data
-		while($result	= mysql_fetch_array($query))
-		{
-			$data[]	= $result['member_id'];
-		}
-		
-		
-		//return the data
-		return $data;
-		
-	}//eof
-		
-	/**
-	*	Get the data associated with a member
-	*
-	*	@param
-	*			$mid		Member id
-	*
-	*	@return array				
-	*/
-	function getMemberData($mid)
-	{
-		//declare vars
-		$data = array();
-		
-		//statement
-		$select = "SELECT * FROM club_member
-				   WHERE member_id = '$mid'";
-				   
-		//execute query
-		$query	= mysql_query($select);
-		//echo $select.mysql_error();exit;
-		//holds the data
-		while($result = mysql_fetch_object($query))
-		{
-			$data  = array(
-					$result->first_name,			//0
-					$result->last_name,				//1
-					$result->email,					//2
-					$result->address,				//3
-					$result->province_id,			//4
-					$result->town,					//5
-					$result->post_code,				//6
-					$result->favourite_resturant,	//7
-					$result->description,			//8
-					$result->added_on,				//9
-					$result->modified_on,			//10
-					
-					);
-		}
-		
-		//return the data
-		return $data;
-		
-	}//eof
+		//update customer info
+		$update = "UPDATE customer_info 
+					SET last_logon = now(), no_logon = no_logon + 1
+					WHERE 	customer_id = '$customer_id'";
 
-	/**
-	*	This function will delete a member
-	*
-	*	@param
-	*			$mid			member id
-	*
-	*	@return null
-	*/	
-	
-	function deleteMember($mid)
-	{
+		$res =  $this->conn->query($update);
 		
-		//delete from product
-		$delete1 = "DELETE FROM club_member WHERE member_id='$mid'";
-		
-		//execute quary
-		$query1	= mysql_query($delete1);
-		
-	}//eof
+	}
 	
 	
 	############################################################################################################
