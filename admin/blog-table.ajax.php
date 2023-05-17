@@ -36,19 +36,10 @@ $blogsDtls	   = $blogMst->ShowBlogData();
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="vendors/feather/feather.css">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
+
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../plugins/data-table/style.css">
-
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-
 </head>
 
 <body>
@@ -148,7 +139,8 @@ $blogsDtls	   = $blogMst->ShowBlogData();
                     <a class="text-decoration-none mx-1" href="blog_edit.php?action=edit_faq&id=<?php echo $id; ?>">
                         <i class="fa-regular fa-eye"></i>
                     </a>
-                    <a class="text-decoration-none mx-1 text-danger" href="#" id="<?php echo $id; ?>" onclick="deleteBlog(this)">
+                    <a class="text-decoration-none mx-1 text-danger" href="#" id="<?php echo $id; ?>"
+                        onclick="deleteBlog(this)">
                         <i class="fa-solid fa-trash"></i>
                     </a>
                 </td>
@@ -159,7 +151,7 @@ $blogsDtls	   = $blogMst->ShowBlogData();
         </tbody>
     </table>
     <!-- content-wrapper ends -->
-    
+
     <script src="../plugins/data-table/simple-datatables.js"></script>
     <script src="../plugins/tinymce/tinymce.js"></script>
     <script src="../plugins/main.js"></script>

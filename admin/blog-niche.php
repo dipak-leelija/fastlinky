@@ -34,20 +34,10 @@ $blogsDtls	   = $blogMst->ShowBlogNichMast();
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Niches - <?php echo COMPANY_S?></title>
-    <link rel="shortcut icon" href="images/favicon.png" />
-    
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
     <link rel="stylesheet" href="css/fastlinky.css">
-    <link rel="stylesheet" href="vendors/feather/feather.css">
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../plugins/data-table/style.css">
-
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
 </head>
 
 <body>

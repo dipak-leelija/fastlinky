@@ -40,27 +40,9 @@ $faqsDtl 	= $faqs->getfaqDetails($_GET['id']);
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Skydash Admin</title>
-    <!-- plugins:css -->
-    <!-- <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css"> -->
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../plugins/data-table/style.css">
-
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
-
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
-
 </head>
 
 <body>
@@ -96,33 +78,34 @@ $faqsDtl 	= $faqs->getfaqDetails($_GET['id']);
                             <div class="col-12 m-3">
                                 <label for="inputAddress" class="form-label">Question</label>
                                 <input type="text" name="question" class="form-control w-75" id="inputAddress"
-                                value="<?php echo $showquestion; ?>" placeholder="">
+                                    value="<?php echo $showquestion; ?>" placeholder="">
                             </div>
                             <div class="col-12 m-3">
                                 <label for="inputAddress2" class="form-label">Question Description</label>
                                 <input type="text" name="ans" class="form-control w-75" id="inputAddress2"
-                                value="<?php echo $showans; ?>"  placeholder="ANS">
+                                    value="<?php echo $showans; ?>" placeholder="ANS">
                             </div>
 
 
                             <div class="col-12 m-3">
                                 <label for="inputAddress2" class="form-label">Page Name</label>
                                 <input type="text" name="page" class="form-control w-75" id="inputAddress2"
-                                value="<?php echo $showpage; ?>"  placeholder="Apartment, studio, or floor">
+                                    value="<?php echo $showpage; ?>" placeholder="Apartment, studio, or floor">
                             </div>
 
 
                             <div class="col-12 m-3">
-                            <input name="btneditfaqs" type="submit" class="btn btn-primary" value="EDIT" />
-                                <input  type="button"  onclick="location.href='faqs.php';" class="btn btn-primary" value="cancel" />
+                                <input name="btneditfaqs" type="submit" class="btn btn-primary" value="EDIT" />
+                                <input type="button" onclick="location.href='faqs.php';" class="btn btn-primary"
+                                    value="cancel" />
 
                             </div>
                         </form>
-                     
+
                     </div>
                 </div>
                 <!-- content-wrapper ends -->
-                
+
                 <!-- Footer Start  -->
                 <?php require_once "partials/_footer.php"; ?>
                 <!-- Footer End  -->

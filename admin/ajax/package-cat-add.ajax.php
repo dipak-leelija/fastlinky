@@ -40,8 +40,7 @@ if (isset($_POST['addPackage'])) {
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
+<?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
 </head>
 
 <body>

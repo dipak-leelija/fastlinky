@@ -70,24 +70,11 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'Search'))
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Customer Emails | <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
 
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="vendors/feather/feather.css">
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-    <!-- <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css"> -->
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../plugins/data-table/style.css">
-
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
 </head>
 
 <body>
@@ -114,7 +101,8 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'Search'))
                                 <div class="card-body">
                                     <div class="row justify-content-center">
                                         <div class="border rounded mx-auto col-md-8 col-lg-7 py-3">
-                                            <form action="email_sendall_acction.php" method="post" name="formCustomerMail">
+                                            <form action="email_sendall_acction.php" method="post"
+                                                name="formCustomerMail">
                                                 <div class="form-group">
                                                     <label for="mailSubject">Subject</label>
                                                     <input type="text" class="form-control" name="mail-subject">
@@ -123,14 +111,18 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'Search'))
 
                                                 <div class="form-group">
                                                     <label for="mailMessage">Message</label>
-                                                    <textarea class="form-control" name="mail-message"rows="20"></textarea>
+                                                    <textarea class="form-control" name="mail-message"
+                                                        rows="20"></textarea>
 
                                                 </div>
 
 
                                                 <div class="d-flex justify-content-around justify-content-md-end">
-                                                    <button class="btn btn-danger mr-2" onclick="history.back()">Cancel</button>
-                                                    <button type="submit" class="btn btn-primary" onclick="mailSubmit(this)" name="btnSendMail" id="btnSendMail">Submit</button>
+                                                    <button class="btn btn-danger mr-2"
+                                                        onclick="history.back()">Cancel</button>
+                                                    <button type="submit" class="btn btn-primary"
+                                                        onclick="mailSubmit(this)" name="btnSendMail"
+                                                        id="btnSendMail">Submit</button>
                                                 </div>
 
                                             </form>
