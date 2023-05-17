@@ -48,13 +48,14 @@
     height: 100%;
     object-fit: contain;
     aspect-ratio: 3/2.5;
-    background: var(--mustard);
+    background-color: var(--pure-white);
     mix-blend-mode: revert;
     /* mix-blend-mode: difference; */
 }
 
 .img-responsive:hover  {
-    background-color: var(--pure-white);
+    background: var(--mustard);
+
 }
 
 @media (min-width:250px) and (max-width:451px) {
