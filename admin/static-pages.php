@@ -33,20 +33,10 @@ $mode			= $utility->returnGetVar('mode','');
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Static Pages - <?php echo COMPANY_S?></title>
-    <link rel="shortcut icon" href="images/favicon.png" />
-
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
     <link rel="stylesheet" href="css/fastlinky.css">
-    <link rel="stylesheet" href="vendors/feather/feather.css">
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../plugins/data-table/style.css">
-
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
 </head>
 
 <body>
@@ -169,7 +159,8 @@ $mode			= $utility->returnGetVar('mode','');
                     <form class="forms-sample">
                         <div class="form-group">
                             <label for="pageFullName">Page Url</label>
-                            <input type="text" class="form-control" id="pageFullName" placeholder="Page full name with extension">
+                            <input type="text" class="form-control" id="pageFullName"
+                                placeholder="Page full name with extension">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>

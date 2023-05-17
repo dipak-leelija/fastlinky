@@ -29,29 +29,11 @@ $ContactDtl 	= $Contact->showContactInfo($_GET['id']);
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Skydash Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="vendors/feather/feather.css">
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-    <!-- <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css"> -->
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../plugins/data-table/style.css">
-
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
-
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
-
 </head>
 
 <body>
@@ -74,33 +56,36 @@ $ContactDtl 	= $Contact->showContactInfo($_GET['id']);
                         <div class="ml-3 mb-3">
                             <h2>Contact View</h2>
                         </div>
-                            <input type="hidden" class="form-control" value="<?php echo $showid; ?>" name="id">
-                            <div class="col-12 m-3">
-                                <label for="full-name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control w-75" id="full-name"
+                        <input type="hidden" class="form-control" value="<?php echo $showid; ?>" name="id">
+                        <div class="col-12 m-3">
+                            <label for="full-name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control w-75" id="full-name"
                                 value="<?php echo $ContactDtl[1]; ?>">
-                            </div>
-                            <div class="col-12 m-3">
-                                <label for="email" class="form-label">E-Mail</label>
-                                <input type="text" class="form-control w-75" id="email"
+                        </div>
+                        <div class="col-12 m-3">
+                            <label for="email" class="form-label">E-Mail</label>
+                            <input type="text" class="form-control w-75" id="email"
                                 value="<?php echo $ContactDtl[2]; ?>">
-                            </div>
-                            <div class="col-12 m-3">
-                                <label for="contact-number" class="form-label">Contact No.</label>
-                                <input type="text" class="form-control w-75" id="contact-number" value="<?php echo $ContactDtl[3]; ?>">
-                            </div>
-                            <div class="col-12 m-3">
-                                <label for="contact-message" class="form-label">Message</label>
-                                <textarea class="form-control w-75" rows="6" cols="30" id="contact-message"><?php echo $ContactDtl[4]; ?></textarea>
-                            </div>
+                        </div>
+                        <div class="col-12 m-3">
+                            <label for="contact-number" class="form-label">Contact No.</label>
+                            <input type="text" class="form-control w-75" id="contact-number"
+                                value="<?php echo $ContactDtl[3]; ?>">
+                        </div>
+                        <div class="col-12 m-3">
+                            <label for="contact-message" class="form-label">Message</label>
+                            <textarea class="form-control w-75" rows="6" cols="30"
+                                id="contact-message"><?php echo $ContactDtl[4]; ?></textarea>
+                        </div>
 
-                            <div class="col-12 m-3">
-                                <input  type="button"  onclick="location.href='contact.php';" class="btn btn-primary" value="Go Back" />
+                        <div class="col-12 m-3">
+                            <input type="button" onclick="location.href='contact.php';" class="btn btn-primary"
+                                value="Go Back" />
 
-                            </div>
-                           
+                        </div>
+
                         </form>
-                     
+
                     </div>
                 </div>
                 <!-- content-wrapper ends -->

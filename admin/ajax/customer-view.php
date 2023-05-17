@@ -50,29 +50,9 @@ $typeM		= $utility->returnGetVar('typeM','');
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Skydash Admin</title>
-    <!-- plugins:css -->
-    <!-- <link rel="stylesheet" href="vendors/feather/feather.css">
-    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css"> -->
     <link rel="stylesheet" href="../css/order-table.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
-
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
-    <!-- <link rel="stylesheet" href="../../plugins/bootstrap-5.2.0/css/bootstrap.css"> -->
-    <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
-
     <style>
     .content-wrapper {
         background: #F5F7FF;
@@ -253,10 +233,11 @@ $typeM		= $utility->returnGetVar('typeM','');
                                 <h4 class="infos-css-style">Password Manager <i class="fa-regular fa-calendar-days"></i>
                                 </h4>
                                 <p>Current Password : <?php echo md5_decrypt($cusDtl[0][4],USER_PASS); ?></p>
-                                <p>Change Password:  <a href="javascript:void(0)" onClick="MM_openBrWindow('customer_pass_edit.php?action=edit_pass&user_id=<?php echo $cus_id; ?>','EditAdvertiserPass','width=450,height=320')">
-                                    Edit Password
-                                </a>
-                            </p>
+                                <p>Change Password: <a href="javascript:void(0)"
+                                        onClick="MM_openBrWindow('customer_pass_edit.php?action=edit_pass&user_id=<?php echo $cus_id; ?>','EditAdvertiserPass','width=450,height=320')">
+                                        Edit Password
+                                    </a>
+                                </p>
                                 <p>Sort Order <?php echo $cusDtl[0][15]; ?></p>
                                 <p>News Letter</p>
 

@@ -76,19 +76,7 @@ $allFeatures       = $GPPackage->featureByPackageId($packageId);
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
-
-
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
-
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
 </head>
 
 <body>
@@ -129,7 +117,8 @@ $allFeatures       = $GPPackage->featureByPackageId($packageId);
 
                                 <div class="col-md-4 mt-3">
                                     <label for="" class="mb-1">Price</label>
-                                    <input type="number" class="form-control" name="price" value="<?php echo $package['price'];?>">
+                                    <input type="number" class="form-control" name="price"
+                                        value="<?php echo $package['price'];?>">
                                 </div>
                                 <div class="col-md-4 mt-3">
                                     <label for="" class="mb-1">Blog Posts</label>

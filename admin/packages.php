@@ -51,23 +51,11 @@ $packageCats = $GPPackage->allPackagesCat();
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Packages - <?php echo COMPANY_FULL_NAME;?></title>
-    <link rel="icon" href="<?php echo FAVCON_PATH;?>" type="image/png">
-    <!-- plugins:css -->
     <link rel="stylesheet" href="<?php echo ADM_URL; ?>/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="<?php echo ADM_URL; ?>/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/plugins/data-table/style.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/css/order-table.css">
-
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
-    <link rel="stylesheet" href="<?php echo ADM_URL; ?>/css/vertical-layout-light/style.css">
-    <!-- endinject -->
-
 <!-- 
     <style>
     @media (max-width:1200px) {
