@@ -124,6 +124,8 @@ if(isset($_POST['btnCancel'])){
 
     <?php require_once ROOT_DIR . "/plugins/font-awsome/font-awsome.php" ?>
 
+
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <!-- <link href="css/form.css" rel='stylesheet' type='text/css' /> -->
@@ -203,10 +205,15 @@ if(isset($_POST['btnCancel'])){
                                                         <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">
                                                             <?php echo $cusDtl[0][5].' '.$cusDtl[0][6]; ?>
                                                         </h4>
+                                                        <span class="badge badge-mustard"><?php echo $cusDtl[0][14]; ?>
+                                                        </span>
                                                         <div class="text-start edit-top-div_detail">
                                                             <p class="mb-0"><?php echo $cusDtl[0][3]; ?></p>
-                                                            <div class="text-muted"><small>Last login 2 hours
-                                                                    ago</small></div>
+                                                            <!-- <div class="text-muted">
+                                                                <small>
+                                                                    Last login <?= $dateUtil->dateTimeText($cusDtl[0][21]) ?>
+                                                                </small>
+                                                            </div> -->
                                                         </div>
 
                                                         <div class="input-group mt-2">
@@ -225,17 +232,28 @@ if(isset($_POST['btnCancel'])){
                                                                 <button id="upload-btn" type="submit"
                                                                     name="picture-update"
                                                                     class="input-group-text btn btn-info rounded text-light fw-semibold ms-2 d-none">
-                                                                    <i class="fa-regular fa-upload pe-1"></i>
+                                                                    <i
+                                                                        class="fa-solid fa-arrow-up-from-bracket pe-1"></i>
                                                                     Upload
                                                                 </button>
                                                             </form>
                                                         </div>
                                                     </div>
                                                     <div class="text-center text-sm-right order-sm-2 order-1">
-                                                        <span
-                                                            class="badge badge-mustard"><?php echo $cusDtl[0][14]; ?></span>
+                                                        <!-- <span
+                                                            class="badge badge-mustard"><?php echo $cusDtl[0][14]; ?>
+                                                        </span>
                                                         <div class="text-muted">
-                                                            <small><?php echo date('l jS \of F Y h:i:s A', strtotime($cusDtl[0][22])); ?></small>
+                                                            <small>
+                                                                <?php
+                                                                    echo $dateUtil->dateTimeText($cusDtl[0][22]);?>
+                                                            </small>
+                                                        </div> -->
+                                                        <div class="text-muted">
+                                                            <small>
+                                                                Last login
+                                                                <?= $dateUtil->dateTimeText($cusDtl[0][21]) ?>
+                                                            </small>
                                                         </div>
                                                     </div>
                                                 </div>
