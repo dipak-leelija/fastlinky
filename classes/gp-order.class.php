@@ -67,10 +67,10 @@ class PackageOrder extends DatabaseConnection{
           echo $sql.$this->conn->error;
         }    
       
-        $res  = $this->conn->query($sql);
+        $res  = $this->conn->query($sql) or die($this->conn->error);
+        echo 'Global:'. $this->conn-> error;
         if (!$res) {
-          // echo $this->conn-> error;
-          printf("error: %s\n", mysqli_errno($this->conn));
+          printf("error: %s\n", $this->conn->error);
         }
         if($res){
           return true;
