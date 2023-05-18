@@ -713,7 +713,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                         } else {
                             Swal.fire(
                                 'Failed!',
-                                'Failed to Accept Order!! 😥.',
+                                response,
                                 'error'
                             )
                         }
