@@ -63,18 +63,14 @@ class PackageOrder extends DatabaseConnection{
         $sql  = "UPDATE `gp_package_order` SET `order_status` = '$statusId', `updated_by` = '$updatedBy'
                                             WHERE `order_id` = '$orderId'";
 
-        if (!$sql) {
-          echo $sql.$this->conn->error;
-        }    
-      
-        $res  = $this->conn->query($sql) or die($this->conn->error);
-        echo 'Global:'. $this->conn-> error;
-        if (!$res) {
-          printf("error: %s\n", $this->conn->error);
-        }
+        $res  = $this->conn->query($sql);
         if($res){
           return true;
         }else {
+          $error = $this->conn->error();
+          if ($error) {
+            echo "SQL Error: $error";
+          }
           return false;
         }
     }
