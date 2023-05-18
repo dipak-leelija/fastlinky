@@ -55,27 +55,46 @@ class PackageOrder extends DatabaseConnection{
     }
 
 
-    function updatePackOrdersStatus($orderId, $statusId, $updatedBy){
+    // function updatePackOrdersStatus($orderId, $statusId, $updatedBy){
 
-      if ($orderId =='') {
-        return false;
-      }else {
+    //   if ($orderId =='') {
+    //     return false;
+    //   }else {
+    //     $sql  = "UPDATE `gp_package_order` SET `order_status` = '$statusId', `updated_by` = '$updatedBy'
+    //                                         WHERE `order_id` = '$orderId'";
+
+    //     $res  = $this->conn->query($sql);
+    //     if($res){
+    //       return true;
+    //     }else {
+    //       $error = $this->conn->error();
+    //       if ($error) {
+    //         echo "SQL Error: $error";
+    //       }
+    //       return false;
+    //     }
+    // }
+  
+    // }//eof
+
+    function updatePackOrdersStatus($orderId, $statusId, $updatedBy) {
+
+      try {
         $sql  = "UPDATE `gp_package_order` SET `order_status` = '$statusId', `updated_by` = '$updatedBy'
                                             WHERE `order_id` = '$orderId'";
-
+    
         $res  = $this->conn->query($sql);
-        if($res){
+    
+        if ($res) {
           return true;
-        }else {
-          $error = $this->conn->error();
-          if ($error) {
-            echo "SQL Error: $error";
-          }
+        } else {
           return false;
         }
+      } catch (Exception $e) {
+        echo $e->getMessage();
+      }
     }
-  
-    }//eof
+    
 
 
     function getOrderStatus($orderId){
