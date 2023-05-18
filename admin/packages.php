@@ -11,7 +11,6 @@ require_once ROOT_DIR."/_config/dbconnect.php";
 
 require_once ROOT_DIR."/classes/gp-package.class.php";
 require_once ROOT_DIR."/classes/location.class.php"; 
-include_once ROOT_DIR."/classes/countries.class.php";
 require_once ROOT_DIR."/classes/search.class.php";
 require_once ROOT_DIR."/classes/error.class.php";
 
@@ -27,7 +26,6 @@ $dateUtil      	= new DateUtil();
 $error 			= new Error();
 $GPPackage      = new GuestPostpackage();
 $lc		 		= new Location();
-$country		= new Countries();
 $search_obj		= new Search();
 
 $utility		= new Utility();
