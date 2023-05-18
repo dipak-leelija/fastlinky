@@ -38,7 +38,7 @@ $typeM		= $utility->returnGetVar('typeM','');
 
 
 $toName  = $_GET['toName'];
-$toEmail = $_GET['toEmail'];
+// $toEmail = $_GET['toEmail'];
 
 ?>
 

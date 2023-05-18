@@ -31467,7 +31467,7 @@ div.tagsinput span.tag a {
     -webkit-align-items: center;
     align-items: center;
     white-space: nowrap;
-    padding: 0.8125rem 1.937rem 0.8125rem 1rem;
+    padding: 0.8125rem 0.937rem 0.8125rem 1rem;
     color: #6C7383;
     border-radius: 8px;
     -webkit-transition-duration: 0.45s;
@@ -31485,7 +31485,7 @@ div.tagsinput span.tag a {
 .sidebar .nav .nav-item .nav-link i.menu-icon {
     font-size: 1rem;
     line-height: 1;
-    margin-right: 1rem;
+    margin-right: .5rem;
     color: #6C7383;
 }
 
@@ -31587,8 +31587,8 @@ div.tagsinput span.tag a {
 
 .sidebar .nav:not(.sub-menu) {
     margin-top: 1.45rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
 }
 
 .sidebar .nav:not(.sub-menu)>.nav-item {
@@ -31654,6 +31654,7 @@ div.tagsinput span.tag a {
 
 .sidebar .nav.sub-menu .nav-item .nav-link.active {
     color: #ffffff;
+    /* color: #FDA33B; */
     background: transparent;
 }
 
