@@ -60,22 +60,23 @@ class PackageOrder extends DatabaseConnection{
       if ($orderId =='') {
         return false;
       }else {
-        $sql  = "UPDATE `gp_package_order`
-                SET
-                `order_status` = '$statusId',
-                `updated_by`   = '$updatedBy'
-                WHERE `order_id` = '$orderId'";
-      echo $sql.$this->conn->error;
+        $sql  = "UPDATE `gp_package_order` SET `order_status` = '$statusId', `updated_by` = '$updatedBy'
+                                            WHERE `order_id` = '$orderId'";
+
+        if (!$sql) {
+          echo $sql.$this->conn->error;
+        }    
       
-      $res  = $this->conn->query($sql);
-      if (!$res) {
-        echo $this->conn-> error;
-      }
-      if($res){
-        return true;
-      }else {
-        return false;
-      }
+        $res  = $this->conn->query($sql);
+        if (!$res) {
+          // echo $this->conn-> error;
+          printf("error: %s\n", mysqli_errno($this->conn));
+        }
+        if($res){
+          return true;
+        }else {
+          return false;
+        }
     }
   
     }//eof
