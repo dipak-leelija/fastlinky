@@ -707,16 +707,16 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                         acceptOrder: ordId,
                     },
                     success: function(response) {
-                        // alert(response);
-                        if (response.includes('updated!')) {
-                            location.reload();
-                        } else {
-                            Swal.fire(
-                                'Failed!',
-                                response,
-                                'error'
-                            )
-                        }
+                        alert(response);
+                        // if (response.includes('updated!')) {
+                        //     location.reload();
+                        // } else {
+                        //     Swal.fire(
+                        //         'Failed!',
+                        //         response,
+                        //         'error'
+                        //     )
+                        // }
 
                     }
                 });

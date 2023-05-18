@@ -67,7 +67,7 @@ class PackageOrder extends DatabaseConnection{
                 WHERE `order_id` = '$orderId'";
       // echo $sql;
       $res  = $this->conn->query($sql);
-      var_dump($res);
+      print_r($res);
       if($res){
         echo 'true';
         return true;
