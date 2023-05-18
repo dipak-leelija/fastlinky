@@ -30,6 +30,7 @@ $returnUrl  = $utility->goToPreviousSessionPage();
 
 $updatedBy  = $_SESSION[ADM_SESS];
 
+print_r($_REQUEST);
 
 if (isset($_POST['acceptOrder'])) {
     $orderId    = $_POST['acceptOrder'];
