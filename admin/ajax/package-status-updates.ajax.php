@@ -36,6 +36,7 @@ if (isset($_POST['acceptOrder'])) {
     $statusId   = PROCESSINGCODE;
 
     $updated = $PackageOrder->updatePackOrdersStatus($orderId, $statusId, $updatedBy);
+    var_dump($updated);
     if ($updated == 1) {
         $added = $PackageOrder->addPackOrderDtls($orderId, $statusId, ORD_ACPT, $updatedBy, COMPANY_S);
         if ($added == 1) {
