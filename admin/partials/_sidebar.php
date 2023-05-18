@@ -24,7 +24,7 @@
                     <li class="nav-item"> <a class="nav-link" href="orders.php">Guest
                             Post Orders</a></li>
 
-                    <li class="nav-item"> <a class="nav-link" href="package-order .php">Package
+                    <li class="nav-item"> <a class="nav-link" href="package-order.php">Package
                             Orders</a></li>
                 </ul>
             </div>
