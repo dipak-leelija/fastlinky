@@ -1,5 +1,6 @@
 <?php
 session_start();
+$page = "adminPackageOrderDetails";
 require_once "../includes/constant.inc.php";
 include_once ADM_DIR . 'checkSession.php';
 

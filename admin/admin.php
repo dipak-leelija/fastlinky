@@ -186,7 +186,7 @@ $userData =  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
                                 <div class="dashboard-list">
                                     <ul>
                                         <li><a href="orders.php">Orders Management</a></li>
-                                        <li><a href="package-orders.php">Package Orders</a></li>
+                                        <li><a href="package-order.php">Package Orders</a></li>
                                     </ul>
                                 </div>
                             </div>

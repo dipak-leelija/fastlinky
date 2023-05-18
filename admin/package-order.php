@@ -1,6 +1,8 @@
 <?php 
+
 require_once("../includes/constant.inc.php");
 session_start();
+$page = "adminPackageOrder";
 include_once('checkSession.php');
 
 require_once ROOT_DIR . "/_config/dbconnect.php";
