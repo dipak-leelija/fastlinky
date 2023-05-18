@@ -1,6 +1,6 @@
 <?php
-require_once "includes/constant.inc.php";
 session_start();
+require_once "includes/constant.inc.php";
 
 require_once ROOT_DIR."/_config/dbconnect.php";
 
@@ -54,18 +54,14 @@ $packages   = $GPPackage->packDetailsByCat(1);
     
 
 
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
-
 </head>
-
-<body data-scrollbar>
+<body>
     <?php require_once "partials/navbar.php"; ?>
     <!--____________________________________________________________________________________________ -->
     <!-- starting of managed-link-building main banner -->

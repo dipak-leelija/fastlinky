@@ -1,6 +1,6 @@
 <?php
-require_once("includes/constant.inc.php");
 session_start();
+require_once("includes/constant.inc.php");
 
 require_once("_config/dbconnect.php");
 
@@ -68,17 +68,12 @@ $blogDtls		= $blogMst->ShowBlogApprData();
     <meta name="description" content="" />
 
 
-    <!-- New Files  -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
-    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
+    <!-- plugins  files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
     <link rel="stylesheet" href="plugins/data-table/style.css">
-    <!-- <link rel="stylesheet" href="plugins"> -->
 
-    <!-- End New Files  -->
-
+    
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="css/blog-list.css" rel='stylesheet' type='text/css' />
@@ -116,8 +111,7 @@ $blogDtls		= $blogMst->ShowBlogApprData();
     }
     </style>
 </head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
     <div id="home">
         <!-- header -->
         <?php require_once 'partials/navbar.php'; ?>

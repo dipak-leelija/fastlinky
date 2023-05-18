@@ -45,12 +45,9 @@ $cusId		= $utility->returnSess('userid', 0);
     <meta name="keywords" content="" />
 
 
-    <!-- Bootstrap Core CSS -->
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
-    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
+    <!-- plugins  files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -59,7 +56,7 @@ $cusId		= $utility->returnSess('userid', 0);
 </head>
 
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
     <?php require_once "partials/navbar.php"; ?>
     <!-- Know More About Us section starts -->
     <section class="about-banner_section" id="about">

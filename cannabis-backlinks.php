@@ -19,20 +19,17 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <meta name="keywords"
         content="cannabis seo experts,	cbd seo	,marijuana seo,	cbd seo agency,	CBD Link building, Cannabis Link building,	Cannabis & CBD Link building Service,Cannabis & CBD Link building,	FastLinky, CBD Link Building Services,	cannabis link building services,Cannabis Backlinks, cannabis seo, cannabis seo experts,  cbd seo, cbd seo company" />
 
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="plugins/fontawesome-free-6.4.0/css/fontawesome.min.css">
-    <!-- <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css"> -->
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/cannabis-backlinks.css" rel='stylesheet' type='text/css' />
-    <!-- font-awesome icons -->
-    <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
-    <!-- //Custom Theme files -->
+    
 </head>
 
-<body data-scrollbar>
+<body>
     <?php require_once "partials/navbar.php"; ?>
     <!--____________________________________________________________________________________________ -->
     <!-- Cannabis Backlinks main banner starting -->

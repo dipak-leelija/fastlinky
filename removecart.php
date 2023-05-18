@@ -1,6 +1,6 @@
 <?php
-require_once("includes/constant.inc.php");
 session_start();
+require_once("includes/constant.inc.php");
 
 require_once("_config/dbconnect.php");
 
@@ -10,7 +10,6 @@ require_once("classes/search.class.php");
 require_once("classes/customer.class.php"); 
 require_once("classes/login.class.php"); 
 
-require_once("classes/products.class.php"); 
 require_once("classes/blog_mst.class.php"); 
 require_once("classes/domain.class.php"); 
 require_once("classes/utility.class.php"); 
@@ -25,7 +24,6 @@ $search_obj		= new Search();
 $customer		= new Customer();
 $logIn			= new Login();
 
-$product		= new Products();
 $blogMst		= new BlogMst();
 $domain			= new Domain();
 $utility		= new Utility();

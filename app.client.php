@@ -44,12 +44,10 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <title>User Dashboard - <?php echo COMPANY_S; ?></title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="<?php echo URL;?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
-    <!-- <link href="<?php echo URL;?>/plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' /> -->
+    <!-- plugins  files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
@@ -59,7 +57,7 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
     <div id="home">
         <!-- header -->
 

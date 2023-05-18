@@ -1,6 +1,6 @@
 <?php
-require_once("includes/constant.inc.php");
 session_start();
+require_once("includes/constant.inc.php");
 require_once("_config/dbconnect.php");
 
 require_once("classes/customer.class.php");
@@ -8,10 +8,8 @@ require_once("classes/blog_mst.class.php");
 
 require_once("classes/utility.class.php");
 require_once "classes/wishList.class.php";
+
 /* INSTANTIATING CLASSES */
-// $dateUtil      	= new DateUtil();
-// $error 			= new Error();
-// $search_obj		= new Search();
 $customer		= new Customer();
 $utility		= new Utility();
 $BlogMst		= new BlogMst();

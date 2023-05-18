@@ -1,7 +1,7 @@
 <?php
+session_start();
 require_once "includes/constant.inc.php";
 require_once ROOT_DIR."/classes/encrypt.inc.php";
-session_start();
 
 require_once ROOT_DIR."/_config/dbconnect.php";
 
@@ -41,14 +41,11 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <!-- Bootstrap Core CSS -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
-    <!-- <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' /> -->
-    <!-- Custom CSS -->
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
+    
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="css/my-orders.css" rel='stylesheet' type='text/css' />
@@ -60,8 +57,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 
 
 </head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
     <div id="home">
         <!-- header -->
         <?php  require_once "partials/navbar.php" ?>
