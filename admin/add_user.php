@@ -1,5 +1,6 @@
 <?php
 session_start();
+$page = "adminAddUser";
 require_once("../includes/constant.inc.php");
 include_once('checkSession.php');
 require_once("../_config/dbconnect.php");
