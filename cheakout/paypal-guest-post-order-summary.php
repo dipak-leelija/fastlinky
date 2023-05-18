@@ -196,10 +196,13 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <link rel="stylesheet" href="<?= URL; ?>/plugins/bootstrap-5.2.0/css/bootstrap.css">
+    <!-- plugins  files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+    
+    <!-- custom css  -->
     <link rel="stylesheet" href="<?= URL; ?>/css/payment-summary-style.css">
 </head>
-
 <body>
     <section class="paylater-main-section">
         <!-- logo codes -->
@@ -218,7 +221,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                             <p><label><?php echo $clientName;?></label></p>
                             <p><label>Anchor Text : <?php echo $clientAnchorText; ?></label></p>
                             <p><label>Target Url : <?php echo $clientTargetUrl;?> </label></p>
-                            <span class="badge text-bg-info p-2" ><?php echo  $contentInfo; ?></span>
+                            <span class="badge text-bg-info p-2"><?php echo  $contentInfo; ?></span>
                         </div>
                     </div>
                 </div>
@@ -297,7 +300,8 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                                             <div class="row">
                                                 <div class="col-6">Total</div>
                                                 <div class="col-6 text-end fw-semibold">
-                                                    <?= CURRENCY; ?> <span id="amount"><?= $clientOrderPrice;?></span></div>
+                                                    <?= CURRENCY; ?> <span id="amount"><?= $clientOrderPrice;?></span>
+                                                </div>
                                             </div>
 
                                         </td>
@@ -318,7 +322,9 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                                                     </div>
                                                 </div>
                                                 <div class="col-12 text-end" id="payBtn">
-                                                   <button type="button" class="btn btn-danger rounded-pill w-100 fw-semibold" onclick="history.back()">Cancel</button>
+                                                    <button type="button"
+                                                        class="btn btn-danger rounded-pill w-100 fw-semibold"
+                                                        onclick="history.back()">Cancel</button>
                                                 </div>
                                             </div>
                                         </td>

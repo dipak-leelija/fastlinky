@@ -133,17 +133,17 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                 </div>
                                 <div class="col-sm-6 mb-3">
                                     <div class="form-group">
-                                        <label class="required-field" for="city">City</label>
-                                        <select class="form-control" name="city" id="city" required>
-                                            <option value="" disabled selected>Select City</option>
+                                        <label class="required-field" for="country">Country</label>
+                                        <select class="form-control" name="country" id="" onchange="getStateList(this)"
+                                            required>
+                                            <option value="" disabled selected>Select Country</option>
                                             <?php
-                                                if ($cusDtl[0][28] != '') {
-                                                    $utility->populateDropDown2($cusDtl[0][27], 'id', 'name', 'state_id', $cusDtl[0][28], 'cities');
-                                                }
-												?>
+												    $utility->populateDropDown($cusDtl[0][30], 'id', 'name', 'countries');
+                                                ?>
                                         </select>
                                     </div>
                                 </div>
+
                                 <div class="col-sm-6 mb-3">
                                     <div class="form-group">
                                         <label class="required-field" for="pin-code">PIN Code</label>
@@ -154,6 +154,7 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                             required>
                                     </div>
                                 </div>
+
                                 <div class="col-sm-6 mb-3">
                                     <div class="form-group">
                                         <label class="required-field" for="state">State</label>
@@ -168,18 +169,21 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                         </select>
                                     </div>
                                 </div>
+
                                 <div class="col-sm-6 mb-3">
                                     <div class="form-group">
-                                        <label class="required-field" for="country">Country</label>
-                                        <select class="form-control" name="country" id="" onchange="getStateList(this)"
-                                            required>
-                                            <option value="" disabled selected>Select Country</option>
+                                        <label class="required-field" for="city">City</label>
+                                        <select class="form-control" name="city" id="city" required>
+                                            <option value="" disabled selected>Select City</option>
                                             <?php
-												    $utility->populateDropDown($cusDtl[0][30], 'id', 'name', 'countries');
-                                                ?>
+                                                if ($cusDtl[0][28] != '') {
+                                                    $utility->populateDropDown2($cusDtl[0][27], 'id', 'name', 'state_id', $cusDtl[0][28], 'cities');
+                                                }
+												?>
                                         </select>
                                     </div>
                                 </div>
+                                
                                 <div class="col-sm-12 mb-3">
                                     <small class="fw-normal">
                                         Please ensure that you provide accurate and complete information to

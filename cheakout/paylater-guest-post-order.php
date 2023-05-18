@@ -194,10 +194,11 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
+    <!-- plugins  files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
+	<!-- Custom css  -->
     <!-- main custom-css for this page  -->
     <link rel="stylesheet" href="../css/payment-summary-style.css">
     <!-- end -->

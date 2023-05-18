@@ -328,17 +328,16 @@ if(isset($_SESSION['orderId'])) {
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Payment Success - Order Received</title>
-	
-	<link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
+
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <link rel="stylesheet" href="<?php echo URL ?>style/ansysoft.css" type="text/css" />
-    <link rel="stylesheet" href="<?php echo URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css">
-	<link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
-        type='text/css' />
-	<!-- <link rel="stylesheet" href="<?php echo URL ?>/plugins/fontawesome-6.1.1/css/all.css"> -->
-	<link rel="stylesheet" href="<?php echo URL; ?>/css/style.css">
+    <!-- plugins  files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
+	<!-- Custom css  -->
+    <link rel="stylesheet" href="<?php echo URL; ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo URL ?>/css/payment-status.css">
 
 </head>
@@ -363,11 +362,11 @@ if(isset($_SESSION['orderId'])) {
                         receive email shortly in your account.</p>
                     <p><i class="fas fa-exclamation-circle fs-5 text-warning"></i> If you find any difficulty, drop an
                         email to <?php echo SITE_BILLING_EMAIL ?></p>
-					<?php
+                    <?php
 					// if ($mailSended) {
 					?>
-					<!-- // 	<p><small>Order details has been sent to your email.</small></p> -->
-					<?php
+                    <!-- // 	<p><small>Order details has been sent to your email.</small></p> -->
+                    <?php
 					// }
 					?>
                 </div>
@@ -378,7 +377,7 @@ if(isset($_SESSION['orderId'])) {
             <div class="col-11 col-md-10 mb-3 mb-md-5 p-4 text-center">
                 <p>Your order status will updated to you, Now you can go back.</p>
                 <div class="mt-3">
-					<a class="btn btn-primary" href="../app.client.php">My Account</a>
+                    <a class="btn btn-primary" href="../app.client.php">My Account</a>
                     <a class="btn btn-primary" href="../my-orders.php">My Orders</a>
                 </div>
             </div>
@@ -390,7 +389,7 @@ if(isset($_SESSION['orderId'])) {
     <!-- Start Foter -->
     <?php require_once ROOT_DIR . "/partials/footer.php"; ?>
     <!-- End Foter -->
-	<script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
     <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
 </body>
 
