@@ -65,14 +65,13 @@ class PackageOrder extends DatabaseConnection{
                 `order_status` = '$statusId',
                 `updated_by`   = '$updatedBy'
                 WHERE `order_id` = '$orderId'";
-      echo $sql;
+      if (!$sql) {
+        echo $this->conn-> error;
+      }
       $res  = $this->conn->query($sql);
-      print_r($res);
       if($res){
-        echo 'true';
         return true;
       }else {
-        echo 'false';
         return false;
       }
     }
