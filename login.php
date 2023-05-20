@@ -107,77 +107,79 @@ if(isset($_POST['btnLogin'])){
     <link rel="stylesheet" href="css/login.css">
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
+    <style>
+    body {
+        padding-top: 4.9rem !important;
+    }
+    </style>
 </head>
 
-<body id="page-top" class="pt-0" data-spy="scroll" data-target=".navbar-fixed-top">
-    <div id="home">
-        <!-- header -->
-        <?php require_once "partials/navbar.php"; ?>
-        <!-- //header -->
-        <section class="login-mainsectn">
-            <div id="main-wrapper" class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-10">
-                        <div class="card border-0" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
-                            <div class="card-body p-0">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-6 d-none d-lg-inline-block m-auto text-center">
+<body id="page-top" class="" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- header -->
+    <?php require_once "partials/navbar.php"; ?>
+    <!-- //header -->
+    <div class=" d-flex align-items-center justify-content-center" style="height:100vh;">
+        <div id="main-wrapper" class="container ">
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="card border-0" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                        <div class="card-body p-0">
+                            <div class="row no-gutters">
+                                <div class="col-lg-6 d-none d-lg-inline-block m-auto text-center">
 
-                                        <div class="account-block rounded-right">
+                                    <div class="account-block rounded-right">
 
-                                            <img src="./images/login.webp" width="400px" height="400px">
-                                        </div>
+                                        <img src="./images/login.webp" width="400px" height="400px">
                                     </div>
-                                    <div class="col-lg-6">
-                                        <div class="login-div-below-card">
-                                            <div>
-                                                <div class="alert-dismissible fade <?php echo $invUser;?>" role="alert">
-                                                    <strong>Sorry!</strong> <?php echo $errorMsg; ?>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                                        aria-label="Close"></button>
-                                                </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="login-div-below-card">
+                                        <div>
+                                            <div class="alert-dismissible fade <?php echo $invUser;?>" role="alert">
+                                                <strong>Sorry!</strong> <?php echo $errorMsg; ?>
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
                                             </div>
-                                            <div class="mb-2">
-                                                <h3 class="h4 font-weight-bold text-theme">Login</h3>
-                                            </div>
-                                            <h6 class="h5 mb-0">Welcome back!</h6>
-                                            <p class="text-muted mt-2 mb-2">Enter your email address and password to
-                                                access
-                                                admin panel.</p>
-
-                                            <form role="form" class="form-horizontal-login needs-validation"
-                                                action="<?php echo $_SERVER['PHP_SELF'] ?>" name="formContactform"
-                                                method="POST" enctype="multipart/form-data" autocomplete="off"
-                                                novalidate>
-                                                <div class="form-group">
-                                                    <label>Email address</label>
-                                                    <input type="email" placeholder="example@gmail.com" id="txtUser"
-                                                        name="txtUser" class="form-control" required>
-                                                    <div class="invalid-feedback">
-                                                        Please enter your email address!
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group ">
-                                                    <label>Password</label>
-                                                    <input type="password" placeholder="Valid Password" minlength="6"
-                                                        id="txtPass" name="txtPass" class="form-control" required>
-                                                    <div class="invalid-feedback">
-                                                        Please enter your Password!
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12 mb-2 submit-divclass  text-center">
-                                                    <a href="/"><button class="my-buttons-hover bn21" type="submit"
-                                                            name="btnLogin">Login</button></a>
-                                                </div>
-                                                <div>
-                                                    <a href="#l" class="forgot-link text-right text-primary">Forgot
-                                                        password?</a>
-                                                </div>
-                                                <p class="text-muted float-right mt-2 mb-0">Don't have an account? <a
-                                                        href="register.php" class="text-primary ml-1">register</a></p>
-                                            </form>
                                         </div>
+                                        <div class="mb-2">
+                                            <h3 class="h4 font-weight-bold text-theme">Login</h3>
+                                        </div>
+                                        <h6 class="h5 mb-0">Welcome back!</h6>
+                                        <p class="text-muted mt-2 mb-2">Enter your email address and password to
+                                            access
+                                            admin panel.</p>
+
+                                        <form role="form" class="form-horizontal-login needs-validation"
+                                            action="<?php echo $_SERVER['PHP_SELF'] ?>" name="formContactform"
+                                            method="POST" enctype="multipart/form-data" autocomplete="off" novalidate>
+                                            <div class="form-group">
+                                                <label>Email address</label>
+                                                <input type="email" placeholder="example@gmail.com" id="txtUser"
+                                                    name="txtUser" class="form-control" required>
+                                                <div class="invalid-feedback">
+                                                    Please enter your email address!
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group ">
+                                                <label>Password</label>
+                                                <input type="password" placeholder="Valid Password" minlength="6"
+                                                    id="txtPass" name="txtPass" class="form-control" required>
+                                                <div class="invalid-feedback">
+                                                    Please enter your Password!
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 mb-2 submit-divclass  text-center">
+                                                <a href="/"><button class="my-buttons-hover bn21" type="submit"
+                                                        name="btnLogin">Login</button></a>
+                                            </div>
+                                            <div>
+                                                <a href="#l" class="forgot-link text-right text-primary">Forgot
+                                                    password?</a>
+                                            </div>
+                                            <p class="text-muted float-right mt-2 mb-0">Don't have an account? <a
+                                                    href="register.php" class="text-primary ml-1">register</a></p>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -185,7 +187,7 @@ if(isset($_POST['btnLogin'])){
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 
     <!-- js-->
