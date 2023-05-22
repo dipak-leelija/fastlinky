@@ -354,7 +354,7 @@ $blogsDtls 	= $blogs->showBlog($_GET['id']);
 
                                 <div class="col-12 m-3">
                                     <input name="btneditfaqs" type="submit" class="btn btn-primary" value="EDIT" />
-                                    <input type="button" onclick="location.href='blog_master.php';"
+                                    <input type="button" onclick="location.href='blog-master.php';"
                                         class="btn btn-primary" value="cancel" />
 
                                 </div>

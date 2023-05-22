@@ -179,8 +179,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     ?>
 
 
-                                    <div class="col-md-3 px-md-1 h-100">
-                                        <div class="card p-card" id="">
+                                    <div class="col-md-3 px-md-1 my-2 my-md-3">
+                                        <div class="card p-card h-100" id="">
                                             <input id="c-box-<?php echo $eachPack['id']?>"
                                                 value="<?php echo $eachPack['id']?>" type="checkbox" name="package[]"
                                                 required="" class="d-none cart-input">

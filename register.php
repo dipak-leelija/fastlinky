@@ -158,128 +158,131 @@ Ready website for business, High Quality website sales, High quality blogs sales
     <link href="css/form.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/register.css">
     <!-- //Custom Theme files -->
+    <style>
+    body {
+        padding-top: 4.9rem !important;
+    }
+    </style>
 </head>
-<body class="pt-0">
-    <div id="home">
-        <!-- header -->
-        <?php require_once 'partials/navbar.php'; ?>
-        <!-- //header -->
-        <section class="register-section">
-            <div id="main-wrapper" class="container">
-                <div class="row justify-content-center mb-3">
-                    <div class="col-xl-12">
-                        <div class="card border-0" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
-                            <div class="card-body p-0">
-                                <div class="row no-gutters ">
-                                    <div class="col-lg-5 d-none d-lg-inline-block m-auto text-center">
 
-                                        <div class=" m-auto text-center">
+<body id="page-top" class="" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- header -->
+    <?php require_once 'partials/navbar.php'; ?>
+    <!-- //header -->
+    <div class="maincountainer d-flex  justify-content-center">
+        <div id="main-wrapper" class="container my-3">
+            <div class="row justify-content-center ">
+                <div class="col-xl-12">
+                    <div class="card border-0" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                        <div class="card-body p-0">
+                            <div class="row no-gutters ">
+                                <div class="col-lg-5 d-none d-lg-inline-block m-auto text-center">
 
-                                            <img src="./images/signup-img.webp" style="width: 90%;">
-                                        </div>
+                                    <div class=" m-auto text-center">
+
+                                        <img src="./images/signup-img.webp" style="width: 90%;">
                                     </div>
-                                    <div class="col-lg-7">
-                                        <div class="reg-div-below-card ">
-                                            <div class="mb-3 mt-2">
-                                                <h3 class="h4 font-weight-bold text-theme reg-heading">
-                                                    Join With Fastlinky</h3>
-                                            </div>
-                                            <div class="section group">
-                                                <div class="bfrom">
-                                                    <form class="form-horizontal-login needs-validation" role="form"
-                                                        action="<?php echo $_SERVER['PHP_SELF'] ?>" name="regUserForm"
-                                                        method="post" enctype="multipart/form-data" autocomplete="off"
-                                                        id="regUserForm" novalidate>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="reg-div-below-card ">
+                                        <div class="mb-3 mt-2">
+                                            <h3 class="h4 font-weight-bold text-theme reg-heading">
+                                                Join With Fastlinky</h3>
+                                        </div>
+                                        <div class="section group">
+                                            <div class="bfrom">
+                                                <form class="form-horizontal-login needs-validation" role="form"
+                                                    action="<?php echo $_SERVER['PHP_SELF'] ?>" name="regUserForm"
+                                                    method="post" enctype="multipart/form-data" autocomplete="off"
+                                                    id="regUserForm" novalidate>
 
-                                                        <div class="row">
-                                                            <div class="col-sm-6">
-                                                                <div class="form-floating mb-2">
-                                                                    <input type="text" placeholder="firstname"
-                                                                        minlength="3" id="firstName" name="firstName"
-                                                                        class="form-control" required>
-                                                                    <label class="required-field">First Name</label>
-                                                                    <div class="invalid-feedback">
-                                                                        Please Enter First your Name!
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <div class="form-floating mb-2">
-                                                                    <input type="text" placeholder="lastname"
-                                                                        minlength="3" id="lastName" name="lastName"
-                                                                        class="form-control" required>
-                                                                    <label class="required-field">Last Name</label>
-                                                                    <div class="invalid-feedback">
-                                                                        Please Enter your Last Name!
-                                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-floating mb-2">
+                                                                <input type="text" placeholder="firstname" minlength="3"
+                                                                    id="firstName" name="firstName" class="form-control"
+                                                                    required>
+                                                                <label class="required-field">First Name</label>
+                                                                <div class="invalid-feedback">
+                                                                    Please Enter First your Name!
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-sm-6">
-                                                                <div class="form-floating mb-2">
-                                                                    <input type="text"
-                                                                        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-                                                                        minlength="10" pattern="[0-9]+" maxlength="10"
-                                                                        class="form-control" id="mobNumber"
-                                                                        placeholder=" " name="mobNumber" required>
-                                                                    <label for="floatingInput"> Contact Number </label>
-                                                                    <div class="invalid-feedback">
-                                                                        Please enter your contact number!
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <div class="form-floating mb-2">
-                                                                    <input type="email" id="txtemail" name="txtemail"
-                                                                        placeholder="example@email.com"
-                                                                        inputmode="email"
-                                                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                                                                        autofill="off" autocomplete="false"
-                                                                        class="form-control" required>
-                                                                    <label class="required-field">Email</label>
-                                                                    <div class="invalid-feedback">
-                                                                        Please enter your email!
-                                                                    </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-floating mb-2">
+                                                                <input type="text" placeholder="lastname" minlength="3"
+                                                                    id="lastName" name="lastName" class="form-control"
+                                                                    required>
+                                                                <label class="required-field">Last Name</label>
+                                                                <div class="invalid-feedback">
+                                                                    Please Enter your Last Name!
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-sm-6">
-                                                                <div class="form-floating mb-2">
-                                                                    <select class="form-select" name="txtProfession"
-                                                                        id="txtProfession"
-                                                                        aria-label="Floating label select example"
-                                                                        required>
-                                                                        <option value="" selected="selected">Select
-                                                                            Profession</option>
-                                                                        <option value="Author">Author</option>
-                                                                        <option value="Blogger">Blogger</option>
-                                                                        <option value="Blogger">Blogger Outreach Manager
-                                                                        </option>
-                                                                        <option value="Business Analyser">Business
-                                                                            Analyser
-                                                                        </option>
-                                                                        <option value="Marketing Manager">Marketing
-                                                                            Manager
-                                                                        </option>
-                                                                        <option value="Web Developer">Web Developer
-                                                                        </option>
-                                                                        <option value="Others">Others</option>
-                                                                    </select>
-                                                                    <label for="profession">Profession</label>
-                                                                    <div class="invalid-feedback">
-                                                                        Please choose a profession!
-                                                                    </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-floating mb-2">
+                                                                <input type="text"
+                                                                    onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                                                    minlength="10" pattern="[0-9]+" maxlength="10"
+                                                                    class="form-control" id="mobNumber" placeholder=" "
+                                                                    name="mobNumber" required>
+                                                                <label for="floatingInput"> Contact Number </label>
+                                                                <div class="invalid-feedback">
+                                                                    Please enter your contact number!
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-6">
-                                                                <div class="form-floating mb-2">
-                                                                    <select class="form-select" id="selectCountry"
-                                                                        name="txtCountry" required>
-                                                                        <option value="" selected="selected">Select
-                                                                            Country</option>
-                                                                        <?php
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-floating mb-2">
+                                                                <input type="email" id="txtemail" name="txtemail"
+                                                                    placeholder="example@email.com" inputmode="email"
+                                                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                                                    autofill="off" autocomplete="false"
+                                                                    class="form-control" required>
+                                                                <label class="required-field">Email</label>
+                                                                <div class="invalid-feedback">
+                                                                    Please enter your email!
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-floating mb-2">
+                                                                <select class="form-select" name="txtProfession"
+                                                                    id="txtProfession"
+                                                                    aria-label="Floating label select example" required>
+                                                                    <option value="" selected="selected">Select
+                                                                        Profession</option>
+                                                                    <option value="Author">Author</option>
+                                                                    <option value="Blogger">Blogger</option>
+                                                                    <option value="Blogger">Blogger Outreach Manager
+                                                                    </option>
+                                                                    <option value="Business Analyser">Business
+                                                                        Analyser
+                                                                    </option>
+                                                                    <option value="Marketing Manager">Marketing
+                                                                        Manager
+                                                                    </option>
+                                                                    <option value="Web Developer">Web Developer
+                                                                    </option>
+                                                                    <option value="Others">Others</option>
+                                                                </select>
+                                                                <label for="profession">Profession</label>
+                                                                <div class="invalid-feedback">
+                                                                    Please choose a profession!
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-floating mb-2">
+                                                                <select class="form-select" id="selectCountry"
+                                                                    name="txtCountry" required>
+                                                                    <option value="" selected="selected">Select
+                                                                        Country</option>
+                                                                    <?php
 												                           if(isset($_SESSION['userid'])){
 												                            
 												                               $utility->populateDropDown($cusDtl[24], 'id', 'name', 'countries');
@@ -288,91 +291,88 @@ Ready website for business, High Quality website sales, High quality blogs sales
 												                                $utility->populateDropDown(0, 'id', 'name', 'countries');
 												                               }
 												                             ?>
-                                                                    </select>
-                                                                    <label for="floatingSelect">Country</label>
-                                                                    <div class="invalid-feedback">
-                                                                        Please choose a country!
-                                                                    </div>
+                                                                </select>
+                                                                <label for="floatingSelect">Country</label>
+                                                                <div class="invalid-feedback">
+                                                                    Please choose a country!
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-sm-6">
-                                                                <div class="form-floating mb-2">
-                                                                    <input type="password" minlength="8"
-                                                                        id="txtPassword" name="txtPassword"
-                                                                        placeholder="(username)123"
-                                                                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
-                                                                        autocomplete="new-password" class="form-control"
-                                                                        required>
-                                                                    <label class="required-field">Password </label>
-                                                                    <div class="invalid-feedback">
-                                                                        Must be a combination of
-                                                                        (A-Z),(a-z),(0-9),(!@#$%^&*=+-_) and >8
-                                                                        characters long!
-                                                                    </div>
-                                                                    <div class="valid-feedback">
-                                                                        Strong password!
-                                                                    </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-floating mb-2">
+                                                                <input type="password" minlength="8" id="txtPassword"
+                                                                    name="txtPassword" placeholder="(username)123"
+                                                                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
+                                                                    autocomplete="new-password" class="form-control"
+                                                                    required>
+                                                                <label class="required-field">Password </label>
+                                                                <div class="invalid-feedback">
+                                                                    Must be a combination of
+                                                                    (A-Z),(a-z),(0-9),(!@#$%^&*=+-_) and >8
+                                                                    characters long!
                                                                 </div>
-                                                            </div>
-
-                                                            <div class="col-sm-6">
-                                                                <div class="form-floating mb-2">
-                                                                    <input type="password" id="txtPasswordConfirm"
-                                                                        name="txtPasswordConfirm" minlength="8"
-                                                                        placeholder="Confirm Password"
-                                                                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
-                                                                        class="form-control " required>
-                                                                    <label class="required-field">Confirm
-                                                                        Password</label>
-                                                                    <div class="form-text confirm-message"></div>
+                                                                <div class="valid-feedback">
+                                                                    Strong password!
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row ">
-                                                            <div class="col-sm-12">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="gridCheck1" required>
-                                                                    <label class="form-check-label" for="gridCheck1">
-                                                                        I Agree with the <a class="term-n-policy"
-                                                                            href="">Terms of service</a>
-                                                                        and <a class="term-n-policy" href="">Privacy
-                                                                            Policy</a> .
-                                                                    </label>
-                                                                </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="form-floating mb-2">
+                                                                <input type="password" id="txtPasswordConfirm"
+                                                                    name="txtPasswordConfirm" minlength="8"
+                                                                    placeholder="Confirm Password"
+                                                                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
+                                                                    class="form-control " required>
+                                                                <label class="required-field">Confirm
+                                                                    Password</label>
+                                                                <div class="form-text confirm-message"></div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-12 mb-3 submit-divclass  text-center">
-                                                            <a href="/"><button class="my-buttons-hover bn21"
-                                                                    type="submit" id="userRegisterBtn"
-                                                                    name="btnSubmit"><i
-                                                                        class="fas fa-sign-in-alt pr-2"></i>
-                                                                    Register</button></a>
+                                                    </div>
+                                                    <div class="row ">
+                                                        <div class="col-sm-12">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="gridCheck1" required>
+                                                                <label class="form-check-label" for="gridCheck1">
+                                                                    I Agree with the <a class="term-n-policy"
+                                                                        href="">Terms of service</a>
+                                                                    and <a class="term-n-policy" href="">Privacy
+                                                                        Policy</a> .
+                                                                </label>
+                                                            </div>
                                                         </div>
-                                                        <div class=" sign-up-btn pr-3 text-right">
-                                                            <span>Already have an account?</span> <a href="login.php"
-                                                                class=""> Sign in
-                                                                Now</a>
-                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12 mb-3 submit-divclass  text-center">
+                                                        <a href="/"><button class="my-buttons-hover bn21" type="submit"
+                                                                id="userRegisterBtn" name="btnSubmit"><i
+                                                                    class="fas fa-sign-in-alt pr-2"></i>
+                                                                Register</button></a>
+                                                    </div>
+                                                    <div class=" sign-up-btn pr-3 text-right">
+                                                        <span>Already have an account?</span> <a href="login.php"
+                                                            class=""> Sign in
+                                                            Now</a>
+                                                    </div>
 
-                                                    </form>
+                                                </form>
 
-                                                    <br>
-                                                </div>
-
+                                                <br>
                                             </div>
+
                                         </div>
                                     </div>
-
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
     <!-- js-->
     <script src="plugins/jquery-3.6.0.min.js"></script>
