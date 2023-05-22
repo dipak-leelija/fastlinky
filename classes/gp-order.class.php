@@ -352,6 +352,32 @@ class PackageOrder extends DatabaseConnection{
 
   }
 
+  function raiseIssue($linkId, $orderId, $issue, $status, $updatedBy){
+
+    try {
+      $sql  = "UPDATE `package_publish_links` SET status = '$status', issue = '$issue', updated_by = '$updatedBy', updated_on = now()
+                                              WHERE id = '$linkId' AND order_id = '$orderId'";
+      $res  = $this->conn->query($sql);
+        return $res;
+    } catch (Exception $e) {
+      echo $e->getMessage();
+    }
+
+  }
+
+  function updateLiveURLS($linkId, $orderId, $url, $status, $updatedBy){
+
+    try {
+      $sql  = "UPDATE `package_publish_links` SET url = '$url', status = '$status', issue = '', updated_by = '$updatedBy', updated_on = now()
+                                              WHERE id = '$linkId' AND order_id = '$orderId'";
+      $res  = $this->conn->query($sql);
+        return $res;
+    } catch (Exception $e) {
+      echo $e->getMessage();
+    }
+
+  }
+
 
 }
 

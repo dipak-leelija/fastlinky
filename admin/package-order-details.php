@@ -306,6 +306,9 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                 if (count($publishedStatus) > 0) {
                                                     $pulished = true;
                                                     $btnBg = 'bg_mustard';
+                                                    if ($publishedStatus['status'] == REJECTEDCODE) {
+                                                        $btnBg = REJECTED;
+                                                    }
                                                 }
 
                                                 $existLinksNo = count($links);
@@ -326,12 +329,10 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
                                                     <?php if ($pulished) { ?>
 
-                                                    <form action="ajax/package-posting-update.ajax.php" method="POST"
-                                                        name="urlsForm-<?php echo $i; ?>">
+                                                    <form id="liveURLUpdateForm<?= $i; ?>">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title fs-5" id="exampleModalLabel">
-                                                                <?php echo $utility->ordinal($i); ?> Post Published
-                                                                Link
+                                                                <?php echo $utility->ordinal($i); ?> Post Live URL
                                                             </h5>
                                                             <button type="button" class="close" data-dismiss="modal"
                                                                 aria-label="Close">
@@ -340,15 +341,39 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                         </div>
 
                                                         <div class="modal-body" id="update-modal-body">
-                                                            <input type="text" class="form-control mt-1"
-                                                                value="<?php echo $publishedStatus['url']; ?>">
+
+                                                            <?php if ($publishedStatus['status'] == REJECTEDCODE) { ?>
+
+                                                            <p
+                                                                class="text-danger text-center fw-semibold fs-6 rounded border border-danger py-2 mb-2">
+                                                                <?= $publishedStatus['issue'] ?></p>
+
+                                                            <?php } ?>
+
+                                                            <input type="text" class="form-control mt-1" name="liveURL"
+                                                                value="<?= $publishedStatus['url']; ?>">
+                                                            <input type="hidden" name="orderId" value="<?= $orderId; ?>">
+                                                            <input type="hidden" name="urlId" value="<?= $publishedStatus['id']; ?>">
+
+                                                            <?php if ($publishedStatus['status'] != REJECTEDCODE) { ?>
+
+                                                            <div class="d-flex justify-content-end mt-1">
+                                                                <button type="button"
+                                                                    class="btn btn-sm btn-warning ms-2"
+                                                                    data-bs-toggle='modal' data-bs-target='#issueModal'
+                                                                    onclick="setLiveUrlId(<?= $publishedStatus['id']?>)">
+                                                                    Have an issue?
+                                                                </button>
+                                                            </div>
+
+                                                            <?php } ?>
                                                         </div>
 
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Close</button>
-                                                            <button type="submit" class="btn btn-primary"
-                                                                data-dismiss="modal">Update</button>
+                                                            <button type="button" class="btn btn-sm btn-secondary"
+                                                                data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-sm btn-primary"
+                                                                onclick="liveUrlUpdate('liveURLUpdateForm<?= $i; ?>')">Update</button>
                                                         </div>
                                                     </form>
 
@@ -892,6 +917,27 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
             }
 
         }
+    }
+
+    const liveUrlUpdate = (formId) => {
+
+        $.ajax({
+            url: "ajax/package-posting-update.ajax.php",
+            type: "POST",
+            data: $(`#${formId}`).serialize(),
+            success: function(response) {
+                // console.log(response);
+                if (response.includes('updated!')) {
+                    location.reload();
+                } else {
+                    Swal.fire(
+                        'Failed!',
+                        response,
+                        'error'
+                    )
+                }
+            }
+        });
     }
     </script>
 </body>

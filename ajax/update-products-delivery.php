@@ -6,7 +6,6 @@ require_once "../_config/dbconnect.php";
 
 
 require_once "../classes/customer.class.php";
-require_once "../classes/order.class.php";
 require_once "../classes/utility.class.php";
 
 
@@ -14,9 +13,6 @@ require_once "../classes/utility.class.php";
 /* INSTANTIATING CLASSES */
 
 $customer		= new Customer();
-// $Domain			= new Domain();
-// $OrderStatus    = new OrderStatus();
-$Order          = new Order();
 $utility        = new Utility;
 ######################################################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
