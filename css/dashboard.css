@@ -162,10 +162,12 @@ ul.breadcrumb li a:hover {
 }
 
 .dboard-cd-box {
+    display: flex;
+    justify-content: space-between;
     border-radius: 4px;
     position: relative;
     color: var(--black) !important;
-    padding: 20px 10px 40px;
+    padding: 20px 20px;
     margin: 20px 0px;
     /* background-color:  #407BFF !important; */
     background-color: var(--pure-white);
@@ -199,11 +201,11 @@ ul.breadcrumb li a:hover {
     font-weight: 500;
 }
 .dboard-cd-box .dboard-icn_font {
-    position: absolute;
+    /* position: absolute;
     top: auto;
     bottom: 0px;
     right: 5px;
-    z-index: 0;
+    z-index: 0; */
     font-size: 40px;
     color: var(--mustard);
 }
