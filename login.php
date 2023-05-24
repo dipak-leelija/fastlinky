@@ -41,11 +41,11 @@ if($cusDtl != NULL){
 
     if($cusDtl[0][0] == 1){
         // redirect to dashboard if loggedin user is set as seller 
-        header("Location: ".URL."/app.client.php");
+        header("Location: ".URL."/app.client");
         exit;
     }elseif($cusDtl[0][0] == 2){
         // redirect to dashboard if loggedin user is set as seller 
-        header("Location: ".URL."/dashboard.php");
+        header("Location: ".URL."/dashboard");
         exit;
     }
 }
@@ -77,9 +77,9 @@ if(isset($_POST['btnLogin'])){
     }else{
         if($return_url == ''){
             if(isset($_SESSION['orderNow'])){
-                $return_url 	= "blogDetailsShare.php?id=".$_SESSION['orderNowId'];
+                $return_url 	= "blogDetailsShare?id=".$_SESSION['orderNowId'];
             }else{
-                $return_url 	= "dashboard.php"; 
+                $return_url 	= "dashboard"; 
             }
         }
         $logIn->validate($login, $password, 'email', 'password', 'customer', $return_url);
@@ -178,7 +178,7 @@ if(isset($_POST['btnLogin'])){
                                                     password?</a>
                                             </div>
                                             <p class="text-muted float-right mt-2 mb-0">Don't have an account? <a
-                                                    href="register.php" class="text-primary ml-1">register</a></p>
+                                                    href="register" class="text-primary ml-1">register</a></p>
                                         </form>
                                     </div>
                                 </div>

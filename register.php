@@ -37,13 +37,12 @@ $typeM		= $utility->returnGetVar('typeM','');
 $cusId			= $utility->returnSess('userid', 0);
 //$cusDtl			= $client->getClientData($cusId);
 
+// echo pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);exit;
+
 if(isset($_POST['btnSubmit'])){
     //post vars
     $firstName 		    = $_POST['firstName'];
     $lastName 		    = $_POST['lastName'];
-    // $fullname           = explode(" ",$firstName );
-    // $firstName          = $fullname[0];
-    // $lastName           = $fullname[1];
     $mobNo              = $_POST['mobNumber'];
     $txtemail  		    = $_POST['txtemail'];
     $txtUserName 	    = $_POST['txtemail'];
@@ -63,7 +62,7 @@ if(isset($_POST['btnSubmit'])){
 
     //defining error variables
     $action		= 'add_user';
-    $url		= $_SERVER['PHP_SELF'];
+    $url		= pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
     $id			= 0;
     $id_var		= '';
     $anchor		= 'addUser';
@@ -135,6 +134,12 @@ if(isset($_POST['btnSubmit'])){
     }
 }//Register
 
+$errorMsg   = '';
+if(isset($_GET['msg'])){
+    $alertProp = 'alert alert-danger show';
+    $errorMsg = $_GET['msg'];
+}
+
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
@@ -188,11 +193,18 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                         <div class="mb-3 mt-2">
                                             <h3 class="h4 font-weight-bold text-theme reg-heading">
                                                 Join With Fastlinky</h3>
+                                            <?php if ($errorMsg != '') { ?>
+                                            <div class="alert-dismissible fade <?=$alertProp;?>" role="alert">
+                                                <strong>Sorry!</strong> <?= $errorMsg; ?>
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <?php } ?>
                                         </div>
                                         <div class="section group">
                                             <div class="bfrom">
                                                 <form class="form-horizontal-login needs-validation" role="form"
-                                                    action="<?php echo $_SERVER['PHP_SELF'] ?>" name="regUserForm"
+                                                    action="<?= $_SERVER['PHP_SELF'] ?>" name="regUserForm"
                                                     method="post" enctype="multipart/form-data" autocomplete="off"
                                                     id="regUserForm" novalidate>
 
@@ -338,10 +350,15 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <input class="form-check-input" type="checkbox"
                                                                     id="gridCheck1" required>
                                                                 <label class="form-check-label" for="gridCheck1">
-                                                                    I Agree with the <a class="term-n-policy"
-                                                                        href="">Terms of service</a>
-                                                                    and <a class="term-n-policy" href="">Privacy
-                                                                        Policy</a> .
+                                                                    I Agree with the 
+                                                                        <a class="term-n-policy" href="privacy-policy">
+                                                                            Terms of service
+                                                                        </a> 
+                                                                        and 
+                                                                        <a class="term-n-policy" href="privacy-policy">
+                                                                            Privacy Policy
+                                                                        </a>
+                                                                        .
                                                                 </label>
                                                             </div>
                                                         </div>
