@@ -101,7 +101,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
     <!-- inject:css -->
     <link rel="stylesheet" href="<?php echo URL ?>/css/order-now.css">
-    <link rel="stylesheet" href="<?php echo URL ?>/css/order-list.css">
+    <link rel="stylesheet" href="<?php echo ADM_URL ?>css/order-details-style.css">
 
     <link rel="stylesheet" href="<?php echo URL ?>/plugins/sweetalert/sweetalert2.css">
 
