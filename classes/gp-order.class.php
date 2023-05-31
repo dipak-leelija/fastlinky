@@ -104,32 +104,43 @@ class PackageOrder extends DatabaseConnection{
 
   
 
-  function getPackOrderDetails($userId, $limit){
-    $myArr = array();
+  function getPackOrderDetails($userId, $limit = '*'){
+    
+    try {
+      
+      $myArr = array();
 
-    if ($limit !== '*') {
-      $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId' LIMIT $limit";
-      $data = $this->conn->query($sql);
-      while($res = $data->fetch_assoc()){
-        $myArr[] = $res;
+      if ($limit !== '*') {
+        $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId' LIMIT $limit";
+        $data = $this->conn->query($sql);
+        while($res = $data->fetch_assoc()){
+          $myArr[] = $res;
+        }
+      }else {
+        $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId'";
+        $data = $this->conn->query($sql);
+        while($res = $data->fetch_assoc()){
+          $myArr[] = $res;
+        }
       }
-    }else {
-      $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId'";
-      $data = $this->conn->query($sql);
-      while($res = $data->fetch_assoc()){
-        $myArr[] = $res;
-      }
+      return $myArr;
+    } catch (Exception $e) {
+      echo $e->getMessage();
     }
-    return $myArr;
   }
 
 
   function countPackOrderByUser($userId){
-    
-    $sql  = "SELECT order_id FROM `gp_package_order` WHERE `customer_id`='$userId'";
-    $data = $this->conn->query($sql);
-    $rows = $data->num_rows;
-    return $rows;
+    try {
+      $sql  = "SELECT COUNT(order_id) AS 'package_order_no' FROM `gp_package_order` WHERE `customer_id`='$userId'";
+      $data = $this->conn->query($sql);
+      while($res = $data->fetch_assoc()){
+        $count = $res['package_order_no'];
+      }
+      return $count;
+    } catch (Exception $e) {
+      echo $e->getMessage();
+    }
   }
 
 
