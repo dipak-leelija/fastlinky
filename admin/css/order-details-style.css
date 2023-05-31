@@ -195,7 +195,7 @@ small, .small {
     padding-left: 0;
     position: relative;
     margin-bottom: 0;
-    font-family: "Satoshi-Variable";
+    font-family: "Nunito", sans-serif;
 }
 
 .icon-data-list hr {

@@ -42,7 +42,7 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
-    <title>User Dashboard - <?php echo COMPANY_S; ?></title>
+    <title>Dashboard - <?php echo COMPANY_S; ?></title>
 
     <!-- plugins  files -->
     <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
@@ -118,23 +118,43 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                                 </div>
                                             </a>
                                         </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="dboard-cd-box mt-md-0">
-                                                <div class="inner">
-                                                    <h3> $00.00</h3>
-                                                    <p> Balance </p>
-                                                </div>
-                                                <div class="dboard-icn_font">
-                                                    <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
-                                                </div>
 
-                                            </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <a href="my-orders.php">
+                                                <div class="dboard-cd-box mt-md-0 ">
+                                                    <div class="inner">
+                                                        <h3><?= count($pendingContOrd) +  count($pendingPackOrd); ?>
+                                                        </h3>
+                                                        <p>Open Orders</p>
+                                                    </div>
+                                                    <div class="dboard-icn_font" aria-hidden="true">
+                                                        <i class="fa-solid fa-spinner"></i>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
+
+                                        <div class="col-lg-3 col-sm-6">
+                                            <a href="my-orders.php">
+                                                <div class="dboard-cd-box mt-md-0 ">
+                                                    <div class="inner">
+                                                        <h3>
+                                                            <?= count($pendingContOrd) +  count($pendingPackOrd); ?>
+                                                        </h3>
+                                                        <p>Pending Orders</p>
+                                                    </div>
+                                                    <div class="dboard-icn_font" aria-hidden="true">
+                                                        <i class="fa-solid fa-hourglass-half"></i>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
                                         <div class="col-lg-3 col-sm-6">
                                             <a href="my-orders.php">
                                                 <div class="dboard-cd-box mt-md-0">
                                                     <div class="inner">
-                                                        <h3><?php echo $packageOrdersIds + count($myOrders); ?> </h3>
+                                                        <h3><?= $packageOrdersIds + count($myOrders); ?> </h3>
                                                         <p> My Orders</p>
                                                     </div>
                                                     <div class="dboard-icn_font">
@@ -144,31 +164,16 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                                 </div>
                                             </a>
                                         </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <a href="my-orders.php">
-                                                <div class="dboard-cd-box mt-md-0 ">
-                                                    <div class="inner">
-                                                        <h3><?php echo count($pendingContOrd) +  count($pendingPackOrd); ?>
-                                                        </h3>
-                                                        <p>Pending Order</p>
-                                                    </div>
-                                                    <div class="dboard-icn_font" aria-hidden="true">
-                                                        <i class="fa-solid fa-hourglass-half"></i>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
+
                                     </div>
 
                                 </header>
                                 <div class="row">
                                     <div class=" col-lg-6 ">
                                         <div class=" table-responsive py-3 p-1">
-                                            <h4>Guest Posting Details</h4>
                                             <div class="card table-responsive db_shadow border-0 p-2">
-                                                <?php
-                                                    if (count($myOrders) > 0 ) {
-                                                    ?>
+                                                <h4>Recent Guest Posts</h4>
+                                                <?php if (count($myOrders) > 0 ) { ?>
                                                 <table class="table  table-hover">
                                                     <thead class="table-light">
                                                         <tr>
@@ -197,11 +202,11 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                                             ?>
                                                     </tbody>
                                                 </table>
-                                                <?php
-                                                    }else {
-                                                        echo 'No Orders';
-                                                    }
-                                                    ?>
+                                                <?php }else { ?>
+                                                    <p class="text-center p-5">
+                                                        No Orders
+                                                    </p> 
+                                                <?php } ?>
                                             </div>
                                         </div>
 

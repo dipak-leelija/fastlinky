@@ -3759,6 +3759,7 @@ class Utility extends DatabaseConnection{
 
 		$url      = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		$validURL = str_replace("&", "&amp;", $url);
+		$validURL = str_replace(".php", "", $url);
 		// $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 		// $escaped_url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' );
 		return $validURL;

@@ -28,6 +28,8 @@
 	define('ORD_COMP', 					' Order has been completed!');
 	define('CONT_UPDT', 				' Content file is successfully updated!');
 
+	define('LVURL_UPDT', 				' Live URL is Updated!');
+
 
 	define('ERR_LINK', 					' Something is error with the provided link');
 
