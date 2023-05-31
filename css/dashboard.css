@@ -141,7 +141,8 @@ ul.breadcrumb li a:hover {
 }
 
 .myhrline{
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
+    margin: .4rem 0 .9rem;
     color: inherit;
     border: 0;
     border-top: 1px solid;
@@ -239,4 +240,46 @@ ul.breadcrumb li a:hover {
     .pkg-img1{
         display: none;
     }
+    .sidebar-icon-btn {
+        padding: 4px 8px !important;
+    }
+}
+@media(max-width:324px){
+    body #home {
+        padding-top: 2rem !important;
+    }
+    
+}
+
+.offcanvas-backdrop.show {
+    opacity: 0;
+}
+.extra-added-butn-for-mob-tab{
+    display: none;
+    position: fixed;
+    z-index: 9999;
+}
+
+.sidebar-icon-btn {
+    background: black;
+    color: white;
+    border-radius: 5px;
+    padding: 6px 12px;
+    border: none;
+}
+
+@media(max-width:767px){
+
+    .client_profile_dashboard_left {
+        display: none;
+    }
+    .extra-added-butn-for-mob-tab{
+        display: block;
+    }
+    .extra-mrgin-top-for-mtab{
+        margin-top: 2rem;
+    }
+}
+.cursor_pointer td{
+    vertical-align: middle;
 }

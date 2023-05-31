@@ -2,7 +2,7 @@
     <h1 class="text-center">Contact us </h1>
     <p class="contact-us-p text-center">Fill out the form below to get your Free Proposal.</p>
     <div class="container">
-        <div class="contact__wrapper shadow-lg mt-n9">
+        <div class="contact__wrapper shadow-lg ">
             <div class="row no-gutters m-0">
                 <div class="col-lg-5 contact-info__wrapper gradient-brand-color   order-lg-2">
                     <h3 class="color--white mb-5">Get in Touch</h3>

@@ -125,6 +125,7 @@ if (isset($_SESSION['content-data'])) {
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
     <!--//webfonts-->
 </head>
+
 <body>
     <div id="home">
 
@@ -137,21 +138,36 @@ if (isset($_SESSION['content-data'])) {
             <div class="container-fluid">
                 <!--Row start-->
                 <div class="row ">
+                    <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
 
-                    <!-- right side start  -->
-                    <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
+                        <!--*****************TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
+                        <div class="extra-added-butn-for-mob-tab ">
+                            <button class="sidebar-icon-btn " type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                                <i class="fa-solid fa-angles-right"></i>
+                            </button>
+                            <div class="offcanvas offcanvas-start " data-bs-scroll="true" data-bs-backdrop="static"
+                                tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <?php include("dashboard-inc.php");?>
+                                    <hr class="myhrline">
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="client_profile_dashboard_left">
                             <?php include("dashboard-inc.php");?>
                             <hr class="myhrline">
                         </div>
-
+                        <!--***********TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                     </div>
-                    <!-- right side end  -->
-
-                    <!-- left side start  -->
-                    <div class="col-md-9  ps-md-0  display-table-cell v-align client_profile_dashboard_right">
-                        <div class="adding-border-css">
+                    <div class="col-md-9  ps-md-0 display-table-cell v-align extra-mrgin-top-for-mtab">
+                        <div class="adding-border-css mt-3 mt-lg-0">
                             <!-- placement selection button section start -->
                             <div class="row">
                                 <div class="col-sm-6">
@@ -346,7 +362,8 @@ if (isset($_SESSION['content-data'])) {
 
                                         <div class="form-group">
                                             <button type="button" class="payLaterBtn" onclick="payLaterOrder()">
-                                                <span class="paylater_logo"><img src="images/payments/pay-later.png"></span>
+                                                <span class="paylater_logo"><img
+                                                        src="images/payments/pay-later.png"></span>
                                                 <span> PayLater</span>
                                             </button>
                                         </div>

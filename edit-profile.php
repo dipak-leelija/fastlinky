@@ -150,18 +150,38 @@ if(isset($_POST['btnCancel'])){
         <div class="edit_profile" style="overflow: hidden;">
             <div class="container-fluid">
                 <div class="row ">
-                    <!--Row start-->
-                    <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align special_fixed" id="navigation">
+                    <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
+
+                        <!--*****************TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
+                        <div class="extra-added-butn-for-mob-tab ">
+                            <button class="sidebar-icon-btn " type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                                <i class="fa-solid fa-angles-right"></i>
+                            </button>
+                            <div class="offcanvas offcanvas-start " data-bs-scroll="true" data-bs-backdrop="static"
+                                tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <?php include("dashboard-inc.php");?>
+                                    <hr class="myhrline">
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="client_profile_dashboard_left">
                             <?php include("dashboard-inc.php");?>
                             <hr class="myhrline">
                         </div>
-
+                        <!--***********TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                     </div>
+
                     <div
-                        class="col-md-9  ps-md-0 display-table-cell v-align client_profile_dashboard_right special_sticky">
-                        <section class="" id="explore">
+                        class="col-md-9  ps-md-0 display-table-cell v-align client_profile_dashboard_right extra-mrgin-top-for-mtab special_sticky">
+                        <section class="mt-3 mt-lg-0" id="explore">
                             <div class="row">
                                 <div class="bfrom">
                                     <div class="dform">
@@ -623,7 +643,8 @@ if(isset($_POST['btnCancel'])){
                                                                 <select id="country" class="form-select "
                                                                     name="countryId" onchange="getStateList(this)"
                                                                     required>
-                                                                    <option value="" selected disabled>Select Country
+                                                                    <option value="" selected disabled>Select
+                                                                        Country
                                                                     </option>
                                                                     <?php
                                                                 $utility->populateDropDown($cusDtl[0][30], 'id', 'name', 'countries')
@@ -676,12 +697,14 @@ if(isset($_POST['btnCancel'])){
                                                     <div class="form-floating mb-3">
                                                         <input type="password" class="form-control" id="recentPassword"
                                                             placeholder="Password">
-                                                        <label for="recentPassword" required> Recent Password</label>
+                                                        <label for="recentPassword" required> Recent
+                                                            Password</label>
                                                     </div>
                                                     <div class="form-floating mb-3">
                                                         <input type="password" class="form-control" id="newPassword"
                                                             placeholder="Password">
-                                                        <label for="newPassword" required> Change New Password</label>
+                                                        <label for="newPassword" required> Change New
+                                                            Password</label>
                                                     </div>
                                                     <div class="form-floating mb-3">
                                                         <input type="password" class="form-control" id="confirmPassword"

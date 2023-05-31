@@ -78,12 +78,35 @@ $pendingPackOrd      = $PackageOrder->pendingGPOrders($cusId);
                     <div class="row ">
                         <!--Row start-->
                         <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
+
+                            <!--*****************TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
+                            <div class="extra-added-butn-for-mob-tab ">
+                                <button class="sidebar-icon-btn " type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                                    <i class="fa-solid fa-angles-right"></i>
+                                </button>
+                                <div class="offcanvas offcanvas-start " data-bs-scroll="true"
+                                    data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+                                    aria-labelledby="staticBackdropLabel">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <?php include("dashboard-inc.php");?>
+                                        <hr class="myhrline">
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
                                 <hr class="myhrline">
                             </div>
+                            <!--***********TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                         </div>
-                        <div class="col-md-9 mt-0 ps-md-0 display-table-cell v-align ">
+                        <div class="col-md-9  ps-md-0 display-table-cell v-align extra-mrgin-top-for-mtab">
                             <div class=" p-0">
                                 <header>
                                     <!-- dasboard top cards -->
