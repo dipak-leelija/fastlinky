@@ -67,6 +67,7 @@ $updatedBy =  $_SESSION[USR_SESS];
     <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
 
 </head>
+
 <body>
 
     <?php
@@ -231,17 +232,36 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
             <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
-                        <!--Row start-->
-                        <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
+                        <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
+
+                            <!--*****************TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
+                            <div class="extra-added-butn-for-mob-tab ">
+                                <button class="sidebar-icon-btn " type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                                    <i class="fa-solid fa-angles-right"></i>
+                                </button>
+                                <div class="offcanvas offcanvas-start " data-bs-scroll="true" data-bs-backdrop="static"
+                                    tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <?php include("dashboard-inc.php");?>
+                                        <hr class="myhrline">
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
                                 <hr class="myhrline">
                             </div>
-
+                            <!--***********TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                         </div>
-                        <div class="col-md-9 ps-md-0 display-table-cell v-align ">
-                            <div class="div-border-css">
+                        <div class="col-md-9  ps-md-0 display-table-cell v-align extra-mrgin-top-for-mtab">
+                            <div class="div-border-css mt-3 mt-lg-0">
                                 <!-- Details section Start  -->
                                 <div class="p-3 p-kage-de-tails">
                                     <div class="row">
@@ -432,7 +452,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                                 </div>
 
                                                 <h5 class="d-md-none">Anchor Text And URL</h5>
-                                                
+
                                             </div>
 
                                             <div class="row mb-3 mb-md-0">
@@ -510,9 +530,11 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                         <!-- ================================================================ -->
 
                                         <div class="form-group">
-                                            <input type="number" id="tid" name="content-id" value="<?= $orderContentId; ?>">
+                                            <input type="number" id="tid" name="content-id"
+                                                value="<?= $orderContentId; ?>">
                                             <input type="number" id="tid" name="order-id" value="<?= $orderId; ?>">
-                                            <input type="number" class="d-none" id="formAction" name="updateBeforeProcess">
+                                            <input type="number" class="d-none" id="formAction"
+                                                name="updateBeforeProcess">
                                         </div>
                                         <div class="text-center">
 
@@ -651,7 +673,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                     $.ajax({
                         url: "ajax/order-update.ajax.php",
                         type: "POST",
-                        data:  $('#orderForm').serialize(),
+                        data: $('#orderForm').serialize(),
                         success: function(data) {
                             console.log(data);
                             if (data.includes('updated')) {

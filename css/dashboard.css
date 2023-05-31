@@ -240,6 +240,11 @@ ul.breadcrumb li a:hover {
         display: none;
     }
 }
+@media(max-width:324px){
+    body #home {
+        padding-top: 2rem !important;
+    }
+}
 
 .offcanvas-backdrop.show {
     opacity: 0;
@@ -259,9 +264,7 @@ ul.breadcrumb li a:hover {
 }
 
 @media(max-width:767px){
-    body #home {
-        padding-top: 2rem !important;
-    }
+
     .client_profile_dashboard_left {
         display: none;
     }
