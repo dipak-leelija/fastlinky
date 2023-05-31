@@ -56,17 +56,20 @@ body a {
 
 body::-webkit-scrollbar-thumb:hover {
     background: #407BFF !important;
-    
+
 }
+
 html {
     scrollbar-width: thin;
-    scrollbar-color:#407BFF rgba(128, 128, 128, 0.23) ;
+    scrollbar-color: #407BFF rgba(128, 128, 128, 0.23);
     scroll-behavior: smooth !important;
-  }
-  html:-webkit-scrollbar {
+}
+
+html:-webkit-scrollbar {
     width: 0.5rem;
     box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.671) !important;
-  }
+}
+
 body #home {
     padding-top: 3rem !important;
 }
@@ -239,11 +242,8 @@ body::-webkit-scrollbar-thumb {
 @media (min-width:200px) and (max-width:385px) {
     .external-styling {
         width: 5.2rem !important;
-        font-size: 10px !important;
-    }
-
-    .dashboaard_button {
-        padding: 0.2rem 0.8rem 0 !important;
+        font-size: 12px !important;
+        padding: .5rem 0;
     }
 
     .external-lis {
@@ -262,12 +262,8 @@ body::-webkit-scrollbar-thumb {
     .external-styling {
         width: 6.6rem !important;
         font-size: 13px !important;
+        padding: 0.5rem;
     }
-
-    .dashboaard_button {
-        padding: 0.2rem 0.8rem 0 !important;
-    }
-
     .external-lis {
         padding: 0 !important;
         font-size: 13px !important;
@@ -483,8 +479,7 @@ body::-webkit-scrollbar-thumb {
 
     .mobile_login_btn {
         font-size: 13px;
-        padding: 0.3rem 0.3rem;
-        width: 90px;
+        /* width: 90px; */
     }
 
     .navbar-toggler {
@@ -502,14 +497,13 @@ body::-webkit-scrollbar-thumb {
     }
 
     .right_mbl {
-        width: 45%;
+        /* width: 45%; */
         justify-content: end;
         align-items: center;
         display: flex;
     }
 
     .mobile_login_btn {
-        padding: 0.4rem 0.8rem;
         width: auto;
     }
 
@@ -672,7 +666,7 @@ body::-webkit-scrollbar-thumb {
 /* ============================== */
 
 /* shadows  */
-.shadow_md{
+.shadow_md {
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
@@ -3588,6 +3582,7 @@ form.pack-form textarea {
     .index-faq-section {
         padding: 3rem 1rem;
     }
+
     .features-sec-head {
         font-weight: 700 !important;
     }
@@ -3731,20 +3726,25 @@ strong {
     .indexpage-starting-main-h1 {
         font-size: 1.55rem;
     }
+
     .index-faq-section h1 {
         font-size: 1.4rem;
     }
+
     p {
         font-size: 1.1rem !important;
         font-weight: 400 !important;
     }
+
     .sec_heading {
         font-size: 1.6rem !important;
     }
+
     .srvc-common-btn {
         font-size: 15px;
     }
-    ul{
+
+    ul {
         font-size: 1.07rem !important;
     }
 }

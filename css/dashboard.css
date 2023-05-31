@@ -239,11 +239,15 @@ ul.breadcrumb li a:hover {
     .pkg-img1{
         display: none;
     }
+    .sidebar-icon-btn {
+        padding: 4px 8px !important;
+    }
 }
 @media(max-width:324px){
     body #home {
         padding-top: 2rem !important;
     }
+    
 }
 
 .offcanvas-backdrop.show {
