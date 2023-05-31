@@ -100,10 +100,10 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                             </div>
                             <!--***********TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                         </div>
-                        <div class="col-md-9  ps-md-0 display-table-cell v-align mt-md-0 mt-2">
+                        <div class="col-md-9  ps-md-0 display-table-cell v-align extra-mrgin-top-for-mtab ">
 
                             <!-- row -->
-                            <div class="row p-5">
+                            <div class="row m-0 w-100 mt-lg-0 mt-4">
 
                                 <!-- Guest Post Orders  Section-->
                                 <div class="col-12 shadow_md rounded p-3">
