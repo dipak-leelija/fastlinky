@@ -79,11 +79,7 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <!-- plugins  files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
-    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
-
-    <!-- Custom css  -->
+    <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="../css/payment-summary-style.css">
 </head>
 
