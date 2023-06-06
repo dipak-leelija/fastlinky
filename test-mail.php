@@ -135,3 +135,9 @@ error_reporting(E_ALL);
 </body>
 
 </html>
+<!-- 
+TRUNCATE TABLE `fastlinky_db`.`ordered_content_hyperlinks`;
+TRUNCATE TABLE `fastlinky_db`.`order_contents`;
+TRUNCATE TABLE `fastlinky_db`.`order_details`;
+TRUNCATE TABLE `fastlinky_db`.`order_transections`;
+TRUNCATE TABLE `fastlinky_db`.`order_updates`; -->

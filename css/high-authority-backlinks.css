@@ -395,7 +395,7 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
         padding: 5rem 3rem !important;
     }
     .how-it-works-1st-img {
-        width: 490px !important;
+      display: none;
     }
     .advantages-of-using-bos-section ul {
         padding-left: 2rem;
@@ -406,9 +406,12 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
 }
 
 @media (max-width:600px) {
+    .works-bo-h2 {
+        font-size: 2.1rem;
+    }
     .mlb-starting-main-h1 {
         font-size: 2rem;
-        font-weight: 500;
+        font-weight: 600;
     }
     .high-autority-placement-div {
         padding: 7rem 2rem;
@@ -437,17 +440,11 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
     .pricing-bo-h1 {
         font-size: 2.2rem !important;
     }
-    .how-it-works-1st-img {
-        width: 460px !important;
-    }
 }
 
 @media (min-width:336px) and (max-width:535px) {
     .pricing-bo-h1 {
         font-size: 1.9rem !important;
-    }
-    .how-it-works-1st-img {
-        width: 300px !important;
     }
 }
 
@@ -461,9 +458,6 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
     .pricing-bo-h1 {
         font-size: 1.9rem !important;
     }
-    .how-it-works-1st-img {
-        width: 285px !important;
-    }
 }
 
 @media (min-width:200px) and (max-width:312px) {
@@ -471,16 +465,16 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
         font-size: 1.6rem !important;
     }
     .how-it-works-main-section h1 {
-        font-size: 30px !important;
+        font-size: 25px !important;
     }
     .pricing-bo-h1 {
         font-size: 1.7rem !important;
     }
-    .how-it-works-1st-img {
-        width: 253px !important;
-    }
     .advantages-of-using-bos-section h3 {
         font-size: 23px;
+    }
+    .works-bo-h2 {
+        font-size: 1.8rem;
     }
 }
 
@@ -497,6 +491,9 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
 }
 
 @media (min-width:250px) and (max-width:451px) {
+    .mlb-starting-main-p {
+        font-size: 1.1rem !important;
+    }
     .how-it-works-main-card-div h4 {
         font-size: 1.5rem;
     }

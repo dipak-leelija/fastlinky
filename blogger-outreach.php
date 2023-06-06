@@ -19,20 +19,18 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
 
 
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- plugins  files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/blogger-outreach.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/clientside-logo.css">
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
-</head>
 
-<body data-scrollbar>
+</head>
+<body>
     <?php require_once "partials/navbar.php"; ?>
     <!--___________________________________________________________________________________________________ -->
     <!-- starting of blogger-outreach main banner -->
@@ -106,7 +104,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- real-blogger-outreach-section start -->
     <section class="real-bo-section">
         <div class="row  w-100 m-auto">
-            <div class="col-lg-6 col-md-6 real-bo-col-first">
+            <div class="col-lg-6 col-md-6 real-bo-col-first px-0">
                 <div class="">
                     <div>
                         <h1 class="real-bo-text-h1">Real Contributors, Real Links, <span>And Real Outcomes</span> </h1>
@@ -114,7 +112,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div>
                         <div class="py-4">
                             <div class="real-bo-secondcol-div1">
-                                <div class=" px-3">
+                                <div class="  px-0 px-sm-3 pe-2">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -124,7 +122,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </div>
                             <div class="real-bo-secondcol-div1">
 
-                                <div class=" px-3">
+                                <div class=" px-0 px-sm-3 pe-2">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -133,7 +131,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 </div>
                             </div>
                             <div class="real-bo-secondcol-div1 mb-3">
-                                <div class=" px-3">
+                                <div class=" px-0 px-sm-3 pe-2">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -168,7 +166,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     </section>
     <!-- real-blogger-outreach-section end -->
-        <!-- _________________________________________________________________________________ -->
+    <!-- _________________________________________________________________________________ -->
     <!-- ==================== Does-Blogger-Outreach Work For You starts ============================ -->
     <section class="works-for-you-bo-section py-0">
         <div class="custom-cntainr">
@@ -179,7 +177,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
                 <div class="works-f-u-main-card-div">
                     <div class="row w-100 m-auto">
-                        <div class="col-md-4 my-2 my-md-3">
+                        <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                             <div class="card  how-it-work-f-u-card h-100">
                                 <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
@@ -193,7 +191,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-4 my-2 my-md-3">
+                        <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
@@ -207,7 +205,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
                             </div>
                         </div>
-                        <div class="col-md-4 my-2 my-md-3">
+                        <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
@@ -220,7 +218,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-4 my-2 my-md-3">
+                        <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
@@ -232,8 +230,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     authority in order to get you the finest stats for your site.</p>
                             </div>
                         </div>
-                      
-                        <div class="col-md-4 my-2 my-md-3">
+
+                        <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class=" pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
@@ -247,7 +245,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     and inside the content of the articles. </p>
                             </div>
                         </div>
-                        <div class="col-md-4 my-2 my-md-3 ">
+                        <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class=" pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
@@ -279,7 +277,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 real-bo-col-first">
+            <div class="col-lg-6 col-md-6 real-bo-col-first p-0">
                 <div class="">
                     <div>
                         <h1 class="amazing-bo-text-h1">Excellent Content + Superb Placements <span> = Incredible
@@ -295,7 +293,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div>
                         <div class="py-4">
                             <div class="real-bo-secondcol-div1">
-                                <div class=" px-3">
+                                <div class="  px-0 px-sm-3 pe-2">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -303,7 +301,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 </div>
                             </div>
                             <div class="real-bo-secondcol-div1">
-                                <div class=" px-3">
+                                <div class="  px-0 px-sm-3 pe-2">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -313,7 +311,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </div>
                             <div class="real-bo-secondcol-div1">
 
-                                <div class=" px-3">
+                                <div class="  px-0 px-sm-3 pe-2">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -321,7 +319,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 </div>
                             </div>
                             <div class="real-bo-secondcol-div1 mb-3">
-                                <div class=" px-3">
+                                <div class="  px-0 px-sm-3 pe-2">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
@@ -357,7 +355,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="works-f-u-main-card-div">
                 <div class="row w-100 m-auto">
-                    <div class="col-md-4 my-2 my-md-3">
+                    <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                         <div class="card works-for-u-card h-100">
                             <div class="pb-3 text-center text-sm-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
@@ -372,7 +370,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 running your business. </p>
                         </div>
                     </div>
-                    <div class="col-md-4 my-2 my-md-3">
+                    <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                         <div class="card works-for-u-card h-100">
                             <div class="pb-3 text-center text-sm-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
@@ -386,7 +384,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 our work. </p>
                         </div>
                     </div>
-                    <div class="col-md-4 my-2 my-md-3">
+                    <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                         <div class="card works-for-u-card h-100">
                             <div class=" pb-3 text-center text-sm-start">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
@@ -461,7 +459,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <h1 class="text-center pricing-bo-h1 mb-3 mt-5">Blogger Outreach Pricing
         </h1>
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
-            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>
@@ -485,7 +483,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </p>
                 <div class="works-f-u-main-card-div">
                     <div class="row w-100 m-auto">
-                        <div class="col-md-4 my-2 my-md-3">
+                        <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                             <div class="card  how-it-work-f-u-card h-100">
                                 <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
@@ -499,7 +497,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-4 my-2 my-md-3">
+                        <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
@@ -512,7 +510,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     it could be a difficult job. </p>
                             </div>
                         </div>
-                        <div class="col-md-4 my-2 my-md-3">
+                        <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class=" pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
@@ -526,7 +524,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     outreach service. </p>
                             </div>
                         </div>
-                        <div class="col-md-4 my-2 my-md-3">
+                        <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
@@ -540,7 +538,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     posts.</p>
                             </div>
                         </div>
-                        <div class="col-md-4  my-2 my-md-3">
+                        <div class="col-md-4  my-2 my-md-3 px-0 px-sm-2">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class="pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
@@ -553,7 +551,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-4 my-2 my-md-3">
+                        <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class=" pb-3 text-center text-sm-start">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"

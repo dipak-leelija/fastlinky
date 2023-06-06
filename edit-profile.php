@@ -55,19 +55,23 @@ if(isset($_POST['btnSubmit'])){
 
 	$customer->editCustomer($cusId, $txtFname, $txtLname, $txtGender, $txtBrief, $txtDesc, $txtorganization, $cusDtl[0][13], $txtProfession, $cusDtl[0][15], $cusDtl[0][13], $cusDtl[0][19]);
 
-
-		//uploading images
-		if($_FILES['fileImg']['name'] != ''){
-			//rename the file
-			$newName = $utility->getNewName4($_FILES['fileImg'], '', $cusId);
-			//upload and crop the file
-			$uImg->imgCropResize($_FILES['fileImg'], '', $newName, 'images/user/', 200, 200, $cusId, 'image', 'customer_id','customer');
-		}
-
-		$utility->delSessArr($sess_arr);
+	$utility->delSessArr($sess_arr);
 
 }
 
+if (isset($_POST['picture-update'])) {
+    //uploading images
+	if($_FILES['profile-picture']['name'] != ''){
+        
+        // delete old image 
+        $utility->deleteFile($cusId, 'customer_id', 'images/user/', 'image', 'customer');
+
+		//rename the file
+		$newName = $utility->getNewName4($_FILES['profile-picture'], '', $cusId);
+		//upload and crop the file
+		$uImg->imgCropResize($_FILES['profile-picture'], '', $newName, 'images/user/', 200, 200, $cusId, 'image', 'customer_id','customer');
+	}
+}
 
 //Edit Address
 if(isset($_POST['addressUpdate'])){
@@ -115,10 +119,9 @@ if(isset($_POST['btnCancel'])){
     <title> Edit My Profile | <?php echo COMPANY_S; ?></title>
     <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -135,7 +138,7 @@ if(isset($_POST['btnCancel'])){
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
     <div id="home">
         <!-- header -->
         <?php require_once "partials/navbar.php"; ?>
@@ -147,18 +150,38 @@ if(isset($_POST['btnCancel'])){
         <div class="edit_profile" style="overflow: hidden;">
             <div class="container-fluid">
                 <div class="row ">
-                    <!--Row start-->
-                    <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align special_fixed" id="navigation">
+                    <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
+
+                        <!--*****************TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
+                        <div class="extra-added-butn-for-mob-tab ">
+                            <button class="sidebar-icon-btn " type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                                <i class="fa-solid fa-angles-right"></i>
+                            </button>
+                            <div class="offcanvas offcanvas-start " data-bs-scroll="true" data-bs-backdrop="static"
+                                tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <?php include("dashboard-inc.php");?>
+                                    <hr class="myhrline">
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="client_profile_dashboard_left">
                             <?php include("dashboard-inc.php");?>
                             <hr class="myhrline">
                         </div>
-
+                        <!--***********TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                     </div>
+
                     <div
-                        class="col-md-9  ps-md-0 display-table-cell v-align client_profile_dashboard_right special_sticky">
-                        <section class="" id="explore">
+                        class="col-md-9  ps-md-0 display-table-cell v-align client_profile_dashboard_right extra-mrgin-top-for-mtab special_sticky">
+                        <section class="mt-3 mt-lg-0" id="explore">
                             <div class="row">
                                 <div class="bfrom">
                                     <div class="dform">
@@ -199,29 +222,55 @@ if(isset($_POST['btnCancel'])){
                                                         <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">
                                                             <?php echo $cusDtl[0][5].' '.$cusDtl[0][6]; ?>
                                                         </h4>
+                                                        <span class="badge badge-mustard"><?php echo $cusDtl[0][14]; ?>
+                                                        </span>
                                                         <div class="text-start edit-top-div_detail">
                                                             <p class="mb-0"><?php echo $cusDtl[0][3]; ?></p>
-                                                            <div class="text-muted"><small>Last login 2 hours
-                                                                    ago</small></div>
+                                                            <!-- <div class="text-muted">
+                                                                <small>
+                                                                    Last login <?= $dateUtil->dateTimeText($cusDtl[0][21]) ?>
+                                                                </small>
+                                                            </div> -->
                                                         </div>
 
                                                         <div class="input-group mt-2">
-                                                            <input type="file" class="form-control file-upload"
-                                                                id="inputGroupFile02"
-                                                                style=" visibility: hidden; display: none;"
-                                                                name="fileImg" id="fileImg" accept="image/*">
-                                                            <label class="input-group-text label_design_as_btn"
-                                                                for="inputGroupFile02">
-                                                                <i class="fa fa-fw fa-camera pe-2"></i>
-                                                                Change Photo
-                                                            </label>
+                                                            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post"
+                                                                enctype="multipart/form-data">
+                                                                <input type="file"
+                                                                    class="form-control file-upload d-none"
+                                                                    id="img-select" name="profile-picture" id="fileImg"
+                                                                    accept="image/*">
+                                                                <label class="input-group-text btn btn-primary rounded"
+                                                                    for="img-select">
+                                                                    <i class="fa fa-fw fa-camera pe-2"></i>
+                                                                    Change Photo
+                                                                </label>
+
+                                                                <button id="upload-btn" type="submit"
+                                                                    name="picture-update"
+                                                                    class="input-group-text btn btn-info rounded text-light fw-semibold ms-2 d-none">
+                                                                    <i
+                                                                        class="fa-solid fa-arrow-up-from-bracket pe-1"></i>
+                                                                    Upload
+                                                                </button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                     <div class="text-center text-sm-right order-sm-2 order-1">
-                                                        <span
-                                                            class="badge badge-mustard"><?php echo $cusDtl[0][14]; ?></span>
+                                                        <!-- <span
+                                                            class="badge badge-mustard"><?php echo $cusDtl[0][14]; ?>
+                                                        </span>
                                                         <div class="text-muted">
-                                                            <small><?php echo date('l jS \of F Y h:i:s A', strtotime($cusDtl[0][22])); ?></small>
+                                                            <small>
+                                                                <?php
+                                                                    echo $dateUtil->dateTimeText($cusDtl[0][22]);?>
+                                                            </small>
+                                                        </div> -->
+                                                        <div class="text-muted">
+                                                            <small>
+                                                                Last login
+                                                                <?= $dateUtil->dateTimeText($cusDtl[0][21]) ?>
+                                                            </small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -378,7 +427,7 @@ if(isset($_POST['btnCancel'])){
                                                 role="tabpanel" aria-labelledby="profile-tab">
                                                 <form class="form-horizontal" role="form"
                                                     action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"
-                                                    enctype="multipart/form-data" autocomplete="off">
+                                                    autocomplete="off">
                                                     <div class="row ">
                                                         <div class="col-sm-6">
                                                             <div class="form-floating mb-3">
@@ -594,7 +643,8 @@ if(isset($_POST['btnCancel'])){
                                                                 <select id="country" class="form-select "
                                                                     name="countryId" onchange="getStateList(this)"
                                                                     required>
-                                                                    <option value="" selected disabled>Select Country
+                                                                    <option value="" selected disabled>Select
+                                                                        Country
                                                                     </option>
                                                                     <?php
                                                                 $utility->populateDropDown($cusDtl[0][30], 'id', 'name', 'countries')
@@ -647,12 +697,14 @@ if(isset($_POST['btnCancel'])){
                                                     <div class="form-floating mb-3">
                                                         <input type="password" class="form-control" id="recentPassword"
                                                             placeholder="Password">
-                                                        <label for="recentPassword" required> Recent Password</label>
+                                                        <label for="recentPassword" required> Recent
+                                                            Password</label>
                                                     </div>
                                                     <div class="form-floating mb-3">
                                                         <input type="password" class="form-control" id="newPassword"
                                                             placeholder="Password">
-                                                        <label for="newPassword" required> Change New Password</label>
+                                                        <label for="newPassword" required> Change New
+                                                            Password</label>
                                                     </div>
                                                     <div class="form-floating mb-3">
                                                         <input type="password" class="form-control" id="confirmPassword"
@@ -686,49 +738,30 @@ if(isset($_POST['btnCancel'])){
         <script src="plugins/jquery-3.6.0.min.js"></script>
         <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
         <script src="js/customerSwitchMode.js"></script>
-        <script type="text/javascript" src="js/ajax.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
+        <script src="js/ajax.js" type="text/javascript"></script>
+        <script src="js/script.js" type="text/javascript"></script>
 
         <script>
-        $(document).ready(function() {
-            var readURL = function(input) {
+        document.addEventListener("DOMContentLoaded", () => {
+            var readURL = (input) => {
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
 
-                    reader.onload = function(e) {
-                        $('.profile-pic').attr('src', e.target.result);
+                    reader.onload = (e) => {
+                        document.querySelector(".profile-pic").src = e.target.result;
                     }
 
                     reader.readAsDataURL(input.files[0]);
-                    alert('Go to Edit Profile and Update the Changes');
+                    document.querySelector("#upload-btn").classList.remove("d-none");
                 }
-            }
+            };
 
 
-            $(".file-upload").on('change', function() {
+            document.querySelector("#img-select").addEventListener("change", function() {
                 readURL(this);
-            });
-
-            $(".upload-button").on('click', function() {
-                $(".file-upload").click();
             });
         });
         </script>
-
-        <script>
-        document.getElementById('buttonid').addEventListener('click', openDialog);
-
-
-        function openDialog() {
-            document.getElementById('fileid').click();
-        }
-        </script>
-        <!-- <script>
-        function thisFileUpload() {
-            document.getElementById("file").click();
-        };
-        </script> -->
-
 </body>
 
 </html>

@@ -45,10 +45,9 @@ class Login extends Utility{
 					$_SESSION['customer_type'] 				= $result['customer_type'];
 					
 					//update customer info
-					$update = "UPDATE 	customer_info 
-							   SET 		last_logon = now(), no_logon = no_logon + 1 
-							   WHERE 	customer_id = '".$_SESSION['userid']."'";
-					
+					$update = "UPDATE customer_info 
+								SET last_logon = now(), no_logon = no_logon + 1
+								WHERE 	customer_id = '".$_SESSION['userid']."'";
 					//execute query	   
 					$this->conn->query($update);
 					

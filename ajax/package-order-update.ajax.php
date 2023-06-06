@@ -1,7 +1,9 @@
 <?php
-require_once dirname(__DIR__)."/includes/constant.inc.php";
-require_once ROOT_DIR."/classes/encrypt.inc.php";
 session_start();
+require_once dirname(__DIR__)."/includes/constant.inc.php";
+require_once ROOT_DIR."/includes/order-constant.inc.php";
+require_once ROOT_DIR."/includes/content.inc.php";
+require_once ROOT_DIR."/classes/encrypt.inc.php";
 
 require_once ROOT_DIR."/_config/dbconnect.php";
 
@@ -26,6 +28,7 @@ $cusDtl		= $customer->getCustomerData($cusId);
 $returnUrl  = $utility->goToPreviousSessionPage();
 require_once ROOT_DIR.'/includes/check-customer-login.inc.php';
 
+// print_r($_REQUEST);
 
 if(isset($_POST['ancortext']) && isset($_POST['url'])){
     $orderId    =   $_POST['order-id'];
@@ -66,6 +69,28 @@ if(isset($_POST['ancortext']) && isset($_POST['url'])){
 
     }
 
+}
+
+
+if (isset($_POST['action'])) {
+    if ($_POST['action'] == 'LiveURLIssue') {
+        $linkId     = $_POST['linkId'];
+        $orderId    = $_POST['orderId'];
+        $issue      = $_POST['issueMsg'];
+        
+        $statusId   = REJECTEDCODE; // 10 is the code of rejected
+        $updatedBy  = $cusDtl[0][2];
+        $errMsg     = ERR_LINK;
+        
+        $updated = $PackageOrder->raiseIssue($linkId, $orderId, $issue, $statusId, $updatedBy);
+        if ($updated == 1) {
+            $existingStatus = $PackageOrder->getOrderStatus($orderId);
+            $added = $PackageOrder->addPackOrderDtls($orderId, $existingStatus, $errMsg, $updatedBy, $updatedBy);
+            if ($added == 1) {
+                echo 'updated!';
+            }
+        }
+    }
 }
 
 

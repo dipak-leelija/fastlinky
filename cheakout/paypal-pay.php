@@ -59,13 +59,13 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
+    <!-- plugins  files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="<?= URL; ?>/plugins/bootstrap-5.2.0/css/bootstrap.css">
+    <!-- custom css  -->
     <link rel="stylesheet" href="<?= URL; ?>/css/payment-summary-style.css">
 </head>
-
 <body>
     <section class="paylater-main-section">
         <!-- logo codes -->
@@ -75,52 +75,52 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
             </div>
         </div>
         <!-- cards for customers details -->
-            <div class="row my-3 my-md-4">
-                <div class="col">
-                    <div class="jumbotron">
-                        <div class="row">
-                            <div class="col-sm d-flex">
-                                <div class="card card-body flex-fill  customer-d-card">
-                                    <div>
-                                        <h5>Customer Details</h5>
-                                        <p><label><?php echo $customerName; ?></label></p>
-                                        <p><label><?php echo $customerEmail; ?></label></p>
-                                        <p><label><?php echo $customerMobile; ?></label></p>
-                                        <p><label><?php echo $customerCity; ?></label></p>
-                                        <p><label><?php echo $customerCountry; ?></label></p>
-                                    </div>
+        <div class="row my-3 my-md-4">
+            <div class="col">
+                <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-sm d-flex">
+                            <div class="card card-body flex-fill  customer-d-card">
+                                <div>
+                                    <h5>Customer Details</h5>
+                                    <p><label><?php echo $customerName; ?></label></p>
+                                    <p><label><?php echo $customerEmail; ?></label></p>
+                                    <p><label><?php echo $customerMobile; ?></label></p>
+                                    <p><label><?php echo $customerCity; ?></label></p>
+                                    <p><label><?php echo $customerCountry; ?></label></p>
                                 </div>
                             </div>
-                            <div class="col-sm d-flex">
-                                <div class="card card-body flex-fill customer-d-card">
-                                    <h5>Bill Details</h5>
-                                    <p><label>Invoice Date : <?php echo $DateUtil->todayDate("/"); ?> </label>
-                                    </p>
-                                    <p><label>Due Date : <?php echo $DateUtil->todayDate("/"); ?><label></p>
-                                    <p><label>Payment Mode : Paypal<label></p>
-                                    <p><label>Total Package: <?php echo count($_SESSION['package']); ?></label>
-                                    </p>
-                                </div>
+                        </div>
+                        <div class="col-sm d-flex">
+                            <div class="card card-body flex-fill customer-d-card">
+                                <h5>Bill Details</h5>
+                                <p><label>Invoice Date : <?php echo $DateUtil->todayDate("/"); ?> </label>
+                                </p>
+                                <p><label>Due Date : <?php echo $DateUtil->todayDate("/"); ?><label></p>
+                                <p><label>Payment Mode : Paypal<label></p>
+                                <p><label>Total Package: <?php echo count($_SESSION['package']); ?></label>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <form action="" method="post">
-                <div class=" display-table text-center ">
-                    <!-- <div class="features_grids table-responsive"> -->
-                    <table class="table detailing-table table-responsive">
-                        <thead class="table-secondary">
-                            <tr>
-                                <th scope="col">Item</th>
-                                <th scope="col">QTY</th>
-                                <th scope="col">Rate</th>
-                                <th scope="col">Subtotal</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
+        <form action="" method="post">
+            <div class=" display-table text-center ">
+                <!-- <div class="features_grids table-responsive"> -->
+                <table class="table detailing-table table-responsive">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">QTY</th>
+                            <th scope="col">Rate</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
                             $totalCost = 00.00;
 
                             foreach ($_SESSION['package'] as $index => $packId) {
@@ -134,71 +134,71 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
                                 
                                 $orderIds[] = $PackageOrder->addPackageOrder($packId, '', $cusId, $customerName, $customerEmail, $pack['price'], 00, $pack['price'], 'Paypal', '', PENDINGCODE, INCOMPLETECODE);
                             ?>
-                            <tr>
-                                <td class="text-start fw-semibold"><?php echo $packFullName; ?> </td>
-                                <td><?php echo 1; ?></td>
-                                <td><?php echo CURRENCY.$pack['price']; ?></td>
-                                <td> <?php echo CURRENCY; ?><span id="amount"><?php echo $pack['price']; ?></span>
-                                </td>
-                            </tr>
-                            <?php
+                        <tr>
+                            <td class="text-start fw-semibold"><?php echo $packFullName; ?> </td>
+                            <td><?php echo 1; ?></td>
+                            <td><?php echo CURRENCY.$pack['price']; ?></td>
+                            <td> <?php echo CURRENCY; ?><span id="amount"><?php echo $pack['price']; ?></span>
+                            </td>
+                        </tr>
+                        <?php
                             }
                             $_SESSION['orderIds']    =    $orderIds;
                             ?>
-                        </tbody>
-                    </table>
-                    <!-- </div> -->
-                </div>
+                    </tbody>
+                </table>
+                <!-- </div> -->
+            </div>
 
-                <!-- invoice table -->
-                <div class="second-table-fr-total">
-                    <div class="row" style="display: flex; justify-content: end;">
-                        <div class="col-md-5  ">
-                            <table class="table table-responsive">
-                                <thead class="table-secondary">
-                                    <tr>
-                                        <th class="text-center" scope="col">Invoice Summary</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-6">Total</div>
-                                                <div class="col-6 text-end fw-semibold">
-                                                    <?php echo CURRENCY.$totalCost;?></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-8"><b> Payment Method </b></div>
-                                                <div class="col-4 text-end"><b>Paypal</b> </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="row mt-2">
-                                                <div class="col-12 text-end" id="payBtn">
-                                                    <div id="paypal-payment-button">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 text-end">
-                                                    <button type="button"
-                                                        class="btn btn-danger rounded-pill w-100 fw-semibold mt-2"
-                                                        onclick="history.back()">Cancel</button>
+            <!-- invoice table -->
+            <div class="second-table-fr-total">
+                <div class="row" style="display: flex; justify-content: end;">
+                    <div class="col-md-5  ">
+                        <table class="table table-responsive">
+                            <thead class="table-secondary">
+                                <tr>
+                                    <th class="text-center" scope="col">Invoice Summary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-6">Total</div>
+                                            <div class="col-6 text-end fw-semibold">
+                                                <?php echo CURRENCY.$totalCost;?></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-8"><b> Payment Method </b></div>
+                                            <div class="col-4 text-end"><b>Paypal</b> </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="row mt-2">
+                                            <div class="col-12 text-end" id="payBtn">
+                                                <div id="paypal-payment-button">
                                                 </div>
                                             </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                                            <div class="col-12 text-end">
+                                                <button type="button"
+                                                    class="btn btn-danger rounded-pill w-100 fw-semibold mt-2"
+                                                    onclick="history.back()">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </form>
+            </div>
+        </form>
         <form action="order-processing.php" method="post" id="payment-process-form" name="payment-process-form">
             <input type="hidden" id="pppamn" name="pppamn" value="">
             <input type="hidden" id="paymentdata" name="paymentdata" value="">
@@ -209,7 +209,6 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
         src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_CLIENT_ID ?>&disable-funding=credit,card,paylater&currency=USD">
     </script>
     <script>
-
     let getAmount = document.getElementById("pppamn");
     let paymentdata = document.getElementById('paymentdata');
     let form = document.getElementById('payment-process-form');
@@ -251,7 +250,7 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
             // console.log(data);
             // sessionStorage.setItem('orderStatus', 'Cancled');
             // if (sessionStorage.getItem('orderStatus') == 'Cancled') {
-                alert('cancled');
+            alert('cancled');
             // }
         },
         onError: function(err) {

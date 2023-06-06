@@ -17,19 +17,17 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <meta name="keywords"
         content="managed link building, monthly link building service, monthly backlink building service, backlink management, link management, link building management, link building packages, whitehat link building services, best link building company," />
 
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/managed-link-building.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/clientside-logo.css">
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
 </head>
-
-<body data-scrollbar>
+<body>
     <?php require_once "partials/navbar.php"; ?>
     <!--____________________________________________________________________________________________ -->
     <!-- starting of managed-link-building main banner -->
@@ -38,7 +36,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-md-6 order-2 order-md-1 px-0 px-md-3">
                 <div class="mlb-wrapping">
                     <h1 class="mlb-starting-main-h1">Managed <span>Link Building</span> Services </h1>
-                    <p class=" mt-2 mb-md-0 mb-3 py-0 py-md-2 mlb-starting-main-p">Get high-quality backlinks to boost your
+                    <p class=" mt-2 mb-md-0 mb-3 py-0 py-md-2 mlb-starting-main-p">Get high-quality backlinks to boost
+                        your
                         website’s visibility and authority on search results.At FastLinky, our outreach specialists
                         are very adept at managing link building. Managed link building is useful for increasing
                         websites’ ranking and organic traffic from Google and other search engines.
@@ -67,7 +66,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-md-6 order-1 order-md-2 text-center p-0">
                 <div class="mlb-wrapping">
-                    <img src="./images/process-showing-fastlinky.png" class="" alt="">
+                    <img src="./images/process-showing-fastlinky.png" class="img-extra-csss" alt="">
                 </div>
             </div>
         </div>
@@ -180,8 +179,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 px-2">Link Building Pricing
         </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as  per DA,
-            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>
@@ -630,8 +629,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
                 <a href="#pricing-cards">
                     <div class="  text-center text-md-start ">
-                        <button type="button"
-                            class="btn srvc-common-btn  external-css-fr-size ">Get Your
+                        <button type="button" class="btn srvc-common-btn  external-css-fr-size ">Get Your
                             Links Now</button>
                     </div>
                 </a>

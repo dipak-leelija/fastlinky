@@ -1,6 +1,7 @@
 <?php
 require_once "../includes/constant.inc.php";
 session_start();
+$page = "adminNicheAdd";
 include_once('checkSession.php');
 require_once("../_config/dbconnect.php");
 
@@ -40,26 +41,9 @@ else if(isset($_POST['btnCancel']))
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Skydash Admin</title>
-    <!-- plugins:css -->
-    <!-- <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css"> -->
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../plugins/data-table/style.css">
-
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
-
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
 
 </head>
 
@@ -79,11 +63,11 @@ else if(isset($_POST['btnCancel']))
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
-                <div class="ml-3 mb-3">
-                            <h2>Add New Niche</h2>
-                        </div>
+                    <div class="ml-3 mb-3">
+                        <h2>Add New Niche</h2>
+                    </div>
                     <div class="row">
-                        
+
                         <?php 
                     //CREATING NEW USER FORM
                     if( (isset($_GET['action'])) && ($_GET['action'] == 'addniche') )
@@ -95,11 +79,13 @@ else if(isset($_POST['btnCancel']))
 
                             <div class="col-12 m-3">
                                 <label for="inputAddress" class="form-label">Niche Name</label>
-                                <input type="text" name="niche_name" class="form-control w-75" id="inputAddress" placeholder="">
+                                <input type="text" name="niche_name" class="form-control w-75" id="inputAddress"
+                                    placeholder="">
                             </div>
                             <div class="col-12 m-3">
                                 <label for="inputAddress2" class="form-label">Seo Url</label>
-                                <input type="text" name="seo_url" class="form-control w-75 h-75" id="inputAddress2" placeholder="URL..">
+                                <input type="text" name="seo_url" class="form-control w-75 h-75" id="inputAddress2"
+                                    placeholder="URL..">
                             </div>
 
                             <div class="col-12 m-3">
@@ -114,11 +100,11 @@ else if(isset($_POST['btnCancel']))
                     </div>
                 </div>
                 <!-- content-wrapper ends -->
-               
+
                 <!-- Footer Start  -->
                 <?php require_once "partials/_footer.php"; ?>
                 <!-- Footer End  -->
-                
+
                 <!-- partial -->
             </div>
             <!-- main-panel ends -->

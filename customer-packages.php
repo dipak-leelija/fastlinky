@@ -63,13 +63,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="description" content="" />
 
 
-    <!-- New Files  -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
 
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <!-- <link href="css/blog-list.css" rel='stylesheet' type='text/css' /> -->
     <link href="css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
 
     <!--webfonts-->
@@ -91,10 +91,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         overflow-y: auto;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
+
     .form-control:focus {
-   
-    box-shadow:none !important;
-}
+
+        box-shadow: none !important;
+    }
+
     #packageList option {
         background-color: white;
         padding: 4px;
@@ -127,15 +129,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class=" display-table">
                     <!--Row start-->
                     <div class="row ">
-                        <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
+                        <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
+
+                            <!--*****************TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
+                            <div class="extra-added-butn-for-mob-tab ">
+                                <button class="sidebar-icon-btn " type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                                    <i class="fa-solid fa-angles-right"></i>
+                                </button>
+                                <div class="offcanvas offcanvas-start " data-bs-scroll="true" data-bs-backdrop="static"
+                                    tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <?php include("dashboard-inc.php");?>
+                                        <hr class="myhrline">
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
                                 <hr class="myhrline">
                             </div>
-
+                            <!--***********TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                         </div>
-                        <div class="col-md-9 mt-4 ps-md-3 px-md-4 display-table-cell v-align ">
+                        <div class="col-md-9  ps-md-0 display-table-cell v-align extra-mrgin-top-for-mtab">
                             <?php
                             if($failed){
                             ?>
@@ -147,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <?php
                             }
                             ?>
-                            <div class="w-100">
+                            <div class="w-100 mt-3 mt-lg-0">
                                 <label>Select Package Category</label>
                                 <input class="form-control mt-1" autocomplete="off" role="combobox" list=""
                                     id="searchDatalist" name="package" placeholder="Search here"
@@ -177,8 +199,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     ?>
 
 
-                                    <div class="col-md-3 px-md-1 h-100">
-                                        <div class="card p-card" id="">
+                                    <div class="col-md-3 px-md-1 my-2 my-md-3">
+                                        <div class="card p-card h-100" id="">
                                             <input id="c-box-<?php echo $eachPack['id']?>"
                                                 value="<?php echo $eachPack['id']?>" type="checkbox" name="package[]"
                                                 required="" class="d-none cart-input">

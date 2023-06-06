@@ -102,20 +102,11 @@ $userData =  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
 <html lang="en" class="h-100">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.104.2">
+<?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title><?php echo COMPANY_S.' Administrative Dashboard'; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
 
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="css/admin-style.css">
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
 
 
 
@@ -195,7 +186,7 @@ $userData =  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
                                 <div class="dashboard-list">
                                     <ul>
                                         <li><a href="orders.php">Orders Management</a></li>
-                                        <li><a href="package-orders.php">Package Orders</a></li>
+                                        <li><a href="package-order.php">Package Orders</a></li>
                                     </ul>
                                 </div>
                             </div>

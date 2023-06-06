@@ -63,10 +63,10 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <title><?php echo $packageCat['category_name'].' '.$package['package_name'].' - '.COMPANY_S; ?></title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="<?php echo URL; ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <!-- font-awesome icons -->
-    <link href="<?php echo URL; ?>/plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="<?php echo URL; ?>/css/style.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL; ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
@@ -76,7 +76,6 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
     <!--//webfonts-->
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
     <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
-
 </head>
 
 <body>
@@ -172,7 +171,11 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
 
                                                     if (count($publishedStatus) > 0) {
                                                         $pulished = true;
+                                                        
                                                         $btnBg = 'bg_mustard';
+                                                        if ($publishedStatus['status'] == REJECTEDCODE) {
+                                                            $btnBg = REJECTED;
+                                                        }
                                                     }
                                                     
                                                     $existLinksNo = count($links);
@@ -185,6 +188,8 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                     echo "<button class='d-block  d_border mt-2 px-3 py-2  w-75 m-auto   ".$btnBg."' data-bs-toggle='modal' data-bs-target='#exampleModal-{$i}'>Link for {$utility->ordinal($i)} Post <i class='".$btnIcon."'></i></button>";
 
                                                 ?>
+
+
 
                                                 <!-- Modal start -->
                                                 <div class="modal fade" id="exampleModal-<?php echo $i; ?>"
@@ -201,8 +206,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                 <div class="modal-header">
                                                                     <h1 class="modal-title fs-5" id="exampleModalLabel">
                                                                         <?php echo $utility->ordinal($i); ?> Post
-                                                                        Published
-                                                                        Link
+                                                                        Live URL
                                                                     </h1>
                                                                     <button type="button" class="btn-close"
                                                                         data-bs-dismiss="modal"
@@ -210,9 +214,29 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                 </div>
 
                                                                 <div class="modal-body" id="update-modal-body">
+
+                                                                    <?php if ($publishedStatus['status'] == REJECTEDCODE) { ?>
+                                                                    <p
+                                                                        class="text-danger text-center fw-semibold fs-6 rounded border border-danger mb-2">
+                                                                        <?= $publishedStatus['issue'] ?></p>
+                                                                    <?php }?>
+
                                                                     <input type="text" class="form-control mt-1"
                                                                         value="<?php echo $publishedStatus['url']; ?>">
+
+                                                                    <?php if ($publishedStatus['status'] != REJECTEDCODE) { ?>
+                                                                    <div class="d-flex justify-content-end mt-1">
+                                                                        <button type="button"
+                                                                            class="btn btn-sm btn-warning ms-2"
+                                                                            data-bs-toggle='modal'
+                                                                            data-bs-target='#issueModal'
+                                                                            onclick="setLiveUrlId(<?= $publishedStatus['id']?>)">
+                                                                            Have an issue?
+                                                                        </button>
+                                                                    </div>
+                                                                    <?php } ?>
                                                                 </div>
+                                                                <!-- onclick="linkIssue(<?php echo $publishedStatus['id'].','. $i; ?>)" -->
 
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary"
@@ -469,8 +493,8 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                                             <hr>
                                                                                         </li>
                                                                                         <?php
-                                             }
-                                             ?>
+                                                                                        }
+                                                                                        ?>
                                                                                     </ul>
                                                                                 </div>
                                                                             </div>
@@ -497,9 +521,37 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                 </div>
                 <!-- //end display table-->
             </div>
-
-
         </div>
+
+
+        <!-- issue Modal start -->
+        <div class="modal fade" id="issueModal" tabindex="-1" aria-labelledby="issueModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title fs-5" id="issueModalLabel">
+                            Raise Link Issue
+                        </h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="update-modal-body">
+                        <div class="form-group">
+                            <label for="linkIssue" class="col-form-label pt-0 pb-0">Write the issue:</label>
+                            <textarea class="form-control" id="linkIssue"></textarea>
+                        </div>
+                        <input type="hidden" id="raiseUrlId">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" onclick="raiseIssue()">Save
+                            changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- issue Modal end -->
+
+
         <script src="<?php echo URL; ?>/plugins/jquery-3.6.0.min.js"></script>
         <script src="<?php echo URL; ?>/plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
         <script src="<?php echo URL; ?>/js/script.js"></script>
@@ -545,7 +597,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                 confirmButtonText: 'Yes, Finish'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    
+
                     $.ajax({
                         url: "admin/ajax/package-status-updates.ajax.php",
                         type: "POST",
@@ -571,6 +623,41 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
             })
         }
 
+        const setLiveUrlId = (liveUrlId) => {
+            let linkId = document.getElementById('raiseUrlId').value = liveUrlId;
+        }
+
+        const raiseIssue = () => {
+            let orderId = <?= $orderId?>;
+            let linkId = document.getElementById('raiseUrlId').value;
+            let issueMsg = document.getElementById('linkIssue').value;
+
+
+            $.ajax({
+                url: "ajax/package-order-update.ajax.php",
+                type: "POST",
+                data: {
+                    action: 'LiveURLIssue',
+                    linkId: linkId,
+                    orderId: orderId,
+                    issueMsg: issueMsg
+                },
+                success: function(response) {
+                    // console.log(response);
+                    if (response.includes('updated!')) {
+                        location.reload();
+                    } else {
+                        Swal.fire(
+                            'Failed!',
+                            response,
+                            'error'
+                        )
+                    }
+
+                }
+            });
+
+        }
 
 
         // if(request.status == 200)

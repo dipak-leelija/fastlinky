@@ -56,15 +56,13 @@ $mails = $Emails->ShowMailsbyCol('to_email', $_SESSION['USERcontinuecontent_ecom
     <title><?php echo $cusDtl[0][5].' '.$cusDtl[0][6];?> - Notifications | <?php echo COMPANY_S; ?></title>
     <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
 
-    <!-- Bootstrap Core CSS -->
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
     <link href="css/my-orders.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <!-- <link href="css/form.css" rel='stylesheet' type='text/css' /> -->
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard-notification.css" rel='stylesheet' type='text/css' />
 

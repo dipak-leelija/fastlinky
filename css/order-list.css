@@ -196,12 +196,8 @@ small, .small {
     position: relative;
     margin-bottom: 0;
     font-family: "Satoshi-Variable";
-    /* font-family: "Nunito", sans-serif; */
 }
 
-.icon-data-list li {
-    /* margin-bottom: 1rem; */
-}
 .icon-data-list hr {
     margin: .4rem 0;
     color: cadetblue;

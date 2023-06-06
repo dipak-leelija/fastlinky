@@ -1,5 +1,6 @@
 <?php
 session_start();
+$page = "adminOrderDetails";
 require_once dirname(__DIR__) . "/includes/constant.inc.php";
 require_once ROOT_DIR . "/_config/dbconnect.php";
 
@@ -153,26 +154,17 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
+    
     <title><?= $showOrder['clientOrderedSite']; ?> - Order Details | <?php echo COMPANY_FULL_NAME; ?></title>
-    <link rel="shortcut icon" href="<?= FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?= FAVCON_PATH?>" />
-
-    <link rel="stylesheet" href="<?= ADM_URL?>vendors/css/vendor.bundle.base.css">
-    <!-- <link rel="stylesheet" href="../plugins/data-table/style.css"> -->
+    
     <link rel="stylesheet" href="<?= URL?>/plugins/sweetalert/sweetalert2.css">
 
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
-
     <!-- inject:css -->
-    <link rel="stylesheet" href="<?= ADM_URL?>css/vertical-layout-light/style.css">
     <link rel="stylesheet" href="<?= URL?>/css/order-now.css">
-    <!-- <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="<?= URL?>/css/order-list.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
+
 </head>
 
 <body>
@@ -688,7 +680,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                         <h5 class="text-primary font-weight-bold">
                                                             Content
                                                             <span class="text-danger font-weight-light">
-                                                                <small>
+                                                                <small class="text-capitalize">
                                                                     You can View or Download the content by clicking on
                                                                     the respective button
                                                                 </small>

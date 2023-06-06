@@ -1,8 +1,8 @@
 <?php 
+session_start();
 require_once "includes/constant.inc.php";
 require_once("includes/paypal.inc.php");  
 
-session_start();
 require_once "_config/dbconnect.php";
 
 $clientUserId           = $_SESSION['userid'];

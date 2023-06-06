@@ -1,6 +1,7 @@
 <?php
 require_once "../includes/constant.inc.php";
 session_start();
+$page = "adminNicheEdit";
 include_once('checkSession.php');
 require_once("../_config/dbconnect.php");
 
@@ -38,27 +39,9 @@ $blogsDtls 	= $blogs->showBlogNichMst($_GET['id']);
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Skydash Admin</title>
-    <!-- plugins:css -->
-    <!-- <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css"> -->
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../plugins/data-table/style.css">
-
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
-
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
-
 </head>
 
 <body>
@@ -87,41 +70,42 @@ $blogsDtls 	= $blogs->showBlogNichMst($_GET['id']);
                             <div class="col-12 m-3">
                                 <label for="inputAddress" class="form-label">Niche Name</label>
                                 <input type="text" name="niche_name" class="form-control w-75" id="inputAddress"
-                                value="<?php echo $blogsDtls[0][1]; ?>">
+                                    value="<?php echo $blogsDtls[0][1]; ?>">
                             </div>
                             <div class="col-12 m-3">
                                 <label for="inputAddress2" class="form-label">Seo Url</label>
                                 <input type="text" name="seo_url" class="form-control w-75" id="inputAddress2"
-                                value="<?php echo $blogsDtls[0][6]; ?>" >
+                                    value="<?php echo $blogsDtls[0][6]; ?>">
                             </div>
 
                             <div class="col-12 m-3">
                                 <label for="inputAddress2" class="form-label">Modified On</label>
                                 <input type="text" name="modified_on" class="form-control w-75" id="inputAddress2"
-                                value="<?php echo $blogsDtls[0][4]; ?>" readonly>
+                                    value="<?php echo $blogsDtls[0][4]; ?>" readonly>
                             </div>
                             <div class="col-12 m-3">
                                 <label for="inputAddress2" class="form-label">Added By</label>
                                 <input type="text" name="added_by" class="form-control w-75" id="inputAddress2"
-                                value="<?php echo $blogsDtls[0][3]; ?>" readonly>
+                                    value="<?php echo $blogsDtls[0][3]; ?>" readonly>
                             </div>
 
 
                             <div class="col-12 m-3">
-                            <input name="btneditfaqs" type="submit" class="btn btn-primary" value="EDIT" />
-                                <input  type="button"  onclick="location.href='blog-niche.php';" class="btn btn-primary" value="cancel" />
+                                <input name="btneditfaqs" type="submit" class="btn btn-primary" value="EDIT" />
+                                <input type="button" onclick="location.href='blog-niche.php';" class="btn btn-primary"
+                                    value="cancel" />
 
                             </div>
                         </form>
-                     
+
                     </div>
                 </div>
                 <!-- content-wrapper ends -->
-                
+
                 <!-- Footer Start  -->
                 <?php require_once "partials/_footer.php"; ?>
                 <!-- Footer End  -->
-                
+
                 <!-- partial -->
             </div>
             <!-- main-panel ends -->

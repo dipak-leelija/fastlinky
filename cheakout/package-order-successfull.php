@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 require_once dirname(__DIR__)."/includes/constant.inc.php";
 require_once ROOT_DIR."/_config/dbconnect.php";
 
@@ -46,15 +45,14 @@ if (!isset($_SESSION['updatedOrders'])) {
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <link rel="stylesheet" href="<?php echo URL; ?>/style/ansysoft.css" type="text/css" />
-    <link rel="stylesheet" href="<?php echo URL; ?>/plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="<?php echo URL; ?>/plugins/fontawesome-6.1.1/css/all.css">
+    <!-- plugins  files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
+	<!-- Custom css  -->
     <link rel="stylesheet" href="<?php echo URL; ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/css/payment-status.css">
-
 </head>
-
-
 <body>
 
     <!-- Start  Header -->

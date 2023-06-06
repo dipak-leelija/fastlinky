@@ -15,11 +15,9 @@
         background-position: inherit;
     }
 }
-
-.mlb-wrapping span {
+.high-quality-gp-heading-main span{
     color: var(--mustard);
 }
-
 .high-quality-gp-heading-main {
     font-family: "Helvetica", "Satoshi-Variable";
     font-size: 3.7rem;
@@ -143,12 +141,10 @@
 
 .actually-card-div1:hover {
     transition: all .9s ease;
-    background-color: #FFF0;
     box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
-    background-image: url(../images/dummy-img/card-hover-bg-img-removebg-preview.jpg);
+    background-image: url('../images/dummy-img/card-hover-bg-image.png');
     background-position: top right;
     background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .external-css-fr-size {
@@ -434,12 +430,6 @@
     .high-quality-gp-heading-main {
         font-size: 2rem;
     }
-    .mlb-wrapping {
-        padding: 0 1rem;
-        align-content: center;
-        align-items: center;
-    }
-
     .pricing-bo-p1 {
         padding: .8rem;
     }
@@ -454,6 +444,9 @@
 
     .who-can-take-section {
         padding: 1rem !important;
+    }
+    .actually-card-div1:hover {
+       background-size: contain;
     }
 }
 
@@ -479,6 +472,12 @@
 }
 
 @media (min-width:200px) and (max-width:320px) {
+    .high-quality-gp-main-p {
+        text-align: justify;
+    }
+    .lbp-texting {
+        font-size: 1.1rem;
+    }
     .definition-gp-div h2 {
         font-size: 1.345rem;
     }

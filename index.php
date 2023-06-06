@@ -29,7 +29,6 @@ $uImg 			= new ImageUtility();
 $uNum 			= new NumUtility();
 $faqs		    = new faqs();
 
-// $GPPackage      = new GuestPostpackage();
 ######################################################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
 //user id
@@ -58,18 +57,17 @@ if(isset($_GET['seo_url']))
         content="seo services, local seo services, seo company, seo agency, Link Building services agency, link building, backlink building, seo link building, what is a backlink ,link building services, seo link building services, best link building services, back link building services, link building seo services" />
 
 
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- plugins  files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+    <link href="./plugins/sweetalert/sweetalert2.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/index.css" rel='stylesheet' type='text/css' />
     <link href="css/testimonials.css" rel="stylesheet">
     <link href="css/clientside-logo.css" rel="stylesheet">
 
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <link href="./plugins/sweetalert/sweetalert2.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
 
 </head>
 
@@ -247,7 +245,8 @@ if(isset($_GET['seo_url']))
                 <h2 class=" text-center mt-4 my-3 service-index-h2"> <span>Services</span> That We Provide </h2>
             </div>
             <p class="service-index-p">
-            From <b>managed link building services</b>  to  <b>country specific links</b>, cannabis backlinks, guest posting, and casino backlinks you will find everything at Fastlinky.
+                From <b>managed link building services</b> to <b>country specific links</b>, cannabis backlinks, guest
+                posting, and casino backlinks you will find everything at Fastlinky.
             </p>
             <div class="service-index-card-div">
                 <div class="row row-cols-1 row-cols-sm-3">
@@ -352,7 +351,7 @@ if(isset($_GET['seo_url']))
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Cannabis Backlink
                             </h4>
                             <p class="h-100">
-                            Get powerful backlinks for <b>Cannabis</b>  and <b>CBD link-building services.</b>  </p>
+                                Get powerful backlinks for <b>Cannabis</b> and <b>CBD link-building services.</b> </p>
                             <div class="my-3">
                                 <a class="services-a-btn" href="cannabis-backlinks">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
@@ -367,7 +366,8 @@ if(isset($_GET['seo_url']))
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Guest Posting
                             </h4>
                             <p class="h-100">
-                            We offer high-quality <b>guest posting services</b>  with useful backlinks and content links that boost the organic growth of your site. </p>
+                                We offer high-quality <b>guest posting services</b> with useful backlinks and content
+                                links that boost the organic growth of your site. </p>
                             <div class="my-3">
                                 <a class="services-a-btn" href="guest-posting">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
@@ -382,7 +382,8 @@ if(isset($_GET['seo_url']))
                             <h4 class="how-fonts-h4 text-center text-md-start py-2">Casino Backlinks
                             </h4>
                             <p class="h-100">
-                            Buy <b>casino backlinks</b>  to grow your <b>online gambling and casino websites</b> . </p>
+                                Buy <b>casino backlinks</b> to grow your <b>online gambling and casino websites</b> .
+                            </p>
                             <div class="my-3">
                                 <a class="services-a-btn" href="casino-backlinks">Learn More <i
                                         class="fa-solid fa-chevron-right ps-1"></i></a>
@@ -405,8 +406,8 @@ if(isset($_GET['seo_url']))
                 <h1 class="only-catchy-headline mb-4">Are You Ready To Be Present On Google's Front Page?
                 </h1>
                 <div class=" buttonsinfo ">
-                    <button type="button" onclick="goTo('customer-packages')"
-                        class="btn srvc-common-btn ">Outrank Your Competition</button>
+                    <button type="button" onclick="goTo('customer-packages')" class="btn srvc-common-btn ">Outrank Your
+                        Competition</button>
                 </div>
 
             </div>

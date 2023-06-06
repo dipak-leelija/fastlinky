@@ -1,6 +1,7 @@
 <?php 
 require_once("../includes/constant.inc.php");
 session_start();
+$page = "adminOrder";
 include_once('checkSession.php');
 
 require_once ROOT_DIR . "/_config/dbconnect.php";
@@ -68,25 +69,16 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'search')){
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
+
     <title>All Orders | <?php echo COMPANY_FULL_NAME; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- plugins:css -->
-    <link rel="stylesheet" href="<?php echo ADM_URL?>vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/plugins/data-table/style.css">
-    <link rel="stylesheet" href="<?php echo URL; ?>css/order-list.css">
-    <link rel="stylesheet" href="<?php echo URL; ?>css/order-table.css">
+    <link rel="stylesheet" href="<?php echo URL; ?>/css/order-list.css">
+    <link rel="stylesheet" href="<?php echo URL; ?>/css/order-table.css">
 
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
-
-    <!-- inject:css -->
-    <link rel="stylesheet" href="<?php echo ADM_URL?>css/vertical-layout-light/style.css">
 </head>
 
 <body>
@@ -192,7 +184,7 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'search')){
                                                             <?=  CURRENCY.$paid_amount; ?>
                                                         </td>
                                                         <td>
-                                                            <label class="badge <?php echo $ordStatordStatusNameus;?>">
+                                                            <label class="badge <?php echo $ordStatusName;?>">
                                                                 <?php echo $ordStatusName;?>
                                                             </label>
                                                         </td>

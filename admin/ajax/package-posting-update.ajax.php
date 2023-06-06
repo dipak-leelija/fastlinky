@@ -1,6 +1,7 @@
 <?php
 require_once dirname(dirname(__DIR__))."/includes/constant.inc.php";
 require_once ROOT_DIR."/includes/content.inc.php";
+require_once ROOT_DIR."/includes/order-constant.inc.php";
 require_once ROOT_DIR."/classes/encrypt.inc.php";
 session_start();
 include_once ADM_DIR . 'checkSession.php';
@@ -25,6 +26,8 @@ $typeM		= $utility->returnGetVar('typeM','');
 //user id
 $returnUrl  = $utility->goToPreviousSessionPage();
 $added_by  = $_SESSION[ADM_SESS];
+
+// print_r($_REQUEST);
 
 if(isset($_POST['publishOrder']) && isset($_POST['forPost']) && isset($_POST['url'])){
 
@@ -51,5 +54,23 @@ if(isset($_POST['publishOrder']) && isset($_POST['forPost']) && isset($_POST['ur
 
 }
 
+if (isset($_POST['liveURL']) && isset($_POST['orderId']) && isset($_POST['urlId'])) {
+    
+    echo $urlId   = $_POST['urlId'];
+    $orderId = $_POST['orderId'];
+    $liveURL = $_POST['liveURL'];
 
+    echo $statusId = COMPLETEDCODE;
+
+    $msg      = LVURL_UPDT;
+
+    $updated = $PackageOrder->updateLiveURLS($urlId, $orderId, $liveURL, $statusId, $added_by);
+
+    if ($updated == true || $updated == 1 ) {
+        $added = $PackageOrder->addPackOrderDtls($orderId, $statusId, $msg, $added_by, COMPANY_S);
+        if ($added  == 1) {
+            echo 'updated!';
+        }
+    }
+}
 ?>

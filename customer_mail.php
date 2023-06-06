@@ -1,23 +1,23 @@
 <?php 
-require_once "../includes/constant.inc.php"; 
-require_once "../includes/email.inc.php";
-
 session_start();
+require_once "includes/constant.inc.php"; 
+require_once "includes/email.inc.php";
+
 
 include_once('checkSession.php');
 
-require_once "../_config/dbconnect.php";
+require_once "_config/dbconnect.php";
 
-require_once("../classes/adminLogin.class.php"); 
-require_once("../classes/customer.class.php");
-require_once("../classes/search.class.php");
+require_once("classes/adminLogin.class.php"); 
+require_once("classes/customer.class.php");
+require_once("classes/search.class.php");
 
-include_once("../classes/emails.class.php");
+include_once("classes/emails.class.php");
 
-require_once("../classes/error.class.php"); 
-require_once("../classes/date.class.php"); 
-require_once("../classes/utility.class.php"); 
-require_once("../classes/utilityMesg.class.php"); 
+require_once("classes/error.class.php"); 
+require_once("classes/date.class.php"); 
+require_once("classes/utility.class.php"); 
+require_once("classes/utilityMesg.class.php"); 
 
 /* INSTANTIATING CLASSES */
 $adminLogin 	= new adminLogin();
@@ -53,15 +53,17 @@ $toEmail = $_GET['toEmail'];
     <title>Send Mail to <?php echo $toName;?> | <?php echo COMPANY_S; ?></title>
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
 
+    <!-- Plugins Files -->
+    <!-- <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet"> -->
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <link rel="stylesheet" href="vendors/feather/feather.css">
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
     <!-- <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css"> -->
     <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../plugins/data-table/style.css">
     <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
+    
 </head>
 
 <body class="modal-open">

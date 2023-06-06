@@ -26,22 +26,8 @@ $userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Admin Profile | <?php echo COMPANY_FULL_NAME;?></title>
-    <link rel="icon" href="<?php echo FAVCON_PATH;?>" type="image/png">
-
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="vendors/feather/feather.css">
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
-    <!-- inject:css -->
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-
 </head>
 
 <body>
@@ -133,7 +119,7 @@ $userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
 
                                         <div class="col-12">
                                             <div class="d-flex justify-content-center align-items-center">
-                                            <?php
+                                                <?php
                                             if ($userData[5] != null) {
                                                 $img = '../images/admin/user/'.$userData[5];
                                             }

@@ -13,12 +13,12 @@ require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php";
 
 /* INSTANTIATING CLASSES */
-$customer		    = new Customer();
+$customer		= new Customer();
 $Contact        = new Contact();
-$MyError 			  = new MyError();
-$emailObj		    = new Emails();
+$MyError 		= new MyError();
+$emailObj		= new Emails();
 $DateUtil      	= new DateUtil();
-$utility		    = new Utility();
+$utility		= new Utility();
 ######################################################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
 //user id
@@ -143,29 +143,26 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
 
 <head>
 
-    <title><?php echo COMPANY_S; ?> Global Support - Contact Us </title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php echo COMPANY_S; ?> Global Support - Contact Us </title>
     <meta name="description"
         content="LeeLija staff always available for your support. Our technical and SEO staffs always online, Leelija team provided free support for every one." />
-    <meta charset="utf-8">
     <meta name="keywords"
         content="contact for SEO, contact for web development, support for on page SEO, support for technical SEO, contact for guest post" />
-    <link href="css/contact-us.css" rel='stylesheet' type='text/css' />
     <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
-    <!-- Bootstrap Core CSS -->
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
+    <link href="css/contact-us.css" rel='stylesheet' type='text/css' />
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
     <link href="css/custom.css" rel='stylesheet' type='text/css' />
-    <!-- font-awesome icons -->
-    <!-- <link href="css/fontawesome-all.min.css" rel="stylesheet"> -->
-
 </head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
     <div id="home">
         <!-- header -->
         <?php require_once "partials/navbar.php"; ?>
@@ -175,7 +172,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
             <h1 class="text-center">Contact us </h1>
             <p class="contact-us-p text-center">Fill out the form below to get your Free Proposal.</p>
             <div class="container">
-                <div class="contact__wrapper shadow-lg mt-n9">
+                <div class="contact__wrapper shadow-lg ">
                     <div class="row no-gutters m-0">
                         <div class="col-lg-5 contact-info__wrapper gradient-brand-color   order-lg-2">
                             <h3 class="color--white mb-5">Get in Touch</h3>
@@ -228,8 +225,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
                             <?php
                           }
                           ?>
-                            <form method="post" action="contact"
-                                class="contact-form needs-validation" novalidate>
+                            <form method="post" action="contact" class="contact-form needs-validation" novalidate>
                                 <div class="row">
                                     <div class="col-sm-6 mb-3">
                                         <div class="form-group">

@@ -49,7 +49,7 @@ footer .footer-copyright nav ul li:first-child {
 }
 
 footer .footer-copyright p {
-    font-size: 15px;
+    font-size: 15px !important;
     font-weight: 700;
     color: #969696;
     margin: 2px 0 0;

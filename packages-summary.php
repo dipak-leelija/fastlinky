@@ -1,8 +1,8 @@
 <?php
+session_start();
 require_once "includes/constant.inc.php";
 require_once "includes/content.inc.php";
 require_once "includes/registration.inc.php";
-session_start();
 
 require_once ROOT_DIR."/_config/dbconnect.php";
 
@@ -67,21 +67,17 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
     <link href="css/package-summary.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
-
-
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
 </head>
-
-<body data-scrollbar>
+<body>
     <div id="home">
         <?php require_once "partials/navbar.php"; ?>
 
@@ -129,42 +125,10 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                 <div class="col-sm-6 mb-3">
                                     <div class="form-group">
                                         <label class="required-field" for="mob-no">Mob No</label>
-                                        <input type="number" class="form-control" id="mob-no" name="mob-no"
-                                            value="<?php echo $cusDtl[0][34]; ?>" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 mb-3">
-                                    <div class="form-group">
-                                        <label class="required-field" for="city">City</label>
-                                        <select class="form-control" name="city" id="city" required>
-                                            <option value="" disabled selected>Select City</option>
-                                            <?php
-                                                if ($cusDtl[0][28] != '') {
-                                                    $utility->populateDropDown2($cusDtl[0][27], 'id', 'name', 'state_id', $cusDtl[0][28], 'cities');
-                                                }
-												?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 mb-3">
-                                    <div class="form-group">
-                                        <label class="required-field" for="pin-code">PIN Code</label>
-                                        <input type="number" class="form-control" id="pin-code" name="pin-code"
-                                            value="<?php echo $cusDtl[0][29]; ?>" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 mb-3">
-                                    <div class="form-group">
-                                        <label class="required-field" for="state">State</label>
-                                        <select class="form-control" name="state" id="stateId"
-                                            onchange="getCitiesList(this)" required>
-                                            <option value="" disabled selected>Select Country First</option>
-                                            <?php
-                                                if ($cusDtl[0][30] != '') {
-                                                    $utility->populateDropDown2($cusDtl[0][28], 'id', 'name', 'country_id', $cusDtl[0][30], 'states');
-                                                }
-                                                ?>
-                                        </select>
+                                        <input type="text"
+                                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                            minlength="10" pattern="[0-9]+" maxlength="10" class="form-control"
+                                            id="mob-no" name="mob-no" value="<?php echo $cusDtl[0][34]; ?>" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 mb-3">
@@ -179,6 +143,47 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                         </select>
                                     </div>
                                 </div>
+
+                                <div class="col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="required-field" for="pin-code">PIN Code</label>
+                                        <input type="text"
+                                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                            minlength="6" pattern="[0-9]+" maxlength="6" class="form-control"
+                                            id="pin-code" name="pin-code" value="<?php echo $cusDtl[0][29]; ?>"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="required-field" for="state">State</label>
+                                        <select class="form-control" name="state" id="stateId"
+                                            onchange="getCitiesList(this)" required>
+                                            <option value="" disabled selected>Select Country First</option>
+                                            <?php
+                                                if ($cusDtl[0][30] != '') {
+                                                    $utility->populateDropDown2($cusDtl[0][28], 'id', 'name', 'country_id', $cusDtl[0][30], 'states');
+                                                }
+                                                ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="required-field" for="city">City</label>
+                                        <select class="form-control" name="city" id="city" required>
+                                            <option value="" disabled selected>Select City</option>
+                                            <?php
+                                                if ($cusDtl[0][28] != '') {
+                                                    $utility->populateDropDown2($cusDtl[0][27], 'id', 'name', 'state_id', $cusDtl[0][28], 'cities');
+                                                }
+												?>
+                                        </select>
+                                    </div>
+                                </div>
+                                
                                 <div class="col-sm-12 mb-3">
                                     <small class="fw-normal">
                                         Please ensure that you provide accurate and complete information to

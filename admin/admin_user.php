@@ -1,6 +1,7 @@
 <?php 
 require_once dirname(__DIR__) . "/includes/constant.inc.php";
 session_start();
+$page = "adminAdminUser";
 include_once ADM_DIR .'checkSession.php';
 require_once ROOT_DIR ."/_config/dbconnect.php";
 
@@ -29,20 +30,12 @@ $adminData	   = $adminLogin->ShowUserData();
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title><?php echo COMPANY_S?> - Admin List</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="<?php echo ADM_URL?>vendors/feather/feather.css">
     <link rel="stylesheet" href="<?php echo ADM_URL?>vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="<?php echo ADM_URL?>vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="<?php echo URL?>/plugins/data-table/style.css">
-    <link rel="stylesheet" href="<?php echo ADM_URL?>css/vertical-layout-light/style.css">
 
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
 
     <style>
     .addnewbtncss {

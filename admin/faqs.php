@@ -1,6 +1,7 @@
 <?php
 require_once("../includes/constant.inc.php");
 session_start();
+$page = "adminFAQ";
 include_once('checkSession.php');
 require_once "../_config/dbconnect.php";
 
@@ -32,26 +33,9 @@ $faqsDtl 	= $faqs->getfaqDetail();
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Skydash Admin</title>
-    <!-- plugins:css -->
-    <!-- <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css"> -->
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../plugins/data-table/style.css">
-
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
-
-
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
     <style>
     .addnewbtncss {
         margin: auto;
@@ -174,11 +158,11 @@ $faqsDtl 	= $faqs->getfaqDetail();
                     </div>
                 </div>
                 <!-- content-wrapper ends -->
-               
+
                 <!-- Footer Start  -->
                 <?php require_once "partials/_footer.php"; ?>
                 <!-- Footer End  -->
-                
+
                 <!-- partial -->
             </div>
             <!-- main-panel ends -->

@@ -52,14 +52,9 @@ $updatedBy =  $_SESSION[USR_SESS];
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <!-- Bootstrap Core CSS -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <!-- font-awesome icons -->
-    <!-- <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-light.css">
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -73,7 +68,7 @@ $updatedBy =  $_SESSION[USR_SESS];
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
 
     <?php
 
@@ -237,17 +232,36 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
             <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
-                        <!--Row start-->
-                        <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
+                        <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
+
+                            <!--*****************TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
+                            <div class="extra-added-butn-for-mob-tab ">
+                                <button class="sidebar-icon-btn " type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                                    <i class="fa-solid fa-angles-right"></i>
+                                </button>
+                                <div class="offcanvas offcanvas-start " data-bs-scroll="true" data-bs-backdrop="static"
+                                    tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <?php include("dashboard-inc.php");?>
+                                        <hr class="myhrline">
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
                                 <hr class="myhrline">
                             </div>
-
+                            <!--***********TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                         </div>
-                        <div class="col-md-9 ps-md-0 display-table-cell v-align ">
-                            <div class="div-border-css">
+                        <div class="col-md-9  ps-md-0 display-table-cell v-align extra-mrgin-top-for-mtab">
+                            <div class="div-border-css mt-3 mt-lg-0">
                                 <!-- Details section Start  -->
                                 <div class="p-3 p-kage-de-tails">
                                     <div class="row">
@@ -257,7 +271,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                                 Order Details: <span
                                                     class="badge text-bg-primary"><?= $orderStatusName; ?></span>
                                             </h5>
-                                            <h5 class="pkage-headline pt-2">
+                                            <h5 class="pkage-headline text-lowercase pt-2">
                                                 <?php echo $showOrder['clientOrderedSite']; ?></h5>
                                             <ul class="listing-adrs">
                                                 <li> Order Id : <?= "#".$orderId; ?></li>
@@ -438,7 +452,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                                 </div>
 
                                                 <h5 class="d-md-none">Anchor Text And URL</h5>
-                                                
+
                                             </div>
 
                                             <div class="row mb-3 mb-md-0">
@@ -516,9 +530,11 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                         <!-- ================================================================ -->
 
                                         <div class="form-group">
-                                            <input type="number" id="tid" name="content-id" value="<?= $orderContentId; ?>">
+                                            <input type="number" id="tid" name="content-id"
+                                                value="<?= $orderContentId; ?>">
                                             <input type="number" id="tid" name="order-id" value="<?= $orderId; ?>">
-                                            <input type="number" class="d-none" id="formAction" name="updateBeforeProcess">
+                                            <input type="number" class="d-none" id="formAction"
+                                                name="updateBeforeProcess">
                                         </div>
                                         <div class="text-center">
 
@@ -657,7 +673,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                     $.ajax({
                         url: "ajax/order-update.ajax.php",
                         type: "POST",
-                        data:  $('#orderForm').serialize(),
+                        data: $('#orderForm').serialize(),
                         success: function(data) {
                             console.log(data);
                             if (data.includes('updated')) {

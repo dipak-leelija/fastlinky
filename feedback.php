@@ -53,8 +53,9 @@ $return_url		= "";
     <meta name="description" content="">
     <meta name="keywords" content="" />
 
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <link rel="stylesheet" href="css/login.css">
     <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -143,7 +144,6 @@ $return_url		= "";
     }
     </style>
 </head>
-
 <body>
     <div id="home">
         <!-- header -->

@@ -1,6 +1,6 @@
 <?php
-require_once "includes/constant.inc.php";
 session_start();
+require_once "includes/constant.inc.php";
 
 require_once ROOT_DIR."/_config/dbconnect.php";
 
@@ -117,10 +117,9 @@ $lastUpdateTime = $dateUtil->dateTimeNum($lastUpdate['updated_on'], '/');
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-
-    <!-- Bootstrap Core CSS -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -128,14 +127,12 @@ $lastUpdateTime = $dateUtil->dateTimeNum($lastUpdate['updated_on'], '/');
     <link href="css/order-view-update.css" rel='stylesheet' type='text/css' />
     <link href="css/order-list.css" rel='stylesheet' type='text/css' />
     <link href="css/my-orders.css" rel='stylesheet' type='text/css' />
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
+
     <!--webfonts-->
     <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <!--//webfonts-->
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
+    <!--//webfonts-->
     <style>
     @media (min-width: 1280px) {
         .client_profile_dashboard_right {
@@ -164,8 +161,7 @@ $lastUpdateTime = $dateUtil->dateTimeNum($lastUpdate['updated_on'], '/');
     }
     </style>
 </head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
     <div id="home">
         <!-- header -->
         <?php require_once ROOT_DIR.'/partials/navbar.php'; ?>

@@ -59,8 +59,7 @@ $package        = $GPPackage->packCatById($packCatId);
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
 </head>
 
 <body>
@@ -68,7 +67,8 @@ $package        = $GPPackage->packCatById($packCatId);
         <!-- partial -->
         <div class="container-fluid">
             <div class="main-panel">
-            <p class="font-weight-bold text-center bg-secondary py-3 <?php echo $msgShow, $tColor; ?>"><?php echo $msg; ?></p>
+                <p class="font-weight-bold text-center bg-secondary py-3 <?php echo $msgShow, $tColor; ?>">
+                    <?php echo $msg; ?></p>
                 <div class="content-wrapper pt-0">
                     <div class="container-fluid pt-4 text-center">
                         <p class="font-weight-bold <?php echo $tColor; ?>"></p>
@@ -79,7 +79,8 @@ $package        = $GPPackage->packCatById($packCatId);
                             <form class="row" action="<?php $_SERVER['REQUEST_URI']?>" method="POST">
                                 <div class="col-md-12 mt-3">
                                     <label for="" class="mb-1">Package Category name</label>
-                                    <input type="text" class="form-control" name="category" value="<?php echo $package['category_name']; ?>">
+                                    <input type="text" class="form-control" name="category"
+                                        value="<?php echo $package['category_name']; ?>">
                                 </div>
 
                                 <div class="col-md-12 text-right mt-3">

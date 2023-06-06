@@ -6,29 +6,42 @@
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#order-management" aria-expanded="false"
-                aria-controls="order-management">
+        <li
+            class="nav-item  <?php if($page == "adminOrder" || $page == "adminOrderDetails" || $page == "adminPackageOrder" || $page == "adminPackageOrderDetails" ){echo "active";} ?>">
+
+            <a class="nav-link <?php if($page == "adminOrder" || $page == "adminOrderDetails" || $page == "adminPackageOrder" || $page == "adminPackageOrderDetails" ){echo "noaction";} else {
+                echo "collapsed"; 
+            } ?>
+            " data-toggle="collapse" href="#order-management" aria-expanded="false" aria-controls="order-management">
                 <i class="fa-regular fa-diagram-project menu-icon"></i>
                 <span class="menu-title">Order Management</span>
                 <i class="fa-regular fa-chevron-right menu-right-arrow"></i>
             </a>
-            <div class="collapse" id="order-management">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="orders.php">Guest Post Orders</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="package-orders.php">Package Orders</a></li>
+            <div class="collapse <?php if($page == "adminOrder" || $page == "adminOrderDetails" || $page == "adminPackageOrder" || $page == "adminPackageOrderDetails"){echo "show";} ?>"
+                id="order-management">
+                <ul class="nav flex-column sub-menu ">
+
+                    <li class="nav-item"> <a class="nav-link" href="orders.php">Guest
+                            Post Orders</a></li>
+
+                    <li class="nav-item"> <a class="nav-link" href="package-order.php">Package
+                            Orders</a></li>
                 </ul>
             </div>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#customer-management" aria-expanded="false"
+        <li
+            class="nav-item <?php if($page == "adminCustomer" || $page == "adminContact" || $page == "adminContactViews"){echo "active";} ?>">
+            <a class="nav-link <?php if($page == "adminCustomer" || $page == "adminContact" || $page == "adminContactViews"){echo "noaction";} else {
+                echo "collapsed"; 
+            } ?>" data-toggle="collapse" href="#customer-management" aria-expanded="false"
                 aria-controls="customer-management">
                 <i class="fa-regular fa-users menu-icon"></i>
                 <span class="menu-title">Customers</span>
                 <i class="fa-regular fa-chevron-right menu-right-arrow"></i>
             </a>
-            <div class="collapse" id="customer-management">
+            <div class="collapse <?php if($page == "adminCustomer" || $page == "adminContact" || $page == "adminContactViews"){echo "show";} ?>"
+                id="customer-management">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="customer.php">Customer</a></li>
                     <li class="nav-item"> <a class="nav-link" href="contact.php">Contact Details</a></li>
@@ -36,20 +49,24 @@
             </div>
         </li>
 
-
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#blogs" aria-expanded="false" aria-controls="blogs">
+        <li
+            class="nav-item   <?php if($page == "adminBlogMaster" || $page == "adminBlogNiches" || $page == "adminNicheAdd" || $page == "adminNicheEdit" || $page == "adminBlogAdd" || $page == "adminBlogEdit" ){echo "active";} ?>">
+            <a class="nav-link <?php if($page == "adminBlogMaster" || $page == "adminBlogNiches" || $page == "adminNicheAdd" || $page == "adminNicheEdit" || $page == "adminBlogAdd" || $page == "adminBlogEdit" ){echo "noaction";} else {
+                echo "collapsed"; 
+            } ?>" data-toggle="collapse" href="#blogs" aria-expanded="false" aria-controls="blogs">
                 <i class="fa-light fa-table-layout menu-icon"></i>
-                <span class="menu-title">Blogs</span>
+                <span class="menu-title">Blogs Management</span>
                 <i class="fa-regular fa-chevron-right menu-right-arrow"></i>
             </a>
-            <div class="collapse" id="blogs">
+            <div class="collapse  <?php if($page == "adminBlogMaster" || $page == "adminBlogNiches" || $page == "adminNicheAdd" || $page == "adminNicheEdit" || $page == "adminBlogAdd" || $page == "adminBlogEdit"){echo "show";} ?>"
+                id="blogs">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="blog-master.php">Blogs</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="blog-niche.php">Niches</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="blog-master.php">Pages</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="blog-niche.php">Faqs</a></li>
                 </ul>
             </div>
         </li>
+
 
 
         <li class="nav-item">
@@ -68,13 +85,17 @@
             </div>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#faqs" aria-expanded="false" aria-controls="faqs">
+        <li
+            class="nav-item <?php if($page == "adminFAQ" || $page == "adminFaqAdd" || $page == "adminfaqEdit"){echo "active";} ?>">
+            <a class="nav-link <?php if($page == "adminFAQ" || $page == "adminFaqAdd" || $page == "adminfaqEdit"){echo "noaction";} else {
+                echo "collapsed"; 
+            } ?>" data-toggle="collapse" href="#faqs" aria-expanded="false" aria-controls="faqs">
                 <i class="fa-light fa-objects-column menu-icon"></i>
                 <span class="menu-title">Editor</span>
                 <i class="fa-regular fa-chevron-right menu-right-arrow"></i>
             </a>
-            <div class="collapse" id="faqs">
+            <div class="collapse <?php if($page == "adminFAQ" || $page == "adminFaqAdd" || $page == "adminfaqEdit"){echo "show";} ?>"
+                id="faqs">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="static-pages.php">Pages</a></li>
                     <li class="nav-item"> <a class="nav-link" href="faqs.php">Faqs</a></li>
@@ -110,7 +131,7 @@
             </a>
             <div class="collapse" id="marketing">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="mails-customer.php">Customer Mails</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="customer-mail.php">Customer Mails</a></li>
                     <li class="nav-item"> <a class="nav-link" href="mails-group-mail.php">Group Mail</a></li>
                     <li class="nav-item"> <a class="nav-link" href="mails-history.php">Mail History</a></li>
                 </ul>
@@ -119,14 +140,17 @@
 
 
 
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#sitesetup" aria-expanded="false"
-                aria-controls="sitesetup">
+        <li
+            class="nav-item  <?php if($page == "adminAdminEdit" || $page == "adminAddUser" || $page == "adminAdminUser"){echo "active";} ?>">
+            <a class="nav-link <?php if($page == "adminAdminEdit" || $page == "adminAddUser" || $page == "adminAdminUser"){echo "noaction";} else {
+                echo "collapsed"; 
+            } ?>" data-toggle="collapse" href="#sitesetup" aria-expanded="false" aria-controls="sitesetup">
                 <i class="fa-duotone fa-gears menu-icon"></i>
                 <span class="menu-title">Setup Tools</span>
                 <i class="fa-regular fa-chevron-right menu-right-arrow"></i>
             </a>
-            <div class="collapse" id="sitesetup">
+            <div class="collapse <?php if($page == "adminAdminEdit" || $page == "adminAddUser" || $page == "adminAdminUser"){echo "show";} ?>"
+                id="sitesetup">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="admin_user.php">Admin Users</a></li>
                     <li class="nav-item"> <a class="nav-link" href="database.php">Database backup</a></li>

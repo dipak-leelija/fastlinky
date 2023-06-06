@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require_once("includes/constant.inc.php");
 
 require_once("includes/user.inc.php");
@@ -6,14 +7,12 @@ require_once("includes/email.inc.php");
 require_once("includes/registration.inc.php");
 require_once("includes/paypal.inc.php");
 
-session_start();
 
 require_once "_config/dbconnect.php";
 
 require_once("classes/error.class.php"); 
 require_once("classes/date.class.php"); 
 require_once("classes/customer.class.php");
-require_once("classes/order.class.php");
 require_once("classes/utility.class.php"); 
 require_once("classes/utilityMesg.class.php"); 
 require_once("classes/utilityImage.class.php");
@@ -23,9 +22,6 @@ require_once("classes/utilityStr.class.php");
 /* INSTANTIATING CLASSES */
 $error			= new Error();
 $dateUtil		= new DateUtil();
-
-
-$ordObj			= new Order();
 
 $utility		= new Utility();
 $uMesg 			= new MesgUtility();
@@ -55,17 +51,12 @@ $typeM		= $utility->returnGetVar('typeM','');
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Payment Error - Order can not be processed</title>
     <link rel="stylesheet" href="<?php echo URL ?>style/ansysoft.css" type="text/css" />
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+    
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- JavaScript -->
-
-    <!-- eof JavaScript -->
-
 </head>
-
-
 <body>
 
     <!-- Start  Header -->

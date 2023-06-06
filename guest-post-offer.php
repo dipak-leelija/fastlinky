@@ -1,6 +1,6 @@
 <?php
-require_once("includes/constant.inc.php");
 session_start();
+require_once("includes/constant.inc.php");
 
 require_once("_config/dbconnect.php");
 
@@ -20,27 +20,16 @@ require_once("classes/faqs.class.php");
 /* INSTANTIATING CLASSES */
 
 $dateUtil       = new DateUtil();
-
 $error 			= new Error();
-
 $search_obj	    = new Search();
-
 $customer		= new Customer();
-
 // $logIn			= new Login();
-
 $GpOfferList  = new GpOfferList();
-
 // $service		= new Services();
-
 // $blogMst		= new BlogMst();
-
 $utility		= new Utility();
-
 $uMesg 			= new MesgUtility();
-
 $uImg 			= new ImageUtility();
-
 $uNum 			= new NumUtility();
 $faqs		    = new faqs();
 // $gp				  = new Gporder();
@@ -93,15 +82,15 @@ query_posts('showposts=3');
         content="LeeLija provided Guest Post Service at reasonable prices on fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement  or more." />
     <meta name="keywords"
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
+
     <!--webfonts-->
     <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">

@@ -54,9 +54,8 @@ $packageCats = $GPPackage->allPackagesCat();
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
+    <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <link rel="stylesheet" href="../../plugins/data-table/style.css">
-    <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
 
 </head>
 
@@ -66,7 +65,8 @@ $packageCats = $GPPackage->allPackagesCat();
         <!-- partial -->
         <div class="container-fluid">
             <div class="main-panel">
-                <p class="font-weight-bold text-center bg-secondary py-3 <?php echo $msgShow, $tColor; ?>"><?php echo $msg; ?></p>
+                <p class="font-weight-bold text-center bg-secondary py-3 <?php echo $msgShow, $tColor; ?>">
+                    <?php echo $msg; ?></p>
                 <div class="content-wrapper pt-0">
                     <div class="row">
 

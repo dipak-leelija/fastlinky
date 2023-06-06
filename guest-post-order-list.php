@@ -1,6 +1,6 @@
 <?php
-require_once "includes/constant.inc.php";
 session_start();
+require_once "includes/constant.inc.php";
 
 require_once("_config/dbconnect.php");
 
@@ -39,19 +39,17 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/logo/favicon.png" type="image/png">
-    <title>My Order :: <?php echo COMPANY_S; ?></title>
+    <title>Guest Post Orders List - <?php echo COMPANY_S; ?></title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' />
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/my-orders.css" rel='stylesheet' type='text/css' />
     <link href="css/order-list.css" rel='stylesheet' type='text/css' />
-
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
 
     <!-- Datatable CSS  -->
     <link rel="stylesheet" href="plugins/data-table/style.css">
@@ -75,18 +73,37 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
             <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
-                        <!--Row start-->
-                        <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
+                        <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
+
+                            <!--*****************TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
+                            <div class="extra-added-butn-for-mob-tab ">
+                                <button class="sidebar-icon-btn " type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                                    <i class="fa-solid fa-angles-right"></i>
+                                </button>
+                                <div class="offcanvas offcanvas-start " data-bs-scroll="true" data-bs-backdrop="static"
+                                    tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <?php include("dashboard-inc.php");?>
+                                        <hr class="myhrline">
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
-                                <hr>
+                                <hr class="myhrline">
                             </div>
-
+                            <!--***********TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                         </div>
-                        <div class="col-md-9 mt-4 ps-md-0  display-table-cell v-align ">
+                        <div class="col-md-9  ps-md-0 display-table-cell v-align extra-mrgin-top-for-mtab">
                             <!-- Guest Post Orders  Section-->
-                            <div class="row">
+                            <div class="row m-0 w-100">
                                 <div class="mb-3">
                                     <h3 class="fw-bold text-center py-2">Guest Posts:</h3>
                                 </div>
@@ -114,7 +131,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 
 
 
-                                                <h3 class="product-title maining-title">
+                                                <h3 class="product-title maining-title text-lowercase">
                                                     <?php echo $order['clientOrderedSite']; ?></h3>
                                                 <small>
                                                     <b>
@@ -163,7 +180,7 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
                                         }else {
                                         ?>
                                 <div
-                                    class="product_card col-lg-5 text-center border border border-danger  border-1 rounded shadow py-4 mb-3">
+                                    class="product_card col-lg-5 m-auto text-center border border border-danger  border-1 rounded shadow py-4 mb-3">
                                     <h3 class="product-title text-danger m-auto">No Orders</h3>
                                     <a href="blogs-list.php" class="btn btn-sm btn-primary  w-25 mt-4">Explore</a>
                                 </div>

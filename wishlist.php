@@ -1,6 +1,6 @@
 <?php
-require_once "includes/constant.inc.php";
 session_start();
+require_once "includes/constant.inc.php";
 
 require_once("_config/dbconnect.php");
 
@@ -56,11 +56,9 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <title>Wishlist | <?php echo COMPANY_S; ?></title>
 
-
-    <!-- Bootstrap Core CSS -->
-    <link href="plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-
-    <link href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css" rel='stylesheet' type='text/css' />
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
 
     <!-- Custom CSS -->
@@ -68,11 +66,9 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="css/wishlist.css" rel='stylesheet' type='text/css' />
 
-
-
     <!--//webfonts-->
-
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
+
     <style>
     @media (min-width:768px) {
         .table-responsive {
@@ -83,7 +79,7 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
     </style>
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body>
     <div id="home">
 
         <!-- navbar start -->
@@ -94,23 +90,40 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
             <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
+                        <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
 
-                        <!--Row start-->
-                        <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
+                            <!--*****************TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
+                            <div class="extra-added-butn-for-mob-tab ">
+                                <button class="sidebar-icon-btn " type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                                    <i class="fa-solid fa-angles-right"></i>
+                                </button>
+                                <div class="offcanvas offcanvas-start " data-bs-scroll="true" data-bs-backdrop="static"
+                                    tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <?php include("dashboard-inc.php");?>
+                                        <hr class="myhrline">
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
                                 <hr class="myhrline">
                             </div>
-
+                            <!--***********TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                         </div>
-
-                        <div class="col-md-9  ps-md-0 display-table-cell v-align ">
+                        <div class="col-md-9  ps-md-0 display-table-cell v-align extra-mrgin-top-for-mtab">
                             <?php
                                 $x=1;
                                 if($userWishLists !=null){
                             ?>
-                            <div class="wishListtable m-auto">
+                            <div class="wishListtable m-auto mt-3 mt-md-0">
                                 <div class="table-responsive" id="insideTable">
                                     <table class="table table-bordered">
                                         <thead>
@@ -169,7 +182,7 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
                             <?php
                                 }else {
                                     ?>
-                            <div class="border p-4 text-danger text-center empty_bx">
+                            <div class="border p-4 text-danger text-center empty_bx mt-3 mt-md-0">
                                 <p class="emp_icon">
                                     <i class="fa-solid fa-heart-circle-plus"
                                         onclick="gotoNewPage('blogs-list.php')"></i>

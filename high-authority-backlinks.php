@@ -21,15 +21,14 @@ what is domain authority,domain authority score, what is a good domain authority
 benefits of high domain authority website, domain authority rank" />
 
 
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/high-authority-backlinks.css" rel='stylesheet' type='text/css' />
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
+
 </head>
 
 <body data-scrollbar>
@@ -137,14 +136,14 @@ benefits of high domain authority website, domain authority rank" />
 
     <section class="lbs-actually-matters-main pt-0">
         <div class="row">
-            <div class="col-xl-6 col-md-6 m-auto">
+            <div class="col-xl-6 col-md-6 order-2 order-md-1 m-auto">
                 <div class="text-center  ">
                     <div>
                         <img src="./images/related-search.png" class="w-100 mb-4" alt="">
                     </div>
                 </div>
             </div>
-            <div class=" col-xl-6 col-md-6 m-auto">
+            <div class=" col-xl-6 col-md-6 order-1 order-md-2 m-auto">
                 <h1 class="lbs-actually-matters-main-h1 ">Relevant Topics, <br>
                     <span>Value Adding Content-</span>
                 </h1>
@@ -393,45 +392,7 @@ benefits of high domain authority website, domain authority rank" />
     </section>
     <!-- -------------------------------------- -->
     <!-- How does it work? ends -->
-    <!-- _______________________________________________________________________________________________ -->
-    <!-- Our High Authority Backlinks Approach Includes start -->
 
-    <section class="lbs-actually-matters-main">
-        <div class="row">
-
-            <div class=" col-xl-6 col-md-6">
-                <h1 class="lbs-actually-matters-main-h1 ">Our High Authority Backlinks<br>
-                    <span> Approach Includes</span>
-                </h1>
-
-
-                <p>The goal of our high domain authority backlinks service is to provide website owners with the best
-                    outcomes possible. Authority backlinks are a part of the most important considerations for site
-                    ranking. You will therefore require high-quality links suggesting to your website. As a result of
-                    our backlinks' verification, we can guarantee their reliability and security. Our goal is to build a
-                    solid article around targeted keywords and anchor text. Before publishing the content to reputable
-                    websites, we will contain the appropriate photos in our SEO-optimized content. It's important to
-                    remember that while creating links, we prioritize quality above number.
-                </p>
-
-
-
-                <div class=" text-center text-md-start  mt-3">
-                    <a href="#pricing-cards">
-                        <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-6 col-md-6 m-auto">
-                <div class="text-center">
-                    <img src="./images/freepik-img/blogger-outrech-cc.png" class="w-100  mb-4 " alt="">
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <!-- Our High Authority Backlinks Approach Includes ends -->
-    <!-- _________________________________________________________________________________________________ -->
     <!-- _______________________________________________________________________________________________ -->
     <!-- Your Rankings Are Carefully Monitored By Us start -->
 
@@ -472,6 +433,46 @@ benefits of high domain authority website, domain authority rank" />
     </section>
     <!-- Your Rankings Are Carefully Monitored By Us- ends -->
     <!-- _________________________________________________________________________________________________ -->
+    <!-- _______________________________________________________________________________________________ -->
+    <!-- Our High Authority Backlinks Approach Includes start -->
+
+    <section class="lbs-actually-matters-main">
+        <div class="row">
+
+            <div class=" col-xl-6 col-md-6">
+                <h1 class="lbs-actually-matters-main-h1 ">Our High Authority Backlinks<br>
+                    <span> Approach Includes</span>
+                </h1>
+
+
+                <p>The goal of our high domain authority backlinks service is to provide website owners with the best
+                    outcomes possible. Authority backlinks are a part of the most important considerations for site
+                    ranking. You will therefore require high-quality links suggesting to your website. As a result of
+                    our backlinks' verification, we can guarantee their reliability and security. Our goal is to build a
+                    solid article around targeted keywords and anchor text. Before publishing the content to reputable
+                    websites, we will contain the appropriate photos in our SEO-optimized content. It's important to
+                    remember that while creating links, we prioritize quality above number.
+                </p>
+
+
+
+                <div class=" text-center text-md-start  mt-3">
+                    <a href="#pricing-cards">
+                        <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-6 m-auto">
+                <div class="text-center">
+                    <img src="./images/freepik-img/blogger-outrech-cc.png" class="w-100  mb-4 " alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Our High Authority Backlinks Approach Includes ends -->
+    <!-- _________________________________________________________________________________________________ -->
+
     <!-- _______________________________________________________________________________________________ -->
 
     <!-- __________________________________________________________________________________________ -->
@@ -540,46 +541,7 @@ benefits of high domain authority website, domain authority rank" />
     </section>
     <!-- What Are Our Plans? ends -->
     <!-- ____________________________________________________________________________________________________ -->
-    <!-- _______________________________________________________________________________________________ -->
-    <!-- Does A Domain Authority Checker Affect Page Authority? start -->
 
-    <section class="lbs-actually-matters-main">
-        <div class="row">
-
-            <div class=" col-xl-6 col-md-6">
-                <h1 class="lbs-actually-matters-main-h1 ">Does A Domain Authority Checker <br>
-                    <span> Affect Page Authority?</span>
-                </h1>
-
-
-                <p>No. Domain authority (DA) and page authority (PA) are two different ideas. While a <b>domain
-                        authority score</b> informs you how sufficiently your website as a whole might rank, a page
-                    authority score examines the possible ranking for a given page on your website. Tools that generate
-                    a PA score rely on AI to set a range of criteria, much like the device language that operates a
-                    domain authority checker.
-                </p>
-
-                <p>When you check your DA, you should match your PA score with the one that appears. Based on the
-                    measurements of your SEO goals, you need to review them. You shouldn't assign a grade of "good" or
-                    "poor" to the outcome of a domain authority or page authority check. Take a look at what it is
-                    saying about the metrics you find important.</p>
-
-                <div class=" text-center text-md-start  mt-3">
-                    <a href="#pricing-cards">
-                        <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-6 col-md-6 m-auto">
-                <div class="text-center">
-                    <img src="./images/freepik-img/guest-posting-imgs-2.webp" class="w-100  mb-4 " alt="">
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <!-- Does A Domain Authority Checker Affect Page Authority? ends -->
-    <!-- _________________________________________________________________________________________________ -->
     <!-- _______________________________________________________________________________________________ -->
     <!-- Fastlinky Will Raise Your Domain Authority And Enhance  start -->
 
@@ -619,6 +581,46 @@ benefits of high domain authority website, domain authority rank" />
 
     </section>
     <!-- Fastlinky Will Raise Your Domain Authority And Enhance  ends -->
+    <!-- _________________________________________________________________________________________________ -->
+    <!-- _______________________________________________________________________________________________ -->
+    <!-- Does A Domain Authority Checker Affect Page Authority? start -->
+
+    <section class="lbs-actually-matters-main">
+        <div class="row">
+
+            <div class=" col-xl-6 col-md-6">
+                <h1 class="lbs-actually-matters-main-h1 ">Does A Domain Authority Checker <br>
+                    <span> Affect Page Authority?</span>
+                </h1>
+
+
+                <p>No. Domain authority (DA) and page authority (PA) are two different ideas. While a <b>domain
+                        authority score</b> informs you how sufficiently your website as a whole might rank, a page
+                    authority score examines the possible ranking for a given page on your website. Tools that generate
+                    a PA score rely on AI to set a range of criteria, much like the device language that operates a
+                    domain authority checker.
+                </p>
+
+                <p>When you check your DA, you should match your PA score with the one that appears. Based on the
+                    measurements of your SEO goals, you need to review them. You shouldn't assign a grade of "good" or
+                    "poor" to the outcome of a domain authority or page authority check. Take a look at what it is
+                    saying about the metrics you find important.</p>
+
+                <div class=" text-center text-md-start  mt-3">
+                    <a href="#pricing-cards">
+                        <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-6 m-auto">
+                <div class="text-center">
+                    <img src="./images/freepik-img/guest-posting-imgs-2.webp" class="w-100  mb-4 " alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Does A Domain Authority Checker Affect Page Authority? ends -->
     <!-- _________________________________________________________________________________________________ -->
 
     <!-- ______________________________________________________________________________________________________ -->

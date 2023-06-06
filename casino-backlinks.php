@@ -20,19 +20,16 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 Online Gaming Link Building,Online Gaming And Casino Link Building
 " />
 
-
-    <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
-    <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+    
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/casino-backlinks.css" rel='stylesheet' type='text/css' />
-    <!-- font-awesome icons -->
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <!-- //Custom Theme files -->
+    
 </head>
-
-<body data-scrollbar>
+<body>
     <?php require_once "partials/navbar.php"; ?>
     <!--___________________________________________________________________________________________________ -->
     <!-- starting of Casino Backlinks main banner  -->
@@ -41,7 +38,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
             <h1 class=""> Link Building & Quality Backlinks <br> <span>For igaming & Casino</span></h1>
             <p class=" ">Work with Online Gambling And Casino Link Building Specialists to gain a commercial advantage.
             </p>
-            <div class=" mt-5">
+            <div class=" mt-2 mt-md-5">
                 <a href="#pricing-cards">
                     <button type="button" class="btn srvc-common-btn ">Get Started</button>
                 </a>
@@ -96,11 +93,11 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
                     </div>
                 </div>
                 <div class=" text-center text-md-start mb-3 mb-md-0">
-                <a href="#pricing-cards">
-                    <button type="button" class="btn srvc-common-btn ">See Pricing</button>
+                    <a href="#pricing-cards">
+                        <button type="button" class="btn srvc-common-btn ">See Pricing</button>
 
-                </a>
-            </div>
+                    </a>
+                </div>
             </div>
             <div class="col-lg-6 col-md-6 order-1 order-md-2 ">
                 <div class="">
@@ -109,7 +106,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </section>
     <!-- ---------------------------------------------------------------------------------------- -->
@@ -197,7 +194,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
         <h1 class="text-center pricing-bo-h1 mb-3">Casino Backlinks Pricing
         </h1>
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
-            DR, or organic traffic. Below is the pricing  for All 3 models.</p>
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>
@@ -443,7 +440,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
     <!-- ------------------------------------------------------------------ -->
     <!-- Benefits Of Online Gaming And Casino Link Building- ending -->
     <!-- _______________________________________________________________________________________________ -->
-      <!-- ______________________________________________________________________________________________________ -->
+    <!-- ______________________________________________________________________________________________________ -->
     <!-- features-section start -->
     <?php require_once "partials/features-section.php"; ?>
     <!-- features-section ends -->
@@ -463,7 +460,7 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
         <?php include_once 'partials/seller-action.php'; ?>
     </div>
     <!-- ================================================================================================= -->
-   <!-- --------------------------------------- -->
+    <!-- --------------------------------------- -->
     <!-- feedback form -->
     <?php require_once "partials/feedback.php"; ?>
     <!-- feedback form -->

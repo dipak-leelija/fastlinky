@@ -36,12 +36,10 @@ if(isset($_POST['btnLogin'])){
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
 <title>Administrator Control Panel -  CRM</title>
 <link rel="stylesheet" type="text/css" href="../style/admin/admin-index.css">
 <link rel="stylesheet" type="text/css" href="../style/admin/common.css">
-<link rel="icon" href="../images/logo/favicon.png" type="image/png">
-
 </head>
 
 <body>

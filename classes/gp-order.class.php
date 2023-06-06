@@ -54,27 +54,25 @@ class PackageOrder extends DatabaseConnection{
       //echo $sql.mysql_error();
     }
 
+    
+    function updatePackOrdersStatus($orderId, $statusId, $updatedBy) {
 
-    function updatePackOrdersStatus($orderId, $statusId, $updatedBy){
-
-      if ($orderId =='') {
-        return false;
-      }else {
-        $sql  = "UPDATE `gp_package_order`
-                SET
-                `order_status` = '$statusId',
-                `updated_by`   = '$updatedBy'
-                WHERE `order_id` = '$orderId'";
-      // echo $sql;
-      $res  = $this->conn->query($sql);
-      if($res){
-        return true;
-      }else {
-        return false;
+      try {
+        $sql  = "UPDATE `gp_package_order` SET `order_status` = '$statusId', `updated_by` = '$updatedBy'
+                                            WHERE `order_id` = '$orderId'";
+    
+        $res  = $this->conn->query($sql);
+    
+        if ($res) {
+          return true;
+        } else {
+          return false;
+        }
+      } catch (Exception $e) {
+        echo $e->getMessage();
       }
     }
-  
-    }//eof
+    
 
 
     function getOrderStatus($orderId){
@@ -106,32 +104,43 @@ class PackageOrder extends DatabaseConnection{
 
   
 
-  function getPackOrderDetails($userId, $limit){
-    $myArr = array();
+  function getPackOrderDetails($userId, $limit = '*'){
+    
+    try {
+      
+      $myArr = array();
 
-    if ($limit !== '*') {
-      $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId' LIMIT $limit";
-      $data = $this->conn->query($sql);
-      while($res = $data->fetch_assoc()){
-        $myArr[] = $res;
+      if ($limit !== '*') {
+        $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId' LIMIT $limit";
+        $data = $this->conn->query($sql);
+        while($res = $data->fetch_assoc()){
+          $myArr[] = $res;
+        }
+      }else {
+        $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId'";
+        $data = $this->conn->query($sql);
+        while($res = $data->fetch_assoc()){
+          $myArr[] = $res;
+        }
       }
-    }else {
-      $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId'";
-      $data = $this->conn->query($sql);
-      while($res = $data->fetch_assoc()){
-        $myArr[] = $res;
-      }
+      return $myArr;
+    } catch (Exception $e) {
+      echo $e->getMessage();
     }
-    return $myArr;
   }
 
 
   function countPackOrderByUser($userId){
-    
-    $sql  = "SELECT order_id FROM `gp_package_order` WHERE `customer_id`='$userId'";
-    $data = $this->conn->query($sql);
-    $rows = $data->num_rows;
-    return $rows;
+    try {
+      $sql  = "SELECT COUNT(order_id) AS 'package_order_no' FROM `gp_package_order` WHERE `customer_id`='$userId'";
+      $data = $this->conn->query($sql);
+      while($res = $data->fetch_assoc()){
+        $count = $res['package_order_no'];
+      }
+      return $count;
+    } catch (Exception $e) {
+      echo $e->getMessage();
+    }
   }
 
 
@@ -351,6 +360,32 @@ class PackageOrder extends DatabaseConnection{
       $data = $result->published;
     }
     return $data;
+
+  }
+
+  function raiseIssue($linkId, $orderId, $issue, $status, $updatedBy){
+
+    try {
+      $sql  = "UPDATE `package_publish_links` SET status = '$status', issue = '$issue', updated_by = '$updatedBy', updated_on = now()
+                                              WHERE id = '$linkId' AND order_id = '$orderId'";
+      $res  = $this->conn->query($sql);
+        return $res;
+    } catch (Exception $e) {
+      echo $e->getMessage();
+    }
+
+  }
+
+  function updateLiveURLS($linkId, $orderId, $url, $status, $updatedBy){
+
+    try {
+      $sql  = "UPDATE `package_publish_links` SET url = '$url', status = '$status', issue = '', updated_by = '$updatedBy', updated_on = now()
+                                              WHERE id = '$linkId' AND order_id = '$orderId'";
+      $res  = $this->conn->query($sql);
+        return $res;
+    } catch (Exception $e) {
+      echo $e->getMessage();
+    }
 
   }
 
