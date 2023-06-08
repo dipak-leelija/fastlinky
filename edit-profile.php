@@ -90,7 +90,7 @@ if(isset($_POST['addressUpdate'])){
 }
 //Edit Address
 if(isset($_POST['passUpdate'])){
-    print_r($_POST);
+    // print_r($_POST);
     // $address1       = $_POST['address1'];
     // $address2       = $_POST['address2'];
     // $cityId         = $_POST['cityId'];
@@ -298,8 +298,8 @@ if(isset($_POST['btnCancel'])){
                                             </li>
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link my_nav_tab" id="change-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#change" type="button" role="tab"
-                                                    aria-controls="change" aria-selected="false">Change
+                                                    data-bs-target="#change-password" type="button" role="tab"
+                                                    aria-controls="change-password" aria-selected="false">Change
                                                     password</button>
                                             </li>
                                         </ul>
@@ -688,39 +688,9 @@ if(isset($_POST['btnCancel'])){
                                             <!-- address tab panel end  -->
 
                                             <!-- password tab panel start  -->
-                                            <div class="tab-pane fade chnge_tab_div" id="change" role="tabpanel"
-                                                aria-labelledby="change-tab">
-                                                <form class="form-horizontal mt-4" role="form"
-                                                    action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"
-                                                    autocomplete="off">
-
-                                                    <div class="form-floating mb-3">
-                                                        <input type="password" class="form-control" id="recentPassword"
-                                                            placeholder="Password">
-                                                        <label for="recentPassword" required> Recent
-                                                            Password</label>
-                                                    </div>
-                                                    <div class="form-floating mb-3">
-                                                        <input type="password" class="form-control" id="newPassword"
-                                                            placeholder="Password">
-                                                        <label for="newPassword" required> Change New
-                                                            Password</label>
-                                                    </div>
-                                                    <div class="form-floating mb-3">
-                                                        <input type="password" class="form-control" id="confirmPassword"
-                                                            placeholder="Password" required>
-                                                        <label for="confirmPassword">Confirm New Password</label>
-                                                    </div>
-
-                                                    <!-- <div class="d-grid gap-2   d-md-flex col-12 col-md-3 mx-auto my-3">
-                                                <button type="submit" name="btnCancel"
-                                                    class="btn botton-midle btn-danger">Cancel</button>
-                                                <button type="submit" name="passUpdate"
-                                                    class="btn botton-midle btn-primary">Update</button>
-                                            </div> -->
-                                                    <div class="form-group">
-                                                    </div>
-                                                </form>
+                                            <div class="tab-pane fade chnge_tab_div" id="change-password"
+                                                role="tabpanel" aria-labelledby="change-tab">
+                                                Loading....
                                             </div>
                                             <!-- password tab panel end -->
 
@@ -742,6 +712,50 @@ if(isset($_POST['btnCancel'])){
         <script src="js/script.js" type="text/javascript"></script>
 
         <script>
+        window.onload = function() {
+            $.ajax({
+                url: "partials/change-password.inc.php",
+                method: "POST",
+                data: {
+                    action: "ChangePassword"
+                },
+                success: function(response) {
+                    document.getElementById("change-password").innerHTML = response;
+                }
+            });
+        };
+        // =========================================================================
+
+
+        // <!-- document.getElementById("passUpdate").addEventListener("click", changePassword); -->
+
+        function changePassword() {
+                // Prevent the default action of the form submission
+                event.preventDefault();
+
+                // Create an AJAX request
+                $.ajax({
+                    url: 'ajax/change-password.ajax.php',
+                    type: 'POST',
+                    data: $('#password-form').serialize(),
+                    success: function(response) {
+                        // Display the response from the server
+                        alert(response);
+                    },
+                    error: function() {
+                        alert('failure');
+                    }
+                });
+            }
+            
+
+        // Add an event listener to the submit button
+        // $('#passUpdate').on('click', changePassword);
+
+
+
+        // =========================================================================
+
         document.addEventListener("DOMContentLoaded", () => {
             var readURL = (input) => {
                 if (input.files && input.files[0]) {
