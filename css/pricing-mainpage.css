@@ -54,7 +54,7 @@ label {
 .price-card-wrapper {
     word-wrap: break-word;
     color: #6b778c;
-    font-size: .81rem;
+    font-size: .81rem !important;
     font-weight: 500;
     border: 1px solid #dfe1e6;
     background: #fff;
@@ -99,7 +99,7 @@ input:checked+.price-card-wrapper {
 }
 
 .flex-column {
-    flex-direction: column!important;
+    flex-direction: column !important;
 }
 
 .pricing-title {
@@ -121,6 +121,7 @@ input:checked+.price-card-wrapper {
 
 .price-card-wrapper li {
     list-style-type: disc;
+    font-size: .81rem;
 }
 
 .item-price {
@@ -130,6 +131,19 @@ input:checked+.price-card-wrapper {
 
 .default-price {
     font-weight: 700;
+}
+
+.sticky_fixed-btn-div {
+    position: fixed;
+    bottom: 0;
+    right: 1rem;
+    z-index: 90;
+    padding: 1rem;
+}
+
+.sticky_fixed-btn-div .btn {
+    width: 8rem;
+    text-align: center;
 }
 
 
@@ -180,7 +194,7 @@ input:checked+.price-card-wrapper {
 }
 
 .text-muted {
-    color: hsla(0, 0%, 100%, .5)!important;
+    color: hsla(0, 0%, 100%, .5) !important;
 }
 
 
@@ -255,28 +269,37 @@ input:checked+.price-card-wrapper {
     .client-details-left {
         padding: 2rem 1rem 2rem 1rem;
     }
+
     .order-details-right {
         padding: 0rem;
     }
+
     .box-payment-btn {
         border-radius: 0px;
     }
 }
 
 @media(max-width:450px) {
+
     .cardBtn,
     .payLaterBtn,
     .paypalBtn {
         padding: 0.4rem;
         font-size: 15px;
     }
+
     .bx_width_40 {
         padding: 1rem 0.5rem;
         width: 100%;
     }
+
     .box-payment-btn {
         padding: 1rem;
         border-radius: 0px;
+    }
+    .sticky_fixed-btn-div .btn {
+        width: 6rem;
+        text-align: center;
     }
 }
 
@@ -291,6 +314,7 @@ input:checked+.price-card-wrapper {
         background: none;
         padding: 0;
     }
+
     .cardBtn,
     .payLaterBtn,
     .paypalBtn {
@@ -303,6 +327,7 @@ input:checked+.price-card-wrapper {
         width: 30px;
         object-fit: cover;
     }
+
     .visaCard img {
         width: 25px;
         object-fit: cover;
@@ -313,6 +338,7 @@ input:checked+.price-card-wrapper {
     .price-card-wrapper ul {
         padding-left: 1rem;
     }
+
     .price-card-wrapper label {
         padding: .5rem;
     }

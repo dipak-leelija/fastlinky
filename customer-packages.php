@@ -129,7 +129,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class=" display-table">
                     <!--Row start-->
                     <div class="row ">
-                        <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
+                        <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align"
+                            style="z-index: 99; background: white;" id="navigation">
 
                             <!--*****************TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                             <div class="extra-added-butn-for-mob-tab ">
@@ -199,7 +200,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     ?>
 
 
-                                    <div class="col-md-3 px-md-1 my-2 my-md-3">
+                                    <div class="col-md-3 px-1 my-2 my-md-3">
                                         <div class="card p-card h-100" id="">
                                             <input id="c-box-<?php echo $eachPack['id']?>"
                                                 value="<?php echo $eachPack['id']?>" type="checkbox" name="package[]"
@@ -230,8 +231,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     }
                                     ?>
                                     <!-- card 1 end -->
-                                    <div class="text-end text-right mt-5">
-                                        <button class="btn btn-primary w-25" type="submit">Next</button>
+                                    <div class="text-end text-right mt-5 sticky_fixed-btn-div pe-0 ">
+                                        <button class="btn btn-primary" type="submit">Next <i class="fa-sharp fa-solid fa-arrow-right-long"></i></button>
                                     </div>
                                 </form>
 
