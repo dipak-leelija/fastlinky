@@ -142,15 +142,13 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
 <html lang="en">
 
 <head>
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo COMPANY_S; ?> Global Support - Contact Us </title>
     <meta name="description"
         content="LeeLija staff always available for your support. Our technical and SEO staffs always online, Leelija team provided free support for every one." />
     <meta name="keywords"
         content="contact for SEO, contact for web development, support for on page SEO, support for technical SEO, contact for guest post" />
-    <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
 
     <!-- Plugins Files -->
     <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
@@ -162,6 +160,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
     <link href="css/form.css" rel='stylesheet' type='text/css' />
     <link href="css/custom.css" rel='stylesheet' type='text/css' />
 </head>
+
 <body>
     <div id="home">
         <!-- header -->

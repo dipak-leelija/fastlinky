@@ -47,11 +47,9 @@ if(isset($_GET['seo_url']))
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
+
     <title>#1 Outreach & Link Building Services Agency in SEO - <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <meta name="description"
         content="Fastlinky is the #1 agency for creative high quality link building services and we are experts in SEO and outreach services that will boost your website's performance." />
     <meta name="keywords"
@@ -69,6 +67,7 @@ if(isset($_GET['seo_url']))
     <link href="css/testimonials.css" rel="stylesheet">
     <link href="css/clientside-logo.css" rel="stylesheet">
 </head>
+
 <body>
     <?php require_once "partials/navbar.php"; ?>
     <section class="privacy-main-banner-section">

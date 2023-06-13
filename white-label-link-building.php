@@ -10,8 +10,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
+
     <title> White Label Link Building Service for SEO agencies and Resellers - <?php echo COMPANY_S; ?></title>
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
@@ -30,6 +30,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <link href="css/white-label-link-building.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="css/testimonials.css">
 </head>
+
 <body>
     <?php require_once "partials/navbar.php"; ?>
     <!--___________________________________________________________________________________________________ -->

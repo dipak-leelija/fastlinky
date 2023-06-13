@@ -91,12 +91,9 @@ if(isset($_POST['btnLogin'])){
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login with <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
 
+    <title>Login with <?php echo COMPANY_S; ?></title>
     <meta name="description" content="">
     <meta name="keywords" content="" />
 
