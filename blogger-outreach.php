@@ -9,12 +9,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <link rel="icon" href="images/logo/favicon.png" type="image/png">
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+
     <title>#1 link building blogger outreach service for SEO agencies - <?php echo COMPANY_S; ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="Fastlinky, a trusted link building agency provide top quality backlinks as per client's requirements.This Blogger Outreach Services help your brand grow globally." />
-    <meta charset="utf-8">
     <meta name="keywords"
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
 
@@ -30,6 +29,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <link rel="stylesheet" href="css/clientside-logo.css">
 
 </head>
+
 <body>
     <?php require_once "partials/navbar.php"; ?>
     <!--___________________________________________________________________________________________________ -->

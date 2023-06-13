@@ -9,17 +9,15 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+
     <title> Boost International SEO By Country Specific Backlinks-fastlinky - <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <meta name="description"
         content="Fastlinky Enhances Your Website's Online Visibility with High-Quality Country-Specific Backlinks Services. Our Experts Will Help You To buy high-quality backlinks USA, Australia, U.K, etc in reasonable price." />
     <meta name="keywords"
         content="country specific backlinks,buy backlinks usa cheap,buy backlinks usa,buy high quality backlinks usa,buy quality backlinks Australia," />
-    
-        <!-- Plugins Files -->
+
+    <!-- Plugins Files -->
     <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
@@ -27,6 +25,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/country-specific-backlinks.css" rel='stylesheet' type='text/css' />
 </head>
+
 <body>
     <?php require_once "partials/navbar.php"; ?>
     <!--____________________________________________________________________________________________ -->

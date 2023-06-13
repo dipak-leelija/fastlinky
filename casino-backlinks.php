@@ -9,11 +9,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+
     <title>Buy Backlinks and Link Building Service for Gambling, Casino & Betting SEO - <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <meta name="description"
         content="Fastlinky provides quality Link Building Service for casino, gambling, igaming, and betting SEO and help you increase ranking and boost your traffic." />
     <meta name="keywords" content="buy casino backlinks cheapbuy casino website,buy casino backlinks,igaming link building,gambling link,gambling seo agency,casino backlinks,gambling seo,sports gambling links,
@@ -23,12 +21,13 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
     <!-- Plugins Files -->
     <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
-    
+
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/casino-backlinks.css" rel='stylesheet' type='text/css' />
-    
+
 </head>
+
 <body>
     <?php require_once "partials/navbar.php"; ?>
     <!--___________________________________________________________________________________________________ -->

@@ -37,10 +37,9 @@ $cusId		= $utility->returnSess('userid', 0);
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+
     <title>About <?php echo COMPANY_S; ?></title>
-    <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="" />
 

@@ -8,12 +8,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <link rel="icon" href="images/logo/favicon.png" type="image/png">
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+
     <title>Top Managed Link Building And Guest posting Services In 2023 - <?php echo COMPANY_S; ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="Fastlinky, the best link-building company promotes your website's rankings through monthly managed link-building service and proper analysis of link management." />
-    <meta charset="utf-8">
     <meta name="keywords"
         content="managed link building, monthly link building service, monthly backlink building service, backlink management, link management, link building management, link building packages, whitehat link building services, best link building company," />
 
@@ -27,6 +26,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/clientside-logo.css">
 </head>
+
 <body>
     <?php require_once "partials/navbar.php"; ?>
     <!--____________________________________________________________________________________________ -->

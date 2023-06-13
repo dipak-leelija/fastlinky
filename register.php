@@ -145,11 +145,9 @@ if(isset($_GET['msg'])){
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+
     <title>Connect with <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <meta name="description"
         content="Client register for buy ready web products or guest post services Or Reseller can register for sell his/her web products or guest post services">
     <meta name="keywords" content="Web Design, Web Development, Apps Development, SEO Services, Guest Post Services, Domain name with Ready Website,
@@ -350,15 +348,15 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                                                 <input class="form-check-input" type="checkbox"
                                                                     id="gridCheck1" required>
                                                                 <label class="form-check-label" for="gridCheck1">
-                                                                    I Agree with the 
-                                                                        <a class="term-n-policy" href="privacy-policy">
-                                                                            Terms of service
-                                                                        </a> 
-                                                                        and 
-                                                                        <a class="term-n-policy" href="privacy-policy">
-                                                                            Privacy Policy
-                                                                        </a>
-                                                                        .
+                                                                    I Agree with the
+                                                                    <a class="term-n-policy" href="privacy-policy">
+                                                                        Terms of service
+                                                                    </a>
+                                                                    and
+                                                                    <a class="term-n-policy" href="privacy-policy">
+                                                                        Privacy Policy
+                                                                    </a>
+                                                                    .
                                                                 </label>
                                                             </div>
                                                         </div>

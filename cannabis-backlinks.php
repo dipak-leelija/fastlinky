@@ -9,11 +9,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+
     <title>Link Building Services for Cannabis & CBD SEO - <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <meta name="description"
         content="Fastlinky provides high quality Cannabis & CBD Link Building services and SEO that can boost your authority and ranking while you reach the desired audience." />
     <meta name="keywords"
@@ -26,7 +24,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
     <link href="css/cannabis-backlinks.css" rel='stylesheet' type='text/css' />
-    
+
 </head>
 
 <body>
