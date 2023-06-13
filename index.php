@@ -46,7 +46,7 @@ if(isset($_GET['seo_url']))
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
     
     <title>#1 Outreach & Link Building Services Agency in SEO - <?php echo COMPANY_S; ?></title>
     <meta name="description"

@@ -10,7 +10,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
 
     <title> White Label Link Building Service for SEO agencies and Resellers - <?php echo COMPANY_S; ?></title>
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />

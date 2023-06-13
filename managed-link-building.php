@@ -8,7 +8,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
 
     <title>Top Managed Link Building And Guest posting Services In 2023 - <?php echo COMPANY_S; ?></title>
     <meta name="description"

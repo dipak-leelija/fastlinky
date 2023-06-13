@@ -145,7 +145,7 @@ if(isset($_GET['msg'])){
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
 
     <title>Connect with <?php echo COMPANY_S; ?></title>
     <meta name="description"

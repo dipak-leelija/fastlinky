@@ -37,7 +37,7 @@ $cusId		= $utility->returnSess('userid', 0);
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
 
     <title>About <?php echo COMPANY_S; ?></title>
     <meta name="description" content="">

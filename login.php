@@ -91,7 +91,7 @@ if(isset($_POST['btnLogin'])){
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
 
     <title>Login with <?php echo COMPANY_S; ?></title>
     <meta name="description" content="">

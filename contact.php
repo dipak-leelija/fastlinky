@@ -142,7 +142,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
 <html lang="en">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php " ?>
+    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
 
     <title><?php echo COMPANY_S; ?> Global Support - Contact Us </title>
     <meta name="description"
