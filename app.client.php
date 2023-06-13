@@ -6,6 +6,7 @@ require_once ROOT_DIR."/_config/dbconnect.php";
 
 require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/content-order.class.php";
+require_once ROOT_DIR."/classes/gp-package.class.php";
 require_once ROOT_DIR."/classes/gp-order.class.php";
 require_once ROOT_DIR."/classes/orderStatus.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
@@ -13,6 +14,7 @@ require_once ROOT_DIR."/classes/wishList.class.php";
 
 $customer		= new Customer();
 $ContentOrder   = new ContentOrder();
+$GPPackage      = new GuestPostpackage();
 $PackageOrder   = new PackageOrder();
 $OrderStatus    = new OrderStatus();
 $WishList       = new WishList();
@@ -29,8 +31,10 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 $wishes             = $WishList->countWishlistByUser($cusId);
 $myOrders           = $ContentOrder->clientOrders($cusId);
 $pendingContOrd     = $ContentOrder->pendingOrders($cusId);
-$packageOrdersIds   = $PackageOrder->countPackOrderByUser($cusId);
-$pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
+
+$packageOrderCount   = $PackageOrder->countPackOrderByUser($cusId);
+$packOrdDtls         = $PackageOrder->getPackOrderDetails($cusId);
+$pendingPackOrd      = $PackageOrder->pendingGPOrders($cusId);
 
 
 ?>
@@ -45,8 +49,10 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
     <title>Dashboard - <?php echo COMPANY_S; ?></title>
 
     <!-- plugins  files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <!-- <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet"> -->
+    <?php require_once ROOT_DIR.'/plugins/bootstrap-5.2.0/bootstrap-css-inc.php'?>
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
 
     <!-- Custom CSS -->
     <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
@@ -154,7 +160,7 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                             <a href="my-orders.php">
                                                 <div class="dboard-cd-box mt-md-0">
                                                     <div class="inner">
-                                                        <h3><?= $packageOrdersIds + count($myOrders); ?> </h3>
+                                                        <h3><?= $packageOrderCount + count($myOrders); ?> </h3>
                                                         <p> My Orders</p>
                                                     </div>
                                                     <div class="dboard-icn_font">
@@ -169,11 +175,16 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
 
                                 </header>
                                 <div class="row">
+
+                                    <!-- start col  -->
                                     <div class=" col-lg-6 ">
+
+                                        <!-- Start Guest Post Order View Section -->
                                         <div class=" table-responsive py-3 p-1">
+                                            <?php if (count($myOrders) > 0 ) { ?>
+
                                             <div class="card table-responsive db_shadow border-0 p-2">
                                                 <h4>Recent Guest Posts</h4>
-                                                <?php if (count($myOrders) > 0 ) { ?>
                                                 <table class="table  table-hover">
                                                     <thead class="table-light">
                                                         <tr>
@@ -202,15 +213,82 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
                                                             ?>
                                                     </tbody>
                                                 </table>
-                                                <?php }else { ?>
-                                                    <p class="text-center p-5">
-                                                        No Orders
-                                                    </p> 
-                                                <?php } ?>
                                             </div>
-                                        </div>
 
+                                            <?php } else { ?>
+                                            <div class="card table-responsive db_shadow border-1 border-danger p-2">
+                                                <p
+                                                    class="text-center text-danger d-flex flex-column align-items-center p-5">
+                                                    <i class="fa-light fa-box-open fs-1"></i>
+                                                    <span class="mt-n1 fs-6">No Recent Guest Post Order</span>
+                                                    <a href="./blogs-list" class="badge text-bg-primary mt-2 w-25">Order
+                                                        Now</a>
+                                                </p>
+                                            </div>
+                                            <?php } ?>
+                                        </div>
+                                        <!-- eof Guest Post Order View Section -->
+
+
+                                        <!-- Start Package Order View Section -->
+                                        <div class=" table-responsive py-3 p-1">
+                                            <?php if ($packageOrderCount > 0 ) { ?>
+
+                                            <div class="card table-responsive db_shadow border-0 p-2">
+                                                <h4 class="border-bottom border-2">Recent Guest Posts</h4>
+                                                <table class="table  table-hover">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th scope="col">Order Id</th>
+                                                            <th scope="col">Package/Service</th>
+                                                            <th scope="col">Status</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php
+                                                                $showItems = 1;
+                                                                foreach ($packOrdDtls as $eachPack) {
+                                                                    // print_r($eachPack);
+                                                                    $thePack    = $GPPackage->packDetailsById($eachPack['package_id']);
+                                                                    
+                                                                    $packageCat = $GPPackage->packCatById($thePack['category_id']);
+                                                                    $ordPackName = $packageCat['category_name'].' '.$thePack['package_name'];
+
+                                                                    $status = $OrderStatus->singleOrderStatus($eachPack['order_status']);
+                                                                    echo '
+                                                                    
+                                                                    <tr onclick="goTo(\'package-order-history.php?order='.base64_encode(urlencode($eachPack["order_id"])).'\')" class="cursor_pointer">
+                                                                        <td>#'.$eachPack["order_id"].'</a></td>
+                                                                        <td>'.$ordPackName.'</td>
+                                                                        <td><span class="badge text-bg-primary '.$status[0]["orders_status_name"].'">'.$status[0]["orders_status_name"].'<span></td>
+                                                                    </tr>
+                                                                    ';
+                                                                    if ($showItems++ == 8) {
+                                                                        break;
+                                                                    }
+                                                                }
+                                                            ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <?php } else { ?>
+                                            <div class="card db_shadow border-1 border-danger p-2">
+                                                <p
+                                                    class="text-center text-danger d-flex flex-column align-items-center p-5">
+                                                    <i class="fa-light fa-clipboard fs-1"></i>
+                                                    <span class="mt-n1 fs-6">No Recent Package Order</span>
+                                                    <a href="./blogs-list" class="badge text-bg-primary mt-2 w-25">
+                                                        Order Now
+                                                    </a>
+                                                </p>
+                                            </div>
+                                            <?php } ?>
+                                        </div>
+                                        <!-- eof Package Order View Section -->
                                     </div>
+                                    <!-- end col  -->
+
                                     <div class=" col-lg-6">
                                         <a href="notifications.php">
                                             <div class="pt-3 pb-0 p-0">
@@ -246,8 +324,12 @@ $pendingPackOrd     = $PackageOrder->pendingGPOrders($cusId);
         <!-- js-->
         <script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
         <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
+
         <!-- Switch Customer Type -->
         <script src="<?php echo URL;?>/js/customerSwitchMode.js"></script>
+
+        <!-- Custom Javascript  -->
+        <script src="<?php echo URL;?>/js/script.js"></script>
 </body>
 
 </html>

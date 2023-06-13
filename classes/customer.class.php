@@ -563,13 +563,27 @@ class Customer extends Utility{
 	*			$id			User unique identity
 	*			$password	User New Password
 	*/
-	function changeUserPassword($id, $password){
-		//$x_password = md5_encrypt($password,USER_PASS);
-		$x_password = md5_encrypt($password,USER_PASS);
-		$update = "UPDATE customer SET password= '$x_password' WHERE customer_id='$id'";
-		$query  = $this->conn->query($update);
+	function changeUserPassword($userId, $currentPassword, $newPassword){
+
+		$msg = '';
+
+		$cPass = $this->getUserPass($userId);
+		if ($cPass == $currentPassword) {
+
+			$x_password = md5_encrypt($newPassword,USER_PASS);
+			$update = "UPDATE customer SET password= '$x_password' WHERE customer_id ='$userId'";
+			$query  = $this->conn->query($update);
+			if ($query) {
+				$msg = 'Password Updated'; 
+			}
+		}else {
+			$msg = 'Current Password is Wrong';
+		}
+
+		return $msg;
 	}//eof
 	
+
 	/**
 	*	Delete a client from the database
 	*
@@ -1150,59 +1164,33 @@ class Customer extends Utility{
 	*
 	*	@return string
 	*/
-	// function getPasswordName($email)
-	// {
-	// 	//declare vars
-	// 	$data  = array();
+	function getUserPass($cusId){
+
+		//declare vars
+		$data  = null;
 		
-	// 	//statement
-	// 	$sql = "SELECT password, fname FROM customer WHERE email='$email'";
+		//statement
+		$sql = "SELECT password FROM customer WHERE customer_id ='$cusId'";
 		
-	// 	//execute query
-	// 	$query = mysql_query($sql);
+		//execute query
+		$query = $this->conn->query($sql);
 		
-	// 	//check and fetch data
-	// 	if(mysql_num_rows($query) > 0)
-	// 	{
-	// 		//result
-	// 		$result = mysql_fetch_array($query);
+		//check and fetch data
+		if($query->num_rows > 0){
+			//result
+			$result = $query->fetch_array();
 			
-	// 		//hold in array
-	// 		$data   = array($result['password'], $result['fname']);
-	// 	}
+			//hold in array
+			$data   = $result['password'];
+			$password = md5_decrypt($data,USER_PASS);
+			
+		}
 		
-	// 	//return data
-	// 	return $data;
+		//return data
+		return $password;
 		
-	// }//end of getting password
+	}//end of getting password
 	
-	
-	/**
-	*	Update for reference
-	*	
-	*	@date October 30, 2010
-	*
-	*	@param
-	*			$cusId			Customer Id
-	*			$refId			Reference or parent id, if parent id is zero, that refers to admin
-	*			$refWeb			Reference website
-	*
-	*	@return null
-	*/
-	// function updateReferece($cusId, $refId, $refWeb)
-	// {
-	// 	//statement
-	// 	$sql	= "UPDATE customer SET
-	// 			   parent_id = '$refId',
-	// 			   referred_website = '$refWeb'
-	// 			   WHERE 
-	// 			   customer_id = '$cusId'
-	// 			   ";
-				   
-	// 	//execute query
-	// 	$query	= mysql_query($sql);
-		
-	// }//eof
 	
 	
 	/**
@@ -1241,393 +1229,7 @@ class Customer extends Utility{
 	
 	
 	
-	/**
-	*	Add to membership policy
-	*
-	*	@param
-	*			$cus_id				Customer Id
-	*			$packId				Package Id
-	*			$ordId				Orders id
-	*			$memType			Membership type
-	*			$amtPaid			Amount paid
-	*			$startDate			Date of starting membership
-	*			$expDate			Date of expiry
-	*
-	*	@return	int
-	*/
-	function joinMembershipProg($cus_id, $packId, $ordId, $memType, $amtPaid, $startDate, $expDate)
-	{
-		//declare var
-		$data	= 0;
-		
-		//check if that order id is already in the database
-		$omId   = $this->getMembershipId('ORD', $ordId);
-		
-		if(count($omId) > 0)
-		{
-			//statemnet
-			$sql	= "UPDATE customer_membership SET
-					   package_id 		= '$packId',
-					   membership_type	= '$memType',
-					   amount_paid		= '$amtPaid',
-					   start_date		= '$startDate',
-					   end_date			= '$expDate'
-					   WHERE 
-					   orders_id = '$ordId'
-					  ";
-		}
-		else
-		{
-			//statemnet
-			$sql	= "INSERT INTO customer_membership
-					   (customer_id, package_id, orders_id, membership_type, amount_paid, start_date, end_date) 
-					   VALUES
-					   ('$cus_id', '$packId', '$ordId', '$memType', '$amtPaid', '$startDate', '$expDate')
-					  ";
-		}
-				  
-		//execute query
-		$query	= mysql_query($sql);
-		
-	}//eof
 	
-	
-	/**
-	*	Get all membership id
-	*
-	*	@param
-	*			$type			Type or search criterion
-	*			$id				Foreign key value used against search
-	*
-	*	@return array
-	*/
-	function getMembershipId($type, $id)
-	{
-		//declare vars
-		$data	= array();
-		
-		//statement
-		switch ($type)
-		{
-			case 'CUS':
-				$sql	= "SELECT * FROM customer_membership WHERE customer_id = $id ORDER BY orders_id DESC";
-				break;
-				
-			case 'PACK':
-				$sql	= "SELECT * FROM customer_membership WHERE package_id = $id";
-				break;
-				
-			case 'MEMTYPE':
-				$sql	= "SELECT * FROM customer_membership WHERE membership_type = $id";
-				break;
-				
-			case 'ORD':
-				$sql	= "SELECT * FROM customer_membership WHERE orders_id = $id";
-				break;
-				
-			case 'CUSLATEST':
-				$sql	= "SELECT * FROM customer_membership WHERE  customer_id = $id ORDER BY orders_id DESC LIMIT 1";
-				break;
-				
-				
-			default:
-				$sql	= "SELECT * FROM customer_membership";
-				break;
-			
-		}//switch
-		
-		//execute statement
-		$query	= mysql_query($sql);
-		
-		//check and put in array
-		if(count($query) > 0)
-		{
-			while($result = mysql_fetch_object($query))
-			{
-				$data[] = $result->customer_membership_id;
-			}
-		}
-		
-		//return the data
-		return $data;
-		
-	}//eof
-	
-	
-	
-	/**
-	*	Return the order membership detail, associated with an order id
-	*
-	*	@date	October 17, 2010
-	*
-	*	@param
-	*			$id			Customer membership id
-	*
-	*	@return	array
-	*/
-	function getMembershipDetail($id)
-	{
-		//declare vars
-		$data	= array();
-		
-		//statement
-		$sql	= "SELECT 	* 
-				   FROM 	customer_membership
-				   WHERE  	customer_membership.customer_membership_id = '$id'";
-					
-		//execute query
-		$query	= mysql_query($sql);
-		
-		//get the resultset
-		$result = mysql_fetch_object($query);
-		
-		//check and hold in array
-		if(mysql_num_rows($query))
-		{
-			//hold data in array
-			$data	= array(
-						$result->customer_id,			//0
-						$result->package_id,			//1
-						$result->orders_id,				//2
-						$result->membership_type,		//3
-						$result->amount_paid,			//4
-						$result->start_date, 			//5
-						$result->end_date	    		//6
-						);
-		}
-		
-		//return the array
-		return $data;
-		
-	}//eof
-	
-	
-	/**
-	*	Check the membership type, whether new or renew
-	*
-	*	@param
-	*			$cusId			Customer id
-	*
-	*	@return char
-	*/
-	function getMembershipType($cusId)
-	{
-		//declare var
-		$res	= '';
-		
-		//check if any record exist
-		$cmIds	= $this->getMembershipId('CUS', $cusId);
-		
-		if(count($cmIds) > 0)
-		{
-			$res	= 'renew';
-		}
-		else
-		{
-			$res	= 'new';
-		}
-		
-		//return the result
-		return $res;
-		
-	}//eof
-	
-	
-	/**
-	*	Get verified customer dropdown
-	*
-	*	@param
-	*			$selected			If the user is already selected
-	*
-	*	@return null
-	*/
-	function getActiveUserList($selected)
-	{
-		//declare var
-		$today		= date("Y-m-d");
-		
-		//statement
-		$select		= "SELECT   C.customer_id, C.email, C.fname, C.lname 
-					   FROM 	customer C, customer_membership CM
-					   WHERE 	C.customer_id = CM.customer_id
-					   AND		CM.end_date >= $today
-					  ";
-					  
-		//execute query
-		$query		= mysql_query($select);
-		
-		if(mysql_num_rows($query) > 0)
-		{
-			while($result	= 	mysql_fetch_object($query))
-			{
-				$data_id	= $result->customer_id;
-				
-				if($data_id == $selected)
-				{
-					$select_string = 'selected';
-				}
-				else
-				{
-					$select_string = '';
-				}
-				
-				echo "<option value='".$data_id."' class='menuText' ".$select_string.">".
-				$result->email."</option>";
-				
-			}
-		}//if
-		
-	}//eof
-	
-	
-	
-	/**
-	*	Get the latest active member's order id
-	*
-	*	@param
-	*			$cusId			Customer Id
-	*
-	*	@return int
-	*/
-	function getActiveOrderIdByUser($cusId)
-	{
-		//declare var
-		$data		= 0;
-		
-		//statement
-		$sql	= "SELECT * FROM customer_membership WHERE customer_id = $cusId ORDER BY orders_id DESC LIMIT 1";
-		
-		//execute query
-		$query	= mysql_query($sql);
-		
-		if(mysql_num_rows($query) > 0)
-		{
-			//fetch the result set
-			$result	= mysql_fetch_object($query);
-			
-			//hold the data
-			$data	= $result->orders_id;			
-		}
-		
-		//return id
-		return $data;
-					  
-	}//eof
-		
-	
-	/**
-	*	Get verified customer dropdown
-	*
-	*
-	*	@return null
-	*/
-	function getActiveMembersId()
-	{
-		//declare var
-		$data		= array();
-		$today		= date("Y-m-d");
-		
-		//statement
-		$select		= "SELECT   C.customer_id
-					   FROM 	customer C, customer_membership CM
-					   WHERE 	C.customer_id = CM.customer_id
-					   AND		CM.end_date >= $today
-					  ";
-					  
-		//execute query
-		$query		= mysql_query($select);
-		
-		//check
-		if(mysql_num_rows($query) > 0)
-		{
-			//fetch
-			while($result = mysql_fetch_object($query))
-			{
-				$data[]	= $result->customer_id;
-			}
-		}
-		
-		//return result
-		return $data;
-		
-	}//eof
-	
-	
-	/**
-	*	Check if a member can post ads or not based whether his membership is active or not
-	*
-	*	@date	December 16, 2010
-	*
-	*	@param
-	*			$usrId			Current user id
-	*
-	*	@return char
-	*/
-	function isActiveMember($usrId)
-	{
-		//declare vars
-		$actUsrIds	= array();
-		$resChar	= 'N';
-		
-		//get the value
-		$actUsrIds	= $this->getActiveMembersId();
-		
-		
-		//checking
-		if(in_array($usrId, $actUsrIds))
-		{
-			$resChar	= 'Y';
-		}
-		else
-		{
-			$resChar	= 'N';
-		}
-	
-		//return the value
-		return $resChar;
-		
-	}//eof
-	
-	
-	/**
-	*	Get customer id by customer email. Usable to search for a client
-	*
-	*	@date November 12, 2010
-	*
-	*	@param
-	*			$email			User email
-	*	@return int
-	*/
-	function getCustomerIdByEmail($email)
-	{
-		//declare var
-		$data		= 0;
-		
-		
-		//statement
-		$select		= "SELECT   C.customer_id
-					   FROM 	customer C
-					   WHERE 	C.email = '$email'
-					  ";
-					  
-		//execute query
-		$query		= mysql_query($select);
-		
-		//check
-		if(mysql_num_rows($query) > 0)
-		{
-			//fetch
-			$result = mysql_fetch_object($query);
-			
-			//get the data
-			$data	= $result->customer_id;
-			
-		}
-		
-		//return result
-		return $data;
-		
-	}//eof
 	
 	
 	/**
@@ -1766,31 +1368,6 @@ class Customer extends Utility{
      	 return $key;
     }//eof
 	
-	
-    /**
-    *    Get the latest id of order
-    */
-    function getLatestOrderId()
-    {
-        //declare vars
-        $id        = 0;
-       
-        //statement
-        $sql    = "SELECT MAX(customer_id) AS MOID FROM customer";
-       
-        //query
-        $query    = mysql_query($sql);
-       
-        //get the result
-        $result    = mysql_fetch_object($query);
-       
-        //assign the value
-        $id        = $result->MOID;
-       
-        //return the result
-        return $id;
-       
-    }//eof
 	
 	
 	############################################################################################################
