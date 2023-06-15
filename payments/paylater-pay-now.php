@@ -69,7 +69,7 @@ $_SESSION['payment-process'] = true;
 
     <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="../css/fontawesome-all.min.css">
-
+    <link rel="stylesheet" href="../css/payment-paylater-paynow.css">
 </head>
 
 <body>
@@ -81,27 +81,26 @@ $_SESSION['payment-process'] = true;
         </p>
     </section>
 
-    <section class="container d-flex align-items-center flex-column mt-5" id="payment-box">
-        <div class="border p-4 mt-2 w-50 bg-light shadow rounded">
-            <div class="row justify-content-center">
-                <div class="col-12 py-3 d-flex justify-content-center">
-                    <img src="../images/logo/logo.png" alt="">
+    <section class="paylater-paynow-section " id="payment-box">
+        <div class="border p-2 p-sm-4 mt-2  bg-light shadow rounded">
+            <div class="row m-0 w-100 justify-content-center">
+                <div class="col-12 py-3 d-flex justify-content-center mb-4">
+                    <img src="../images/logo/logo.png" class="page-logo" alt="">
                 </div>
-
-                <div class="col-6">
-                    <h5 class="fw-bold">Customer Details:</h5>
-                    <div class="ps-2">
-                        <p class="mb-0" id="customer-name"><?php echo $buyer[0][5].' '.$buyer[0][6];?></p>
-                        <p class="mb-0">
-                            <?php
+                <!-- <div class="row justify-content-between"> -->
+                    <div class="col-sm-6">
+                        <h5 class="">Customer Details:</h5>
+                        <div class="">
+                            <p class="mb-0" id="customer-name"> <span class="title-span">NAME: </span> <?php echo $buyer[0][5].' '.$buyer[0][6];?></p>
+                            <p class="mb-0">
+                                <?php
                                 if($buyer[0][24] != null){
                                         echo $buyer[0][24];
                                     }
                                     
                             ?>
-                        </p>
-                        <p class="mb-0">
-                            <?php
+                            </p>
+                            <p class="mb-0">  <?php
                                 if($buyer[0][25] != null){
                                         echo $buyer[0][25].', ';
                                     }
@@ -111,16 +110,16 @@ $_SESSION['payment-process'] = true;
                                     }
                                     
                             ?>
-                        </p>
-                        <p class="mb-0">
-                            <?php
+                            </p>
+                            <p class="mb-0">
+                                <?php
                                 if($buyer[0][27] != null){
                                         echo $buyer[0][27];
                                     }
                             ?>
-                        </p>
-                        <p class="mb-0">
-                            <?php
+                            </p>
+                            <p class="mb-0">
+                                <?php
                                 if($buyer[0][28] != null){
                                         echo $buyer[0][28].', ';
                                     }
@@ -128,28 +127,29 @@ $_SESSION['payment-process'] = true;
                                     echo $buyer[0][29];
                                 }
                             ?>
-                        </p>
-                        <p class="mb-0">
-                            <?php
+                            </p>
+                            <p class="mb-0"><span class="title-span">ADDRESS: </span>
+                                <?php
                                 if($buyer[0][30] != null){
                                     $country = $Location->getCountyById($buyer[0][30]);
                                         echo $country['name'];
                                     }
                             ?>
-                        </p>
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-6 d-flex flex-column justify-content-center">
-                    <p class="mb-0"><span class="fw-semibold">ORDER ID:</span> <?php echo '#'.$orderId; ?></p>
-                    <p class="mb-0"><span class="fw-semibold">ORDER DATE:</span>
-                        <?php echo $DateUtil->dateText($orderDate); ?></p>
-                </div>
+                    <div class="col-sm-6 text-sm-end mt-sm-0 mt-3 ">
+                        <h5 class="">Order Details:</h5>
+                        <p class="mb-0"><span class="title-span">ORDER ID:</span> <?php echo '#'.$orderId; ?></p>
+                        <p class="mb-0"><span class="title-span">ORDER DATE:</span>
+                            <?php echo $DateUtil->dateText($orderDate); ?></p>
+                    </div>
+                <!-- </div> -->
+                <hr style="width: 95%;" class="mt-3 mt-md-5">
 
-                <hr style="width: 95%;" class="mt-3">
-
-                <div class="col-11">
-                    <table class="table table-sm table-bordered align-middle text-center">
+                <div class="col-12 table-responsive mt-3 mt-md-5">
+                    <table class="table table-sm  table-bordered align-middle text-center ">
                         <thead>
                             <tr>
                                 <th scope="col">Order Id</th>
@@ -173,8 +173,8 @@ $_SESSION['payment-process'] = true;
                     </table>
                 </div>
 
-                <div class="col-11">
-                    <div class="d-flex justify-content-end mt-2" id="payBtn">
+                <div class="col-12">
+                    <div class="d-flex justify-content-center justify-content-md-end mt-2" id="payBtn">
                         <div id="paypal-payment-button">
                         </div>
                     </div>
@@ -190,7 +190,9 @@ $_SESSION['payment-process'] = true;
     </form>
 
 
-    <script src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_CLIENT_ID ?>&disable-funding=credit,card&currency=USD"></script>
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_CLIENT_ID ?>&disable-funding=credit,card&currency=USD">
+    </script>
     <script>
     let customerName = document.getElementById("customer-name").innerText;
     let waitingBox = document.getElementById("waiting-box");
@@ -222,7 +224,8 @@ $_SESSION['payment-process'] = true;
             return actions.order.capture().then(function(details) {
                 // This function shows a transaction success message to your buyer.
 
-                document.getElementById('payBtn').innerHTML = `<div class="bg-secondary border border-info rounded text-center"><p class="fw-bold py-2 mb-0"><span><img src="../images/icons/loading-2.gif" alt="loading"></span> Please Wait..</p></div>`;
+                document.getElementById('payBtn').innerHTML =
+                    `<div class="bg-secondary border border-info rounded text-center"><p class="fw-bold py-2 mb-0"><span><img src="../images/icons/loading-2.gif" alt="loading"></span> Please Wait..</p></div>`;
                 waitingBox.style.display = "block";
                 paymentBox.style.display = "none !import";
                 formInp.value = JSON.stringify(details);
@@ -235,7 +238,7 @@ $_SESSION['payment-process'] = true;
             // console.log(data);
             // sessionStorage.setItem('orderStatus', 'Cancled');
             // if (sessionStorage.getItem('orderStatus') == 'Cancled') {
-                alert('cancled');
+            alert('cancled');
             // }
         },
         onError: function(err) {
