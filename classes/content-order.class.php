@@ -82,10 +82,10 @@ class ContentOrder extends DatabaseConnection{
       }//eof
 
 
-      function pendingOrders($userId){
+      function pendingContentOrders($userId, $PENDING, $PENDINGCODE){
 
             $data = array();
-            $sql  = "SELECT * FROM `order_details` WHERE `clientUserId` = '$userId' AND `order_status` = 2 OR `order_status` = 'pending' OR `order_status` = 'Pending'";
+            $sql  = "SELECT * FROM `order_details` WHERE `clientUserId` = '$userId' AND (`order_status` = '$PENDINGCODE' OR `order_status` = '$PENDING')";
             // echo $sql;
             $res  = $this->conn->query($sql);
             $rows = $res->num_rows;
@@ -95,6 +95,49 @@ class ContentOrder extends DatabaseConnection{
                   }
             }
             return $data;
+
+      }//eof
+
+      function openContentOrders($userId, $PENDINGCODE, $REJECTEDCODE, $COMPLETEDCODE, $preference){
+
+            try {
+                  if ($preference == 'COUNT') {
+                        $sql  = "SELECT COUNT(*) as 'COUNT' FROM `order_details` 
+                                    WHERE `clientUserId` = '$userId'
+                                    AND
+                                    (`order_status` != '$PENDINGCODE'
+                                    OR
+                                    `order_status` != '$REJECTEDCODE'
+                                    OR `order_status` != '$COMPLETEDCODE')";
+
+                        $res  = $this->conn->query($sql);
+
+                        if ($res->num_rows > 0) {
+                              while ($result = $res->fetch_object()) {
+                                    $data[] = $result->COUNT;
+                              }
+                        }
+                  }else {
+                        $sql  = "SELECT * FROM `order_details` 
+                                    WHERE `clientUserId` = '$userId'
+                                    AND
+                                    (`order_status` != '$PENDINGCODE'
+                                    OR
+                                    `order_status` != '$REJECTEDCODE'
+                                    OR `order_status` != '$COMPLETEDCODE')";
+
+                        $res  = $this->conn->query($sql);
+
+                        if ($res->num_rows > 0) {
+                              while ($result = $res->fetch_assoc()) {
+                                    $data[] = $result;
+                              }
+                        }
+                  }
+                  return $data;
+            } catch (Exception $e) {
+                  echo $e->getMessage();
+            }
 
       }//eof
 
