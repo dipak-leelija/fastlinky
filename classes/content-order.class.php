@@ -534,7 +534,7 @@ class ContentOrder extends DatabaseConnection{
                               `due_amount`      = '$due_amount',
                               `paid_amount`     = '$paid_amount',
                               `updated_on`      = '$updated_on',
-                              `updated_by`      = '$updated_by'
+                              `transection_by`  = '$updated_by'
                               WHERE
                               `order_id`        = '$order_id'";
             

@@ -1,56 +1,60 @@
 <?php
 session_start();
+print_r($_SESSION);
+exit;
 require_once dirname(__DIR__) .  "/includes/constant.inc.php";
 require_once ROOT_DIR . "/_config/dbconnect.php";
 
 require_once ROOT_DIR . "/includes/order-constant.inc.php";
+require_once ROOT_DIR . "/includes/content.inc.php";
 require_once ROOT_DIR . "/includes/user.inc.php";
 require_once ROOT_DIR . "/includes/email.inc.php";
 require_once ROOT_DIR . "/includes/registration.inc.php";
 require_once ROOT_DIR . "/includes/mail-functions.php";
 require_once ROOT_DIR . "/includes/paypal.inc.php";
 
-require_once ROOT_DIR . "/classes/domain.class.php"; 
-require_once ROOT_DIR . "/classes/blog_mst.class.php"; 
+require_once ROOT_DIR . "/classes/gp-order.class.php";
 require_once ROOT_DIR . "/classes/orderStatus.class.php";
 require_once ROOT_DIR . "/classes/error.class.php";
 require_once ROOT_DIR . "/classes/date.class.php";
-require_once ROOT_DIR . "/classes/content-order.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php"; 
 require_once ROOT_DIR . "/classes/utilityMesg.class.php"; 
 
 /* INSTANTIATING CLASSES */
-$domain			= new Domain();
-$BlogMst		= new BlogMst();
+$PackageOrder   = new PackageOrder();
 $OrderStatus	= new OrderStatus();
 $error			= new MyError();
-$ContentOrder	= new ContentOrder();
-
 $dateUtil		= new DateUtil();
 $utility		= new Utility();
 $uMesg 			= new MesgUtility();
 
 ###############################################################################################
 
-require_once("../classes/customer.class.php");
+require_once ROOT_DIR ."/classes/customer.class.php";
 $customer		= new Customer();
-$cusId		= $utility->returnSess('userid', 0);
-$cusDtl		= $customer->getCustomerData($cusId);
+$cusId			= $utility->returnSess('userid', 0);
+$cusDtl			= $customer->getCustomerData($cusId);
 
 
 ###############################################################################################
 
-//declare vars
-$typeM		= $utility->returnGetVar('typeM','');
 
+//declare vars
+$typeM			= $utility->returnGetVar('typeM','');
 
 if (!isset($_POST)) {
-	header("Location: ../dashboard.php");
-	exit;
+	$previousPage = $utility->goToPreviousSessionPage();
+	if ($previousPage == 0 || $previousPage == null) {
+		header("Location: ".URL."/app.client");
+		exit;
+	}else {
+		header("Location: ".$previousPage);
+		exit;
+	}
 }
 
 if (!isset($_SESSION['payment-process']) || $_SESSION['payment-process'] != true) {
-	header("Location: ".URL."/dashboard.php");
+	header("Location: ".URL."/app.client");
 	exit;
 }
 
@@ -59,24 +63,21 @@ if (!isset($_SESSION['payment-process']) || $_SESSION['payment-process'] != true
 if (isset($_POST['data']) && isset($_POST['orderId'])) {
 	
 	$orderId = $_POST['orderId'];
-
-
+	
 	//fetch the order details
-	$orderDetail 	= $ContentOrder->showOrderdContentsByCol('order_id', $orderId, '', '');
+	$orderDetail 	= $PackageOrder->gpOrderById($orderId);
 
-	$statusCode 		= $orderDetail[0]['order_status'];
-	$clientEmail 		= $orderDetail[0]['clientEmail'];
-	$clientOrderPrice 	= $orderDetail[0]['order_price'];
-	$clientOrderedSite 	= $orderDetail[0]['clientOrderedSite'];
- 
-
-	// Transection Details by Id 
-	// $ordTxn = $ContentOrder->showTransectionByOrder($orderId);
-	// print_r($ordTxn['item_amount'] );exit;
+	$statusCode 		= $orderDetail['order_status'];
+	$orderPrice 		= $orderDetail['price'];
+	$dueAmount 			= $orderDetail['due_amount'];
+	$paidAmount 		= $orderDetail['paid_amount'];
+	
+	//order status
+	$statusName 		= $OrderStatus->getOrdStatName($statusCode);
 
 
 	$details = (array)json_decode($_POST['data']);
-	// print_r($details);
+	// print_r($details);exit;
 	$purchase_units = (array)$purchase_units = (array)$payer = $details['purchase_units'];
 	$payments = (array)$payments = $purchase_units[0];
 	$captures = (array)$captures = (array)$payments['payments'];
@@ -89,33 +90,29 @@ if (isset($_POST['data']) && isset($_POST['orderId'])) {
 	$trxnId 	= $captures['id'];		//geting the transection id 
 	$trxnStatus = $captures['status'];	//geting the transection status
 
-	$t_date = date('Y-m-d H:i:s');
+	$t_date = $dateUtil->todayWithTime('-');
 
-	if ($trxnStatus == "COMPLETED") {
+	if (ucfirst(strtolower($trxnStatus)) == COMPLETED) {
 		
-		$trxn_id	  = $trxnId;
 		$_SESSION['pay_success']  = true;
 
-
-		$ContentOrder->updatepayLaterTransection($orderId, $trxn_id, "Paypal", 0, $paid_amount, $t_date, $clientEmail);
-		$ContentOrder->contentOrderStatusUpdate($orderId, $trxn_id, COMPLETED, COMPLETEDCODE);
-
-		$ContentOrder->addOrderUpdate($orderId, 'Payment Completed', '', $cusDtl[0][0]);
-
-
-	}else {
-
-		$ContentOrder->contentOrderStatusUpdate($orderId, $_SESSION['trxn_id'], FAILED, FAILEDCODE);
-		$ContentOrder->addOrderUpdate($orderId, 'Payment Failed', 'Paylater Payment Failed', $cusDtl[0][0]);
+		$updated = $PackageOrder->updatePayment($orderId, $trxnId, 'Paypal', COMPLETEDCODE, COMPLETEDCODE);
+		if ($updated == 1 || $updated == true) {
+			$added = $PackageOrder->addPackOrderDtls($orderId, COMPLETEDCODE, ORDPY001, $cusDtl[0][2], $cusDtl[0][2]);
+		}
 		
+	}else {
+		$updated = $PackageOrder->updatePayment($orderId, $trxnId, 'PayLater', FAILEDCODE, COMPLETEDCODE);
+		if ($updated == 1 || $updated == true) {
+			$added = $PackageOrder->addPackOrderDtls($orderId, FAILEDCODE, ORDPY006, $cusDtl[0][2], $cusDtl[0][2]);
+		}
 	}
 	
 }//end of post request data cheaking
 
-// $orderDetail 	= $ContentOrder->showOrderdContentsByCol('order_id', $orderId, '', '');
-// print_r($orderDetail);
-// exit;
 /*
+
+
 if($_SESSION['pay_success'] == true) {
 
 	$orderDetail 	= $ContentOrder->showOrderdContentsByCol('order_id', $orderId, '', '');
@@ -185,17 +182,18 @@ if($_SESSION['pay_success'] == true) {
 
 	// ================================== MAIL SENDED TO CLIENT ================================== 
 
-	
+	//session array
+	$sess_arr = array('payment-process', 'sitePrice', 'order-data', 'orderId', 'trxn_id', 'pay_success');
+	$utility->delSessArr($sess_arr);
+	unset($_POST);
 }else {
 	echo 'Payment Failed!';
 }
+
 */
 
 
-# ============= session array ============= #
-$sess_arr = array('payment-process', 'updatedOrders');
-$utility->delSessArr($sess_arr);
-unset($_POST);
+
 ?>
 
 <!DOCTYPE html>
@@ -208,10 +206,9 @@ unset($_POST);
 	<link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <title>Payment Success - Order Received</title>
-
-	<link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
-    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
-
+    <link rel="stylesheet" href="<?php echo URL ?>/style/ansysoft.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="<?php echo URL ?>/plugins/fontawesome-6.1.1/css/all.css">
     <link rel="stylesheet" href="<?php echo URL ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo URL ?>/css/payment-status.css">
 
@@ -253,7 +250,7 @@ unset($_POST);
                 <p>Your order status will updated to you, Now you can go back.</p>
                 <div class="mt-3">
                     <a class="btn btn-primary" href="../app.client.php">My Account</a>
-                    <a class="btn btn-primary" href="<?= URL ?>/guest-post-article-submit.php?order=<?= base64_encode(urlencode($orderId)) ?>">See Order</a>
+                    <a class="btn btn-primary" href="../my-orders.php">My Orders</a>
                 </div>
             </div>
         </div>

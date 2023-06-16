@@ -378,7 +378,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                     if ($paymentMode == PAYLATER) {
                                                         
                                                         echo '<div class="text-center mt-2">
-                                                                <button class="btn btn-sm btn-primary w-25">Pay Now</button>
+                                                                <a href="cheakout/package-paylater-payment.php?order='.$_GET['order'].'" class="btn btn-sm btn-primary w-25">Pay Now</a>
                                                             </div>';
 
                                                     }

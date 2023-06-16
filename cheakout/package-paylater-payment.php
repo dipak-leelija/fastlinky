@@ -6,7 +6,9 @@ require_once ROOT_DIR . "/includes/paypal.inc.php";
 require_once ROOT_DIR ."/_config/dbconnect.php";
 
 require_once ROOT_DIR . "/classes/customer.class.php";
-require_once ROOT_DIR . "/classes/content-order.class.php";
+// require_once ROOT_DIR . "/classes/content-order.class.php";
+require_once ROOT_DIR . "/classes/gp-order.class.php";
+require_once ROOT_DIR . "/classes/gp-package.class.php";
 require_once ROOT_DIR . "/classes/location.class.php";
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php";
@@ -14,17 +16,20 @@ require_once ROOT_DIR . "/classes/utility.class.php";
 
 include "../Crypto.php";
 
-$ContentOrder     = new ContentOrder();
 $Customer         = new Customer();
+// $ContentOrder     = new ContentOrder();
+$PackageOrder     = new PackageOrder();
+$GPPackage        = new GuestPostpackage();
 $Location         = new Location();
 $DateUtil         = new DateUtil();
 $Utility		  = new Utility();
 
 ######################################################################################################################
-$typeM		= $Utility->returnGetVar('typeM','');
+$typeM		    = $Utility->returnGetVar('typeM','');
 //user id
-$cusId		= $Utility->returnSess('userid', 0);
-$cusDtl		= $Customer->getCustomerData($cusId);
+$cusId		    = $Utility->returnSess('userid', 0);
+$cusDtl		    = $Customer->getCustomerData($cusId);
+$currentPage    = $Utility->setCurrentPageSession();
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
@@ -35,24 +40,22 @@ $orderId = base64_decode($_GET['order']);
 // echo $clientName               = $_SESSION['name'];
 // exit;
 
-$showOrder  = $ContentOrder->clientOrderById($orderId);
-$orderPrice         = $showOrder['order_price'];
-$clientOrderedSite  = $showOrder['clientOrderedSite'];
-$orderDate          = $showOrder['added_on'];
+$showOrder  = $PackageOrder->gpOrderById($orderId);
+// print_r($showOrder);exit;
+$orderPrice         = $showOrder['due_amount'];
+$packageId          = $showOrder['package_id'];
+$orderDate          = $showOrder['date'];
+$paymentStatus      = $showOrder['payment_type'];
 
+$packageFullName = $GPPackage->packageFullName($packageId);
 
-$ordTxn     = $ContentOrder->showTrxnByOrderId($orderId);
-$paymentStatus      = $ordTxn['transection_mode'];
-// print_r($paymentStatus);
-
-
-if ($paymentStatus != "Pay Later") {
-    echo "This is Not a Paylater Order!";
+if ($paymentStatus != "PayLater") {
+    echo "This is a Paylater Payment page!";
 }
 
-$ordTxn = $ContentOrder->showTransectionByOrder($orderId);
-$buyer = $Customer->getCustomerData($showOrder['clientUserId']);
-
+// $ordTxn = $ContentOrder->showTransectionByOrder($orderId);
+$buyer = $Customer->getCustomerData($showOrder['customer_id']);
+// print_r($buyer);exit;
 $_SESSION['payment-process'] = true;
 ?>
 
@@ -92,7 +95,7 @@ $_SESSION['payment-process'] = true;
                         <h5 class="">Customer Details:</h5>
                         <div class="">
                             <p class="mb-0" id="customer-name"> <span class="title-span">NAME: </span> <?php echo $buyer[0][5].' '.$buyer[0][6];?></p>
-                            <p class="mb-0">
+                            <p class="mb-0"><span class="title-span">ADDRESS: </span>
                                 <?php
                                 if($buyer[0][24] != null){
                                         echo $buyer[0][24];
@@ -114,21 +117,21 @@ $_SESSION['payment-process'] = true;
                             <p class="mb-0">
                                 <?php
                                 if($buyer[0][27] != null){
-                                        echo $buyer[0][27];
+                                        echo $Location->getCityName($buyer[0][27]);
                                     }
                             ?>
                             </p>
                             <p class="mb-0">
                                 <?php
                                 if($buyer[0][28] != null){
-                                        echo $buyer[0][28].', ';
+                                    echo $Location->getStateName($buyer[0][28]).', ';
                                     }
                                 if($buyer[0][29] != null){
                                     echo $buyer[0][29];
                                 }
                             ?>
                             </p>
-                            <p class="mb-0"><span class="title-span">ADDRESS: </span>
+                            <p class="mb-0">
                                 <?php
                                 if($buyer[0][30] != null){
                                     $country = $Location->getCountyById($buyer[0][30]);
@@ -161,7 +164,7 @@ $_SESSION['payment-process'] = true;
                         <tbody>
                             <tr>
                                 <th scope="row"><?php echo '#'.$orderId; ?></th>
-                                <td><?php echo $clientOrderedSite; ?></td>
+                                <td><?php echo $packageFullName; ?></td>
                                 <td><?php echo $orderPrice; ?></td>
                                 <td><?php echo $orderPrice; ?></td>
                             </tr>
@@ -184,7 +187,7 @@ $_SESSION['payment-process'] = true;
     </section>
 
 
-    <form action="paylater-pay-success.php" method="post" id="send-data" class="d-none">
+    <form action="package-paylater-payment-success.php" method="post" id="send-data" class="d-none">
         <input type="text" name="data" id="form-inp">
         <input type="text" name="orderId" value="<?php echo $orderId; ?>">
     </form>

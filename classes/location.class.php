@@ -108,12 +108,12 @@ class Location extends DatabaseConnection{
 		
 		$result	= array();
 		//create the statement
-		$sql	= "SELECT state_name FROM states WHERE state_id='$id'";
+		$sql	= "SELECT name FROM states WHERE id='$id'";
 		
 		$query	= $this->conn->query($sql);
 		if($query->num_rows == 1){
 			$result = $query->fetch_assoc();
-			$result = $result['state_name']; 
+			$result = $result['name']; 
 		} 
 		return $result;
 	}//eof
@@ -214,6 +214,22 @@ class Location extends DatabaseConnection{
 		$query	= mysql_query($sql);
 	}//eof
 	
+
+	function getCityName($id){
+		
+		$result	= array();
+		//create the statement
+		$sql	= "SELECT name FROM cities WHERE id='$id'";
+		
+		$query	= $this->conn->query($sql);
+		if($query->num_rows == 1){
+			$result = $query->fetch_assoc();
+			$result = $result['name']; 
+		} 
+		return $result;
+	}//eof
+
+
 	/**
 	*	Retrieve all City id
 	*	@return array
