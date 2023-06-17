@@ -195,7 +195,7 @@ small, .small {
     padding-left: 0;
     position: relative;
     margin-bottom: 0;
-    font-family: "Satoshi-Variable";
+    font-family: "Nunito", sans-serif;
 }
 
 .icon-data-list hr {
@@ -204,10 +204,11 @@ small, .small {
 }
 
 .icon-data-list li img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin-right: 10px;
     border-radius: 100%;
+    /* display: none; */
 }
 .icon-data-list h5{
     font-size: 1rem;

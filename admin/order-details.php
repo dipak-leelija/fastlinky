@@ -155,9 +155,9 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
 <head>
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
-    
+
     <title><?= $showOrder['clientOrderedSite']; ?> - Order Details | <?php echo COMPANY_FULL_NAME; ?></title>
-    
+
     <link rel="stylesheet" href="<?= URL?>/plugins/sweetalert/sweetalert2.css">
 
     <!-- inject:css -->
@@ -558,7 +558,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
                                 <div class="row">
 
-                                    <div class="col-md-8">
+                                    <div class="col-lg-8">
                                         <div class="card rounded-1r border shadow mt-4">
                                             <div class="card-body">
 
@@ -707,7 +707,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
 
                                                     <!-- anchor texts start  -->
-                                                    <div class="col-6 mt-3">
+                                                    <div class="col-sm-6 mt-3">
                                                         <h5 class="text-primary font-weight-bold">Anchor Text</h5>
 
                                                         <div class="text-wrap mb-2">
@@ -735,7 +735,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                     <!-- anchor texts end -->
 
                                                     <!-- anchor links start -->
-                                                    <div class="col-6 mt-3">
+                                                    <div class=" col-sm-6 mt-3">
                                                         <h5 class="text-primary font-weight-bold">Target URL</h5>
 
                                                         <div class="text-wrap mb-2">
@@ -904,12 +904,13 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
 
                                     <!-- start of updates  -->
-                                    <div class="col-md-4">
+                                    <div class="col-lg-4">
                                         <div class="stretch-card grid-margin mt-4">
-                                            <div class="card status_card rounded-1r border shadow">
-                                                <div class="card-body">
+                                            <div class="card status_card p-0 rounded-1r border shadow">
+                                                <div class="card-body px-3">
                                                     <p class="card-title">Updates</p>
-                                                    <ul class="icon-data-list">
+                            
+                                                    <ul class="icon-data-list" id="progressbar">
                                                         <?php
                                                     $ordUpdates = $ContentOrder->showOrderUpdateById($showOrder['order_id'], 'ASC');
                                                     // print_r($ordUpdates);
@@ -934,8 +935,8 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                          
                                                     ?>
 
-                                                        <li>
-                                                            <div class="d-flex">
+                                                        <li  id="step">
+                                                            <div class="d-flex pl-4" style="margin-top: -1.18rem;">
                                                                 <img src="<?= $userImg ?>" alt="user">
                                                                 <div>
                                                                     <p class="text-info mb-0">
@@ -955,16 +956,12 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                         <?php
                                                     }
                                                     ?>
-
-
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                     <!-- end of updates  -->
-
                                 </div>
                             </div>
                         </div>
