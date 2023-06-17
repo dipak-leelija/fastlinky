@@ -3,6 +3,18 @@
 class GuestPostpackage extends DatabaseConnection{
 
 
+  function packageFullName($packageId){
+    try {
+
+      $package = $this->packDetailsById($packageId);
+      $categoryName = $this->packCatName($package['category_id']);
+      $fullName = $categoryName .' '.$package['package_name'];
+      return $fullName;
+    } catch (Exception $e) {
+      echo $e->getMessage();
+    }
+  }
+
   ######################################################################################################
   #                                                                                                    #
   #                                       gp_pagkage_category                                          #
@@ -44,6 +56,20 @@ class GuestPostpackage extends DatabaseConnection{
       $myArr = $res;
     }
     return $myArr;
+
+  }
+
+  function packCatName($id){
+    try {
+      $sql = "SELECT category_name FROM `gp_package_category`  where `id`= '$id'";
+      $data = $this->conn->query($sql);
+      while($res = $data->fetch_assoc()){
+        $myArr = $res['category_name'];
+      }
+      return $myArr;
+    } catch (Exception $e) {
+      echo $e->getMessage();
+    }
 
   }
 
@@ -121,6 +147,18 @@ class GuestPostpackage extends DatabaseConnection{
     return $data;
   }
 
+  function packNameById($id){
+    try {
+      $sql  = "SELECT package_name FROM `gp_package`  where `id`= '$id'";
+      $res  = $this->conn->query($sql);
+      while($result = $res->fetch_assoc()){
+        $data = $result['package_name'];
+      }
+      return $data;
+    } catch (Exception $e) {
+      echo $e->getMessage();
+    }
+  }
 
 
   function packDetailsByCat($packCatId){

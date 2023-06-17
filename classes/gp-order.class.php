@@ -146,10 +146,15 @@ class PackageOrder extends DatabaseConnection{
 
   
 
-  function pendingGPOrders($userId){
+  function pendingGPOrders($userId, $PENDING, $PENDINGCODE){
 
     $data = array();
-    $sql  = "SELECT * FROM `gp_package_order` WHERE `customer_id` = '$userId' AND `order_status` = 2 OR `order_status` = 'pending' OR `order_status` = 'Pending'";
+    $sql  = "SELECT * FROM `gp_package_order` 
+                      WHERE `customer_id` = '$userId'
+                      AND
+                      (`order_status` = '$PENDING'
+                      OR
+                      `order_status` = '$PENDINGCODE')";
     // echo $sql;
     $res  = $this->conn->query($sql);
     $rows = $res->num_rows;
@@ -162,6 +167,51 @@ class PackageOrder extends DatabaseConnection{
 
   }//eof
 
+
+  function openGPOrders($userId, $PENDINGCODE, $REJECTEDCODE, $COMPLETEDCODE, $preference){
+
+    try {
+          if ($preference == 'COUNT') {
+                $sql  = "SELECT COUNT(*) as 'COUNT' FROM `gp_package_order` 
+                            WHERE `customer_id` = '$userId'
+                            AND
+                            (`order_status` != '$PENDINGCODE'
+                            OR
+                            `order_status` != '$REJECTEDCODE'
+                            OR `order_status` != '$COMPLETEDCODE')";
+
+                // echo $sql;
+                // exit;
+                $res  = $this->conn->query($sql);
+
+                if ($res->num_rows > 0) {
+                      while ($result = $res->fetch_object()) {
+                            $data[] = $result->COUNT;
+                      }
+                }
+          }else {
+                $sql  = "SELECT * FROM `gp_package_order` 
+                            WHERE `customer_id` = '$userId'
+                            AND
+                            (`order_status` != '$PENDINGCODE'
+                            OR
+                            `order_status` != '$REJECTEDCODE'
+                            OR `order_status` != '$COMPLETEDCODE')";
+
+                $res  = $this->conn->query($sql);
+
+                if ($res->num_rows > 0) {
+                      while ($result = $res->fetch_assoc()) {
+                            $data[] = $result;
+                      }
+                }
+          }
+          return $data;
+    } catch (Exception $e) {
+          echo $e->getMessage();
+    }
+
+  }//eof
 
 
   ##############################################################################################################

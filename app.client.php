@@ -1,6 +1,7 @@
 <?php
-require_once "includes/constant.inc.php";
 session_start();
+require_once "includes/constant.inc.php";
+require_once "includes/order-constant.inc.php";
 
 require_once ROOT_DIR."/_config/dbconnect.php";
 
@@ -30,12 +31,16 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 $wishes             = $WishList->countWishlistByUser($cusId);
 $myOrders           = $ContentOrder->clientOrders($cusId);
-$pendingContOrd     = $ContentOrder->pendingOrders($cusId);
+$pendingContOrd     = $ContentOrder->pendingContentOrders($cusId, PENDING, PENDINGCODE);
+$openContOrdCount       = $ContentOrder->openContentOrders($cusId, PENDINGCODE, REJECTEDCODE, COMPLETEDCODE, 'COUNT');
 
 $packageOrderCount   = $PackageOrder->countPackOrderByUser($cusId);
 $packOrdDtls         = $PackageOrder->getPackOrderDetails($cusId);
-$pendingPackOrd      = $PackageOrder->pendingGPOrders($cusId);
+$pendingPackOrd      = $PackageOrder->pendingGPOrders($cusId, PENDING, PENDINGCODE);
+$openGPOrdCount         = $PackageOrder->openGPOrders($cusId, PENDINGCODE, REJECTEDCODE, COMPLETEDCODE, 'COUNT');
 
+$totalOpenOrders    = $openGPOrdCount[0]+$openContOrdCount[0];
+$totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
 
 ?>
 <!DOCTYPE HTML>
@@ -129,7 +134,7 @@ $pendingPackOrd      = $PackageOrder->pendingGPOrders($cusId);
                                             <a href="my-orders.php">
                                                 <div class="dboard-cd-box mt-md-0 ">
                                                     <div class="inner">
-                                                        <h3><?= count($pendingContOrd) +  count($pendingPackOrd); ?>
+                                                        <h3><?= $totalOpenOrders; ?>
                                                         </h3>
                                                         <p>Open Orders</p>
                                                     </div>
@@ -145,7 +150,7 @@ $pendingPackOrd      = $PackageOrder->pendingGPOrders($cusId);
                                                 <div class="dboard-cd-box mt-md-0 ">
                                                     <div class="inner">
                                                         <h3>
-                                                            <?= count($pendingContOrd) +  count($pendingPackOrd); ?>
+                                                            <?= $totalPendingOrders; ?>
                                                         </h3>
                                                         <p>Pending Orders</p>
                                                     </div>

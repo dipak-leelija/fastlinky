@@ -34,6 +34,9 @@
 	define('ERR_LINK', 					' Something is error with the provided link');
 
 	define('PACK_ORD',					'package');
+	define('ORDPY001', 					'Payment Completed!');
+	define('ORDPY006', 					'Payment Failed!');
+
 
 	
 	
