@@ -907,8 +907,8 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                     <div class="col-lg-4">
                                         <div class="stretch-card grid-margin mt-4">
                                             <div class="card status_card p-0 rounded-1r border shadow">
-                                                <div class="card-body px-3">
-                                                    <p class="card-title">Updates</p>
+                                                <div class="card-body">
+                                                    <p class="card-title" style="margin-bottom: 0.75rem;">Updates</p>
                             
                                                     <ul class="icon-data-list" id="progressbar">
                                                         <?php
@@ -937,9 +937,9 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
                                                         <li  id="step">
                                                             <div class="d-flex pl-4" style="margin-top: -1.18rem;">
-                                                                <img src="<?= $userImg ?>" alt="user">
+                                                                <!-- <img src="<?= $userImg ?>" alt="user"> -->
                                                                 <div>
-                                                                    <p class="text-info mb-0">
+                                                                    <p class="text-primary mb-0" >
                                                                         <?php echo $ordUpdate['subject']; ?></p>
                                                                     <p class="mb-0">
                                                                         <?php
@@ -949,7 +949,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                         ?>
                                                                         <small>By <?= $updateBy ?></small>
                                                                     </p>
-                                                                    <small><?php echo $ordUpdate['updated_on']; ?></small>
+                                                                    <small style="font-size: 83%;"><?php echo $ordUpdate['updated_on']; ?></small>
                                                                 </div>
                                                             </div>
                                                         </li>

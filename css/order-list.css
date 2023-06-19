@@ -208,14 +208,14 @@ small, .small {
     height: 30px;
     margin-right: 10px;
     border-radius: 100%;
-    /* display: none; */
+    display: none;
 }
 .icon-data-list h5{
     font-size: 1rem;
     font-weight: 600;
 }
 .icon-data-list p{
-    font-weight: 500;
+    font-weight: 600;
     font-size: .9rem !important;
     color: black;
     line-height: 1.27;
