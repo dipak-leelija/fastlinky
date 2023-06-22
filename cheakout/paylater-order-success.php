@@ -327,7 +327,7 @@ if(isset($_SESSION['orderId'])) {
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Payment Success - Order Received</title>
+    <title>Successful Order - Order Received</title>
 
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />

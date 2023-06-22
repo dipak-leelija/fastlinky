@@ -523,12 +523,13 @@ class ContentOrder extends DatabaseConnection{
 
 
 
-      function updatepayLaterTransection($order_id, $transection_id, $transection_mode, $due_amount, $paid_amount, $updated_on, $updated_by){
+      function updatepayLaterTransection($order_id, $transectionStatus, $transection_id, $transection_mode, $due_amount, $paid_amount, $updated_on, $updated_by){
             
             $transection_mode = addslashes(trim($transection_mode));
 
             $sql = "UPDATE `order_transections`
                               SET
+                              `transection_status`    = '$transectionStatus',
                               `transection_id`  = '$transection_id',
                               `transection_mode`= '$transection_mode',
                               `due_amount`      = '$due_amount',

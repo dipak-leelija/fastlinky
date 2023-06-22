@@ -16,10 +16,8 @@ $updatedBy = 0;
 
 
 if (isset($_GET['accept-order'])) {
-    
-    $orderStatus    = 3; // Processing 
 
-    $accepted = $ContentOrder->ClientOrderOrderUpdate($_GET['accept-order'], $orderStatus, '', '');
+    $accepted = $ContentOrder->ClientOrderOrderUpdate($_GET['accept-order'], PROCESSINGCODE, '', '');
     if ($accepted) {
         $updated = $ContentOrder->addOrderUpdate($_GET['accept-order'], 'Accepted', '', 0);
         if ($updated) {
@@ -65,11 +63,10 @@ if (isset($_GET['cancel-order'])) {
 
 
 if (isset($_POST['reject-order'])) {
-                                
-    $orderStatus    = 10; // Rejected
+
     $reason        = $_POST['cancellation-reason'];
 
-    $rejected = $ContentOrder->ClientOrderOrderUpdate($_POST['order-id'], $orderStatus, '', '');
+    $rejected = $ContentOrder->ClientOrderOrderUpdate($_POST['order-id'], REJECTEDCODE, '', '');
     if ($rejected) {
 
         $updated = $ContentOrder->addOrderUpdate($_POST['order-id'], 'Rejected', $reason, 0);
@@ -83,13 +80,11 @@ if (isset($_POST['reject-order'])) {
 
 
 if (isset($_POST['deliver-order'])) {
-    // print_r($_POST);
-    $orderStatus    = 1; // Deliverd 
     $deliveredLink  = $_POST['deliver-link'];
     
     $deliveredLink  = rawurlencode($deliveredLink);
 
-    $delivered = $ContentOrder->ClientOrderOrderUpdate($_POST['order-id'], $orderStatus, 'deliveredLink', $deliveredLink);
+    $delivered = $ContentOrder->ClientOrderOrderUpdate($_POST['order-id'], DELIVEREDCODE, 'deliveredLink', $deliveredLink);
     if ($delivered) {
         $updated = $ContentOrder->addOrderUpdate($_POST['order-id'], 'Delivered', '', 0);
         if ($updated) {
