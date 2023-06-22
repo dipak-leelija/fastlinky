@@ -361,7 +361,7 @@ if(isset($_SESSION['orderId'])) {
                     <p><i class="fas fa-check-circle fs-5 text-primary"></i> We have received your order. You will
                         receive email shortly in your account.</p>
                     <p><i class="fas fa-exclamation-circle fs-5 text-warning"></i> If you find any difficulty, drop an
-                        email to <?php echo SITE_BILLING_EMAIL ?></p>
+                        email to <?php echo SITE_EMAIL ?></p>
                     <?php
 					// if ($mailSended) {
 					?>
@@ -377,8 +377,8 @@ if(isset($_SESSION['orderId'])) {
             <div class="col-11 col-md-10 mb-3 mb-md-5 p-4 text-center">
                 <p>Your order status will updated to you, Now you can go back.</p>
                 <div class="mt-3">
-                    <a class="btn btn-primary" href="../app.client.php">My Account</a>
-                    <a class="btn btn-primary" href="../my-orders.php">My Orders</a>
+                    <a class="btn btn-primary" href=<?= URL."/app.client.php"; ?>>My Account</a>
+                    <a class="btn btn-primary" href="<?= URL."/guest-post-article-submit.php?order=".base64_encode(urlencode($_SESSION['orderId'])); ?>>See Order</a>
                 </div>
             </div>
         </div>

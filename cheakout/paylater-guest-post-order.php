@@ -230,7 +230,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
                     <div class="Client-details-section">
                         <div class="card customer-d-card">
                             <h5>Bill Details</h5>
-                            <p><label>Invoice No: </label></p>
+                            <p><label>Invoice No: Not Generated</label></p>
                             <p><label>Invoice Date : <?php echo $todayDate; ?> </label></p>
                             <p><label>Due Date : <?php echo $todayDate; ?><label></p>
                             <p><label>Payment Mode : PayLater<label></p>
