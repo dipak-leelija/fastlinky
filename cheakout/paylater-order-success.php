@@ -65,6 +65,7 @@ if (!isset($_SESSION['domainName']) && !isset($_SESSION['sitePrice']) && !isset(
 	$clientUserId       = $_SESSION['userid'];
 	$clientName         = $_SESSION['name'];
 	$clientEmail        = $_SESSION[USR_SESS];
+	$orderId			= $_SESSION['orderId'];
 
 	// Order Data
 	$clientOrderedSite 	= $_SESSION['domainName'];
@@ -105,11 +106,11 @@ if ( isset($_POST['blogId'])) {
 		 * 4 = Oedered
 		 * 
 		 *  */ 
-		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], ORDEREDCODE);
+		$ContentOrder->contentOrderStatusUpdate($orderId, ORDEREDCODE);
 		
-		$ContentOrder->addOrderTransection($_SESSION['orderId'], $trxnId, "Pay Later", $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice,$clientOrderPrice, $paid_amount, $clientEmail);
+		$ContentOrder->addOrderTransection($orderId, $trxnId, "Pay Later", $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice,$clientOrderPrice, $paid_amount, $clientEmail);
 		
-		$ContentOrder->addOrderUpdate($_SESSION['orderId'], 'Order Placed', '', $cusDtl[0][0]);
+		$ContentOrder->addOrderUpdate($orderId, 'Order Placed', '', $cusDtl[0][0]);
 		$BlogMst->incrBlogSoldQty($blogId, 1);
 
 
@@ -122,7 +123,7 @@ if ( isset($_POST['blogId'])) {
 if(isset($_SESSION['orderId'])) {
 
 	//fetch the order details
-	$orderDetail 	= $ContentOrder->showOrderdContentsByCol('order_id', $_SESSION['orderId'], '', '');
+	$orderDetail 	= $ContentOrder->showOrderdContentsByCol('order_id', $orderId, '', '');
 
  
 	//Remove Item From WishList after purchase
@@ -162,7 +163,7 @@ if(isset($_SESSION['orderId'])) {
 	$seller = $customer->getCustomerByemail($sellerEmail);
 	
 	// transection details
-	$txn = $ContentOrder->showTrxnByOrderId($_SESSION['orderId']);
+	$txn = $ContentOrder->showTrxnByOrderId($orderId);
 	
 
 	// ===================================================================================================================
@@ -377,8 +378,8 @@ if(isset($_SESSION['orderId'])) {
             <div class="col-11 col-md-10 mb-3 mb-md-5 p-4 text-center">
                 <p>Your order status will updated to you, Now you can go back.</p>
                 <div class="mt-3">
-                    <a class="btn btn-primary" href=<?= URL."/app.client.php"; ?>>My Account</a>
-                    <a class="btn btn-primary" href="<?= URL."/guest-post-article-submit.php?order=".base64_encode(urlencode($_SESSION['orderId'])); ?>>See Order</a>
+                    <a class="btn btn-primary" href=<?= URL."/app.client"; ?>>My Account</a>
+                    <a class="btn btn-primary" href="<?= URL."/guest-post-article-submit.php?order=".base64_encode(urlencode($orderId)); ?>">See Order</a>
                 </div>
             </div>
         </div>

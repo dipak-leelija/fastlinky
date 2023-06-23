@@ -339,35 +339,9 @@ if (isset($_SESSION['content-data'])) {
 
                                 </form>
 
-                                <div class="box-payment-btn">
-                                    <div class="bx_width_40">
-
-                                        <div class="form-group">
-                                            <button type="submit" onclick="paypalOrder()" class="paypalBtn">
-                                                <span class="paypal_logo"><img src="images/payments/paypal-logo.png"
-                                                        alt=""></span>
-                                                <span class="pay">Pay</span><span class="pal">Pal</span>
-                                            </button>
-                                        </div>
-
-                                        <!-- <div class="form-group">
-                                            <button type="submit" class="cardBtn" id="orderNowCcavenue"
-                                                onclick="ccAvenueOrder()">
-                                                <span class="masterCard"><img
-                                                        src="images/payments/masterCard.png"></span>
-                                                <span class="visaCard"><img src="images/payments/visaCard.png"></span>
-                                                <span> Credit or Debit Card</span>
-                                            </button>
-                                        </div> -->
-
-                                        <div class="form-group">
-                                            <button type="button" class="payLaterBtn" onclick="payLaterOrder()">
-                                                <span class="paylater_logo"><img
-                                                        src="images/payments/pay-later.png"></span>
-                                                <span> PayLater</span>
-                                            </button>
-                                        </div>
-                                    </div>
+                                <div class="d-flex justify-content-between py-3">
+                                    <button class="btn btn-secondary w-25">Cancel</button>
+                                    <button class="btn btn-primary w-25" onclick="gotoSummary()">Continue</button>
                                 </div>
                             </div>
                             <!-- contentPlacement end here -->
@@ -519,18 +493,13 @@ if (isset($_SESSION['content-data'])) {
 
 
     <script>
-    const paypalOrder = () => {
+    const gotoSummary = () => {
 
         let orderForm = document.getElementById("orderForm");
         let orderName = document.getElementById("order-name");
 
         document.getElementById("order-name").value = "onlyPlacement";
-        orderForm.action = "cheakout/paypal-guest-post-order-summary.php";
-        // orderForm.action = "payments/paypal-order-details.php";
-
-        // if (validateForm1() != false) {
-        //     document.getElementById("orderForm").submit();
-        // }
+        orderForm.action = "cheakout/order-summary.php";
 
 
         let contentFile = document.getElementsByName("content-file");
@@ -563,52 +532,41 @@ if (isset($_SESSION['content-data'])) {
 
     }
 
-    // const ccAvenueOrder = () => {
+    // const payLaterOrder = () => {
+    //     let orderForm = document.getElementById("orderForm");
+    //     let orderName = document.getElementById("order-name");
 
-    //     document.getElementById("order-name").value = "ccAvOrder";
-    //     document.getElementById("orderForm").action = "payments/gpwishlistOrder/payment.php";
+    //     orderForm.action = "./cheakout/paylater-guest-post-order.php";
 
-    //     if (validateForm1() != false) {
-    //         document.getElementById("orderForm").submit();
+    //     let contentFile = document.getElementsByName("content-file");
+    //     let clientContent1 = document.getElementsByName("clientContent1");
+
+    //     // execute if content not exists 
+    //     if (contentFile[0].value == '' && clientContent1[0].value == '') {
+    //         alert('Content Not Avilable');
+    //         return false;
     //     }
 
+    //     // execute if content file uploded 
+    //     if (contentFile[0].value != '' && clientContent1[0].value == '') {
+    //         // console.log('Content file exists');
+    //         orderName.value = "onlyPlacementWithFile";
+
+    //     }
+
+    //     // execute if content pasted 
+    //     if (contentFile[0].value == '' && clientContent1[0].value != '') {
+    //         console.log('Content file exists');
+    //         if (WordCount(contentFile[0].value) < 500) {
+    //             alert('Your content Should contain minimum 500words');
+    //         } else {
+    //             orderName.value = "onlyPlacementWithText";
+    //         }
+    //     }
+
+    //     orderForm.submit();
+
     // }
-
-    const payLaterOrder = () => {
-        let orderForm = document.getElementById("orderForm");
-        let orderName = document.getElementById("order-name");
-
-        orderForm.action = "./cheakout/paylater-guest-post-order.php";
-
-        let contentFile = document.getElementsByName("content-file");
-        let clientContent1 = document.getElementsByName("clientContent1");
-
-        // execute if content not exists 
-        if (contentFile[0].value == '' && clientContent1[0].value == '') {
-            alert('Content Not Avilable');
-            return false;
-        }
-
-        // execute if content file uploded 
-        if (contentFile[0].value != '' && clientContent1[0].value == '') {
-            // console.log('Content file exists');
-            orderName.value = "onlyPlacementWithFile";
-
-        }
-
-        // execute if content pasted 
-        if (contentFile[0].value == '' && clientContent1[0].value != '') {
-            console.log('Content file exists');
-            if (WordCount(contentFile[0].value) < 500) {
-                alert('Your content Should contain minimum 500words');
-            } else {
-                orderName.value = "onlyPlacementWithText";
-            }
-        }
-
-        orderForm.submit();
-
-    }
 
 
     const paypalOrder2 = () => {
@@ -642,16 +600,6 @@ if (isset($_SESSION['content-data'])) {
         }
 
     }
-    </script>
-
-    <script>
-    // function hideTextfields() {
-    //     var element = document.getElementById("content-text");
-    //     var orDivider = document.getElementById("or-divider");
-
-    //     element.style.display = "none";
-    //     orDivider.style.display = "none";
-    // }
     </script>
 </body>
 

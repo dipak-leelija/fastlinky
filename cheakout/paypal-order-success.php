@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "includes/constant.inc.php";
+require_once dirname(__DIR__)."/includes/constant.inc.php";
 
 require_once ROOT_DIR."/_config/dbconnect.php";
 
@@ -47,19 +47,19 @@ $typeM		= $utility->returnGetVar('typeM','');
 
 
 if (!isset($_POST)) {
-	header("Location: dashboard.php");
+	header("Location: ".URL."/app.client");
 	exit;
 }
 
 if (!isset($_SESSION['domainName']) && !isset($_SESSION['clientOrderPrice']) && !isset($_SESSION['order-data']) && !isset($_SESSION['orderId']) ) {
-	header("Location: my-orders.php");
+	header("Location: ".URL."/my-orders.php");
 	exit;
 }else {
 	
 	$clientUserId       = $_SESSION['userid'];
 	$clientName         = $cusDtl[0][5].' '.$cusDtl[0][6];
 	$clientEmail        = $_SESSION[USR_SESS];
-
+	$orderId			= $_SESSION['orderId'];
 	// Order Data
 	$clientOrderedSite 	= $_SESSION['domainName'];
 	$clientOrderPrice	= $_SESSION['clientOrderPrice'];
@@ -315,7 +315,7 @@ if(isset($_SESSION['orderId'])) {
 </head>
 <body>
     <!-- Start  Header -->
-    <?php require_once "partials/navbar.php"; ?>
+    <?php require_once ROOT_DIR."/partials/navbar.php"; ?>
     <!-- End  Header -->
 
     <!-- Start  container -->
@@ -346,8 +346,8 @@ if(isset($_SESSION['orderId'])) {
             <div class="col-11 col-md-10 mb-3 mb-md-5 p-4 text-center">
                 <p>Your order status will updated to you, Now you can go back.</p>
                 <div class="mt-3">
-                    <a class="btn btn-primary" href="app.client.php">My Account</a>
-                    <a class="btn btn-primary" href="my-orders.php">My Orders</a>
+                    <a class="btn btn-primary" href="<?= URL."/app.client"; ?>">My Account</a>
+					<a class="btn btn-primary" href="<?= URL."/guest-post-article-submit.php?order=".base64_encode(urlencode($orderId)); ?>">See Order</a>
                 </div>
             </div>
         </div>
