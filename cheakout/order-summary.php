@@ -82,27 +82,113 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
             $blogId             = $_POST['blogId'];
             
             
-            $filename   = basename($_FILES['content-file']['name']);
+            $filename    = basename($_FILES['content-file']['name']);
+            // $fileData    = $_FILES['content-file'];
+            // print_r($filename);
+            // echo '<br>'.$filename;
+            // echo 'Hi';
             
-            $contentInfo = 'Content Type: '.pathinfo($filename, PATHINFO_EXTENSION);
-
-            $uploadedPath = $Utility->fileUploadWithRename($_FILES['content-file'], CONT_DIR);
-            if ($uploadedPath != false) {
-
-                $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
+            if ($filename != '') {
                 
-                $_SESSION['orderId']    = $orderId;
+                $contentInfo    = 'Content Type: '.pathinfo($filename, PATHINFO_EXTENSION);
+                $uploadedPath   = $Utility->fileUploadWithRename($_FILES['content-file'], CONT_DIR);
 
-                $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle, $uploadedPath);
+                if ($uploadedPath != false) {
 
-                $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1,$refAnc2, $refUrl2);
+                    $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
+                    
+                    $_SESSION['orderId']    = $orderId;
+    
+                    $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle, $uploadedPath);
+    
+                    $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1,$refAnc2, $refUrl2);
+
+                }
+
+            }else {
+                if (isset($_SESSION['content-data'])) {
+                    // print_r($_SESSION['content-data']);
+                    
+                    // $fileData           = '';
+                    // $fileData           = $_FILES['content-file'];
+                    $remainingorderId   = $_SESSION['content-data']['remainingorderId'];
+                    
+                    if ($filename != '') {
+                        $contentInfo    = 'Content Type: '.pathinfo($filename, PATHINFO_EXTENSION);
+                        $uploadedPath   = $Utility->fileUploadWithRename($_FILES['content-file'], CONT_DIR);        
+                    }else {
+                        $uploadedPath       = $_SESSION['content-data']['uploadedPath'];
+                    }
+
+                    // $contentTitle       = $_SESSION['content-data']['contentTitle'];
+                    // $clientAnchorText   = $_SESSION['content-data']['clientAnchorText'];
+                    // $clientTargetUrl    = $_SESSION['content-data']['clientTargetUrl'];
+
+                    // $refAnc1            = $_SESSION['content-data']['reference-anchor1'];
+                    // $refUrl1            = $_SESSION['content-data']['reference-url1'];
+                    // $refAnc2            = $_SESSION['content-data']['reference-anchor2'];
+                    // $refUrl2            = $_SESSION['content-data']['reference-url2'];
+                    // $clientRequirement  = $_SESSION['content-data']['clientRequirement'];
+
+                    // image array 
+                    /*
+                     [contentFile] => Array ( [name] => new article.docx [full_path] => new article.docx [type] => application/vnd.openxmlformats-officedocument.wordprocessingml.document [tmp_name] => C:\xampp\tmp\php9BF7.tmp [error] => 0 [size] => 15218 )
+                     */
+
+                    if (isset($_SESSION['content-data']['uploadedPath'])){
+                        if ($_SESSION['content-data']['uploadedPath'] != '') {
+                            $contentInfo    = 'Content Type: '.pathinfo($_SESSION['content-data']['uploadedPath'], PATHINFO_EXTENSION);
+                            $uploadedPath = $_SESSION['content-data']['uploadedPath'];
+
+                            //fetching the ordered blog
+                            $clientOrderedSite  = $ContentOrder->getOrderBlog($remainingorderId);
+                            
+                            //fetching order contents
+                            $remorderContents      = $ContentOrder->getOrderContent($remainingorderId);
+
+                            // fetching order hyperlinks
+                            $remorderHyperLink  = $ContentOrder->getContentHyperLinks($remorderContents['id']);
+
+                            // contents
+                            $contentId      = $remorderContents['id'];
+                            $content_type   = $remorderContents['content_type'];
+                            // $title          = $remorderContents['title'];
+                            // $path           = $remorderContents['path'];
+                            $content        = $remorderContents['content'];
+
+                            // hyperlinks
+                            $hyperLinkId = $remorderHyperLink['id'];
+
+                            //update order details
+                            $ContentOrder->updateGuestPostOrder($remainingorderId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
+
+                            $ContentOrder->updateContent($remainingorderId, $content_type, $clientContentTitle, $uploadedPath, $content);
+                            
+                            $ContentOrder->updateContentHyperlink($hyperLinkId, $contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1, $refAnc2, $refUrl2);
+
+                        }else {
+                            echo 'File Path is blank';
+                            exit;
+                        }
+                    }else {
+                        echo 'No Path Exists!';
+                        exit;
+                    }
+                }else {
+                    echo 'content Not exist!';
+                    exit;
+                }
             }
 
+            echo $uploadedPath;
+            
             $_SESSION['order-data'] = array();
 
             $_SESSION['content-data'] = array(
+                'remainingorderId'  => $contentId,
                 'contentTitle'      => $clientContentTitle,
                 'contentFile'       => $_FILES['content-file'],
+                'uploadedPath'      => $uploadedPath,
                 'clientAnchorText'  => $clientAnchorText,
                 'clientTargetUrl'   => $clientTargetUrl,
                 'reference-anchor1' => $refAnc1,
@@ -111,10 +197,12 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                 'reference-url2'    => $refUrl2,
                 'clientRequirement' => $clientRequirement
             );
+            
+            // exit;
         endif;
 
     }
-    
+    // exit;
     // ==============================================================================================================
     // ==============================================================================================================
 
@@ -138,7 +226,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
              * Do Not Remove This Line
              * 
              **/
-            // unset($_SESSION['ConetntCreationPlacementPrice']);
+            unset($_SESSION['ConetntCreationPlacementPrice']);
 
             $clientContent      = '';
             $content_type       = '';
@@ -249,7 +337,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                 </div>
             </div>
 
-            <form action="paylater-order-success.php" method="post">
+            <form method="post" id="orderForm">
                 <input type="hidden" name="blogId" id="blogId" value="<?php echo $blogId; ?>">
 
                 <div class=" display-table text-center">
@@ -324,8 +412,11 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                                                     <div id="paypal-payment-button">
                                                     </div>
                                                     <div class="col-12 text-end mb-1">
-                                                        <button type="submit"
-                                                            class="btn rounded-pill w-100 fw-bolder pay_button">PayLater</button>
+                                                        <button type="button"
+                                                            class="btn rounded-pill w-100 fw-bolder pay_button"
+                                                            onclick="paylaterOrder()">
+                                                            PayLater
+                                                        </button>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 text-end" id="payBtn">
@@ -353,9 +444,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
 
     <script
         src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_CLIENT_ID; ?>&disable-funding=credit,card&currency=USD">
-    // Live Id = AVfNiFu9M4brh84SlYmeHtHJCtdjW1CUmWl5T0wLsU2JOm6VNB6pCRcxi8zKxBbCO9p0t54pPtF65Tim
     </script>
-    <!-- <script>paypal.Buttons().rander('#paypal-payment-button');</script> -->
     <script>
     let amount = document.getElementById("amount").innerText;
 
@@ -406,18 +495,14 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
             alert(`Error: ${err}`);
         }
     }).render('#paypal-payment-button');
+
+    const paylaterOrder = () => {
+        orderForm = document.getElementById("orderForm");
+        orderForm.action = "paylater-order-success.php";
+        orderForm.submit();
+    }
     </script>
     <script src="<?= URL; ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>
-
-
-<!-- <script>
-window.onload = setInterval(() => {
-    let paypalBtn = document.querySelector('paypal-button-label-container')
-    if (paypalBtn) {
-        console.log('dom manipulation')
-    }
-}, 100)
-</script> -->

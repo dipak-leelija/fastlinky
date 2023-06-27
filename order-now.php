@@ -93,8 +93,25 @@ if (isset($_SESSION['content-data'])) {
     
     if (isset($_SESSION['content-data']['clientContent'])) {
         $SESScontentText      = $_SESSION['content-data']['clientContent'];
-    
     }
+
+    $uploadedFileName = '';
+    $uploadedPath     = '';
+
+    if (isset($_SESSION['content-data']['contentFile']) && isset($_SESSION['content-data']['uploadedPath'])) {
+        $SESScontentText      = $_SESSION['content-data']['contentFile'];
+        // print_r($_SESSION['content-data']['contentFile']);exit;
+        $existingName = $SESScontentText['name'];
+
+        $uploadedPath       = $_SESSION['content-data']['uploadedPath'];
+        $globalFile         = URL.'./uploads/contents/'.basename($_SESSION['content-data']['uploadedPath']);
+
+        $uploadedFileName   = basename($_SESSION['content-data']['uploadedPath']);
+    }
+    // exit;
+    // print_r($_SESSION['content-data']['contentFile']);
+    // fopen($_SESSION['content-data']['uploadedPath'], 'r');
+    // exit;
 }
 ?>
 <!DOCTYPE HTML>
@@ -114,7 +131,7 @@ if (isset($_SESSION['content-data'])) {
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/leelija.css" rel='stylesheet' type='text/css' />
+    <!-- <link href="css/leelija.css" rel='stylesheet' type='text/css' /> -->
     <link href="css/form.css" rel='stylesheet' type='text/css' />
     <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="css/order-now.css" rel='stylesheet' type='text/css' />
@@ -209,20 +226,27 @@ if (isset($_SESSION['content-data'])) {
 
                                     <!-- content upload section start -->
                                     <div class="content-upload">
-                                        <div class="content-upload-wrap">
-                                            <input class="file-upload-input" name="content-file" type='file'
+                                        <div class="content-upload-wrap"
+                                            style="display : <?= $uploadedFileName == '' ? 'block' : 'none' ?>">
+                                            <input class="file-upload-input" name="content-file"
+                                                value="<?= $existingName == '' ? '' : $existingName ?>" type='file'
                                                 onchange="readURL(this);" accept=".doc, .docx" />
                                             <div class="drag-text">
-                                                <p><i class="fa-sharp fa-solid fa-file-arrow-up"></i> <br>
-                                                    Drag and Drop Your Content File</p>
+                                                <p>
+                                                    <i class="fa-sharp fa-solid fa-file-arrow-up"></i>
+                                                    <br>
+                                                    Drag and Drop Your Content File
+                                                </p>
                                             </div>
                                         </div>
-                                        <div class="file-upload-content">
-                                            <img class="file-upload-image" src="#" alt="your image" />
+                                        <div class="file-upload-content"
+                                            style="display : <?= $uploadedFileName == '' ? 'none' : 'block' ?>">
+                                            <img class="file-upload-image" src="<?= $globalFile; ?>"
+                                                alt="Content File" />
                                             <div class="image-title-wrap">
                                                 <button type="button" onclick="removeUpload()"
                                                     class="remove-image d-flex justify-content-between px-3">
-                                                    <span class="image-title">Uploaded Image</span>
+                                                    <span class="image-title"><?= $uploadedFileName; ?></span>
                                                     <span><i class="fa-sharp fa-solid fa-xmark fs-5"></i></span>
                                                 </button>
                                             </div>
@@ -251,7 +275,7 @@ if (isset($_SESSION['content-data'])) {
                                             <div class="form-group">
                                                 <textarea class="form-control" name="clientContent1" id="" rows="9"
                                                     placeholder="Write or paste your content here"
-                                                    onkeyup="checkContent(this)"><?php echo $SESScontentText; ?></textarea>
+                                                    onkeyup="checkContent(this)"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -498,7 +522,7 @@ if (isset($_SESSION['content-data'])) {
         let orderForm = document.getElementById("orderForm");
         let orderName = document.getElementById("order-name");
 
-        document.getElementById("order-name").value = "onlyPlacement";
+        document.getElementById("order-name").value = "onlyPlacementWithFile";
         orderForm.action = "cheakout/order-summary.php";
 
 
@@ -507,21 +531,34 @@ if (isset($_SESSION['content-data'])) {
 
         // execute if content not exists 
         if (contentFile[0].value == '' && clientContent1[0].value == '') {
-            alert('Content Not Avilable');
-            return false;
+            
         }
+
+        let existingFile = document.querySelector('.file-upload-image').src;
+        // alert(existingFile);
+
+        // if (existingFile.includes('data:')) {
+        //     alert('New File');
+        // }else{
+
+        //     alert('Existing File');
+        // }
 
         // execute if content file uploded 
         if (contentFile[0].value != '' && clientContent1[0].value == '') {
+            if (existingFile == '') {
+                alert('Content Not Avilable');
+                return false;
+            }
             // console.log('Content file exists');
             orderName.value = "onlyPlacementWithFile";
 
         }
 
         // execute if content pasted 
+        // console.log(clientContent1[0].value);
         if (contentFile[0].value == '' && clientContent1[0].value != '') {
-            console.log('Content file exists');
-            if (WordCount(contentFile[0].value) < 500) {
+            if (WordCount(clientContent1[0].value) < 500) {
                 alert('Your content Should contain minimum 500words');
             } else {
                 orderName.value = "onlyPlacementWithText";
@@ -531,42 +568,6 @@ if (isset($_SESSION['content-data'])) {
         orderForm.submit();
 
     }
-
-    // const payLaterOrder = () => {
-    //     let orderForm = document.getElementById("orderForm");
-    //     let orderName = document.getElementById("order-name");
-
-    //     orderForm.action = "./cheakout/paylater-guest-post-order.php";
-
-    //     let contentFile = document.getElementsByName("content-file");
-    //     let clientContent1 = document.getElementsByName("clientContent1");
-
-    //     // execute if content not exists 
-    //     if (contentFile[0].value == '' && clientContent1[0].value == '') {
-    //         alert('Content Not Avilable');
-    //         return false;
-    //     }
-
-    //     // execute if content file uploded 
-    //     if (contentFile[0].value != '' && clientContent1[0].value == '') {
-    //         // console.log('Content file exists');
-    //         orderName.value = "onlyPlacementWithFile";
-
-    //     }
-
-    //     // execute if content pasted 
-    //     if (contentFile[0].value == '' && clientContent1[0].value != '') {
-    //         console.log('Content file exists');
-    //         if (WordCount(contentFile[0].value) < 500) {
-    //             alert('Your content Should contain minimum 500words');
-    //         } else {
-    //             orderName.value = "onlyPlacementWithText";
-    //         }
-    //     }
-
-    //     orderForm.submit();
-
-    // }
 
 
     const paypalOrder2 = () => {

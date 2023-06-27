@@ -306,11 +306,11 @@ if(isset($_SESSION['orderId'])) {
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/bootstrap-5.2.0/bootstrap-css-inc.php'?>
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
-
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="<?php echo URL ?>/css/payment-status.css">
+	
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/payment-status.css" rel="stylesheet" type='text/css'>
 
 </head>
 <body>

@@ -39,6 +39,30 @@ class ContentOrder extends DatabaseConnection{
       }//eof
 
 
+      public function updateGuestPostOrder($orderId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, $orderStatus){
+
+            $clientRequirement      = addslashes(trim($clientRequirement));
+            
+            try {
+                  $sql = "UPDATE  `order_details`
+                                    SET 
+                                    `clientEmail`           = '$clientEmail',
+                                    `clientOrderedSite`     = '$clientOrderedSite',
+                                    `clientRequirement`     = '$clientRequirement',
+                                    `order_price`           = '$clientOrderPrice',
+                                    `order_status`          = '$orderStatus',
+                                    `added_on`              = now()
+                                    WHERE
+                                    `order_id`              = '$orderId'";
+
+                  $query = $this->conn->query($sql);
+                  return $query;
+
+            } catch (Exception $e) {
+                  echo $e->getMessage();
+            }
+
+      }//eof
 
 
       function showOrderdContentsByCol($column, $value, $andCol, $andvalue){
@@ -185,20 +209,44 @@ class ContentOrder extends DatabaseConnection{
        */
       function clientOrderById($id){
 
-            $data = false;
-            $sql  = "SELECT * FROM `order_details` WHERE `order_id` = '$id'";
-            $res  = $this->conn->query($sql);
-            $rows = $res->num_rows;
-            if ($rows > 0 ) {
-                  while ($result = $res->fetch_array()) {
-                        $data = $result;
+            try {
+                  $data = false;
+                  $sql  = "SELECT * FROM `order_details` WHERE `order_id` = '$id'";
+                  $res  = $this->conn->query($sql);
+                  $rows = $res->num_rows;
+                  if ($rows > 0 ) {
+                        while ($result = $res->fetch_assoc()) {
+                              $data = $result;
+                        }
                   }
+                  return $data;
+            } catch (Exception $e) {
+                  echo $e->getMessage();
             }
-            return $data;
 
       }//eof
 
+            /**
+       * @param $id = table `id` of tha table
+       */
+      function getOrderBlog($id){
 
+            try {
+                  $data = false;
+                  $sql  = "SELECT clientOrderedSite FROM `order_details` WHERE `order_id` = '$id'";
+                  $res  = $this->conn->query($sql);
+                  $rows = $res->num_rows;
+                  if ($rows > 0 ) {
+                        while ($result = $res->fetch_object()) {
+                              $data = $result->clientOrderedSite;
+                        }
+                  }
+                  return $data;
+            } catch (Exception $e) {
+                  echo $e->getMessage();
+            }
+
+      }//eof
 
 
       function clientOrders($userId){
@@ -320,21 +368,63 @@ class ContentOrder extends DatabaseConnection{
             $path        = addslashes(trim($path));
             $content     = addslashes(trim($content));
 
-            if ($content_type == 'doc') {
-                  $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `path`, `added_on`)
-                                                VALUES
-                                                ('$orderId', '$content_type', '$title', '$path', now())";
-            }else {
-                  $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `content`, `added_on`)
-                                                VALUES
-                                                ('$orderId', '$content_type', '$title', '$content', now())";
+            try {
+                  if ($content_type == 'doc') {
+                        $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `path`, `added_on`)
+                                                      VALUES
+                                                      ('$orderId', '$content_type', '$title', '$path', now())";
+                  }else {
+                        $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `content`, `added_on`)
+                                                      VALUES
+                                                      ('$orderId', '$content_type', '$title', '$content', now())";
+                  }
+
+                  if($this->conn->query($sql) != 1){
+                        return false;
+                  }else {
+                        $insert_id= $this->conn->insert_id;
+                        return $insert_id;
+                  }
+            } catch (Exception $e) {
+                  echo $e->getMessage();
             }
 
-            if($this->conn->query($sql) != 1){
-                  return false;
-            }else {
-                  $insert_id= $this->conn->insert_id;
-                  return $insert_id;
+      }//eof
+
+
+      function updateContent($orderId, $content_type, $title, $path="", $content=""){
+
+            $title       = addslashes(trim($title));
+            $path        = addslashes(trim($path));
+            $content     = addslashes(trim($content));
+
+            try {
+                  if ($content_type == 'doc') {
+                        $sql = "UPDATE order_contents SET
+                                                      `content_type` = '$content_type',
+                                                      `title` = '$title',
+                                                      `path` = '$path',
+                                                      `added_on` = now()
+                                                      WHERE
+                                                      `order_id` = '$orderId'";
+                  }else {
+                        $sql = "UPDATE order_contents SET
+                                                      `content_type` = '$content_type',
+                                                      `title` = '$title',
+                                                      `path` = '$path',
+                                                      `added_on` = now()
+                                                      WHERE
+                                                      `order_id` = '$orderId'";
+                  }
+
+                  if($this->conn->query($sql) != 1){
+                        return false;
+                  }else {
+                        // $insert_id= $this->conn->insert_id;
+                        return true;
+                  }
+            } catch (Exception $e) {
+                  echo $e->getMessage();
             }
 
       }//eof
@@ -411,29 +501,66 @@ class ContentOrder extends DatabaseConnection{
 
       function addContentHyperlink($contentId, $client_anchor, $client_url, $reference_anchor1, $reference_url1, $reference_anchor2, $reference_url2){
 
-            $client_anchor     = addslashes(trim($client_anchor));
-            $reference_anchor1        = addslashes(trim($reference_anchor1));
-            $reference_anchor2        = addslashes(trim($reference_anchor2));
+            try {
+                  $client_anchor     = addslashes(trim($client_anchor));
+                  $reference_anchor1        = addslashes(trim($reference_anchor1));
+                  $reference_anchor2        = addslashes(trim($reference_anchor2));
 
-            $sql= "INSERT INTO `ordered_content_hyperlinks`  
-                              (`content_id`,
-                              `client_anchor`,
-                              `client_url`,
-                              `reference_anchor1`,
-                              `reference_url1`,
-                              `reference_anchor2`,
-                              `reference_url2`,
-                              `added_on`)
-                              VALUES
-                              ('$contentId', '$client_anchor', '$client_url', '$reference_anchor1', '$reference_url1','$reference_anchor2', '$reference_url2', now())";
+                  $sql= "INSERT INTO `ordered_content_hyperlinks`  
+                                    (`content_id`,
+                                    `client_anchor`,
+                                    `client_url`,
+                                    `reference_anchor1`,
+                                    `reference_url1`,
+                                    `reference_anchor2`,
+                                    `reference_url2`,
+                                    `added_on`)
+                                    VALUES
+                                    ('$contentId', '$client_anchor', '$client_url', '$reference_anchor1', '$reference_url1','$reference_anchor2', '$reference_url2', now())";
 
-            // echo $sql.$this->conn->error;
-            $query = $this->conn->query($sql);
+                  // echo $sql.$this->conn->error;
+                  $query = $this->conn->query($sql);
 
-            return $query;
-
+                  return $query;
+            
+            } catch (Exception $e) {
+                  echo $e->getMessage();
+            }
+            
       }//eof
 
+
+
+      function updateContentHyperlink($id, $contentId, $client_anchor, $client_url, $reference_anchor1, $reference_url1, $reference_anchor2, $reference_url2){
+
+            try {
+                  $client_anchor          = addslashes(trim($client_anchor));
+                  $reference_anchor1      = addslashes(trim($reference_anchor1));
+                  $reference_anchor2      = addslashes(trim($reference_anchor2));
+
+                  $sql= "UPDATE `ordered_content_hyperlinks`
+                                    SET
+                                    `client_anchor`         = '$client_anchor',
+                                    `client_url`            = '$client_url',
+                                    `reference_anchor1`     = '$reference_anchor1',
+                                    `reference_url1`        = '$reference_url1',
+                                    `reference_anchor2`     = '$reference_anchor2',
+                                    `reference_url2`        = '$reference_url2',
+                                    `added_on`              = now()
+                                    WHERE
+                                    `content_id`      = '$contentId'
+                                    AND
+                                    `id`              = '$id'";
+
+                  // echo $sql.$this->conn->error;
+                  $query = $this->conn->query($sql);
+                  return $query;
+            
+            } catch (Exception $e) {
+                  echo $e->getMessage();
+            }
+            
+      }//eof
 
 
       function updateHyperLinks($contentId, $client_anchor, $client_url, $reference_anchor1, $reference_url1, $reference_anchor2, $reference_url2){
@@ -454,16 +581,21 @@ class ContentOrder extends DatabaseConnection{
       }
 
       function getContentHyperLinks($content_id){
-            
-            $res    = false;
-            $select = "SELECT * FROM ordered_content_hyperlinks WHERE content_id = $content_id";
-            $query  = $this->conn->query($select);
-            if ($query->num_rows > 0) {
-                  while ($data = $query->fetch_assoc()) {
-                        $res = $data;
+
+            try {
+                  $res    = false;
+                  $select = "SELECT * FROM ordered_content_hyperlinks WHERE content_id = $content_id";
+                  $query  = $this->conn->query($select);
+                  if ($query->num_rows > 0) {
+                        while ($data = $query->fetch_assoc()) {
+                              $res = $data;
+                        }
                   }
+                  return $res;
+                  
+            } catch (Exception $e) {
+                  echo $e->getMessage();
             }
-            return $res;
       }
       
 
