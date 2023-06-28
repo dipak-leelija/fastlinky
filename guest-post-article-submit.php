@@ -35,15 +35,18 @@ if(isset($_GET['order'])){
     header("Location: my-orders.php");
 }
 
-$thisPage =  $Utility->currentUrl();
-$updatedBy =  $_SESSION[USR_SESS];
+$thisPage   = $Utility->currentUrl();
+$updatedBy  = $_SESSION[USR_SESS];
+
+//session array
+$sess_arr = array('contetPrice', ORDERDOMAIN, ORDERSITECOST, ORDERID, SUMMARYDOMAIN, SUMMARYSITECOST, 'content-data', 'ConetntCreationPlacementPrice');
+$Utility->delSessArr($sess_arr);
 
 ?>
 
 
 <!DOCTYPE HTML>
-<html lang="zxx">
-
+<html lang="en">
 <head>
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
@@ -552,7 +555,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                             }
 
                                             if($orderStatusCode == INCOMPLETECODE){
-                                                echo '<a class="btn btn-primary" >Complete The Order now</a>';
+                                                echo '<a class="btn btn-primary" href="cheakout/order-summary.php?order='.$_GET['order'].'">Complete The Order now</a>';
                                             }
 
                                             if($orderStatusCode == REJECTEDCODE){

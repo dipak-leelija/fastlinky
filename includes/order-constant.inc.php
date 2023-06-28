@@ -60,8 +60,17 @@ foreach ($allStatus as $value) {
 }
 
 define("CONTENTPRICE",                      15);
-
 define("PAYLATER",                          'PayLater');
+
+
+define("SUMMARYDOMAIN",                     'SUMMARYDOMAIN');
+define("ORDERDOMAIN",                       'ORDERDOMAIN');
+
+define("SUMMARYSITECOST",                   'SUMMARYSITECOST');
+define("ORDERSITECOST",                     'ORDERSITECOST');
+define("ORDERID",                           'ORDERID');
+
+
 
 
 ?>

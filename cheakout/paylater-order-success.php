@@ -57,7 +57,7 @@ if (!isset($_POST)) {
 }
 
 
-if (!isset($_SESSION['domainName']) && !isset($_SESSION['sitePrice']) && !isset($_SESSION['order-data']) && !isset($_SESSION['orderId'])) {
+if (!isset($_SESSION[ORDERDOMAIN]) && !isset($_SESSION[ORDERSITECOST]) && !isset($_SESSION[ORDERID])) {
 	header("Location: ".URL . "/my-orders.php");
 	exit;
 }else {
@@ -65,21 +65,20 @@ if (!isset($_SESSION['domainName']) && !isset($_SESSION['sitePrice']) && !isset(
 	$clientUserId       = $_SESSION['userid'];
 	$clientName         = $_SESSION['name'];
 	$clientEmail        = $_SESSION[USR_SESS];
-	$orderId			= $_SESSION['orderId'];
+	$orderId			= $_SESSION[ORDERID];
 
 	// Order Data
-	$clientOrderedSite 	= $_SESSION['domainName'];
-	$clientOrderPrice	= $_SESSION['clientOrderPrice'];
-	$sitePrice 			= $_SESSION['sitePrice'];
+	$clientOrderedSite 	= $_SESSION[ORDERDOMAIN];
+	$clientOrderPrice	= $_SESSION[ORDERSITECOST];
 	$contetPrice 		= $_SESSION['contetPrice'];
 	$contentData 		= $_SESSION['content-data'];
 
 	
 		$domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
-    	$itemAmount = $domain[9]+$domain[16]; // cost + ext_cost
+    	$itemAmount = $domain['cost']+$domain['ext_cost']; // cost + ext_cost
 		
-		$sess_arr = array('domainName','sitePrice','order-data');
-		$utility->delSessArr($sess_arr);
+		// $sess_arr = array(ORDERDOMAIN,'sitePrice');
+		// $utility->delSessArr($sess_arr);
 
 }
 
@@ -120,7 +119,7 @@ if ( isset($_POST['blogId'])) {
 
 
 // if(isset($_SESSION['ordId'])) {
-if(isset($_SESSION['orderId'])) {
+if(isset($_SESSION[ORDERID])) {
 
 	//fetch the order details
 	$orderDetail 	= $ContentOrder->showOrderdContentsByCol('order_id', $orderId, '', '');
@@ -158,7 +157,7 @@ if(isset($_SESSION['orderId'])) {
 
 
 	$domainDetails = $BlogMst->showBlogbyDomain($orderDetail[0]['clientOrderedSite']);
-	$sellerEmail = $domainDetails[19];
+	$sellerEmail = $domainDetails['created_by'];
 	
 	$seller = $customer->getCustomerByemail($sellerEmail);
 	
@@ -170,7 +169,7 @@ if(isset($_SESSION['orderId'])) {
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
 	// ===================================================================================================================
 
-
+	/*
 	$addedOn 	= date('l, jS \of F Y, h:i a', strtotime($orderDetail[0]['added_on']));
 
 
@@ -272,7 +271,7 @@ if(isset($_SESSION['orderId'])) {
 						$addedOn
 					);
 	
-	
+	*/
 
 
 	// $fromMail_admin 	=	SITE_ADMIN_EMAIL;
@@ -313,10 +312,8 @@ if(isset($_SESSION['orderId'])) {
 
 	// ================================== MAIL SENDED TO SELLER ================================== 
 	
-
-
 	//session array
-	$sess_arr = array('domainName', 'sitePrice', 'order-data', 'orderId', 'trxn_id', 'pay_success');
+	$sess_arr = array('reorder-page', 'contetPrice', ORDERDOMAIN, ORDERSITECOST, ORDERID, 'sitePrice', 'trxn_id', 'pay_success');
 	$utility->delSessArr($sess_arr);
 	unset($_SESSION['content-data']);
 	unset($_POST);

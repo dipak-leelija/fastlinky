@@ -38,12 +38,11 @@ $clientUserId       = $_SESSION['userid'];
 $clientName         = $_SESSION['name'];
 $clientEmail        = $_SESSION[USR_SESS];
 
-if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_SESSION['ConetntCreationPlacementPrice'])) {
+if (isset($_SESSION[SUMMARYDOMAIN]) && isset($_SESSION[SUMMARYSITECOST]) && isset($_SESSION['ConetntCreationPlacementPrice'])) {
 
-    
-    $clientOrderedSite        = $_SESSION['domainName'];
-    $clientOrderedSiteNos     = count( (array) $_SESSION['domainName']);
-    $sitePrice                = $_SESSION['sitePrice'];
+    $clientOrderedSite        = $_SESSION[SUMMARYDOMAIN];
+    $clientOrderedSiteNos     = count( (array) $_SESSION[SUMMARYDOMAIN]);
+    $sitePrice                = $_SESSION[SUMMARYSITECOST];
     
     
     if (isset($_POST['order-name'])) {
@@ -56,16 +55,10 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
 
         if($_POST['order-name'] == "onlyPlacementWithFile" ):
 
-            $clientOrderPrice               = $_SESSION['sitePrice'];
-            $_SESSION['clientOrderPrice']   = $clientOrderPrice;
+            $clientOrderPrice               = $sitePrice;
+            // $_SESSION['clientOrderPrice']   = $clientOrderPrice;
 	        $_SESSION['contetPrice'] 		= 00;
 
-            /** 
-             * 
-             * Do Not Remove This Line
-             * 
-             **/
-            // unset($_SESSION['ConetntCreationPlacementPrice']);
 
             $content_type       = 'doc';
             $clientContentTitle = $_POST['clientContentTitle1'];
@@ -83,11 +76,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
             
             
             $filename    = basename($_FILES['content-file']['name']);
-            // $fileData    = $_FILES['content-file'];
-            // print_r($filename);
-            // echo '<br>'.$filename;
-            // echo 'Hi';
-            
+
             if ($filename != '') {
                 
                 $contentInfo    = 'Content Type: '.pathinfo($filename, PATHINFO_EXTENSION);
@@ -97,8 +86,6 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
 
                     $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
                     
-                    $_SESSION['orderId']    = $orderId;
-    
                     $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle, $uploadedPath);
     
                     $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1,$refAnc2, $refUrl2);
@@ -107,11 +94,8 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
 
             }else {
                 if (isset($_SESSION['content-data'])) {
-                    // print_r($_SESSION['content-data']);
-                    
-                    // $fileData           = '';
-                    // $fileData           = $_FILES['content-file'];
-                    $remainingorderId   = $_SESSION['content-data']['remainingorderId'];
+
+                    $orderId            = $_SESSION['content-data']['remainingorderId'];
                     
                     if ($filename != '') {
                         $contentInfo    = 'Content Type: '.pathinfo($filename, PATHINFO_EXTENSION);
@@ -120,49 +104,29 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                         $uploadedPath       = $_SESSION['content-data']['uploadedPath'];
                     }
 
-                    // $contentTitle       = $_SESSION['content-data']['contentTitle'];
-                    // $clientAnchorText   = $_SESSION['content-data']['clientAnchorText'];
-                    // $clientTargetUrl    = $_SESSION['content-data']['clientTargetUrl'];
-
-                    // $refAnc1            = $_SESSION['content-data']['reference-anchor1'];
-                    // $refUrl1            = $_SESSION['content-data']['reference-url1'];
-                    // $refAnc2            = $_SESSION['content-data']['reference-anchor2'];
-                    // $refUrl2            = $_SESSION['content-data']['reference-url2'];
-                    // $clientRequirement  = $_SESSION['content-data']['clientRequirement'];
-
-                    // image array 
-                    /*
-                     [contentFile] => Array ( [name] => new article.docx [full_path] => new article.docx [type] => application/vnd.openxmlformats-officedocument.wordprocessingml.document [tmp_name] => C:\xampp\tmp\php9BF7.tmp [error] => 0 [size] => 15218 )
-                     */
-
                     if (isset($_SESSION['content-data']['uploadedPath'])){
                         if ($_SESSION['content-data']['uploadedPath'] != '') {
                             $contentInfo    = 'Content Type: '.pathinfo($_SESSION['content-data']['uploadedPath'], PATHINFO_EXTENSION);
                             $uploadedPath = $_SESSION['content-data']['uploadedPath'];
 
                             //fetching the ordered blog
-                            $clientOrderedSite  = $ContentOrder->getOrderBlog($remainingorderId);
-                            
+                            $clientOrderedSite      = $ContentOrder->getOrderBlog($orderId);
+                            $clientOrderedSiteNos   = 1;
+
                             //fetching order contents
-                            $remorderContents      = $ContentOrder->getOrderContent($remainingorderId);
+                            $remorderContents       = $ContentOrder->getOrderContent($orderId);
+                            $contentId              = $remorderContents['id'];
+                            $content_type           = $remorderContents['content_type'];
+                            $content                = $remorderContents['content'];
 
                             // fetching order hyperlinks
                             $remorderHyperLink  = $ContentOrder->getContentHyperLinks($remorderContents['id']);
-
-                            // contents
-                            $contentId      = $remorderContents['id'];
-                            $content_type   = $remorderContents['content_type'];
-                            // $title          = $remorderContents['title'];
-                            // $path           = $remorderContents['path'];
-                            $content        = $remorderContents['content'];
-
-                            // hyperlinks
-                            $hyperLinkId = $remorderHyperLink['id'];
+                            $hyperLinkId        = $remorderHyperLink['id'];
 
                             //update order details
-                            $ContentOrder->updateGuestPostOrder($remainingorderId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
+                            $ContentOrder->updateGuestPostOrder($orderId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
 
-                            $ContentOrder->updateContent($remainingorderId, $content_type, $clientContentTitle, $uploadedPath, $content);
+                            $ContentOrder->updateContent($orderId, $content_type, $clientContentTitle, $uploadedPath, $content);
                             
                             $ContentOrder->updateContentHyperlink($hyperLinkId, $contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1, $refAnc2, $refUrl2);
 
@@ -179,30 +143,10 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                     exit;
                 }
             }
-
-            echo $uploadedPath;
-            
-            $_SESSION['order-data'] = array();
-
-            $_SESSION['content-data'] = array(
-                'remainingorderId'  => $contentId,
-                'contentTitle'      => $clientContentTitle,
-                'contentFile'       => $_FILES['content-file'],
-                'uploadedPath'      => $uploadedPath,
-                'clientAnchorText'  => $clientAnchorText,
-                'clientTargetUrl'   => $clientTargetUrl,
-                'reference-anchor1' => $refAnc1,
-                'reference-url1'    => $refUrl1,
-                'reference-anchor2' => $refAnc2,
-                'reference-url2'    => $refUrl2,
-                'clientRequirement' => $clientRequirement
-            );
-            
-            // exit;
         endif;
 
     }
-    // exit;
+    
     // ==============================================================================================================
     // ==============================================================================================================
 
@@ -217,16 +161,11 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
 
         if($_POST['order-name2'] == "placementWithArticle" ):
         
+            /*
             $clientOrderPrice               = $_SESSION['ConetntCreationPlacementPrice'];
             $_SESSION['clientOrderPrice']   = $clientOrderPrice;
 	        $_SESSION['contetPrice'] 		= CONTENTPRICE;
 
-            /** 
-             * 
-             * Do Not Remove This Line
-             * 
-             **/
-            unset($_SESSION['ConetntCreationPlacementPrice']);
 
             $clientContent      = '';
             $content_type       = '';
@@ -251,13 +190,9 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
 
             $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
                 
-                $_SESSION['orderId']    = $orderId;
-
                 $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle);
 
                 $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1, $refAnc2, $refUrl2);
-
-            $_SESSION['order-data']   = array();
 
             $_SESSION['content-data'] = array(
                 'contentTitle'      => $clientContentTitle,
@@ -269,17 +204,85 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                 'reference-url2'    => $refUrl2,
                 'clientRequirement' => $clientRequirement
                 );
+            */
 
         endif;
     }
 
-    $domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
+}elseif(isset($_GET['order'])) {
+    $orderId			  		= urldecode(base64_decode($_GET['order']));
+    $_FILES['content-file']     = '';
 
-}else {
+
+    //fetching the ordered blog
+    $remainingOrder       = $ContentOrder->clientOrderById($orderId);
+    $clientOrderedSiteNos   = 1;
+    $clientOrderedSite      = $remainingOrder['clientOrderedSite'];
+    $clientOrderPrice       = $remainingOrder['order_price'];
+    $clientRequirement      = $remainingOrder['clientRequirement'];
+
+
+    //fetching order contents
+    $remorderContents      = $ContentOrder->getOrderContent($orderId);
+    $content_type           = $remorderContents['content_type'];
+    $content                = $remorderContents['content'];
+    $contentInfo            = 'Content Type: '.$remorderContents['content_type'];
+    $clientContentTitle     = $remorderContents['title'];
+    $uploadedPath           = $remorderContents['path'];
+
+
+    // fetching order hyperlinks
+    $remorderHyperLink     = $ContentOrder->getContentHyperLinks($remorderContents['id']);
+    $clientAnchorText       = $remorderHyperLink['client_anchor'];
+    $clientTargetUrl        = $remorderHyperLink['client_url'];
+    $refAnc1                = $remorderHyperLink['reference_anchor1'];
+    $refUrl1                = $remorderHyperLink['reference_url1'];
+    $refAnc2                = $remorderHyperLink['reference_anchor2'];
+    $refUrl2                = $remorderHyperLink['reference_url2'];
+
+
+    $domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
+    $currentSitePrice = $totalCost = $domain['cost'] + $domain['ext_cost'];
+    $sitePrice        = $currentSitePrice;
+
+    $Utility->setSession('contetPrice', 00);
+
+}else{
     $redirectTo = "../order-now.php?id=".$_POST['blogId'];
     header('Location: '.$redirectTo);
     exit;
 }
+// exit;
+
+
+/** 
+ * Destrying The Unnecessary sessions
+ **/
+unset($_SESSION['ConetntCreationPlacementPrice']);
+unset($_SESSION['clientOrderPrice']);
+unset($_SESSION[SUMMARYDOMAIN]);
+unset($_SESSION[SUMMARYSITECOST]);
+
+/** 
+ * Setingup The Necessary sessions for complete the order
+ **/
+$Utility->setSession(ORDERDOMAIN, $clientOrderedSite);
+$Utility->setSession(ORDERSITECOST, $clientOrderPrice);
+$Utility->setSession(ORDERID, $orderId);
+
+$_SESSION['content-data'] = array(
+    'remainingorderId'  => $orderId,
+    'contentTitle'      => $clientContentTitle,
+    'contentFile'       => $_FILES['content-file'],
+    'uploadedPath'      => $uploadedPath,
+    'clientAnchorText'  => $clientAnchorText,
+    'clientTargetUrl'   => $clientTargetUrl,
+    'reference-anchor1' => $refAnc1,
+    'reference-url1'    => $refUrl1,
+    'reference-anchor2' => $refAnc2,
+    'reference-url2'    => $refUrl2,
+    'clientRequirement' => $clientRequirement
+);
 
 ?>
 

@@ -51,7 +51,7 @@ if (!isset($_POST)) {
 	exit;
 }
 
-if (!isset($_SESSION['domainName']) && !isset($_SESSION['clientOrderPrice']) && !isset($_SESSION['order-data']) && !isset($_SESSION['orderId']) ) {
+if (!isset($_SESSION[ORDERDOMAIN]) && !isset($_SESSION[ORDERSITECOST]) && !isset($_SESSION[ORDERID]) ) {
 	header("Location: ".URL."/my-orders.php");
 	exit;
 }else {
@@ -59,21 +59,17 @@ if (!isset($_SESSION['domainName']) && !isset($_SESSION['clientOrderPrice']) && 
 	$clientUserId       = $_SESSION['userid'];
 	$clientName         = $cusDtl[0][5].' '.$cusDtl[0][6];
 	$clientEmail        = $_SESSION[USR_SESS];
-	$orderId			= $_SESSION['orderId'];
+	$orderId			= $_SESSION[ORDERID];
 	// Order Data
-	$clientOrderedSite 	= $_SESSION['domainName'];
-	$clientOrderPrice	= $_SESSION['clientOrderPrice'];
+	$clientOrderedSite 	= $_SESSION[ORDERDOMAIN];
+	$clientOrderPrice	= $_SESSION[ORDERSITECOST];
 	$contetPrice		= $_SESSION['contetPrice'];
 	$contentData 		= $_SESSION['content-data'];
 	
 	$domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
-    $itemAmount = $domain[9]+$domain[16]; // cost + ext_cost
+    $itemAmount = $domain['cost']+$domain['ext_cost']; // cost + ext_cost
 	
 	$dueAmount = 00;
-
-	$sess_arr = array('domainName','sitePrice','order-data');
-	$utility->delSessArr($sess_arr);
-
 }
 
 
@@ -113,19 +109,19 @@ if (isset($_POST['data']) && isset($_POST['blogId'])) {
 		 * 4 = Oedered
 		 * 
 		 *  */ 
-		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], ORDEREDCODE);
+		$ContentOrder->contentOrderStatusUpdate($orderId, ORDEREDCODE);
 
-		$ContentOrder->addOrderTransection($_SESSION['orderId'], $trxnId, "Paypal", $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice, $dueAmount, $paid_amount, $clientEmail);
+		$ContentOrder->addOrderTransection($orderId, $trxnId, "Paypal", $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice, $dueAmount, $paid_amount, $clientEmail);
 
 
 
-		$ContentOrder->addOrderUpdate($_SESSION['orderId'], 'Order Placed', '', $cusDtl[0][0]);
+		$ContentOrder->addOrderUpdate($orderId, 'Order Placed', '', $cusDtl[0][0]);
 		$BlogMst->incrBlogSoldQty($blogId, 1);
 
 
 	}else {
 
-		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], PENDINGCODE);
+		$ContentOrder->contentOrderStatusUpdate($orderId, PENDINGCODE);
 		
 	}
 	
@@ -134,10 +130,10 @@ if (isset($_POST['data']) && isset($_POST['blogId'])) {
 
 
 // if(isset($_SESSION['ordId'])) {
-if(isset($_SESSION['orderId'])) {
+if(isset($_SESSION[ORDERID])) {
 
 	//fetch the order details
-	$orderDetail 	= $ContentOrder->showOrderdContentsByCol('order_id', $_SESSION['orderId'], '', '');
+	$orderDetail 	= $ContentOrder->showOrderdContentsByCol('order_id', $orderId, '', '');
 
  
 	//Remove Item From WishList after purchase
@@ -154,12 +150,12 @@ if(isset($_SESSION['orderId'])) {
 
 
 	$domainDetails = $BlogMst->showBlogbyDomain($orderDetail[0]['clientOrderedSite']);
-	$sellerEmail = $domainDetails[19];
+	$sellerEmail = $domainDetails['created_by'];
 
 	$seller = $customer->getCustomerByemail($sellerEmail);
 
 	// transection details
-	$txn = $ContentOrder->showTrxnByOrderId($_SESSION['orderId']);
+	$txn = $ContentOrder->showTrxnByOrderId($orderId);
 
 	// ===================================================================================================================
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
@@ -287,8 +283,9 @@ if(isset($_SESSION['orderId'])) {
 	
 
 	//session array
-	$sess_arr = array('content-data', 'domainName', 'clientOrderPrice', 'order-data', 'orderId', 'trxn_id', 'pay_success');
+	$sess_arr = array('reorder-page', 'contetPrice', ORDERDOMAIN, ORDERSITECOST, ORDERID, 'sitePrice', 'trxn_id', 'pay_success');
 	$utility->delSessArr($sess_arr);
+	unset($_SESSION['content-data']);
 	unset($_POST);
 }
 		

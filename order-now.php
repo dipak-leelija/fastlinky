@@ -57,8 +57,8 @@ $wishListsingleData = $blogMst->showBlog($id);
 $contentPlacementPrice = $wishListsingleData[9]+$wishListsingleData[16];
 $contetCreationPlacementPrice = CONTENTPRICE +  $contentPlacementPrice;
 
-$_SESSION['domainName']     = $wishListsingleData[0];
-$_SESSION['sitePrice']      = $contentPlacementPrice;
+$_SESSION[SUMMARYDOMAIN]     = $wishListsingleData[0];
+$_SESSION[SUMMARYSITECOST]      = $contentPlacementPrice;
 $_SESSION['ConetntCreationPlacementPrice']  = $contetCreationPlacementPrice;
 
 
@@ -108,10 +108,6 @@ if (isset($_SESSION['content-data'])) {
 
         $uploadedFileName   = basename($_SESSION['content-data']['uploadedPath']);
     }
-    // exit;
-    // print_r($_SESSION['content-data']['contentFile']);
-    // fopen($_SESSION['content-data']['uploadedPath'], 'r');
-    // exit;
 }
 ?>
 <!DOCTYPE HTML>

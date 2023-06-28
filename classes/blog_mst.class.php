@@ -335,35 +335,38 @@ class BlogMst extends DatabaseConnection{
 		$query	= $this->conn->query($select);
 		//echo $select.mysql_error();exit;
 		//holds the data
-		while($result = $query->fetch_object()){
-			$data  = array(
-					$result->domain,			//0
-					$result->da,				//1
-					$result->pa,				//2
-					$result->cf,				//3
-					$result->tf,				//4
-					$result->gip,				//5
-					$result->mozr,				//6
-					$result->follow,			//7
-					$result->internal,			//8
-					$result->cost,				//9
-					$result->review_type,		//10
-					$result->issue,				//11
-					$result->issue_comment,		//12
-					$result->int_email,			//13
-					$result->ext_email,			//14
-					$result->ext_contact_name,	//15
-					$result->ext_cost,			//16
-					$result->ex_url,			//17
-					$result->domain_comments,	//18
-					$result->created_by,		//19
-					$result->created_on,		//20
-					$result->updated_by,		//21
-					$result->updated_on,		//22
-					$result->niche,				//23
-					$result->approved			//24
-					);
+		while($result = $query->fetch_assoc()){
+			$data = $result;
 		}
+		// while($result = $query->fetch_object()){
+		// 	$data  = array(
+		// 			$result->domain,			//0
+		// 			$result->da,				//1
+		// 			$result->pa,				//2
+		// 			$result->cf,				//3
+		// 			$result->tf,				//4
+		// 			$result->gip,				//5
+		// 			$result->mozr,				//6
+		// 			$result->follow,			//7
+		// 			$result->internal,			//8
+		// 			$result->cost,				//9
+		// 			$result->review_type,		//10
+		// 			$result->issue,				//11
+		// 			$result->issue_comment,		//12
+		// 			$result->int_email,			//13
+		// 			$result->ext_email,			//14
+		// 			$result->ext_contact_name,	//15
+		// 			$result->ext_cost,			//16
+		// 			$result->ex_url,			//17
+		// 			$result->domain_comments,	//18
+		// 			$result->created_by,		//19
+		// 			$result->created_on,		//20
+		// 			$result->updated_by,		//21
+		// 			$result->updated_on,		//22
+		// 			$result->niche,				//23
+		// 			$result->approved			//24
+		// 			);
+		// }
 		//print_r($data);
 		//return the data
 		return $data;
