@@ -125,6 +125,13 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
         $itemAmount     = $ordTxn['item_amount'];
         $paidAmount     = $ordTxn['paid_amount'];
         $paymentTime    = $ordTxn['updated_on'];
+    }else{
+        $transectionId  = '';
+        $paymentMode    = '';
+        $paymentStatus  = '';
+        $itemAmount     = '';
+        $paidAmount     = '';
+        $paymentTime    = '';
     }
     // $ordTxn['transection_id'];
 
@@ -141,7 +148,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     $item       = $BlogMst->showBlogbyDomain($showOrder['clientOrderedSite']);
 
     //blog creator / seller
-    $seller     = $customer->getCustomerByemail($item[19]);
+    $seller     = $customer->getCustomerByemail($item['created_by']);
 
     //customer / buyer
     $buyer      = $customer->getCustomerData($showOrder['clientUserId']);

@@ -844,7 +844,7 @@ class Customer extends Utility{
  
 
 	function getCustomerByemail($email){	
-		
+		try {
 		//create the statement
 		$sql = "SELECT * FROM customer C, customer_info CI, customer_address CD
 						WHERE C.customer_id = CI.customer_id
@@ -879,6 +879,12 @@ class Customer extends Utility{
 				}
 				return $data2;
 			}
+		}
+		
+		} catch (Exception $e) {
+			echo '<b>Error on:</b> '.__FILE__.', <b>On Line:</b>'.__LINE__.'<br>';
+			echo '<b>Error:</b> '.$e->getMessage();
+			exit;
 		}
 
 	}//	eof

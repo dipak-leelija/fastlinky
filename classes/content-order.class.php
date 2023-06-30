@@ -189,7 +189,7 @@ class ContentOrder extends DatabaseConnection{
       function showAllOrderdContents(){
 
             $data = array();
-            $sql  = "SELECT * FROM `order_details`";
+            $sql  = "SELECT * FROM `order_details` ORDER BY order_id DESC";
             $res  = $this->conn->query($sql);
             $rows = $res->num_rows;
             if ($rows > 0 ) {
