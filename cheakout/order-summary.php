@@ -159,17 +159,18 @@ if (isset($_SESSION[SUMMARYDOMAIN]) && isset($_SESSION[SUMMARYSITECOST]) && isse
         |                                                                               |
         |------------------------------------------------------------------------------*/ 
 
-        if($_POST['order-name2'] == "placementWithArticle" ):
+        if($_POST['order-name2'] == "placementWOC" ):
         
-            /*
             $clientOrderPrice               = $_SESSION['ConetntCreationPlacementPrice'];
             $_SESSION['clientOrderPrice']   = $clientOrderPrice;
 	        $_SESSION['contetPrice'] 		= CONTENTPRICE;
+            
+            $_FILES['content-file'] = '';
+            $uploadedPath           = '';
+            $clientContent          = '';
+            $content_type           = '';
 
-
-            $clientContent      = '';
-            $content_type       = '';
-
+            $contentInfo        = 'Content Will be publish by '. COMPANY_S;
             $blogId             = $_POST['blogId'];
             
             $clientContentTitle = $_POST['clientContentTitle2'];
@@ -183,28 +184,12 @@ if (isset($_SESSION[SUMMARYDOMAIN]) && isset($_SESSION[SUMMARYSITECOST]) && isse
             $refUrl2            = $_POST['reference-url2'];
             
             $clientRequirement  = $_POST['clientRequirement2'];
-            
-            
-
-            $contentInfo = 'Content Will be publish by '. COMPANY_S;
 
             $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
-                
-                $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle);
-
-                $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1, $refAnc2, $refUrl2);
-
-            $_SESSION['content-data'] = array(
-                'contentTitle'      => $clientContentTitle,
-                'clientAnchorText'  => $clientAnchorText,
-                'clientTargetUrl'   => $clientTargetUrl,
-                'reference-anchor1' => $refAnc1,
-                'reference-url1'    => $refUrl1,
-                'reference-anchor2' => $refAnc2,
-                'reference-url2'    => $refUrl2,
-                'clientRequirement' => $clientRequirement
-                );
-            */
+            
+            $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle);
+            
+            $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1, $refAnc2, $refUrl2);
 
         endif;
     }

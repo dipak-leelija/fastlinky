@@ -59,7 +59,7 @@ foreach ($allStatus as $value) {
 
 }
 
-define("CONTENTPRICE",                      15);
+define("CONTENTPRICE",                      10);
 define("PAYLATER",                          'PayLater');
 
 

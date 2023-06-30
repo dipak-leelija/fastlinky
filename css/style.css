@@ -30,6 +30,7 @@
     --pure-green: #00FF00;
     --pink: #FF0833;
     --red: #dc3545;
+    --pure-black: #000000;
 }
 
 body {
@@ -3129,10 +3130,6 @@ form.pack-form textarea {
     font-weight: 700;
 }
 
-.estimatedDate {
-    font-size: 20px;
-    font-weight: 700;
-}
 
 #OrderNow {
     font-weight: 700;
@@ -3142,9 +3139,6 @@ form.pack-form textarea {
     display: block;
 }
 
-.contentCreationPlacement {
-    display: none;
-}
 
 .warning {
     color: red;
