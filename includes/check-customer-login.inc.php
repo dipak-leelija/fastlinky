@@ -7,7 +7,7 @@ if($cusId == 0){
     exit;
 }elseif($cusDtl[0][0] == 2){
     // redirect to dashboard if loggedin user is set as seller 
-    header("Location: ".URL."/app.client");
+    header("Location: ".URL."/dashboard");
     exit;
 }
 ?>
