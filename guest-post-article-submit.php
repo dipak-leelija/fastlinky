@@ -154,7 +154,7 @@ if (isset($_POST['changesReq'])) {
     $updateResponse  = [$updatedTitle, $updatedLinks, $updated];
 
     if (!in_array(false, $updateResponse) || !in_array(0, $updateResponse)) {
-        $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Changes Request', '', $cusDtl[0][0]);
+        $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Changes Request', '', $cusId);
         if ($statusUpdated) {        
     ?>
     <script>

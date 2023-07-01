@@ -115,7 +115,7 @@ if (isset($_POST['data']) && isset($_POST['blogId'])) {
 
 
 
-		$ContentOrder->addOrderUpdate($orderId, 'Order Placed', '', $cusDtl[0][0]);
+		$ContentOrder->addOrderUpdate($orderId, 'Order Placed', '', $clientUserId);
 		$BlogMst->incrBlogSoldQty($blogId, 1);
 
 

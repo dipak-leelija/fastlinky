@@ -71,7 +71,7 @@ if(isset($_POST["ordId"])){
 
     $completed = $ContentOrder->ClientOrderOrderUpdate($_POST["ordId"], $orderStatus, '', '');
     if ($completed) {
-        $updated = $ContentOrder->addOrderUpdate($_POST["ordId"], 'Completed', '', $cusDtl[0][0]);
+        $updated = $ContentOrder->addOrderUpdate($_POST["ordId"], 'Completed', '', $cusId);
         if ($updated) {
          echo 'finished';   
         }
@@ -91,7 +91,7 @@ if(isset($_POST["changesOrder"])){
     }
     $completed  = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'changesReq', $showOrder[0]['changesReq']-1 );
     if ($completed) {
-        $updated = $ContentOrder->addOrderUpdate($orderId, 'Changes Updated', '', $cusDtl[0][0]);
+        $updated = $ContentOrder->addOrderUpdate($orderId, 'Changes Updated', '', $cusId);
         if ($updated) {
          echo 'updated';   
         }
@@ -110,7 +110,7 @@ if(isset($_POST["changes-request"])){
     $showOrder  = $ContentOrder->clientOrderById($orderId);
     $completed  = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'changesReq', $showOrder['changesReq']+1 );
     if ($completed) {
-        $updated = $ContentOrder->addOrderUpdate($orderId, 'Requested for changes', $changesOf, $cusDtl[0][0]);
+        $updated = $ContentOrder->addOrderUpdate($orderId, 'Requested for changes', $changesOf, $cusId);
         var_dump($updated);
         if ($updated) {
             $uMesg->showSuccessT('success', 0, '', $returnPage, "Requested for changes", 'SUCCESS');

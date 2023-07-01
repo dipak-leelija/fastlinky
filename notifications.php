@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once "includes/constant.inc.php";
-
 require_once "_config/dbconnect.php";
 
 require_once "classes/search.class.php";
@@ -25,8 +24,6 @@ $typeM		= $utility->returnGetVar('typeM','');
 //user id
 $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
-// print_r($cusDtl);
-// print_r($_SESSION);
 
 if($cusId == 0){
     header("Location: index.php");
@@ -36,16 +33,11 @@ if($cusDtl[0][0] == 0){
 	header("Location: index.php");
 }
 
-
-
-// $Emails->getemailDetail('to_email', $colVal)
-
 $mails = $Emails->ShowMailsbyCol('to_email', $_SESSION[USR_SESS]);
 
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
-
 <head>
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
