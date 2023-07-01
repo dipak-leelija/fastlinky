@@ -194,7 +194,7 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'search')){
                                                     <td>
                                                         <a class="text-decoration-none mx-1"
                                                             href="order-details.php?ord_id=<?php echo $order['order_id']; ?>">
-                                                            <span class="badge badge-success"> View <i class="fa-regular fa-eye"></i></span>
+                                                            <span class="badge badge-success"><small> View <i class="fa-regular fa-eye"></i></small></span>
                                                         </a>
                                                     </td>
                                                 </tr>
