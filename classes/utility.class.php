@@ -907,30 +907,7 @@ class Utility extends DatabaseConnection{
 		return $format;
 	}//END OF FORMATTING CURRENCY
 	
-	/**
-	*	Update counter, useful when wants to update the no. of visit by 1
-	*	@return NULL
-	*/
-	function updateCounter($id, $key_column ,$update_column, $table)
-	{
-		$update	= "UPDATE ".$table." SET ".$update_column." = ".$update_column." + 1 WHERE ".$key_column."= ".$id."";
-		$query = mysql_query($update);
-		
-	}//end of update counter
-	
-	/**
-	*	Update counter, useful when wants to update the no. of visit by 1
-	*	@return NULL
-	*/
-	function getCounter($id, $key_column ,$counter_column, $table)
-	{
-		$sql	= "SELECT  ".$counter_column." FROM ".$table." WHERE ".$key_column."= ".$id."";
-		$query 	= mysql_query($sql);
-		$result	= mysql_fetch_array($query);
-		$data	= $result[$counter_column];
-		return $data;
-	}//end of get counter
-	
+
 	/**
 	*	Generate randon x coordinate
 	*	@return int
@@ -4215,5 +4192,34 @@ function word_teaser_end($string, $count){
 		
 	}//eof
 	
+
+
+	/*****************************************************************************
+	 *																			 *
+	*								DATABASE FUNCTIONS							 *
+	*																			 *
+	*****************************************************************************/
+
+	function getSingleData($fetch, $table, $column, $value){
+		try {
+			$sql	= "SELECT $fetch FROM $table WHERE $column = '$value'";
+			$query	= $this->conn->query($sql);
+			
+			if($query->num_rows > 0){
+				while($result = $query->fetch_assoc()){
+					$data = $result;
+				}
+			}
+			return $data;
+		
+		} catch (Exception $e) {
+			echo '<b>Error on:</b> '.__FILE__.', <b>On Line:</b>'.__LINE__.'<br>';
+			echo '<b>Error:</b> '.$e->getMessage();
+			exit;
+		}
+	}
+
+
+
 }//eoc
 ?>

@@ -922,7 +922,8 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                     $ordUpdates = $ContentOrder->showOrderUpdateById($showOrder['order_id'], 'ASC');
                                                     // print_r($ordUpdates);
                                                     foreach ($ordUpdates as $ordUpdate) {
-                                                        $updateCustomer = $customer->getCustomerByTypeId($ordUpdate['updated_by']);
+                                                        $newCus = $utility->getSingleData('customer_type', 'customer', 'customer_id', $ordUpdate['updated_by']);
+                                                        $updateCustomer = $customer->getCustomerByTypeId($newCus['customer_type']);
 
                                                         $avatar = $customer->getCustomerAvatar($showOrder['clientUserId']);
                                                         if ($avatar == '') {
@@ -935,7 +936,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                             $updateBy = COMPANY_S;
                                                             $userImg  = FAVCON_PATH;
                                                         } else {
-                                                            $updateBy = $updateCustomer[0]['cus_type'];
+                                                            $updateBy = $updateCustomer['cus_type'];
                                                             $userImg  = $avatar;
                                                         }
 

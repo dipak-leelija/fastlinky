@@ -2003,17 +2003,22 @@ class Customer extends Utility{
 
 
 	function getCustomerByTypeId($type_id){
-
-		$data	= array();
-		$sql	= "SELECT * FROM customer_type WHERE customer_type_id = '$type_id'";
-		$query	= $this->conn->query($sql);
-		
-		if($query->num_rows > 0){
-			while($result = $query->fetch_array()){
-				$data[] = $result;
+		try {
+			$sql	= "SELECT * FROM customer_type WHERE customer_type_id = '$type_id'";
+			$query	= $this->conn->query($sql);
+			
+			if($query->num_rows > 0){
+				while($result = $query->fetch_assoc()){
+					$data = $result;
+				}
 			}
+			return $data;
+		
+		} catch (Exception $e) {
+			echo '<b>Error on:</b> '.__FILE__.', <b>On Line:</b>'.__LINE__.'<br>';
+			echo '<b>Error:</b> '.$e->getMessage();
+			exit;
 		}
-		return $data;
 	}
 
 
