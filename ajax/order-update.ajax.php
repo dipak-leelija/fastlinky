@@ -124,7 +124,8 @@ if(isset($_POST["changes-request"])){
         $Notifications->addNotification(ORD_UPDATE, ORD_CNG_REQ, ORD_CNG_REQ_M, $reference_link, $customerId);
         // var_dump($updated);
         if ($updated) {
-            $uMesg->showSuccessT('success', 0, '', $returnPage, "Requested for changes", 'SUCCESS');
+            // $uMesg->showSuccessT('success', 0, '', $returnPage, "Requested for changes", 'SUCCESS');
+            exit;
         }
     }
 }

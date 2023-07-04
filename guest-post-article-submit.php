@@ -2,11 +2,13 @@
 session_start();
 require_once __DIR__ . "/includes/constant.inc.php";
 require_once __DIR__ . "/includes/order-constant.inc.php";
+require_once __DIR__ . "/includes/content.inc.php";
 require_once ROOT_DIR . "/_config/dbconnect.php";
 
 require_once ROOT_DIR . "/classes/customer.class.php";
 require_once ROOT_DIR . "/classes/content-order.class.php";
 require_once ROOT_DIR . "/classes/orderStatus.class.php";
+require_once ROOT_DIR . "/classes/notification.class.php";
 require_once ROOT_DIR . "/classes/location.class.php";
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php";
@@ -16,6 +18,7 @@ require_once ROOT_DIR . "/classes/utilityMesg.class.php";
 $customer		= new Customer();
 $ContentOrder   = new ContentOrder();
 $OrderStatus    = new OrderStatus();
+$Notifications  = new Notifications();
 $Location       = new Location();
 $DateUtil       = new DateUtil();
 $Utility		= new Utility();
@@ -38,6 +41,8 @@ if(isset($_GET['order'])){
 $thisPage   = $Utility->currentUrl();
 $updatedBy  = $_SESSION[USR_SESS];
 
+$reference_link = $thisPage;
+
 //session array
 $sess_arr = array('contetPrice', ORDERDOMAIN, ORDERSITECOST, ORDERID, SUMMARYDOMAIN, SUMMARYSITECOST, 'content-data', 'ConetntCreationPlacementPrice');
 $Utility->delSessArr($sess_arr);
@@ -47,6 +52,7 @@ $Utility->delSessArr($sess_arr);
 
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
@@ -70,60 +76,9 @@ $Utility->delSessArr($sess_arr);
     <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
 
 </head>
-
 <body>
 
-    <?php
-
-// print_r($_REQUEST);
-// exit;
-if (isset($_POST['articleSubmit'])) {
-
-    
-    // exit;
-    // if (isset($_POST['clientContent'])) {
-        
-    //     $clientContent      = $_POST['clientContent'];
-
-    //     $updated = $ContentOrder->ClientOrderContentUpdate($orderId, $clientAnchorText, $clientTargetUrl, $clientContent, $clientRequirement);
-
-    //     if ($updated) {
-    //         $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Content Updated', '', $cusDtl[0][0]);
-
-    ?>
-    // <script>
-    //         Swal.fire({
-    //             title: 'Updated!',
-    //             text: 'Contents Updated',
-    //             icon: 'success',
-    //             confirmButtonText: 'Continue'
-    //         })
-    //         
-    </script>
-    // <?php
-    //     }
-    // }else {
-    //         $updated = $ContentOrder->ClientOrderContentUpdate($orderId, $clientAnchorText, $clientTargetUrl, '', $clientRequirement);
-
-    //         if ($updated) {
-    //         $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Content Updated', '', $cusDtl[0][0]);
-
-    // ?>
-    // <script>
-    // Swal.fire({
-    //     title: 'Updated!',
-    //     text: 'Contents Updated',
-    //     icon: 'success',
-    //     confirmButtonText: 'Continue'
-    // })
-    // 
-    </script>
-    // <?php
-    //         }
-    // }
-
-}
-
+<?php
 
 if (isset($_POST['changesReq'])) {
 
@@ -154,7 +109,9 @@ if (isset($_POST['changesReq'])) {
     $updateResponse  = [$updatedTitle, $updatedLinks, $updated];
 
     if (!in_array(false, $updateResponse) || !in_array(0, $updateResponse)) {
-        $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Changes Request', '', $cusId);
+        $statusUpdated = $ContentOrder->addOrderUpdate($orderId, ORD_CNG_REQ, '', $cusId);
+        $Notifications->addNotification(ORD_UPDATE, ORD_CNG_REQ, ORD_CNG_REQ_M, $reference_link, $cusId);
+
         if ($statusUpdated) {        
     ?>
     <script>

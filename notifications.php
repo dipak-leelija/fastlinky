@@ -111,12 +111,14 @@ $orUpdates = $Notifications->allNotifications();
                             </div>
                             <!--***********TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                         </div>
-                        
+
                         <div class="col-md-9  ps-md-0 display-table-cell v-align extra-mrgin-top-for-mtab">
                             <div class="toast">
                                 <h2 class="notice-title">Notifications <i class="fa-solid fa-bell fa-shake"></i></h2>
 
-                                <?php  foreach ($orUpdates as $update) { ?>
+                                <?php 
+                                if (count($orUpdates) > 0) {
+                                    foreach ($orUpdates as $update) { ?>
                                 <!-- Notification start  -->
                                 <div class="notification-main-division my-2 item_order_bx coloring-cd">
                                     <div class="row">
@@ -140,15 +142,23 @@ $orUpdates = $Notifications->allNotifications();
                                             </div>
 
                                         </div>
-                                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-sm-inline-block justify-content-end d-none m-auto">
-                                            <a class="btn btn-sm btn-primary" href="<?= $update['reference_link'];?>">View</a>
+                                        <div
+                                            class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-sm-inline-block justify-content-end d-none m-auto">
+                                            <a class="btn btn-sm btn-primary"
+                                                href="<?= $update['reference_link'];?>">View</a>
                                             <br>
                                             <small class="notify-time"><?= $update['added_on'];?></small>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Notification start  -->
-                                <?php } ?>
+                                <?php
+                                    }
+                                }else{?>
+                                <div class="container border border-info rounded">
+                                    <h4 class="text-center py-4">No Notifications</h4>
+                                </div>
+                                <?php }?>
 
 
 
