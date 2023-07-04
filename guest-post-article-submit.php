@@ -358,7 +358,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                 <?php if ( $orderStatusCode == DELIVEREDCODE ):?>
                                 <div class="btn_bx text-center mt-3">
                                     <button class="btn btn-sm btn-primary"
-                                        onclick="finishedOrder(<?= $orderId ?>)">Finished</button>
+                                        onclick="finishedOrder(<?= $orderId ?>, <?= $cusId ?>)">Finished</button>
                                     <button class="btn btn-sm btn-info" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal" onclick="changeRequest(<?= $orderId ?>)">Change
                                         Request</button>
@@ -586,8 +586,9 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <input type="hidden" name="return-page" value="<?php echo $Utility->currentUrl()?>">
-                            <input type="hidden" name="order-id" value="<?php echo $orderId?>">
+                            <input type="hidden" name="return-page" value="<?= $Utility->currentUrl()?>">
+                            <input type="hidden" name="order-id" value="<?= $orderId?>">
+                            <input type="hidden" name="customer-id" value="<?= $cusId?>">
                             <div class="modal-body" id="update-modal-body">
 
                             </div>
@@ -613,7 +614,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
         <script src="js/script.js"></script>
         <script src="js/ajax.js" type="text/javascript"></script>
         <script>
-        const finishedOrder = (ordId) => {
+        const finishedOrder = (ordId, customerId) => {
             Swal.fire({
                 title: 'Are you sure?',
                 text: "Order Completed!",
@@ -629,7 +630,8 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                         url: "ajax/order-update.ajax.php",
                         type: "POST",
                         data: {
-                            ordId: ordId
+                            ordId: ordId,
+                            customerId: customerId
                         },
                         success: function(data) {
                             // alert(data);

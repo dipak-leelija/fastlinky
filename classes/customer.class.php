@@ -2004,6 +2004,7 @@ class Customer extends Utility{
 
 	function getCustomerByTypeId($type_id){
 		try {
+			$data 	= array();
 			$sql	= "SELECT * FROM customer_type WHERE customer_type_id = '$type_id'";
 			$query	= $this->conn->query($sql);
 			

@@ -120,9 +120,10 @@ if (isset($_POST['data']) && isset($_POST['blogId'])) {
 
 
 
-		$updateId = $ContentOrder->addOrderUpdate($orderId, 'Order Placed', '', $clientUserId);
+		$updateId = $ContentOrder->addOrderUpdate($orderId, ORDS001, '', $clientUserId);
 
-		$Notifications->addNotification(ORD_UPDATE, 'New Order Placed', 'New Guest Post Order Placed', $reference_link, $clientUserId);
+		$Notifications->addNotification(ORD_UPDATE, ORDS001, ORD_PLCD_M, $reference_link, $clientUserId);
+
 		$BlogMst->incrBlogSoldQty($blogId, 1);
 
 

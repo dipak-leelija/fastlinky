@@ -4202,9 +4202,10 @@ function word_teaser_end($string, $count){
 
 	function getSingleData($fetch, $table, $column, $value){
 		try {
+			$data	= array();
 			$sql	= "SELECT $fetch FROM $table WHERE $column = '$value'";
 			$query	= $this->conn->query($sql);
-			
+			// echo $sql;
 			if($query->num_rows > 0){
 				while($result = $query->fetch_assoc()){
 					$data = $result;

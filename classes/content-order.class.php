@@ -726,7 +726,7 @@ class ContentOrder extends DatabaseConnection{
                   $sql = "SELECT * FROM `order_updates` WHERE `order_id` = '$order_id' ORDER BY `updated_on` $order_by;";
                   $query = $this->conn->query($sql);
                   if ($query->num_rows > 0) {
-                        while ($result = $query->fetch_array()) {
+                        while ($result = $query->fetch_assoc()) {
                               $data[] = $result;
                         }
                   }
@@ -734,7 +734,7 @@ class ContentOrder extends DatabaseConnection{
                   $sql = "SELECT * FROM `order_updates` WHERE `order_id` = '$order_id'";
                   $query = $this->conn->query($sql);
                   if ($query->num_rows > 0) {
-                        while ($result = $query->fetch_array()) {
+                        while ($result = $query->fetch_assoc()) {
                               $data[] = $result;
                         }
                   }

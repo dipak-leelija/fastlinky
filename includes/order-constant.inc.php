@@ -73,7 +73,18 @@ define("SUMMARYSITECOST",                   'SUMMARYSITECOST');
 define("ORDERSITECOST",                     'ORDERSITECOST');
 define("ORDERID",                           'ORDERID');
 
+define("ORD_PLCD_M",                          "Thank you for placing your order! We have successfully received it and will begin processing it promptly. Stay tuned!");
+
+define("ORD_ACPT_M",                          "Congratulations! Your order has been accepted and is now being processed. Thank you  for choosing our services!");
+
+define("ORD_RCJTD_M",                          "We regret to inform you that your order has been rejected. We apologize for any inconvenience caused and appreciate your understanding.");
 
 
+define("ORD_DLVRD_M",                          "Your order has been delivered successfully. We hope you enjoy your purchase. Thank you for choosing our services!");
+
+define('ORD_CNG_REQ_M', 				        "A change has been requested for your order. Our team will reach out to you shortly to discuss the details.");
+
+
+define("ORD_CMPLT_M",                           "Your order has been successfully completed. We hope you are satisfied with your purchase. Thank you for choosing our services!")
 
 ?>

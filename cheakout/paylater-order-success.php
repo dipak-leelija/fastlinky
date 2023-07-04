@@ -3,6 +3,7 @@ session_start();
 require_once dirname(__DIR__) .  "/includes/constant.inc.php";
 
 require_once ROOT_DIR . "/includes/user.inc.php";
+require_once ROOT_DIR . "/includes/content.inc.php";
 require_once ROOT_DIR . "/includes/order-constant.inc.php";
 require_once ROOT_DIR . "/includes/email.inc.php";
 require_once ROOT_DIR . "/includes/registration.inc.php";
@@ -17,6 +18,8 @@ require_once ROOT_DIR . "/classes/orderStatus.class.php";
 require_once ROOT_DIR . "/classes/error.class.php";
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/content-order.class.php";
+require_once ROOT_DIR . "/classes/notification.class.php";
+
 require_once ROOT_DIR . "/classes/wishList.class.php";
 require_once ROOT_DIR . "/classes/location.class.php";
 
@@ -30,6 +33,8 @@ $BlogMst		= new BlogMst();
 $OrderStatus	= new OrderStatus();
 $error			= new MyError();
 $ContentOrder	= new ContentOrder();
+$Notifications  = new Notifications();
+
 $WishList		= new WishList();
 $Location		= new Location();
 
@@ -52,13 +57,13 @@ $cusDtl		= $customer->getCustomerData($cusId);
 
 
 if (!isset($_POST)) {
-	header("Location: ".URL . "/dashboard.php");
+	header("Location: ".URL . "/dashboard");
 	exit;
 }
 
 
 if (!isset($_SESSION[ORDERDOMAIN]) && !isset($_SESSION[ORDERSITECOST]) && !isset($_SESSION[ORDERID])) {
-	header("Location: ".URL . "/my-orders.php");
+	header("Location: ".URL . "/my-orders");
 	exit;
 }else {
 	
@@ -66,6 +71,7 @@ if (!isset($_SESSION[ORDERDOMAIN]) && !isset($_SESSION[ORDERSITECOST]) && !isset
 	$clientName         = $_SESSION['name'];
 	$clientEmail        = $_SESSION[USR_SESS];
 	$orderId			= $_SESSION[ORDERID];
+	$reference_link		= URL."/guest-post-article-submit.php?order=".base64_encode(urlencode($orderId));
 
 	// Order Data
 	$clientOrderedSite 	= $_SESSION[ORDERDOMAIN];
@@ -96,21 +102,22 @@ if ( isset($_POST['blogId'])) {
 
 
 
-		/**
-		 * 
-		 * ORDER STATUS CODE
-		 * 1 = Delivered
-		 * 2 = Pending
-		 * 3 = Processing
-		 * 4 = Oedered
-		 * 
-		 *  */ 
-		$ContentOrder->contentOrderStatusUpdate($orderId, ORDEREDCODE);
-		
-		$ContentOrder->addOrderTransection($orderId, $trxnId, "Pay Later", $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice,$clientOrderPrice, $paid_amount, $clientEmail);
-		
-		$ContentOrder->addOrderUpdate($orderId, 'Order Placed', '', $clientUserId);
-		$BlogMst->incrBlogSoldQty($blogId, 1);
+	/**
+	 * 
+	 * ORDER STATUS CODE
+	 * 1 = Delivered
+	 * 2 = Pending
+	 * 3 = Processing
+	 * 4 = Oedered
+	 * 
+	 *  */ 
+	$ContentOrder->contentOrderStatusUpdate($orderId, ORDEREDCODE);
+	
+	$ContentOrder->addOrderTransection($orderId, $trxnId, "Pay Later", $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice, $clientOrderPrice, $paid_amount, $clientEmail);
+	
+	$ContentOrder->addOrderUpdate($orderId, ORDS001, '', $clientUserId);
+	$Notifications->addNotification(ORD_UPDATE, ORDS001, ORD_PLCD_M, $reference_link, $clientUserId);
+	$BlogMst->incrBlogSoldQty($blogId, 1);
 
 
 	
@@ -376,7 +383,7 @@ if(isset($_SESSION[ORDERID])) {
                 <p>Your order status will updated to you, Now you can go back.</p>
                 <div class="mt-3">
                     <a class="btn btn-primary" href=<?= URL."/app.client"; ?>>My Account</a>
-                    <a class="btn btn-primary" href="<?= URL."/guest-post-article-submit.php?order=".base64_encode(urlencode($orderId)); ?>">See Order</a>
+                    <a class="btn btn-primary" href="<?= $reference_link; ?>">See Order</a>
                 </div>
             </div>
         </div>
