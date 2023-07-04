@@ -1,5 +1,11 @@
 <?php 
 
+	define('ORD_UPDATE', 		'Order Update');
+	define('PRFL_UPDATE', 		'Profile Update');
+	define('OFFER', 			'Offer Update');
+	define('OTHERS', 			'Others Update');
+
+
 	//Constant for Advertiser
 	define('ERSTCON001', ' No static has created so far');
 	define('ERSTCON002', ' Static content title can not be empty');

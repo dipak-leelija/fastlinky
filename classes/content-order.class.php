@@ -713,9 +713,9 @@ class ContentOrder extends DatabaseConnection{
                         ('$order_id','$subject','$dsc','$updated_by', now())";
             
             $query = $this->conn->query($sql);
-            // $insert_id= $this->conn->insert_id;
+            $insert_id = $this->conn->insert_id;
 
-            return $query;
+            return $insert_id;
 
       }//eof
 

@@ -59,6 +59,9 @@ foreach ($allStatus as $value) {
 
 }
 
+define("CONTENT_ORDER",                      'Guest Post Order');
+define("PACKAGE_ORDER",                      'Package Order');
+
 define("CONTENTPRICE",                      10);
 define("PAYLATER",                          'PayLater');
 

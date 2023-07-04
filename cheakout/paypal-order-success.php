@@ -5,6 +5,7 @@ require_once dirname(__DIR__)."/includes/constant.inc.php";
 require_once ROOT_DIR."/_config/dbconnect.php";
 
 require_once ROOT_DIR."/includes/order-constant.inc.php";
+require_once ROOT_DIR."/includes/content.inc.php";
 require_once ROOT_DIR."/includes/user.inc.php";
 require_once ROOT_DIR."/includes/email.inc.php";
 require_once ROOT_DIR."/includes/registration.inc.php";
@@ -18,6 +19,7 @@ require_once ROOT_DIR."/classes/orderStatus.class.php";
 require_once ROOT_DIR."/classes/error.class.php";
 require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/content-order.class.php";
+require_once ROOT_DIR."/classes/notification.class.php";
 require_once ROOT_DIR."/classes/wishList.class.php";
 require_once ROOT_DIR."/classes/utility.class.php"; 
 require_once ROOT_DIR."/classes/utilityMesg.class.php"; 
@@ -29,6 +31,7 @@ $BlogMst		= new BlogMst();
 $OrderStatus	= new OrderStatus();
 $error			= new MyError();
 $ContentOrder	= new ContentOrder();
+$Notifications  = new Notifications();
 $WishList		= new WishList();
 $dateUtil		= new DateUtil();
 $utility		= new Utility();
@@ -60,6 +63,8 @@ if (!isset($_SESSION[ORDERDOMAIN]) && !isset($_SESSION[ORDERSITECOST]) && !isset
 	$clientName         = $cusDtl[0][5].' '.$cusDtl[0][6];
 	$clientEmail        = $_SESSION[USR_SESS];
 	$orderId			= $_SESSION[ORDERID];
+	$reference_link		= URL."/guest-post-article-submit.php?order=".base64_encode(urlencode($orderId));
+	
 	// Order Data
 	$clientOrderedSite 	= $_SESSION[ORDERDOMAIN];
 	$clientOrderPrice	= $_SESSION[ORDERSITECOST];
@@ -115,7 +120,9 @@ if (isset($_POST['data']) && isset($_POST['blogId'])) {
 
 
 
-		$ContentOrder->addOrderUpdate($orderId, 'Order Placed', '', $clientUserId);
+		$updateId = $ContentOrder->addOrderUpdate($orderId, 'Order Placed', '', $clientUserId);
+
+		$Notifications->addNotification(ORD_UPDATE, 'New Order Placed', 'New Guest Post Order Placed', $reference_link, $clientUserId);
 		$BlogMst->incrBlogSoldQty($blogId, 1);
 
 
@@ -344,7 +351,7 @@ if(isset($_SESSION[ORDERID])) {
                 <p>Your order status will updated to you, Now you can go back.</p>
                 <div class="mt-3">
                     <a class="btn btn-primary" href="<?= URL."/app.client"; ?>">My Account</a>
-					<a class="btn btn-primary" href="<?= URL."/guest-post-article-submit.php?order=".base64_encode(urlencode($orderId)); ?>">See Order</a>
+					<a class="btn btn-primary" href="<?= $reference_link; ?>">See Order</a>
                 </div>
             </div>
         </div>
