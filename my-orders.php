@@ -32,8 +32,8 @@ require_once ROOT_DIR.'/includes/check-customer-login.inc.php';
 
 $myOrders       = $ContentOrder->clientOrders($cusId);
 $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
-// $orders         = $Order->getOrdersByCusId($cusId);
 
+// print_r($_SESSION);exit;
 
 ?>
 <!DOCTYPE HTML>

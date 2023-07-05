@@ -10,7 +10,9 @@ require_once ROOT_DIR."/classes/content-order.class.php";
 require_once ROOT_DIR."/classes/gp-package.class.php";
 require_once ROOT_DIR."/classes/gp-order.class.php";
 require_once ROOT_DIR."/classes/orderStatus.class.php";
+require_once ROOT_DIR."/classes/notification.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
+require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/wishList.class.php";
 
 $customer		= new Customer();
@@ -18,8 +20,10 @@ $ContentOrder   = new ContentOrder();
 $GPPackage      = new GuestPostpackage();
 $PackageOrder   = new PackageOrder();
 $OrderStatus    = new OrderStatus();
+$Notifications  = new Notifications();
 $WishList       = new WishList();
 $utility		= new Utility();
+$DateUtil       = new DateUtil();
 ######################################################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
 //user id
@@ -29,6 +33,7 @@ $wishes     = $WishList->countWishlistByUser($cusId);
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
+$notifies           = $Notifications->allNotifications($cusId, 3);
 $wishes             = $WishList->countWishlistByUser($cusId);
 $myOrders           = $ContentOrder->clientOrders($cusId);
 $pendingContOrd     = $ContentOrder->pendingContentOrders($cusId, PENDING, PENDINGCODE);
@@ -63,7 +68,7 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
     <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL;?>/css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/order-list.css" rel='stylesheet' type='text/css' />
+    <link href="<?php echo URL;?>/css/status-colors.css" rel='stylesheet' type='text/css' />
 
 
 </head>
@@ -90,9 +95,8 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                     data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
                                     <i class="fa-solid fa-angles-right"></i>
                                 </button>
-                                <div class="offcanvas offcanvas-start " data-bs-scroll="true"
-                                    data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
-                                    aria-labelledby="staticBackdropLabel">
+                                <div class="offcanvas offcanvas-start " data-bs-scroll="true" data-bs-backdrop="static"
+                                    tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
                                     <div class="offcanvas-header">
                                         <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
@@ -297,10 +301,31 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                     <div class=" col-lg-6">
                                         <a href="notifications.php">
                                             <div class="pt-3 pb-0 p-0">
-                                                <h4 class="text-dark">Recent Notification</h4>
-                                                <div class="alert alert-warning db_shadow" role="alert">
-                                                    <strong> No Notifications</strong>
+                                                <!-- <h4 class="text-dark">Recent Notification</h4> -->
+
+                                                <?php
+                                                if (count($notifies) > 0) {
+                                                    foreach ($notifies as $eachNotify) {
+                                                ?>
+
+                                                <div class="alert alert-primary db_shadow mb-2 px-2 py-1" role="alert">
+                                                    <span class="d-flex justify-content-between">
+                                                        <b><small><?= $eachNotify['title'] ?></small></b>
+                                                        <small><?= $DateUtil->dateTimeNumber($eachNotify['added_on']) ?></small>
+                                                    </span>
+                                                    <small><?= substr($eachNotify['message'], 0, 85); ?>..</small>
                                                 </div>
+
+                                                <?php
+                                                    }
+                                                }else {
+                                                ?>
+                                                    <div class="alert alert-warning db_shadow" role="alert">
+                                                        <strong> No Notifications</strong>
+                                                    </div>
+                                                    <?php
+                                                }
+                                                ?>
                                             </div>
                                         </a>
                                         <div class="col-lg-12 mt-5">

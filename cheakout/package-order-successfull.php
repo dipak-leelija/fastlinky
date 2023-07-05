@@ -29,14 +29,20 @@ $cusDtl		= $customer->getCustomerData($cusId);
 
 
 if (!isset($_SESSION['updatedOrders'])) {
-    header("Location: ".URL."/customer-packages.php");
+    header("Location:" .URL."/customer-packages.php");
     exit;
 }
+
+$orderIds = $_SESSION['updatedOrders'];
+
+$sess_arr = array('orderIds', 'goTo', 'updatedOrders');
+$utility->delSessArr($sess_arr);
 ?>
 
- 
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,10 +55,11 @@ if (!isset($_SESSION['updatedOrders'])) {
     <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-	<!-- Custom css  -->
+    <!-- Custom css  -->
     <link rel="stylesheet" href="<?php echo URL; ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo URL; ?>/css/payment-status.css">
 </head>
+
 <body>
 
     <!-- Start  Header -->
@@ -66,12 +73,53 @@ if (!isset($_SESSION['updatedOrders'])) {
 
             <!--======= column 1 =======-->
             <div class="col-11 col-md-10">
-                <div class="mt-4 p-5 bg-lighter-blue text-white rounded">
+                <div class="mt-4 p-5 bg-lighter-blue rounded">
                     <h2 class="text-primary">Thanking you for your order.</h2>
                     <p><i class="fas fa-check-circle fs-5 text-primary"></i> We have received your order. You will
                         receive email shortly in your account.</p>
+
+                    <div class="d-flex justify-content-center">
+                        <div class="col-12 col-sm-9 col-md-8 col-lg-7 py-4">
+
+                            <?php
+                            foreach ($orderIds as $eachOrderId) {
+                                $eachOrder = $PackageOrder->gpOrderById($eachOrderId);
+                                if ($eachOrder['transection_id'] != '') {
+                                    $paymentRow = 'Transection ID';
+                                    $paymentvalue = '$eachOrder[\'transection_id\']';
+                                }else {
+                                    $paymentRow = 'Payment';
+                                    $paymentvalue = $eachOrder['payment_type'];
+                                }
+                                ?>
+                            <table class="table table-bordered table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Order ID</th>
+                                        <td>#<?= $eachOrder['order_id']?></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><?= $paymentRow?></th>
+                                        <td><?= $paymentvalue?></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Email</th>
+                                        <td><?= $eachOrder['email']?></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Date</th>
+                                        <td><?= $eachOrder['date']?></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <?php }?>
+
+                        </div>
+                    </div>
+
+
                     <p><i class="fas fa-exclamation-circle fs-5 text-warning"></i> If you find any difficulty, drop an
-                        email to <?php echo SITE_BILLING_EMAIL ?></p>
+                        email to <?= SITE_BILLING_EMAIL ?></p>
                 </div>
             </div>
 
@@ -80,8 +128,8 @@ if (!isset($_SESSION['updatedOrders'])) {
             <div class="col-11 col-md-10 mb-3 mb-md-5 p-4 text-center">
                 <p>Your order status will updated to you, Now you can go back.</p>
                 <div class="mt-3">
-                    <a class="btn btn-primary" href="<?php echo URL; ?>/app.client.php">My Account</a>
-                    <a class="btn btn-primary" href="<?php echo URL; ?>/my-orders.php">My Orders</a>
+                    <a class="btn btn-primary" href="<?= URL; ?>/app.client.php">My Account</a>
+                    <a class="btn btn-primary" href="<?= URL; ?>/my-orders.php">My Orders</a>
                 </div>
             </div>
         </div>

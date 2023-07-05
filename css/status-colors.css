@@ -1,0 +1,37 @@
+.complete-status {
+    display: inline-flex;
+    background: #4404f5;
+    padding: 0 1rem;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.Failed,
+.Rejected,
+.Cancelled,
+.Incomplete {
+    background-color: rgb(245, 41, 41) !important;
+    color: #fff !important;
+}
+
+.Pending {
+    background-color: rgb(143, 255, 15) !important;
+    color: #fff !important;
+}
+
+.Processing {
+    background-color: rgb(139, 109, 247) !important;
+    color: #fff !important;
+}
+
+.Ordered {
+    background-color: #00db0d !important;
+    color: #fff !important;
+}
+
+.Delivered,
+.Completed {
+    background-color: #1E80C0 !important;
+    color: #fff !important;
+}

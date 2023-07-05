@@ -23,31 +23,29 @@ class Notifications extends DatabaseConnection{
     }// eof addNotification
 
 
-    public function allNotifications(){
-        try {
+    public function allNotifications($USERID, $LIMIT = '*', $SORT = 'DESC'){
 
-            $data = array();
-            $query = "SELECT * FROM notification ORDER BY added_on DESC";
-            $result = $this->conn->query($query);
+        $data = array();
+        if ($LIMIT == '*') {
+            $SQL = "SELECT * FROM notification WHERE added_by = $USERID ORDER BY added_on $SORT";
+        }else {
+           $SQL = "SELECT * FROM notification WHERE added_by = $USERID ORDER BY added_on $SORT LIMIT $LIMIT";
+        }
+        $result = $this->conn->query($SQL);
 
-            if ($result->num_rows > 0) {
-                
-                while ($row = $result->fetch_assoc()) {
-                    $data[] = $row;
-                }
-
-                $this->conn->close();
-                return $data;
+        if ($result->num_rows > 0) {
+            
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
             }
 
-            $this->conn->close();
-            return array();
-
-        } catch (Exception $e) {
-            echo '<b>Error on:</b> '.__FILE__.', <b>On Line:</b>'.__LINE__.'<br>';
-            echo '<b>Error:</b> '.$e->getMessage();
-            exit;
+        $this->conn->close();
+            return $data;
         }
+
+        $this->conn->close();
+        return array();
+            
     }// eof allNotifications
 
 }

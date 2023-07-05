@@ -10,6 +10,7 @@ require_once ROOT_DIR."/includes/order-constant.inc.php";
 require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/gp-package.class.php";
 require_once ROOT_DIR."/classes/gp-order.class.php";
+require_once ROOT_DIR."/classes/notification.class.php";
 require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/location.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
@@ -20,6 +21,7 @@ $DateUtil       = new DateUtil();
 $customer		= new Customer();
 $GPPackage      = new GuestPostpackage();
 $PackageOrder   = new PackageOrder();
+$Notifications  = new Notifications();
 $Location       = new Location();
 $utility		= new Utility();
 
@@ -32,6 +34,8 @@ $currentPage    = $utility->setCurrentPageSession();
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
+
+$reference_link = URL.'/package-order-history.php?order=';
 
 
 if (isset($_POST['paymentdata']) && isset($_POST['pppamn'])) {
@@ -59,15 +63,18 @@ if (isset($_POST['paymentdata']) && isset($_POST['pppamn'])) {
             
             if (isset($_SESSION['orderIds'])) {
                 foreach ($_SESSION['orderIds'] as $eachOrderId) {
+                    $reference_link .= base64_encode(urlencode($eachOrderId));
                     $updated[] = $PackageOrder->updatePayment($eachOrderId, $trxnId, 'Paypal', COMPLETEDCODE, ORDEREDCODE);
                 }
                 
                 $falseExist =  in_array(false, $updated, true);
                 if (!$falseExist) {
                     $added = $PackageOrder->addPackOrderDtls($eachOrderId, ORDEREDCODE, ORDS001, $cusDtl[0][2], $cusDtl[0][2]);
+	                $Notifications->addNotification(ORD_UPDATE, ORDS001, ORD_PLCD_M, $reference_link, $cusId);
+
                     if ($added) {
                         $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
-                        unset($_SESSION['orderIds']);
+                        // unset($_SESSION['orderIds']);
                         header('Location: ./package-order-successfull.php');
                         exit;
                     }
@@ -93,15 +100,17 @@ if (isset($_POST['paylaterForm'])) {
             unset($_SESSION['package']);
         if (isset($_SESSION['orderIds'])) {
             foreach ($_SESSION['orderIds'] as $eachOrderId) {
-                    $updated[] = $PackageOrder->updatePayment($eachOrderId, '', 'PayLater', PENDINGCODE, ORDEREDCODE);
+                $reference_link .= base64_encode(urlencode($eachOrderId));
+                $updated[] = $PackageOrder->updatePayment($eachOrderId, '', 'PayLater', PENDINGCODE, ORDEREDCODE);
             }
 
             $falseExist =  in_array(false, $updated, true);
             if (!$falseExist) {
                 $added = $PackageOrder->addPackOrderDtls($eachOrderId, ORDEREDCODE, ORDS001, $cusDtl[0][2], $cusDtl[0][2]);
+                $Notifications->addNotification(ORD_UPDATE, ORDS001, ORD_PLCD_M, $reference_link, $cusId);
                 if ($added) {
                     $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
-                    unset($_SESSION['orderIds']);
+                    // unset($_SESSION['orderIds']);
                     header('Location: ./package-order-successfull.php');
                     exit;
                 }

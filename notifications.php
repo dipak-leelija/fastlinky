@@ -34,7 +34,7 @@ $cusDtl		= $customer->getCustomerData($cusId);
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 $mails = $Emails->ShowMailsbyCol('to_email', $_SESSION[USR_SESS]);
-$orUpdates = $Notifications->allNotifications();
+$orUpdates = $Notifications->allNotifications($cusId, 2);
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
@@ -143,11 +143,11 @@ $orUpdates = $Notifications->allNotifications();
 
                                         </div>
                                         <div
-                                            class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-sm-inline-block justify-content-end d-none m-auto">
+                                            class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-sm-flex flex-column align-items-end d-none m-auto">
                                             <a class="btn btn-sm btn-primary"
                                                 href="<?= $update['reference_link'];?>">View</a>
                                             <br>
-                                            <small class="notify-time"><?= $update['added_on'];?></small>
+                                            <small class="notify-time"><?= $DateUtil->dateTimeNumber($update['added_on']);?></small>
                                         </div>
                                     </div>
                                 </div>
