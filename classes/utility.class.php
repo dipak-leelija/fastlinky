@@ -907,30 +907,7 @@ class Utility extends DatabaseConnection{
 		return $format;
 	}//END OF FORMATTING CURRENCY
 	
-	/**
-	*	Update counter, useful when wants to update the no. of visit by 1
-	*	@return NULL
-	*/
-	function updateCounter($id, $key_column ,$update_column, $table)
-	{
-		$update	= "UPDATE ".$table." SET ".$update_column." = ".$update_column." + 1 WHERE ".$key_column."= ".$id."";
-		$query = mysql_query($update);
-		
-	}//end of update counter
-	
-	/**
-	*	Update counter, useful when wants to update the no. of visit by 1
-	*	@return NULL
-	*/
-	function getCounter($id, $key_column ,$counter_column, $table)
-	{
-		$sql	= "SELECT  ".$counter_column." FROM ".$table." WHERE ".$key_column."= ".$id."";
-		$query 	= mysql_query($sql);
-		$result	= mysql_fetch_array($query);
-		$data	= $result[$counter_column];
-		return $data;
-	}//end of get counter
-	
+
 	/**
 	*	Generate randon x coordinate
 	*	@return int
@@ -1105,28 +1082,6 @@ class Utility extends DatabaseConnection{
 	}//eof
 
 
-	//////////////////////////////////////////////////////////////////////////////////////
-	//
-	//							Session + Get + Post + Form Fields and Variables
-	//
-	///////////////////////////////////////////////////////////////////////////////////////
-	
-	/**
-	*	Add to session
-	*	
-	*	@param
-	*			$sessArr	Session name
-	*
-	*	@return NULL
-	*/
-	function addToSession($sessArr)
-	{
-		foreach($sessArr as $k)
-		{
-			$_SESSION[$k] = $k;
-		}
-	}//eof
-	
 	/**
 	*	Show the selected value in a dropdown menu
 	*
@@ -1168,138 +1123,6 @@ class Utility extends DatabaseConnection{
 			$check	= '';
 		}
 		return $check;
-	}//eof
-	
-	/**
-	*	Check the radio or check box if the session variable is there
-	*
-	*	@param
-	*			$name		The current name
-	*			$value		The has to select
-	*			$alt		Alternate text or default value
-	*
-	*	@return string
-	*/
-	function checkSessStr($name,$value, $alt)
-	{
-		$str 	= '';
-		
-		if(isset($_SESSION[$name]))
-		{
-			if($_SESSION[$name] == $value)
-			{
-				$str 	= 'checked';
-			}
-			else
-			{
-				$str 	= $alt;
-			}
-		}
-		else
-		{
-			$str 	= $alt;
-		}
-		
-		//return
-		return $str;
-		
-	}//eof
-	
-	/**
-	*	Check the radio or check box if the session variable is there
-	*
-	*	@param
-	*			$valArr		The current name
-	*			$value		The has to select
-	*			$alt		Alternate text or default value
-	*
-	*	@return string
-	*/
-	function checkSessStr2($valArr,$value, $alt)
-	{
-		$str 	= '';
-		if(in_array($value, $valArr))
-		{
-			$str 	= 'checked';
-		}
-		else
-		{
-			$str 	= $alt;
-		}
-		
-		//return
-		return $str;
-		
-	}//eof
-	
-
-	/**
-	*	This function simply print session variables
-	*	
-	*	@param
-	*			$var		Value associated with the the session variable
-	*
-	*	@return NULL
-	*/
-	function printSess($var)
-	{
-		if(isset($_SESSION[$var]))
-		{
-			echo $_SESSION[$var];
-		}
-	}//eof
-	
-	/**
-	*	This function is a modified version of previous function. It will 
-	*	find for a default value as well.
-	*	
-	*	@param
-	*			$var		Value associated with the the session variable
-	*			$default	Default value to be printed if the session is not registered
-	*
-	*	@return NULL
-	*/
-	function printSess2($var, $default)
-	{
-		if(isset($_SESSION[$var]))
-		{
-			echo $_SESSION[$var];
-		}
-		else
-		{
-			echo $default;
-		}
-	}//eof
-	
-	
-	/**
-	*	This function is a modified version of previous function. It will return the session
-	*	value if registered else will return a default value
-	*	
-	*	@param
-	*			$var		Value associated with the the session variable
-	*			$default	Default value to be printed if the session is not registered
-	*
-	*	@return NULL
-	*/
-	function returnSess($var, $default)
-	{
-		// echo $var, $default;
-		// exit;
-		$sessVal	= '';
-		if(isset($_SESSION[$var])){
-			// echo "here 1"; exit;
-			// echo $_SESSION[$var]; exit;
-			$sessVal  =  $_SESSION[$var];
-		}else{
-			// echo "here 2"; exit;
-			$sessVal  =  $default;
-		}
-		
-		//return the value
-		// echo $sessVal;exit;
-		return $sessVal;
-		
 	}//eof
 	
 	
@@ -1519,33 +1342,6 @@ class Utility extends DatabaseConnection{
 				$_SESSION[$k] = '';
 
 			}
-		}
-	}//eof
-	
-	/**
-	*	Delete session if exist.
-	*/
-	function delSession($sess){
-		if(isset($_SESSION[$sess])){
-			$_SESSION[$sess] = '';
-			unset($_SESSION[$sess]);
-		}
-	}//eof
-	
-	
-	/**
-	*	Delete session are in array
-	*
-	*	@param
-	*			$sess_arr	Session Array
-	*
-	*	@return	null
-	*/
-	function delSessArr($sess_arr)
-	{
-		foreach($sess_arr as $k)
-		{
-			$this->delSession($k);
 		}
 	}//eof
 	
@@ -3767,42 +3563,7 @@ class Utility extends DatabaseConnection{
 	}
 	
 	
-	/**
-	*	Go to page session
-	*
-	*	@param
-	*			$goTo		Name of the session variable 
-	*			$pageName	Name of the new page
-	*			$alt		If page not found then forward it to alternate page
-	*
-	*	@date	October 5, 2009
-	*
-	*	@return string
-	*/
-	function setCurrentPageSession(){
-		
-		//unset the previously set session
-		$this->delSession('goTo');
-		
-		//register with new page
-		// $_SESSION['goTo']	= $pageName;
-		$currentUrl = $this->currentUrl();
-		$_SESSION['goTo']	= $currentUrl;
-
-		
-		//return page name
-		return $currentUrl;
-		
-	}//eof
 	
-	
-
-	function goToPreviousSessionPage(){
-		if (isset($_SESSION['goTo'])) {
-			return $_SESSION['goTo'];
-		}
-
-	}
 
 
 	/**
@@ -4217,6 +3978,249 @@ function word_teaser_end($string, $count){
  $string = implode(' ', $words);
   return $string;
 }
+
+
+	/*****************************************************************************
+	 *																			 *
+	*								SESSION FUNCTIONS							 *
+	*																			 *
+	*****************************************************************************/
+
+
+	function setSession($sess, $value){
+		try {
+			$this->delSession($sess);
+			$_SESSION[$sess] = $value;
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
+	} 
+
+	/**
+	*	Delete session if exist.
+	*/
+	function delSession($sess){
+		if(isset($_SESSION[$sess])){
+			$_SESSION[$sess] = '';
+			unset($_SESSION[$sess]);
+		}
+	}//eof
 	
+	
+	/**
+	*	Delete session are in array
+	*
+	*	@param
+	*			$sess_arr	Session Array
+	*
+	*	@return	null
+	*/
+	function delSessArr($sess_arr)
+	{
+		foreach($sess_arr as $k)
+		{
+			$this->delSession($k);
+		}
+	}//eof
+	
+ 	/**
+	*	Go to page session
+	*
+	*	@param
+	*			$goTo		Name of the session variable 
+	*			$currentUrl	URL of the current page
+	*
+	*	@return string
+	*/
+	function setCurrentPageSession(){
+		
+		//unset the previously set session
+		$this->delSession('goTo');
+		
+		//register with new page
+		$currentUrl = $this->currentUrl();
+		$_SESSION['goTo']	= $currentUrl;
+
+		
+		//return page name
+		return $currentUrl;
+		
+	}//eof
+	
+	
+
+	function goToPreviousSessionPage(){
+		if (isset($_SESSION['goTo'])) {
+			return $_SESSION['goTo'];
+		}
+
+	}
+
+
+	
+	//////////////////////////////////////////////////////////////////////////////////////
+	//
+	//							Session + Get + Post + Form Fields and Variables
+	//
+	///////////////////////////////////////////////////////////////////////////////////////
+	
+	/**
+	*	Add to session
+	*	
+	*	@param
+	*			$sessArr	Session name
+	*
+	*	@return NULL
+	*/
+	function addToSession($sessArr){
+		foreach($sessArr as $k){
+			$_SESSION[$k] = $k;
+		}
+	}//eof
+	
+
+	/**
+	*	Check the radio or check box if the session variable is there
+	*
+	*	@param
+	*			$name		The current name
+	*			$value		The has to select
+	*			$alt		Alternate text or default value
+	*
+	*	@return string
+	*/
+	function checkSessStr($name,$value, $alt){
+		$str 	= '';
+		
+		if(isset($_SESSION[$name])){
+			if($_SESSION[$name] == $value){
+				$str 	= 'checked';
+			}else{
+				$str 	= $alt;
+			}
+		}
+		else
+		{
+			$str 	= $alt;
+		}
+		
+		//return
+		return $str;
+		
+	}//eof
+	
+	/**
+	*	Check the radio or check box if the session variable is there
+	*
+	*	@param
+	*			$valArr		The current name
+	*			$value		The has to select
+	*			$alt		Alternate text or default value
+	*
+	*	@return string
+	*/
+	function checkSessStr2($valArr,$value, $alt){
+
+		$str 	= '';
+		if(in_array($value, $valArr)){
+			$str 	= 'checked';
+		}else{
+			$str 	= $alt;
+		}
+		
+		//return
+		return $str;
+		
+	}//eof
+	
+
+	/**
+	*	This function simply print session variables
+	*	
+	*	@param
+	*			$var		Value associated with the the session variable
+	*
+	*	@return NULL
+	*/
+	function printSess($var){
+
+		if(isset($_SESSION[$var])){
+			echo $_SESSION[$var];
+		}
+	}//eof
+	
+	/**
+	*	This function is a modified version of previous function. It will 
+	*	find for a default value as well.
+	*	
+	*	@param
+	*			$var		Value associated with the the session variable
+	*			$default	Default value to be printed if the session is not registered
+	*
+	*	@return NULL
+	*/
+	function printSess2($var, $default){
+
+		if(isset($_SESSION[$var])){
+			echo $_SESSION[$var];
+		}else{
+			echo $default;
+		}
+	}//eof
+	
+	
+	/**
+	*	This function is a modified version of previous function. It will return the session
+	*	value if registered else will return a default value
+	*	
+	*	@param
+	*			$var		Value associated with the the session variable
+	*			$default	Default value to be printed if the session is not registered
+	*
+	*	@return NULL
+	*/
+	function returnSess($var, $default){
+
+		$sessVal	= '';
+		if(isset($_SESSION[$var])){
+			$sessVal  =  $_SESSION[$var];
+		}else{
+			$sessVal  =  $default;
+		}
+		
+		return $sessVal;
+		
+	}//eof
+	
+
+
+	/*****************************************************************************
+	 *																			 *
+	*								DATABASE FUNCTIONS							 *
+	*																			 *
+	*****************************************************************************/
+
+	function getSingleData($fetch, $table, $column, $value){
+		try {
+			$data	= array();
+			$sql	= "SELECT $fetch FROM $table WHERE $column = '$value'";
+			$query	= $this->conn->query($sql);
+			// echo $sql;
+			if($query->num_rows > 0){
+				while($result = $query->fetch_assoc()){
+					$data = $result;
+				}
+			}
+			return $data;
+		
+		} catch (Exception $e) {
+			echo '<b>Error on:</b> '.__FILE__.', <b>On Line:</b>'.__LINE__.'<br>';
+			echo '<b>Error:</b> '.$e->getMessage();
+			exit;
+		}
+	}
+
+
+
 }//eoc
 ?>

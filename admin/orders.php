@@ -162,49 +162,42 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'search')){
 
                                                 ?>
 
-                                                    <tr>
-                                                        <td>
-                                                            <?= '#'.$orderId; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?= $customerName; ?>
-                                                        </td>
-                                                        <td>
-                                                            <!-- <div class="progress">
+                                                <tr>
+                                                    <td>
+                                                        <?= '#'.$orderId; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $customerName; ?>
+                                                    </td>
+                                                    <td>
+                                                        <!-- <div class="progress">
                                                                 <div class="progress-bar bg-success" role="progressbar"
                                                                     style="width: 25%" aria-valuenow="25" aria-valuemin="0"
                                                                     aria-valuemax="100"></div>
                                                             </div> -->
-                                                            <?php echo $order['clientOrderedSite']; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?= CURRENCY.$itemAmount; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?=  CURRENCY.$paid_amount; ?>
-                                                        </td>
-                                                        <td>
-                                                            <label class="badge <?php echo $ordStatusName;?>">
-                                                                <?php echo $ordStatusName;?>
-                                                            </label>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $orderDate; ?>
-                                                        </td>
-                                                        <td>
-                                                            <a class="text-decoration-none mx-1"
-                                                                href="order-details.php?ord_id=<?php echo $order['order_id']; ?>">
-                                                                <i class="fa-regular fa-eye"></i>
-                                                            </a>
-                                                            <a href="" class="text-decoration-none mx-1">
-                                                                <i class="fa-regular fa-pen-to-square mx-1"></i>
-                                                            </a>
-                                                            <a href="" class="text-decoration-none mx-1">
-                                                                <i
-                                                                    class="fa-regular fa-trash-can-xmark text-danger mx-1"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
+                                                        <?php echo $order['clientOrderedSite']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= CURRENCY.$itemAmount; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?=  CURRENCY.$paid_amount; ?>
+                                                    </td>
+                                                    <td>
+                                                        <label class="badge <?php echo $ordStatusName;?>">
+                                                            <?php echo $ordStatusName;?>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $orderDate; ?>
+                                                    </td>
+                                                    <td>
+                                                        <a class="text-decoration-none mx-1"
+                                                            href="order-details.php?ord_id=<?php echo $order['order_id']; ?>">
+                                                            <span class="badge badge-success"><small> View <i class="fa-regular fa-eye"></i></small></span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
                                                 <?php
                                               }
                                               ?>

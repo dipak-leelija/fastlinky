@@ -26,7 +26,7 @@ class DateUtil extends GeneraicDuration{
 	}
 
 	/**
-	 * This Function Will printa the date like : 1st of January, 1997
+	 * This Function Will printa the date like : 01.01.1997 01:57:40 pm
 	 * $date = date as string
 	 */
 	function dateTimeNum($date, $divider){

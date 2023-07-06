@@ -2,11 +2,13 @@
 session_start();
 require_once __DIR__ . "/includes/constant.inc.php";
 require_once __DIR__ . "/includes/order-constant.inc.php";
+require_once __DIR__ . "/includes/content.inc.php";
 require_once ROOT_DIR . "/_config/dbconnect.php";
 
 require_once ROOT_DIR . "/classes/customer.class.php";
 require_once ROOT_DIR . "/classes/content-order.class.php";
 require_once ROOT_DIR . "/classes/orderStatus.class.php";
+require_once ROOT_DIR . "/classes/notification.class.php";
 require_once ROOT_DIR . "/classes/location.class.php";
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php";
@@ -16,6 +18,7 @@ require_once ROOT_DIR . "/classes/utilityMesg.class.php";
 $customer		= new Customer();
 $ContentOrder   = new ContentOrder();
 $OrderStatus    = new OrderStatus();
+$Notifications  = new Notifications();
 $Location       = new Location();
 $DateUtil       = new DateUtil();
 $Utility		= new Utility();
@@ -35,14 +38,20 @@ if(isset($_GET['order'])){
     header("Location: my-orders.php");
 }
 
-$thisPage =  $Utility->currentUrl();
-$updatedBy =  $_SESSION[USR_SESS];
+$thisPage   = $Utility->currentUrl();
+$updatedBy  = $_SESSION[USR_SESS];
+
+$reference_link = $thisPage;
+
+//session array
+$sess_arr = array('contetPrice', ORDERDOMAIN, ORDERSITECOST, ORDERID, SUMMARYDOMAIN, SUMMARYSITECOST, 'content-data', 'ConetntCreationPlacementPrice');
+$Utility->delSessArr($sess_arr);
 
 ?>
 
 
 <!DOCTYPE HTML>
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <meta name="robots" content="noindex,nofollow">
@@ -67,60 +76,9 @@ $updatedBy =  $_SESSION[USR_SESS];
     <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
 
 </head>
-
 <body>
 
-    <?php
-
-// print_r($_REQUEST);
-// exit;
-if (isset($_POST['articleSubmit'])) {
-
-    
-    // exit;
-    // if (isset($_POST['clientContent'])) {
-        
-    //     $clientContent      = $_POST['clientContent'];
-
-    //     $updated = $ContentOrder->ClientOrderContentUpdate($orderId, $clientAnchorText, $clientTargetUrl, $clientContent, $clientRequirement);
-
-    //     if ($updated) {
-    //         $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Content Updated', '', $cusDtl[0][0]);
-
-    ?>
-    // <script>
-    //         Swal.fire({
-    //             title: 'Updated!',
-    //             text: 'Contents Updated',
-    //             icon: 'success',
-    //             confirmButtonText: 'Continue'
-    //         })
-    //         
-    </script>
-    // <?php
-    //     }
-    // }else {
-    //         $updated = $ContentOrder->ClientOrderContentUpdate($orderId, $clientAnchorText, $clientTargetUrl, '', $clientRequirement);
-
-    //         if ($updated) {
-    //         $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Content Updated', '', $cusDtl[0][0]);
-
-    // ?>
-    // <script>
-    // Swal.fire({
-    //     title: 'Updated!',
-    //     text: 'Contents Updated',
-    //     icon: 'success',
-    //     confirmButtonText: 'Continue'
-    // })
-    // 
-    </script>
-    // <?php
-    //         }
-    // }
-
-}
-
+<?php
 
 if (isset($_POST['changesReq'])) {
 
@@ -151,7 +109,9 @@ if (isset($_POST['changesReq'])) {
     $updateResponse  = [$updatedTitle, $updatedLinks, $updated];
 
     if (!in_array(false, $updateResponse) || !in_array(0, $updateResponse)) {
-        $statusUpdated = $ContentOrder->addOrderUpdate($orderId, 'Changes Request', '', $cusDtl[0][0]);
+        $statusUpdated = $ContentOrder->addOrderUpdate($orderId, ORD_CNG_REQ, '', $cusId);
+        $Notifications->addNotification(ORD_UPDATE, ORD_CNG_REQ, ORD_CNG_REQ_M, $reference_link, $cusId);
+
         if ($statusUpdated) {        
     ?>
     <script>
@@ -355,7 +315,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                 <?php if ( $orderStatusCode == DELIVEREDCODE ):?>
                                 <div class="btn_bx text-center mt-3">
                                     <button class="btn btn-sm btn-primary"
-                                        onclick="finishedOrder(<?= $orderId ?>)">Finished</button>
+                                        onclick="finishedOrder(<?= $orderId ?>, <?= $cusId ?>)">Finished</button>
                                     <button class="btn btn-sm btn-info" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal" onclick="changeRequest(<?= $orderId ?>)">Change
                                         Request</button>
@@ -552,7 +512,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                             }
 
                                             if($orderStatusCode == INCOMPLETECODE){
-                                                echo '<a class="btn btn-primary" >Complete The Order now</a>';
+                                                echo '<a class="btn btn-primary" href="cheakout/order-summary.php?order='.$_GET['order'].'">Complete The Order now</a>';
                                             }
 
                                             if($orderStatusCode == REJECTEDCODE){
@@ -583,8 +543,9 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <input type="hidden" name="return-page" value="<?php echo $Utility->currentUrl()?>">
-                            <input type="hidden" name="order-id" value="<?php echo $orderId?>">
+                            <input type="hidden" name="return-page" value="<?= $Utility->currentUrl()?>">
+                            <input type="hidden" name="order-id" value="<?= $orderId?>">
+                            <input type="hidden" name="customer-id" value="<?= $cusId?>">
                             <div class="modal-body" id="update-modal-body">
 
                             </div>
@@ -610,7 +571,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
         <script src="js/script.js"></script>
         <script src="js/ajax.js" type="text/javascript"></script>
         <script>
-        const finishedOrder = (ordId) => {
+        const finishedOrder = (ordId, customerId) => {
             Swal.fire({
                 title: 'Are you sure?',
                 text: "Order Completed!",
@@ -626,7 +587,8 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                         url: "ajax/order-update.ajax.php",
                         type: "POST",
                         data: {
-                            ordId: ordId
+                            ordId: ordId,
+                            customerId: customerId
                         },
                         success: function(data) {
                             // alert(data);

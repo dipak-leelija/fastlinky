@@ -97,15 +97,15 @@ if (isset($_POST['data']) && isset($_POST['orderId'])) {
 		$_SESSION['pay_success']  = true;
 
 
-		$ContentOrder->updatepayLaterTransection($orderId, $trxn_id, "Paypal", 0, $paid_amount, $t_date, $clientEmail);
-		$ContentOrder->contentOrderStatusUpdate($orderId, $trxn_id, COMPLETED, COMPLETEDCODE);
+		$ContentOrder->updatepayLaterTransection($orderId, COMPLETEDCODE, $trxn_id, "Paypal", 0, $paid_amount, $t_date, $clientEmail);
+		$ContentOrder->contentOrderStatusUpdate($orderId, COMPLETEDCODE);
 
 		$ContentOrder->addOrderUpdate($orderId, 'Payment Completed', '', $cusDtl[0][0]);
 
 
 	}else {
 
-		$ContentOrder->contentOrderStatusUpdate($orderId, $_SESSION['trxn_id'], FAILED, FAILEDCODE);
+		$ContentOrder->contentOrderStatusUpdate($orderId, FAILEDCODE);
 		$ContentOrder->addOrderUpdate($orderId, 'Payment Failed', 'Paylater Payment Failed', $cusDtl[0][0]);
 		
 	}
@@ -207,7 +207,7 @@ unset($_POST);
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
-    <title>Payment Success - Order Received</title>
+    <title>Successful Order - Order Received</title>
 
 	<link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>

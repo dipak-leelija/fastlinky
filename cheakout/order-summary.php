@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once dirname(__DIR__) . "/includes/constant.inc.php";
+require_once dirname(__DIR__)."/includes/constant.inc.php";
 
 require_once ROOT_DIR . "/_config/dbconnect.php";
 
@@ -38,12 +38,11 @@ $clientUserId       = $_SESSION['userid'];
 $clientName         = $_SESSION['name'];
 $clientEmail        = $_SESSION[USR_SESS];
 
-if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_SESSION['ConetntCreationPlacementPrice'])) {
+if (isset($_SESSION[SUMMARYDOMAIN]) && isset($_SESSION[SUMMARYSITECOST]) && isset($_SESSION['ConetntCreationPlacementPrice'])) {
 
-    
-    $clientOrderedSite        = $_SESSION['domainName'];
-    $clientOrderedSiteNos     = count( (array) $_SESSION['domainName']);
-    $sitePrice                      = $_SESSION['sitePrice'];
+    $clientOrderedSite        = $_SESSION[SUMMARYDOMAIN];
+    $clientOrderedSiteNos     = count( (array) $_SESSION[SUMMARYDOMAIN]);
+    $sitePrice                = $_SESSION[SUMMARYSITECOST];
     
     
     if (isset($_POST['order-name'])) {
@@ -56,11 +55,10 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
 
         if($_POST['order-name'] == "onlyPlacementWithFile" ):
 
-            $clientOrderPrice               = $_SESSION['sitePrice'];
-            $_SESSION['clientOrderPrice']   = $clientOrderPrice;
+            $clientOrderPrice               = $sitePrice;
+            // $_SESSION['clientOrderPrice']   = $clientOrderPrice;
 	        $_SESSION['contetPrice'] 		= 00;
 
-            unset($_SESSION['ConetntCreationPlacementPrice']);
 
             $content_type       = 'doc';
             $clientContentTitle = $_POST['clientContentTitle1'];
@@ -77,35 +75,74 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
             $blogId             = $_POST['blogId'];
             
             
-            $filename   = basename($_FILES['content-file']['name']);
-            
-            $contentInfo = 'Content Type: '.pathinfo($filename, PATHINFO_EXTENSION);
+            $filename    = basename($_FILES['content-file']['name']);
 
-            $uploadedPath = $Utility->fileUploadWithRename($_FILES['content-file'], CONT_DIR);
-            if ($uploadedPath != false) {
-
-                $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
+            if ($filename != '') {
                 
-                $_SESSION['orderId']    = $orderId;
+                $contentInfo    = 'Content Type: '.pathinfo($filename, PATHINFO_EXTENSION);
+                $uploadedPath   = $Utility->fileUploadWithRename($_FILES['content-file'], CONT_DIR);
 
-                $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle, $uploadedPath);
+                if ($uploadedPath != false) {
 
-                $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1,$refAnc2, $refUrl2);
+                    $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
+                    
+                    $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle, $uploadedPath);
+    
+                    $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1,$refAnc2, $refUrl2);
+
+                }
+
+            }else {
+                if (isset($_SESSION['content-data'])) {
+
+                    $orderId            = $_SESSION['content-data']['remainingorderId'];
+                    
+                    if ($filename != '') {
+                        $contentInfo    = 'Content Type: '.pathinfo($filename, PATHINFO_EXTENSION);
+                        $uploadedPath   = $Utility->fileUploadWithRename($_FILES['content-file'], CONT_DIR);        
+                    }else {
+                        $uploadedPath       = $_SESSION['content-data']['uploadedPath'];
+                    }
+
+                    if (isset($_SESSION['content-data']['uploadedPath'])){
+                        if ($_SESSION['content-data']['uploadedPath'] != '') {
+                            $contentInfo    = 'Content Type: '.pathinfo($_SESSION['content-data']['uploadedPath'], PATHINFO_EXTENSION);
+                            $uploadedPath = $_SESSION['content-data']['uploadedPath'];
+
+                            //fetching the ordered blog
+                            $clientOrderedSite      = $ContentOrder->getOrderBlog($orderId);
+                            $clientOrderedSiteNos   = 1;
+
+                            //fetching order contents
+                            $remorderContents       = $ContentOrder->getOrderContent($orderId);
+                            $contentId              = $remorderContents['id'];
+                            $content_type           = $remorderContents['content_type'];
+                            $content                = $remorderContents['content'];
+
+                            // fetching order hyperlinks
+                            $remorderHyperLink  = $ContentOrder->getContentHyperLinks($remorderContents['id']);
+                            $hyperLinkId        = $remorderHyperLink['id'];
+
+                            //update order details
+                            $ContentOrder->updateGuestPostOrder($orderId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
+
+                            $ContentOrder->updateContent($orderId, $content_type, $clientContentTitle, $uploadedPath, $content);
+                            
+                            $ContentOrder->updateContentHyperlink($hyperLinkId, $contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1, $refAnc2, $refUrl2);
+
+                        }else {
+                            echo 'File Path is blank';
+                            exit;
+                        }
+                    }else {
+                        echo 'No Path Exists!';
+                        exit;
+                    }
+                }else {
+                    echo 'content Not exist!';
+                    exit;
+                }
             }
-
-            $_SESSION['order-data'] = array();
-
-            $_SESSION['content-data'] = array(
-                'contentTitle'      => $clientContentTitle,
-                'contentFile'       => $_FILES['content-file'],
-                'clientAnchorText'  => $clientAnchorText,
-                'clientTargetUrl'   => $clientTargetUrl,
-                'reference-anchor1' => $refAnc1,
-                'reference-url1'    => $refUrl1,
-                'reference-anchor2' => $refAnc2,
-                'reference-url2'    => $refUrl2,
-                'clientRequirement' => $clientRequirement
-            );
         endif;
 
     }
@@ -122,17 +159,18 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
         |                                                                               |
         |------------------------------------------------------------------------------*/ 
 
-        if($_POST['order-name2'] == "placementWithArticle" ):
+        if($_POST['order-name2'] == "placementWOC" ):
         
             $clientOrderPrice               = $_SESSION['ConetntCreationPlacementPrice'];
             $_SESSION['clientOrderPrice']   = $clientOrderPrice;
 	        $_SESSION['contetPrice'] 		= CONTENTPRICE;
+            
+            $_FILES['content-file'] = '';
+            $uploadedPath           = '';
+            $clientContent          = '';
+            $content_type           = '';
 
-            unset($_SESSION['ConetntCreationPlacementPrice']);
-
-            $clientContent      = '';
-            $content_type       = '';
-
+            $contentInfo        = 'Content Will be publish by '. COMPANY_S;
             $blogId             = $_POST['blogId'];
             
             $clientContentTitle = $_POST['clientContentTitle2'];
@@ -146,42 +184,90 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
             $refUrl2            = $_POST['reference-url2'];
             
             $clientRequirement  = $_POST['clientRequirement2'];
-            
-            
-
-            $contentInfo = 'Content Will be publish by '. COMPANY_S;
 
             $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
-                
-                $_SESSION['orderId']    = $orderId;
-
-                $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle);
-
-                $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1, $refAnc2, $refUrl2);
-
-            $_SESSION['order-data']   = array();
-
-            $_SESSION['content-data'] = array(
-                'contentTitle'      => $clientContentTitle,
-                'clientAnchorText'  => $clientAnchorText,
-                'clientTargetUrl'   => $clientTargetUrl,
-                'reference-anchor1' => $refAnc1,
-                'reference-url1'    => $refUrl1,
-                'reference-anchor2' => $refAnc2,
-                'reference-url2'    => $refUrl2,
-                'clientRequirement' => $clientRequirement
-                );
+            
+            $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle);
+            
+            $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1, $refAnc2, $refUrl2);
 
         endif;
     }
 
-    $domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
+}elseif(isset($_GET['order'])) {
+    $orderId			  		= urldecode(base64_decode($_GET['order']));
+    $_FILES['content-file']     = '';
 
-}else {
+
+    //fetching the ordered blog
+    $remainingOrder       = $ContentOrder->clientOrderById($orderId);
+    $clientOrderedSiteNos   = 1;
+    $clientOrderedSite      = $remainingOrder['clientOrderedSite'];
+    $clientOrderPrice       = $remainingOrder['order_price'];
+    $clientRequirement      = $remainingOrder['clientRequirement'];
+
+
+    //fetching order contents
+    $remorderContents      = $ContentOrder->getOrderContent($orderId);
+    $content_type           = $remorderContents['content_type'];
+    $content                = $remorderContents['content'];
+    $contentInfo            = 'Content Type: '.$remorderContents['content_type'];
+    $clientContentTitle     = $remorderContents['title'];
+    $uploadedPath           = $remorderContents['path'];
+
+
+    // fetching order hyperlinks
+    $remorderHyperLink     = $ContentOrder->getContentHyperLinks($remorderContents['id']);
+    $clientAnchorText       = $remorderHyperLink['client_anchor'];
+    $clientTargetUrl        = $remorderHyperLink['client_url'];
+    $refAnc1                = $remorderHyperLink['reference_anchor1'];
+    $refUrl1                = $remorderHyperLink['reference_url1'];
+    $refAnc2                = $remorderHyperLink['reference_anchor2'];
+    $refUrl2                = $remorderHyperLink['reference_url2'];
+
+
+    $domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
+    $currentSitePrice = $totalCost = $domain['cost'] + $domain['ext_cost'];
+    $sitePrice        = $currentSitePrice;
+
+    $Utility->setSession('contetPrice', 00);
+
+}else{
     $redirectTo = "../order-now.php?id=".$_POST['blogId'];
     header('Location: '.$redirectTo);
     exit;
 }
+// exit;
+
+
+/** 
+ * Destrying The Unnecessary sessions
+ **/
+unset($_SESSION['ConetntCreationPlacementPrice']);
+unset($_SESSION['clientOrderPrice']);
+unset($_SESSION[SUMMARYDOMAIN]);
+unset($_SESSION[SUMMARYSITECOST]);
+
+/** 
+ * Setingup The Necessary sessions for complete the order
+ **/
+$Utility->setSession(ORDERDOMAIN, $clientOrderedSite);
+$Utility->setSession(ORDERSITECOST, $clientOrderPrice);
+$Utility->setSession(ORDERID, $orderId);
+
+$_SESSION['content-data'] = array(
+    'remainingorderId'  => $orderId,
+    'contentTitle'      => $clientContentTitle,
+    'contentFile'       => $_FILES['content-file'],
+    'uploadedPath'      => $uploadedPath,
+    'clientAnchorText'  => $clientAnchorText,
+    'clientTargetUrl'   => $clientTargetUrl,
+    'reference-anchor1' => $refAnc1,
+    'reference-url1'    => $refUrl1,
+    'reference-anchor2' => $refAnc2,
+    'reference-url2'    => $refUrl2,
+    'clientRequirement' => $clientRequirement
+);
 
 ?>
 
@@ -199,10 +285,11 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
     <!-- plugins  files -->
     <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
-    
+
     <!-- custom css  -->
     <link rel="stylesheet" href="<?= URL; ?>/css/payment-summary-style.css">
 </head>
+
 <body>
     <section class="paylater-main-section">
         <!-- logo codes -->
@@ -238,7 +325,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                 </div>
             </div>
 
-            <form action="paylater-order-success.php" method="post">
+            <form method="post" id="orderForm">
                 <input type="hidden" name="blogId" id="blogId" value="<?php echo $blogId; ?>">
 
                 <div class=" display-table text-center">
@@ -309,22 +396,19 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
                                     <tr>
                                         <td>
                                             <div class="row">
-                                                <div class="col-8"><b> Payment Method </b></div>
-                                                <div class="col-4 text-end"><b>PayPal</b> </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="row">
                                                 <div class="col-12 text-end" id="payBtn">
                                                     <div id="paypal-payment-button">
                                                     </div>
+                                                    <div class="col-12 text-end mb-1">
+                                                        <button type="button"
+                                                            class="btn rounded-pill w-100 fw-bolder pay_button"
+                                                            onclick="paylaterOrder()">
+                                                            PayLater
+                                                        </button>
+                                                    </div>
                                                 </div>
-                                                <div class="col-12 text-end" id="payBtn">
-                                                    <button type="button"
-                                                        class="btn btn-danger rounded-pill w-100 fw-semibold"
-                                                        onclick="history.back()">Cancel</button>
+                                                <div class="col-12 text-center" id="payBtn">
+                                                    <a href="#" onclick="history.back()">Cancel</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -338,7 +422,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
         </div>
     </section>
 
-    <form action="../pay-success.php" method="post" id="send-data" class="d-none">
+    <form action="paypal-order-success.php" method="post" id="send-data" class="d-none">
         <input type="text" name="data" id="form-inp">
         <input type="text" name="blogId" id="blogId" value="<?php echo $blogId; ?>">
     </form>
@@ -346,9 +430,7 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
 
     <script
         src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_CLIENT_ID; ?>&disable-funding=credit,card&currency=USD">
-    // Live Id = AVfNiFu9M4brh84SlYmeHtHJCtdjW1CUmWl5T0wLsU2JOm6VNB6pCRcxi8zKxBbCO9p0t54pPtF65Tim
     </script>
-    <!-- <script>paypal.Buttons().rander('#paypal-payment-button');</script> -->
     <script>
     let amount = document.getElementById("amount").innerText;
 
@@ -359,8 +441,9 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
 
     paypal.Buttons({
         style: {
+            height: 45,
             layout: 'vertical',
-            color: 'silver',
+            color: 'blue',
             shape: 'pill',
             label: 'paypal'
         },
@@ -398,18 +481,14 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice']) && isset($_S
             alert(`Error: ${err}`);
         }
     }).render('#paypal-payment-button');
+
+    const paylaterOrder = () => {
+        orderForm = document.getElementById("orderForm");
+        orderForm.action = "paylater-order-success.php";
+        orderForm.submit();
+    }
     </script>
     <script src="<?= URL; ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>
-
-
-<!-- <script>
-window.onload = setInterval(() => {
-    let paypalBtn = document.querySelector('paypal-button-label-container')
-    if (paypalBtn) {
-        console.log('dom manipulation')
-    }
-}, 100)
-</script> -->

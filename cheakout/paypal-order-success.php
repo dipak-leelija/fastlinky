@@ -1,10 +1,11 @@
 <?php
 session_start();
-require_once "includes/constant.inc.php";
+require_once dirname(__DIR__)."/includes/constant.inc.php";
 
 require_once ROOT_DIR."/_config/dbconnect.php";
 
 require_once ROOT_DIR."/includes/order-constant.inc.php";
+require_once ROOT_DIR."/includes/content.inc.php";
 require_once ROOT_DIR."/includes/user.inc.php";
 require_once ROOT_DIR."/includes/email.inc.php";
 require_once ROOT_DIR."/includes/registration.inc.php";
@@ -18,6 +19,7 @@ require_once ROOT_DIR."/classes/orderStatus.class.php";
 require_once ROOT_DIR."/classes/error.class.php";
 require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/content-order.class.php";
+require_once ROOT_DIR."/classes/notification.class.php";
 require_once ROOT_DIR."/classes/wishList.class.php";
 require_once ROOT_DIR."/classes/utility.class.php"; 
 require_once ROOT_DIR."/classes/utilityMesg.class.php"; 
@@ -29,6 +31,7 @@ $BlogMst		= new BlogMst();
 $OrderStatus	= new OrderStatus();
 $error			= new MyError();
 $ContentOrder	= new ContentOrder();
+$Notifications  = new Notifications();
 $WishList		= new WishList();
 $dateUtil		= new DateUtil();
 $utility		= new Utility();
@@ -47,33 +50,31 @@ $typeM		= $utility->returnGetVar('typeM','');
 
 
 if (!isset($_POST)) {
-	header("Location: dashboard.php");
+	header("Location: ".URL."/app.client");
 	exit;
 }
 
-if (!isset($_SESSION['domainName']) && !isset($_SESSION['clientOrderPrice']) && !isset($_SESSION['order-data']) && !isset($_SESSION['orderId']) ) {
-	header("Location: my-orders.php");
+if (!isset($_SESSION[ORDERDOMAIN]) && !isset($_SESSION[ORDERSITECOST]) && !isset($_SESSION[ORDERID]) ) {
+	header("Location: ".URL."/my-orders.php");
 	exit;
 }else {
 	
 	$clientUserId       = $_SESSION['userid'];
 	$clientName         = $cusDtl[0][5].' '.$cusDtl[0][6];
 	$clientEmail        = $_SESSION[USR_SESS];
-
+	$orderId			= $_SESSION[ORDERID];
+	$reference_link		= URL."/guest-post-article-submit.php?order=".base64_encode(urlencode($orderId));
+	
 	// Order Data
-	$clientOrderedSite 	= $_SESSION['domainName'];
-	$clientOrderPrice	= $_SESSION['clientOrderPrice'];
+	$clientOrderedSite 	= $_SESSION[ORDERDOMAIN];
+	$clientOrderPrice	= $_SESSION[ORDERSITECOST];
 	$contetPrice		= $_SESSION['contetPrice'];
 	$contentData 		= $_SESSION['content-data'];
 	
 	$domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
-    $itemAmount = $domain[9]+$domain[16]; // cost + ext_cost
+    $itemAmount = $domain['cost']+$domain['ext_cost']; // cost + ext_cost
 	
 	$dueAmount = 00;
-
-	$sess_arr = array('domainName','sitePrice','order-data');
-	$utility->delSessArr($sess_arr);
-
 }
 
 
@@ -113,19 +114,22 @@ if (isset($_POST['data']) && isset($_POST['blogId'])) {
 		 * 4 = Oedered
 		 * 
 		 *  */ 
-		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], ORDEREDCODE);
+		$ContentOrder->contentOrderStatusUpdate($orderId, ORDEREDCODE);
 
-		$ContentOrder->addOrderTransection($_SESSION['orderId'], $trxnId, "Paypal", $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice, $dueAmount, $paid_amount, $clientEmail);
+		$ContentOrder->addOrderTransection($orderId, $trxnId, "Paypal", $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice, $dueAmount, $paid_amount, $clientEmail);
 
 
 
-		$ContentOrder->addOrderUpdate($_SESSION['orderId'], 'Order Placed', '', $cusDtl[0][0]);
+		$updateId = $ContentOrder->addOrderUpdate($orderId, ORDS001, '', $clientUserId);
+
+		$Notifications->addNotification(ORD_UPDATE, ORDS001, ORD_PLCD_M, $reference_link, $clientUserId);
+
 		$BlogMst->incrBlogSoldQty($blogId, 1);
 
 
 	}else {
 
-		$ContentOrder->contentOrderStatusUpdate($_SESSION['orderId'], PENDINGCODE);
+		$ContentOrder->contentOrderStatusUpdate($orderId, PENDINGCODE);
 		
 	}
 	
@@ -134,10 +138,10 @@ if (isset($_POST['data']) && isset($_POST['blogId'])) {
 
 
 // if(isset($_SESSION['ordId'])) {
-if(isset($_SESSION['orderId'])) {
+if(isset($_SESSION[ORDERID])) {
 
 	//fetch the order details
-	$orderDetail 	= $ContentOrder->showOrderdContentsByCol('order_id', $_SESSION['orderId'], '', '');
+	$orderDetail 	= $ContentOrder->showOrderdContentsByCol('order_id', $orderId, '', '');
 
  
 	//Remove Item From WishList after purchase
@@ -154,12 +158,12 @@ if(isset($_SESSION['orderId'])) {
 
 
 	$domainDetails = $BlogMst->showBlogbyDomain($orderDetail[0]['clientOrderedSite']);
-	$sellerEmail = $domainDetails[19];
+	$sellerEmail = $domainDetails['created_by'];
 
 	$seller = $customer->getCustomerByemail($sellerEmail);
 
 	// transection details
-	$txn = $ContentOrder->showTrxnByOrderId($_SESSION['orderId']);
+	$txn = $ContentOrder->showTrxnByOrderId($orderId);
 
 	// ===================================================================================================================
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
@@ -287,8 +291,9 @@ if(isset($_SESSION['orderId'])) {
 	
 
 	//session array
-	$sess_arr = array('content-data', 'domainName', 'clientOrderPrice', 'order-data', 'orderId', 'trxn_id', 'pay_success');
+	$sess_arr = array('reorder-page', 'contetPrice', ORDERDOMAIN, ORDERSITECOST, ORDERID, 'sitePrice', 'trxn_id', 'pay_success');
 	$utility->delSessArr($sess_arr);
+	unset($_SESSION['content-data']);
 	unset($_POST);
 }
 		
@@ -306,16 +311,16 @@ if(isset($_SESSION['orderId'])) {
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/bootstrap-5.2.0/bootstrap-css-inc.php'?>
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
-
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="<?php echo URL ?>/css/payment-status.css">
+	
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/payment-status.css" rel="stylesheet" type='text/css'>
 
 </head>
 <body>
     <!-- Start  Header -->
-    <?php require_once "partials/navbar.php"; ?>
+    <?php require_once ROOT_DIR."/partials/navbar.php"; ?>
     <!-- End  Header -->
 
     <!-- Start  container -->
@@ -346,8 +351,8 @@ if(isset($_SESSION['orderId'])) {
             <div class="col-11 col-md-10 mb-3 mb-md-5 p-4 text-center">
                 <p>Your order status will updated to you, Now you can go back.</p>
                 <div class="mt-3">
-                    <a class="btn btn-primary" href="app.client.php">My Account</a>
-                    <a class="btn btn-primary" href="my-orders.php">My Orders</a>
+                    <a class="btn btn-primary" href="<?= URL."/app.client"; ?>">My Account</a>
+					<a class="btn btn-primary" href="<?= $reference_link; ?>">See Order</a>
                 </div>
             </div>
         </div>

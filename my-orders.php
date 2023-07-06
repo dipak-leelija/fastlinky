@@ -32,8 +32,8 @@ require_once ROOT_DIR.'/includes/check-customer-login.inc.php';
 
 $myOrders       = $ContentOrder->clientOrders($cusId);
 $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
-// $orders         = $Order->getOrdersByCusId($cusId);
 
+// print_r($_SESSION);exit;
 
 ?>
 <!DOCTYPE HTML>
@@ -201,7 +201,11 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                             foreach ($myOrders as $order) {
                                                 $gpOrderId = $order['order_id'];
                                                 $payMode = $ContentOrder->showTrxnByOrderId($order['order_id']);
-
+                                                if ($payMode != null) {
+                                                    $transectionMode = $payMode['transection_mode'];
+                                                }else {
+                                                    $transectionMode = '';
+                                                }
                                                 $statusName = $OrderStatus->getOrdStatName($order['order_status']);
                                         ?>
                                             <tr class="cursor_pointer"
@@ -210,7 +214,7 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                                 <td><?= $order['clientOrderedSite']; ?></td>
                                                 <td><span class="badge <?= $statusName;?>"><?= $statusName;?></span>
                                                 </td>
-                                                <td><?= $payMode['transection_mode'];?></td>
+                                                <td><?= $transectionMode;?></td>
                                                 <td><?= $DateUtil->printDate2($order['added_on']); ?></td>
                                             </tr>
                                             <?php

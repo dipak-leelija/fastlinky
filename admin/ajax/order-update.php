@@ -1,29 +1,37 @@
 <?php
 session_start();
 require_once "../../includes/constant.inc.php";
-require_once "../../includes/order-constant.inc.php";
+require_once ROOT_DIR."/includes/order-constant.inc.php";
+require_once ROOT_DIR."/includes/content.inc.php";
+
 include_once('checkSession.php');
 
 
-require_once "../../_config/dbconnect.php";
+require_once ROOT_DIR."/_config/dbconnect.php";
 
-require_once "../../classes/utilityMesg.class.php";
-require_once "../../classes/content-order.class.php";
+require_once ROOT_DIR."/classes/utilityMesg.class.php";
+require_once ROOT_DIR."/classes/content-order.class.php";
+require_once ROOT_DIR."/classes/notification.class.php";
 
 $ContentOrder   = new ContentOrder();
 $uMesg 			= new MesgUtility();
+$Notifications  = new Notifications();
+
 $updatedBy = 0;
+$reference_link =   URL.'/guest-post-article-submit.php?order=';
 
 
-if (isset($_GET['accept-order'])) {
+if (isset($_GET['order-id']) && isset($_GET['customer-id']) ) {
+    $orderId    = $_GET['order-id'];
+    $customerId = $_GET['customer-id'];
+    $reference_link .=  base64_encode(urlencode($orderId));
     
-    $orderStatus    = 3; // Processing 
-
-    $accepted = $ContentOrder->ClientOrderOrderUpdate($_GET['accept-order'], $orderStatus, '', '');
+    $accepted = $ContentOrder->ClientOrderOrderUpdate($orderId, PROCESSINGCODE, '', '');
     if ($accepted) {
-        $updated = $ContentOrder->addOrderUpdate($_GET['accept-order'], 'Accepted', '', 0);
+        $updated = $ContentOrder->addOrderUpdate($orderId, ORD_ACPT, '', 0);
+        $Notifications->addNotification(ORD_UPDATE, ORD_ACPT, ORD_ACPT_M, $reference_link, $customerId);
         if ($updated) {
-            $uMesg->showSuccessT('success', 0, '', '../order-details.php?ord_id='.$_GET['accept-order'], "Order Accepted", 'SUCCESS');
+            $uMesg->showSuccessT('success', 0, '', '../order-details.php?ord_id='.$orderId, ORD_ACPT, 'SUCCESS');
         }
     }
 }
@@ -65,11 +73,10 @@ if (isset($_GET['cancel-order'])) {
 
 
 if (isset($_POST['reject-order'])) {
-                                
-    $orderStatus    = 10; // Rejected
+
     $reason        = $_POST['cancellation-reason'];
 
-    $rejected = $ContentOrder->ClientOrderOrderUpdate($_POST['order-id'], $orderStatus, '', '');
+    $rejected = $ContentOrder->ClientOrderOrderUpdate($_POST['order-id'], REJECTEDCODE, '', '');
     if ($rejected) {
 
         $updated = $ContentOrder->addOrderUpdate($_POST['order-id'], 'Rejected', $reason, 0);
@@ -83,15 +90,18 @@ if (isset($_POST['reject-order'])) {
 
 
 if (isset($_POST['deliver-order'])) {
-    // print_r($_POST);
-    $orderStatus    = 1; // Deliverd 
-    $deliveredLink  = $_POST['deliver-link'];
+    $deliveredLink      = $_POST['deliver-link'];
+    $customerId         = $_POST['customer-id'];
+    $orderId            = $_POST['order-id'];
+    $reference_link    .= base64_encode(urlencode($orderId));
     
     $deliveredLink  = rawurlencode($deliveredLink);
 
-    $delivered = $ContentOrder->ClientOrderOrderUpdate($_POST['order-id'], $orderStatus, 'deliveredLink', $deliveredLink);
+    $delivered = $ContentOrder->ClientOrderOrderUpdate($orderId, DELIVEREDCODE, 'deliveredLink', $deliveredLink);
+    $Notifications->addNotification(ORD_UPDATE, ORD_DEL, ORD_DLVRD_M, $reference_link, $customerId);
+
     if ($delivered) {
-        $updated = $ContentOrder->addOrderUpdate($_POST['order-id'], 'Delivered', '', 0);
+        $updated = $ContentOrder->addOrderUpdate($orderId, ORD_DEL, '', 0);
         if ($updated) {
             $uMesg->showSuccessT('success', 0, '', $_POST['return-page'], "Order Delivered", 'SUCCESS');
         }
@@ -103,13 +113,14 @@ if (isset($_POST['deliver-order'])) {
 
 
 if(isset($_POST["ordId"])){
+    $orderId         = $_POST["ordId"];
+    $customerId      = $_POST["customerId"];
+    $reference_link .= base64_encode(urlencode($orderId));
 
-    // echo 'Hi';
-    $orderStatus    = 5; // Completed 
-
-    $completed = $ContentOrder->ClientOrderOrderUpdate($_POST["ordId"], $orderStatus, '', '');
+    $completed = $ContentOrder->ClientOrderOrderUpdate($orderId, COMPLETEDCODE, '', '');
     if ($completed) {
-        $updated = $ContentOrder->addOrderUpdate($_POST["ordId"], 'Completed', '', $updatedBy);
+        $updated = $ContentOrder->addOrderUpdate($orderId, ORD_COMP, '', $updatedBy);
+        $Notifications->addNotification(ORD_UPDATE, ORD_COMP, ORD_CMPLT_M, $reference_link, $customerId);
         if ($updated) {
          echo 'finished';   
         }
@@ -122,16 +133,19 @@ if(isset($_POST["ordId"])){
 
 if(isset($_POST["changes-request"])){
 
-    $orderId = $_POST["order-id"];
-    $changesOf = $_POST["changes-req"];
-    $returnPage = $_POST["return-page"];
-
-    $orderStatus    = 6; // Hold 
+    $orderId         = $_POST["order-id"];
+    $customerId      = $_POST["customer-id"];
+    $changesOf       = $_POST["changes-req"];
+    $returnPage      = $_POST["return-page"];
+    $reference_link .= base64_encode(urlencode($orderId));
+    
 
     $showOrder  = $ContentOrder->clientOrderById($orderId);
-    $completed  = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'changesReq', $showOrder['changesReq']+1 );
+    $completed  = $ContentOrder->ClientOrderOrderUpdate($orderId, HOLDCODE, 'changesReq', $showOrder['changesReq']+1 );
     if ($completed) {
-        $updated = $ContentOrder->addOrderUpdate($orderId, 'Requested for changes', $changesOf, $updatedBy);
+        $updated = $ContentOrder->addOrderUpdate($orderId, ORD_CNG_REQ, $changesOf, $updatedBy);
+        $Notifications->addNotification(ORD_UPDATE, ORD_CNG_REQ, ORD_CNG_REQ_M, $reference_link, $customerId);
+
         if ($updated) {
             $uMesg->showSuccessT('success', 0, '', $returnPage, "Requested", 'SUCCESS');
         }

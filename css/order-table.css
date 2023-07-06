@@ -30,10 +30,10 @@ vertical-align: middle !important;
     border: none !important;
 }
 .dataTable-sorter::before {
-    border-top: 4px solid white !important;
+    border-top: 4px solid #407BFF !important;
 }
 .dataTable-sorter::after {
-    border-bottom: 4px solid white !important;
+    border-bottom: 4px solid #407BFF !important;
    
 }
 .dataTable-sorter::before, .dataTable-sorter::after {

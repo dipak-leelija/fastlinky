@@ -844,7 +844,7 @@ class Customer extends Utility{
  
 
 	function getCustomerByemail($email){	
-		
+		try {
 		//create the statement
 		$sql = "SELECT * FROM customer C, customer_info CI, customer_address CD
 						WHERE C.customer_id = CI.customer_id
@@ -879,6 +879,12 @@ class Customer extends Utility{
 				}
 				return $data2;
 			}
+		}
+		
+		} catch (Exception $e) {
+			echo '<b>Error on:</b> '.__FILE__.', <b>On Line:</b>'.__LINE__.'<br>';
+			echo '<b>Error:</b> '.$e->getMessage();
+			exit;
 		}
 
 	}//	eof
@@ -1997,17 +2003,23 @@ class Customer extends Utility{
 
 
 	function getCustomerByTypeId($type_id){
-
-		$data	= array();
-		$sql	= "SELECT * FROM customer_type WHERE customer_type_id = '$type_id'";
-		$query	= $this->conn->query($sql);
-		
-		if($query->num_rows > 0){
-			while($result = $query->fetch_array()){
-				$data[] = $result;
+		try {
+			$data 	= array();
+			$sql	= "SELECT * FROM customer_type WHERE customer_type_id = '$type_id'";
+			$query	= $this->conn->query($sql);
+			
+			if($query->num_rows > 0){
+				while($result = $query->fetch_assoc()){
+					$data = $result;
+				}
 			}
+			return $data;
+		
+		} catch (Exception $e) {
+			echo '<b>Error on:</b> '.__FILE__.', <b>On Line:</b>'.__LINE__.'<br>';
+			echo '<b>Error:</b> '.$e->getMessage();
+			exit;
 		}
-		return $data;
 	}
 
 

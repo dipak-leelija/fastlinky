@@ -1,12 +1,14 @@
 <?php
 session_start();
 require_once "includes/constant.inc.php";
-
 require_once "_config/dbconnect.php";
 
 require_once "classes/search.class.php";
 require_once "classes/customer.class.php";
 require_once "classes/emails.class.php";
+require_once "classes/notification.class.php";
+
+
 require_once "classes/blog_mst.class.php";
 require_once "classes/date.class.php";
 require_once "classes/utility.class.php";
@@ -17,6 +19,9 @@ require_once "classes/utility.class.php";
 $search_obj		= new Search();
 $customer		= new Customer();
 $Emails         = new Emails();
+$Notifications  = new Notifications();
+
+
 $blogMst		= new BlogMst();
 $DateUtil       = new DateUtil();
 $utility		= new Utility();
@@ -25,23 +30,11 @@ $typeM		= $utility->returnGetVar('typeM','');
 //user id
 $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
-// print_r($cusDtl);
-// print_r($_SESSION);
 
-if($cusId == 0){
-    header("Location: index.php");
-}
-
-if($cusDtl[0][0] == 0){
-	header("Location: index.php");
-}
-
-
-
-// $Emails->getemailDetail('to_email', $colVal)
+require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 $mails = $Emails->ShowMailsbyCol('to_email', $_SESSION[USR_SESS]);
-
+$orUpdates = $Notifications->allNotifications($cusId, 2);
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
@@ -118,12 +111,77 @@ $mails = $Emails->ShowMailsbyCol('to_email', $_SESSION[USR_SESS]);
                             </div>
                             <!--***********TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                         </div>
+
                         <div class="col-md-9  ps-md-0 display-table-cell v-align extra-mrgin-top-for-mtab">
                             <div class="toast">
                                 <h2 class="notice-title">Notifications <i class="fa-solid fa-bell fa-shake"></i></h2>
 
+                                <?php 
+                                if (count($orUpdates) > 0) {
+                                    foreach ($orUpdates as $update) { ?>
+                                <!-- Notification start  -->
+                                <div class="notification-main-division my-2 item_order_bx coloring-cd">
+                                    <div class="row">
+                                        <div
+                                            class="col-xl-1 ps-xl-1 col-lg-2 col-md-2 col-sm-2 col-3 m-auto image-column-div">
+                                            <div>
+                                                <img src="<?php echo FAVCON_PATH; ?>"
+                                                    class="notify-person-img rounded me-2" alt="...">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-9 col-lg-8 col-md-8 col-sm-8 col-9 info-column-div">
+                                            <div class="notification-para">
+                                                <p class="notify-body">
+                                                    <strong class="person-name"><?= $update['title']; ?></strong>
+                                                </p>
+                                                <p class="notify-body">
+                                                    <?= $update['message'];?>
+                                                </p>
+                                                <p class="notify-body">
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                        <div
+                                            class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-sm-flex flex-column align-items-end d-none m-auto">
+                                            <a class="btn btn-sm btn-primary"
+                                                href="<?= $update['reference_link'];?>">View</a>
+                                            <br>
+                                            <small class="notify-time"><?= $DateUtil->dateTimeNumber($update['added_on']);?></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Notification start  -->
                                 <?php
-                                
+                                    }
+                                }else{?>
+                                <div class="container border border-info rounded">
+                                    <h4 class="text-center py-4">No Notifications</h4>
+                                </div>
+                                <?php }?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <?php
+                                /*
                                 if (count($mails) > 0) {
                                     foreach ($mails as $eachMail) {
 
@@ -196,6 +254,7 @@ $mails = $Emails->ShowMailsbyCol('to_email', $_SESSION[USR_SESS]);
                                 </div>
                                 <?php
                                 }
+                                */
                                 ?>
                                 <!-- notification end-->
 

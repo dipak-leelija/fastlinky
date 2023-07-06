@@ -111,6 +111,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
     $orderDate      = $showOrder['added_on'];
     $ordStatCode    = $showOrder['order_status'];
+    $customerId     = $showOrder['clientUserId'];
     
     // order status names
     $statusName = $OrderStatus->getOrdStatName($ordStatCode);
@@ -125,6 +126,13 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
         $itemAmount     = $ordTxn['item_amount'];
         $paidAmount     = $ordTxn['paid_amount'];
         $paymentTime    = $ordTxn['updated_on'];
+    }else{
+        $transectionId  = '';
+        $paymentMode    = '';
+        $paymentStatus  = '';
+        $itemAmount     = '';
+        $paidAmount     = '';
+        $paymentTime    = '';
     }
     // $ordTxn['transection_id'];
 
@@ -141,10 +149,10 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     $item       = $BlogMst->showBlogbyDomain($showOrder['clientOrderedSite']);
 
     //blog creator / seller
-    $seller     = $customer->getCustomerByemail($item[19]);
+    $seller     = $customer->getCustomerByemail($item['created_by']);
 
     //customer / buyer
-    $buyer      = $customer->getCustomerData($showOrder['clientUserId']);
+    $buyer      = $customer->getCustomerData($customerId);
     $buyerName  = $buyer[0][5].' '.$buyer[0][6];
 
 }
@@ -543,7 +551,8 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                         if ($ordStatCode == DELIVEREDCODE) {
                                             echo '
                                                     <div class="btn_bx text-center mt-3">
-                                                        <button class="btn btn-sm btn-primary" onclick="finishedOrder(\''.$orderId.'\')">Finished</button>
+                                <input type="hidden" name="customer-id" value="<?= $customerId; ?>">
+                                                        <button class="btn btn-sm btn-primary" onclick="finishedOrder(\''.$orderId.'\', \''.$customerId.'\')">Finished</button>
                                                         <button class="btn btn-sm btn-danger"  data-toggle="modal" data-target="#updateModal" onclick="changeRequest()">Need to Change</button>
                                                     </div>';
                                         } else {
@@ -788,7 +797,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                             onclick="rejectOrder()">Reject</button>
 
                                                         <button class="btn btn-primary w-25" name="accept-order"
-                                                            onclick="acceptOrder(<?= $orderId; ?>)">Accept</button>
+                                                            onclick="acceptOrder(<?= $orderId; ?>, <?= $customerId; ?>)">Accept</button>
                                                     </div>
                                                 </div>
                                                 <?php endif;?>
@@ -909,37 +918,43 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                             <div class="card status_card p-0 rounded-1r border shadow">
                                                 <div class="card-body">
                                                     <p class="card-title" style="margin-bottom: 0.75rem;">Updates</p>
-                            
+
                                                     <ul class="icon-data-list" id="progressbar">
                                                         <?php
                                                     $ordUpdates = $ContentOrder->showOrderUpdateById($showOrder['order_id'], 'ASC');
                                                     // print_r($ordUpdates);
                                                     foreach ($ordUpdates as $ordUpdate) {
-                                                        $updateCustomer = $customer->getCustomerByTypeId($ordUpdate['updated_by']);
+                                                        if ($ordUpdate['updated_by'] != 0) {
+                                                        
+                                                            $newCus = $utility->getSingleData('customer_type', 'customer', 'customer_id', $ordUpdate['updated_by']);
+                                                            $updateCustomer = $customer->getCustomerByTypeId($newCus['customer_type']);
 
-                                                        $avatar = $customer->getCustomerAvatar($showOrder['clientUserId']);
-                                                        if ($avatar == '') {
-                                                            $avatar = DFAULT_AVATAR_PATH;
-                                                        }else{
-                                                            $avatar = USER_IMG_PATH.$avatar;
+                                                            $avatar = $customer->getCustomerAvatar($customerId);
+                                                            if ($avatar == '') {
+                                                                $avatar = DFAULT_AVATAR_PATH;
+                                                            }else{
+                                                                $avatar = USER_IMG_PATH.$avatar;
+                                                            }
+                                                        
                                                         }
+                                                        
 
                                                         if ($ordUpdate['updated_by'] == 0) {
                                                             $updateBy = COMPANY_S;
                                                             $userImg  = FAVCON_PATH;
                                                         } else {
-                                                            $updateBy = $updateCustomer[0]['cus_type'];
+                                                            $updateBy = $updateCustomer['cus_type'];
                                                             $userImg  = $avatar;
                                                         }
 
                                                          
                                                     ?>
 
-                                                        <li  id="step">
+                                                        <li id="step">
                                                             <div class="d-flex pl-4" style="margin-top: -1.18rem;">
                                                                 <!-- <img src="<?= $userImg ?>" alt="user"> -->
                                                                 <div>
-                                                                    <p class="text-primary mb-0" >
+                                                                    <p class="text-primary mb-0">
                                                                         <?php echo $ordUpdate['subject']; ?></p>
                                                                     <p class="mb-0">
                                                                         <?php
@@ -949,7 +964,9 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                                         ?>
                                                                         <small>By <?= $updateBy ?></small>
                                                                     </p>
-                                                                    <small style="font-size: 83%;"><?php echo $ordUpdate['updated_on']; ?></small>
+                                                                    <small style="font-size: 83%;">
+                                                                        <?= $DateUtil->dateTimeNumber($ordUpdate['updated_on']); ?>
+                                                                    </small>
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -1009,8 +1026,10 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <input type="hidden" name="return-page" value="<?php echo $utility->currentUrl() ?>">
-                                <input type="hidden" name="order-id" value="<?php echo $orderId ?>">
+                                <input type="hidden" name="return-page" value="<?= $utility->currentUrl() ?>">
+                                <input type="hidden" name="order-id" value="<?= $orderId ?>">
+                                <input type="hidden" name="customer-id" value="<?= $customerId; ?>">
+
                                 <div class="modal-body p-3" id="updateModalBody">
                                 </div>
                                 <div class="modal-footer">
@@ -1037,8 +1056,9 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <input type="hidden" name="return-page" value="<?php echo $utility->currentUrl() ?>">
-                                <input type="hidden" name="order-id" value="<?php echo $orderId ?>">
+                                <input type="hidden" name="return-page" value="<?= $utility->currentUrl() ?>">
+                                <input type="hidden" name="order-id" value="<?= $orderId ?>">
+                                <input type="hidden" name="customer-id" value="<?= $customerId; ?>">
                                 <div class="modal-body p-2" id="deliverModalBody">
                                     <input type="text" class="form-control" name="deliver-link" id="deliver-link"
                                         placeholder="Paste the link here">
@@ -1078,10 +1098,10 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
 
     <script>
-    const acceptOrder = (ordId) => {
+    const acceptOrder = (ordId, customerId) => {
 
         if (confirm("Are You Sure ?")) {
-            window.location.href = `ajax/order-update.php?accept-order=${ordId}`;
+            window.location.href = `ajax/order-update.php?order-id=${ordId}&customer-id=${customerId}`;
         }
 
         // reject-order
@@ -1144,7 +1164,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     }
 
 
-    const finishedOrder = (ordId) => {
+    const finishedOrder = (ordId, customerId) => {
         Swal.fire({
             title: 'Are you sure?',
             text: "Order Completed!",
@@ -1160,7 +1180,8 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                     url: "ajax/order-update.php",
                     type: "POST",
                     data: {
-                        ordId: ordId
+                        ordId: ordId,
+                        customerId: customerId
                     },
                     success: function(data) {
                         // alert(data);
@@ -1182,7 +1203,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     }
 
 
-    const changeRequest = (orderId) => {
+    const changeRequest = () => {
         // alert('Hi');
         document.getElementById('updateModalLabel').innerText = 'What to change?';
         document.getElementById('action-btn').name = 'changes-request';
