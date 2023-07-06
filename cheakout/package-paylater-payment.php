@@ -42,7 +42,7 @@ $orderId = base64_decode($_GET['order']);
 
 $showOrder  = $PackageOrder->gpOrderById($orderId);
 // print_r($showOrder);exit;
-$orderPrice         = $showOrder['due_amount'];
+$orderPrice         = $showOrder['price'];
 $packageId          = $showOrder['package_id'];
 $orderDate          = $showOrder['date'];
 $paymentStatus      = $showOrder['payment_type'];

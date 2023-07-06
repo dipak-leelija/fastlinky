@@ -222,7 +222,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                     <?php }?>
 
                                                                     <input type="text" class="form-control mt-1"
-                                                                        value="<?php echo $publishedStatus['url']; ?>">
+                                                                        value="<?= $publishedStatus['url']; ?>" required>
 
                                                                     <?php if ($publishedStatus['status'] != REJECTEDCODE) { ?>
                                                                     <div class="d-flex justify-content-end mt-1">
@@ -283,14 +283,18 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                             </div>
 
                                                                             <input type="text"
-                                                                                class="form-control <?php echo $border; ?>"
+                                                                                class="form-control <?= $border; ?>"
                                                                                 name="ancortext[]"
-                                                                                placeholder="Ancor Text" value="<?php
-                                                                            echo $eachLink['anchor']; ?>">
+                                                                                placeholder="Ancor Text"
+                                                                                value="<?= $eachLink['anchor']; ?>"
+                                                                                required>
+
                                                                             <input type="text"
-                                                                                class="form-control mt-1 <?php echo $border; ?>"
-                                                                                name="url[]" placeholder="URL" value="<?php
-                                                                            echo $eachLink['url']; ?>">
+                                                                                class="form-control mt-1 <?= $border; ?>"
+                                                                                name="url[]"
+                                                                                placeholder="URL"
+                                                                                value="<?=$eachLink['url']; ?>"
+                                                                                required>
 
 
                                                                             <div
@@ -311,9 +315,9 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                             <label for="ancortext"
                                                                                 class="form-label mb-0">Link '.$linkNo.'</label>
                                                                             <input type="text" class="form-control"
-                                                                                name="ancortext[]" placeholder="Ancor Text">
+                                                                                name="ancortext[]" placeholder="Ancor Text" required>
                                                                             <input type="text" class="form-control mt-1"
-                                                                                name="url[]" placeholder="URL">
+                                                                                name="url[]" placeholder="URL" required>
                                                                         </div>';
                                                                     }
                                                                     ?>
