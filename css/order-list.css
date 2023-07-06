@@ -161,9 +161,11 @@ small, .small {
     padding-left: 0;
     position: relative;
     margin-bottom: 0;
-    font-family: "Nunito", sans-serif;
+    font-family: inherit;
 }
-
+small, .small {
+    font-weight: 400;
+}
 .icon-data-list hr {
     margin: .4rem 0;
     color: cadetblue;
@@ -181,7 +183,7 @@ small, .small {
     font-weight: 600;
 }
 .icon-data-list p{
-    font-weight: 600;
+    font-weight: 600 !important;
     font-size: .9rem !important;
     color: black;
     line-height: 1.27;
@@ -204,3 +206,104 @@ small, .small {
     padding: .5rem;
 
 }
+#progressbar {
+    overflow: hidden;
+    padding-left: 0px;
+    display: inline-grid;
+  }
+  
+  #progressbar li {
+    list-style-type: none;
+    font-size: 0.8rem;
+    float: left;
+    position: relative;
+    font-weight: 400;
+  }
+  
+  #progressbar #step:before {
+    content: "";
+    color: white;
+    width: 12px;
+    height: 12px;
+    margin-left: 0px !important;
+  }
+  
+  #progressbar li:before {
+    line-height: 29px;
+    display: block;
+    font-size: 12px;
+    background: #6dc517;
+    border-radius: 50%;
+    margin: auto;
+    z-index: -1;
+    margin-bottom: 1vh;
+  }
+  
+  #progressbar li:nth-child(1):after {
+    /* height: 100px; */
+  }
+  #progressbar li:last-child:after{
+    height: 0px !important;
+  }
+  #progressbar li:last-child{
+    margin-bottom:1.2rem !important ;
+  }
+  
+  #progressbar li.active:before,
+  #progressbar li.active:after {
+    background: #6dc517;
+  }
+  
+  #progressbar li:after {
+    content: '';
+    height: 85px;
+    background: #6dc517;
+    position: absolute;
+    left: 2.2%;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 2px;
+  }
+  .icon-data-list li {
+    margin-bottom: 1.5rem !important; 
+  }
+  
+  
+  .nav-tabs .nav-link{
+    border-bottom: 1px solid var(--mustard);
+    color: var(--pure-black);
+    height: 100%;
+  }
+  
+  .nav-tabs .nav-link:hover{
+    border: 1px solid var(--mustard);
+    border-bottom: 1px solid var(--pure-white);
+  }
+  
+  .nav-tabs .nav-link.active{
+    font-weight: 600;
+    color: var(--pure-black);
+    background: var(--mustard) !important;
+    border: 1px solid var(--mustard);
+  }
+  @media (max-width: 575px){
+    .content-wrapper {
+      padding: 0 !important;
+  }
+  }
+  @media (min-width: 768px) and (max-width: 855px){
+    #progressbar li:after {
+      height: 99px;
+    }
+  }
+  @media (max-width: 338px){
+    #progressbar li:after {
+      height: 99px;
+    }
+  }
+  @media (max-width: 308px){
+    #progressbar li:after {
+        left: 2.6%;
+    }
+  }

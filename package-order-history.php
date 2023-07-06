@@ -72,10 +72,15 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
     <link href="<?php echo URL; ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL; ?>/css/my-orders.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL; ?>/css/order-list.css" rel='stylesheet' type='text/css' />
-
     <!--//webfonts-->
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
     <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+    <style>
+    .btn-check:focus+.btn,
+    .btn:focus {
+        box-shadow: none !important;
+    }
+    </style>
 </head>
 
 <body>
@@ -393,39 +398,46 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                 </h5>
 
                                                 <div class="card status_card extra-scroll-add">
-                                                    <div class="card-body p-0">
-                                                        <ul class="icon-data-list">
+                                                    <div class="card-body">
+                                                        <ul class="icon-data-list" id="progressbar">
 
                                                             <?php
                                                       foreach ($updates as $ordUpdate) {
                                                        ?>
 
-                                                            <li>
-                                                                <div class="d-flex">
+                                                            <li id="step">
+                                                                <div class="d-flex ps-4" style="margin-top: -1.18rem;">
                                                                     <img src="<?php echo URL?>/images/user/default-user-icon.png"
                                                                         alt="user">
                                                                     <div>
-                                                                        <h5 class="text-info mb-0">
+                                                                        <!-- <p class="text-primary mb-0">
                                                                             <?php
                                                                 $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
                                                                 echo $updateShow[0][1];
                                                                 ?>
-                                                                        </h5>
-                                                                        <p class="mb-0">
+                                                                        </p> -->
+                                                                        <p class="text-primary mb-0">
                                                                             <?php
                                                                         if ($ordUpdate['dsc'] != null) {
                                                                             echo $ordUpdate['dsc'] . '<br>';
                                                                         }
+                                                                        ?>
+                                                                        </p>
 
+                                                                        <p class=" mb-0">
+                                                                            <?php
                                                                         if ($ordUpdate['updator'] != null) {
                                                                             echo '<small>By ' . $ordUpdate['updator'] . '</small> <br>';
                                                                         }
                                                                         ?>
+                                                                        </p>
+
+                                                                        <p class=" mb-0">
                                                                             <small><?php echo $ordUpdate['added_on']; ?></small>
                                                                         </p>
                                                                     </div>
                                                                 </div>
-                                                                <hr>
+                                                                <!-- <hr> -->
                                                             </li>
                                                             <?php
                                                        }
@@ -459,38 +471,47 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                             <div class="card status_card "
                                                                                 style="   overflow-y: scroll; max-height: 500px;">
                                                                                 <div class="card-body p-0">
-                                                                                    <ul class="icon-data-list">
+                                                                                    <ul class="icon-data-list"
+                                                                                        id="progressbar">
 
                                                                                         <?php
                                                                                         foreach ($updates as $ordUpdate) {
                                                                                         ?>
-                                                                                        <li>
-                                                                                            <div class="d-flex">
+                                                                                        <li id="step">
+                                                                                            <div class="d-flex ps-4"
+                                                                                                style="margin-top: -1.18rem;">
                                                                                                 <img src="<?php echo URL?>/images/user/default-user-icon.png"
                                                                                                     alt="user">
                                                                                                 <div>
-                                                                                                    <h5
-                                                                                                        class="text-info mb-0">
+                                                                                                    <!-- <p class="text-primary mb-0">
+                                                                            <?php
+                                                                $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
+                                                                echo $updateShow[0][1];
+                                                                ?>
+                                                                        </p> -->
+                                                                                                    <p
+                                                                                                        class="text-primary mb-0">
                                                                                                         <?php
-                                                                                                        $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
-                                                                                                        echo $updateShow[0][1];
-                                                                                                        ?>
-                                                                                                    </h5>
-                                                                                                    <p class="mb-0">
-                                                                                                        <?php
-                                                                                                        if ($ordUpdate['dsc'] != null) {
-                                                                                                            echo $ordUpdate['dsc'] . '<br>';
-                                                                                                        }
+                                                                        if ($ordUpdate['dsc'] != null) {
+                                                                            echo $ordUpdate['dsc'] . '<br>';
+                                                                        }
+                                                                        ?>
+                                                                                                    </p>
 
-                                                                                                        if ($ordUpdate['updator'] != null) {
-                                                                                                            echo '<small>By ' . $ordUpdate['updator'] . '</small> <br>';
-                                                                                                        }
-                                                                                                        ?>
+                                                                                                    <p class=" mb-0">
+                                                                                                        <?php
+                                                                        if ($ordUpdate['updator'] != null) {
+                                                                            echo '<small>By ' . $ordUpdate['updator'] . '</small> <br>';
+                                                                        }
+                                                                        ?>
+                                                                                                    </p>
+
+                                                                                                    <p class=" mb-0">
                                                                                                         <small><?php echo $ordUpdate['added_on']; ?></small>
                                                                                                     </p>
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <hr>
+
                                                                                         </li>
                                                                                         <?php
                                                                                         }
