@@ -10,6 +10,7 @@ require_once ROOT_DIR."/classes/gp-order.class.php";
 require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/location.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
+require_once ROOT_DIR."/classes/date.class.php";
 
 
 /* INSTANTIATING CLASSES */
@@ -20,6 +21,7 @@ $PackageOrder   = new PackageOrder();
 $customer		= new Customer();
 $Location       = new Location();
 $utility		= new Utility();
+$DateUtil       = new DateUtil();
 
 ############################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
@@ -86,13 +88,13 @@ $utility->delSessArr($sess_arr);
                                 $eachOrder = $PackageOrder->gpOrderById($eachOrderId);
                                 if ($eachOrder['transection_id'] != '') {
                                     $paymentRow = 'Transection ID';
-                                    $paymentvalue = '$eachOrder[\'transection_id\']';
+                                    $paymentvalue = $eachOrder['transection_id'];
                                 }else {
                                     $paymentRow = 'Payment';
                                     $paymentvalue = $eachOrder['payment_type'];
                                 }
                                 ?>
-                            <table class="table table-bordered table-striped">
+                            <table class="table table-bordered table-light table-striped">
                                 <tbody>
                                     <tr>
                                         <th scope="row">Order ID</th>
@@ -108,7 +110,7 @@ $utility->delSessArr($sess_arr);
                                     </tr>
                                     <tr>
                                         <th scope="row">Date</th>
-                                        <td><?= $eachOrder['date']?></td>
+                                        <td><?= $DateUtil->fullDateTimeText($eachOrder['date'])?></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -119,7 +121,7 @@ $utility->delSessArr($sess_arr);
 
 
                     <p><i class="fas fa-exclamation-circle fs-5 text-warning"></i> If you find any difficulty, drop an
-                        email to <?= SITE_BILLING_EMAIL ?></p>
+                        email to <?= SITE_EMAIL ?></p>
                 </div>
             </div>
 

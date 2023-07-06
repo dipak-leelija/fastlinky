@@ -77,6 +77,7 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
     <link href="css/package-summary.css" rel='stylesheet' type='text/css' />
     <link href="css/form.css" rel='stylesheet' type='text/css' />
 </head>
+
 <body>
     <div id="home">
         <?php require_once "partials/navbar.php"; ?>
@@ -183,7 +184,7 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                         </select>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-sm-12 mb-3">
                                     <small class="fw-normal">
                                         Please ensure that you provide accurate and complete information to
@@ -229,73 +230,56 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                             <!-- </form> -->
 
                         </div>
-                        <div class="col-lg-5 order-details-right">
-                            <div>
-                                <!-- <form id="paymentForm" action="" method="POST"> -->
-                                <div class="">
-                                    <div class="invoice-items" id="preview">
-                                        <h2 class="mb-4">Summary</h2>
-                                        <div class="cart-contents">
-                                            <?php
+                        <div class="col-lg-5 order-details-right d-flex">
+                            <div class="d-flex flex-column justify-content-between w-100">
+
+                                <div class="invoice-items" id="preview">
+                                    <h2 class="mb-4">Summary</h2>
+                                    <div class="cart-contents">
+                                        <?php
                                                 if (count($selectedPacks) == count($packsCosts)) {
                                                     for ($i=0; $i < count($packsCosts); $i++) {
                                                         $selectedPacks[$i];
                                                         $packsCosts[$i];
                                                     ?>
-                                            <div class="mb-4 d-flex justify-content-between">
+                                        <div class="mb-4 d-flex justify-content-between">
+                                            <div>
+                                                <div class="text-500"><?php echo $selectedPacks[$i]; ?></div>
                                                 <div>
-                                                    <div class="text-500"><?php echo $selectedPacks[$i]; ?></div>
-                                                    <div>
-                                                        <span class="me-1 text-muted">Qty</span>
-                                                        1
-                                                    </div>
-                                                </div>
-                                                <div class="text-right text-500">
-                                                    <?php echo CURRENCY.$packsCosts[$i]; ?>
+                                                    <span class="me-1 text-muted">Qty</span>
+                                                    1
                                                 </div>
                                             </div>
-                                            <?php
+                                            <div class="text-right text-500">
+                                                <?php echo CURRENCY.$packsCosts[$i]; ?>
+                                            </div>
+                                        </div>
+                                        <?php
                                                     }
                                             }?>
-                                            <hr>
-                                            <!-- Show total and payment terms -->
-                                            <div class="mb-4 d-flex justify-content-between">
-                                                <div>
-                                                    <div class="text-500">Total</div>
-                                                    <div class="text-muted"><?php echo CURRENCY_CODE; ?></div>
-                                                </div>
-                                                <div class="text-right">
-                                                    <h2 class="m-0"><?php echo CURRENCY.$totalCost; ?></h2>
-                                                    <div class="mt-1 text-muted small">
-                                                        <?php echo CURRENCY.$totalCost; ?> Total Cost</div>
-                                                </div>
+                                        <hr>
+                                        <!-- Show total and payment terms -->
+                                        <div class="mb-4 d-flex justify-content-between">
+                                            <div>
+                                                <div class="text-500">Total</div>
+                                                <div class="text-muted"><?php echo CURRENCY_CODE; ?></div>
                                             </div>
-                                            <hr>
-                                        </div>
-                                    </div>
-
-                                    <div class="box-payment-btn">
-                                        <div class="bx_width_40">
-                                            <!-- <input type="hidden" name="order-name" id="order-name"> -->
-                                            <div class="form-group myformgrp">
-                                                <button type="button" onclick="paypalOrder()" class="paypalBtn">
-                                                    <span class="paypal_logo"><img src="images/payments/paypal-logo.png"
-                                                            alt=""></span>
-                                                    <span class="pay">Pay</span><span class="pal">Pal</span>
-                                                </button>
-                                            </div>
-
-                                            <div class="form-group myformgrp">
-                                                <button type="button" class="payLaterBtn" onclick="payLaterOrder()">
-                                                    <span class="paylater_logo"><img
-                                                            src="images/payments/pay-later.png"></span>
-                                                    <span> PayLater</span>
-                                                </button>
+                                            <div class="text-right">
+                                                <h2 class="m-0"><?php echo CURRENCY.$totalCost; ?></h2>
+                                                <div class="mt-1 text-muted small">
+                                                    <?php echo CURRENCY.$totalCost; ?> Total Cost</div>
                                             </div>
                                         </div>
-
+                                        <hr>
                                     </div>
                                 </div>
+
+                                <div class="form-group myformgrp">
+                                    <button type="button" id="continue-btn" class="btn btn-primary w-100">
+                                        Continue
+                                    </button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -309,20 +293,15 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="js/script.js"></script>
     <script>
-    const paypalOrder = () => {
-        document.getElementById("paymentForm").action = "cheakout/paypal-pay.php";
+    
+    let continueBtn = document.getElementById('continue-btn');
+
+    continueBtn.addEventListener("click", function() {
+        document.getElementById("paymentForm").action = "cheakout/package-order-summary.php";
         if (checkAddress("paymentForm") != false) {
             document.getElementById("paymentForm").submit();
         }
-    }
-
-    const payLaterOrder = () => {
-        document.getElementById("paymentForm").action = "cheakout/paylater-order.php";
-        if (checkAddress("paymentForm") != false) {
-            document.getElementById("paymentForm").submit();
-        }
-    }
-
+    });
 
 
     const checkAddress = (formName) => {

@@ -37,6 +37,7 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 $reference_link = URL.'/package-order-history.php?order=';
 
+print_r($_POST);
 
 if (isset($_POST['paymentdata']) && isset($_POST['pppamn'])) {
     

@@ -407,10 +407,8 @@ $_SESSION['content-data'] = array(
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <div class="col-12 text-end" id="payBtn">
-                                                    <button type="button"
-                                                        class="btn btn-danger rounded-pill w-100 fw-semibold"
-                                                        onclick="history.back()">Cancel</button>
+                                                <div class="col-12 text-center" id="payBtn">
+                                                    <a href="#" onclick="history.back()">Cancel</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -445,7 +443,7 @@ $_SESSION['content-data'] = array(
         style: {
             height: 45,
             layout: 'vertical',
-            color: 'silver',
+            color: 'blue',
             shape: 'pill',
             label: 'paypal'
         },

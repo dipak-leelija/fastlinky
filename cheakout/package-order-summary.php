@@ -40,12 +40,36 @@ if (!isset($_SESSION[PACK_ORD])) {
     exit;   
 }
 
-$customerName       = $cusDtl[0][5].' '.$cusDtl[0][6];
-$customerEmail      = $cusDtl[0][3];
-$customerMobile     = $cusDtl[0][34];
-$customerCity       = $Location->getCityDataById($cusDtl[0][27])['name'];
-$customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
+if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['mob-no']) && isset($_POST['city']) && isset($_POST['pin-code']) && isset($_POST['state']) && isset($_POST['country'])) {
+    
+    $fname      = $_POST['firstname'];
+    $lname      = $_POST['lastName'];
+    $city       = $_POST['city'];
+    $state      = $_POST['state'];
+    $mobile     = $_POST['mob-no'];
+    $pincode    = $_POST['pin-code'];
+    $country    = $_POST['country'];
+   
+    $response = $customer->updateAddrDuringPackOrd($cusId, $fname, $lname, $city, $pincode, $state, $country, $mobile);
 
+    if (preg_match("/ERU300/i", $response)) {
+        header('Location: ../packages-summary.php?msg='.ERU300);
+        exit;
+    }
+    if (preg_match("/ERU007/i", $response)) {
+        header('Location: ../packages-summary.php?msg='.ERU007);
+        exit;
+    }
+    if ($response == 'SUU010') {
+
+        $customerName       = $fname.' '.$lname;
+        $customerEmail      = $cusDtl[0][3];
+        $customerMobile     = $mobile;
+        $customerCity       = $Location->getCityDataById($city)['name'];
+        $customerCountry    = $Location->getCountyById($country)['name'];
+
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -66,6 +90,7 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
     <!-- custom css  -->
     <link rel="stylesheet" href="<?= URL; ?>/css/payment-summary-style.css">
 </head>
+
 <body>
     <section class="paylater-main-section">
         <!-- logo codes -->
@@ -107,7 +132,7 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
             </div>
         </div>
 
-        <form action="" method="post">
+        <form action="" method="post" id="summary-form">
             <div class=" display-table text-center ">
                 <!-- <div class="features_grids table-responsive"> -->
                 <table class="table detailing-table table-responsive">
@@ -172,14 +197,6 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
                                 </tr>
                                 <tr>
                                     <td>
-                                        <div class="row">
-                                            <div class="col-8"><b> Payment Method </b></div>
-                                            <div class="col-4 text-end"><b>Paypal</b> </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
                                         <div class="row mt-2">
                                             <div class="col-12 text-end" id="payBtn">
                                                 <div id="paypal-payment-button">
@@ -187,8 +204,17 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
                                             </div>
                                             <div class="col-12 text-end">
                                                 <button type="button"
-                                                    class="btn btn-danger rounded-pill w-100 fw-semibold mt-2"
-                                                    onclick="history.back()">Cancel</button>
+                                                    class="btn rounded-pill w-100 fw-bolder pay_button payLaterBtn"
+                                                    onclick="paylaterProcess()">
+                                                    <span class="paylater_logo">
+                                                        <img src="<?= URL ?>/images/payments/pay-later.png">
+                                                    </span>
+                                                    <span> PayLater</span>
+                                                </button>
+                                                <input type="hidden" name="paylaterForm" value="paylaterForm">
+                                            </div>
+                                            <div class="col-12 text-center">
+                                                <a href="#" onclick="history.back()">Cancel</a>
                                             </div>
                                         </div>
                                     </td>
@@ -217,8 +243,9 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
 
     paypal.Buttons({
         style: {
+            height: 45,
             layout: 'vertical',
-            color: 'silver',
+            color: 'blue',
             shape: 'pill',
             label: 'paypal'
         },
@@ -257,8 +284,17 @@ $customerCountry    = $Location->getCountyById($cusDtl[0][30])['name'];
             alert(`Error: ${err}`);
         }
     }).render('#paypal-payment-button');
+
+    // paypal end and paylater start 
+    const paylaterProcess = ()=>{
+        let summaryForm = document.getElementById('summary-form');
+        summaryForm.action = 'order-processing.php';
+        summaryForm.submit();
+    }
     </script>
-    <script src="../plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+
+
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>
