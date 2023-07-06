@@ -110,7 +110,6 @@ if (isset($_POST['finishOrder'])) {
     $updated = $PackageOrder->updatePackOrdersStatus($orderId, $statusId, $updatedBy);
     if ($updated == 1) {
         $added = $PackageOrder->addPackOrderDtls($orderId, $statusId, ORD_COMP, $updatedBy, COMPANY_S);
-        $Notifications->addNotification(ORD_UPDATE, ORD_COMP, ORD_CMPLT_M, $reference_link, $customerId);
         if ($added == 1) {
             echo 'finished!';
         }
