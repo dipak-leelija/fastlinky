@@ -110,9 +110,18 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                     <div class="row">
                                         <!-- Order Details Start -->
                                         <div class="col-md-6 ">
-                                            <h5 class="pkage-title border-bottom pb-2">Order Details:</h5>
+
+                                            <?php
+                                            $ordStatus = $OrderStatus->singleOrderStatus($orderStatus); 
+                                            $payStatus = $OrderStatus->singleOrderStatus($order['status']);
+                                            ?>
+
+                                            <h5 class="pkage-title border-bottom pb-2">
+                                                Order Details: 
+                                                <span class="badge <?= $ordStatus[0][1]; ?>"><?= $ordStatus[0][1]; ?></span>
+                                            </h5>
                                             <h5 class="pkage-headline pt-2">
-                                                <?php echo $packageCat['category_name'].' '.$package['package_name']; ?>
+                                                <?= $packageCat['category_name'].' '.$package['package_name']; ?>
                                             </h5>
                                             <p class="fs-6 fw-semibold"><?php echo $order['niche']; ?></p>
                                             <ul class="listing-adrs">
@@ -124,16 +133,10 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                             }
                                             ?>
                                                 </li>
-                                                <li> Price : <?php echo '$'.$orderPrice; ?></li>
-                                                <?php
-                                                $ordStatus = $OrderStatus->singleOrderStatus($orderStatus); 
-                                                $payStatus = $OrderStatus->singleOrderStatus($order['status']);
-                                                    ?>
-                                                <li> Order : <?php echo $ordStatus[0][1]; ?></li>
-                                                <li> Payment : <?php echo $payStatus[0][1]; ?></li>
-                                                <li> Date :
-                                                    <?php echo $DateUtil->fullDateTimeText($order['date']); ?>
-                                                </li>
+                                                <li> Price : <?='$'.$orderPrice; ?></li>
+                                                <!-- <li> Order : <?= $ordStatus[0][1]; ?></li> -->
+                                                <li> Payment : <span class="badge <?= $payStatus[0][1]; ?>"><?= $payStatus[0][1]; ?></span></li>
+                                                <li> Date : <?= $DateUtil->fullDateTimeText($order['date']); ?></li>
                                             </ul>
                                         </div>
                                         <!-- Order Details End -->
@@ -227,7 +230,8 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                     <?php }?>
 
                                                                     <input type="text" class="form-control mt-1"
-                                                                        value="<?php echo $publishedStatus['url']; ?>">
+                                                                        value="<?= $publishedStatus['url']; ?>"
+                                                                        required>
 
                                                                     <?php if ($publishedStatus['status'] != REJECTEDCODE) { ?>
                                                                     <div class="d-flex justify-content-end mt-1">
@@ -288,14 +292,17 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                             </div>
 
                                                                             <input type="text"
-                                                                                class="form-control <?php echo $border; ?>"
+                                                                                class="form-control <?= $border; ?>"
                                                                                 name="ancortext[]"
-                                                                                placeholder="Ancor Text" value="<?php
-                                                                            echo $eachLink['anchor']; ?>">
+                                                                                placeholder="Ancor Text"
+                                                                                value="<?= $eachLink['anchor']; ?>"
+                                                                                required>
+
                                                                             <input type="text"
-                                                                                class="form-control mt-1 <?php echo $border; ?>"
-                                                                                name="url[]" placeholder="URL" value="<?php
-                                                                            echo $eachLink['url']; ?>">
+                                                                                class="form-control mt-1 <?= $border; ?>"
+                                                                                name="url[]" placeholder="URL"
+                                                                                value="<?=$eachLink['url']; ?>"
+                                                                                required>
 
 
                                                                             <div
@@ -316,9 +323,9 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                             <label for="ancortext"
                                                                                 class="form-label mb-0">Link '.$linkNo.'</label>
                                                                             <input type="text" class="form-control"
-                                                                                name="ancortext[]" placeholder="Ancor Text">
+                                                                                name="ancortext[]" placeholder="Ancor Text" required>
                                                                             <input type="text" class="form-control mt-1"
-                                                                                name="url[]" placeholder="URL">
+                                                                                name="url[]" placeholder="URL" required>
                                                                         </div>';
                                                                     }
                                                                     ?>

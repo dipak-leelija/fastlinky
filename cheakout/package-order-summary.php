@@ -157,7 +157,7 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['mob
                                 $totalCost      += $pack['price'];
 
                                 
-                                $orderIds[] = $PackageOrder->addPackageOrder($packId, '', $cusId, $customerName, $customerEmail, $pack['price'], 00, $pack['price'], 'Paypal', '', PENDINGCODE, INCOMPLETECODE);
+                                $orderIds[] = $PackageOrder->addPackageOrder($packId, '', $cusId, $customerName, $customerEmail, $pack['price'], 00, 00, '', '', PENDINGCODE, INCOMPLETECODE);
                             ?>
                         <tr>
                             <td class="text-start fw-semibold"><?php echo $packFullName; ?> </td>

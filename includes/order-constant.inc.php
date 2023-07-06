@@ -85,6 +85,11 @@ define("ORD_DLVRD_M",                          "Your order has been delivered su
 define('ORD_CNG_REQ_M', 				        "A change has been requested for your order. Our team will reach out to you shortly to discuss the details.");
 
 
-define("ORD_CMPLT_M",                           "Your order has been successfully completed. We hope you are satisfied with your purchase. Thank you for choosing our services!")
+define("ORD_CMPLT_M",                           "Your order has been successfully completed. We hope you are satisfied with your purchase. Thank you for choosing our services!");
+
+define("ORD_PY_SUCESS",                           "Great news! Your payment has been successfully processed. Thank you for your purchase and trust in our services.");
+
+define("ORD_PY_FAILED",                           "Apologies, the payment attempt has failed. Please try again later.");
+
 
 ?>

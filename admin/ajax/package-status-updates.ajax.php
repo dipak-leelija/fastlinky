@@ -11,6 +11,7 @@ require_once ADM_DIR . 'checkSession.php';
 require_once ROOT_DIR."/classes/encrypt.inc.php";
 require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/gp-order.class.php";
+require_once ROOT_DIR."/classes/notification.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
 require_once ROOT_DIR."/classes/utilityMesg.class.php";
 
@@ -20,6 +21,7 @@ require_once ROOT_DIR."/classes/utilityMesg.class.php";
 
 $customer		= new Customer();
 $PackageOrder   = new PackageOrder();
+$Notifications  = new Notifications();
 $utility        = new Utility;
 $uMesg          = new MesgUtility();
 ######################################################################################################################
@@ -39,6 +41,7 @@ if (isset($_POST['acceptOrder'])) {
     $updated = $PackageOrder->updatePackOrdersStatus($orderId, $statusId, $updatedBy);
     if ($updated == 1) {
         $added = $PackageOrder->addPackOrderDtls($orderId, $statusId, ORD_ACPT, $updatedBy, COMPANY_S);
+        $Notifications->addNotification(ORD_UPDATE, ORD_ACPT, ORD_ACPT_M, $reference_link, $customerId);
         if ($added == 1) {
             echo 'updated!';
         }
@@ -65,7 +68,7 @@ if (isset($_POST['changesOrder'])) {
 if (isset($_POST['issueOrder'])) {
     $linkId     = $_POST['issueOrder'];
     $orderId    = $_POST['orderId'];
-    $statusId   = 10; // 10 is the code of rejected
+    $statusId   = REJECTEDCODE; // 10 is the code of rejected
     $updatedBy  = $_SESSION[ADM_SESS];
     $issue      = $_POST['issueMsg'];
     $postNo     = $utility->ordinal($_POST['postNo']);
@@ -76,6 +79,9 @@ if (isset($_POST['issueOrder'])) {
     if ($updated == 1) {
         $existingStatus = $PackageOrder->getOrderStatus($orderId);
         $added = $PackageOrder->addPackOrderDtls($orderId, $existingStatus, $errMsg, $updatedBy, COMPANY_S);
+        $added = $PackageOrder->addPackOrderDtls($orderId, $statusId, $resecjMsg, $updatedBy, COMPANY_S);
+        // $Notifications->addNotification(ORD_UPDATE, ORD_ACPT, $resecjMsg, $reference_link, $customerId);
+
         if ($added == 1) {
             echo 'updated!';
         }
@@ -109,40 +115,6 @@ if (isset($_POST['finishOrder'])) {
         }
     }
 }
-
-
-
-// if(isset($_POST['ancortext']) && isset($_POST['url'])){
-//     $orderId    =   $_POST['order-id'];
-//     $forPost    =   $_POST['for-post'];
-
-//     if (count($_POST['ancortext']) == count($_POST['url'])) {
-        
-//         $deleted = $PackageOrder->deletePackOrdLinks($orderId, $forPost);
-//         if ($deleted) {
-//             for ($i=0; $i < count($_POST['url']); $i++) { 
-//                 for ($j=0; $j < count($_POST['ancortext']); $j++) { 
-//                     if ($i === $j) {
-//                         // echo "{$i}=>{$j}";
-//                         if ($_POST['ancortext'][$i] != null && $_POST['url'][$i] != null) {
-//                             echo $_POST['ancortext'][$i], $_POST['url'][$i];
-//                             $added = $PackageOrder->addPackOrderLinks( $orderId, $forPost, $_POST['ancortext'][$i], $_POST['url'][$i], $_SESSION[ADM_SESS]);
-
-//                         }
-//                     }
-//                 }
-//             }
-//             if ($added) {
-//                 header('Location: '.$returnUrl);
-//                 exit;
-//             }else {
-//                 echo 'Redirection Error!';
-//             }
-//         }
-
-//     }
-
-// }
 
 
 ?>

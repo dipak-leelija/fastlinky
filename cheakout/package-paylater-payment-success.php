@@ -1,7 +1,5 @@
 <?php
 session_start();
-print_r($_SESSION);
-exit;
 require_once dirname(__DIR__) .  "/includes/constant.inc.php";
 require_once ROOT_DIR . "/_config/dbconnect.php";
 
@@ -16,6 +14,7 @@ require_once ROOT_DIR . "/includes/paypal.inc.php";
 require_once ROOT_DIR . "/classes/gp-order.class.php";
 require_once ROOT_DIR . "/classes/orderStatus.class.php";
 require_once ROOT_DIR . "/classes/error.class.php";
+require_once ROOT_DIR . "/classes/notification.class.php";
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php"; 
 require_once ROOT_DIR . "/classes/utilityMesg.class.php"; 
@@ -24,6 +23,7 @@ require_once ROOT_DIR . "/classes/utilityMesg.class.php";
 $PackageOrder   = new PackageOrder();
 $OrderStatus	= new OrderStatus();
 $error			= new MyError();
+$Notifications  = new Notifications();
 $dateUtil		= new DateUtil();
 $utility		= new Utility();
 $uMesg 			= new MesgUtility();
@@ -58,6 +58,7 @@ if (!isset($_SESSION['payment-process']) || $_SESSION['payment-process'] != true
 	exit;
 }
 
+$reference_link = URL.'/package-order-history?order=';
 
 // Update Order Status 
 if (isset($_POST['data']) && isset($_POST['orderId'])) {
@@ -71,6 +72,7 @@ if (isset($_POST['data']) && isset($_POST['orderId'])) {
 	$orderPrice 		= $orderDetail['price'];
 	$dueAmount 			= $orderDetail['due_amount'];
 	$paidAmount 		= $orderDetail['paid_amount'];
+	$reference_link	   .= base64_encode(urlencode($orderId));
 	
 	//order status
 	$statusName 		= $OrderStatus->getOrdStatName($statusCode);
@@ -99,12 +101,15 @@ if (isset($_POST['data']) && isset($_POST['orderId'])) {
 		$updated = $PackageOrder->updatePayment($orderId, $trxnId, 'Paypal', COMPLETEDCODE, COMPLETEDCODE);
 		if ($updated == 1 || $updated == true) {
 			$added = $PackageOrder->addPackOrderDtls($orderId, COMPLETEDCODE, ORDPY001, $cusDtl[0][2], $cusDtl[0][2]);
+			$Notifications->addNotification(ORD_UPDATE, ORDPY001, ORD_PY_SUCESS, $reference_link, $cusId);
+
 		}
 		
 	}else {
 		$updated = $PackageOrder->updatePayment($orderId, $trxnId, 'PayLater', FAILEDCODE, COMPLETEDCODE);
 		if ($updated == 1 || $updated == true) {
 			$added = $PackageOrder->addPackOrderDtls($orderId, FAILEDCODE, ORDPY006, $cusDtl[0][2], $cusDtl[0][2]);
+			$Notifications->addNotification(ORD_UPDATE, ORDPY006, ORD_PY_FAILED, $reference_link, $cusId);
 		}
 	}
 	
@@ -218,7 +223,7 @@ if($_SESSION['pay_success'] == true) {
 <body>
 
     <!-- Start  Header -->
-    <?php require_once "../partials/navbar.php"; ?>
+    <?php require_once URL."/partials/navbar.php"; ?>
     <!-- End  Header -->
 
     <!-- Start  container -->
@@ -249,8 +254,8 @@ if($_SESSION['pay_success'] == true) {
             <div class="col-11 col-md-10 mb-3 mb-md-5 p-4 text-center">
                 <p>Your order status will updated to you, Now you can go back.</p>
                 <div class="mt-3">
-                    <a class="btn btn-primary" href="../app.client.php">My Account</a>
-                    <a class="btn btn-primary" href="../my-orders.php">My Orders</a>
+                    <a class="btn btn-primary" href="<?= URL ?>/app.client">My Account</a>
+                    <a class="btn btn-primary" href="<?= URL ?>/my-orders">My Orders</a>
                 </div>
             </div>
         </div>
@@ -259,10 +264,10 @@ if($_SESSION['pay_success'] == true) {
     <!-- End  MainWrap -->
 
     <!-- Start Foter -->
-    <?php require_once "../partials/footer.php"; ?>
+    <?php require_once URL."/partials/footer.php"; ?>
     <!-- End Foter -->
-	<script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
-    <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
+	<script src="<?= URL;?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>

@@ -1,84 +1,6 @@
 <?php 
 class Location extends DatabaseConnection{
-	/**
-	* 	Create a province
-	*	
-	*	@param	
-	*			$name	Province name
-	*			$desc	Province description
-	*			$code	Province Code
-	*
-	*	@return string
-	*/
-	function addProvince($name, $desc, $countryId, $code)
-	{
-		$name	=	trim(addslashes($name));
-		$desc	=	trim(addslashes($desc));
-		$code	=	trim(addslashes($code));
-		
-		$sql 	= "INSERT INTO province
-				  (province_name, province_desc, countries_id, code, added_on)
-				  VALUES
-				  ('$name', '$desc', '$countryId', '$code', now())";
-		$query	= mysql_query($sql);
-		//echo $sql.mysql_error(); exit ;
-		$result = '';
-		if(!$query)
-		{
-			$result = 'ER101';
-		}
-		else
-		{
-			$result = mysql_insert_id();
-		}
-		return $result;
-	}//eof
 	
-	
-	/**
-	*	Update province
-	*	@return string
-	*	@param	
-	*			$id		Province id
-	*			$name	Province name
-	*			$desc	Province description
-	*/
-	function updateProvince($id, $name, $desc, $code)
-	{
-		$name   = trim($name);
-		$desc   = trim($desc);
-		$id   	= trim($id);
-		
-		$sql	= "UPDATE province SET
-				  province_name = '$name',
-				  province_desc	= '$desc',
-				  province_code	= '$code',
-				  modified_on	=  now()
-				  WHERE 
-				  province_id 	= '$id'
-				  ";
-		$query	= mysql_query($sql);
-	}//eof
-	
-	/**
-	*	Retrieve all province id
-	*	@return array
-	*/
-	function getProvinceId()
-	{
-		$sql	= "SELECT province_id FROM province ORDER BY province_name";
-		$query	= mysql_query($sql);
-		$data	= array();
-		
-		if(mysql_num_rows($query) > 0)
-		{
-			while($result = mysql_fetch_array($query))
-			{
-				$data[] = $result['province_id'];
-			}
-		}
-		return $data;
-	}//eof
 	
 	/**
 	*	Retrieve all province data
@@ -126,94 +48,6 @@ class Location extends DatabaseConnection{
 	//
 	////////////////////////////////////////////////////////////////////////////////////
 	
-	/**
-	* 	Create a City
-	*	@return string
-	*	@param
-	*			$countryId	Country id	
-	*			$pid		Province id
-	*			$cid		County id
-	*			$name		City name
-	*			$desc		City description
-	*/
-	function addCity($countryId, $pid, $cid, $name, $desc)
-	{
-		$name   = trim($name);
-		$desc   = trim($desc);
-		$cid   	= trim($cid);
-		
-		$sql 	= "INSERT INTO cities
-				  (countries_id, province_id, county_id, citie_name, citie_desc, added_on)
-				  VALUES
-				  ('$countryId', '$pid', '$cid','$name', '$desc', now())";
-		$query	= mysql_query($sql);
-		//echo $sql.mysql_error();exit;
-		$result = '';
-		if(!$query)
-		{
-			$result = 'ER101';
-		}
-		else
-		{
-			$result = mysql_insert_id();
-		}
-		return $result;
-	}//eof
-	
-	/**
-	*	Delete a City.
-	*	@param $id	City id
-	*	@return string
-	*/
-	function deleteCity($id)
-	{
-		//deleting from City
-		$sql	= "DELETE FROM cities WHERE city_id='$id'";
-		$query	= mysql_query($sql);
-		
-		$result = '';
-		if(!$query)
-		{
-			$result = "ER103";
-		}
-		else
-		{
-			$result = "SU103";
-		}
-		
-		//return the result
-		return $result;
-	}//eof
-	
-	/**
-	*	Update City
-	*	@return string
-	*	@param	
-	*			$tid	City id
-	*			$cid	County id
-	*			$name	City name
-	*			$desc	City description
-	*/
-	function updateCity($tid, $cid, $pid, $countryId, $name, $desc)
-	{
-		$name   = trim($name);
-		$desc   = trim($desc);
-		$tid   	= trim($tid);
-		$cid   	= trim($cid);
-		
-		$sql	= "UPDATE cities SET
-				  countries_id	= '$countryId',
-				  province_id	= '$pid',
-				  county_id 	= '$cid',
-				  city_name 	= '$name',
-				  city_desc		= '$desc',
-				  modified_on	=  now()
-				  WHERE 
-				  city_id	 	= '$tid'
-				  ";
-		$query	= mysql_query($sql);
-	}//eof
-	
 
 	function getCityName($id){
 		
@@ -228,54 +62,6 @@ class Location extends DatabaseConnection{
 		} 
 		return $result;
 	}//eof
-
-
-	/**
-	*	Retrieve all City id
-	*	@return array
-	*	@param
-	*			$id		Unique id
-	*			$type	Province, County or City
-	*/
-	function getCityId($id, $type)
-	{
-		$id = (int)$id;
-		if($type == 'PROVINCE')
-		{
-			$sql	= "SELECT city_id FROM cities T,county C,province P 
-					   WHERE P.province_id = C.province_id
-					   AND   C.county_id   = T.county_id
-					   AND   P.province_id = '$id'
-					   ORDER BY P.province_id, C.county_name, T.town_name";
-		}
-		elseif($type == 'COUNTY')
-		{
-			$sql	= "SELECT town_id FROM town T,county C,province P 
-					   WHERE P.province_id = C.province_id
-					   AND C.county_id   = T.county_id
-					   AND   C.county_id   = '$id'
-					   ORDER BY town_name";
-		}
-		else
-		{
-			$sql	= "SELECT town_id FROM town T,county C,province P
-					   WHERE P.province_id = C.province_id
-					   AND   C.county_id   = T.county_id 
-					   ORDER BY P.province_id, C.county_name, T.town_name";
-		}
-		$query	= mysql_query($sql);
-		$data	= array();
-		
-		if(mysql_num_rows($query) > 0)
-		{
-			while($result = mysql_fetch_array($query))
-			{
-				$data[] = $result['town_id'];
-			}
-		}
-		return $data;
-	}//eof
-
 
 
 	/**
@@ -298,88 +84,6 @@ class Location extends DatabaseConnection{
 	}//eof
 
 
-	
-	/**
-	*	Retrieve all town id
-	*	@return array
-	*	@param
-	*			$id		Unique id
-	*			$type	Province, County or Town
-	*/
-	function getAllTownId()
-	{
-
-		$sql	= "SELECT town_id FROM town";
-
-		$query	= mysql_query($sql);
-		$data	= array();
-		
-		if(mysql_num_rows($query) > 0)
-		{
-			while($result = mysql_fetch_array($query))
-			{
-				$data[] = $result['town_id'];
-			}
-		}
-		return $data;
-	}//eof
-	
-	/**
-	*	Retrieve all town data and county data
-	*	@return array
-	*	@param	
-	*			$id		id of the county
-	*
-	*/
-	function getTownData($id)
-	{
-		//create the statement
-		$sql	= 	"SELECT 
-					T.town_name AS T_NAME, T.town_desc AS T_DESC, 
-					T.town_image AS T_IMG, T.added_on AS T_ADD,  T.modified_on AS T_MOD,
-					C.county_name AS C_NAME, C.county_desc AS C_DESC, C.county_image AS C_IMG,  
-					C.added_on AS C_ADD, C.modified_on AS C_MOD, C.county_id AS C_ID,
-					P.province_name AS P_NAME, P.province_desc AS P_DESC, P.province_image AS P_IMG,  
-					P.added_on AS P_ADD, P.modified_on AS P_MOD, P.province_id AS P_ID
-					FROM province P, county C, town T
-				    WHERE 
-					T.county_id= C.county_id
-					AND P.province_id= C.province_id
-					AND T.town_id = '$id'";
-		
-		$query	= mysql_query($sql);
-		$data	= array();
-		
-		if(mysql_num_rows($query) == 1)
-		{
-			$result = mysql_fetch_array($query);
-			
-			$data = array(
-						 
-						 $result['T_NAME'],		//0 TOWN FIRST
-						 $result['T_DESC'],		//1
-						 $result['T_IMG'],		//2
-						 $result['T_ADD'],		//3
-						 $result['T_MOD'],		//4
-						
-						 $result['C_ID'],		//5 COUNTY NEXT
-						 $result['C_NAME'],		//6 
-						 $result['C_DESC'],		//7
-						 $result['C_IMG'],		//8
-						 $result['C_ADD'],		//9
-						 $result['C_MOD'],		//10
-						 
-						 $result['P_ID'],		//11 COUNTY NEXT
-						 $result['P_NAME'],		//12 
-						 $result['P_DESC'],		//13
-						 $result['P_IMG'],		//14
-						 $result['P_ADD'],		//15
-						 $result['P_MOD']		//16
-						 );
-						
-		} 
-		return $data;
-	}//eof
 	
 	/**
 	*	Retrieve all town data and city data
@@ -405,161 +109,12 @@ class Location extends DatabaseConnection{
 		return $data;
 	}//eof
 	
-	/**
-	*	Display location as a bread crumb style. BC referes to bread crumb.
-	*	
-	*	@param
-	*			$id		Location id
-	*			$type	Location type, town, county or province
-	*	
-	*	@return string
-	*/
-	function displayLocBC($id, $isUnderline, $type)
-	{
-		switch($type)
-		{
-			case 'TOWN':
-				$townDetail = $this->getTownData($id);
-				if($isUnderline == 'YES')
-				{
-					$breadCrumb	= "<u>".$townDetail[12]."</u> > <u>".$townDetail[6]."</u> > "
-					.$townDetail[0];
-				}
-				else
-				{
-					$breadCrumb	= $townDetail[12]." > ".$townDetail[6]." > ".$townDetail[0];
-				}
-				break;
-			case 'COUNTY':
-				$countyDetail = $this->getCountyData($id);
-				if($isUnderline == 'YES')
-				{
-					$breadCrumb	= "<u>".$countyDetail[5]."</u> > <u>".$townDetail[0]."</u> > ";
-				}
-				else
-				{
-					$breadCrumb	= $countyDetail[5]." > ".$countyDetail[0];
-				}
-				break;
-			case 'PROVINCE':
-				$provinceDetail = $this->getProvinceData($id);
-				if($isUnderline == 'YES')
-				{
-					$breadCrumb	= "<u>".$provinceDetail[0]."</u> > ";
-				}
-				else
-				{
-					$breadCrumb	= $provinceDetail[0];
-				}
-				break;
-			
-		}//switch
-		
-		
-		return $breadCrumb;
-	}//eof
-	
 	
 	//////////////////////////////////////////////////////////////////////////////////////
 	//																					//
 	//							  ********** COUNTRY ***********						//
 	//																					//
 	//////////////////////////////////////////////////////////////////////////////////////
-	
-	/**
-	* 	Create a county
-	*	@return string
-	*	@param	
-	*			$pid		Province id
-	*			$name	County name
-	*			$desc	County description
-	*/
-	function addCounty($countryId,  $pid, $name, $desc)
-	{
-		$name   = trim($name);
-		$desc   = trim($desc);
-		$pid   	= trim($pid);
-		
-		$sql 	= "INSERT INTO county
-				  (countries_id, province_id, county_name, county_desc, added_on)
-				  VALUES
-				  ('$countryId', '$pid','$name', '$desc', now())";
-		$query	= mysql_query($sql);
-		
-		$result = '';
-		if(!$query)
-		{
-			$result = 'ER101';
-		}
-		else
-		{
-			$result = mysql_insert_id();
-		}
-		return $result;
-	}//eof
-	
-	/**
-	*	Delete a county. Check whether there are town added under this county
-	*	@param $id	County id
-	*	@return string
-	*/
-	function deleteCounty($id)
-	{
-		$tIds = $this->getTownId($id, 'COUNTY');
-		
-		if(count($tIds) > 0)
-		{
-			//if town exists, don't delete
-			$result = "ER103";
-		}
-		else
-		{
-			//deleting from county
-			$sql	= "DELETE FROM county WHERE county_id='$id'";
-			$query	= mysql_query($sql);
-			
-			$result = '';
-			if(!$query)
-			{
-				$result = "ER103";
-			}
-			else
-			{
-				$result = "SU103";
-			}
-		}
-		//return the result
-		return $result;
-	}//eof
-	
-	/**
-	*	Update county
-	*	@param	
-	*			$cid	County id
-	*			$pid	Province id
-	*			$name	County name
-	*			$desc	County description
-	*/
-	function updateCounty($cid, $countryId, $pid, $name, $desc)
-	{
-		$name   = trim($name);
-		$desc   = trim($desc);
-		$pid   	= trim($pid);
-		$cid   	= trim($cid);
-		
-		$sql	= "UPDATE county SET
-				  countries_id	= '$countryId',
-				  province_id 	= '$pid',
-				  county_name 	= '$name',
-				  county_desc	= '$desc',
-				  modified_on	=  now()
-				  WHERE 
-				  county_id 	= '$cid'
-				  ";
-		$query	= mysql_query($sql);
-	}//eof
-
-	
 	
 		/**
 	*	Retrieve all town data and county data
@@ -854,191 +409,6 @@ class Location extends DatabaseConnection{
 	}//eof
 	
 	
-	/**
-	*	Generating county dropdowns
-	*
-	*	@date 	November 22, 2006
-	*
-	*	@param
-	*			$cid	Countries id
-	*
-	*	@return null
-	*/
-	function genProvinceList3($cid)
-	{
-		//statement
-		$select		= "SELECT 		* 
-					   FROM 		province 
-					   WHERE 		countries_id='$cid' 
-					   ORDER BY 	province_name";
-		
-		//execute query
-		$query		= mysql_query($select);
-		//echo $select.mysql_error();exit;
-		if(mysql_num_rows($query) > 0)
-		{
-			while($result	= 	mysql_fetch_array($query))
-			{
-				$province_id		= $result['province_id'];
-				$province_name		= $result['province_name'];
-				
-				echo "<li value='".$province_id."' class='menuText' id='menuText".$province_id."'>".
-				$province_name."</li>";
-				
-				/*echo "<option value='".$result['county_id']."'>".
-						$result['county_name'].
-					 "</option>";*/
-			}
-		}
-		
-	}//eof
-	
-	
-	/**
-	*	Generating county dropdowns
-	*	@param
-	*			$pid	Province id
-	*	@date 	November 22, 2006
-	*/
-	function genCountyList($pid)
-	{
-		$select		= "SELECT 		* 
-					   FROM 		county 
-					   WHERE 		province_id='$pid' 
-					   ORDER BY 	county_name";
-
-
-		
-		//execute query
-		$query		= mysql_query($select);
-		//echo $select.mysql_error();exit;
-		
-				
-		if(mysql_num_rows($query) > 0)
-		{
-			
-			echo "
-			  <label>District</label>
-			  <select name='txtCountyId' id='txtCountyId' class='text-field' onChange='getTownList()'>
-				<option value='0'>-- Select One --</option>";
-				
-			while($result	= 	mysql_fetch_array($query))
-			{
-				$county_id		= $result['county_id'];
-				$county_name	= $result['county_name'];
-				
-				echo "<option value='".$result['county_id']."'>".
-						$result['county_name'].
-					 "</option>";
-			}
-			echo "</select>
-			<div class='cl'></div>";
-		}
-		else
-		{
-			$select		= "SELECT 		* 
-						   FROM 		town 
-						   WHERE 		province_id='$pid' 
-						   ORDER BY 	town_name";
-	
-	
-			
-			//execute query
-			$query		= mysql_query($select);
-			if(mysql_num_rows($query) > 0)
-			{
-				
-				echo "
-					  <label>Town/Village</label>
-					  <select name='txtTownId' id='txtTownId' class='text-field' onChange='getAltTown()'>
-						<option value='0'>-- Select One --</option>";
-				while($result	= 	mysql_fetch_array($query))
-				{
-					$province_id		= $result['town_id'];
-					$province_name		= $result['town_name'];
-					
-					echo "<option value='".$result['town_id']."'>".
-							$result['town_name'].
-						 "</option>";
-						 
-					
-				}
-				echo "	<option value='0'>-- Add Town --</option>";
-				echo "</select>";
-					echo "</div>
-					<div class='cl'></div>";
-			}
-			else
-			{
-				echo "
-					  <label>Town/Village</label>
-					  <div class='label-cl'></div>
-					  <select name='txtTownId' id='txtTownId' class='text-field' onChange='getAltTown()'>
-						<option value='0'>-- Select One --</option>";
-
-				echo "	<option value='0'>-- Add Town --</option>";
-				echo "</select>
-				<div class='cl'></div>";
-			}
-		}
-		
-	}//eof
-	
-	
-	
-	/**
-	*	Generating county dropdowns
-	*
-	*	@date 	November 22, 2006
-	*
-	*	@param
-	*			$pid	Province id
-	*			$cid	Countries id
-	*
-	*	@return null
-	*/
-	function genCountyList2($pid, $cid)
-	{
-		//statement
-		if($pid == -1)
-		{
-			$select		= "SELECT 		* 
-						   FROM 		county 
-						   WHERE 		countries_id='$cid' 
-						   ORDER BY 	county_name";
-		}
-		else
-		{
-			$select		= "SELECT 		* 
-						   FROM 		county 
-						   WHERE 		province_id='$pid' 
-						   ORDER BY 	county_name";
-		}
-		
-		//execute query
-		$query		= mysql_query($select);
-		//echo $select.mysql_error();exit;
-		echo "
-			  <select name='countyId' id='countyId' class='text-field' onChange='getTownList()'>
-				<option value='0'>-- Select One --</option>";
-				
-		if(mysql_num_rows($query) > 0)
-		{
-			while($result	= 	mysql_fetch_array($query))
-			{
-				$county_id		= $result['county_id'];
-				$county_name	= $result['county_name'];
-				
-				echo "<option value='".$result['county_id']."'>".
-						$result['county_name'].
-					 "</option>";
-			}
-		}
-		echo "<option value='-1'>NO COUNTY</option>";	
-		echo "</select>";
-		
-	}//eof
-	
 	
 	/**
 	*	Generating county dropdowns
@@ -1317,149 +687,92 @@ class Location extends DatabaseConnection{
 		
 	}//eof
 	
+	/*------------------------------------------------------------------------------------------------------
+	|																										|
+	|												Address Printing 										|
+	|																										|
+	|-------------------------------------------------------------------------------------------------------*/
+
+
+
 	/**
-	*	Generating town dropdowns 2
-	*
-	*	@param
-	*			$pid		Province id
-	*			$class		Style of the Dropdown list
-	*
-	*	@return null
-	*/
-	function genTownList2($pid, $class)
-	{
-		$select		= "SELECT * FROM town WHERE province_id='$pid' ORDER BY town_name";
-		$query		= mysql_query($select);
-		
-		echo "<div style='padding-top: 5px; padding-top: 5px;'>
-				<select name='townId' id='townId' class='".$class."'>
-				<option value='0'>-- Select One --</option>";
-				
-		if(mysql_num_rows($query) > 0)
-		{
-			while($result	= 	mysql_fetch_array($query))
-			{
-				$town_id	= $result['town_id'];
-				$town_name	= $result['town_name'];
-				
-				echo "<option value='".$result['town_id']."' class='menuText'>".
-				$result['town_name']."</option>";
-				
-			}
+	 * Use this array as input of this function to print the full address
+	 * 	$addressArr = array(
+	 * 			'address1' => '',
+	 * 			'address2' => '',	
+	 * 			'address3' => '',
+	 *			'city' => '',
+	 *			'state' => '',
+	 *			'country' => '',
+	 *			'zipcode' => ''
+	 *	);
+	 */
+	function printAddress($addrArr) {
+		$parts = array(
+			'address1' => isset($addrArr['address1']) ? $addrArr['address1'] : '',
+			'address2' => isset($addrArr['address2']) ? $addrArr['address2'] : '',
+			'address3' => isset($addrArr['address3']) ? $addrArr['address3'] : '',
+			'city' 	   => isset($addrArr['city']) ? $addrArr['city'] : '',
+			'state'    => isset($addrArr['state']) ? $addrArr['state'] : '',
+			'country'  => isset($addrArr['country']) ? $addrArr['country'] : '',
+			'zipcode'  => isset($addrArr['zipcode']) ? $addrArr['zipcode'] : '',
+		);
+
+		$addressString = '';
+
+		if (!empty($parts['address1'])) {
+		$addressString .= $parts['address1'];
 		}
-		echo "<option value='0'>-- None Found --</option>";
-		echo "</select>
-				
-				</div>";
-			
-		
-	}//eof
-	
-	
-	/**
-	*	This function will allow user to add alternate town if none found
-	*/
-	function getAltTown()
-	{
-		echo "
-				<div class='cl'></div>
-				<label for='alternate city'>
-					Alternate City/Village <span class='orangeLetter'>*</span>
-				</label>			
-				<input name='txtAltTown' type='text' class='text-field' id='txtAltTown' 
-				size='25' title='alternate city'  style='float:left; ' >
-				<span id='verifyTownName'></span>
-                <div class='cl'></div>
-			
-			 ";
-	}//eof
-	
-	/**
-	*	This function will allow user to add alternate town if none found
-	*/
-	function getAltTown3()
-	{
-		echo "<div style='width:125px; float:left;padding-top:3px; '>Alternate Town</div>
-                  <div style='float:left; '>
-                    <input name='txtAltTown' type='text' class='text_box_large' id='txtAltTown' 
-					size='25' title='alternate city'  style='float:left; ' onChange='verifyTown()'>
-					
-					<span class='maroonErrorLarge'>*</span>
-					<span id='verifyTownName'></span>
-                  </div>
-			 ";
-	}//eof
-	
-	/**
-	*	This function will allow user to add alternate town if none found
-	*/
-	function getAltTown2()
-	{
-		echo   "<table width='100%' cellspacing='0' cellpadding='0' border='0'>
-				  <tr>
-					<td width='21%' align='left'>
-					 <div style='text-align:left;'>Alternate Town</div>
-					</td>
-					<td width='78%'  align='left'>
-					<div style='padding-top: 5px; padding-top: 5px;'>
-						<input class='text_box_large' type='text' name='txtAltTown'  id='txtAltTown' onBlur='verifyTown()'>
-						<span class='maroonErrorLarge'>*</span>
-						<span id='verifyTownName'></span>
-					</div>
-					</td>
-				  </tr>
-				 </table> ";
+
+		if (!empty($parts['address2'])) {
+		if (!empty($addressString)) {
+		$addressString .= ', ';
+		}
+		$addressString .= $parts['address2'];
+		}
+
+		if (!empty($parts['address3'])) {
+		$addressString .= $parts['address3'];
+		if (!empty($addressString)) {
+		$addressString .= ', ';
+		}
+		}
+
+		if (!empty($parts['city'])) {
+		if (!empty($addressString)) {
+		$addressString .= ', ';
+		}
+		$addressString .= $parts['city'];
+		}
+
+		if (!empty($parts['state'])) {
+		if (!empty($addressString)) {
+		$addressString .= ', ';
+		}
+		$addressString .= $parts['state'];
+		}
+
+		if (!empty($parts['country'])) {
+		if (!empty($addressString)) {
+		$addressString .= ', ';
+		}
+		$addressString .= $parts['country'];
+		}
+
+		if (!empty($parts['zipcode'])) {
+		if (!empty($addressString)) {
+		$addressString .= ', ';
+		}
+		$addressString .= $parts['zipcode'];
+		}
+
+		echo $addressString;
+
 	}
 	
-	/**
-	*	This function will check the whether there is any duplicacy in location. The 
-	*	check will be done agaist the parent id and child name.
-	*
-	*	
-	*/
-	function duplicateLoc($parent_id, $parent_column, $cat_id, $cat_column, $table, $type)
-	{
-		
-		$select =  "SELECT * FROM ".$table."
-					WHERE  ".$parent_column." 	= '$parent_id' 
-					AND    ".$cat_column." 		= '$cat_id'
-					";
-		
-		$query  = mysql_query($select);
-		$num    = mysql_num_rows($query);
-		$msg = '';
-		if($num > 0 )
-		{
-			$msg = "<label class='orangeLetter'>Error: The ".$type." already exist </label>";
-		}
-		else
-		{
-			$msg = "<label class='greenLetter'> Success !!! </label>";
-		}
-		return $msg;
-	}//eof
+	// printAddress($address);
 	
-	/**
-	*	This function will allow user to add alternate town if none found
-	*/
-	function getAltCounty()
-	{
-		echo "<div class='h25 pad2 w100P'>
-				<div class='w125 fl'>
-					<label for='alternate district'>
-						<span  class='menuText'>Alternate District</span>
-						<span class='orangeLetter'>*</span>
-					</label>
-				</div>
-				<div  class='fl padL20'>
-					<input name='txtAltCounty' type='text' class='text_box_large' id='txtAltCounty' 
-					size='25' title='alternate city'  style='float:left; ' onChange='verifyCounty()'>
-					<span id='verifyCountyName'></span>
-				</div>
-                <div class='cl'></div>
-			 </div>
-			 ";
-	}//eof
+	
 	
 	
 }

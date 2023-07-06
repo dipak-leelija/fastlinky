@@ -338,52 +338,36 @@ if(isset($_POST['btnCancel'])){
                                                         <label>Address</label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <p><?php
-                                                                        if (!empty($cusDtl[0][24])) {
-                                                                            echo $cusDtl[0][24];
-                                                                        }
-                                                                        
-                                                                        if (!empty($cusDtl[0][24]) && empty($cusDtl[0][25])) {
-                                                                            echo ', ';
-                                                                        }elseif (!empty($cusDtl[0][24]) && !empty($cusDtl[0][25])) {
-                                                                            echo ', ';
-                                                                        }
-                                                                        
-                                                                        if (!empty($cusDtl[0][25])) {
-                                                                            echo $cusDtl[0][25];
-                                                                        }
-                                                                        
-                                                                        if (!empty($cusDtl[0][25]) && empty($cusDtl[0][26])) {
-                                                                            echo ', ';
-                                                                        }
+                                                        <p>
+                                                            <?php
+                                                                      
+                                                            if (!empty($cusDtl[0][27])) {
+                                                                $city = $Location->getCityDataById($cusDtl[0][27])['name'];
+                                                            }
+                                                            
+                                                            if (!empty($cusDtl[0][28])) {
+                                                                $state = $Location->getStateName($cusDtl[0][28]);
+                                                            }
+                                                            
+                                                            if (!empty($cusDtl[0][30])) {
+                                                                $country = $Location->getCountyById($cusDtl[0][30])['name'];
+                                                            }
 
-                                                                        if (!empty($cusDtl[0][26])) {
-                                                                            echo $cusDtl[0][26];
-                                                                        }
+                                                            $addressArr = array(
+                                                                'address1' => $cusDtl[0][24],
+                                                                'address2' => $cusDtl[0][25],
+                                                                'address3' => $cusDtl[0][26],
+                                                                'city' => $city,
+                                                                'state' => $state,
+                                                                'country' => $country,
+                                                                'zipcode' => $cusDtl[0][29]
+                                                                
+                                                            );
+                                                            
+                                                            $Location->printAddress($addressArr);
 
-                                                                        if (!empty($cusDtl[0][27]) && empty($cusDtl[0][30])) {
-                                                                            echo ', ';
-                                                                        }
-                                                                        
-                                                                        if (!empty($cusDtl[0][27])) {
-                                                                            // -------need to fix address ------
-                                                                            // $city = $Location->getCityDataById($cusDtl[0][27])[1];
-                                                                            // print_r($city[1]);
-                                                                        }
-                                                                        
-                                                                        if (!empty($cusDtl[0][27]) && empty($cusDtl[0][30])) {
-                                                                            echo ', ';
-                                                                        }
-
-                                                                        if (!empty($cusDtl[0][30])) {
-                                                                            echo $Location->getCountyById($cusDtl[0][30])['name'];
-                                                                        }
-
-                                                                        if (!empty($cusDtl[0][29])) {
-                                                                            echo ', ';
-                                                                            echo $cusDtl[0][29];
-                                                                        }
-                                                                        ?></p>
+                                                            ?>
+                                                        </p>
                                                     </div>
                                                 </div>
 
@@ -730,24 +714,24 @@ if(isset($_POST['btnCancel'])){
         // <!-- document.getElementById("passUpdate").addEventListener("click", changePassword); -->
 
         function changePassword() {
-                // Prevent the default action of the form submission
-                event.preventDefault();
+            // Prevent the default action of the form submission
+            event.preventDefault();
 
-                // Create an AJAX request
-                $.ajax({
-                    url: 'ajax/change-password.ajax.php',
-                    type: 'POST',
-                    data: $('#password-form').serialize(),
-                    success: function(response) {
-                        // Display the response from the server
-                        alert(response);
-                    },
-                    error: function() {
-                        alert('failure');
-                    }
-                });
-            }
-            
+            // Create an AJAX request
+            $.ajax({
+                url: 'ajax/change-password.ajax.php',
+                type: 'POST',
+                data: $('#password-form').serialize(),
+                success: function(response) {
+                    // Display the response from the server
+                    alert(response);
+                },
+                error: function() {
+                    alert('failure');
+                }
+            });
+        }
+
 
         // Add an event listener to the submit button
         // $('#passUpdate').on('click', changePassword);
