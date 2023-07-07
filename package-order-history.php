@@ -80,6 +80,11 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
     .btn:focus {
         box-shadow: none !important;
     }
+    @media (max-width: 308px){
+    #progressbar li:after {
+        left: 2.6%;
+    }
+  }
     </style>
 </head>
 
@@ -477,7 +482,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                         <div class="stretch-card grid-margin">
                                                                             <div class="card status_card "
                                                                                 style="   overflow-y: scroll; max-height: 500px;">
-                                                                                <div class="card-body p-0">
+                                                                                <div class="card-body ">
                                                                                     <ul class="icon-data-list"
                                                                                         id="progressbar">
 

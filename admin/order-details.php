@@ -175,9 +175,19 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
 </head>
 <style>
+     @media (max-width: 308px){
+    #progressbar li:after {
+        left: 3.3%;
+    }
+  }
       @media (max-width: 991px){
     #progressbar li:after {
         left: 1.8%;
+    }
+  }
+  @media (min-width: 1406px){
+    #progressbar li:after {
+        left: 1.87%;
     }
   }
 </style>
