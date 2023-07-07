@@ -20,7 +20,7 @@ require_once("../classes/utilityMesg.class.php");
 
 /* INSTANTIATING CLASSES */
 $adminLogin 	= new adminLogin();
-$customer	    = new Customer();
+$Customer	    = new Customer();
 $search_obj		= new Search();
 
 // $PHPMailer      = new PHPMailer();
@@ -36,9 +36,11 @@ $uMesg 			= new MesgUtility();
 //declare vars
 $typeM		= $utility->returnGetVar('typeM','');
 
+$customerId  = $_GET['customer'];
+$dtls = $Customer->getCustomerData($customerId);
 
-$toName  = $_GET['toName'];
-// $toEmail = $_GET['toEmail'];
+$toName     = $dtls[0][5].' '.$dtls[0][6];
+$toEmail    = $dtls[0][3];
 
 ?>
 
@@ -205,7 +207,7 @@ $toName  = $_GET['toName'];
                 type: "POST",
                 data: $(".mail-form").serialize(),
                 success: function(response) {
-                    // alert(response)
+                    alert(response)
                     $('#sendedToast').toast('show');
                     $('#sendingToast').toast('hide');
                     resolve(response)

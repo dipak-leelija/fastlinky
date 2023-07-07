@@ -4,24 +4,24 @@ error_reporting(-1);
 ini_set('error_reporting', E_ALL);
 
 session_start();
-include_once '../admin/checkSession.php';
+require_once "../includes/constant.inc.php";
 
-require_once "../_config/dbconnect.php";
-require_once "../_config/dbconnect.trait.php";
+include_once ADM_DIR .'/checkSession.php';
 
-require_once "../includes/constant.inc.php"; 
-require_once "../includes/email.inc.php";
+require_once ROOT_DIR . "/_config/dbconnect.php";
 
-require_once "../classes/customer.class.php";
-require_once("../classes/search.class.php");
+require_once ROOT_DIR . "/includes/email.inc.php";
 
-require_once "../classes/class.phpmailer.php";
-include_once("../classes/emails.class.php");
+require_once ROOT_DIR . "/classes/customer.class.php";
+require_once ROOT_DIR . "/classes/search.class.php";
 
-require_once("../classes/error.class.php"); 
-require_once("../classes/date.class.php"); 
-require_once("../classes/utility.class.php"); 
-require_once("../classes/utilityMesg.class.php"); 
+require_once ROOT_DIR . "/classes/class.phpmailer.php";
+include_once ROOT_DIR . "/classes/emails.class.php";
+
+require_once ROOT_DIR . "/classes/error.class.php"; 
+require_once ROOT_DIR . "/classes/date.class.php"; 
+require_once ROOT_DIR . "/classes/utility.class.php"; 
+require_once ROOT_DIR . "/classes/utilityMesg.class.php"; 
 
 /* INSTANTIATING CLASSES */
 $customer	    = new Customer();
