@@ -69,9 +69,9 @@ class Contact extends DatabaseConnection{
 		}
 
 		$query		= $this->conn->query($select);
-		while($result	= 	$query->fetch_array()){
+		while($result	= 	$query->fetch_assoc()){
 
-			$data[]		= $result['id'];
+			$data[]		= $result;
 
 		}
 
