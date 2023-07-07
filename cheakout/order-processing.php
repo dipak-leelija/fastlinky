@@ -102,7 +102,7 @@ if (isset($_POST['paylaterForm'])) {
         if (isset($_SESSION['orderIds'])) {
             foreach ($_SESSION['orderIds'] as $eachOrderId) {
                 $reference_link .= base64_encode(urlencode($eachOrderId));
-                $updated[] = $PackageOrder->updatePayment($eachOrderId, '', 'PayLater', PENDINGCODE, ORDEREDCODE);
+                $updated[] = $PackageOrder->updatePayment($eachOrderId, '', PAYLATER, PENDINGCODE, ORDEREDCODE);
             }
 
             $falseExist =  in_array(false, $updated, true);
