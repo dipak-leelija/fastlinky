@@ -565,27 +565,30 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                             </div>';
 
                                         if ($ordStatCode == DELIVEREDCODE) {
-                                            echo '
-                                                    <div class="btn_bx text-center mt-3">
-                                <input type="hidden" name="customer-id" value="<?= $customerId; ?>">
-                                <button class="btn btn-sm btn-primary"
-                                    onclick="finishedOrder(\''.$orderId.'\', \''.$customerId.'\')">Finished</button>
-                                <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#updateModal"
-                                    onclick="changeRequest()">Need to Change</button>
-                            </div>';
-                            } else {
-                            $ordUpdate = $ContentOrder->lastUpdate($orderId);
-                            echo '<p class="text-center font-weight-bold my-3">Order Completed on ' .
-                                $DateUtil->dateTimeText($ordUpdate['updated_on']). '</p>';
-                            }
+                                            echo '<div class="btn_bx text-center mt-3">
+                                                    <input type="hidden" name="customer-id" value="<?= $customerId; ?>">
+                                                    <button class="btn btn-sm btn-primary" onclick="finishedOrder(\''.$orderId.'\', \''.$customerId.'\')">Finished</button>
+                                                    <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#updateModal" onclick="changeRequest()">Need to Change</button>
+                                                </div>';
+                                        } else {
+                                            if ($paymentMode == PAYLATER) {
+                                                echo '<div class="text-center">
+                                                        <p>'.PAYLATER.' Payment Required to close the order </p>
+                                                        <button class="btn btn-sm btn-primary text-light"><a class="text-light" href="#">Contact Customer</a></button>
+                                                        </div>';
+                                            }else {
+                                                $ordUpdate = $ContentOrder->lastUpdate($orderId);
+                                                echo '<p class="text-center font-weight-bold my-3">Order Completed on ' .
+                                                $DateUtil->dateTimeText($ordUpdate['updated_on']). '</p>';
+                                            }
+                                        }
 
-                            echo '
-                        </div>';
+                                    echo '</div>';
+                                
+                                endif;
+                                ?>
 
-                        endif;
-                        ?>
-
-                        <div class="row">
+                                <div class="row">
 
                             <div class="col-lg-8">
                                 <div class="card rounded-1r border shadow mt-4">

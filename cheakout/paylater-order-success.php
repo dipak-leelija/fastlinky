@@ -113,7 +113,7 @@ if ( isset($_POST['blogId'])) {
 	 *  */ 
 	$ContentOrder->contentOrderStatusUpdate($orderId, ORDEREDCODE);
 	
-	$ContentOrder->addOrderTransection($orderId, $trxnId, "Pay Later", $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice, $clientOrderPrice, $paid_amount, $clientEmail);
+	$ContentOrder->addOrderTransection($orderId, $trxnId, PAYLATER, $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice, $clientOrderPrice, $paid_amount, $clientEmail);
 	
 	$ContentOrder->addOrderUpdate($orderId, ORDS001, '', $clientUserId);
 	$Notifications->addNotification(ORD_UPDATE, ORDS001, ORD_PLCD_M, $reference_link, $clientUserId);

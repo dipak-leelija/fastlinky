@@ -167,40 +167,52 @@ $allCusatomer = $Customer->getAllCust();
                                                         <?php
                                                         $imageName = $dtls[0][9];
                                                         if ($dtls[0][9] == null) $imageName = 'default-user-icon.png';
-                                                    ?>
-                                                        <img src="../images/user/<?php echo $imageName; ?>"
-                                                            alt="<?php echo $dtls[0][5]."-".$dtls[0][6]; ?>" />
+                                                        ?>
+                                                        <img src="<?= IMG_PATH ?>/user/<?php echo $imageName; ?>" alt="<?php echo $dtls[0][5]."-".$dtls[0][6]; ?>" />
                                                     </td>
                                                     <td>
-                                                        <?php echo $dtls[0][5]." ".$dtls[0][6]; ?>
+                                                        <?= $dtls[0][5]." ".$dtls[0][6]; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $dtls[0][3]; ?>
+                                                        <?= $dtls[0][3]; ?>
                                                     </td>
                                                     <td>
-                                                        <?php if($dtls[0][0] == 1){ echo "User";} else{ echo "Client";}?>
+                                                        <?= $dtls[0][0] == 1 ? "User" : "Client" ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $Customer->renderVerifyStr($customerId, ERUVERF003, $dtls[0][16]); ?>
+                                                        <?= $Customer->renderVerifyStr($customerId, ERUVERF003, $dtls[0][16]); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $dateUtil->printDate($dtls[0][22]); ?>
+                                                        <?= $dateUtil->printDate($dtls[0][22]); ?>
                                                     </td>
                                                     <td>
-                                                        <a class="text-decoration-none mx-1" href="javascript:void(0)"
-                                                            data-toggle="modal" data-target="#viewModal"
-                                                            onclick="showModal('ajax/customer-view.php?cus_id=<?php echo $customerId;?>', 'show_modal_body')">
-                                                            <i class="fa-regular fa-eye"></i>
+                                                        
+                                                        <a class="text-decoration-none small mx-1"
+                                                            href="javascript:void(0)"
+                                                            data-toggle="modal"
+                                                            data-target="#viewModal"
+                                                            onclick="showModal('ajax/customer-view.php?cus_id=<?= $customerId;?>', 'show_modal_body')">
+                                                            <span class="badge badge-primary">
+                                                                View    
+                                                                <i class="fa-regular fa-eye"></i>
+                                                            </span>
                                                         </a>
+
+                                                        <a href="<?= URL ?>/admin/customer-mail.php?customer=<?= $customerId?>"
+                                                            class="text-decoration-none small mx-1">
+                                                            <span class="badge badge-secondary text-light">
+                                                                Mail
+                                                                <i class="fa-regular fa-envelope"></i>
+                                                            </span>
+                                                        </a>
+
+
                                                         <a href="javascript:void(0)"
                                                             onClick="MM_openBrWindow('customer-edit.php?action=edit_user&cus_id=<?php echo $customerId; ?>','CustomerEdit','scrollbars=yes,width=700,height=650')"
                                                             class="text-decoration-none mx-1">
                                                             <i class="fa-regular fa-pen-to-square mx-1"></i>
                                                         </a>
-                                                        <!-- <a href="?data="
-                                                            class="text-decoration-none mx-1">
-                                                            <i class="fa-regular fa-trash-can-xmark text-danger mx-1"></i>
-                                                        </a> -->
+                                                        
                                                         <i class="fa-regular fa-trash-can-xmark text-danger mx-1"
                                                             onclick="deleteUser(<?php echo $customerId; ?>, this);"></i>
                                                     </td>

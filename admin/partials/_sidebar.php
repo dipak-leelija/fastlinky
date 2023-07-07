@@ -131,7 +131,6 @@
             </a>
             <div class="collapse" id="marketing">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="customer-mail.php">Customer Mails</a></li>
                     <li class="nav-item"> <a class="nav-link" href="mails-group-mail.php">Group Mail</a></li>
                     <li class="nav-item"> <a class="nav-link" href="mails-history.php">Mail History</a></li>
                 </ul>
