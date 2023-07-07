@@ -67,8 +67,7 @@ class Contact extends DatabaseConnection{
 		}else{
 			$select		= "SELECT * FROM contact";
 		}
-
-		echo $select;
+		
 		$query		= $this->conn->query($select);
 		while($result	= 	$query->fetch_assoc()){
 
