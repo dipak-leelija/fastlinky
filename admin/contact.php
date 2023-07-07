@@ -26,7 +26,7 @@ $keyword		= $utility->returnGetVar('keyword','');
 $type			= $utility->returnGetVar('type','');
 $mode			= $utility->returnGetVar('mode','');
 
-$ContactDtls	   = $Contact->ShowContact();
+$ContactDtls	   = $Contact->showAllContact();
 	
 ?>
 

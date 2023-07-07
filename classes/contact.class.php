@@ -56,31 +56,19 @@ class Contact extends DatabaseConnection{
 	/**
 	*	Returns the list of registered customer
 	*/
-	function getAllContact($num){
+	function showAllContact($limit ='*'){
+		
 		$data		= array();
 
-
-
-		if($num == 'ALL'){
-
+		if($limit == '*'){
 			$select		= "SELECT * FROM contact ORDER BY added_on DESC";
-
-		}else if($num > 0){
-
-			$select		= "SELECT * FROM contact ORDER BY added_on DESC LIMIT $num";
-
+		}else if($limit > 0){
+			$select		= "SELECT * FROM contact ORDER BY added_on DESC LIMIT $limit";
 		}else{
-
 			$select		= "SELECT * FROM contact";
-
 		}
 
-		
-
 		$query		= $this->conn->query($select);
-
-		
-
 		while($result	= 	$query->fetch_array()){
 
 			$data[]		= $result['id'];
@@ -94,17 +82,11 @@ class Contact extends DatabaseConnection{
 	
 
 	/**
-
 	*	Show contact data
-
 	*	@param
-
 	*	
-
 	*			$id		Contact identity
-
 	*/
-
 	function showContactInfo($id){
 
 		$data		= array();
@@ -145,16 +127,16 @@ class Contact extends DatabaseConnection{
 
 
 	//  Display Contact identity  use
-	public function ShowContact(){
-		$temp_arr 	= array();
-		$res 		= "SELECT * FROM contact order by id asc";
-		$resQuery 	= $this->conn->query($res);
-		while($row 	= $resQuery->fetch_array()) {
-			 $temp_arr[] =$row;
+	// public function ShowContact($limit = '*'){
+	// 	$temp_arr 	= array();
+	// 	$res 		= "SELECT * FROM contact ORDER BY id DESC";
+	// 	$resQuery 	= $this->conn->query($res);
+	// 	while($row 	= $resQuery->fetch_assoc()) {
+	// 		 $temp_arr[] =$row;
 	
-		}
-		return $temp_arr;
-	}
+	// 	}
+	// 	return $temp_arr;
+	// }
 	
 	
 
