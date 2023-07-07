@@ -6,7 +6,6 @@ require_once ROOT_DIR . "/includes/content.inc.php";
 require_once ROOT_DIR . "/includes/order-constant.inc.php";
 require_once ROOT_DIR . "/classes/encrypt.inc.php";
 
-
 require_once ROOT_DIR . "/classes/customer.class.php";
 require_once ROOT_DIR . "/classes/content-order.class.php";
 require_once ROOT_DIR . "/classes/notification.class.php";
@@ -76,7 +75,7 @@ if(isset($_POST["ordId"])){
 
     $completed = $ContentOrder->ClientOrderOrderUpdate($orderId, COMPLETEDCODE, '', '');
     if ($completed) {
-        $updated = $ContentOrder->addOrderUpdate($orderId, 'ORD_COMP', '', $cusId);
+        $updated = $ContentOrder->addOrderUpdate($orderId, ORD_COMP, '', $cusId);
         $Notifications->addNotification(ORD_UPDATE, ORD_COMP, ORD_CMPLT_M, $reference_link, $customerId);
         if ($updated) {
          echo 'finished';
