@@ -218,6 +218,8 @@ small, .small {
     float: left;
     position: relative;
     font-weight: 400;
+    margin-bottom: 0 !important;
+    padding-bottom: 1rem;
   }
   
   #progressbar #step:before {
@@ -239,12 +241,13 @@ small, .small {
     margin-bottom: 1vh;
   }
   
-  #progressbar li:nth-child(1):after {
-    /* height: 100px; */
+  #progressbar li:nth-last-child(2):after {
+    height: 81px;
   }
   #progressbar li:last-child:after{
     height: 0px !important;
   }
+
   #progressbar li:last-child{
     margin-bottom:1.2rem !important ;
   }
@@ -256,7 +259,7 @@ small, .small {
   
   #progressbar li:after {
     content: '';
-    height: 85px;
+    height: 125px;
     background: #6dc517;
     position: absolute;
     left: 2.2%;
@@ -297,13 +300,13 @@ small, .small {
       height: 99px;
     }
   }
-  @media (max-width: 338px){
+  /* @media (max-width: 991px){
     #progressbar li:after {
-      height: 99px;
+        left: 1.8%;
     }
-  }
+  } */
   @media (max-width: 308px){
     #progressbar li:after {
-        left: 2.6%;
+        left: 3.3%;
     }
   }
