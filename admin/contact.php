@@ -68,7 +68,7 @@ $ContactDtls	   = $Contact->showAllContact();
                                             <thead>
                                                 <tr>
                                                     <th>
-                                                        Id
+                                                        SL.
                                                     </th>
                                                     <th>
                                                         Full Name
@@ -89,7 +89,7 @@ $ContactDtls	   = $Contact->showAllContact();
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $i=1;                                             
+                                                $i= count($ContactDtls);                                             
                                                 foreach($ContactDtls as $row){
                                                 $id = $row['id'];
                                                 ?>
@@ -123,7 +123,7 @@ $ContactDtls	   = $Contact->showAllContact();
                                                     </td>
                                                 </tr>
                                                 <?php
-                                                $i++;}
+                                                $i--;}
                                               ?>
                                             </tbody>
                                         </table>
