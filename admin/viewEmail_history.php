@@ -1,15 +1,15 @@
 <?php
-require_once "../includes/constant.inc.php";
 session_start();
-include_once('checkSession.php');
-require_once("../_config/dbconnect.php");
+require_once dirname(__DIR__) ."/includes/constant.inc.php";
+include_once ADM_DIR .'/checkSession.php';
+require_once ROOT_DIR."/_config/dbconnect.php";
 
-require_once("../classes/email.class.php"); 
-require_once("../classes/utility.class.php");
-require_once("../classes/utilityImage.class.php");
+require_once ROOT_DIR."/classes/emails.class.php"; 
+require_once ROOT_DIR."/classes/utility.class.php";
+require_once ROOT_DIR."/classes/utilityImage.class.php";
 
 /* INSTANTIATING CLASSES */
-$Email 	        = new Email();
+$Email 	        = new Emails();
 $utility		= new Utility();
 $uImg 			= new ImageUtility();
 
@@ -19,7 +19,7 @@ $uImg 			= new ImageUtility();
 $typeM		    = $utility->returnGetVar('typeM','');
 //admin detail
 
-$emailDetail = $Email->getemailDetail($_GET['id']);
+$emailDetail = $Email->getemailDetail('id', $_GET['id']);
 ?>
 
 <!DOCTYPE html>
@@ -27,9 +27,9 @@ $emailDetail = $Email->getemailDetail($_GET['id']);
 
 <head>
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
-    <title>Skydash Admin</title>
-    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="../plugins/data-table/style.css">
+    <title><?= $emailDetail[2]; ?> - <?= COMPANY_S ?></title>
+    <link rel="stylesheet" href="<?= ADM_URL ?>/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="<?= URL ?>/plugins/data-table/style.css">
 </head>
 
 <body>

@@ -215,13 +215,14 @@ class Emails extends DatabaseConnection{
 	//  Display email history  use
 	public function ShowallEmaildetails(){
 
-		$res = "SELECT * FROM allemail_details order by id";
-		$resQuery = $this->conn->query($res);
-		while($row = $resQuery->fetch_array()) {
+		$temp_arr	= array();
+		$res 		= "SELECT * FROM allemail_details order by id";
+		$resQuery 	= $this->conn->query($res);
+		while($row 	= $resQuery->fetch_array()) {
 			 $temp_arr[] =$row;
-	
-		 }
-		 return $temp_arr;
+		}
+		return $temp_arr;
+		
 	}
 
 
