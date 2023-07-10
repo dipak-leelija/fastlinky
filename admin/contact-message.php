@@ -29,6 +29,17 @@ $Contact->markAsSeenContact($_GET['id']);
     <!-- plugins:css -->
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="../plugins/data-table/style.css">
+    <style>
+@media(max-width:390px) {
+    h2, .h2 {
+        font-size: 1.5rem;
+    }
+
+    h3, .h3 {
+        font-size: 1.325rem;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -51,28 +62,28 @@ $Contact->markAsSeenContact($_GET['id']);
                     <div class="ml-3 mb-3">
                         <h2>Contact View</h2>
                     </div>
-                    <div class="card p-5 px-3">
+                    <div class="card py-5 px-3 px-md-5">
                         <div>
                             <h3 class="text-center">Customer Query section </h3>
                         </div>
-                        <div class="d-flex justify-content-end my-3 align-items-center" >
-                            <h5>Date & Time:</h5>
+                        <div class="d-sm-flex justify-content-end my-3 align-items-center" >
+                            <h5>Date & Time :</h5>
                             <p class="pl-2">10July, 12:35 p.m</p>
                         </div>
-                        <div class="d-flex">
-                            <h5>Full Name:</h5>
+                        <div class="d-sm-flex">
+                            <h5>Full Name :</h5>
                             <p class="pl-2"><?php  echo $ContactDtl[1]; ?></p>
                         </div>
-                        <div class="d-flex">
-                            <h5>E-Mail:</h5>
-                            <p class="pl-2"> <?php echo $ContactDtl[2]; ?></p>
+                        <div class="d-sm-flex">
+                            <h5>Email :</h5>
+                            <p class="pl-2" style="word-break: break-word;"> <?php echo $ContactDtl[2]; ?></p>
                         </div>
-                        <div class="d-flex">
-                            <h5>Contact No.:</h5>
+                        <div class="d-sm-flex">
+                            <h5>Contact No. :</h5>
                             <p class="pl-2"> <?php echo $ContactDtl[3]; ?></p>
                         </div>
 
-                        <div class="d-flex">
+                        <div class="d-sm-flex">
                             <h5>Message:</h5>
                             <p class="pl-2"> <?php echo $ContactDtl[4]; ?></p>
                         </div>
