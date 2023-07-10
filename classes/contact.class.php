@@ -5,7 +5,7 @@ class Contact extends DatabaseConnection{
 
 	//Add contact data on contact table
 	function addContact($contact_name, $contact_email, $contact_phone, $message) {
-		$id = 0;
+		
 		$contact_name 			= addslashes(trim($contact_name));
 		$contact_email			= addslashes(trim($contact_email));
 		$contact_phone			= addslashes(trim($contact_phone));
@@ -22,15 +22,41 @@ class Contact extends DatabaseConnection{
 
 	}
 
+
+	
+	/**
+	*	Returns the list of registered customer
+	*/
+	function showAllContact($limit ='*'){
+		
+		$data		= array();
+
+		if($limit == '*'){
+			$select		= "SELECT * FROM contact ORDER BY added_on DESC";
+		}else if($limit > 0){
+			$select		= "SELECT * FROM contact ORDER BY added_on DESC LIMIT $limit";
+		}else{
+			$select		= "SELECT * FROM contact";
+		}
+
+		$query		= $this->conn->query($select);
+		while($result	= 	$query->fetch_assoc()){
+
+			$data[]		= $result;
+
+		}
+
+		return $data;
+
+	}//eof
 	
 
 
 	/**
-	*	Retrive  from the contact table
+	*	Retrive from the contact table
 	*
 	*	@param
-	*			$id			contact id or primary key
-	*			
+	*	$id			contact id or primary key		
 	*	@return array
 	*/
 	function getContactData($id){
@@ -53,58 +79,15 @@ class Contact extends DatabaseConnection{
 
 	
 
-	/**
-	*	Returns the list of registered customer
-	*/
-	function getAllContact($num){
-		$data		= array();
-
-
-
-		if($num == 'ALL'){
-
-			$select		= "SELECT * FROM contact ORDER BY added_on DESC";
-
-		}else if($num > 0){
-
-			$select		= "SELECT * FROM contact ORDER BY added_on DESC LIMIT $num";
-
-		}else{
-
-			$select		= "SELECT * FROM contact";
-
-		}
-
-		
-
-		$query		= $this->conn->query($select);
-
-		
-
-		while($result	= 	$query->fetch_array()){
-
-			$data[]		= $result['id'];
-
-		}
-
-		return $data;
-
-	}//eof
 
 	
 
 	/**
-
 	*	Show contact data
-
 	*	@param
-
-	*	
-
-	*			$id		Contact identity
-
+	*	$id		Contact identity
+	*	@return array
 	*/
-
 	function showContactInfo($id){
 
 		$data		= array();
@@ -145,13 +128,13 @@ class Contact extends DatabaseConnection{
 
 
 	//  Display Contact identity  use
-	public function ShowContact(){
+	public function getUnreedContacts($limit){
+
 		$temp_arr 	= array();
-		$res 		= "SELECT * FROM contact order by id asc";
-		$resQuery 	= $this->conn->query($res);
-		while($row 	= $resQuery->fetch_array()) {
+		$sql 		= "SELECT * FROM contact WHERE status = '0' ORDER BY id DESC LIMIT $limit";
+		$query 	= $this->conn->query($sql);
+		while($row 	= $query->fetch_assoc()) {
 			 $temp_arr[] =$row;
-	
 		}
 		return $temp_arr;
 	}

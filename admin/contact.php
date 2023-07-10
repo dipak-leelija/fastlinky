@@ -26,7 +26,7 @@ $keyword		= $utility->returnGetVar('keyword','');
 $type			= $utility->returnGetVar('type','');
 $mode			= $utility->returnGetVar('mode','');
 
-$ContactDtls	   = $Contact->ShowContact();
+$ContactDtls	   = $Contact->showAllContact();
 	
 ?>
 
@@ -68,7 +68,7 @@ $ContactDtls	   = $Contact->ShowContact();
                                             <thead>
                                                 <tr>
                                                     <th>
-                                                        Id
+                                                        SL.
                                                     </th>
                                                     <th>
                                                         Full Name
@@ -89,7 +89,7 @@ $ContactDtls	   = $Contact->ShowContact();
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $i=1;                                             
+                                                $i= count($ContactDtls);                                             
                                                 foreach($ContactDtls as $row){
                                                 $id = $row['id'];
                                                 ?>
@@ -123,7 +123,7 @@ $ContactDtls	   = $Contact->ShowContact();
                                                     </td>
                                                 </tr>
                                                 <?php
-                                                $i++;}
+                                                $i--;}
                                               ?>
                                             </tbody>
                                         </table>
