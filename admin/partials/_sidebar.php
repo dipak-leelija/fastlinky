@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link" href="admin.php">
+        <li class="nav-item <?= $page == 'dashboard' ? 'active' : ''; ?>">
+            <a class="nav-link" href="dashboard.php">
                 <i class="fa-light fa-grid-2 menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>

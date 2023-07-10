@@ -1,6 +1,7 @@
 <?php 
-require_once "../includes/constant.inc.php";
 session_start();
+$page = 'dashboard';
+require_once "../includes/constant.inc.php";
 include_once('checkSession.php');
 require_once ROOT_DIR . "/_config/dbconnect.php";
 
@@ -84,7 +85,6 @@ $userData =  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
                                     <!-- -------------------------------------------------------------------------------------- -->
 
                                         <section class="admin-dashboard">
-                                            <h1>Welcome to Fast Linky Admin Dashboard</h1>
                                             <div class="container my-container-styles">
                                                 <div class="row">
 

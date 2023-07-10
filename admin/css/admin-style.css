@@ -10,13 +10,13 @@
 .my-container-styles{
   position: relative;
 }
-.admin-dashboard h1 {
+/* .admin-dashboard h1 {
   font: normal 40px HelveticaNeue, Helvetica, Arial, "Arial Narrow", sans-serif;
   margin: 25px 0 56px 0;
   padding: 0;
   text-align: center;
   color: darkblue;
-}
+} */
 .my-container-styles .maincard{
   position: relative;
   width: 230px;
