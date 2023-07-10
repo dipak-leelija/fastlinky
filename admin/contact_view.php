@@ -80,12 +80,7 @@ $ContactDtl 	= $Contact->showContactInfo($_GET['id']);
 
                         <div class="d-flex">
                             <h5>Message:</h5>
-                            <p class="pl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto maxime magnam
-                                aliquam corporis molestiae. Ad deleniti ipsam sed minus molestias quos provident sint
-                                eligendi suscipit. Corporis ullam velit ratione necessitatibus! Lorem ipsum dolor sit
-                                amet consectetur, adipisicing elit. Hic, atque soluta? Ad ullam consequuntur eum?
-                                Recusandae placeat deleniti illum, aliquid ut, veniam nesciunt adipisci praesentium
-                                obcaecati vero, tenetur similique minima. <?php echo $ContactDtl[4]; ?></p>
+                            <p class="pl-2"> <?php echo $ContactDtl[4]; ?></p>
                         </div>
 
                     </div>
