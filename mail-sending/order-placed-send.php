@@ -66,7 +66,7 @@ $orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
 
         
     echo $messageBody;
-    exit;
+    // exit;
     
         try {
             $PHPMailer->IsSMTP();
