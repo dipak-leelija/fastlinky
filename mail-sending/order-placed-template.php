@@ -7,47 +7,19 @@ require_once dirname(__DIR__) . '/includes/constant.inc.php';
 
 function mailFooter(){
     $body = '
-        <style>
-        /* FOOTER DIVISION CSS STARTS */
-        .footer-text-address h1{
-            font-size: 2rem;
-            color: darkblue;
-            border-bottom: 2px solid #003399;
-            padding-bottom: 5px;
-            width: fit-content;
-            margin: auto;
-            margin-bottom: 20px;
-        }
-        .social-icons-div{
-            background: darkblue;
-                padding: 12px;
-                margin: 0px;
-        }
-        .social-icons-div a{
-            text-decoration:none;
-        }
-        .social-icons-div img{
-            display:inline-block;
-            padding: 4px;
-            vertical-align: sub !important;
-        }
-        .t-d-none{
-            text-decoration: none;
-        }
-    </style>
         <tr>
             <td style="padding: 0px; text-align: center; font-size: 12px; background-color: #f3b165;">
-                <div class="footer-text-address" style="margin-bottom: 2rem; margin-top: 2rem;">
-                    <h1>Get In Touch</h1>
+                <div class="footer-text-address" style="margin: 2rem auto; ">
+                    <h1 style="font-size: 2rem; color: darkblue; border-bottom: 2px solid #003399; padding-bottom: 5px; width: fit-content; margin: auto; margin-bottom: 20px;">Get In Touch</h1>
                     <div>
                         <p style="margin: 0; font-size: 14px; line-height: 1.4">Barasat, Kolkata, West Bengal, 700125, India</p>
                         <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
-                            <a class="t-d-none" style="color: #000;" rel="noopener" href="tel:'.SITE_CONTACT_NO.'" target="_blank">
+                            <a style="color: #000; text-decoration: none;" rel="noopener" href="tel:'.SITE_CONTACT_NO.'" target="_blank">
                             '.SITE_CONTACT_NO.'
                             </a>
                         </p>
                         <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center; color: #fff;">
-                            <a class="t-d-none" style=" color: #000;" rel="noopener" href="tel:'.SITE_BILLING_CONTACT_NO.'" target="_blank">
+                            <a style=" color: #000; text-decoration: none;" rel="noopener" href="tel:'.SITE_BILLING_CONTACT_NO.'" target="_blank">
                             '.SITE_BILLING_CONTACT_NO.'
                             </a>
                         </p>
@@ -65,18 +37,18 @@ function mailFooter(){
 
                 </div>
 
-                <p class="social-icons-div">
-                    <a href="'.FB_LINK.'" title="Facebook" target="_blank">
-                        <img src="https://fastlinky.com/images/icons/social-media-icons/facebook2x.png" width="35" height="35" alt="facebook">
+                <p class="social-icons-div" style="background: darkblue; padding: 12px; margin: 0px;">
+                    <a href="'.FB_LINK.'" title="Facebook" target="_blank" style="text-decoration:none;">
+                        <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/facebook2x.png" width="35" height="35" alt="facebook">
                     </a>
-                    <a href="'.TWITTER_LINK.'" title="Twitter" target="_blank">
-                        <img src="https://fastlinky.com/images/icons/social-media-icons/twitter2x.png" width="35" height="35" alt="t">
+                    <a href="'.TWITTER_LINK.'" title="Twitter" target="_blank" style="text-decoration:none;">
+                        <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/twitter2x.png" width="35" height="35" alt="t">
                     </a>
-                    <a href="'.LINKDIN_LINK.'" title="Linkedin" target="_blank">
-                        <img src="https://fastlinky.com/images/icons/social-media-icons/linkedin2x.png" width="35" height="35" alt="Li">
+                    <a href="'.LINKDIN_LINK.'" title="Linkedin" target="_blank" style="text-decoration:none;">
+                        <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/linkedin2x.png" width="35" height="35" alt="Li">
                     </a>
-                    <a href="'.INSTA_LINK.'" title="Instagram" target="_blank">
-                        <img src="https://fastlinky.com/images/icons/social-media-icons/instagram2x.png" width="35" height="35" alt="insta">
+                    <a href="'.INSTA_LINK.'" title="Instagram" target="_blank" style="text-decoration:none;">
+                        <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/instagram2x.png" width="35" height="35" alt="insta">
                     </a>
                 </p>
             </td>
