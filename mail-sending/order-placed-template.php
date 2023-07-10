@@ -400,8 +400,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                             </div>
                         </td>
                     </tr>
-                                     
-
 
                         <tr>
                             <td class="order-details-description">
@@ -413,11 +411,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                                     <p class="col-lge-p2" style="">Nam non ante risus. Vestibulum vitae
                                         eleifend nisl, quis vehicula justo. Integer viverra efficitur pharetra. Nullam
                                         eget erat nibh.</p>
-                                    <!--<p class="col-lge-p3">
-                                        <a href="#" class="col-lge-p3-atag">
-                                            <span class="col-lge-p3-span">Track your order</span>
-                                        </a>
-                                    </p>-->
                                 </div>
                             </td>
                         </tr>
@@ -428,11 +421,14 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                                     commodo, nulla ac feugiat cursus, arcu orci condimentum tellus, vel placerat libero
                                     sapien et libero. Suspendisse auctor vel orci nec finibus.</small>
                             </td>
-                        </tr>';
-                        // <!-- ************************** FOOTER STARTS ************************ -->
-                        $mail .= mailFooter();
-                        // <!-- ************************** FOOTER ENDS ************************ -->
-            $mail .= '</table>
+                        </tr>
+                    </table>';
+                    
+        $mail .= '<table>';
+                    // <!-- ************************** FOOTER STARTS ************************ -->
+                    $mail .= mailFooter();
+                    // <!-- ************************** FOOTER ENDS ************************ -->
+        $mail .= '</table>
                 </td>
             </tr>
         </table>
