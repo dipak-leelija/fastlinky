@@ -37,7 +37,7 @@ function mailFooter(){
 
                 </div>
 
-                <p class="social-icons-div" style="background: darkblue; padding: 12px; margin: 0px;">
+                <p style="background: darkblue; padding: 12px; margin: 0px;">
                     <a href="'.FB_LINK.'" title="Facebook" target="_blank" style="text-decoration:none;">
                         <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/facebook2x.png" width="35" height="35" alt="facebook">
                     </a>
