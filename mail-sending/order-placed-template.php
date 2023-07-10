@@ -460,5 +460,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
 return $mail;
 } 
 
-
+// $arr1 = array('Name', 'Date');
+// $arr2 = array('Dipak Majumdar', '29/08/1999');
+// echo orderPlacedtoCustomer('#786876', $arr1, $arr2);
 ?>
