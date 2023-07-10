@@ -53,11 +53,48 @@ $ContactDtl 	= $Contact->showContactInfo($_GET['id']);
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
-                    <div class="row">
-                        <div class="ml-3 mb-3">
-                            <h2>Contact View</h2>
+                    <!-- <div class="row"> -->
+                    <div class="ml-3 mb-3">
+                        <h2>Contact View</h2>
+                    </div>
+                    <div class="card p-5 px-3">
+                        <div>
+                            <h3 class="text-center">Customer Query section </h3>
                         </div>
-                        <input type="hidden" class="form-control" value="<?php echo $showid; ?>" name="id">
+                        <div class="d-flex justify-content-end my-3 align-items-center" >
+                            <h5>Date & Time:</h5>
+                            <p class="pl-2">10July, 12:35 p.m</p>
+                        </div>
+                        <div class="d-flex">
+                            <h5>Full Name:</h5>
+                            <p class="pl-2"><?php  echo $ContactDtl[1]; ?></p>
+                        </div>
+                        <div class="d-flex">
+                            <h5>E-Mail:</h5>
+                            <p class="pl-2"> <?php echo $ContactDtl[2]; ?></p>
+                        </div>
+                        <div class="d-flex">
+                            <h5>Contact No.:</h5>
+                            <p class="pl-2"> <?php echo $ContactDtl[3]; ?></p>
+                        </div>
+
+                        <div class="d-flex">
+                            <h5>Message:</h5>
+                            <p class="pl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto maxime magnam
+                                aliquam corporis molestiae. Ad deleniti ipsam sed minus molestias quos provident sint
+                                eligendi suscipit. Corporis ullam velit ratione necessitatibus! Lorem ipsum dolor sit
+                                amet consectetur, adipisicing elit. Hic, atque soluta? Ad ullam consequuntur eum?
+                                Recusandae placeat deleniti illum, aliquid ut, veniam nesciunt adipisci praesentium
+                                obcaecati vero, tenetur similique minima. <?php echo $ContactDtl[4]; ?></p>
+                        </div>
+
+                    </div>
+                    <div class="col-12 mt-3 text-center">
+                        <input type="button" onclick="location.href='contact.php';" class="btn btn-primary"
+                            value="Go Back" />
+
+                    </div>
+                    <!-- <input type="hidden" class="form-control" value="<?php echo $showid; ?>" name="id">
                         <div class="col-12 m-3">
                             <label for="full-name" class="form-label">Full Name</label>
                             <input type="text" class="form-control w-75" id="full-name"
@@ -83,11 +120,11 @@ $ContactDtl 	= $Contact->showContactInfo($_GET['id']);
                             <input type="button" onclick="location.href='contact.php';" class="btn btn-primary"
                                 value="Go Back" />
 
-                        </div>
+                        </div> -->
 
-                        </form>
+                    </form>
 
-                    </div>
+                    <!-- </div> -->
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial:../../partials/_footer.html -->

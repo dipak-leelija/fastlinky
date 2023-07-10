@@ -111,7 +111,7 @@ $ContactDtls	   = $Contact->ShowContact();
                                                         <?php echo $dateUtil->dateTimeNumber($row['added_on']); ?>
                                                     </td>
                                                     <td>
-                                                        <a class="text-decoration-none mx-1"
+                                                        <a class="text-decoration-none mx-1" 
                                                             href="contact_view.php?action=edit_niches&id=<?php echo $id; ?>">
                                                             <i class="fa-regular fa-eye"></i>
                                                         </a>
