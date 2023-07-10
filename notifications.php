@@ -34,7 +34,7 @@ $cusDtl		= $customer->getCustomerData($cusId);
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 $mails = $Emails->ShowMailsbyCol('to_email', $_SESSION[USR_SESS]);
-$orUpdates = $Notifications->allNotifications($cusId, 2);
+$orUpdates = $Notifications->allNotifications($cusId);
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
