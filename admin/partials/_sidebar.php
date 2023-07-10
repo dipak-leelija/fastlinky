@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link" href="admin.php">
+        <li class="nav-item <?= $page == 'dashboard' ? 'active' : ''; ?>">
+            <a class="nav-link" href="dashboard.php">
                 <i class="fa-light fa-grid-2 menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
@@ -44,7 +44,7 @@
                 id="customer-management">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="customer.php">Customer</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="contact.php">Contact Details</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="contacts.php">Contact Details</a></li>
                 </ul>
             </div>
         </li>

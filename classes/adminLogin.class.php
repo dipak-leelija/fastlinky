@@ -20,27 +20,16 @@ class adminLogin extends Utility
 
 
 	/**
-
 	*	Validate the admin user against its login and password.
-
 	*
-
 	*	@param	
-
 	*			$login 		user input for login name
-
 	*			$password 	user input for password
-
 	*			$dbLogin    database login column name
-
 	*			$passCol     database password column name
-
 	*			$table      table name to query
-
 	*
-
 	*	@return NULL
-
 	*/
 
 	function validate($login, $password, $usernameCol, $passCol, $table){
@@ -116,7 +105,7 @@ class adminLogin extends Utility
 				// $forwardPage	= $this->buildForwardPage($pageName, 'php');
 
 				//url
-				$url	= 'admin.php?session_id='.$session_id."&".$id_var."=".$id_var_val;
+				$url	= 'dashboard.php?session_id='.$session_id."&".$id_var."=".$id_var_val;
 
 
 				//forwarding 
@@ -335,65 +324,6 @@ class adminLogin extends Utility
 
 	}//eof
 
-	
-
-	/**
-
-	*	Fetch all the user id and store in an array
-
-	*	@return NULL
-
-	*/
-
-	function getAllUserId()
-
-	{
-
-		$select     = "SELECT username FROM admin_users";
-
-		$query      = mysql_query($select);
-
-		$data   	= array();
-
-		while($result = mysql_fetch_array($query))
-
-		{
-
-			$data[] = $result['username'];
-
-		}
-
-		
-
-		return $data;
-
-	}//eof
-
-	
-
-	
-
-	 public function ShowAdminData(){
-
-     $temp_arr = array();
-
-     $res = mysql_query("SELECT * FROM admin_users order by fname desc") or die(mysql_error());        
-
-     $count=mysql_num_rows($res);
-
-    while($row = mysql_fetch_array($res)) {
-
-         $temp_arr[] =$row;
-
-		 
-
-     }
-
-     return $temp_arr;  
-
-     }
-
-	
 
 	
 

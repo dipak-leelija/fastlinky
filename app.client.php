@@ -207,14 +207,17 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                                                 $showItems = 1;
                                                                 foreach ($myOrders as $order) {
                                                                     $status = $OrderStatus->singleOrderStatus($order['order_status']);
-                                                                    echo '
                                                                     
-                                                                    <tr>
-                                                                        <td><a href="guest-post-article-submit.php?order='.base64_encode(urlencode($order["order_id"])).'">#'.$order["order_id"].'</a></td>
-                                                                        <td><a href="guest-post-article-submit.php?order='.base64_encode(urlencode($order["order_id"])).'">'.$order['clientOrderedSite'].'</a></td>
-                                                                        <td><a href="guest-post-article-submit.php?order='.base64_encode(urlencode($order["order_id"])).'"> <span class="badge text-bg-primary '.$status[0]["orders_status_name"].'">'.$status[0]["orders_status_name"].'<span></a></td>
+                                                                    
+                                                                    echo "
+                                                                    
+                                                                    <tr onclick='goTo(\"guest-post-article-submit.php?order=".base64_encode(urlencode($order['order_id']))."\")' class='cursor_pointer'>
+                                                                    
+                                                                        <td>#{$order['order_id']}</a></td>
+                                                                        <td>{$order['clientOrderedSite']}</td>
+                                                                        <td><span class='badge text-bg-primary {$status[0]['orders_status_name']}'>{$status[0]['orders_status_name']}<span></td>
                                                                     </tr>
-                                                                    ';
+                                                                    ";
                                                                     if ($showItems++ == 8) {
                                                                         break;
                                                                     }
@@ -230,7 +233,7 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                                     class="text-center text-danger d-flex flex-column align-items-center p-5">
                                                     <i class="fa-light fa-box-open fs-1"></i>
                                                     <span class="mt-n1 fs-6">No Recent Guest Post Order</span>
-                                                    <a href="./blogs-list" class="badge text-bg-primary mt-2 w-25">Order
+                                                    <a href="./blogs-list" class="badge text-bg-primary mt-2">Order
                                                         Now</a>
                                                 </p>
                                             </div>
@@ -287,7 +290,7 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                                     class="text-center text-danger d-flex flex-column align-items-center p-5">
                                                     <i class="fa-light fa-clipboard fs-1"></i>
                                                     <span class="mt-n1 fs-6">No Recent Package Order</span>
-                                                    <a href="./blogs-list" class="badge text-bg-primary mt-2 w-25">
+                                                    <a href="blogs-list" class="badge text-bg-primary mt-2">
                                                         Order Now
                                                     </a>
                                                 </p>

@@ -91,35 +91,23 @@ class Contact extends DatabaseConnection{
 	function showContactInfo($id){
 
 		$data		= array();
-
 		$select		= "SELECT * FROM contact WHERE id ='$id'";
-
 		$query		= $this->conn->query($select);
-
 		if($query->num_rows > 0){
-
 			while($result	= 	$query->fetch_array()){
-
 				$data	=	array(
-
 								  $result['id'],				//0
 								  $result['contact_name'],		//1
 								  $result['contact_email'],		//2
 								  $result['contact_phone'],		//3
 								  $result['message'],			//4
 								  $result['added_on']			//5
-
 								);
-
 			}//while
 
 		}//if
 
-		
-
-		return $data;	
-
-		
+		return $data;
 
 	}//	eof
 
@@ -139,6 +127,24 @@ class Contact extends DatabaseConnection{
 		return $temp_arr;
 	}
 	
+
+	public function checkSeenContact($id){
+
+		$sql 		= "SELECT status FROM contact WHERE id = $id";
+		$query 		= $this->conn->query($sql);
+		$result     = $query->fetch_array();
+		$result		= $result['status'];
+		return $result;
+	}
+
+	public function markAsSeenContact($id){
+
+		if($this->checkSeenContact($id) == 0){
+			$sql 		= "UPDATE contact SET status = '1' WHERE id = $id";
+			$query 		= $this->conn->query($sql);
+			return $query;
+		}
+	}
 	
 
 	

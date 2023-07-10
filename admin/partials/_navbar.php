@@ -56,7 +56,7 @@ $contacts = $Contact->getUnreedContacts(3);
                     <?php
 
                     foreach ($contacts as $eachContact) {
-                      echo '<a class="dropdown-item preview-item" href="contact_view.php?id='.$eachContact['id'].'">
+                      echo '<a class="dropdown-item preview-item" href="contact-message.php?id='.$eachContact['id'].'">
                               <div class="preview-thumbnail">
                                 <div class="preview-icon bg-success">
                                   <i class="fa-light fa-message m-0"></i>
