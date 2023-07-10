@@ -31,6 +31,17 @@ $emailDetail = $Email->getemailDetail('id', $_GET['id']);
     <link rel="stylesheet" href="<?= ADM_URL ?>/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="<?= URL ?>/plugins/data-table/style.css">
 </head>
+<style>
+@media(max-width:390px) {
+    h2, .h2 {
+        font-size: 1.5rem;
+    }
+
+    h3, .h3 {
+        font-size: 1.325rem;
+    }
+}
+</style>
 
 <body>
     <div class="container-scroller">
@@ -48,9 +59,45 @@ $emailDetail = $Email->getemailDetail('id', $_GET['id']);
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="ml-3 mb-3">
-                        <h2>View Email History</h2>
+                        <h2 class="fs-3">View Email History</h2>
                     </div>
-                    <div class="row">
+
+                    <div class="card py-5 px-md-5 px-3 ">
+                        <div>
+                            <h3 class="text-center">Customer Emails History Section </h3>
+                        </div>
+                        <div class="d-sm-flex justify-content-end my-3 align-items-center">
+                            <h5>Date & Time :</h5>
+                            <p class="pl-2"><?php echo $emailDetail[5]; ?></p>
+                        </div>
+                        <div class="d-sm-flex">
+                            <h5>Customer Name :</h5>
+                            <p class="pl-2"><?php echo $emailDetail[2]; ?></p>
+                        </div>
+                        <div class="d-sm-flex">
+                            <h5>Customer Email :</h5>
+                            <p class="pl-2" style="word-break: break-word;"> <?php echo $emailDetail[1]; ?></p>
+                        </div>
+                        <div class="d-sm-flex">
+                            <h5>Admin Email :</h5>
+                            <p class="pl-2" style="word-break: break-word;"> <?php echo $emailDetail[0]; ?></p>
+                        </div>
+
+                        <div class="d-sm-flex">
+                            <h5>Subject :</h5>
+                            <p class="pl-2"> <?php echo $emailDetail[3]; ?></p>
+                        </div>
+                        <div class="d-sm-flex">
+                            <h5>Message:</h5>
+                            <p class="pl-2"> <?php echo $emailDetail[4]; ?></p>
+                        </div>
+                    </div>
+                    <div class="col-12 m-3 text-center">
+                        <input type="button" onclick="location.href='mails-history.php';" class="btn btn-primary"
+                            value="Go Back" />
+
+                    </div>
+                    <!-- <div class="row">
 
                         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>"
                             class="row ml-3 m-3 bg-white text-dark rounded">
@@ -95,7 +142,7 @@ $emailDetail = $Email->getemailDetail('id', $_GET['id']);
 
                             </div>
                         </form>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial:../../partials/_footer.html -->
