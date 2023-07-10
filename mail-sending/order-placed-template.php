@@ -422,7 +422,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                                     sapien et libero. Suspendisse auctor vel orci nec finibus.</small>
                             </td>
                         </tr>';
-                        
                         // <!-- ************************** FOOTER STARTS ************************ -->
                         $mail .= mailFooter();
                         // <!-- ************************** FOOTER ENDS ************************ -->
