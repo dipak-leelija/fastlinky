@@ -16,14 +16,8 @@ $Contact		= new Contact();
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-//declare variables
-$typeM		= $utility->returnGetVar('typeM','');
-//admin detail
-$userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
-//parent ids
-$pIds	= $utility->getAllId('categories_id', 'static_categories');
-
-$ContactDtl 	= $Contact->showContactInfo($_GET['id']); 
+$ContactDtl 	= $Contact->showContactInfo($_GET['id']);
+$Contact->markAsSeenContact($_GET['id']);
 ?>
 
 <!DOCTYPE html>

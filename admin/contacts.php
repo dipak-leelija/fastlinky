@@ -112,7 +112,7 @@ $ContactDtls	   = $Contact->showAllContact();
                                                     </td>
                                                     <td>
                                                         <a class="text-decoration-none mx-1"
-                                                            href="contact_view.php?action=edit_niches&id=<?php echo $id; ?>">
+                                                            href="contact-message.php?action=edit_niches&id=<?php echo $id; ?>">
                                                             <i class="fa-regular fa-eye"></i>
                                                         </a>
                                                         <a href='contact_delete.php?id=<?php    echo $id;  ?>'
