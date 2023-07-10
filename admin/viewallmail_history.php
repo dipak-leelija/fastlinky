@@ -1,6 +1,7 @@
 <?php
 require_once "../includes/constant.inc.php";
 session_start();
+$page = "view_All-mail";
 include_once('checkSession.php');
 require_once("../_config/dbconnect.php");
 

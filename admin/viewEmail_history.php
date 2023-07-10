@@ -1,5 +1,6 @@
 <?php
 session_start();
+$page = "viewEmail-history";
 require_once dirname(__DIR__) ."/includes/constant.inc.php";
 include_once ADM_DIR .'/checkSession.php';
 require_once ROOT_DIR."/_config/dbconnect.php";

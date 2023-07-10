@@ -104,8 +104,8 @@
         </li>
 
 
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#contentmanagement" aria-expanded="false"
+        <li class="nav-item ">
+            <a class="nav-link " data-toggle="collapse" href="#contentmanagement" aria-expanded="false"
                 aria-controls="contentmanagement">
                 <i class="fa-light fa-folder-grid menu-icon"></i>
                 <span class="menu-title">Content Management</span>
@@ -122,22 +122,23 @@
         </li>
 
 
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#marketing" aria-expanded="false"
-                aria-controls="marketing">
+        <li
+            class="nav-item <?php if($page == "Mail-groups-mail" || $page == "Mails-historys" || $page == "viewEmail-history" || $page == "view_All-mail"){echo "active";} ?>">
+            <a class="nav-link <?php if($page == "Mail-groups-mail" || $page == "Mails-historys" || $page == "viewEmail-history" || $page == "view_All-mail"){echo "noaction";} else {
+                echo "collapsed"; 
+            } ?>" data-toggle="collapse" href="#marketing" aria-expanded="false" aria-controls="marketing">
                 <i class="fa-light fa-bullhorn menu-icon"></i>
                 <span class="menu-title">Marketing</span>
                 <i class="fa-regular fa-chevron-right menu-right-arrow"></i>
             </a>
-            <div class="collapse" id="marketing">
+            <div class="collapse <?php if($page == "Mail-groups-mail" || $page == "Mails-historys" || $page == "viewEmail-history" || $page == "view_All-mail"){echo "show";} ?>"
+                id="marketing">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="mails-group-mail.php">Group Mail</a></li>
                     <li class="nav-item"> <a class="nav-link" href="mails-history.php">Mail History</a></li>
                 </ul>
             </div>
         </li>
-
-
 
         <li
             class="nav-item  <?php if($page == "adminAdminEdit" || $page == "adminAddUser" || $page == "adminAdminUser"){echo "active";} ?>">
