@@ -9,17 +9,6 @@ function mailFooter(){
     $body = '
         <style>
         /* FOOTER DIVISION CSS STARTS */
-        /* footer */
-        .ts-td7-footer-div {
-            padding: 0px;
-            text-align: center;
-            font-size: 12px;
-            background-color: #f3b165;
-        }
-        .footer-text-address{
-            margin-bottom: 2rem;
-            margin-top: 2rem;
-        }
         .footer-text-address h1{
             font-size: 2rem;
             color: darkblue;
@@ -28,11 +17,6 @@ function mailFooter(){
             width: fit-content;
             margin: auto;
             margin-bottom: 20px;
-        }
-        .footer-text-address p{
-            margin: 0;
-            font-size: 14px;
-            line-height: 1.4;
         }
         .social-icons-div{
             background: darkblue;
@@ -52,27 +36,27 @@ function mailFooter(){
         }
     </style>
         <tr>
-            <td class="ts-td7-footer-div">
-                <div class="footer-text-address">
+            <td style="padding: 0px; text-align: center; font-size: 12px; background-color: #f3b165;">
+                <div class="footer-text-address" style="margin-bottom: 2rem; margin-top: 2rem;">
                     <h1>Get In Touch</h1>
                     <div>
-                        <p>Barasat, Kolkata, West Bengal, 700125, India</p>
-                        <p style="font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
+                        <p style="margin: 0; font-size: 14px; line-height: 1.4">Barasat, Kolkata, West Bengal, 700125, India</p>
+                        <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
                             <a class="t-d-none" style="color: #000;" rel="noopener" href="tel:'.SITE_CONTACT_NO.'" target="_blank">
                             '.SITE_CONTACT_NO.'
                             </a>
                         </p>
-                        <p style="font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center; color: #fff;">
+                        <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center; color: #fff;">
                             <a class="t-d-none" style=" color: #000;" rel="noopener" href="tel:'.SITE_BILLING_CONTACT_NO.'" target="_blank">
                             '.SITE_BILLING_CONTACT_NO.'
                             </a>
                         </p>
-                        <p style="font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
+                        <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
                             <a style="text-decoration: none;" rel="noopener" href="mailto:'.SITE_EMAIL.'" target="_blank">
                             '.SITE_EMAIL.'
                             </a>
                         </p>
-                        <p style="font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
+                        <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
                             <a style="text-decoration: none;" rel="noopener" href="mailto:'.SITE_BILLING_EMAIL.'" target="_blank">
                             '.SITE_BILLING_EMAIL.'
                             </a>
