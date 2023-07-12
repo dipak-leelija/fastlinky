@@ -337,10 +337,10 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                                     <img src="'.LOGO_WITH_PATH.'" alt="">
                                 </div>
                                 <div class="right-icon">
-                                    <span>
-                                    Order PLaced 
-                                    <img src="'.IMG_PATH.'/icons/success.png" alt="">
-                                    <span>
+                                    // <span>
+                                    // Order PLaced 
+                                    // <img src="'.IMG_PATH.'/icons/success.png" alt="">
+                                    // <span>
                                 </div>
                             </td>
                         </tr>
