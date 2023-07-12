@@ -94,7 +94,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
     }
 
     .table-second {
-        width: 100%;
+        /*width: 100%;*/
         max-width: 600px;
         border: 1px solid #c9c6c6;
         border-spacing: 0;
@@ -109,10 +109,10 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         display: flex;
         display:-webkit-flex;
         width: 100%;
-        padding: 15px 30px;
-        text-align: center;
-        font-size: 24px;
-        font-weight: bold;
+        padding: 15px 0;
+        /*text-align: center;*/
+        /*font-size: 24px;*/
+        /*font-weight: bold;*/
         background: aliceblue;
         justify-content: space-between;
     }
