@@ -395,7 +395,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                         </tr>';
 
                         // <!-- ************************** FOOTER STARTS ************************ -->
-                        // $mail .= mailFooter();
+                        $mail .= mailFooter();
                         // <!-- ************************** FOOTER ENDS ************************ -->
             $mail .= '</table>
                 </td>
