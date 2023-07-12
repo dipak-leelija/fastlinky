@@ -107,6 +107,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
 
     .order-placed-header {
         display: flex;
+        display:-webkit-flex;
         padding: 15px 30px;
         text-align: center;
         font-size: 24px;
@@ -330,18 +331,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                         <!-- **************************  LOGO IMAGE HEADER SECTION ************************ -->
                         <tr>
                             <td>
-                                <!-- <div class="order-placed-header">
-                                    <div class="left-icon">
-                                        <img src="'.LOGO_WITH_PATH.'" alt="">
-                                    </div>
-                                    <div class="right-icon">
-                                        <span>
-                                            Order PLaced 
-                                            <img src="'.IMG_PATH.'/icons/success.png" alt="">
-                                        <span>
-                                    </div>
-                                </div>-->
-
                                 <div class="order-placed-header">
                                         <img class="header-logo" src="'.LOGO_WITH_PATH.'" alt="'.COMPANY_FULL_NAME.'">
                                         <span class="header-right">
@@ -349,8 +338,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                                             <img src="'.IMG_PATH.'/icons/success.png" alt="">
                                         <span>
                                 </div>
-
-
                             </td>
                         </tr>
                         <!-- **************************  LOGO IMAGE HEADER SECTION ENDS ************************ -->
