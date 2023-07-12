@@ -107,7 +107,9 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
 
     .order-placed-header {
         display: flex;
-        display:-webkit-flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /*display:-webkit-flex;*/
         width: 100%;
         padding: 15px 0;
         /*text-align: center;*/
