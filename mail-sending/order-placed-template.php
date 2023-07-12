@@ -108,6 +108,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
     .order-placed-header {
         display: flex;
         display:-webkit-flex;
+        width: 100%;
         padding: 15px 30px;
         text-align: center;
         font-size: 24px;
