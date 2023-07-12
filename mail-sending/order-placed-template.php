@@ -115,7 +115,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         justify-content: space-between;
     }
 
-    .left-icon img {
+    .header-logo {
         width: 100px;
         max-width: 100%;
         height: auto;
@@ -124,17 +124,14 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         color: #ffffff;
     }
 
-    .right-icon{
-        display: flex;
-        align-items: center;
-    }
-    .right-icon span{
+    
+    .header-right{
         display: flex;
         align-items: center;
         font-size: 18px;
     }
 
-    .right-icon img {
+    .header-right img {
         width: 40px;
         margin-left: 10px;
         max-width: 100%;
@@ -314,10 +311,10 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         .order-placed-header {
             padding: 15px 8px;
         }
-        .right-icon span {
+        .header-right {
             font-size: 13px;
         }
-        .right-icon img {
+        .header-right img {
             width: 22px;
         }
    }
@@ -333,7 +330,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                         <!-- **************************  LOGO IMAGE HEADER SECTION ************************ -->
                         <tr>
                             <td>
-                                <div class="order-placed-header">
+                                <!-- <div class="order-placed-header">
                                     <div class="left-icon">
                                         <img src="'.LOGO_WITH_PATH.'" alt="">
                                     </div>
@@ -343,7 +340,17 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                                             <img src="'.IMG_PATH.'/icons/success.png" alt="">
                                         <span>
                                     </div>
+                                </div>-->
+
+                                <div class="order-placed-header">
+                                        <img class="header-logo" src="'.LOGO_WITH_PATH.'" alt="'.COMPANY_FULL_NAME.'">
+                                        <span class="header-right">
+                                            Order PLaced 
+                                            <img src="'.IMG_PATH.'/icons/success.png" alt="">
+                                        <span>
                                 </div>
+
+
                             </td>
                         </tr>
                         <!-- **************************  LOGO IMAGE HEADER SECTION ENDS ************************ -->
