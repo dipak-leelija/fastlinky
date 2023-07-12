@@ -332,15 +332,17 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                     <table role="presentation" class="table-second">
                         <!-- **************************  LOGO IMAGE HEADER SECTION ************************ -->
                         <tr>
-                            <td class="order-placed-header" style="display: flex; justify-content: space-between;">
-                                <div class="left-icon">
-                                    <img src="'.LOGO_WITH_PATH.'" alt="">
-                                </div>
-                                <div class="right-icon">
-                                    // <span>
-                                    // Order PLaced 
-                                    // <img src="'.IMG_PATH.'/icons/success.png" alt="">
-                                    // <span>
+                            <td>
+                                <div class="order-placed-header">
+                                    <div class="left-icon">
+                                        <img src="'.LOGO_WITH_PATH.'" alt="">
+                                    </div>
+                                    <div class="right-icon">
+                                        <span>
+                                            Order PLaced 
+                                            <img src="'.IMG_PATH.'/icons/success.png" alt="">
+                                        <span>
+                                    </div>
                                 </div>
                             </td>
                         </tr>
