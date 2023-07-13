@@ -318,10 +318,10 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         .order-placed-header {
             padding: 15px 8px;
         }
-        /*.header-right {
-            font-size: 13px;
+        .header-right {
+            margin-left: 113px;
         }
-        .header-right img {
+        /*.header-right img {
             width: 22px;
         }*/
    }
