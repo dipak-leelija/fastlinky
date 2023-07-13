@@ -24,7 +24,18 @@ require_once ROOT_DIR . "/classes/wishList.class.php";
 require_once ROOT_DIR . "/classes/location.class.php";
 
 require_once ROOT_DIR . "/classes/utility.class.php"; 
-require_once ROOT_DIR . "/classes/utilityMesg.class.php"; 
+require_once ROOT_DIR . "/classes/utilityMesg.class.php";
+
+
+
+require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/includes/email.inc.php";
+
+require_once ROOT_DIR."/classes/class.phpmailer.php";
+require_once ROOT_DIR."/classes/error.class.php"; 
+require_once ROOT_DIR."/mail-sending/order-placed-template.php";
+
+
 
 /* INSTANTIATING CLASSES */
 $customer		= new Customer();
