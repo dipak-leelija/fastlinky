@@ -170,6 +170,9 @@ if(isset($_SESSION[ORDERID])) {
 	$client		= $customer->getCustomerData($orderDetail[0]['clientUserId']);
 	// print_r($_SESSION);exit;
 
+	$customerFullName 	= $client[0][5].' '.$client[0][6]; 
+	$customerEmail 		= $client[0][3];
+
 	if ($client[0][31] != '') {
 		$customerPhone = $client[0][31];
 	}elseif ($client[0][32 != '']) {
@@ -179,8 +182,6 @@ if(isset($_SESSION[ORDERID])) {
 	}else {
 		$customerPhone = '';
 	}
-	// $customerFirstName 		= $client[0][31];
-	// $customerEmail 			= $client[0][32];
 	// $customerFirstName 		= $client[0][34];
 	// $customerFirstName = $client[0][5];
 	// $customerFirstName = $client[0][5];
@@ -203,31 +204,6 @@ if(isset($_SESSION[ORDERID])) {
 	
 	$addedOn 	= date('l, jS \of F Y, h:i a', strtotime($orderDetail[0]['added_on']));
 
-
-	// customer details 
-	/*
-	$cusDtls_arr = array(
-					'CUSTOMER NAME',		//0
-					'CUSTOMER EMAIL', 		//1
-					'BUSINESS NAME', 		//2
-					'CITY',					//3
-					'STATE',				//4
-					'POSTAL CODE',			//5
-					'PHONE',				//6
-					'PLACED ON'				//7
-					);
-
-	$cusData_arr = array(
-						$clientName,						//0
-						$orderDetail[0]['clientEmail'],		//1
-						$client[0][12],						//2
-						$cityName,							//3
-						$stateName,							//4
-						$client[0][29],						//5
-						$client[0][34],						//6
-						$addedOn							//7
-					);
-					*/
 
 	$cusMailDataArr = array(
 						'ORDER ID',
@@ -363,7 +339,7 @@ if(isset($_SESSION[ORDERID])) {
 	}elseif($clientName == ''){
 		$mailMsg = 'Receiver Name Not Found!';
 	}else{
-
+		
 		try {
 			$PHPMailer->IsSMTP();
 			$PHPMailer->IsHTML(true);
@@ -374,10 +350,9 @@ if(isset($_SESSION[ORDERID])) {
 			$PHPMailer->From        = SITE_EMAIL;
 			$PHPMailer->FromName    = COMPANY_FULL_NAME;
 			$PHPMailer->Sender      = SITE_EMAIL;
-			$PHPMailer->addAddress($clientEmail, $clientName);
+			$PHPMailer->addAddress($customerEmail, $customerFullName);
 			$PHPMailer->Subject     = $subject;
 			$PHPMailer->Body        = $messageBody;
-			// $PHPMailer->send();
 
 			if ($PHPMailer->send()) {
 				$mailMsg = 'You will receive email shortly in your account.';
