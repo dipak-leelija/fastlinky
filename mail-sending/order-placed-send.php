@@ -31,7 +31,7 @@ $orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
 
 // print_r($_POST);exit;
 
-    $fromMail       = MARKETING_MAIL;
+    $fromMail       = CONTACT_MAIL;
     $toMail  		= 'dipakmajumdar.leelija@gmail.com';
 	$toName   		= 'Dipak Majumdar';
 	$subject        = 'Trying 2';

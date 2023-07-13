@@ -7,8 +7,11 @@ require_once ROOT_DIR . "/includes/content.inc.php";
 require_once ROOT_DIR . "/includes/order-constant.inc.php";
 require_once ROOT_DIR . "/includes/email.inc.php";
 require_once ROOT_DIR . "/includes/registration.inc.php";
-// require_once ROOT_DIR . "/includes/mail-functions.php";
 require_once ROOT_DIR . "/includes/paypal.inc.php";
+
+require_once ROOT_DIR."/classes/class.phpmailer.php";
+require_once ROOT_DIR."/mail-sending/order-placed-template.php";
+
 
 require_once ROOT_DIR . "/_config/dbconnect.php";
 require_once ROOT_DIR . "/classes/customer.class.php";
@@ -28,12 +31,6 @@ require_once ROOT_DIR . "/classes/utilityMesg.class.php";
 
 
 
-require_once ROOT_DIR."/_config/dbconnect.php";
-require_once ROOT_DIR."/includes/email.inc.php";
-
-require_once ROOT_DIR."/classes/class.phpmailer.php";
-require_once ROOT_DIR."/classes/error.class.php"; 
-require_once ROOT_DIR."/mail-sending/order-placed-template.php";
 
 
 
@@ -51,7 +48,6 @@ $Location		= new Location();
 
 $dateUtil		= new DateUtil();
 $utility		= new Utility();
-$uMesg 			= new MesgUtility();
 
 
 // ========================================
@@ -355,7 +351,7 @@ if(isset($_SESSION[ORDERID])) {
 		
 	// print_r($_POST);exit;
 
-	$fromMail       = CONTACT_MAIL;
+	$fromMail       = MARKETING_MAIL;
 	$subject        = 'Order Placed Successfully!';
 	$messageBody    = orderPlacedtoCustomerTemplate($orderId, $clientFName, $cusMailDataArr, $cusMailValueArr);
 
