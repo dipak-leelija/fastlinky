@@ -261,46 +261,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
    .order-details-sub-div{
         width: 50%;
    }
-   /*
-   @media screen and (max-width: 530px) {
-        .customer-details-div h1 {
-            font-size: 20px;
-        }
-
-        .customer-details-div {
-            padding: 15px;
-        }
-
-        .col-lge {
-            max-width: 100% !important;
-            text-align: center;
-        }
-
-    }
-   @media(max-width:320px){
-        .order-details-headline{
-            margin-bottom: 0.5rem; 
-            display: block;
-            width: 100%;
-            word-break: break-word;
-        }
-        .order-details-headline-div{
-            width: 100%;
-        }
-        .order-details-main-div{
-            display: block;
-            width: 100%;
-        }
-        .order-details-sub-div{
-            width: 100%;
-        }
-        .extra-space{
-            padding-left: 6px;
-        }
-        .extra-font{
-            font-weight: 600;
-        }
-   }*/
     </style>
 </head>
 
