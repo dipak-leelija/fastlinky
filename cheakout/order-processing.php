@@ -42,6 +42,9 @@ $currentPage    = $utility->setCurrentPageSession();
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
+$customerEmail  = $cusDtl[0][3];
+$customerName   = $cusDtl[0][5].' '.$cusDtl[0][5];
+$customerFName  = $cusDtl[0][5];
 
 $reference_link = URL.'/package-order-history.php?order=';
 
@@ -120,67 +123,58 @@ if (isset($_POST['paylaterForm'])) {
                     $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
                     // unset($_SESSION['orderIds']);
 
+                    $orderId            ='#'.$eachOrderId;
+                    $orderDataArray     = array('Name','Package',
+                                                'Amount', 'Payment Mode,', 'Status','Phone',
+                                                'Email', 'Placed on');
+
+                    $orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
+                                                '7657576465','$175','PayLater','ordered','7699753019',
+                                                'dipakmajumdar.leelija@gmail.com','12/12/2022');
+
+                                                
+                        $toMail  		= $customerEmail;
+                        $toName   		= $customerName;
+                        $subject        = 'Order Placed Successfully!';
+                        $messageBody    = orderPlacedtoCustomerTemplate($orderId, $customerFName, $orderDataArray, $orderDetailsArray);
+
+                        $invalidEmail 	= $MyError->invalidEmail($toMail);
+                        
+
+                        if(($toMail == '')||(mb_ereg("^ER",$invalidEmail))){
+                            echo 'Receiver Email Address May Invalid or Not Found!';
+                        }elseif($toName == ''){
+                            echo 'Receiver Name Not Found!';
+                        }else{
+
+                        
+                            try {
+                                $PHPMailer->IsSMTP();
+                                $PHPMailer->IsHTML(true);
+                                $PHPMailer->Host        = gethostname();
+                                $PHPMailer->SMTPAuth    = true;
+                                $PHPMailer->Username    = SITE_EMAIL;
+                                $PHPMailer->Password    = SITE_EMAIL_P;
+                                $PHPMailer->From        = SITE_EMAIL;
+                                $PHPMailer->FromName    = COMPANY_FULL_NAME;
+                                $PHPMailer->Sender      = SITE_EMAIL;
+                                $PHPMailer->addAddress($toMail, $toName);
+                                $PHPMailer->Subject     = $subject;
+                                $PHPMailer->Body        = $messageBody;
+                                // $PHPMailer->send();
+
+                                if ($PHPMailer->send()) {
+                                    echo 'Message has been sent';
+                                }else {
+                                    echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+                                }
+                                $PHPMailer->ClearAllRecipients();
 
 
-
-
-                    // =====================================================================================================
-
-###############################################################################################
-
-$orderId            ='#876876';
-$orderDataArray     = array('Name','Service','Site','Transection ID',
-                            'Amount', 'Payment Mode,', 'Status','Phone',
-                            'Email', 'Placed on');
-
-$orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
-                            '7657576465','$175','PayLater','ordered','7699753019',
-                            'dipakmajumdar.leelija@gmail.com','12/12/2022');
-
-
-    $fromMail       = CONTACT_MAIL;
-    $toMail  		= 'dipakmajumdar.leelija@gmail.com';
-	$toName   		= 'Dipak Majumdar';
-	$subject        = 'Order Placed Successfully!';
-	$messageBody    = orderPlacedtoCustomerTemplate($orderId, 'Dipak', $orderDataArray, $orderDetailsArray);
-
-	$invalidEmail 	= $MyError->invalidEmail($toMail);
-	
-
-    if(($toMail == '')||(mb_ereg("^ER",$invalidEmail))){
-        echo 'Receiver Email Address May Invalid or Not Found!';
-	}elseif($toName == ''){
-        echo 'Receiver Name Not Found!';
-    }else{
-
-    
-        try {
-            $PHPMailer->IsSMTP();
-            $PHPMailer->IsHTML(true);
-            $PHPMailer->Host        = gethostname();
-            $PHPMailer->SMTPAuth    = true;
-            $PHPMailer->Username    = SITE_EMAIL;
-            $PHPMailer->Password    = SITE_EMAIL_P;
-            $PHPMailer->From        = SITE_EMAIL;
-            $PHPMailer->FromName    = COMPANY_FULL_NAME;
-            $PHPMailer->Sender      = SITE_EMAIL;
-            $PHPMailer->addAddress($toMail, $toName);
-            $PHPMailer->Subject     = $subject;
-            $PHPMailer->Body        = $messageBody;
-            // $PHPMailer->send();
-
-            if ($PHPMailer->send()) {
-                echo 'Message has been sent';
-            }else {
-                echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
-            }
-            $PHPMailer->ClearAllRecipients();
-
-
-        } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
-        }
-    }
+                            } catch (Exception $e) {
+                                echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+                            }
+                        }
 
 
 // ========================================================================
