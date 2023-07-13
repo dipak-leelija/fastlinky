@@ -118,6 +118,10 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         justify-content: space-between;
     }
 
+    .img-sec{
+        width: 50%;
+    }
+
     .header-logo {
         width: 100px;
         max-width: 100%;
