@@ -132,15 +132,16 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
 
     
     .header-right{
+        text-align: end;
         /*display: flex;
-        align-items: center;
+        // align-items: center;
         font-size: 18px;*/
-        margin-left: 113px;
+        /*margin-left: 113px;*/
     }
 
     .header-right img {
-        /*width: 40px;
-        margin-left: 10px;
+        width: 170px;
+        /*margin-left: 10px;
         text-decoration: none;
         color: #ffffff;*/
         max-width: 100%;
@@ -232,18 +233,18 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
     }
 
     @media(max-width:600px){
-        .header-right {
+        /*.header-right {
             margin-left: 85px;
-        }
+        }*/
         .order-details-table {
             padding: 0 1rem;
         }
    }
 
     @media screen and (max-width: 530px) {
-        .header-right {
+        /*.header-right {
             margin-left: 65px;
-        }
+        }*/
         .customer-details-div h1 {
             font-size: 20px;
         }
@@ -298,6 +299,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
    .order-details-sub-div{
         width: 50%;
    }
+   /*
    @media screen and (max-width: 450px) {
     .header-right {
         margin-left: 40px;
@@ -308,6 +310,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         margin-left: 0px;
     }
    }
+   */
    @media(max-width:320px){
         .order-details-headline{
             margin-bottom: 0.5rem; 
@@ -361,7 +364,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                                     </div>
                                     <div class="img-sec">
                                         <div class="header-right">
-                                            <img src="'.IMG_PATH.'/icons/order-placed2.png" alt="">
+                                            <img src="'.IMG_PATH.'/icons/order-placed-icon.png" alt="">
                                         </div>
                                     </div>
                                 </div>
