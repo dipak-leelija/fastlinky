@@ -108,13 +108,10 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
     .order-placed-header {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        /*display:-webkit-flex;*/
-        padding: 15px 30px;
+        padding: 15px 10px;
         font-size: 24px;
         font-weight: bold;
         background: aliceblue;
-        justify-content: space-between;
     }
 
     .img-sec{
@@ -136,7 +133,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
     }
 
     .header-right img {
-        width: 170px;
+        width: 155px;
         object-fit: contain;
     }
 
@@ -302,9 +299,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         }
         .extra-font{
             font-weight: 600;
-        }
-        .order-placed-header {
-            padding: 15px 8px;
         }
    }
     </style>
