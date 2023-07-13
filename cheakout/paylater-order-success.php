@@ -145,6 +145,7 @@ if ( isset($_POST['blogId'])) {
 // if(isset($_SESSION['ordId'])) {
 if(isset($_SESSION[ORDERID])) {
 
+	$mailMsg = '';
 	//fetch the order details
 	$orderDetail 	= $ContentOrder->showOrderdContentsByCol('order_id', $orderId, '', '');
 
@@ -351,9 +352,9 @@ if(isset($_SESSION[ORDERID])) {
 
 
 	if(($clientEmail == '')||(mb_ereg("^ER",$invalidEmail))){
-		echo 'Receiver Email Address May Invalid or Not Found!';
+		$mailMsg = 'Receiver Email Address May Invalid or Not Found!';
 	}elseif($clientName == ''){
-		echo 'Receiver Name Not Found!';
+		$mailMsg = 'Receiver Name Not Found!';
 	}else{
 
 		try {
@@ -372,15 +373,15 @@ if(isset($_SESSION[ORDERID])) {
 			// $PHPMailer->send();
 
 			if ($PHPMailer->send()) {
-				echo 'Message has been sent';
+				$mailMsg = 'You will receive email shortly in your account.';
 			}else {
-				echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+				$mailMsg = "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
 			}
 			$PHPMailer->ClearAllRecipients();
 
 
 		} catch (Exception $e) {
-			echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+			$mailMsg = "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
 		}
 	}
 
@@ -447,8 +448,8 @@ if(isset($_SESSION[ORDERID])) {
             <div class="col-11 col-md-10">
                 <div class="mt-4 p-5 bg-lighter-blue text-white rounded">
                     <h2 class="text-primary">Thanking you for your order.</h2>
-                    <p><i class="fas fa-check-circle fs-5 text-primary"></i> We have received your order. You will
-                        receive email shortly in your account.</p>
+                    <p><i class="fas fa-check-circle fs-5 text-primary"></i> We have received your order. 
+						<?= $mailMsg != '' ? $mailMsg : ''; ?> </p>
                     <p><i class="fas fa-exclamation-circle fs-5 text-warning"></i> If you find any difficulty, drop an
                         email to <?php echo SITE_EMAIL ?></p>
                     <?php
