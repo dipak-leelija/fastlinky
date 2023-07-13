@@ -3,34 +3,16 @@ session_start();
 require_once dirname(__DIR__) . "/includes/constant.inc.php"; 
 
 require_once ROOT_DIR."/_config/dbconnect.php";
-
 require_once ROOT_DIR."/includes/email.inc.php";
 
-require_once ROOT_DIR."/classes/customer.class.php";
-require_once ROOT_DIR."/classes/search.class.php";
-
 require_once ROOT_DIR."/classes/class.phpmailer.php";
-include_once ROOT_DIR."/classes/emails.class.php";
-
 require_once ROOT_DIR."/classes/error.class.php"; 
-require_once ROOT_DIR."/classes/date.class.php"; 
-require_once ROOT_DIR."/classes/utility.class.php"; 
-require_once ROOT_DIR."/classes/utilityMesg.class.php";
-
 require_once ROOT_DIR."/mail-sending/order-placed-template.php";
 
 
 /* INSTANTIATING CLASSES */
-$customer	    = new Customer();
-$search_obj		= new Search();
-
 $PHPMailer      = new PHPMailer();
-$emailObj   	= new Emails();
-
-$dateUtil      	= new DateUtil();
 $MyError 			= new MyError();
-$utility		= new Utility();
-$uMesg 			= new MesgUtility();
 
 ###############################################################################################
 
@@ -53,7 +35,7 @@ $orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
     $toMail  		= 'dipakmajumdar.leelija@gmail.com';
 	$toName   		= 'Dipak Majumdar';
 	$subject        = 'Trying 2';
-	$messageBody    = orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray);
+	$messageBody    = orderPlacedtoCustomerTemplate($orderId, 'Dipak', $orderDataArray, $orderDetailsArray);
 
 	$invalidEmail 	= $MyError->invalidEmail($toMail);
 	

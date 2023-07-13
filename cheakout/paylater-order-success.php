@@ -7,7 +7,7 @@ require_once ROOT_DIR . "/includes/content.inc.php";
 require_once ROOT_DIR . "/includes/order-constant.inc.php";
 require_once ROOT_DIR . "/includes/email.inc.php";
 require_once ROOT_DIR . "/includes/registration.inc.php";
-require_once ROOT_DIR . "/includes/mail-functions.php";
+// require_once ROOT_DIR . "/includes/mail-functions.php";
 require_once ROOT_DIR . "/includes/paypal.inc.php";
 
 require_once ROOT_DIR . "/_config/dbconnect.php";
@@ -31,7 +31,7 @@ $customer		= new Customer();
 $domain			= new Domain();
 $BlogMst		= new BlogMst();
 $OrderStatus	= new OrderStatus();
-$error			= new MyError();
+$MyError		= new MyError();
 $ContentOrder	= new ContentOrder();
 $Notifications  = new Notifications();
 
@@ -41,6 +41,22 @@ $Location		= new Location();
 $dateUtil		= new DateUtil();
 $utility		= new Utility();
 $uMesg 			= new MesgUtility();
+
+
+// ========================================
+
+
+require_once ROOT_DIR."/classes/class.phpmailer.php";
+include_once ROOT_DIR."/classes/emails.class.php";
+
+
+require_once ROOT_DIR."/mail-sending/order-placed-template.php";
+
+
+/* INSTANTIATING CLASSES */
+$PHPMailer      = new PHPMailer();
+
+// ========================================
 
 ###############################################################################################
 //declare vars
@@ -69,6 +85,7 @@ if (!isset($_SESSION[ORDERDOMAIN]) && !isset($_SESSION[ORDERSITECOST]) && !isset
 	
 	$clientUserId       = $_SESSION['userid'];
 	$clientName         = $_SESSION['name'];
+	$clientFName        = $_SESSION['welcome_name'];
 	$clientEmail        = $_SESSION[USR_SESS];
 	$orderId			= $_SESSION[ORDERID];
 	$reference_link		= URL."/guest-post-article-submit.php?order=".base64_encode(urlencode($orderId));
@@ -143,24 +160,23 @@ if(isset($_SESSION[ORDERID])) {
 
 	// Client Details 
 	$client		= $customer->getCustomerData($orderDetail[0]['clientUserId']);
+	// print_r($_SESSION);exit;
 
-	//country details
-	$countryDetails = $Location->getCountyById($client[0][30]);
-	$countryName   	= $countryDetails['name'];
-
-	//city details
-	$cityDetails 	= $Location->getCityDataById($client[0][27]);
-	$cityName = '';
-	if (isset($cityDetails['city'])) {
-		$cityName = $cityDetails['city'];
+	if ($client[0][31] != '') {
+		$customerPhone = $client[0][31];
+	}elseif ($client[0][32 != '']) {
+		$customerPhone = $client[0][32];
+	}elseif ($client[0][32] != '') {
+		$customerPhone = $client[0][34];
+	}else {
+		$customerPhone = '';
 	}
+	// $customerFirstName 		= $client[0][31];
+	// $customerEmail 			= $client[0][32];
+	// $customerFirstName 		= $client[0][34];
+	// $customerFirstName = $client[0][5];
+	// $customerFirstName = $client[0][5];
 
-	//state details
-	$stateDetails 	= $Location->getStateData($client[0][28]);
-	$stateName = '';
-	if (isset($stateName['state_name'])) {
-		$stateName 		= $stateDetails['state_name'];
-	}
 
 
 	$domainDetails = $BlogMst->showBlogbyDomain($orderDetail[0]['clientOrderedSite']);
@@ -176,11 +192,12 @@ if(isset($_SESSION[ORDERID])) {
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
 	// ===================================================================================================================
 
-	/*
+	
 	$addedOn 	= date('l, jS \of F Y, h:i a', strtotime($orderDetail[0]['added_on']));
 
 
 	// customer details 
+	/*
 	$cusDtls_arr = array(
 					'CUSTOMER NAME',		//0
 					'CUSTOMER EMAIL', 		//1
@@ -202,10 +219,30 @@ if(isset($_SESSION[ORDERID])) {
 						$client[0][34],						//6
 						$addedOn							//7
 					);
+					*/
+
+	$cusMailDataArr = array(
+						'ORDER ID',
+						'DOMAIN',
+						'PAYMENT MODE',
+						'ORDER STATUS',
+						'PHONE',
+						'EMAIL',
+						'PLACED ON'
+	);
+
+	$cusMailValueArr = array(
+						'#'.$orderId,
+						$clientOrderedSite,
+						PAYLATER,
+						ORDERED,
+						$customerPhone,
+						$clientEmail,
+						'PLACED ON'
+	);
 
 
-
-	
+	/*
 	// order details for admin and customer
 	$orddtls_arr = array(
 						'NAME', 		//0
@@ -301,6 +338,53 @@ if(isset($_SESSION[ORDERID])) {
 	
 
 	// $mailSended = customerOrderPlacedMail($fromMail, $toMail, $toName, $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
+
+
+		
+	// print_r($_POST);exit;
+
+	$fromMail       = CONTACT_MAIL;
+	$subject        = 'Order Placed Successfully!';
+	$messageBody    = orderPlacedtoCustomerTemplate($orderId, $clientFName, $cusMailDataArr, $cusMailValueArr);
+
+	$invalidEmail 	= $MyError->invalidEmail($clientEmail);
+
+
+	if(($clientEmail == '')||(mb_ereg("^ER",$invalidEmail))){
+		echo 'Receiver Email Address May Invalid or Not Found!';
+	}elseif($clientName == ''){
+		echo 'Receiver Name Not Found!';
+	}else{
+
+		try {
+			$PHPMailer->IsSMTP();
+			$PHPMailer->IsHTML(true);
+			$PHPMailer->Host        = gethostname();
+			$PHPMailer->SMTPAuth    = true;
+			$PHPMailer->Username    = SITE_EMAIL;
+			$PHPMailer->Password    = SITE_EMAIL_P;
+			$PHPMailer->From        = SITE_EMAIL;
+			$PHPMailer->FromName    = COMPANY_FULL_NAME;
+			$PHPMailer->Sender      = SITE_EMAIL;
+			$PHPMailer->addAddress($clientEmail, $clientName);
+			$PHPMailer->Subject     = $subject;
+			$PHPMailer->Body        = $messageBody;
+			// $PHPMailer->send();
+
+			if ($PHPMailer->send()) {
+				echo 'Message has been sent';
+			}else {
+				echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+			}
+			$PHPMailer->ClearAllRecipients();
+
+
+		} catch (Exception $e) {
+			echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+		}
+	}
+
+
 
 	// ================================== MAIL SENDED TO CLIENT ================================== 
 	

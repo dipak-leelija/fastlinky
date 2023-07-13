@@ -58,7 +58,7 @@ function mailFooter(){
 }
 
 
-function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
+function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $orderDetailsArray){
 
     $mail = 
 
@@ -288,7 +288,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                         <!-- **************************  LOGO IMAGE HEADER SECTION ENDS ************************ -->
                         <tr>
                             <td class="customer-details-div">
-                                <h1>Hi Dipak, Your order has been place successfully</h1>
+                                <h1>Hi '.$firstName.', Your order has been place successfully</h1>
                                 <p>Thank you very much for placing an order with us! We truly appreciate your trust and look forward to making your experience as enjoyable as possible.</p>
                             </td>
                         </tr>
@@ -348,9 +348,5 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
 </html>';
 
 return $mail;
-} 
-
-// $arr1 = array('Name', 'Date');
-// $arr2 = array('Dipak Majumdar', '29/08/1999');
-// echo orderPlacedtoCustomer('#786876', $arr1, $arr2);
+}
 ?>
