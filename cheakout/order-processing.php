@@ -6,17 +6,25 @@ require_once ROOT_DIR."/_config/dbconnect.php";
 
 require_once ROOT_DIR."/includes/content.inc.php";
 require_once ROOT_DIR."/includes/order-constant.inc.php";
+require_once ROOT_DIR."/classes/class.phpmailer.php";
+require_once ROOT_DIR."/includes/email.inc.php";
+require_once ROOT_DIR."/mail-sending/order-placed-template.php";
+
 
 require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/gp-package.class.php";
 require_once ROOT_DIR."/classes/gp-order.class.php";
 require_once ROOT_DIR."/classes/notification.class.php";
+require_once ROOT_DIR."/classes/error.class.php"; 
 require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/location.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
 
 /* INSTANTIATING CLASSES */
 $DateUtil       = new DateUtil();
+
+$PHPMailer         = new PHPMailer();
+$MyError 			= new MyError();
 
 $customer		= new Customer();
 $GPPackage      = new GuestPostpackage();
@@ -118,18 +126,6 @@ if (isset($_POST['paylaterForm'])) {
 
                     // =====================================================================================================
 
-
-require_once ROOT_DIR."/includes/email.inc.php";
-
-require_once ROOT_DIR."/classes/class.phpmailer.php";
-require_once ROOT_DIR."/classes/error.class.php"; 
-require_once ROOT_DIR."/mail-sending/order-placed-template.php";
-
-
-/* INSTANTIATING CLASSES */
-$PHPMailer         = new PHPMailer();
-$MyError 			= new MyError();
-
 ###############################################################################################
 
 $orderId            ='#876876';
@@ -145,7 +141,7 @@ $orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
     $fromMail       = CONTACT_MAIL;
     $toMail  		= 'dipakmajumdar.leelija@gmail.com';
 	$toName   		= 'Dipak Majumdar';
-	$subject        = 'Trying 2';
+	$subject        = 'Order Placed Successfully!';
 	$messageBody    = orderPlacedtoCustomerTemplate($orderId, 'Dipak', $orderDataArray, $orderDetailsArray);
 
 	$invalidEmail 	= $MyError->invalidEmail($toMail);
