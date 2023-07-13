@@ -133,18 +133,10 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
     
     .header-right{
         text-align: end;
-        /*display: flex;
-        // align-items: center;
-        font-size: 18px;*/
-        /*margin-left: 113px;*/
     }
 
     .header-right img {
         width: 170px;
-        /*margin-left: 10px;
-        text-decoration: none;
-        color: #ffffff;*/
-        max-width: 100%;
         object-fit: contain;
     }
 
@@ -232,33 +224,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         font-family: inherit;
     }
 
-    @media(max-width:600px){
-        /*.header-right {
-            margin-left: 85px;
-        }*/
-        .order-details-table {
-            padding: 0 1rem;
-        }
-   }
-
-    @media screen and (max-width: 530px) {
-        /*.header-right {
-            margin-left: 65px;
-        }*/
-        .customer-details-div h1 {
-            font-size: 20px;
-        }
-
-        .customer-details-div {
-            padding: 15px;
-        }
-
-        .col-lge {
-            max-width: 100% !important;
-            text-align: center;
-        }
-
-    }
     .tables-fr-cdetails{
         width: 100%;
         text-align: left;
@@ -277,7 +242,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
 
     .order-details-table{
         word-break: break-word;
-        padding: 0 6rem;
+        padding: 0 2rem;
         font-weight: 600;
         font-family: "Cabin", sans-serif;
     }
@@ -300,17 +265,21 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         width: 50%;
    }
    /*
-   @media screen and (max-width: 450px) {
-    .header-right {
-        margin-left: 40px;
+   @media screen and (max-width: 530px) {
+        .customer-details-div h1 {
+            font-size: 20px;
+        }
+
+        .customer-details-div {
+            padding: 15px;
+        }
+
+        .col-lge {
+            max-width: 100% !important;
+            text-align: center;
+        }
+
     }
-   }
-   @media screen and (max-width: 360px) {
-    .header-right {
-        margin-left: 0px;
-    }
-   }
-   */
    @media(max-width:320px){
         .order-details-headline{
             margin-bottom: 0.5rem; 
@@ -337,7 +306,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         .order-placed-header {
             padding: 15px 8px;
         }
-   }
+   }*/
     </style>
 </head>
 
@@ -350,14 +319,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                         <!-- **************************  LOGO IMAGE HEADER SECTION ************************ -->
                         <tr>
                             <td>
-                                <!-- <div class="order-placed-header">
-                                        <img class="header-logo" src="'.LOGO_WITH_PATH.'" alt="'.COMPANY_FULL_NAME.'">
-                                        <span class="header-right">
-                                            Order PLaced 
-                                            <img src="'.IMG_PATH.'/icons/success.png" alt="">
-                                        <span>
-                                </div> -->
-
                                 <div class="order-placed-header">
                                     <div class="img-sec">
                                         <img class="header-logo" src="'.LOGO_WITH_PATH.'" alt="'.COMPANY_FULL_NAME.'">
@@ -368,7 +329,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                                         </div>
                                     </div>
                                 </div>
-
                             </td>
                         </tr>
                         <!-- **************************  LOGO IMAGE HEADER SECTION ENDS ************************ -->
