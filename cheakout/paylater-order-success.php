@@ -329,7 +329,7 @@ if(isset($_SESSION[ORDERID])) {
 
 	$fromMail       = MARKETING_MAIL;
 	$subject        = 'Order Placed Successfully!';
-	$messageBody    = orderPlacedtoCustomerTemplate($orderId, $clientFName, $cusMailDataArr, $cusMailValueArr);
+	echo $messageBody    = orderPlacedtoCustomerTemplate($orderId, $clientFName, $cusMailDataArr, $cusMailValueArr);
 
 	$invalidEmail 	= $MyError->invalidEmail($clientEmail);
 
