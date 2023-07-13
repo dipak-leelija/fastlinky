@@ -132,17 +132,18 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
 
     
     .header-right{
-        display: flex;
+        /*display: flex;
         align-items: center;
-        font-size: 18px;
+        font-size: 18px;*/
+        margin-left: 113px;
     }
 
     .header-right img {
-        width: 40px;
+        /*width: 40px;
         margin-left: 10px;
-        max-width: 100%;
         text-decoration: none;
-        color: #ffffff;
+        color: #ffffff;*/
+        max-width: 100%;
         object-fit: contain;
     }
 
@@ -317,12 +318,12 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         .order-placed-header {
             padding: 15px 8px;
         }
-        .header-right {
+        /*.header-right {
             font-size: 13px;
         }
         .header-right img {
             width: 22px;
-        }
+        }*/
    }
     </style>
 </head>
@@ -350,8 +351,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                                     </div>
                                     <div class="img-sec">
                                         <div class="header-right">
-                                            Order PLaced 
-                                            <img src="'.IMG_PATH.'/icons/success.png" alt="">
+                                            <img src="'.IMG_PATH.'/icons/order-placed2.png" alt="">
                                         </div>
                                     </div>
                                 </div>
