@@ -111,7 +111,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         justify-content: space-between;
         /*display:-webkit-flex;*/
         padding: 15px 30px;
-        text-align: center;
         font-size: 24px;
         font-weight: bold;
         background: aliceblue;
