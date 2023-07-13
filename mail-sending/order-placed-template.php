@@ -261,7 +261,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
    .order-details-sub-div{
         width: 50%;
    }
-   
+   /*
    @media screen and (max-width: 530px) {
         .customer-details-div h1 {
             font-size: 20px;
@@ -300,7 +300,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         .extra-font{
             font-weight: 600;
         }
-   }
+   }*/
     </style>
 </head>
 
