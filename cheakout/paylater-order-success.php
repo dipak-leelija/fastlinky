@@ -50,21 +50,6 @@ $dateUtil		= new DateUtil();
 $utility		= new Utility();
 
 
-// ========================================
-
-
-require_once ROOT_DIR."/classes/class.phpmailer.php";
-include_once ROOT_DIR."/classes/emails.class.php";
-
-
-require_once ROOT_DIR."/mail-sending/order-placed-template.php";
-
-
-/* INSTANTIATING CLASSES */
-$PHPMailer      = new PHPMailer();
-
-// ========================================
-
 ###############################################################################################
 //declare vars
 $typeM		= $utility->returnGetVar('typeM','');
@@ -182,10 +167,6 @@ if(isset($_SESSION[ORDERID])) {
 	}else {
 		$customerPhone = '';
 	}
-	// $customerFirstName 		= $client[0][34];
-	// $customerFirstName = $client[0][5];
-	// $customerFirstName = $client[0][5];
-
 
 
 	$domainDetails = $BlogMst->showBlogbyDomain($orderDetail[0]['clientOrderedSite']);
@@ -329,7 +310,7 @@ if(isset($_SESSION[ORDERID])) {
 
 	$fromMail       = MARKETING_MAIL;
 	$subject        = 'Order Placed Successfully!';
-	echo $messageBody    = orderPlacedtoCustomerTemplate($orderId, $clientFName, $cusMailDataArr, $cusMailValueArr);
+	$messageBody    = orderPlacedtoCustomerTemplate($orderId, $clientFName, $cusMailDataArr, $cusMailValueArr);
 
 	$invalidEmail 	= $MyError->invalidEmail($clientEmail);
 
