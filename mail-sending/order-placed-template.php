@@ -231,7 +231,19 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         font-family: inherit;
     }
 
+    @media(max-width:600px){
+        .header-right {
+            margin-left: 85px;
+        }
+        .order-details-table {
+            padding: 0 1rem;
+        }
+   }
+
     @media screen and (max-width: 530px) {
+        .header-right {
+            margin-left: 65px;
+        }
         .customer-details-div h1 {
             font-size: 20px;
         }
@@ -286,12 +298,16 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
    .order-details-sub-div{
         width: 50%;
    }
-   @media(max-width:600px){
-        .order-details-table {
-            padding: 0 1rem;
-        }
+   @media screen and (max-width: 450px) {
+    .header-right {
+        margin-left: 40px;
+    }
    }
-
+   @media screen and (max-width: 360px) {
+    .header-right {
+        margin-left: 0px;
+    }
+   }
    @media(max-width:320px){
         .order-details-headline{
             margin-bottom: 0.5rem; 
@@ -318,12 +334,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         .order-placed-header {
             padding: 15px 8px;
         }
-        .header-right {
-            margin-left: 113px;
-        }
-        /*.header-right img {
-            width: 22px;
-        }*/
    }
     </style>
 </head>
