@@ -178,21 +178,14 @@ if(isset($_SESSION[ORDERID])) {
 	
 	// transection details
 	$txn = $ContentOrder->showTrxnByOrderId($orderId);
-	
+	$orderDomain = $utility->url_to_domain($clientOrderedSite);
 
 	// ===================================================================================================================
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
 	// ===================================================================================================================
 
 	$cusMailDataArr     = array('Domain', 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
-	$cusMailValueArr  	= array('domain', ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
-
-	echo addslashes(trim($clientOrderedSite));
-	echo '<br>';
-	echo $clientOrderedSite;
-	echo '<br>';
-	echo $utility->url_to_domain($clientOrderedSite);
-// print get_domain("http://mail.somedomain.co.uk"); // outputs 'somedomain.co.uk'
+	$cusMailValueArr  	= array($orderDomain, ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
 
 	/*
 	// order details for admin and customer
