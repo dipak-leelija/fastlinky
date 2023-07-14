@@ -195,9 +195,9 @@ if(isset($_SESSION[ORDERID])) {
 	// print_r($cusMailValueArr);
 
 
-	$cusMailDataArr     = array('Domain','Order Status', 'Payment Mode','Phone','Email', 'Placed on');
+	$cusMailDataArr     = array('Domain', 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
 
-	$cusMailValueArr  = array('bizmaa.com','Ordered', 'PayLater','7699753019','dipakmajumdar.leelija@gmail.com',$orderDate);
+	$cusMailValueArr  = array('bizmaa.com', 'Ordered', 'PayLater', $customerPhone, $customerEmail, $orderDate);
 
 	/*
 	// order details for admin and customer
