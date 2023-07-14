@@ -309,45 +309,70 @@ if(isset($_SESSION[ORDERID])) {
 		
 	// print_r($_POST);exit;
 
-	$fromMail       = MARKETING_MAIL;
-	$subject        = 'Order Placed Successfully!';
-	$messageBody    = orderPlacedtoCustomerTemplate($orderId, $clientFName, $cusMailDataArr, $cusMailValueArr);
 
-	$invalidEmail 	= $MyError->invalidEmail($clientEmail);
+###############################################################################################
 
+$orderId            ='#876876';
+$orderDataArray     = array('Name','Service','Site','Transection ID',
+                            'Amount', 'Payment Mode,', 'Status','Phone',
+                            'Email', 'Placed on');
 
-	if(($clientEmail == '')||(mb_ereg("^ER",$invalidEmail))){
-		$mailMsg = 'Receiver Email Address May Invalid or Not Found!';
-	}elseif($clientName == ''){
-		$mailMsg = 'Receiver Name Not Found!';
-	}else{
-		
-		try {
-			$PHPMailer->IsSMTP();
-			$PHPMailer->IsHTML(true);
-			$PHPMailer->Host        = gethostname();
-			$PHPMailer->SMTPAuth    = true;
-			$PHPMailer->Username    = SITE_EMAIL;
-			$PHPMailer->Password    = SITE_EMAIL_P;
-			$PHPMailer->From        = SITE_EMAIL;
-			$PHPMailer->FromName    = COMPANY_FULL_NAME;
-			$PHPMailer->Sender      = SITE_EMAIL;
-			$PHPMailer->addAddress($customerEmail, $customerFullName);
-			$PHPMailer->Subject     = $subject;
-			$PHPMailer->Body        = $messageBody;
-
-			if ($PHPMailer->send()) {
-				$mailMsg = 'You will receive email shortly in your account.';
-			}else {
-				$mailMsg = "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
-			}
-			$PHPMailer->ClearAllRecipients();
+$orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
+                            '7657576465','$175','PayLater','ordered','7699753019',
+                            'dipakmajumdar.leelija@gmail.com','12/12/2022');
 
 
-		} catch (Exception $e) {
-			$mailMsg = "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
-		}
-	}
+###############################################################################################
+
+
+// print_r($_POST);exit;
+
+    $fromMail       = CONTACT_MAIL;
+    $toMail  		= 'dipakmajumdar.leelija@gmail.com';
+	$toName   		= 'Dipak Majumdar';
+	$subject        = 'Trying 2';
+	$messageBody    = orderPlacedtoCustomerTemplate($orderId, 'Dipak', $orderDataArray, $orderDetailsArray);
+
+	$invalidEmail 	= $MyError->invalidEmail($toMail);
+	
+
+    if(($toMail == '')||(mb_ereg("^ER",$invalidEmail))){
+        echo 'Receiver Email Address May Invalid or Not Found!';
+	}elseif($toName == ''){
+        echo 'Receiver Name Not Found!';
+    }else{
+
+        
+    echo $messageBody;
+    // exit;
+    
+        try {
+            $PHPMailer->IsSMTP();
+            $PHPMailer->IsHTML(true);
+            $PHPMailer->Host        = gethostname();
+            $PHPMailer->SMTPAuth    = true;
+            $PHPMailer->Username    = SITE_EMAIL;
+            $PHPMailer->Password    = SITE_EMAIL_P;
+            $PHPMailer->From        = SITE_EMAIL;
+            $PHPMailer->FromName    = COMPANY_FULL_NAME;
+            $PHPMailer->Sender      = SITE_EMAIL;
+            $PHPMailer->addAddress($toMail, $toName);
+            $PHPMailer->Subject     = $subject;
+            $PHPMailer->Body        = $messageBody;
+            // $PHPMailer->send();
+
+            if ($PHPMailer->send()) {
+                echo 'Message has been sent';
+            }else {
+                echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+            }
+            $PHPMailer->ClearAllRecipients();
+
+
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+        }
+    }
 
 
 
