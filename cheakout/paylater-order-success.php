@@ -316,10 +316,10 @@ if(isset($_SESSION[ORDERID])) {
 
 // print_r($_POST);exit;
 
-    echo $toMail  		= $customerEmail;
+    $toMail  		= $customerEmail;
 	$toName   		= $customerFullName;
 	$subject        = 'Guest Post Order Placed Successfully!';
-	$messageBody    = orderPlacedtoCustomerTemplate($orderId, 'Dipak', $orderDataArray, $orderDetailsArray);
+	$messageBody    = orderPlacedtoCustomerTemplate($orderId, 'Dipak', $cusMailDataArr, $cusMailValueArr);
 
 	$invalidEmail 	= $MyError->invalidEmail($toMail);
 	
