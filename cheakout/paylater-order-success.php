@@ -187,19 +187,19 @@ if(isset($_SESSION[ORDERID])) {
 	$addedOn 	= date('l, jS \of F Y, h:i a', strtotime($orderDetail[0]['added_on']));
 
 
-	$cusMailDataArr = array( 'DOMAIN', 'PAYMENT MODE', 'ORDER STATUS', 'PHONE', 'EMAIL', 'PLACED ON' );
+	// $cusMailDataArr = array( 'DOMAIN', 'PAYMENT MODE', 'ORDER STATUS', 'PHONE', 'EMAIL', 'PLACED ON' );
 
-	$cusMailValueArr = array( $clientOrderedSite, PAYLATER, ORDERED, $customerPhone, $clientEmail, 'PLACED ON');
+	// $cusMailValueArr = array( $clientOrderedSite, PAYLATER, ORDERED, $customerPhone, $clientEmail, 'PLACED ON');
 
-	print_r($cusMailDataArr);
-	print_r($cusMailValueArr);
+	// print_r($cusMailDataArr);
+	// print_r($cusMailValueArr);
 
 
-	$orderDataArray     = array('Name','Service','Site','Transection ID',
+	$cusMailDataArr     = array('Name','Service','Site','Transection ID',
                             'Amount', 'Payment Mode,', 'Status','Phone',
                             'Email', 'Placed on');
 
-	$orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
+	$cusMailValueArr  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
                             '7657576465','$175','PayLater','ordered','7699753019',
                             'dipakmajumdar.leelija@gmail.com','12/12/2022');
 
