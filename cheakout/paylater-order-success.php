@@ -199,7 +199,7 @@ if(isset($_SESSION[ORDERID])) {
                             'Amount', 'Payment Mode,', 'Status','Phone',
                             'Email', 'Placed on');
 
-	$cusMailValueArr  = array($clientOrderedSite,ORDERED,'bizmaa.com',
+	$cusMailValueArr  = array($clientOrderedSite,'Ordered','bizmaa.com',
                             '7657576465','$175','PayLater','ordered','7699753019',
                             'dipakmajumdar.leelija@gmail.com','12/12/2022');
 
