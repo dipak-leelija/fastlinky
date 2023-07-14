@@ -195,11 +195,11 @@ if(isset($_SESSION[ORDERID])) {
 	// print_r($cusMailValueArr);
 
 
-	$cusMailDataArr     = array('Name','Service','Site','Transection ID',
+	$cusMailDataArr     = array('Domain','Order Status','Site','Transection ID',
                             'Amount', 'Payment Mode,', 'Status','Phone',
                             'Email', 'Placed on');
 
-	$cusMailValueArr  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
+	$cusMailValueArr  = array($clientOrderedSite,ORDERED,'bizmaa.com',
                             '7657576465','$175','PayLater','ordered','7699753019',
                             'dipakmajumdar.leelija@gmail.com','12/12/2022');
 
