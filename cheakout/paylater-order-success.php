@@ -46,7 +46,7 @@ $Notifications  = new Notifications();
 $WishList		= new WishList();
 $Location		= new Location();
 
-$dateUtil		= new DateUtil();
+$DateUtil		= new DateUtil();
 $utility		= new Utility();
 $PHPMailer         = new PHPMailer();
 $MyError 			= new MyError();
