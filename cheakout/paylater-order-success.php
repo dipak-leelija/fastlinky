@@ -313,13 +313,13 @@ if(isset($_SESSION[ORDERID])) {
 ###############################################################################################
 
 $orderId            ='#876876';
-// $orderDataArray     = array('Name','Service','Site','Transection ID',
-//                             'Amount', 'Payment Mode,', 'Status','Phone',
-//                             'Email', 'Placed on');
+$orderDataArray     = array('Name','Service','Site','Transection ID',
+                            'Amount', 'Payment Mode,', 'Status','Phone',
+                            'Email', 'Placed on');
 
-// $orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
-//                             '7657576465','$175','PayLater','ordered','7699753019',
-//                             'dipakmajumdar.leelija@gmail.com','12/12/2022');
+$orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
+                            '7657576465','$175','PayLater','ordered','7699753019',
+                            'dipakmajumdar.leelija@gmail.com','12/12/2022');
 
 
 ###############################################################################################
@@ -330,7 +330,7 @@ $orderId            ='#876876';
     echo $toMail  		= $customerEmail;
 	$toName   		= $customerFullName;
 	$subject        = 'Trying 2';
-	$messageBody    = orderPlacedtoCustomerTemplate($orderId, 'Dipak', $cusMailDataArr, $cusMailValueArr);
+	$messageBody    = orderPlacedtoCustomerTemplate($orderId, 'Dipak', $orderDataArray, $orderDetailsArray);
 
 	$invalidEmail 	= $MyError->invalidEmail($toMail);
 	
