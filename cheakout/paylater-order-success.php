@@ -178,14 +178,14 @@ if(isset($_SESSION[ORDERID])) {
 	
 	// transection details
 	$txn = $ContentOrder->showTrxnByOrderId($orderId);
-	echo $orderDomain = $utility->url_to_domain($clientOrderedSite);
+	$orderDomain = $utility->url_to_domain($clientOrderedSite);
 
 	// ===================================================================================================================
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
 	// ===================================================================================================================
 
 	$cusMailDataArr     = array('Domain', 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
-	$cusMailValueArr  	= array('neybg.com', ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
+	$cusMailValueArr  	= array($orderDomain, ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
 
 	/*
 	// order details for admin and customer
