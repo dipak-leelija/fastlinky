@@ -16,6 +16,7 @@ require_once ROOT_DIR."/classes/gp-package.class.php";
 require_once ROOT_DIR."/classes/gp-order.class.php";
 require_once ROOT_DIR."/classes/notification.class.php";
 require_once ROOT_DIR."/classes/error.class.php"; 
+require_once ROOT_DIR."/classes/orderStatus.class.php";
 require_once ROOT_DIR."/classes/date.class.php";
 require_once ROOT_DIR."/classes/location.class.php";
 require_once ROOT_DIR."/classes/utility.class.php";
@@ -30,6 +31,7 @@ $customer		= new Customer();
 $GPPackage      = new GuestPostpackage();
 $PackageOrder   = new PackageOrder();
 $Notifications  = new Notifications();
+$OrderStatus    = new OrderStatus();
 $Location       = new Location();
 $utility		= new Utility();
 
@@ -45,6 +47,16 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 $customerEmail  = $cusDtl[0][3];
 $customerName   = $cusDtl[0][5].' '.$cusDtl[0][5];
 $customerFName  = $cusDtl[0][5];
+
+if ($cusDtl[0][31] != ''){
+    $customerMobile = $cusDtl[0][31];
+}elseif ($cusDtl[0][32]){
+    $customerMobile = $cusDtl[0][32];
+}elseif ($cusDtl[0][34]){
+    $customerMobile = $cusDtl[0][34];
+}else {
+    $customerMobile = '';
+}
 
 $reference_link = URL.'/package-order-history.php?order=';
 
@@ -112,77 +124,87 @@ if (isset($_POST['paylaterForm'])) {
         if (isset($_SESSION['orderIds'])) {
             foreach ($_SESSION['orderIds'] as $eachOrderId) {
                 $reference_link .= base64_encode(urlencode($eachOrderId));
-                $updated[] = $PackageOrder->updatePayment($eachOrderId, '', PAYLATER, PENDINGCODE, ORDEREDCODE);
-            }
+                $updated = $PackageOrder->updatePayment($eachOrderId, '', PAYLATER, PENDINGCODE, ORDEREDCODE);
 
-            $falseExist =  in_array(false, $updated, true);
-            if (!$falseExist) {
-                $added = $PackageOrder->addPackOrderDtls($eachOrderId, ORDEREDCODE, ORDS001, $cusDtl[0][2], $cusDtl[0][2]);
-                $Notifications->addNotification(ORD_UPDATE, ORDS001, ORD_PLCD_M, $reference_link, $cusId);
-                if ($added) {
-                    $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
-                    // unset($_SESSION['orderIds']);
+                // $falseExist =  in_array(false, $updated, true);
+                if ($updated != false) {
+                    $added = $PackageOrder->addPackOrderDtls($eachOrderId, ORDEREDCODE, ORDS001, $cusDtl[0][2], $cusDtl[0][2]);
+                    $Notifications->addNotification(ORD_UPDATE, ORDS001, ORD_PLCD_M, $reference_link, $cusId);
+                    if ($added) {
+                        $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
+                        // unset($_SESSION['orderIds']);
 
-                    $orderId            ='#'.$eachOrderId;
-                    $orderDataArray     = array('Name','Package',
-                                                'Amount', 'Payment Mode,', 'Status','Phone',
-                                                'Email', 'Placed on');
+                        // print_r($_SESSION);exit;
+                        $ordDtls = $PackageOrder->gpOrderById($eachOrderId);
+                        $customerName   =   $ordDtls['name'];
+                        $customerFName  =   strtok($ordDtls['name'], '');
+                        $customerEmail  =   $ordDtls['email'];
 
-                    $orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
-                                                '7657576465','$175','PayLater','ordered','7699753019',
-                                                'dipakmajumdar.leelija@gmail.com','12/12/2022');
-
-                                                
-                        $toMail  		= $customerEmail;
-                        $toName   		= $customerName;
-                        $subject        = 'Order Placed Successfully!';
-                        $messageBody    = orderPlacedtoCustomerTemplate($orderId, $customerFName, $orderDataArray, $orderDetailsArray);
-
-                        $invalidEmail 	= $MyError->invalidEmail($toMail);
+                        $packageId      =   $ordDtls['package_id'];
+                        $ordStatus      =   $OrderStatus->getOrdStatName($ordDtls['order_status']);
+                        $payStatus      =   $OrderStatus->getOrdStatName($ordDtls['status']);
+                        $paymentType    =   $ordDtls['payment_type'];
+                        $orderDate      =   $DateUtil->dateTimeNumber($ordDtls['date']);
                         
+                        $packageName = $GPPackage->packageFullName($packageId);
 
-                        if(($toMail == '')||(mb_ereg("^ER",$invalidEmail))){
-                            echo 'Receiver Email Address May Invalid or Not Found!';
-                        }elseif($toName == ''){
-                            echo 'Receiver Name Not Found!';
-                        }else{
+                        $orderId            ='#'.$eachOrderId;
+                        $orderDataArray     = array('Name', 'Package', 'Order Status', 'Payment Mode,',
+                                                    'Payment Status','Phone', 'Email', 'Placed on');
 
-                        
-                            try {
-                                $PHPMailer->IsSMTP();
-                                $PHPMailer->IsHTML(true);
-                                $PHPMailer->Host        = gethostname();
-                                $PHPMailer->SMTPAuth    = true;
-                                $PHPMailer->Username    = SITE_EMAIL;
-                                $PHPMailer->Password    = SITE_EMAIL_P;
-                                $PHPMailer->From        = SITE_EMAIL;
-                                $PHPMailer->FromName    = COMPANY_FULL_NAME;
-                                $PHPMailer->Sender      = SITE_EMAIL;
-                                $PHPMailer->addAddress($toMail, $toName);
-                                $PHPMailer->Subject     = $subject;
-                                $PHPMailer->Body        = $messageBody;
-                                // $PHPMailer->send();
+                        $orderDetailsArray  = array($customerName, $packageName, $ordStatus, $paymentType,
+                                                    $payStatus, $customerMobile, $customerEmail, $orderDate);
 
-                                if ($PHPMailer->send()) {
-                                    echo 'Message has been sent';
-                                }else {
+                                                    
+                            $toMail  		= $customerEmail;
+                            $toName   		= $customerName;
+                            $subject        = 'Order Placed Successfully!';
+                            $messageBody    = orderPlacedtoCustomerTemplate($orderId, $customerFName, $orderDataArray, $orderDetailsArray);
+
+                            $invalidEmail 	= $MyError->invalidEmail($toMail);
+                            
+
+                            if(($toMail == '')||(mb_ereg("^ER",$invalidEmail))){
+                                echo 'Receiver Email Address May Invalid or Not Found!';
+                            }elseif($toName == ''){
+                                echo 'Receiver Name Not Found!';
+                            }else{
+
+                            
+                                try {
+                                    $PHPMailer->IsSMTP();
+                                    $PHPMailer->IsHTML(true);
+                                    $PHPMailer->Host        = gethostname();
+                                    $PHPMailer->SMTPAuth    = true;
+                                    $PHPMailer->Username    = SITE_EMAIL;
+                                    $PHPMailer->Password    = SITE_EMAIL_P;
+                                    $PHPMailer->From        = SITE_EMAIL;
+                                    $PHPMailer->FromName    = COMPANY_FULL_NAME;
+                                    $PHPMailer->Sender      = SITE_EMAIL;
+                                    $PHPMailer->addAddress($toMail, $toName);
+                                    $PHPMailer->Subject     = $subject;
+                                    $PHPMailer->Body        = $messageBody;
+                                    // $PHPMailer->send();
+
+                                    if ($PHPMailer->send()) {
+                                        // echo 'Message has been sent';
+                                        header('Location: ./package-order-successfull.php');
+                                        exit;
+                                    }else {
+                                        echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+                                    }
+                                    $PHPMailer->ClearAllRecipients();
+
+
+                                } catch (Exception $e) {
                                     echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
                                 }
-                                $PHPMailer->ClearAllRecipients();
-
-
-                            } catch (Exception $e) {
-                                echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
                             }
-                        }
 
-
-// ========================================================================
-                    // header('Location: ./package-order-successfull.php');
-                    // exit;
+                    }
+                }else {
+                    echo 'Error:=> Failed to update Payment status of order!';
                 }
-            }else {
-                echo 'Error:=> Failed to update Payment status of order!';
             }
         }else {
             echo 'Error:=> orderids session expired!';

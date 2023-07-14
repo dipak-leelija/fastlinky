@@ -48,7 +48,8 @@ $Location		= new Location();
 
 $dateUtil		= new DateUtil();
 $utility		= new Utility();
-
+$PHPMailer         = new PHPMailer();
+$MyError 			= new MyError();
 
 ###############################################################################################
 //declare vars
