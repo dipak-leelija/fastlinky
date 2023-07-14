@@ -184,20 +184,9 @@ if(isset($_SESSION[ORDERID])) {
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
 	// ===================================================================================================================
 
-	
-
-
-	// $cusMailDataArr = array( 'DOMAIN', 'PAYMENT MODE', 'ORDER STATUS', 'PHONE', 'EMAIL', 'PLACED ON' );
-
-	// $cusMailValueArr = array( $clientOrderedSite, PAYLATER, ORDERED, $customerPhone, $clientEmail, 'PLACED ON');
-
-	// print_r($cusMailDataArr);
-	// print_r($cusMailValueArr);
-
-
 	$cusMailDataArr     = array('Domain', 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
 
-	$cusMailValueArr  = array('bizmaa.com', ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
+	$cusMailValueArr  = array( addslashes(trim($clientOrderedSite)), ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
 
 	/*
 	// order details for admin and customer
@@ -289,32 +278,10 @@ if(isset($_SESSION[ORDERID])) {
 	// =========================================		SEND MAIL TO CLIENT		 =========================================
 	// ===================================================================================================================
 
-	// $fromMail       = SITE_EMAIL;
-	// $toMail         = $orderDetail[0]['clientEmail'];
-	// $toName         = $clientName;
-	
-
-	// $mailSended = customerOrderPlacedMail($fromMail, $toMail, $toName, $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
-
-
-		
-	// print_r($_POST);exit;
-
-
-###############################################################################################
-
-// $orderId            ='#876876';
-
-
-###############################################################################################
-
-
-// print_r($_POST);exit;
-
     $toMail  		= $customerEmail;
 	$toName   		= $customerFullName;
 	$subject        = 'Guest Post Order Placed Successfully!';
-	$messageBody    = orderPlacedtoCustomerTemplate($orderId, 'Dipak', $cusMailDataArr, $cusMailValueArr);
+	$messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, 'Dipak', $cusMailDataArr, $cusMailValueArr);
 
 	$invalidEmail 	= $MyError->invalidEmail($toMail);
 	
