@@ -148,8 +148,9 @@ if(isset($_SESSION[ORDERID])) {
 	
 
 	//order status
-	$statusCode			= $orderDetail[0]['order_status'];
-	$statusName 		= $OrderStatus->getOrdStatName($statusCode);
+	// $statusCode			= $orderDetail[0]['order_status'];
+	$statusName 		= $OrderStatus->getOrdStatName($orderDetail[0]['order_status']);
+	$orderDate 			= $DateUtil->dateTimeNumber($orderDetail[0]['added_on']);
 
 
 	// Client Details 
@@ -184,7 +185,6 @@ if(isset($_SESSION[ORDERID])) {
 	// ===================================================================================================================
 
 	
-	$addedOn 	= date('l, jS \of F Y, h:i a', strtotime($orderDetail[0]['added_on']));
 
 
 	// $cusMailDataArr = array( 'DOMAIN', 'PAYMENT MODE', 'ORDER STATUS', 'PHONE', 'EMAIL', 'PLACED ON' );
@@ -197,7 +197,7 @@ if(isset($_SESSION[ORDERID])) {
 
 	$cusMailDataArr     = array('Domain','Order Status', 'Payment Mode','Phone','Email', 'Placed on');
 
-	$cusMailValueArr  = array('bizmaa.com','Ordered', 'PayLater','7699753019','dipakmajumdar.leelija@gmail.com','12/12/2022');
+	$cusMailValueArr  = array('bizmaa.com','Ordered', 'PayLater','7699753019','dipakmajumdar.leelija@gmail.com',$orderDate);
 
 	/*
 	// order details for admin and customer
