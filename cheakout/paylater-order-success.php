@@ -325,9 +325,9 @@ if(isset($_SESSION[ORDERID])) {
 	
 
     if(($toMail == '')||(mb_ereg("^ER",$invalidEmail))){
-        echo 'Receiver Email Address May Invalid or Not Found!';
+        $mailMsg = 'Receiver Email Address May Invalid or Not Found!';
 	}elseif($toName == ''){
-        echo 'Receiver Name Not Found!';
+        $mailMsg = 'Receiver Name Not Found!';
     }else{
 
         try {
@@ -346,15 +346,15 @@ if(isset($_SESSION[ORDERID])) {
             // $PHPMailer->send();
 
             if ($PHPMailer->send()) {
-                echo 'Message has been sent';
+                $mailMsg = 'Message has been sent';
             }else {
-                echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+                $mailMsg = "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
             }
             $PHPMailer->ClearAllRecipients();
 
 
         } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+            $mailMsg = "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
         }
     }
 
