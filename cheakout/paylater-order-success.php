@@ -47,9 +47,9 @@ $WishList		= new WishList();
 $Location		= new Location();
 
 $DateUtil		= new DateUtil();
+$PHPMailer      = new PHPMailer();
+$MyError 		= new MyError();
 $utility		= new Utility();
-$PHPMailer         = new PHPMailer();
-$MyError 			= new MyError();
 
 ###############################################################################################
 //declare vars
@@ -190,6 +190,10 @@ if(isset($_SESSION[ORDERID])) {
 	echo addslashes(trim($clientOrderedSite));
 	echo '<br>';
 	echo $clientOrderedSite;
+	echo '<br>';
+	echo $utility->url_to_domain($clientOrderedSite);
+// print get_domain("http://mail.somedomain.co.uk"); // outputs 'somedomain.co.uk'
+
 	/*
 	// order details for admin and customer
 	$orddtls_arr = array(
