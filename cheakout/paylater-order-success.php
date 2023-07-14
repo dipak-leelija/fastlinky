@@ -196,14 +196,24 @@ if(isset($_SESSION[ORDERID])) {
 
 
 	$cusMailDataArr     = array('Domain','Order Status','Site','Transection ID',
-                            'Amount', 'Payment Mode,', 'Status','Phone',
+                            'Amount', 'Payment Mode', 'Status','Phone',
                             'Email', 'Placed on');
 
-	$cusMailValueArr  = array($clientOrderedSite,'Ordered','bizmaa.com',
+	$cusMailValueArr  = array('bizmaa.com','Ordered','bizmaa.com',
                             '7657576465','$175','PayLater','ordered','7699753019',
                             'dipakmajumdar.leelija@gmail.com','12/12/2022');
 
 
+	$arr1     = array('Domain','Order Status','Site','Transection ID',
+                            'Amount', 'Payment Mode', 'Status','Phone',
+                            'Email', 'Placed on');
+
+	$arr2  = array($clientOrderedSite,'Ordered','bizmaa.com',
+                            '7657576465','$175','PayLater','ordered','7699753019',
+                            'dipakmajumdar.leelija@gmail.com','12/12/2022');
+
+	print_r($arr1);
+	print_r($arr2);
 	/*
 	// order details for admin and customer
 	$orddtls_arr = array(
