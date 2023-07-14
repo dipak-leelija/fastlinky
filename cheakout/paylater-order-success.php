@@ -156,8 +156,7 @@ if(isset($_SESSION[ORDERID])) {
 	$client		= $customer->getCustomerData($orderDetail[0]['clientUserId']);
 	// print_r($_SESSION);exit;
 
-	$customerFullName 	= $client[0][5].' '.$client[0][6];
-	$clientFName		= $client[0][5];
+	$customerFullName 	= $client[0][5].' '.$client[0][6]; 
 	$customerEmail 		= $client[0][3];
 
 	if ($client[0][31] != '') {
@@ -310,18 +309,36 @@ if(isset($_SESSION[ORDERID])) {
 		
 	// print_r($_POST);exit;
 
+
+###############################################################################################
+
+// $orderId            ='#876876';
+// $orderDataArray     = array('Name','Service','Site','Transection ID',
+//                             'Amount', 'Payment Mode,', 'Status','Phone',
+//                             'Email', 'Placed on');
+
+// $orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
+//                             '7657576465','$175','PayLater','ordered','7699753019',
+//                             'dipakmajumdar.leelija@gmail.com','12/12/2022');
+
+
+###############################################################################################
+
+
+// print_r($_POST);exit;
+
     $toMail  		= $customerEmail;
 	$toName   		= $customerFullName;
 	$subject        = 'Guest Post Order Placed Successfully!';
-	$messageBody    = orderPlacedtoCustomerTemplate($orderId, $clientFName, $cusMailDataArr, $cusMailValueArr);
+	$messageBody    = orderPlacedtoCustomerTemplate($orderId, 'Dipak', $cusMailDataArr, $cusMailValueArr);
 
 	$invalidEmail 	= $MyError->invalidEmail($toMail);
 	
 
     if(($toMail == '')||(mb_ereg("^ER",$invalidEmail))){
-        $mailMsg = 'Receiver Email Address May Invalid or Not Found!';
+        echo 'Receiver Email Address May Invalid or Not Found!';
 	}elseif($toName == ''){
-        $mailMsg = 'Receiver Name Not Found!';
+        echo 'Receiver Name Not Found!';
     }else{
 
         try {
@@ -340,14 +357,15 @@ if(isset($_SESSION[ORDERID])) {
             // $PHPMailer->send();
 
             if ($PHPMailer->send()) {
-                $mailMsg = 'You will be receive a mail shortly.';
+                echo 'Message has been sent';
             }else {
-                $mailMsg = "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+                echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
             }
             $PHPMailer->ClearAllRecipients();
 
+
         } catch (Exception $e) {
-            $mailMsg = "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+            echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
         }
     }
 
