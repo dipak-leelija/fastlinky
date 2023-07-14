@@ -327,9 +327,8 @@ $orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
 
 // print_r($_POST);exit;
 
-    $fromMail       = CONTACT_MAIL;
-    $toMail  		= 'dipakmajumdar.leelija@gmail.com';
-	$toName   		= 'Dipak Majumdar';
+    echo $toMail  		= $customerEmail;
+	$toName   		= $customerFullName;
 	$subject        = 'Trying 2';
 	$messageBody    = orderPlacedtoCustomerTemplate($orderId, 'Dipak', $orderDataArray, $orderDetailsArray);
 
@@ -342,10 +341,6 @@ $orderDetailsArray  = array('Dipak Majumdar','Guest Posting','bizmaa.com',
         echo 'Receiver Name Not Found!';
     }else{
 
-        
-    echo $messageBody;
-    // exit;
-    
         try {
             $PHPMailer->IsSMTP();
             $PHPMailer->IsHTML(true);
