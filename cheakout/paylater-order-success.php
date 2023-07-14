@@ -155,9 +155,9 @@ if(isset($_SESSION[ORDERID])) {
 
 	// Client Details 
 	$client		= $customer->getCustomerData($orderDetail[0]['clientUserId']);
-	// print_r($_SESSION);exit;
 
 	$customerFullName 	= $client[0][5].' '.$client[0][6]; 
+	$customerFName		= $client[0][5];
 	$customerEmail 		= $client[0][3];
 
 	if ($client[0][31] != '') {
@@ -185,9 +185,11 @@ if(isset($_SESSION[ORDERID])) {
 	// ===================================================================================================================
 
 	$cusMailDataArr     = array('Domain', 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
+	$cusMailValueArr  	= array('domain', ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
 
-	$cusMailValueArr  = array( addslashes(trim($clientOrderedSite)), ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
-
+	echo addslashes(trim($clientOrderedSite));
+	echo '<br>';
+	echo $clientOrderedSite;
 	/*
 	// order details for admin and customer
 	$orddtls_arr = array(
@@ -281,7 +283,7 @@ if(isset($_SESSION[ORDERID])) {
     $toMail  		= $customerEmail;
 	$toName   		= $customerFullName;
 	$subject        = 'Guest Post Order Placed Successfully!';
-	$messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, 'Dipak', $cusMailDataArr, $cusMailValueArr);
+	$messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, $customerFName, $cusMailDataArr, $cusMailValueArr);
 
 	$invalidEmail 	= $MyError->invalidEmail($toMail);
 	
