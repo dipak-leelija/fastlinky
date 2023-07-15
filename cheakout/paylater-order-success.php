@@ -179,15 +179,13 @@ if(isset($_SESSION[ORDERID])) {
 	// transection details
 	$txn = $ContentOrder->showTrxnByOrderId($orderId);
 	$orderDomain = $utility->url_to_domain($clientOrderedSite);
-	define("ORDER_DOMAIN",	trim($orderDomain));
 
-	echo ORDER_DOMAIN;
 	// ===================================================================================================================
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
 	// ===================================================================================================================
 
-	$cusMailDataArr     = array( 'Domain', 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
-	$cusMailValueArr  	= array( 'elivestory.com', ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
+	$cusMailDataArr     = array('Domain', 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
+	$cusMailValueArr  	= array('neybg.com', ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
 
 	/*
 	// order details for admin and customer
@@ -282,7 +280,7 @@ if(isset($_SESSION[ORDERID])) {
     $toMail  		= $customerEmail;
 	$toName   		= $customerFullName;
 	$subject        = 'Guest Post Order Placed Successfully!';
-	echo $messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, $customerFName, $cusMailDataArr, $cusMailValueArr);
+	$messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, $customerFName, $cusMailDataArr, $cusMailValueArr);
 
 	$invalidEmail 	= $MyError->invalidEmail($toMail);
 	
