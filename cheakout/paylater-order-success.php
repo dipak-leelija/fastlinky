@@ -187,7 +187,7 @@ if(isset($_SESSION[ORDERID])) {
 	// ===================================================================================================================
 
 	$cusMailDataArr     = array( 'Domain', 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
-	$cusMailValueArr  	= array( ORDER_DOMAIN, ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
+	$cusMailValueArr  	= array( 'elivestory.com', ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
 
 	/*
 	// order details for admin and customer
