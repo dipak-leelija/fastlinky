@@ -179,7 +179,7 @@ if(isset($_SESSION[ORDERID])) {
 	// transection details
 	$txn = $ContentOrder->showTrxnByOrderId($orderId);
 	$orderDomain = $utility->url_to_domain($clientOrderedSite);
-	define("ORDER_DOMAIN",	$orderDomain);
+	define("ORDER_DOMAIN",	trim($orderDomain));
 
 	echo ORDER_DOMAIN;
 	// ===================================================================================================================
