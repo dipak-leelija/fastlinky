@@ -47,8 +47,6 @@ $openGPOrdCount         = $PackageOrder->openGPOrders($cusId, PENDINGCODE, REJEC
 $totalOpenOrders    = $openGPOrdCount[0]+$openContOrdCount[0];
 $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
 
-echo $DateUtil->todayWithTime('-');
-
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
