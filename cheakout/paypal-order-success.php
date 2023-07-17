@@ -40,7 +40,7 @@ $Notifications  = new Notifications();
 $WishList		= new WishList();
 $Location		= new Location();
 
-$dateUtil		= new DateUtil();
+$DateUtil		= new DateUtil();
 $PHPMailer      = new PHPMailer();
 $utility		= new Utility();
 $uMesg 			= new MesgUtility();
