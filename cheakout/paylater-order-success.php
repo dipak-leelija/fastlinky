@@ -2,6 +2,7 @@
 session_start();
 require_once dirname(__DIR__) .  "/includes/constant.inc.php";
 
+require_once ROOT_DIR . "/_config/dbconnect.php";
 require_once ROOT_DIR . "/includes/user.inc.php";
 require_once ROOT_DIR . "/includes/content.inc.php";
 require_once ROOT_DIR . "/includes/order-constant.inc.php";
@@ -12,8 +13,6 @@ require_once ROOT_DIR . "/includes/paypal.inc.php";
 require_once ROOT_DIR."/classes/class.phpmailer.php";
 require_once ROOT_DIR."/mail-sending/order-placed-template.php";
 
-
-require_once ROOT_DIR . "/_config/dbconnect.php";
 require_once ROOT_DIR . "/classes/customer.class.php";
 require_once ROOT_DIR . "/classes/domain.class.php"; 
 require_once ROOT_DIR . "/classes/blog_mst.class.php"; 
@@ -28,10 +27,6 @@ require_once ROOT_DIR . "/classes/location.class.php";
 
 require_once ROOT_DIR . "/classes/utility.class.php"; 
 require_once ROOT_DIR . "/classes/utilityMesg.class.php";
-
-
-
-
 
 
 /* INSTANTIATING CLASSES */
