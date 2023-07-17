@@ -301,11 +301,15 @@ function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $o
                                         <div class="order-details-headline-div"> Order ID :</div>
                                         <div class="order-details-headline-div  "> '.$orderId.'</div>
                                     </h4>';
+
+                                    if ($domain != '') {
+                                        $mail .='<div class="order-details-main-div">
+                                                    <div class="order-details-sub-div extra-font">Domain :</div>
+                                                    <div class="order-details-sub-div extra-space">'.$domain.'</div>
+                                                </div>';
+                                    }
                                     // $orderDataArray, $orderDetailsArray
                                     for ($i=0; $i<count($orderDataArray); $i++) {
-                                        if ($domain != '') {
-                                            echo $domain;
-                                        }
                                         $mail .= '<div class="order-details-main-div">
                                                 <div class="order-details-sub-div extra-font">'.$orderDataArray[$i].' :</div>
                                                 <div class="order-details-sub-div extra-space">'.$orderDetailsArray[$i].'</div>
