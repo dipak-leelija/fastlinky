@@ -22,5 +22,10 @@ TRUNCATE `ordered_content_hyperlinks`;
 TRUNCATE `order_contents`;
 TRUNCATE `order_transections`;
 TRUNCATE `order_details`;
-TRUNCATE `order_updates`;
+
+TRUNCATE `gp_package_order`;
+TRUNCATE `gp_package_order_details`;
+TRUNCATE `gp_package_order_links`;
+TRUNCATE `gp_package_order_link_status`;
+TRUNCATE `package_publish_links`;
 */
