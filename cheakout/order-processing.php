@@ -158,6 +158,8 @@ if (isset($_POST['paymentdata']) && isset($_POST['pppamn'])) {
                         }
                         // =======================================================================================
     
+                    }else {
+                        echo 'Error:=> Failed to update Payment status of order!';
                     }
                 }
                 
@@ -202,6 +204,8 @@ if (isset($_POST['paylaterForm'])) {
                         $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
                         // unset($_SESSION['orderIds']);
 
+
+                        // =======================================================================================
                         // print_r($_SESSION);exit;
                         $ordDtls = $PackageOrder->gpOrderById($eachOrderId);
                         $customerName   =   $ordDtls['name'];
@@ -216,7 +220,6 @@ if (isset($_POST['paylaterForm'])) {
                         
                         $packageName = $GPPackage->packageFullName($packageId);
 
-                        $orderId            ='#'.$eachOrderId;
                         $orderDataArray     = array('Name', 'Package', 'Order Status', 'Payment Mode,',
                                                     'Payment Status','Phone', 'Email', 'Placed on');
 
@@ -224,56 +227,68 @@ if (isset($_POST['paylaterForm'])) {
                                                     $payStatus, $customerMobile, $customerEmail, $orderDate);
 
                                                     
-                            $toMail  		= $customerEmail;
-                            $toName   		= $customerName;
-                            $subject        = 'Order Placed Successfully!';
-                            $messageBody    = orderPlacedtoCustomerTemplate($orderId, $customerFName, $orderDataArray, $orderDetailsArray);
+                        $toMail  		= $customerEmail;
+                        $toName   		= $customerName;
+                        $subject        = 'Order Placed Successfully!';
+                        $messageBody    = orderPlacedtoCustomerTemplate('#'.$eachOrderId, $customerFName, $orderDataArray, $orderDetailsArray);
 
-                            $invalidEmail 	= $MyError->invalidEmail($toMail);
+                        $invalidEmail 	= $MyError->invalidEmail($toMail);
                             
 
-                            if(($toMail == '')||(mb_ereg("^ER",$invalidEmail))){
-                                echo 'Receiver Email Address May Invalid or Not Found!';
-                            }elseif($toName == ''){
-                                echo 'Receiver Name Not Found!';
-                            }else{
+                        if(($toMail == '')||(mb_ereg("^ER",$invalidEmail))){
+                            echo 'Receiver Email Address May Invalid or Not Found!';
+                        }elseif($toName == ''){
+                            echo 'Receiver Name Not Found!';
+                        }else{
 
                             
-                                try {
-                                    $PHPMailer->IsSMTP();
-                                    $PHPMailer->IsHTML(true);
-                                    $PHPMailer->Host        = gethostname();
-                                    $PHPMailer->SMTPAuth    = true;
-                                    $PHPMailer->Username    = SITE_EMAIL;
-                                    $PHPMailer->Password    = SITE_EMAIL_P;
-                                    $PHPMailer->From        = SITE_EMAIL;
-                                    $PHPMailer->FromName    = COMPANY_FULL_NAME;
-                                    $PHPMailer->Sender      = SITE_EMAIL;
-                                    $PHPMailer->addAddress($toMail, $toName);
-                                    $PHPMailer->Subject     = $subject;
-                                    $PHPMailer->Body        = $messageBody;
-                                    // $PHPMailer->send();
-
-                                    if ($PHPMailer->send()) {
-                                        // echo 'Message has been sent';
-                                        header('Location: ./package-order-successfull.php');
-                                        exit;
-                                    }else {
-                                        echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
-                                    }
-                                    $PHPMailer->ClearAllRecipients();
-
-
-                                } catch (Exception $e) {
+                            try {
+                                $PHPMailer->IsSMTP();
+                                $PHPMailer->IsHTML(true);
+                                $PHPMailer->Host        = gethostname();
+                                $PHPMailer->SMTPAuth    = true;
+                                $PHPMailer->Username    = SITE_EMAIL;
+                                $PHPMailer->Password    = SITE_EMAIL_P;
+                                $PHPMailer->From        = SITE_EMAIL;
+                                $PHPMailer->FromName    = COMPANY_FULL_NAME;
+                                $PHPMailer->Sender      = SITE_EMAIL;
+                                $PHPMailer->addAddress($toMail, $toName);
+                                $PHPMailer->Subject     = $subject;
+                                $PHPMailer->Body        = $messageBody;
+                                // $PHPMailer->send();
+                                if ($PHPMailer->send()) {
+                                    // echo 'Message has been sent';
+                                    // header('Location: ./package-order-successfull.php');
+                                    // exit;
+                                    $completed[] = true;
+                                }else {
                                     echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
                                 }
+                                $PHPMailer->ClearAllRecipients();
+
+
+                            } catch (Exception $e) {
+                                echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
                             }
+                        }
+                        // =======================================================================================
 
                     }
                 }else {
                     echo 'Error:=> Failed to update Payment status of order!';
                 }
             }
+            $falseExist =  in_array(false, $completed, true);
+                if (!$falseExist) {
+
+                    $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
+                    unset($_SESSION['orderIds']);
+                    header('Location: ./package-order-successfull.php');
+                    exit;
+
+                }else {
+                    echo 'Error:=> Failed to update Payment status of order!';
+                }
         }else {
             echo 'Error:=> orderids session expired!';
         }
