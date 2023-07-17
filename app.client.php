@@ -233,7 +233,7 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                                     class="text-center text-danger d-flex flex-column align-items-center p-5">
                                                     <i class="fa-light fa-box-open fs-1"></i>
                                                     <span class="mt-n1 fs-6">No Recent Guest Post Order</span>
-                                                    <a href="./blogs-list" class="badge text-bg-primary mt-2">Order
+                                                    <a href="./customer-packages" class="badge text-bg-primary mt-2">Order
                                                         Now</a>
                                                 </p>
                                             </div>
@@ -247,7 +247,7 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                             <?php if ($packageOrderCount > 0 ) { ?>
 
                                             <div class="card table-responsive db_shadow border-0 p-2">
-                                                <h4 class="border-bottom border-2">Recent Guest Posts</h4>
+                                                <h4 class="border-bottom border-2">Recent Package Orders</h4>
                                                 <table class="table  table-hover">
                                                     <thead class="table-light">
                                                         <tr>
