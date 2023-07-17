@@ -111,7 +111,7 @@ class PackageOrder extends DatabaseConnection{
       $myArr = array();
 
       if ($limit !== '*') {
-        $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId' LIMIT $limit";
+        $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId' ORDER BY `order_id` DESC LIMIT $limit";
         $data = $this->conn->query($sql);
         while($res = $data->fetch_assoc()){
           $myArr[] = $res;
