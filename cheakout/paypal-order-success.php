@@ -33,7 +33,7 @@ $customer		= new Customer();
 $domain			= new Domain();
 $BlogMst		= new BlogMst();
 $OrderStatus	= new OrderStatus();
-$error			= new MyError();
+$MyError 			= new MyError();
 $ContentOrder	= new ContentOrder();
 $Notifications  = new Notifications();
 
@@ -157,8 +157,8 @@ if(isset($_SESSION[ORDERID])) {
 	
 
 	//order status
-	$statusCode	= $orderDetail[0]['order_status'];
-	$statusName 		= $OrderStatus->getOrdStatName($statusCode);
+	$statusName 		= $OrderStatus->getOrdStatName($orderDetail[0]['order_status']);
+	$orderDate 			= $DateUtil->dateTimeNumber($orderDetail[0]['added_on']);
 
 
 	// Client Details 
