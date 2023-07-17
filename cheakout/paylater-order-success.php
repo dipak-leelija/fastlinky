@@ -280,7 +280,6 @@ if(isset($_SESSION[ORDERID])) {
 	$toName   		= $customerFullName;
 	$subject        = 'Guest Post Order Placed Successfully!';
 	echo $messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, $customerFName, $cusMailDataArr, $cusMailValueArr, $domainArr);
-	exit;
 	$invalidEmail 	= $MyError->invalidEmail($toMail);
 	
 
