@@ -160,25 +160,16 @@ if (isset($_POST['paymentdata']) && isset($_POST['pppamn'])) {
                         // =======================================================================================
     
                     }
-                    // print_r($updated);
-                    // echo explode($updated);
-                    /*if (condition) {
-                        
-                        
-                    }*/
                 }
                 
                 $falseExist =  in_array(false, $completed, true);
                 if (!$falseExist) {
-                    // $added = $PackageOrder->addPackOrderDtls($eachOrderId, ORDEREDCODE, ORDS001, $cusDtl[0][2], $cusDtl[0][2]);
-	                // $Notifications->addNotification(ORD_UPDATE, ORDS001, ORD_PLCD_M, $reference_link, $cusId);
 
-                    // if ($added) {
-                    //     $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
-                    //     // unset($_SESSION['orderIds']);
-                    //     header('Location: ./package-order-successfull.php');
-                    //     exit;
-                    // }
+                    $_SESSION['updatedOrders'] = $_SESSION['orderIds'];
+                    unset($_SESSION['orderIds']);
+                    header('Location: ./package-order-successfull.php');
+                    exit;
+                    
                 }else {
                     echo 'Error:=> Failed to update Payment status of order!';
                 }

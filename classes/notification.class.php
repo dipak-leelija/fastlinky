@@ -12,7 +12,7 @@ class Notifications extends DatabaseConnection{
 
             
             $query = $this->conn->query($sql);
-            $this->conn->close();
+            // $this->conn->close();
             return $query;
         } catch (Exception $e) {
             echo '<b>Error on:</b> '.__FILE__.', <b>On Line:</b>'.__LINE__.'<br>';
