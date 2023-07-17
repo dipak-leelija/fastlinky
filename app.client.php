@@ -233,7 +233,7 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                                     class="text-center text-danger d-flex flex-column align-items-center p-5">
                                                     <i class="fa-light fa-box-open fs-1"></i>
                                                     <span class="mt-n1 fs-6">No Recent Guest Post Order</span>
-                                                    <a href="./customer-packages" class="badge text-bg-primary mt-2">Order
+                                                    <a href="./blogs-list" class="badge text-bg-primary mt-2">Order
                                                         Now</a>
                                                 </p>
                                             </div>
@@ -290,7 +290,7 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                                     class="text-center text-danger d-flex flex-column align-items-center p-5">
                                                     <i class="fa-light fa-clipboard fs-1"></i>
                                                     <span class="mt-n1 fs-6">No Recent Package Order</span>
-                                                    <a href="blogs-list" class="badge text-bg-primary mt-2">
+                                                    <a href="./customer-packages" class="badge text-bg-primary mt-2">
                                                         Order Now
                                                     </a>
                                                 </p>
