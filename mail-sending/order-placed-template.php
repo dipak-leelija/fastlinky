@@ -58,7 +58,7 @@ function mailFooter(){
 }
 
 
-function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $orderDetailsArray){
+function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $orderDetailsArray, $domain = ''){
 
     $mail = 
 
@@ -302,7 +302,10 @@ function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $o
                                         <div class="order-details-headline-div  "> '.$orderId.'</div>
                                     </h4>';
                                     // $orderDataArray, $orderDetailsArray
-                                    for ($i=0; $i<count($orderDataArray); $i++) { 
+                                    for ($i=0; $i<count($orderDataArray); $i++) {
+                                        if ($domain != '') {
+                                            echo $domain;
+                                        }
                                         $mail .= '<div class="order-details-main-div">
                                                 <div class="order-details-sub-div extra-font">'.$orderDataArray[$i].' :</div>
                                                 <div class="order-details-sub-div extra-space">'.$orderDetailsArray[$i].'</div>
