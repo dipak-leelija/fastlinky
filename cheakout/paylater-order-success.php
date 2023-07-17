@@ -179,6 +179,7 @@ if(isset($_SESSION[ORDERID])) {
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
 	// ===================================================================================================================
 
+	// customer details 
 	$cusMailDataArr     = array( 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
 	$cusMailValueArr  	= array( ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
 

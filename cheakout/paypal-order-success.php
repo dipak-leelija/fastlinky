@@ -186,16 +186,13 @@ if(isset($_SESSION[ORDERID])) {
 
 	// transection details
 	$txn = $ContentOrder->showTrxnByOrderId($orderId);
+	$orderDomain = $utility->url_to_domain($clientOrderedSite);
 
 	// ===================================================================================================================
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
 	// ===================================================================================================================
 
-
-	$addedOn 	= date('l, jS \of F Y, h:i a', strtotime($orderDetail[0]['added_on']));
-
-
-	// // customer details 
+	// customer details 
 	$cusMailDataArr     = array( 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
 	$cusMailValueArr  	= array( ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
 
@@ -270,7 +267,7 @@ if(isset($_SESSION[ORDERID])) {
 	$toMail  		= $customerEmail;
 	$toName   		= $customerFullName;
 	$subject        = 'Guest Post Order Placed Successfully!';
-	$messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, $customerFName, $cusMailDataArr, $cusMailValueArr);
+	$messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, $customerFName, $cusMailDataArr, $cusMailValueArr, $orderDomain);
 
 	$invalidEmail 	= $MyError->invalidEmail($toMail);
 	
