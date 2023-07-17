@@ -265,7 +265,7 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['mob
                 // This function shows a transaction success message to your buyer.
                 // alert('Done');
                 document.getElementById('payBtn').innerHTML =
-                    `<div class="bg-secondary border border-info rounded text-center"><p class="fw-bold py-2 mb-0"><span><img src="images/icons/loading-2.gif" alt="loading"></span> Please Wait..</p></div>`;
+                    `<div class="bg-secondary border border-info rounded text-center"><p class="fw-bold py-2 mb-0"><span><img src="../images/icons/loading-2.gif" alt="loading"></span> Please Wait..</p></div>`;
                 getAmount.value = <?= $totalCost?>;
                 paymentdata.value = JSON.stringify(details);
                 form.submit();

@@ -107,7 +107,6 @@ if (isset($_POST['paymentdata']) && isset($_POST['pppamn'])) {
                         
                         $packageName = $GPPackage->packageFullName($packageId);
 
-                        $orderId            ='#'.$eachOrderId;
                         $orderDataArray     = array('Name', 'Package', 'Order Status', 'Payment Mode,',
                                                     'Payment Status','Phone', 'Email', 'Placed on');
 
@@ -118,7 +117,7 @@ if (isset($_POST['paymentdata']) && isset($_POST['pppamn'])) {
                         $toMail  		= $customerEmail;
                         $toName   		= $customerName;
                         $subject        = 'Order Placed Successfully!';
-                        $messageBody    = orderPlacedtoCustomerTemplate($eachOrderId, $customerFName, $orderDataArray, $orderDetailsArray);
+                        $messageBody    = orderPlacedtoCustomerTemplate('#'.$eachOrderId, $customerFName, $orderDataArray, $orderDetailsArray);
                         $invalidEmail 	= $MyError->invalidEmail($toMail);
                             
 
@@ -169,7 +168,7 @@ if (isset($_POST['paymentdata']) && isset($_POST['pppamn'])) {
                     unset($_SESSION['orderIds']);
                     header('Location: ./package-order-successfull.php');
                     exit;
-                    
+
                 }else {
                     echo 'Error:=> Failed to update Payment status of order!';
                 }
