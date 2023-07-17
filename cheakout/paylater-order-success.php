@@ -174,6 +174,9 @@ if(isset($_SESSION[ORDERID])) {
 	// transection details
 	$txn = $ContentOrder->showTrxnByOrderId($orderId);
 	$orderDomain = $utility->url_to_domain($clientOrderedSite);
+	$domainArr = explode('.', $orderDomain);
+	// echo $domainArr[0];
+	// exit;
 
 	// ===================================================================================================================
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
@@ -276,7 +279,7 @@ if(isset($_SESSION[ORDERID])) {
     $toMail  		= $customerEmail;
 	$toName   		= $customerFullName;
 	$subject        = 'Guest Post Order Placed Successfully!';
-	$messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, $customerFName, $cusMailDataArr, $cusMailValueArr, $orderDomain);
+	$messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, $customerFName, $cusMailDataArr, $cusMailValueArr, $domainArr);
 
 	$invalidEmail 	= $MyError->invalidEmail($toMail);
 	
