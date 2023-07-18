@@ -300,9 +300,6 @@ if(isset($_SESSION[ORDERID])) {
             $PHPMailer->From        = SITE_EMAIL;
             $PHPMailer->FromName    = COMPANY_FULL_NAME;
             $PHPMailer->Sender      = SITE_EMAIL;
-			$PHPMailer->addCustomHeader('MIME-Version', '1.0');
-			$PHPMailer->addCustomHeader('Content-Type', 'text/html;charset=charset=iso-8859-1');
-
             $PHPMailer->addAddress($toMail, $toName);
             $PHPMailer->Subject     = $subject;
             $PHPMailer->Body        = $messageBody;

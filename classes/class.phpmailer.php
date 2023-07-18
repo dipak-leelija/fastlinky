@@ -1256,10 +1256,14 @@ class PHPMailer{
 
         // Add custom headers
 
-        for($index = 0; $index < count($this->CustomHeader); $index++){
-            print_r($index);
+        for($index = 0; $index < count($this->CustomHeader); $index++)
+
+        {
+
             $result .= $this->HeaderLine(trim($this->CustomHeader[$index][0]), 
+
                        $this->EncodeHeader(trim($this->CustomHeader[$index][1])));
+
         }
 
         $result .= $this->HeaderLine("MIME-Version", "1.0");
