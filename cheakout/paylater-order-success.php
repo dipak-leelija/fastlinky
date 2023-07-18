@@ -293,6 +293,7 @@ if(isset($_SESSION[ORDERID])) {
             $PHPMailer->IsSMTP();
             $PHPMailer->IsHTML(true);
 			$PHPMailer->Encoding 	= 'base64';
+			$PHPMailer->Encoding = 'quoted-printable';
 			$PHPMailer->CharSet 	= "UTF-8";
             $PHPMailer->Host        = gethostname();
             $PHPMailer->SMTPAuth    = true;
@@ -301,6 +302,7 @@ if(isset($_SESSION[ORDERID])) {
             $PHPMailer->From        = SITE_EMAIL;
             $PHPMailer->FromName    = COMPANY_FULL_NAME;
             $PHPMailer->Sender      = SITE_EMAIL;
+			$PHPMailer->addCustomHeader('Content-Type', 'text/plain;charset=utf-8');
             $PHPMailer->addAddress($toMail, $toName);
             $PHPMailer->Subject     = $subject;
             $PHPMailer->Body        = $messageBody;
