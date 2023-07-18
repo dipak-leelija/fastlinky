@@ -14,6 +14,7 @@ require_once ROOT_DIR."/classes/class.phpmailer.php";
 require_once ROOT_DIR."/mail-sending/order-placed-template.php";
 
 require_once ROOT_DIR . "/classes/customer.class.php";
+require_once ROOT_DIR . "/classes/encrypt.inc.php";
 require_once ROOT_DIR . "/classes/domain.class.php"; 
 require_once ROOT_DIR . "/classes/blog_mst.class.php"; 
 require_once ROOT_DIR . "/classes/orderStatus.class.php";
@@ -174,7 +175,8 @@ if(isset($_SESSION[ORDERID])) {
 	// transection details
 	$txn = $ContentOrder->showTrxnByOrderId($orderId);
 	$orderDomain = $utility->url_to_domain($clientOrderedSite);
-	$domainArr = explode('.', $orderDomain);
+	// $domainArr = explode('.', $orderDomain);
+	$orderDomain = md5_encrypt($orderDomain, ADV_PASS);
 	// echo $domainArr[0];
 	// exit;
 
@@ -279,7 +281,7 @@ if(isset($_SESSION[ORDERID])) {
     $toMail  		= $customerEmail;
 	$toName   		= $customerFullName;
 	$subject        = 'Guest Post Order Placed Successfully!';
-	$messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, $customerFName, $cusMailDataArr, $cusMailValueArr, $domainArr);
+	$messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, $customerFName, $cusMailDataArr, $cusMailValueArr, $orderDomain);
 	$invalidEmail 	= $MyError->invalidEmail($toMail);
 	
 

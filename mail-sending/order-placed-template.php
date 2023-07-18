@@ -1,6 +1,7 @@
 <?php 
 
 require_once dirname(__DIR__) . '/includes/constant.inc.php';
+require_once ROOT_DIR . "/classes/encrypt.inc.php";
 
 
 
@@ -305,7 +306,7 @@ function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $o
                                     if ($domain != '') {
                                         $mail .='<div class="order-details-main-div">
                                                     <div class="order-details-sub-div extra-font">Domain :</div>
-                                                    <div class="order-details-sub-div extra-space"><span>'.$domain[0].'&#46;'.$domain[1].'</span></div>
+                                                    <div class="order-details-sub-div extra-space"><span>'.md5_decrypt($domain, ADV_PASS).'</span></div>
                                                 </div>';
                                     }
                                     // $orderDataArray, $orderDetailsArray
