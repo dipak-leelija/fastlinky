@@ -292,7 +292,7 @@ if(isset($_SESSION[ORDERID])) {
         try {
             $PHPMailer->IsSMTP();
             $PHPMailer->IsHTML(true);
-			$PHPMailer->Encoding = 'quoted-printable';
+			// $PHPMailer->Encoding = 'quoted-printable';
             $PHPMailer->Host        = gethostname();
             $PHPMailer->SMTPAuth    = true;
             $PHPMailer->Username    = SITE_EMAIL;
