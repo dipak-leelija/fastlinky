@@ -292,6 +292,7 @@ if(isset($_SESSION[ORDERID])) {
         try {
             $PHPMailer->IsSMTP();
             $PHPMailer->IsHTML(true);
+			$PHPMailer->Encoding 	= 'base64';
             $PHPMailer->Host        = gethostname();
             $PHPMailer->SMTPAuth    = true;
             $PHPMailer->Username    = SITE_EMAIL;
