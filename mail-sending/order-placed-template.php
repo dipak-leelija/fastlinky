@@ -303,7 +303,12 @@ function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $o
                                         <div class="order-details-headline-div  "> '.$orderId.'</div>
                                     </h4>';
 
-                                    
+                                    if ($domain != '') {
+                                        $mail .='<div class="order-details-main-div">
+                                                    <div class="order-details-sub-div extra-font">Site Name :</div>
+                                                    <div class="order-details-sub-div extra-space"><span>'.$domain[0].'</span></div>
+                                                </div>';
+                                    }
                                     // $orderDataArray, $orderDetailsArray
                                     for ($i=0; $i<count($orderDataArray); $i++) {
                                         $mail .= '<div class="order-details-main-div">
