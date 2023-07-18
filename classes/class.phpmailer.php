@@ -1262,7 +1262,7 @@ class PHPMailer{
 
             $result .= $this->HeaderLine(trim($this->CustomHeader[$index][0]), 
 
-                       $this->EncodeHeader(trim($this->CustomHeader[$index][1])));
+                       $this->EncodeHeader(trim($this->CustomHeader[$index])));
 
         }
 
