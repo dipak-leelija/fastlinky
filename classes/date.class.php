@@ -229,11 +229,13 @@ class DateUtil extends GeneraicDuration{
 
 		$defaultZone = date_default_timezone_get();
 		// echo $defaultZone.'=>'.$dateTime.'<br>';
-		
+
 		$datetime = new DateTime($dateTime);
 		// echo $datetime->format('Y-m-d H:i:s') . "\n";
-		$newTZ = $this->getMyIpData()->geoplugin_timezone;
 
+		$newTZ = $this->getMyIpData()->geoplugin_timezone;
+		// $newTZ = 'America/Los_Angeles';
+		
 		if ($newTZ != '') {
 			$newTZ = new DateTimeZone($newTZ);
 		}else {
@@ -241,7 +243,8 @@ class DateUtil extends GeneraicDuration{
 		}
 		
 		$datetime->setTimezone($newTZ);
-		echo $datetime->format('Y-m-d H:i:sa');
+		
+		return $datetime->format('Y-m-d H:i:sa');
 		}
 
 		
