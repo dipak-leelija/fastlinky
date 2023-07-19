@@ -4259,6 +4259,41 @@ function word_teaser_end($string, $count){
 	}
 
 
+	/*****************************************************************************
+	*																			 *
+	*								DATABASE UPDATES							 *
+	*																			 *
+	*****************************************************************************/
+
+	function getMysqlTimeZone() {
+		
+		try {
+
+			$sql = 'SELECT @@global.time_zone as Time_Zone';
+			$query   = $this->conn->query($sql);
+			while($row  = $query->fetch_object()){
+				$res	= $row->Time_Zone;
+			}
+
+			echo $res;
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	function setMysqlTimeZone($zone) {
+		
+		try {
+
+			$sql = "SET GLOBAL time_zone = '$zone'";
+			$query   = $this->conn->query($sql);
+			var_dump($query);
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
+	}
 
 }//eoc
 ?>

@@ -31,6 +31,11 @@ $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 $wishes     = $WishList->countWishlistByUser($cusId);
 
+$utility->getMysqlTimeZone();
+$utility->setMysqlTimeZone('+5:30');
+$utility->getMysqlTimeZone();
+
+exit;
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 $notifies           = $Notifications->allNotifications($cusId, 3);
