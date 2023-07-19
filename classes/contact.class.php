@@ -1,7 +1,10 @@
 <?php
 class Contact extends DatabaseConnection{
 
-	
+	/**
+	 * declared a variable to store the current date and time
+	 */
+	var $time = NOW;
 
 	//Add contact data on contact table
 	function addContact($contact_name, $contact_email, $contact_phone, $message) {
@@ -14,7 +17,7 @@ class Contact extends DatabaseConnection{
 		$sql = 			"INSERT INTO contact 
 						(contact_name, contact_email, contact_phone, message, added_on)
 						 VALUES
-						('$contact_name', '$contact_email', '$contact_phone', '$message', now())";
+						('$contact_name', '$contact_email', '$contact_phone', '$message', '$this->time')";
 		$query	= $this->conn->query($sql); 
 		if ($query == 1) {
 			return $query;
