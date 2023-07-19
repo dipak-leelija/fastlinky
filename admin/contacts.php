@@ -102,7 +102,7 @@ $ContactDtls	   = $Contact->showAllContact();
                                                         <?php echo $row['contact_name']; ?>
                                                     </td>
                                                     <td style="WHITE-SPACE: inherit;">
-                                                        <?php echo $utility->displayEmail($row['contact_email'], $row['contact_name'], "YES", "customer_mail.php"); ?>
+                                                        <?php echo $utility->displayEmail($row['contact_email'], $row['contact_name'], "YES", "customer-mail.php"); ?>
                                                     </td>
                                                     <td style="WHITE-SPACE: inherit;">
                                                         <?php echo substr($row['message'], 0, 50); ?>

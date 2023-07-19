@@ -1,10 +1,10 @@
 <?php
-require_once("../includes/constant.inc.php");
-require_once "../includes/email.inc.php";
 session_start();
+require_once("../includes/constant.inc.php");
 include_once('checkSession.php');
 
 require_once "../_config/dbconnect.php";
+require_once "../includes/email.inc.php";
  
 
 require_once("../classes/adminLogin.class.php"); 
@@ -36,11 +36,16 @@ $uMesg 			= new MesgUtility();
 //declare vars
 $typeM		= $utility->returnGetVar('typeM','');
 
-$customerId  = $_GET['customer'];
-$dtls = $Customer->getCustomerData($customerId);
-
-$toName     = $dtls[0][5].' '.$dtls[0][6];
-$toEmail    = $dtls[0][3];
+if (isset($_GET['customer'])) {
+    $customerId  = $_GET['customer'];
+    $dtls = $Customer->getCustomerData($customerId);
+    
+    $toName     = trim($dtls[0][5].' '.$dtls[0][6]);
+    $toEmail    = trim($dtls[0][3]);
+}elseif (isset($_GET['toEmail']) && isset($_GET['toName'])) {
+    $toName     = trim($_GET['toName']);
+    $toEmail    = trim($_GET['toEmail']);
+}
 
 ?>
 
@@ -49,7 +54,7 @@ $toEmail    = $dtls[0][3];
 
 <head>
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
-    <title>Send Mail to <?php echo $toName;?> | <?php echo COMPANY_S; ?></title>
+    <title>Send Mail to <?php echo $toName;?> - <?php echo COMPANY_S; ?></title>
 
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="../plugins/data-table/style.css">

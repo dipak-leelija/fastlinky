@@ -81,7 +81,7 @@ class DateUtil extends GeneraicDuration{
 	 */
 	function dateTimeText($date){
 		$date = strtotime($date);
-		$date = date('jS \of F Y, h:i:s A', $date);
+		$date = date('jS \of F Y, h:ia', $date);
 
 		return $date;
 

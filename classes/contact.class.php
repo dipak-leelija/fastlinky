@@ -14,7 +14,7 @@ class Contact extends DatabaseConnection{
 		$contact_phone			= addslashes(trim($contact_phone));
 		$message 				= addslashes(trim($message));
 
-		echo $sql = 			"INSERT INTO contact 
+		$sql = 			"INSERT INTO contact 
 						(contact_name, contact_email, contact_phone, message, added_on)
 						 VALUES
 						('$contact_name', '$contact_email', '$contact_phone', '$message', '$this->time')";
