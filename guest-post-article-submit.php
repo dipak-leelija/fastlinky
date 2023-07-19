@@ -144,7 +144,8 @@ if ($showOrder == false) {
     $orderStatusCode        = $showOrder['order_status'];
     $orderStatusName             = $OrderStatus->getOrdStatName($orderStatusCode);
 
-    $orderDate              = $DateUtil->dateTimeText($showOrder['added_on']);
+    $orderDate              = $DateUtil->timeZoneConvert($showOrder['added_on']);
+    $orderDate              = $DateUtil->dateTimeText($orderDate);
 
 
 
@@ -325,14 +326,18 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
 
                                 <?php if( $orderStatusCode == COMPLETEDCODE):
                                         $ordUpdate = $ContentOrder->lastUpdate($orderId);
-                                        $updateDate = date('l jS \of F Y h:i:s A', strtotime($ordUpdate['updated_on']));
+                                        
+                                        $updateDate              = $DateUtil->timeZoneConvert($ordUpdate['updated_on']);
+                                        $updateDate              = $DateUtil->dateTimeText($updateDate);
+
                                         echo '
                                         <div class="text-center">
                                             <p class="text-center fw-bold my-3">Order Completed on '.$updateDate.'</p>';
 
-                                            $dueDate = date_create($ordUpdate['updated_on']);
+                                            $dueDate = date_create($updateDate);
                                             date_add($dueDate, date_interval_create_from_date_string("2 days"));
-                                            $dueDate = date_format($dueDate, "l jS \of F Y h:i:s A");
+                                            $dueDate = $DateUtil->dateTimeText($dueDate);
+                                            // date_format($dueDate, "l jS \of F Y h:i:s A");
 
 
                                             if ($ordTxn['transection_status'] == PENDING) {

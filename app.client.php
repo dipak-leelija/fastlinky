@@ -314,7 +314,12 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                                 <div class="alert alert-primary db_shadow mb-2 px-2 py-1" role="alert">
                                                     <span class="d-flex justify-content-between">
                                                         <b><small><?= $eachNotify['title'] ?></small></b>
-                                                        <small><?= $DateUtil->dateTimeNumber($eachNotify['added_on']) ?></small>
+                                                        <small>
+                                                            <?php
+                                                            $notifyDate = $DateUtil->timeZoneConvert($eachNotify['added_on']);
+                                                            echo $DateUtil->dateTimeNumber($notifyDate);
+                                                            ?>
+                                                        </small>
                                                     </span>
                                                     <small><?= substr($eachNotify['message'], 0, 85); ?>..</small>
                                                 </div>

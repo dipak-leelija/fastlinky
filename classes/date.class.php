@@ -93,6 +93,7 @@ class DateUtil extends GeneraicDuration{
 	 * $date = date as string
 	 */
 	function dateTimeNumber($date){
+		
 		$date = strtotime($date);
 		$date = date('d/m/Y, h:i A', $date);
 
@@ -244,7 +245,7 @@ class DateUtil extends GeneraicDuration{
 		
 		$datetime->setTimezone($newTZ);
 		
-		return $datetime->format('Y-m-d H:i:sa');
+		return $datetime->format('Y-m-d h:i:sa');
 		}
 
 		
