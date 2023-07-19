@@ -143,6 +143,9 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                 <li> Date : <?php 
                                                                 // $ordDate = date('Y-m-d H:i:s');
                                                                 // $ordDate = $DateUtil->timeZoneConvert($ordDate);
+                                                                // echo date_default_timezone_get();
+                                                                // echo $DateUtil->fullDateTimeText($order['date']);
+
                                                                 $ordDate = $DateUtil->timeZoneConvert($order['date']);
                                                                 echo $DateUtil->fullDateTimeText($ordDate);
                                                             ?>
