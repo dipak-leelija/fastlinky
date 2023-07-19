@@ -9,7 +9,7 @@ class ContentOrder extends DatabaseConnection{
       #######################################################################################################################
 
 
-      public function addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, $orderStatus){
+      public function addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, $orderStatus, $time = NOW){
 
             $clientRequirement      = addslashes(trim($clientRequirement));
 
@@ -28,7 +28,7 @@ class ContentOrder extends DatabaseConnection{
                                     '$clientRequirement',
                                     '$clientOrderPrice',
                                     '$orderStatus',
-                                    now()
+                                    '$time'
                                     )";
             // echo $sql;
             $query = $this->conn->query($sql);
@@ -39,7 +39,7 @@ class ContentOrder extends DatabaseConnection{
       }//eof
 
 
-      public function updateGuestPostOrder($orderId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, $orderStatus){
+      public function updateGuestPostOrder($orderId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, $orderStatus, $time = NOW){
 
             $clientRequirement      = addslashes(trim($clientRequirement));
             
@@ -51,7 +51,7 @@ class ContentOrder extends DatabaseConnection{
                                     `clientRequirement`     = '$clientRequirement',
                                     `order_price`           = '$clientOrderPrice',
                                     `order_status`          = '$orderStatus',
-                                    `added_on`              = now()
+                                    `added_on`              = '$time'
                                     WHERE
                                     `order_id`              = '$orderId'";
 
@@ -312,15 +312,15 @@ class ContentOrder extends DatabaseConnection{
 
 
 
-      function orderSingleDataUpdate($ord_id, $colName, $colVal, $updatedBy){
+      function orderSingleDataUpdate($ord_id, $colName, $colVal, $updatedBy, $time = NOW){
 
             $colVal = addslashes(trim($colVal));
 
             $sql= "UPDATE `order_details`
                                     SET
-                                    `$colName`        ='$colVal',
-                                    `modified_by`     ='$updatedBy',
-                                    `modified_on`     =now()
+                                    `$colName`        = '$colVal',
+                                    `modified_by`     = '$updatedBy',
+                                    `modified_on`     = '$time'
                                     WHERE
                                     `order_id`  = '$ord_id' ";
             // echo $sql.$this->conn->error;
@@ -362,7 +362,7 @@ class ContentOrder extends DatabaseConnection{
       
       
 
-      function addContent($orderId, $content_type, $title, $path="", $content=""){
+      function addContent($orderId, $content_type, $title, $path="", $content="", $time = NOW){
 
             $title       = addslashes(trim($title));
             $path        = addslashes(trim($path));
@@ -372,11 +372,11 @@ class ContentOrder extends DatabaseConnection{
                   if ($content_type == 'doc') {
                         $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `path`, `added_on`)
                                                       VALUES
-                                                      ('$orderId', '$content_type', '$title', '$path', now())";
+                                                      ('$orderId', '$content_type', '$title', '$path', '$time')";
                   }else {
                         $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `content`, `added_on`)
                                                       VALUES
-                                                      ('$orderId', '$content_type', '$title', '$content', now())";
+                                                      ('$orderId', '$content_type', '$title', '$content', '$time')";
                   }
 
                   if($this->conn->query($sql) != 1){
@@ -392,7 +392,7 @@ class ContentOrder extends DatabaseConnection{
       }//eof
 
 
-      function updateContent($orderId, $content_type, $title, $path="", $content=""){
+      function updateContent($orderId, $content_type, $title, $path="", $content="", $time = NOW){
 
             $title       = addslashes(trim($title));
             $path        = addslashes(trim($path));
@@ -404,7 +404,7 @@ class ContentOrder extends DatabaseConnection{
                                                       `content_type` = '$content_type',
                                                       `title` = '$title',
                                                       `path` = '$path',
-                                                      `added_on` = now()
+                                                      `added_on` = '$time'
                                                       WHERE
                                                       `order_id` = '$orderId'";
                   }else {
@@ -412,7 +412,7 @@ class ContentOrder extends DatabaseConnection{
                                                       `content_type` = '$content_type',
                                                       `title` = '$title',
                                                       `path` = '$path',
-                                                      `added_on` = now()
+                                                      `added_on` = '$time'
                                                       WHERE
                                                       `order_id` = '$orderId'";
                   }
@@ -430,12 +430,12 @@ class ContentOrder extends DatabaseConnection{
       }//eof
 
 
-      function titleUpdate($orderId, $title){
+      function titleUpdate($orderId, $title, $time = NOW){
 
             $update = "UPDATE order_contents
                               SET
                               title             = '$title',
-                              updated_on        = now()
+                              updated_on        = '$time'
                               WHERE	
                               order_id	      = '$orderId'";
             $query = $this->conn->query($update);
@@ -443,13 +443,13 @@ class ContentOrder extends DatabaseConnection{
       }
 
 
-      function contentUpdate($orderId, $fileType, $path){
+      function contentUpdate($orderId, $fileType, $path, $time = NOW){
 
             $update = "UPDATE order_contents
                               SET
                               path             = '$path',
                               content_type     = '$fileType',
-                              updated_on        = now()
+                              updated_on       = '$time'
                               WHERE	
                               order_id	      = '$orderId'";
             $query = $this->conn->query($update);
@@ -499,7 +499,7 @@ class ContentOrder extends DatabaseConnection{
       #                                                                                                                    #
       ######################################################################################################################
 
-      function addContentHyperlink($contentId, $client_anchor, $client_url, $reference_anchor1, $reference_url1, $reference_anchor2, $reference_url2){
+      function addContentHyperlink($contentId, $client_anchor, $client_url, $reference_anchor1, $reference_url1, $reference_anchor2, $reference_url2, $time = NOW){
 
             try {
                   $client_anchor     = addslashes(trim($client_anchor));
@@ -516,7 +516,7 @@ class ContentOrder extends DatabaseConnection{
                                     `reference_url2`,
                                     `added_on`)
                                     VALUES
-                                    ('$contentId', '$client_anchor', '$client_url', '$reference_anchor1', '$reference_url1','$reference_anchor2', '$reference_url2', now())";
+                                    ('$contentId', '$client_anchor', '$client_url', '$reference_anchor1', '$reference_url1','$reference_anchor2', '$reference_url2', '$time')";
 
                   // echo $sql.$this->conn->error;
                   $query = $this->conn->query($sql);
@@ -531,7 +531,7 @@ class ContentOrder extends DatabaseConnection{
 
 
 
-      function updateContentHyperlink($id, $contentId, $client_anchor, $client_url, $reference_anchor1, $reference_url1, $reference_anchor2, $reference_url2){
+      function updateContentHyperlink($id, $contentId, $client_anchor, $client_url, $reference_anchor1, $reference_url1, $reference_anchor2, $reference_url2, $time = NOW){
 
             try {
                   $client_anchor          = addslashes(trim($client_anchor));
@@ -546,7 +546,7 @@ class ContentOrder extends DatabaseConnection{
                                     `reference_url1`        = '$reference_url1',
                                     `reference_anchor2`     = '$reference_anchor2',
                                     `reference_url2`        = '$reference_url2',
-                                    `added_on`              = now()
+                                    `added_on`              = '$time'
                                     WHERE
                                     `content_id`      = '$contentId'
                                     AND
@@ -563,7 +563,7 @@ class ContentOrder extends DatabaseConnection{
       }//eof
 
 
-      function updateHyperLinks($contentId, $client_anchor, $client_url, $reference_anchor1, $reference_url1, $reference_anchor2, $reference_url2){
+      function updateHyperLinks($contentId, $client_anchor, $client_url, $reference_anchor1, $reference_url1, $reference_anchor2, $reference_url2, $time = NOW){
             $update = "UPDATE ordered_content_hyperlinks SET
                               client_anchor     = '$client_anchor',
                               client_url        = '$client_url',
@@ -571,7 +571,7 @@ class ContentOrder extends DatabaseConnection{
                               reference_url1    = '$reference_url1',
                               reference_anchor2 = '$reference_anchor2',
                               reference_url2    = '$reference_url2',
-                              added_on          = now()
+                              added_on          = '$time'
                               WHERE 
                               content_id        = $contentId";
 
@@ -636,14 +636,14 @@ class ContentOrder extends DatabaseConnection{
       }//eof
 
 
-      function addOrderTransection($order_id, $trxn_id, $trxn_mode, $trxn_status, $item_amount, $content_price, $order_amount, $due_amount, $paid_amount, $transection_by){
+      function addOrderTransection($order_id, $trxn_id, $trxn_mode, $trxn_status, $item_amount, $content_price, $order_amount, $due_amount, $paid_amount, $transection_by, $time = NOW){
 
             $trxn_mode = addslashes(trim($trxn_mode));	
 	
             $sql = "INSERT INTO `order_transections` 
                         (`order_id`, `transection_id`, `transection_mode`, `transection_status`, `item_amount`, `content_price`, `order_amount`, `due_amount`, `paid_amount`, `transection_by`, `updated_on`)	
                         VALUES
-                        ('$order_id', '$trxn_id', '$trxn_mode', '$trxn_status', '$item_amount', '$content_price', '$order_amount', '$due_amount', '$paid_amount','$transection_by', now())";
+                        ('$order_id', '$trxn_id', '$trxn_mode', '$trxn_status', '$item_amount', '$content_price', '$order_amount', '$due_amount', '$paid_amount','$transection_by', '$time')";
             // echo $sql.$this->conn->error;
             
             $query = $this->conn->query($sql);
@@ -702,7 +702,7 @@ class ContentOrder extends DatabaseConnection{
       ######################################################################################################################
 
 
-      function addOrderUpdate($order_id, $subject, $dsc, $updated_by){
+      function addOrderUpdate($order_id, $subject, $dsc, $updated_by, $time = NOW){
             
             $subject = addslashes(trim($subject));
             $dsc     = addslashes(trim($dsc));
@@ -710,7 +710,7 @@ class ContentOrder extends DatabaseConnection{
             $sql = "INSERT INTO `order_updates`
             (`order_id`, `subject`,	`dsc`, `updated_by`, `updated_on`)
                         VALUES
-                        ('$order_id','$subject','$dsc','$updated_by', now())";
+                        ('$order_id','$subject','$dsc','$updated_by', '$time')";
             
             $query = $this->conn->query($sql);
             $insert_id = $this->conn->insert_id;

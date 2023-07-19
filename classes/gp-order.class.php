@@ -11,7 +11,7 @@ class PackageOrder extends DatabaseConnection{
                         VALUES
                         ('$packageId', '$niche', '$customerID', '$name', '$email', '$price', '$due_amount', '$paid_amount',
                         '$paymentType', '$transection_id', '$status', '$orderStatus', '$time')";
-                        echo $sql.$this->conn->error;
+                        // echo $sql.$this->conn->error;
         $data  = $this->conn->query($sql);
         if ($data) {
           $id = $this->conn->insert_id;
