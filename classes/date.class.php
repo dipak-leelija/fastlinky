@@ -225,16 +225,22 @@ class DateUtil extends GeneraicDuration{
 	  }
 	  
 
-	function timeZoneConvert($dateTime, $fromZone, $toZone){
+	function timeZoneConvert($dateTime){
 
-		// date_default_timezone_set('Europe/London');
-
-		$dateTime = date('Y-m-d H:i:sa');
-		echo date_default_timezone_get().'=>'.$dateTime.'<br>';
+		$defaultZone = date_default_timezone_get();
+		// echo $defaultZone.'=>'.$dateTime.'<br>';
+		
 		$datetime = new DateTime($dateTime);
 		// echo $datetime->format('Y-m-d H:i:s') . "\n";
-		$la_time = new DateTimeZone('Asia/Dubai');
-		$datetime->setTimezone($la_time);
+		$newTZ = $this->getMyIpData()->geoplugin_timezone;
+
+		if ($newTZ != '') {
+			$newTZ = new DateTimeZone($newTZ);
+		}else {
+			$newTZ = new DateTimeZone($defaultZone);
+		}
+		
+		$datetime->setTimezone($newTZ);
 		echo $datetime->format('Y-m-d H:i:sa');
 		}
 
@@ -253,6 +259,34 @@ class DateUtil extends GeneraicDuration{
 		}
 	}
 
+
+	/**
+	 * @return object
+	 * [geoplugin_request] 
+	 * [geoplugin_status] 
+	 * [geoplugin_delay] 
+	 * [geoplugin_credit]
+	 * [geoplugin_city]
+	 * [geoplugin_region]
+	 * [geoplugin_regionCode]
+	 * [geoplugin_regionName]
+	 * [geoplugin_areaCode]
+	 * [geoplugin_dmaCode]
+	 * [geoplugin_countryCode]
+	 * [geoplugin_countryName]
+	 * [geoplugin_inEU]
+	 * [geoplugin_euVATrate]
+	 * [geoplugin_continentCode]
+	 * [geoplugin_continentName]
+	 * [geoplugin_latitude]
+	 * [geoplugin_longitude]
+	 * [geoplugin_locationAccuracyRadius]
+	 * [geoplugin_timezone]
+	 * [geoplugin_currencyCode]
+	 * [geoplugin_currencySymbol]
+	 * [geoplugin_currencySymbol_UTF8]
+	 * [geoplugin_currencyConverter]
+	 */
 	function getMyIpData(){
 
 		// Use JSON encoded string and converts

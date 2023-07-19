@@ -142,8 +142,10 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                 <!-- <li> Order : <?= $ordStatus[0][1]; ?></li> -->
                                                 <li> Payment : <span class="badge <?= $payStatus[0][1]; ?>"><?= $payStatus[0][1]; ?></span></li>
                                                 <li> Date : <?= $DateUtil->fullDateTimeText($order['date']); ?></li>
-                                                <?php $ipdata = $DateUtil->getMyIpData();
-                                                print_r($ipdata);
+                                                <?php
+                                                $ipdata = $DateUtil->getMyIpData();
+                                                echo $DateUtil->timeZoneConvert($order['date']);
+                                                // print_r($ipdata);
                                                 ?>
                                             </ul>
                                         </div>
