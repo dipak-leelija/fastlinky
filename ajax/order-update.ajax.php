@@ -122,8 +122,8 @@ if(isset($_POST["changes-request"])){
         $updated = $ContentOrder->addOrderUpdate($orderId, ORD_CNG_REQ, $changesOf, $cusId);
         $Notifications->addNotification(ORD_UPDATE, ORD_CNG_REQ, ORD_CNG_REQ_M, $reference_link, $customerId);
         // var_dump($updated);
-        if ($updated) {
-            // $uMesg->showSuccessT('success', 0, '', $returnPage, "Requested for changes", 'SUCCESS');
+        if ($updated ==1) {
+            $uMesg->showSuccessT('success', 0, '', $returnPage, "Requested for changes", 'SUCCESS');
             exit;
         }
     }
