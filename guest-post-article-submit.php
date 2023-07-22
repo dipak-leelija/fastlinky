@@ -327,18 +327,19 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                 <?php if( $orderStatusCode == COMPLETEDCODE):
                                         $ordUpdate = $ContentOrder->lastUpdate($orderId);
                                         
-                                        $updateDate              = $DateUtil->timeZoneConvert($ordUpdate['updated_on']);
-                                        $updateDate              = $DateUtil->dateTimeText($updateDate);
+                                        $updateZoneDate              = $DateUtil->timeZoneConvert($ordUpdate['updated_on']);
+                                        $updateDate                  = $DateUtil->dateTimeText($updateZoneDate);
 
                                         echo '
                                         <div class="text-center">
                                             <p class="text-center fw-bold my-3">Order Completed on '.$updateDate.'</p>';
 
-                                            $dueDate = date_create($updateDate);
-                                            date_add($dueDate, date_interval_create_from_date_string("2 days"));
+                                            $updateDate = date("Y-m-d h:i", strtotime($updateZoneDate));
+                                            $days = 2;
+                                            $dueDate = strtotime("+".$days."days", strtotime($updateDate));
+                                            $dueDate = date("Y-m-d h:ia", $dueDate);
                                             $dueDate = $DateUtil->dateTimeText($dueDate);
-                                            // date_format($dueDate, "l jS \of F Y h:i:s A");
-
+                                            
 
                                             if ($ordTxn['transection_status'] == PENDING) {
                                             echo '<small class="d-block text-capitalize text-danger fw-bold my-1">Pay Before

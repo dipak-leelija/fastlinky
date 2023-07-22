@@ -849,6 +849,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
                                         <!-- =============== if order is Hold =============== -->
                                         <?php if ($ordStatCode == HOLDCODE):
+                                                    echo $showOrder['changesReq'];
                                                     if ($showOrder['changesReq'] > 0) {
 
                                                         $chngMsg = 'There is a Request for Changes!';
