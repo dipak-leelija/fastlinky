@@ -183,13 +183,6 @@ $_SESSION['payment-process'] = true;
                                                 <div class="col-12 text-end" id="payBtn">
                                                     <div id="paypal-payment-button">
                                                     </div>
-                                                    <div class="col-12 text-end mb-1">
-                                                        <button type="button"
-                                                            class="btn rounded-pill w-100 fw-bolder pay_button"
-                                                            onclick="paylaterOrder()">
-                                                            PayLater
-                                                        </button>
-                                                    </div>
                                                 </div>
                                                 <div class="col-12 text-center" id="payBtn">
                                                     <a href="#" onclick="history.back()">Cancel</a>
