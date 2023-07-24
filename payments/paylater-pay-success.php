@@ -200,7 +200,7 @@ if($_SESSION['pay_success'] == true) {
 	
 	$toMail  		= $customerEmail;
 	$toName   		= $customerName;
-	$subject        = "Guest Post Order Placed Successfully!";
+	$subject        = "Payment Successful!";
 	$messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, $customerFName, $cusMailDataArr, $cusMailValueArr);
 	$invalidEmail 	= $MyError->invalidEmail($toMail);
 	
@@ -246,7 +246,7 @@ if($_SESSION['pay_success'] == true) {
 
 	
 }else {
-	echo 'Payment Failed!';
+	$errorMsg = 'Payment Failed!';
 }
 
 
@@ -291,16 +291,12 @@ unset($_POST);
             <div class="col-11 col-md-10">
                 <div class="mt-4 p-5 bg-lighter-blue text-white rounded">
                     <h2 class="text-primary">Thanking you for your payment.</h2>
-                    <p><i class="fas fa-check-circle fs-5 text-primary"></i> <?= $mailMsg ?></p>
+					<?php
+					if (isset($errorMsg) ) { echo '<p>'.$errorMsg.'</p>';}
+					else {echo '<p><i class="fas fa-check-circle fs-5 text-primary"></i>'.$mailMsg.'</p>';}
+					?>
                     <p><i class="fas fa-exclamation-circle fs-5 text-warning"></i> If you find any difficulty, drop an
                         email to <?php echo SITE_BILLING_EMAIL ?></p>
-                    <?php
-					// if ($sendedToadmin) {
-						?>
-                    <!-- <p><small>Order details has been sent to your email.</small></p> -->
-                    <?php
-					// }
-					?>
                 </div>
             </div>
 
