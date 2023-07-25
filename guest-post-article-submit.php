@@ -164,8 +164,9 @@ if ($ordTxn != false) {
 
     if ($ordTxn['transection_status'] != null) {
         $txnStatus = $ordTxn['transection_status'];
+        $txnStatusName = $OrderStatus->getOrdStatName($txnStatus);
     }
-
+    
     if ($ordTxn['item_amount'] != null) {
         $itemAmount = $ordTxn['item_amount'];
     }
@@ -253,7 +254,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
 
                                                 <?php
                                                 if ($txnStatus  != null) {
-                                                    echo '<li> Payment Status : '.$txnStatus.'</li>';
+                                                    echo '<li> Payment Status : '.$txnStatusName.'</li>';
                                                 }
                                                 ?>
                                                 <li> Date : <?= $orderDate; ?></li>
@@ -341,13 +342,13 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                             $dueDate = $DateUtil->dateTimeText($dueDate);
                                             
 
-                                            if ($ordTxn['transection_status'] == PENDING) {
+                                            if ($ordTxn['transection_status'] == PENDINGCODE) {
                                             echo '<small class="d-block text-capitalize text-danger fw-bold my-1">Pay Before
                                                 '.$dueDate.'</small>';
                                             }
 
 
-                                            if ($ordTxn['transection_status'] == PENDING) {
+                                            if ($ordTxn['transection_status'] == PENDINGCODE) {
                                             echo '<a class="btn btn-primary text-center"
                                                 href="payments/paylater-pay-now.php?order='.base64_encode($orderId).'">Pay
                                                 Now</a>';

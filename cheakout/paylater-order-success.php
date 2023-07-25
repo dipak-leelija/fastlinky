@@ -102,7 +102,7 @@ if ( isset($_POST['blogId'])) {
 	$amount 				= 00;
 	$paid_amount 			= 00;   // paid ammount
 	$trxnId 				= '';	//geting the transection id 
-	$trxnStatus 			= PENDING;	//geting the transection status
+	$trxnStatus 			= PENDINGCODE;	//geting the transection status
 	$_SESSION['trxn_id']	= $trxnId;	
 	$_SESSION['pay_success']  = true;
 
