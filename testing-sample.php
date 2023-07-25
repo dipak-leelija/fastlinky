@@ -21,6 +21,7 @@ TRUNCATE `notification`;
 TRUNCATE `ordered_content_hyperlinks`;
 TRUNCATE `order_contents`;
 TRUNCATE `order_transections`;
+TRUNCATE `order_updates`;
 TRUNCATE `order_details`;
 
 TRUNCATE `gp_package_order`;

@@ -4,3 +4,4 @@ uploads/contents
 images/user
 *.zip
 .idea/
+testing-sample.php

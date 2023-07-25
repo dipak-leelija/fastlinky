@@ -779,7 +779,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                 </div>
                                                 <div class="text-wrap mb-2">
                                                     <input type="text" class="form-control" id="target-url"
-                                                        value="<?= $contentLink['reference_url1']; ?>">
+                                                        value="<?= $contentLink['reference_url2']; ?>">
                                                     <div id="copyTargetUrl" class="clipboard icon">
                                                     </div>
                                                 </div>

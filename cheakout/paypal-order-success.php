@@ -110,18 +110,8 @@ if (isset($_POST['data']) && isset($_POST['blogId'])) {
 		
 		$_SESSION['trxn_id']	  = $trxnId;
 		$_SESSION['pay_success']  = true;
+		$trxnStatus 			  = COMPLETEDCODE;
 
-
-
-		/**
-		 * 
-		 * ORDER STATUS CODE
-		 * 1 = Delivered
-		 * 2 = Pending
-		 * 3 = Processing
-		 * 4 = Oedered
-		 * 
-		 *  */ 
 		$ContentOrder->contentOrderStatusUpdate($orderId, ORDEREDCODE);
 
 		$ContentOrder->addOrderTransection($orderId, $trxnId, "Paypal", $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice, $dueAmount, $paid_amount, $clientEmail);
