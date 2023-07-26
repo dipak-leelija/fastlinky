@@ -1,7 +1,7 @@
 RewriteEngine On 
 RewriteCond %{SERVER_PORT} 80
 RewriteCond %{HTTP_HOST} ^(www\.)?fastlinky\.com
-RewriteRule ^(.*)$ https://fastlinky.com/$1 [R,L]
+RewriteRule ^(.*)$ https://www.fastlinky.com/$1 [R,L]
 
 <!-- # Add www to any URLs that do not have them:
 RewriteEngine on
