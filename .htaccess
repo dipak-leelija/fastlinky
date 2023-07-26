@@ -1,7 +1,7 @@
 # RewriteEngine On 
 RewriteCond %{SERVER_PORT} 80
 RewriteCond %{HTTP_HOST} ^(www\.)?fastlinky\.com
-RewriteRule ^(.*)$ https://www.fastlinky.com/$1 [R,L]
+RewriteRule ^(.*)$ https://fastlinky.com/$1 [R,L]
 
 
 # www to non-www Example: www.technovedant.in to https://technovedant.in
