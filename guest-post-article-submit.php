@@ -13,7 +13,7 @@ require_once ROOT_DIR . "/classes/location.class.php";
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php";
 require_once ROOT_DIR . "/classes/utilityMesg.class.php";
-
+echo 'Right here'; exit;
 /* INSTANTIATING CLASSES */
 $customer		= new Customer();
 $ContentOrder   = new ContentOrder();
