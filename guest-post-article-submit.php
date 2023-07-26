@@ -13,7 +13,6 @@ require_once ROOT_DIR . "/classes/location.class.php";
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php";
 require_once ROOT_DIR . "/classes/utilityMesg.class.php";
-echo 'Right here'; exit;
 /* INSTANTIATING CLASSES */
 $customer		= new Customer();
 $ContentOrder   = new ContentOrder();
@@ -28,6 +27,7 @@ $typeM		= $Utility->returnGetVar('typeM','');
 //user id
 $cusId		= $Utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
+echo 'Right here'; exit;
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
