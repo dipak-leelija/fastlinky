@@ -101,6 +101,15 @@ class DateUtil extends GeneraicDuration{
 
 	}
 
+
+	function dayIncToDate($date, $dayNos){
+		
+		$updateDate = date("Y-m-d h:i:s", strtotime($date));
+		$dueDate = strtotime("+".$dayNos."days", strtotime($updateDate));
+		$dueDate = date("Y-m-d h:i:s", $dueDate);
+		return $dueDate;
+	}
+
 	/**
 	 * 	This function will return the difference the 
 	 *  between given time and current time

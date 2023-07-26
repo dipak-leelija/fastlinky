@@ -52,6 +52,7 @@ $openGPOrdCount         = $PackageOrder->openGPOrders($cusId, PENDINGCODE, REJEC
 $totalOpenOrders    = $openGPOrdCount[0]+$openContOrdCount[0];
 $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
 
+$oldNotifications = $Notifications->delByDaysOldNotification(NOW, 6, '249');
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
@@ -343,8 +344,7 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                         </a>
                                         <div class="col-lg-12 mt-5">
                                             <a href="./exclusive-guest-post.php">
-                                                <div class="card package-details-pricing-crd db_shadow pb-5">
-                                                    <h4> Exclusive Blogs </h4>
+                                                <div class="card package-details-pricing-crd db_shadow py-4">
                                                     <div class="m-auto p-5 bg-light text-primary rounded">
                                                         <h1>Coming Soon..</h1>
                                                         <p class="text-primary">Some Exclusive Guest Posting Sites are

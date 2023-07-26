@@ -1,14 +1,13 @@
 <?php
-// "CREATE TABLE `fastlinky_db`.`notification` (`id` BIGINT(12) PRIMARY KEY NOT NULL , `order_name` VARCHAR(24) NOT NULL , `order_id` BIGINT(12) NOT NULL , `status` INT(2) NOT NULL , `message` VARCHAR(300) NOT NULL , `reference_table` VARCHAR(50) NOT NULL , `reference_id` VARCHAR(24) NOT NULL , `added_by` VARCHAR(24) NOT NULL , `added_on` DATETIME NOT NULL )";
 
 class Notifications extends DatabaseConnection{
 
-    function addNotification($type, $title, $message, $reference_link, $added_by){
+    function addNotification($type, $title, $message, $reference_link, $added_for){
         try {
             $sql = "INSERT INTO notification 
-                    (type, title, message, reference_link, added_by, added_on)
+                    (type, title, message, reference_link, added_for, added_on)
                     VALUES
-                    ('$type', '$title', '$message', '$reference_link', '$added_by', now())";
+                    ('$type', '$title', '$message', '$reference_link', '$added_for', now())";
 
             
             $query = $this->conn->query($sql);
@@ -27,9 +26,9 @@ class Notifications extends DatabaseConnection{
 
         $data = array();
         if ($LIMIT == '*') {
-            $SQL = "SELECT * FROM notification WHERE added_by = $USERID ORDER BY added_on $SORT";
+            $SQL = "SELECT * FROM fastlinky WHERE added_for = $USERID ORDER BY added_on $SORT";
         }else {
-           $SQL = "SELECT * FROM notification WHERE added_by = $USERID ORDER BY added_on $SORT LIMIT $LIMIT";
+           $SQL = "SELECT * FROM notification WHERE added_for = $USERID ORDER BY added_on $SORT LIMIT $LIMIT";
         }
         $result = $this->conn->query($SQL);
 
@@ -39,13 +38,21 @@ class Notifications extends DatabaseConnection{
                 $data[] = $row;
             }
 
-        $this->conn->close();
+        // $this->conn->close();
             return $data;
         }
 
-        $this->conn->close();
+        // $this->conn->close();
         return array();
             
     }// eof allNotifications
 
+
+    function delByDaysOldNotification($today, $daysBefore, $added_for){
+
+        $sql   = "DELETE FROM notification WHERE added_for = '$added_for' AND added_on < '$today' - INTERVAL $daysBefore DAY;";        
+        $query = $this->conn->query($sql);
+        return $query;
+
+    }// eof delByDaysOldNotification
 }
