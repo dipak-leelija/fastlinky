@@ -149,7 +149,7 @@ $orUpdates = $Notifications->allNotifications($cusId);
                                         <div
                                             class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-sm-flex flex-column align-items-end d-none m-auto">
                                             <a class="btn btn-sm btn-primary"
-                                                href="<?= $update['reference_link'];?>">View</a>
+                                                href="<?=trim($update['reference_link']);?>">View</a>
                                             <br>
                                             <small class="notify-time"><?= $DateUtil->dateTimeNumber($notificationDate);?></small>
                                         </div>

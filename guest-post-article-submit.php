@@ -1,5 +1,6 @@
 <?php
 session_start();
+echo 'Session:=>';print_r($_SESSION);
 require_once __DIR__ . "/includes/constant.inc.php";
 require_once __DIR__ . "/includes/order-constant.inc.php";
 require_once __DIR__ . "/includes/content.inc.php";
@@ -26,8 +27,8 @@ $uMesg          = new MesgUtility();
 $typeM		= $Utility->returnGetVar('typeM','');
 //user id
 echo $cusId		= $Utility->returnSess('userid', 0);
-echo '<br>'.$cusDtl		= $customer->getCustomerData($cusId);
-
+$cusDtl		= $customer->getCustomerData($cusId);
+echo '<br><br>Details:=>';print_r($cusDtl);
 echo 'Right here'; exit;
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
