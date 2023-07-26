@@ -227,8 +227,8 @@ if (isset($_SESSION['content-data'])) {
                                                     <h5>Title</h5>
                                                 </label>
                                                 <input type="text" class="form-control"
-                                                    placeholder="Enter the article title" name="clientContentTitle1"
-                                                    value="<?= $SESSclientContentTitle; ?>">
+                                                    placeholder="Enter the article title" name="clientContentTitle1" 
+                                                    value="<?= $SESSclientContentTitle != '' ? $SESSclientContentTitle : ''; ?>">
                                             </div>
 
                                             <!-- content upload section start -->
@@ -608,7 +608,7 @@ if (isset($_SESSION['content-data'])) {
 
 
         /* Title validation start here */
-        let title = document.getElementsByName("clientContentTitle1")[0].value;
+        let title = document.getElementsByName("clientContentTitle2")[0].value;
         if (title == '') {
             alert(`Please Write a post title`);
             return false;
