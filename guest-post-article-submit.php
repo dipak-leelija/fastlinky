@@ -28,8 +28,8 @@ $typeM		= $Utility->returnGetVar('typeM','');
 echo $cusId		= $Utility->returnSess('userid', 0);
 echo '<br>'.$cusDtl		= $customer->getCustomerData($cusId);
 
-require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 echo 'Right here'; exit;
+require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 if(isset($_GET['order'])){
     $orderId			  		= urldecode(base64_decode($_GET['order']));
