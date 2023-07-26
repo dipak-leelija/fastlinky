@@ -25,8 +25,8 @@ $uMesg          = new MesgUtility();
 ######################################################################################################################
 $typeM		= $Utility->returnGetVar('typeM','');
 //user id
-$cusId		= $Utility->returnSess('userid', 0);
-$cusDtl		= $customer->getCustomerData($cusId);
+echo $cusId		= $Utility->returnSess('userid', 0);
+echo '<br>'.$cusDtl		= $customer->getCustomerData($cusId);
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 echo 'Right here'; exit;
