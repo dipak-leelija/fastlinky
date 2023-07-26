@@ -27,9 +27,9 @@ $typeM		= $Utility->returnGetVar('typeM','');
 //user id
 $cusId		= $Utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
-echo 'Right here'; exit;
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
+echo 'Right here'; exit;
 
 if(isset($_GET['order'])){
     $orderId			  		= urldecode(base64_decode($_GET['order']));
