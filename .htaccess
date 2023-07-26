@@ -4,11 +4,11 @@ RewriteCond %{HTTP_HOST} ^(www\.)?fastlinky\.com
 RewriteRule ^(.*)$ https://fastlinky.com/$1 [R,L]
 
 
-# www to non-www Example: www.technovedant.in to https://technovedant.in
+# www to non-www Example: www.fastlinky.com to https://fastlinky.com
 
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^www.fastlinky.com/ 
-RewriteRule (.*) https://technovedant.com/$1 [R=301,L]
+RewriteRule (.*) https://fastlinky.com/$1 [R=301,L]
 
 
 # REMOVING THE PHP EXTENSION
@@ -16,15 +16,3 @@ RewriteRule (.*) https://technovedant.com/$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [NC,L]
-
-# Add www to any URLs that do not have them:
-# RewriteEngine on
-# RewriteCond %{HTTP_HOST} !^www\.
-# RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
-
-
-# Remove www from any URLs that have them:
-# RewriteEngine on
-# RewriteCond %{HTTP_HOST} ^www\.
-# RewriteRule ^(.*)$ http://fastlinky.com/$1 [R=301,L]
-
