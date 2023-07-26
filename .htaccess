@@ -10,6 +10,10 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^www.fastlinky.com/ 
 RewriteRule (.*) https://fastlinky.com/$1 [R=301,L]
 
+# Remove www from any URLs that have them:
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.
+RewriteRule ^(.*)$ https://fastlinky.com/$1 [R=301,L]
 
 # REMOVING THE PHP EXTENSION
 #RewriteEngine On
