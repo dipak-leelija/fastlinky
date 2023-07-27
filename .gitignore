@@ -4,4 +4,5 @@ uploads/contents
 images/user
 *.zip
 .idea/
+.vscode/
 testing-sample.php
