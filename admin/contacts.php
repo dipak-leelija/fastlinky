@@ -115,11 +115,10 @@ $ContactDtls	   = $Contact->showAllContact();
                                                             href="contact-message.php?action=edit_niches&id=<?php echo $id; ?>">
                                                             <i class="fa-regular fa-eye"></i>
                                                         </a>
-                                                        <a href='contact_delete.php?id=<?php    echo $id;  ?>'
-                                                            class="text-decoration-none mx-1">
+                                                        <span class="text-decoration-none mx-1">
                                                             <i class="fa-regular fa-trash-can-xmark text-danger mx-1"
-                                                                onclick="return deleteContact();"></i>
-                                                        </a>
+                                                                onclick="deleteContact(<?= $id ?>, this)"></i>
+                                                        </spam>
                                                     </td>
                                                 </tr>
                                                 <?php
@@ -157,13 +156,46 @@ $ContactDtls	   = $Contact->showAllContact();
     <script src="../plugins/data-table/simple-datatables.js"></script>
     <script src="../plugins/tinymce/tinymce.js"></script>
     <script src="../plugins/main.js"></script>
+    <script src="../plugins/sweetalert/sweetalert2.all.js"></script>
 
     <script>
-    function deleteContact() {
 
-        return confirm("Are you sure that you want to delete the contact Contents ?")
+    const deleteContact = (contactId, element) => {
+        Swal.fire({
+            // title: 'Are you sure?',
+            title: "Want to delete?",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+            if (result.isConfirmed) {
 
-    };
+                $.ajax({
+                    url: "ajax/contact-delete.php",
+                    type: "POST",
+                    data: {
+                        action: 'deleteContact',
+                        contactId: contactId
+                    },
+                    success: function(response) {
+                        if (response.includes('SU103')) {
+                            $(element).closest("tr").fadeOut()
+                        } else {
+                            Swal.fire(
+                                'Failed to Delete!!!',
+                                '',
+                                'error'
+                            )
+                        }
+
+                    }
+                });
+            }
+        })
+        return false;
+    }
     </script>
 
     <!-- endinject -->
