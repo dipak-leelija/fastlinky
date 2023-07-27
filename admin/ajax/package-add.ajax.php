@@ -1,7 +1,7 @@
 <?php
-require_once "../../includes/constant.inc.php";
 session_start();
-include_once('checkSession.php');
+require_once dirname(dirname(__DIR__))."/includes/constant.inc.php";
+include_once ADM_DIR.'/checkSession.php';
 
 require_once ROOT_DIR."/_config/dbconnect.php";
 

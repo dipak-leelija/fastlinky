@@ -2,8 +2,8 @@
 session_start();
 
 require_once dirname(dirname(__DIR__)) . "/includes/constant.inc.php";
-require_once ROOT_DIR . "/includes/user.inc.php";
 require_once ADM_DIR . "checkSession.php";
+require_once ROOT_DIR . "/includes/user.inc.php";
 require_once ROOT_DIR . "/_config/dbconnect.php";
 
 require_once ROOT_DIR . "/classes/adminLogin.class.php"; 

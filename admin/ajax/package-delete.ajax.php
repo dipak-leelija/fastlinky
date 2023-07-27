@@ -1,7 +1,7 @@
 <?php 
 session_start();
-require_once "../../includes/constant.inc.php";
-include_once('checkSession.php');
+require_once dirname(dirname(__DIR__))."/includes/constant.inc.php";
+include_once ADM_DIR.'/checkSession.php';
 
 require_once ROOT_DIR."/includes/user.inc.php";
 require_once ROOT_DIR.'/classes/encrypt.inc.php';
