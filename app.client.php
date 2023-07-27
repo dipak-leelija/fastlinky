@@ -31,10 +31,6 @@ $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 $wishes     = $WishList->countWishlistByUser($cusId);
 
-// $utility->getMysqlTimeZone();
-// $utility->setMysqlTimeZone('+5:30');
-// $utility->getMysqlTimeZone();
-// exit;
 
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
@@ -52,7 +48,7 @@ $openGPOrdCount         = $PackageOrder->openGPOrders($cusId, PENDINGCODE, REJEC
 $totalOpenOrders    = $openGPOrdCount[0]+$openContOrdCount[0];
 $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
 
-$oldNotifications = $Notifications->delByDaysOldNotification(NOW, 6, '249');
+$oldNotifications = $Notifications->delByDaysOldNotification(NOW, 7, $cusId);
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
