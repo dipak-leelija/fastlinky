@@ -26,7 +26,7 @@ class Notifications extends DatabaseConnection{
 
         $data = array();
         if ($LIMIT == '*') {
-            $SQL = "SELECT * FROM fastlinky WHERE added_for = $USERID ORDER BY added_on $SORT";
+            $SQL = "SELECT * FROM notification WHERE added_for = $USERID ORDER BY added_on $SORT";
         }else {
            $SQL = "SELECT * FROM notification WHERE added_for = $USERID ORDER BY added_on $SORT LIMIT $LIMIT";
         }
