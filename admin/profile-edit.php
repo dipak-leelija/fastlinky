@@ -228,6 +228,9 @@ $userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
                     </div>
                 </div>
                 <!-- content-wrapper ends -->
+                <!-- partial footer -->
+                <?php require_once ADM_DIR . 'partials/_footer.php'; ?>
+                <!-- partial footer end-->
             </div>
             <!-- main-panel ends -->
         </div>
