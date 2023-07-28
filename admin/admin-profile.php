@@ -1,17 +1,19 @@
 <?php 
-require_once("../includes/constant.inc.php");
 session_start();
+require_once dirname(__DIR__)."/includes/constant.inc.php";
 $page = "adminAdminEdit";
-include_once('checkSession.php');
-require_once("../_config/dbconnect.php");
+include_once ADM_DIR.'/checkSession.php';
+require_once ROOT_DIR."/_config/dbconnect.php";
 
-require_once("../classes/adminLogin.class.php"); 
-require_once("../classes/utility.class.php");
-require_once("../classes/utilityImage.class.php");
+require_once ROOT_DIR."/classes/adminLogin.class.php"; 
+require_once ROOT_DIR."/classes/utility.class.php";
+require_once ROOT_DIR."/classes/date.class.php";
+require_once ROOT_DIR."/classes/utilityImage.class.php";
 
 /* INSTANTIATING CLASSES */
 $adminLogin 	= new adminLogin();
 $utility		= new Utility();
+$DateUtil       = new DateUtil();
 $uImg 			= new ImageUtility();
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -64,13 +66,7 @@ $userDetail = $adminLogin->getUserDetail($_GET['id']);
 
 <head>
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
-    
     <title><?php echo $userDetail[0] .' '.$userDetail[1] .' Profile Edit - '. COMPANY_S ?></title>
-
-    <!-- plugins:css -->
-    <!-- <link rel="stylesheet" href="vendors/feather/feather.css"> -->
-
-
 </head>
 
 <body>
@@ -83,76 +79,54 @@ $userDetail = $adminLogin->getUserDetail($_GET['id']);
 
             <!-- partial -->
             <?php require_once "partials/_sidebar.php"; ?>
-            <!-- partial:../../ -->
-            <!-- background-color: #cddbff; -->
+            <!-- partial/ -->
+
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
-                    <div class="ml-3 mb-3">
-                        <h2>EDIT USER</h2>
-                    </div>
-                    <div class="row">
 
-                        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']."?id=".$_GET['id'].""?>"
-                            class="row ml-3 m-3 bg-white text-dark rounded" enctype="multipart/form-data">
+                    <div class="">
 
-                            <div class="col-12 m-3">
-                                <label for="inputAddress" class="form-label">User Name</label>
-                                <input type="text" name="niche_name" class="form-control w-75" id="inputAddress"
-                                    value="<?= $_GET['id']; ?>" readonly>
-                            </div>
-                            <div class="col-12 m-3">
-                                <label for="inputAddress2" class="form-label">Image</label>
+                        <div class="card flex-row py-4 px-3">
+
+                            <div class="col-3 border-right border-primary d-flex justify-content-center">
                                 <?php 
-                            if(($userDetail[5] != '') && ( file_exists("../images/admin/user/".$userDetail[5])) )
-                            {
-                            echo $utility->imageDisplay2('../images/admin/user/', 
-                            $userDetail[5], 75, 75, 0, 'greyBorder', $userDetail[0]);
-                            }
-                            ?>
+                                    if(($userDetail[5] != '') && ( file_exists("../images/admin/user/".$userDetail[5])) ){
+                                        $profileImgPath = "../images/admin/user/".$userDetail[5];
+                                    }
+                                    ?>
+                                <div class="card w-75">
+                                    <img src="<?= $profileImgPath?>" class="rounded" alt="">
+                                </div>
                             </div>
+                            <div class="col-9 col-9 d-flex align-items-center justify-content-center">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h3><?= $userDetail[0]; ?> <?= $userDetail[1]; ?>
+                                            <span><small><?php //$userDetail[3]; ?></small></span>
+                                        </h3>
+                                        <h5><i class="fa-regular fa-user"></i> <?= $userDetail[10]; ?></h5>
+                                        <h5><i class="fa-regular fa-envelope"></i> <?= $userDetail[4]; ?></h5>
+                                        <h5>Join Date: <?= $DateUtil->dateTimeText($userDetail[8]); ?></h5>
+                                    </div>
+                                    <div class="col-6">
+                                        
+                                        <p><i class="fa-solid fa-location-dot"></i> <?= $userDetail[2]; ?></p>
+                                        <p class="mb-0">Last Logged In: <?= $DateUtil->dateTimeText($userDetail[6]); ?></p>
+                                        <p class="mb-0">Modified On: <?= $DateUtil->dateTimeText($userDetail[9]); ?></p>
+                                        <p class="mb-0">Total Loggedin : <?= $userDetail[7]; ?><small>Times</small></p>
 
-                            <div class="col-12 m-3">
-                                <label for="inputAddress2" class="form-label">First Name</label>
-                                <input type="text" name="txtFName" class="form-control w-75"
-                                    value="<?= $userDetail[0]; ?>">
-                            </div>
-                            <div class="col-12 m-3">
-                                <label for="inputAddress2" class="form-label">Surname</label>
-                                <input type="text" name="txtSurname" class="form-control w-75"
-                                    value="<?= $userDetail[1]; ?>">
-                            </div>
-
-                            <div class="col-12 m-3">
-                                <label for="inputAddress2" class="form-label">Address</label>
-                                <input type="text" name="txtAddress" class="form-control w-75"
-                                    value="<?php echo $userDetail[2]; ?>">
-                            </div>
-                            <div class="col-12 m-3">
-                                <label for="inputAddress2" class="form-label">Email</label>
-                                <input type="text" name="txtEmail" class="form-control w-75"
-                                    value="<?php echo $userDetail[4]; ?>">
-                            </div>
-
-                            <div class="col-12 m-3">
-                                <label for="inputAddress2" class="form-label">Image</label>
-                                <input type="file" name="fileImg" class="form-control w-75">
-                                <?php 
-                                if( ($userDetail[5] != '' ) && (file_exists("../images/admin/user/".$userDetail[5])) )
-                                {
-                                echo "<input name=\"delImg\" type=\"checkbox\" value=\"1\"> 
-                                <span class='blackLarge'>Delete this image</span>"; 
-                                }
-                                ?>
-                            </div>
-
-                            <div class="col-12 m-3">
-                                <input name="btnEditUser" type="submit" class="btn btn-primary" value="EDIT" />
-                                <input type="button" onclick="location.href='admin_user.php';" class="btn btn-primary"
-                                    value="cancel" />
+                                    </div>
+                                    <div class="col-12 text-center mt-4">
+                                        <button class="btn btn-sm btn-secondary" onclick="history.back()">Back</button>
+                                        <button class="btn btn-sm btn-warning" type="button">
+                                            <a href="<?= ADM_URL.'/profile-edit.php'; ?>" class="text-decoration-none text-dark">Edit Ptofile</a>
+                                        </button>
+                                    </div>
+                                </div>
 
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <!-- content-wrapper ends -->

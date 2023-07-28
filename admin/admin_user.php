@@ -134,7 +134,7 @@ $adminData	   = $adminLogin->ShowUserData();
                                                     </td>
                                                     <td>
                                                         <a class="text-decoration-none mx-1"
-                                                            href="admin_edit.php?action=edit_user&id=<?php echo $id; ?>">
+                                                            href="admin-profile.php?action=edit_user&id=<?php echo $id; ?>">
                                                             <i class="fa-regular fa-eye"></i>
                                                         </a>
                                                         <a class="text-decoration-none mx-1"
