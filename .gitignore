@@ -2,7 +2,9 @@ blog/
 includes/constant.inc.php
 uploads/contents
 images/user
+images/admin/user
 *.zip
 .idea/
 .vscode/
+testing-sample.php
 testing-sample.php
