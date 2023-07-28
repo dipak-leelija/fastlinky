@@ -4,6 +4,7 @@ require_once dirname(__DIR__)."/includes/constant.inc.php";
 $page = "adminAdminEdit";
 include_once ADM_DIR.'/checkSession.php';
 require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/classes/encrypt.inc.php";
 
 require_once ROOT_DIR."/classes/adminLogin.class.php"; 
 require_once ROOT_DIR."/classes/utility.class.php";
@@ -20,10 +21,17 @@ $uImg 			= new ImageUtility();
 
 //declare variables
 $typeM		    = $utility->returnGetVar('typeM','');
+
+if (isset($_GET['user'])) {
+    $userName   = $_GET['user'];
+}else {
+    $userName   = url_enc($_SESSION[ADM_SESS]);
+}
 //admin detail
-$userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
-if(isset($_POST['btnEditUser']))
-{
+$userData 		=  $adminLogin->getUserDetail(url_dec($userName));
+
+if(isset($_POST['btnEditUser'])){
+
     $id      = $_GET['id'];
 	$fname   = $_POST['txtFName'];
 	$lname   = $_POST['txtSurname'];
@@ -58,7 +66,7 @@ if(isset($_POST['btnEditUser']))
 		// $uMesg->showSuccessT('success', $id, 'id', $_SERVER['PHP_SELF'], SUADM002, 'SUCCESS');
 	
 }
-$userDetail = $adminLogin->getUserDetail($_GET['id']);
+$userDetail = $adminLogin->getUserDetail(url_dec($userName));
 ?>
 
 <!DOCTYPE html>
@@ -120,7 +128,7 @@ $userDetail = $adminLogin->getUserDetail($_GET['id']);
                                     <div class="col-12 text-center mt-4">
                                         <button class="btn btn-sm btn-secondary" onclick="history.back()">Back</button>
                                         <button class="btn btn-sm btn-warning" type="button">
-                                            <a href="<?= ADM_URL.'profile-edit.php'; ?>" class="text-decoration-none text-dark">Edit Ptofile</a>
+                                            <a href="<?= ADM_URL.'profile-edit.php?user='.$userName; ?>" class="text-decoration-none text-dark">Edit Ptofile</a>
                                         </button>
                                     </div>
                                 </div>

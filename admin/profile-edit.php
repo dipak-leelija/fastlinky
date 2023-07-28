@@ -1,9 +1,10 @@
 <?php 
-require_once dirname(__DIR__) . "/includes/constant.inc.php";
 session_start();
+require_once dirname(__DIR__) . "/includes/constant.inc.php";
 
 require_once ADM_DIR  . "checkSession.php";
 require_once ROOT_DIR . "/_config/dbconnect.php";
+require_once ROOT_DIR . "/classes/encrypt.inc.php";
 require_once ROOT_DIR . "/classes/adminLogin.class.php"; 
 require_once ROOT_DIR . "/classes/utility.class.php";
 require_once ROOT_DIR . "/classes/utilityImage.class.php";
@@ -18,7 +19,13 @@ $uImg 			= new ImageUtility();
 //declare variables
 $typeM		    = $utility->returnGetVar('typeM','');
 //admin detail
-$userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
+if (isset($_GET['user'])) {
+    $userName = url_dec($_GET['user']);
+}else {
+    $userName = $_SESSION[ADM_SESS];
+}
+
+$userData 		=  $adminLogin->getUserDetail($userName);
 
 ?>
 

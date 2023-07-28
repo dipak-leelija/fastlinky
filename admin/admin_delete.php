@@ -1,12 +1,13 @@
 <?php
-require_once("../includes/constant.inc.php");
-
 session_start();
-include_once('checkSession.php');
-require_once("../_config/dbconnect.php");
+require_once dirname(__DIR__)."/includes/constant.inc.php";
 
-require_once("../classes/utility.class.php");
-require_once("../classes/adminLogin.class.php");
+include_once ADM_DIR.'/checkSession.php';
+require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/classes/encrypt.inc.php";
+
+require_once ROOT_DIR."/classes/utility.class.php";
+require_once ROOT_DIR."/classes/adminLogin.class.php";
 
 /* INSTANTIATING CLASSES */
 $adminLogin 	= new adminLogin();
@@ -15,9 +16,9 @@ $utility		= new Utility();
 ########################################################################################################
 
   if($_SERVER['REQUEST_METHOD'] == 'GET'){
-    $id = $_GET["id"];
-    //delete from region
+    $id = url_dec($_GET["user"]);
 
+    //delete from region
     $delReg = $adminLogin->deleteUser($id, 'username', 'admin_users');
     
   }

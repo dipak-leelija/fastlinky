@@ -152,7 +152,7 @@
             <div class="collapse <?php if($page == "adminAdminEdit" || $page == "adminAddUser" || $page == "adminAdminUser"){echo "show";} ?>"
                 id="sitesetup">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="admin_user.php">Admin Users</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="admin-user.php">Admin Users</a></li>
                     <li class="nav-item"> <a class="nav-link" href="database.php">Database backup</a></li>
                 </ul>
             </div>
