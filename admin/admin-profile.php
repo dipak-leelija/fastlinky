@@ -92,7 +92,7 @@ $userDetail = $adminLogin->getUserDetail($_GET['id']);
                             <div class="col-3 border-right border-primary d-flex justify-content-center">
                                 <?php 
                                     if(($userDetail[5] != '') && ( file_exists("../images/admin/user/".$userDetail[5])) ){
-                                        $profileImgPath = "../images/admin/user/".$userDetail[5];
+                                        $profileImgPath = URL."/images/admin/user/".$userDetail[5];
                                     }
                                     ?>
                                 <div class="card w-75">

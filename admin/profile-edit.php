@@ -129,13 +129,13 @@ $userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
                                                         <?php
                                                         if ($userData[5] != null) {
                                                             echo 
-                                                            '<img src="../images/admin/user/'.$userData[5].'" id="file-ip-1-preview" style="display: block;">'; 
+                                                            '<img src="'.URL.'/images/admin/user/'.$userData[5].'" id="file-ip-1-preview" style="display: block;">'; 
                                                         }else {
                                                             echo  '<img id="file-ip-1-preview">';
                                                         }
                                                         ?>
                                                     </div>
-                                                    <label for="file-ip-1">Upload Image</label>
+                                                    <label for="file-ip-1">CHange Image</label>
                                                     <input type="file" id="file-ip-1" name="profile-image"
                                                         accept="image/*" onchange="showPreview(event);">
 
