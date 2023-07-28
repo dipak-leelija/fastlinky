@@ -19,13 +19,14 @@ $uImg 			= new ImageUtility();
 //declare variables
 $typeM		    = $utility->returnGetVar('typeM','');
 //admin detail
+
 if (isset($_GET['user'])) {
     $userName = url_dec($_GET['user']);
 }else {
     $userName = $_SESSION[ADM_SESS];
 }
 
-$userData 		=  $adminLogin->getUserDetail($userName);
+$userDetails 		=  $adminLogin->getUserDetail($userName);
 
 ?>
 
@@ -127,16 +128,16 @@ $userData 		=  $adminLogin->getUserDetail($userName);
                                         <div class="col-12">
                                             <div class="d-flex justify-content-center align-items-center">
                                                 <?php
-                                            if ($userData[5] != null) {
-                                                $img = '../images/admin/user/'.$userData[5];
+                                            if ($userDetails[5] != null) {
+                                                $img = '../images/admin/user/'.$userDetails[5];
                                             }
                                             ?>
                                                 <div class="form-input">
                                                     <div class="preview">
                                                         <?php
-                                                        if ($userData[5] != null) {
+                                                        if ($userDetails[5] != null) {
                                                             echo 
-                                                            '<img src="'.URL.'/images/admin/user/'.$userData[5].'" id="file-ip-1-preview" style="display: block;">'; 
+                                                            '<img src="'.URL.'/images/admin/user/'.$userDetails[5].'" id="file-ip-1-preview" style="display: block;">'; 
                                                         }else {
                                                             echo  '<img id="file-ip-1-preview">';
                                                         }
@@ -177,23 +178,23 @@ $userData 		=  $adminLogin->getUserDetail($userName);
                                         <div class="col-12 col-md-6">
                                             <label for="fname" class="form-label">First Name</label>
                                             <input type="text" name="fname" class="form-control" id="fname"
-                                                value="<?php echo $userData[0]; ?>">
+                                                value="<?php echo $userDetails[0]; ?>">
                                         </div>
 
                                         <div class="col-12 col-md-6">
                                             <label for="lname" class="form-label">Last Name</label>
                                             <input type="text" name="lname" class="form-control"
-                                                value="<?php echo $userData[1]; ?>">
+                                                value="<?php echo $userDetails[1]; ?>">
                                         </div>
                                         <div class="col-12 mt-3">
                                             <label for="city" class="form-label">City</label>
                                             <input type="text" name="city" class="form-control"
-                                                value="<?php echo $userData[2]; ?>">
+                                                value="<?php echo $userDetails[2]; ?>">
                                         </div>
                                         <div class="col-12 mt-3">
                                             <label for="mail-id" class="form-label">Email</label>
                                             <input type="text" name="mail-id" class="form-control"
-                                                value="<?php echo $userData[4]; ?>">
+                                                value="<?php echo $userDetails[4]; ?>">
                                         </div>
 
                                         <div class="col-12 text-center mt-3">
