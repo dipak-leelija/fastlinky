@@ -74,7 +74,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
         header("Location: package-order.php");
 	    exit;
     }
-    var_dump($showOrder);exit;
+    // var_dump($showOrder);exit;
     $orderStatus = $showOrder['order_status'];
     $paymentMode    = $showOrder['payment_type'];
     $txnId          = $showOrder['transection_id'];
