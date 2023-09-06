@@ -67,11 +67,12 @@ if(isset($_POST["action"])){
     <table id="examplew" class="table table-hover datatable">
         <thead>
             <tr>
-                <!--  <th>Sl. No.</th> -->
                 <th>Domain</th>
                 <th>Niche</th>
                 <th class="dataTable_numeric">DA</th>
-                <th class="dataTable_numeric">TF</th>
+                <th class="dataTable_numeric">DR</th>
+                <th class="dataTable_numeric">Ahrefs Traffic</th>
+                <th>Grey Niche Allowed</th>
                 <th>Link Type</th>
                 <th>Prices($)</th>
                 <th>Action</th>
@@ -82,28 +83,30 @@ if(isset($_POST["action"])){
 	if($total_row > 0){
 		foreach($result as $row){
 			$getNiche          = $blogMst->showBlogNichMstByName($row['niche']);
-			// echo $getNiche[0][0];
-			// $nicheDtls	 	   = $blogMst->showBlogNichMst($getNiche[0][0]);
-			
+            
+            //get niche details
 			$nicheDtls	 	= $blogMst->showBlogNichMst($row['niche']);
-			// echo $cusId; exit;
-			// $BlogFavDtls 	= $blogMst->showBlogFavList($cusId, $row['blog_id']);
+            
+            // wishlist fetching 
 			$wishDtls 	= $WishList->checkWish($cusId, $row['blog_id']);
-			// print_r($BlogFavDtls);exit;
 
+
+            if($row['grey_niche'] == 'Yes') {
+                $sellingPrice = $row['grey_niche_cost'];
+            }else {
+                $sellingPrice = $row['ext_cost'];
+            }
 		?>
 
             <tr>
-                <td style="width: 100px;font-weight:500;"><?php echo $row['domain'] ;?></td>
-                <td><?php echo $row['niche']; ?></td>
-                <td class="text-center"><?php echo round($row['da']);?></td>
-                <td class="text-center"><?php echo round($row['tf']);?></td>
-                <td>
-                    <?php echo $row['follow'] ;?>
-                </td>
-                <td>
-                    <?php echo $row['cost']+$row['ext_cost'] ;?>
-                </td>
+                <td><?= $row['domain'] ;?></td>
+                <td><?= $row['niche']; ?></td>
+                <td><?= $row['da'];?></td>
+                <td><?= $row['dr'];?></td>
+                <td><?= $row['organic_trafic'];?></td>
+                <td><?= $row['grey_niche'];?></td>
+                <td><?= $row['follow'] ;?></td>
+                <td><?= $sellingPrice ;?></td>
                 <td>
                 <div class="d-flex justify-content-evenly" id="action-<?php echo $row['blog_id']?>">
 
