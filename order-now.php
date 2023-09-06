@@ -53,8 +53,17 @@ if($cusDtl[0][0] == 2){
 $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
 
 $wishListsingleData = $blogMst->showBlog($id);
+$blogPrice      = $wishListsingleData[9];
 
-$contentPlacementPrice = $wishListsingleData[9]+$wishListsingleData[16];
+$greyNiche      = $wishListsingleData[28];
+$greyNicheCost  = $wishListsingleData[29];
+
+$sellingPrice   =  $wishListsingleData[16];
+if ($greyNiche == 'Yes') {
+    $sellingPrice   =  $greyNicheCost;
+}
+
+$contentPlacementPrice = $sellingPrice;
 $contetCreationPlacementPrice = CONTENTPRICE +  $contentPlacementPrice;
 
 $_SESSION[SUMMARYDOMAIN]     = $wishListsingleData[0];

@@ -308,7 +308,9 @@ class BlogMst extends DatabaseConnection{
 					$result->approved,			//24
 					$result->alexa_traffic,		//25
 					$result->organic_trafic,	//26
-					$result->deliver_time		//27
+					$result->deliver_time,		//27
+					$result->grey_niche,		//28
+					$result->grey_niche_cost	//29
 					);
 		}
 		// print_r($data);exit;
