@@ -72,9 +72,10 @@ if(isset($_POST["action"])){
                 <th class="dataTable_numeric">DA</th>
                 <th class="dataTable_numeric">DR</th>
                 <th class="dataTable_numeric">Ahrefs Traffic</th>
-                <th>Grey Niche Allowed</th>
                 <th>Link Type</th>
-                <th>Prices($)</th>
+                <th>Grey Niche</th>
+                <th>G.N Price($)</th>
+                <th>General Prices($)</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -104,8 +105,9 @@ if(isset($_POST["action"])){
                 <td><?= $row['da'];?></td>
                 <td><?= $row['dr'];?></td>
                 <td><?= $row['organic_trafic'];?></td>
-                <td><?= $row['grey_niche'];?></td>
                 <td><?= $row['follow'] ;?></td>
+                <td><?= $row['grey_niche'];?></td>
+                <td><?= $row['grey_niche_cost'];?></td>
                 <td><?= $sellingPrice ;?></td>
                 <td>
                 <div class="d-flex justify-content-evenly" id="action-<?php echo $row['blog_id']?>">
