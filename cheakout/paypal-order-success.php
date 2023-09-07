@@ -80,8 +80,14 @@ if (!isset($_SESSION[ORDERDOMAIN]) && !isset($_SESSION[ORDERSITECOST]) && !isset
 	$contentData 		= $_SESSION['content-data'];
 	
 	$domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
-    $itemAmount = $domain['cost']+$domain['ext_cost']; // cost + ext_cost
+    $itemAmount = $domain['ext_cost']; // ext_cost
 	
+	$content = $ContentOrder->getOrderContent($orderId);
+	$nicheType = $content['niche_type'];
+	if ($nicheType == GREYNICHECONTENT) {
+		$itemAmount = $domain['grey_niche_cost'];
+	}
+
 	$dueAmount = 00;
 }
 

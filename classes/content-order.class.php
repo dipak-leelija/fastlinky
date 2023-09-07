@@ -362,7 +362,7 @@ class ContentOrder extends DatabaseConnection{
       
       
 
-      function addContent($orderId, $content_type, $title, $path="", $content="", $time = NOW){
+      function addContent($orderId, $content_type, $title, $nicheType, $path="", $content="", $time = NOW){
 
             $title       = addslashes(trim($title));
             $path        = addslashes(trim($path));
@@ -370,13 +370,13 @@ class ContentOrder extends DatabaseConnection{
 
             try {
                   if ($content_type == 'doc') {
-                        $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `path`, `added_on`)
+                        $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `path`, `niche_type`, `added_on`)
                                                       VALUES
-                                                      ('$orderId', '$content_type', '$title', '$path', '$time')";
+                                                      ('$orderId', '$content_type', '$title', '$path', '$nicheType', '$time')";
                   }else {
-                        $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `content`, `added_on`)
+                        $sql = "INSERT INTO order_contents (`order_id`, `content_type`, `title`, `content`, `niche_type`, `added_on`)
                                                       VALUES
-                                                      ('$orderId', '$content_type', '$title', '$content', '$time')";
+                                                      ('$orderId', '$content_type', '$title', '$content', '$nicheType', '$time')";
                   }
 
                   if($this->conn->query($sql) != 1){

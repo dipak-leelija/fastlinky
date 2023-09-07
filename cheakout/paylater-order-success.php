@@ -87,8 +87,14 @@ if (!isset($_SESSION[ORDERDOMAIN]) && !isset($_SESSION[ORDERSITECOST]) && !isset
 
 	
 		$domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
-    	$itemAmount = $domain['cost']+$domain['ext_cost']; // cost + ext_cost
+    	$itemAmount = $domain['ext_cost']; //ext_cost
 		
+		$content = $ContentOrder->getOrderContent($orderId);
+		$nicheType = $content['niche_type'];
+		if ($nicheType == GREYNICHECONTENT) {
+			$itemAmount = $domain['grey_niche_cost'];
+		}
+
 		// $sess_arr = array(ORDERDOMAIN,'sitePrice');
 		// $utility->delSessArr($sess_arr);
 
@@ -107,16 +113,6 @@ if ( isset($_POST['blogId'])) {
 	$_SESSION['pay_success']  = true;
 
 
-
-	/**
-	 * 
-	 * ORDER STATUS CODE
-	 * 1 = Delivered
-	 * 2 = Pending
-	 * 3 = Processing
-	 * 4 = Oedered
-	 * 
-	 *  */ 
 	$ContentOrder->contentOrderStatusUpdate($orderId, ORDEREDCODE);
 	
 	$ContentOrder->addOrderTransection($orderId, $trxnId, PAYLATER, $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice, $clientOrderPrice, $paid_amount, $clientEmail);

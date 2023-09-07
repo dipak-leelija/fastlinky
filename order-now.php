@@ -50,25 +50,25 @@ if($cusDtl[0][0] == 2){
 }
 
 //echo $cusId;exit;
-$blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
+// $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
 
-$wishListsingleData = $blogMst->showBlog($id);
-$blogPrice      = $wishListsingleData[9];
+$item = $blogMst->showBlog($id);
+$sitename       = $item[0];
+$siteNiche      = $item[23];
+$blogPrice      = $item[9];
+$greyNiche      = $item[28];
+$greyNicheCost  = $item[29];
+$sellingPrice   = $item[16];
 
-$greyNiche      = $wishListsingleData[28];
-$greyNicheCost  = $wishListsingleData[29];
 
-$sellingPrice   =  $wishListsingleData[16];
-if ($greyNiche == 'Yes') {
-    $sellingPrice   =  $greyNicheCost;
-}
 
-$contentPlacementPrice = $sellingPrice;
-$contetCreationPlacementPrice = CONTENTPRICE +  $contentPlacementPrice;
+$_SESSION[SUMMARYDOMAIN]        = $sitename;
+$_SESSION[SUMMARYSITECOST]      = $sellingPrice;
+$_SESSION[SUMMARYGREYNICHECOST] = $greyNicheCost;
 
-$_SESSION[SUMMARYDOMAIN]     = $wishListsingleData[0];
-$_SESSION[SUMMARYSITECOST]      = $contentPlacementPrice;
-$_SESSION['ConetntCreationPlacementPrice']  = $contetCreationPlacementPrice;
+// $contetCreationPlacementPrice                       = CONTENTPRICE +  $sellingPrice;
+$_SESSION['ConetntCreationPlacementPrice']           = CONTENTPRICE +  $sellingPrice;
+$_SESSION['GreyNicheConetntCreationPlacementPrice']  = CONTENTPRICE +  $greyNicheCost;
 
 
 // Variable decleared to fetch content from session  
@@ -131,7 +131,7 @@ if (isset($_SESSION['content-data'])) {
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $wishListsingleData[0]; ?> - Order | <?php echo COMPANY_S; ?></title>
+    <title><?= $sitename; ?> - Order | <?php echo COMPANY_S; ?></title>
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
@@ -217,19 +217,27 @@ if (isset($_SESSION['content-data'])) {
                                 <div class="tab-pane fade show active" id="guest-post-tab-pane" role="tabpanel"
                                     aria-labelledby="guest-post-tab" tabindex="0">
 
-                                    <div class="siteName">
-                                        <p><?= $wishListsingleData[0];  ?></p>
-                                    </div>
-                                    <small><b><?= CURRENCY,$contentPlacementPrice;?></b> is the total cost for guest
-                                        post on
-                                        the selected site</small>
-
-                                    <hr class="border-primary mb-2">
+                                    <!-- <hr class="border-primary mb-2"> -->
 
                                     <!-- contentPlacement start here -->
                                     <div class="contentPlacement">
                                         <form method="post" id="orderForm" name="contentPlacementForm"
                                             enctype="multipart/form-data">
+
+                                            <div class="form-group">
+                                                <label for="niche">
+                                                    <h5>Niche</h5>
+                                                </label>
+                                                <select name="niche" id="niche" class="form-control" required>
+                                                    <option value="" selected disabled>Select</option>
+                                                    <option value="<?= GREYNICHECONTENT ?>">Grey Niche Content</option>
+                                                    <option value="<?= REGULARCONTENT ?>"><?= $siteNiche ?> Niche Content</option>
+
+                                                </select>
+                                                <!-- <input type="text" class="form-control"
+                                                    placeholder="Enter the article title" name="clientContentTitle1" 
+                                                    value="<?= $SESSclientContentTitle != '' ? $SESSclientContentTitle : ''; ?>"> -->
+                                            </div>
 
                                             <div class="form-group">
                                                 <label for="clientContentTitle1">
@@ -393,7 +401,7 @@ if (isset($_SESSION['content-data'])) {
                                     aria-labelledby="guest-post-with-content-tab" tabindex="0">
 
                                     <div class="siteName">
-                                        <p><?= $wishListsingleData[0];  ?></p>
+                                        <p><?= $sitename;  ?></p>
                                     </div>
                                     <small><b><?= CURRENCY,$contetCreationPlacementPrice;?></b> includes content
                                         price</small>
@@ -539,7 +547,16 @@ if (isset($_SESSION['content-data'])) {
         document.getElementById("order-name").value = "onlyPlacementWithFile";
         
         /* Title validation start here */
-        let title = orderForm[0].value;
+        let niche = orderForm[0].value;
+        if (niche == '') {
+            alert(`Please Select Niche Type`);
+            return false;
+        }
+        /* ----------------------------------------------------------- */
+
+
+                /* Title validation start here */
+        let title = orderForm[1].value;
         if (title == '') {
             alert(`Please Write a post title`);
             return false;
@@ -585,17 +602,17 @@ if (isset($_SESSION['content-data'])) {
 
 
         /* HyperLinks validation start here */
-        let clientAnchor = orderForm[4].value;
-        let clientURL = orderForm[5].value;
+        let clientAnchor = orderForm[5].value;
+        let clientURL = orderForm[6].value;
         if (clientAnchor == '' || clientURL =='') {
             alert(`Please Provide Client Anchor and URL!`);
             return false;
         }
 
-        let refAnc1 = orderForm[6].value;
-        let refURL1 = orderForm[7].value;
-        let refAnc2 = orderForm[8].value;
-        let refURL2 = orderForm[9].value;
+        let refAnc1 = orderForm[7].value;
+        let refURL1 = orderForm[8].value;
+        let refAnc2 = orderForm[9].value;
+        let refURL2 = orderForm[10].value;
         if (refAnc1 == "" && refURL1 == '' && refAnc2 == '' && refURL2 == '') {
             alert(`Looks Like you have not provided any reference links yet, well you can do is later` );
         }
