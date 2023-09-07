@@ -186,9 +186,8 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
     <div id="home">
         <!-- header -->
         <?php  require_once "partials/navbar.php" ?>
-        <?php //include 'header-user-profile.php'?>
+        <!-- header end -->
 
-        <!-- //header -->
         <!-- banner -->
         <div class="edit_profile">
             <div class="container-fluid">
@@ -245,7 +244,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                                 
                                                 if ($orderStatusCode != INCOMPLETECODE) {
                                                 ?>
-                                                <li> Item Amount : <?= CURRENCY.$itemAmount ?></li>
+                                                <li> Item Price : <?= CURRENCY.$itemAmount ?></li>
                                                 <li> Paid Amount : <?= CURRENCY.$paidAmount ?></li>
                                                 <li> Transection Mode : <?= $txnMode; ?></li>
                                                 <?php
