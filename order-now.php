@@ -217,6 +217,18 @@ if (isset($_SESSION['content-data'])) {
                                 <div class="tab-pane fade show active" id="guest-post-tab-pane" role="tabpanel"
                                     aria-labelledby="guest-post-tab" tabindex="0">
 
+                                    <div class="d-md-flex d-block">
+                                        <p class="pe-4">Domain: <span class="siteName"><?= $sitename; ?></span></p>
+                                        <p class="pe-4">Niche: <span class="siteName"
+                                                id="nicheName"><?= $siteNiche ?></span>
+                                            <span class="siteName d-none" id="GreyNicheName"><?= $greyNiche == 'Allowed' ?  'Grey Niche': ''; ?></span>
+                                        </p>
+                                        <p class="pe-4">Price: <span class="siteName"
+                                                id="sitePrice"><?= CURRENCY.$sellingPrice ?></span>
+                                            <span class="siteName d-none"
+                                                id="greyNichePrice"><?= CURRENCY.$greyNicheCost ?></span>
+                                        </p>
+                                    </div>
                                     <!-- <hr class="border-primary mb-2"> -->
 
                                     <!-- contentPlacement start here -->
@@ -224,8 +236,22 @@ if (isset($_SESSION['content-data'])) {
                                         <form method="post" id="orderForm" name="contentPlacementForm"
                                             enctype="multipart/form-data">
 
-                                            <div class="form-group">
-                                                <label for="niche">
+                                            <div class="form-group mt-3">
+                                                <small class="text-danger">**Casino, CBD, Cannabis and etc except Adult
+                                                    content</small>
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input shadow-none" type="checkbox" role="switch"
+                                                        id="niche" name="niche">
+                                                    <label class="form-check-label" for="niche">Are You Posting Grey
+                                                        Niche Content?</label>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- <div class="form-group"> -->
+                                            <!-- <label for="">Are You Posting Grey Niche Cintent?</label> -->
+
+                                            <!-- <label for="niche">
                                                     <h5>Niche</h5>
                                                 </label>
                                                 <select name="niche" id="niche" class="form-control" required>
@@ -233,18 +259,15 @@ if (isset($_SESSION['content-data'])) {
                                                     <option value="<?= GREYNICHECONTENT ?>">Grey Niche Content</option>
                                                     <option value="<?= REGULARCONTENT ?>"><?= $siteNiche ?> Niche Content</option>
 
-                                                </select>
-                                                <!-- <input type="text" class="form-control"
-                                                    placeholder="Enter the article title" name="clientContentTitle1" 
-                                                    value="<?= $SESSclientContentTitle != '' ? $SESSclientContentTitle : ''; ?>"> -->
-                                            </div>
+                                                </select> -->
+                                            <!-- </div> -->
 
                                             <div class="form-group">
                                                 <label for="clientContentTitle1">
                                                     <h5>Title</h5>
                                                 </label>
                                                 <input type="text" class="form-control"
-                                                    placeholder="Enter the article title" name="clientContentTitle1" 
+                                                    placeholder="Enter the article title" name="clientContentTitle1"
                                                     value="<?= $SESSclientContentTitle != '' ? $SESSclientContentTitle : ''; ?>">
                                             </div>
 
@@ -388,7 +411,8 @@ if (isset($_SESSION['content-data'])) {
                                         </form>
 
                                         <div class="d-flex justify-content-between py-3">
-                                            <button class="btn btn-secondary w-25">Cancel</button>
+                                            <button class="btn btn-secondary w-25"
+                                                onclick="history.back()">Back</button>
                                             <button class="btn btn-primary w-25"
                                                 onclick="gotoSummary()">Continue</button>
                                         </div>
@@ -539,13 +563,40 @@ if (isset($_SESSION['content-data'])) {
 
 
     <script>
+    let nichecheck = document.getElementById('niche');
+    const changeNiche = () => {
+        let sitePrice = document.getElementById('sitePrice');
+        let nicheName = document.getElementById('nicheName');
+        let greyNichePrice = document.getElementById('greyNichePrice');
+        let GreyNicheName = document.getElementById('GreyNicheName');
+
+        if (nichecheck.checked) {
+            sitePrice.classList.add('d-none');
+            nicheName.classList.add('d-none');
+
+            GreyNicheName.classList.remove('d-none');
+            greyNichePrice.classList.remove('d-none');
+
+        } else {
+            sitePrice.classList.remove('d-none');
+            nicheName.classList.remove('d-none');
+
+            GreyNicheName.classList.add('d-none');
+            greyNichePrice.classList.add('d-none');
+
+        }
+    }
+
+    nichecheck.addEventListener('change', changeNiche)
+
+
     const gotoSummary = () => {
 
         let orderForm = document.getElementById("orderForm");
         let orderName = document.getElementById("order-name");
         orderForm.action = "cheakout/order-summary.php";
         document.getElementById("order-name").value = "onlyPlacementWithFile";
-        
+
         /* Title validation start here */
         let niche = orderForm[0].value;
         if (niche == '') {
@@ -555,15 +606,15 @@ if (isset($_SESSION['content-data'])) {
         /* ----------------------------------------------------------- */
 
 
-                /* Title validation start here */
+        /* Title validation start here */
         let title = orderForm[1].value;
         if (title == '') {
             alert(`Please Write a post title`);
             return false;
         }
         /* ----------------------------------------------------------- */
-        
-        /* Content validation start here */  
+
+        /* Content validation start here */
         let contentFile = document.getElementsByName("content-file");
         let clientContent1 = document.getElementsByName("clientContent1");
         let existingFile = document.querySelector('.file-upload-image').src;
@@ -604,7 +655,7 @@ if (isset($_SESSION['content-data'])) {
         /* HyperLinks validation start here */
         let clientAnchor = orderForm[5].value;
         let clientURL = orderForm[6].value;
-        if (clientAnchor == '' || clientURL =='') {
+        if (clientAnchor == '' || clientURL == '') {
             alert(`Please Provide Client Anchor and URL!`);
             return false;
         }
@@ -614,7 +665,7 @@ if (isset($_SESSION['content-data'])) {
         let refAnc2 = orderForm[9].value;
         let refURL2 = orderForm[10].value;
         if (refAnc1 == "" && refURL1 == '' && refAnc2 == '' && refURL2 == '') {
-            alert(`Looks Like you have not provided any reference links yet, well you can do is later` );
+            alert(`Looks Like you have not provided any reference links yet, well you can do is later`);
         }
         /* ----------------------------------------------------------- */
 
@@ -640,7 +691,7 @@ if (isset($_SESSION['content-data'])) {
             return false;
         }
         /* ----------------------------------------------------------- */
-        
+
 
         /* HyperLinks validation start here */
         let clientAnchor = document.getElementsByName("clientAnchorText2")[0].value;

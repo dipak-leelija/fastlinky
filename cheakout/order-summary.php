@@ -60,14 +60,16 @@ if (isset($_SESSION[SUMMARYDOMAIN]) && isset($_SESSION[SUMMARYSITECOST]) && isse
             // $_SESSION['clientOrderPrice']   = $clientOrderPrice;
 	        $_SESSION['contetPrice'] 		= 00;
             
-            $nicheType = $_POST['niche'];
-            if ($nicheType == GREYNICHECONTENT) {
-                $clientOrderPrice = $greyNicheCost;
-            }
-            if ($nicheType == REGULARCONTENT) {
-                $clientOrderPrice               = $sitePrice;
-            }
+            $clientOrderPrice               = $sitePrice;
 
+            if (isset($_POST['niche'])){
+                $nicheType = $_POST['niche'];
+                
+                if ($nicheType == 'on') {
+                    $clientOrderPrice = $greyNicheCost;
+                }
+            }
+            
             $content_type       = 'doc';
             $clientContentTitle = $_POST['clientContentTitle1'];
 
