@@ -131,10 +131,11 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
                                                 <th scope="col">No</th>
                                                 <th scope="col">Site Name</th>
                                                 <th scope="col">Niche</th>
-                                                <th scope="col">Domain Authority</th>
-                                                <th scope="col">Trust Flow</th>
+                                                <th scope="col">DA</th>
+                                                <th scope="col">DR</th>
                                                 <th scope="col">Link Type</th>
-                                                <th scope="col">Price($)</th>
+                                                <th scope="col">Price ( <?= CURRENCY?> )</th>
+                                                <th scope="col">Grey Niche Price( <?= CURRENCY?> )</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
@@ -146,21 +147,18 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
                                                 <td><?php echo $x; $x++?></td>
                                                 <td><?php echo $singleWish['domain'];?></td>
                                                 <td><?php echo $singleWish['niche'];?></td>
-                                                <td><?php echo round($singleWish['da']);?></td>
-                                                <td><?php echo round($singleWish['tf']);?></td>
+                                                <td><?php echo $singleWish['da'];?></td>
+                                                <td><?php echo $singleWish['dr'];?></td>
                                                 <td><?php echo $singleWish['follow'];?></td>
-                                                <td><?php echo $singleWish['cost'];?></td>
+                                                <td><?php echo $singleWish['ext_cost'];?></td>
+                                                <td><?php echo $singleWish['grey_niche_cost'];?></td>
                                                 <td>
 
-                                                    <a href="webSiteDetailsSingle.php?id=<?php echo $singleWish['blog_id'] ?>"
+                                                    <a href="order-now.php?id=<?php echo $singleWish['blog_id'] ?>"
                                                         class="badge text-bg-success">
-
                                                         <span>
-
                                                             <i class="fas fa-shopping-bag"></i>
-
                                                         </span> Buy
-
                                                     </a>
 
                                                     <a href="javascript:void()"
