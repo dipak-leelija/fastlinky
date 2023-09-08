@@ -60,23 +60,22 @@ $blogsDtls	   = $blogMst->ShowBlogData();
                     DA
                 </th>
                 <th>
-                    PA
-                </th>
-
-                <th>
-                    TF
+                    DR
                 </th>
                 <th>
-                    Org.Traffic
+                Ahrefs Traffic
                 </th>
                 <th>
                     Link Type
                 </th>
                 <th>
-                    AdminPrices
+                    Price(<?= CURRENCY ?>)
                 </th>
                 <th>
-                    Prices
+                    Salling Prices (<?= CURRENCY ?>)
+                </th>
+                <th>
+                    G.N Price (<?= CURRENCY ?>)
                 </th>
                 <th>
                     Approved
@@ -94,52 +93,52 @@ $blogsDtls	   = $blogMst->ShowBlogData();
             ?>
             <tr>
                 <td>
-                    <?php echo $i++; ?>
+                    <?= $i++; ?>
                 </td>
                 <td style="WHITE-SPACE: inherit;">
-                    <?php echo $eachRecord['domain']; ?>
+                    <?= $eachRecord['domain']; ?>
                 </td>
                 <td style="WHITE-SPACE: inherit;">
-                    <?php echo $eachRecord['niche'];  ?>
+                    <?= $eachRecord['niche'];  ?>
                 </td>
                 <td>
-                    <?php echo $eachRecord['da']; ?>
+                    <?= $eachRecord['da']; ?>
                 </td>
                 <td>
-                    <?php echo $eachRecord['pa']; ?>
+                    <?= $eachRecord['dr']; ?>
                 </td>
                 <td>
-                    <?php echo  $eachRecord['tf']; ?>
+                    <?= $eachRecord['organic_trafic']; ?>
                 </td>
                 <td>
-                    <?php echo $eachRecord['organic_trafic']; ?>
+                    <?= $eachRecord['follow']; ?>
                 </td>
                 <td>
-                    <?php echo $eachRecord['follow']; ?>
+                    <?= $eachRecord['cost']; ?>
                 </td>
                 <td>
-                    <?php echo $eachRecord['ext_cost']; ?>
+                    <?= $eachRecord['ext_cost']; ?>
                 </td>
                 <td>
-                    <?php echo $eachRecord['cost']; ?>
+                    <?= $eachRecord['grey_niche_cost']; ?>
                 </td>
                 <td class="text-center">
                     <label class="form-switch">
                         <?php if($eachRecord['approved'] == 'yes'): ?>
-                        <input id="cheak" class="form-check-input" data-id="<?php echo $eachRecord['blog_id']; ?>"
+                        <input id="cheak" class="form-check-input" data-id="<?= $eachRecord['blog_id']; ?>"
                             value="yes" onclick="return disapproved();" type="checkbox" checked>
                         <?php else: ?>
-                        <input id="cheak" class="form-check-input" data-id="<?php echo $eachRecord['blog_id']; ?>"
+                        <input id="cheak" class="form-check-input" data-id="<?= $eachRecord['blog_id']; ?>"
                             value="no" onclick="return approved();" type="checkbox">
                         <?php endif ?>
 
                     </label>
                 </td>
                 <td>
-                    <a class="text-decoration-none mx-1" href="blog_edit.php?action=edit_faq&id=<?php echo $id; ?>">
+                    <a class="text-decoration-none mx-1" href="blog_edit.php?action=edit_faq&id=<?= $id; ?>">
                         <i class="fa-regular fa-eye"></i>
                     </a>
-                    <a class="text-decoration-none mx-1 text-danger" href="#" id="<?php echo $id; ?>"
+                    <a class="text-decoration-none mx-1 text-danger" href="#" id="<?= $id; ?>"
                         onclick="deleteBlog(this)">
                         <i class="fa-solid fa-trash"></i>
                     </a>
