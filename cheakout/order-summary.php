@@ -57,18 +57,18 @@ if (isset($_SESSION[SUMMARYDOMAIN]) && isset($_SESSION[SUMMARYSITECOST]) && isse
 
         if($_POST['order-name'] == "onlyPlacementWithFile" ):
 
-            // $_SESSION['clientOrderPrice']   = $clientOrderPrice;
-	        $_SESSION['contetPrice'] 		= 00;
             
-            $clientOrderPrice               = $sitePrice;
+            $clientOrderPrice = $sitePrice;
+            $nicheType = REGULARCONTENT;
 
             if (isset($_POST['niche'])){
-                $nicheType = $_POST['niche'];
-                
-                if ($nicheType == 'on') {
+                if ($_POST['niche'] == 'on') {
                     $clientOrderPrice = $greyNicheCost;
+                    $nicheType = GREYNICHECONTENT;
                 }
             }
+            // $_SESSION['clientOrderPrice']   = $clientOrderPrice;
+            $_SESSION['contetPrice'] 		= 00;
             
             $content_type       = 'doc';
             $clientContentTitle = $_POST['clientContentTitle1'];
@@ -169,12 +169,23 @@ if (isset($_SESSION[SUMMARYDOMAIN]) && isset($_SESSION[SUMMARYSITECOST]) && isse
         |                                                                               |
         |------------------------------------------------------------------------------*/ 
 
-        if($_POST['order-name2'] == "placementWOC" ):
+        $clientOrderPrice = $_SESSION['ConetntCreationPlacementPrice'];
         
-            $clientOrderPrice               = $_SESSION['ConetntCreationPlacementPrice'];
+        if($_POST['order-name2'] == "placementWOC" ):
+
+            $nicheType = REGULARCONTENT;
+
+            if (isset($_POST['niche2'])) {
+                if($_POST['niche2'] == 'on'){
+                    $nicheType  = GREYNICHECONTENT;
+                    $clientOrderPrice  = $_SESSION['GreyNicheConetntCreationPlacementPrice'];
+                }
+            }
+
             $_SESSION['clientOrderPrice']   = $clientOrderPrice;
 	        $_SESSION['contetPrice'] 		= CONTENTPRICE;
             
+
             $_FILES['content-file'] = '';
             $uploadedPath           = '';
             $clientContent          = '';
@@ -197,7 +208,7 @@ if (isset($_SESSION[SUMMARYDOMAIN]) && isset($_SESSION[SUMMARYSITECOST]) && isse
 
             $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
             
-            $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle);
+            $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle, $nicheType);
             
             $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1, $refAnc2, $refUrl2);
 

@@ -69,7 +69,8 @@ $_SESSION[SUMMARYGREYNICHECOST] = $greyNicheCost;
 // $contetCreationPlacementPrice                       = CONTENTPRICE +  $sellingPrice;
 $_SESSION['ConetntCreationPlacementPrice']           = CONTENTPRICE +  $sellingPrice;
 $_SESSION['GreyNicheConetntCreationPlacementPrice']  = CONTENTPRICE +  $greyNicheCost;
-
+$generallNicheWithContent                            = $_SESSION['ConetntCreationPlacementPrice'];
+$greyNicheWithContent                                = $_SESSION['GreyNicheConetntCreationPlacementPrice'];
 
 // Variable decleared to fetch content from session  
 $SESSclientContentTitle = '';
@@ -221,7 +222,8 @@ if (isset($_SESSION['content-data'])) {
                                         <p class="pe-4">Domain: <span class="siteName"><?= $sitename; ?></span></p>
                                         <p class="pe-4">Niche: <span class="siteName"
                                                 id="nicheName"><?= $siteNiche ?></span>
-                                            <span class="siteName d-none" id="GreyNicheName"><?= $greyNiche == 'Allowed' ?  'Grey Niche': ''; ?></span>
+                                            <span class="siteName d-none"
+                                                id="GreyNicheName"><?= $greyNiche == 'Allowed' ?  'Grey Niche': ''; ?></span>
                                         </p>
                                         <p class="pe-4">Price: <span class="siteName"
                                                 id="sitePrice"><?= CURRENCY.$sellingPrice ?></span>
@@ -229,7 +231,12 @@ if (isset($_SESSION['content-data'])) {
                                                 id="greyNichePrice"><?= CURRENCY.$greyNicheCost ?></span>
                                         </p>
                                     </div>
-                                    <!-- <hr class="border-primary mb-2"> -->
+
+                                    <div>
+                                        <p class="small">Estimated completion: <span class="deviveryDt">Approx 3 days after order confirmation <?= date('jS M Y',strtotime("+3 day"));?></span></p>
+                                    </div>
+
+                                    <hr class="border-primary mb-2">
 
                                     <!-- contentPlacement start here -->
                                     <div class="contentPlacement">
@@ -240,8 +247,8 @@ if (isset($_SESSION['content-data'])) {
                                                 <small class="text-danger">**Casino, CBD, Cannabis and etc except Adult
                                                     content</small>
                                                 <div class="form-check form-switch">
-                                                    <input class="form-check-input shadow-none" type="checkbox" role="switch"
-                                                        id="niche" name="niche">
+                                                    <input class="form-check-input shadow-none" type="checkbox"
+                                                        role="switch" id="niche" name="niche">
                                                     <label class="form-check-label" for="niche">Are You Posting Grey
                                                         Niche Content?</label>
                                                 </div>
@@ -424,15 +431,26 @@ if (isset($_SESSION['content-data'])) {
                                 <div class="tab-pane fade" id="guest-post-with-content-tab-pane" role="tabpanel"
                                     aria-labelledby="guest-post-with-content-tab" tabindex="0">
 
-                                    <div class="siteName">
+                                    <!-- <div class="siteName">
                                         <p><?= $sitename;  ?></p>
+                                    </div> -->
+                                    <!-- <small><b><?= CURRENCY,$contetCreationPlacementPrice;?></b> includes content
+                                        price</small> -->
+
+                                    <div class="d-md-flex d-block">
+                                        <p class="pe-4">Domain: <span class="siteName"><?= $sitename; ?></span></p>
+                                        <p class="pe-4">Niche:
+                                            <span class="siteName" id="nicheName2"><?= $siteNiche ?></span>
+                                            <span class="siteName d-none" id="GreyNicheName2"><?= $greyNiche == 'Allowed' ?  'Grey Niche': ''; ?></span>
+                                        </p>
+                                        <p class="pe-4">Price: 
+                                            <span class="siteName" id="sitePrice2"><?= CURRENCY.$generallNicheWithContent; ?></span>
+                                            <span class="siteName d-none" id="greyNichePrice2"><?= CURRENCY.$greyNicheWithContent ?></span>
+                                        </p>
                                     </div>
-                                    <small><b><?= CURRENCY,$contetCreationPlacementPrice;?></b> includes content
-                                        price</small>
+
                                     <div>
-                                        <p class="small">Estimated completion: <span class="deviveryDt">Approx 3 days
-                                                after order confirmation
-                                                <?= date('jS M Y',strtotime("+3 day"));?></span></p>
+                                        <p class="small">Estimated completion: <span class="deviveryDt">Approx 3 days after order confirmation <?= date('jS M Y',strtotime("+3 day"));?></span></p>
                                     </div>
 
                                     <hr class="border-primary mb-2">
@@ -442,6 +460,18 @@ if (isset($_SESSION['content-data'])) {
                                     <div class="contentCreationPlacement">
                                         <form method="post" action="cheakout/order-summary.php"
                                             name="contentCreationPlacementForm" id="orderForm2">
+
+
+                                            <div class="form-group mt-3">
+                                                <small class="text-danger">**Casino, CBD, Cannabis and etc except Adult
+                                                    content</small>
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input shadow-none" type="checkbox"
+                                                        role="switch" id="niche2" name="niche2">
+                                                    <label class="form-check-label" for="niche">Are You Posting Grey
+                                                        Niche Content?</label>
+                                                </div>
+                                            </div>
 
                                             <div class="form-group">
                                                 <label for="clientContentTitle2">
@@ -587,8 +617,36 @@ if (isset($_SESSION['content-data'])) {
         }
     }
 
-    nichecheck.addEventListener('change', changeNiche)
+    nichecheck.addEventListener('change', changeNiche);
 
+
+    let nichecheck2 = document.getElementById('niche2');
+    const changeNiche2 = () => {
+        let sitePrice = document.getElementById('sitePrice2');
+        let nicheName = document.getElementById('nicheName2');
+        let greyNichePrice = document.getElementById('greyNichePrice2');
+        let GreyNicheName = document.getElementById('GreyNicheName2');
+
+        if (nichecheck2.checked) {
+            // alert('Hi there');
+            sitePrice.classList.add('d-none');
+            nicheName.classList.add('d-none');
+
+            GreyNicheName.classList.remove('d-none');
+            greyNichePrice.classList.remove('d-none');
+
+        } else {
+            // alert('unchecked');
+            sitePrice.classList.remove('d-none');
+            nicheName.classList.remove('d-none');
+
+            GreyNicheName.classList.add('d-none');
+            greyNichePrice.classList.add('d-none');
+
+        }
+    }
+
+    nichecheck2.addEventListener('change', changeNiche2);
 
     const gotoSummary = () => {
 
