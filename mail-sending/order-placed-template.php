@@ -1,78 +1,35 @@
 <?php 
 
 require_once dirname(__DIR__) . '/includes/constant.inc.php';
+require_once ROOT_DIR . "/classes/encrypt.inc.php";
 
 
 
 
 function mailFooter(){
     $body = '
-        <style>
-        /* FOOTER DIVISION CSS STARTS */
-        /* footer */
-        .ts-td7-footer-div {
-            padding: 0px;
-            text-align: center;
-            font-size: 12px;
-            background-color: #f3b165;
-        }
-        .footer-text-address{
-            margin-bottom: 2rem;
-            margin-top: 2rem;
-        }
-        .footer-text-address h1{
-            font-size: 2rem;
-            color: darkblue;
-            border-bottom: 2px solid #003399;
-            padding-bottom: 5px;
-            width: fit-content;
-            margin: auto;
-            margin-bottom: 20px;
-        }
-        .footer-text-address p{
-            margin: 0;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-        .social-icons-div{
-            background: darkblue;
-                padding: 12px;
-                margin: 0px;
-        }
-        .social-icons-div a{
-            text-decoration:none;
-        }
-        .social-icons-div img{
-            display:inline-block;
-            padding: 4px;
-            vertical-align: sub !important;
-        }
-        .t-d-none{
-            text-decoration: none;
-        }
-    </style>
         <tr>
-            <td class="ts-td7-footer-div">
-                <div class="footer-text-address">
-                    <h1>Get In Touch</h1>
+            <td style="padding: 0px; text-align: center; font-size: 12px; background-color: #f3b165;">
+                <div class="footer-text-address" style="margin: 2rem auto; ">
+                    <h1 style="font-size: 2rem; color: darkblue; border-bottom: 2px solid #003399; padding-bottom: 5px; width: fit-content; margin: auto; margin-bottom: 20px;">Get In Touch</h1>
                     <div>
-                        <p>Barasat, Kolkata, West Bengal, 700125, India</p>
-                        <p style="font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
-                            <a class="t-d-none" style="color: #000;" rel="noopener" href="tel:'.SITE_CONTACT_NO.'" target="_blank">
+                        <p style="margin: 0; font-size: 14px; line-height: 1.4">Barasat, Kolkata, West Bengal, 700125, India</p>
+                        <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
+                            <a style="color: #000; text-decoration: none;" rel="noopener" href="tel:'.SITE_CONTACT_NO.'" target="_blank">
                             '.SITE_CONTACT_NO.'
                             </a>
                         </p>
-                        <p style="font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center; color: #fff;">
-                            <a class="t-d-none" style=" color: #000;" rel="noopener" href="tel:'.SITE_BILLING_CONTACT_NO.'" target="_blank">
+                        <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center; color: #fff;">
+                            <a style=" color: #000; text-decoration: none;" rel="noopener" href="tel:'.SITE_BILLING_CONTACT_NO.'" target="_blank">
                             '.SITE_BILLING_CONTACT_NO.'
                             </a>
                         </p>
-                        <p style="font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
+                        <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
                             <a style="text-decoration: none;" rel="noopener" href="mailto:'.SITE_EMAIL.'" target="_blank">
                             '.SITE_EMAIL.'
                             </a>
                         </p>
-                        <p style="font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
+                        <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
                             <a style="text-decoration: none;" rel="noopener" href="mailto:'.SITE_BILLING_EMAIL.'" target="_blank">
                             '.SITE_BILLING_EMAIL.'
                             </a>
@@ -81,18 +38,18 @@ function mailFooter(){
 
                 </div>
 
-                <p class="social-icons-div">
-                    <a href="'.FB_LINK.'" title="Facebook" target="_blank">
-                        <img src="https://fastlinky.com/images/icons/social-media-icons/facebook2x.png" width="35" height="35" alt="facebook">
+                <p style="background: darkblue; padding: 12px; margin: 0px;">
+                    <a href="'.FB_LINK.'" title="Facebook" target="_blank" style="text-decoration:none;">
+                        <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/facebook2x.png" width="35" height="35" alt="facebook">
                     </a>
-                    <a href="'.TWITTER_LINK.'" title="Twitter" target="_blank">
-                        <img src="https://fastlinky.com/images/icons/social-media-icons/twitter2x.png" width="35" height="35" alt="t">
+                    <a href="'.TWITTER_LINK.'" title="Twitter" target="_blank" style="text-decoration:none;">
+                        <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/twitter2x.png" width="35" height="35" alt="t">
                     </a>
-                    <a href="'.LINKDIN_LINK.'" title="Linkedin" target="_blank">
-                        <img src="https://fastlinky.com/images/icons/social-media-icons/linkedin2x.png" width="35" height="35" alt="Li">
+                    <a href="'.LINKDIN_LINK.'" title="Linkedin" target="_blank" style="text-decoration:none;">
+                        <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/linkedin2x.png" width="35" height="35" alt="Li">
                     </a>
-                    <a href="'.INSTA_LINK.'" title="Instagram" target="_blank">
-                        <img src="https://fastlinky.com/images/icons/social-media-icons/instagram2x.png" width="35" height="35" alt="insta">
+                    <a href="'.INSTA_LINK.'" title="Instagram" target="_blank" style="text-decoration:none;">
+                        <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/instagram2x.png" width="35" height="35" alt="insta">
                     </a>
                 </p>
             </td>
@@ -102,7 +59,7 @@ function mailFooter(){
 }
 
 
-function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
+function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $orderDetailsArray, $domain = ''){
 
     $mail = 
 
@@ -151,15 +108,18 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
 
     .order-placed-header {
         display: flex;
-        padding: 15px 30px;
-        text-align: center;
+        flex-direction: row;
+        padding: 15px 10px;
         font-size: 24px;
         font-weight: bold;
         background: aliceblue;
-        justify-content: space-between;
     }
 
-    .left-icon img {
+    .img-sec{
+        width: 50%;
+    }
+
+    .header-logo {
         width: 100px;
         max-width: 100%;
         height: auto;
@@ -168,22 +128,13 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         color: #ffffff;
     }
 
-    .right-icon{
-        display: flex;
-        align-items: center;
-    }
-    .right-icon span{
-        display: flex;
-        align-items: center;
-        font-size: 18px;
+    
+    .header-right{
+        text-align: end;
     }
 
-    .right-icon img {
-        width: 40px;
-        margin-left: 10px;
-        max-width: 100%;
-        text-decoration: none;
-        color: #ffffff;
+    .header-right img {
+        width: 155px;
         object-fit: contain;
     }
 
@@ -271,21 +222,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
         font-family: inherit;
     }
 
-    @media screen and (max-width: 530px) {
-        .customer-details-div h1 {
-            font-size: 20px;
-        }
-
-        .customer-details-div {
-            padding: 15px;
-        }
-
-        .col-lge {
-            max-width: 100% !important;
-            text-align: center;
-        }
-
-    }
     .tables-fr-cdetails{
         width: 100%;
         text-align: left;
@@ -304,7 +240,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
 
     .order-details-table{
         word-break: break-word;
-        padding: 0 6rem;
+        padding: 0 2rem;
         font-weight: 600;
         font-family: "Cabin", sans-serif;
     }
@@ -326,45 +262,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
    .order-details-sub-div{
         width: 50%;
    }
-   @media(max-width:600px){
-        .order-details-table {
-            padding: 0 1rem;
-        }
-   }
-
-   @media(max-width:320px){
-        .order-details-headline{
-            margin-bottom: 0.5rem; 
-            display: block;
-            width: 100%;
-            word-break: break-word;
-        }
-        .order-details-headline-div{
-            width: 100%;
-        }
-        .order-details-main-div{
-            display: block;
-            width: 100%;
-        }
-        .order-details-sub-div{
-            width: 100%;
-        }
-        .extra-space{
-            padding-left: 6px;
-        }
-        .extra-font{
-            font-weight: 600;
-        }
-        .order-placed-header {
-            padding: 15px 8px;
-        }
-        .right-icon span {
-            font-size: 13px;
-        }
-        .right-icon img {
-            width: 22px;
-        }
-   }
     </style>
 </head>
 
@@ -376,48 +273,53 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                     <table role="presentation" class="table-second">
                         <!-- **************************  LOGO IMAGE HEADER SECTION ************************ -->
                         <tr>
-                            <td class="order-placed-header">
-                                <div class="left-icon">
-                                    <img src="'.LOGO_WITH_PATH.'" alt="">
-                                </div>
-                                <div class="right-icon">
-                                    <span>
-                                    Order PLaced 
-                                    <img src="'.IMG_PATH.'/icons/success.png" alt="">
-                                    <span>
+                            <td>
+                                <div class="order-placed-header">
+                                    <div class="img-sec">
+                                        <img class="header-logo" src="'.LOGO_WITH_PATH.'" alt="'.COMPANY_FULL_NAME.'">
+                                    </div>
+                                    <div class="img-sec">
+                                        <div class="header-right">
+                                            <img src="'.IMG_PATH.'/icons/order-placed-icon.png" alt="">
+                                        </div>
+                                    </div>
                                 </div>
                             </td>
                         </tr>
                         <!-- **************************  LOGO IMAGE HEADER SECTION ENDS ************************ -->
                         <tr>
                             <td class="customer-details-div">
-                                <h1>Hi Dipak, Your order has been place successfully</h1>
+                                <h1>Hi '.$firstName.', Your order has been place successfully</h1>
                                 <p>Thank you very much for placing an order with us! We truly appreciate your trust and look forward to making your experience as enjoyable as possible.</p>
                             </td>
                         </tr>
                     
                         <tr>
-                        <td>
-                    
-                            <div class="order-details-table">
-                                <h4 class="order-details-headline">
-                                    <div class="order-details-headline-div"> Order ID :</div>
-                                    <div class="order-details-headline-div  "> '.$orderId.'</div>
-                                </h4>';
-                                // $orderDataArray, $orderDetailsArray
-                                for ($i=0; $i<count($orderDataArray); $i++) { 
-                                    $mail .= '<div class="order-details-main-div">
-                                            <div class="order-details-sub-div extra-font">'.$orderDataArray[$i].' :</div>
-                                            <div class="order-details-sub-div extra-space">'.$orderDetailsArray[$i].'</div>
-                                            </div>';
-                                }
+                            <td>
+                        
+                                <div class="order-details-table">
+                                    <h4 class="order-details-headline">
+                                        <div class="order-details-headline-div"> Order ID :</div>
+                                        <div class="order-details-headline-div  "> '.$orderId.'</div>
+                                    </h4>';
 
-                    $mail .= '</div>
-                            </div>
-                        </td>
-                    </tr>
-                                     
+                                    if ($domain != '') {
+                                        $mail .='<div class="order-details-main-div">
+                                                    <div class="order-details-sub-div extra-font">Site Name :</div>
+                                                    <div class="order-details-sub-div extra-space"><span>'.$domain[0].'</span></div>
+                                                </div>';
+                                    }
+                                    // $orderDataArray, $orderDetailsArray
+                                    for ($i=0; $i<count($orderDataArray); $i++) {
+                                        $mail .= '<div class="order-details-main-div">
+                                                <div class="order-details-sub-div extra-font">'.$orderDataArray[$i].' :</div>
+                                                <div class="order-details-sub-div extra-space">'.$orderDetailsArray[$i].'</div>
+                                                </div>';
+                                    }
+                        $mail .= '</div>
 
+                            </td>
+                        </tr>
 
                         <tr>
                             <td class="order-details-description">
@@ -429,11 +331,6 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                                     <p class="col-lge-p2" style="">Nam non ante risus. Vestibulum vitae
                                         eleifend nisl, quis vehicula justo. Integer viverra efficitur pharetra. Nullam
                                         eget erat nibh.</p>
-                                    <!--<p class="col-lge-p3">
-                                        <a href="#" class="col-lge-p3-atag">
-                                            <span class="col-lge-p3-span">Track your order</span>
-                                        </a>
-                                    </p>-->
                                 </div>
                             </td>
                         </tr>
@@ -445,6 +342,7 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
                                     sapien et libero. Suspendisse auctor vel orci nec finibus.</small>
                             </td>
                         </tr>';
+
                         // <!-- ************************** FOOTER STARTS ************************ -->
                         $mail .= mailFooter();
                         // <!-- ************************** FOOTER ENDS ************************ -->
@@ -458,9 +356,5 @@ function orderPlacedtoCustomer($orderId, $orderDataArray, $orderDetailsArray){
 </html>';
 
 return $mail;
-} 
-
-// $arr1 = array('Name', 'Date');
-// $arr2 = array('Dipak Majumdar', '29/08/1999');
-// echo orderPlacedtoCustomer('#786876', $arr1, $arr2);
+}
 ?>

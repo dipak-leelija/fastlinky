@@ -3,14 +3,15 @@ class PackageOrder extends DatabaseConnection{
 
 
 
-  function addPackageOrder($packageId, $niche, $customerID, $name, $email, $price, $due_amount, $paid_amount, $paymentType, $transection_id, $status, $orderStatus){
+  function addPackageOrder($packageId, $niche, $customerID, $name, $email, $price, $due_amount, $paid_amount, $paymentType, $transection_id, $status, $orderStatus, $time = NOW){
     
     $sql ="INSERT INTO gp_package_order 
                         (`package_id`, `niche`, `customer_id`, `name`,	`email`, `price`, `due_amount`, `paid_amount`,
                         `payment_type`, `transection_id`, `status`, `order_status`, `date`)
                         VALUES
                         ('$packageId', '$niche', '$customerID', '$name', '$email', '$price', '$due_amount', '$paid_amount',
-                        '$paymentType', '$transection_id', '$status', '$orderStatus', now())";
+                        '$paymentType', '$transection_id', '$status', '$orderStatus', '$time')";
+                        // echo $sql.$this->conn->error;
         $data  = $this->conn->query($sql);
         if ($data) {
           $id = $this->conn->insert_id;
@@ -111,7 +112,7 @@ class PackageOrder extends DatabaseConnection{
       $myArr = array();
 
       if ($limit !== '*') {
-        $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId' LIMIT $limit";
+        $sql = "SELECT * FROM `gp_package_order` WHERE `customer_id`='$userId' ORDER BY `order_id` DESC LIMIT $limit";
         $data = $this->conn->query($sql);
         while($res = $data->fetch_assoc()){
           $myArr[] = $res;
@@ -221,13 +222,13 @@ class PackageOrder extends DatabaseConnection{
   ##############################################################################################################
 
 
-  function addPackOrderLinks($orderId, $for_post, $anchor, $url, $added_by){
+  function addPackOrderLinks($orderId, $for_post, $anchor, $url, $added_by, $time = NOW){
 
     $anchor = addslashes(trim($anchor));
     $url    = addslashes(trim($url));
 
       $query =  "INSERT INTO `gp_package_order_links`(`order_id`, `for_post`, `anchor`, `url`, `added_by`, `added_on`)
-                                              VALUES ('$orderId', '$for_post','$anchor','$url', '$added_by', now())";
+                                              VALUES ('$orderId', '$for_post','$anchor','$url', '$added_by', '$time')";
       $res = $this->conn->query($query);
       // $count = $this->conn->insert_id();
       return $res;
@@ -265,14 +266,14 @@ class PackageOrder extends DatabaseConnection{
   ##############################################################################################################
 
 
-  function raisePackOrderLinksIssue($linkId, $statusId, $issue, $added_by){
+  function raisePackOrderLinksIssue($linkId, $statusId, $issue, $added_by, $time = NOW){
 
     $issue = addslashes(trim($issue));
 
       $query =  "INSERT INTO `gp_package_order_link_status`
                 (`link_id`, `status`, `issue`, `added_by`, `added_on`)
                 VALUES
-                ('$linkId', '$statusId', '$issue', '$added_by', now())";
+                ('$linkId', '$statusId', '$issue', '$added_by', '$time')";
 
       $res = $this->conn->query($query);
       // $count = $this->conn->insert_id();
@@ -309,14 +310,14 @@ class PackageOrder extends DatabaseConnection{
   ##############################################################################################################
 
 
-  function addPackOrderDtls($orderId, $statusId, $dsc, $added_by, $updator){
+  function addPackOrderDtls($orderId, $statusId, $dsc, $added_by, $updator, $time = NOW){
     if ($orderId == '') {
       return false;
     }else {
       $dsc = addslashes(trim($dsc));
       
       $query =  "INSERT INTO `gp_package_order_details`(`order_id`, `status`, `dsc`, `added_by`, `updator`, `added_on`)
-                                              VALUES ('$orderId', '$statusId', '$dsc', '$added_by', '$updator', now())";
+                                              VALUES ('$orderId', '$statusId', '$dsc', '$added_by', '$updator', '$time')";
       $res = $this->conn->query($query);
       // $count = $this->conn->insert_id();
       return $res;
@@ -371,12 +372,12 @@ class PackageOrder extends DatabaseConnection{
   /**
    * status code 1 = delivered;
    */
-  function addPackPubLinks($orderId, $for_post, $pubUrl, $added_by){
+  function addPackPubLinks($orderId, $for_post, $pubUrl, $added_by, $time = NOW){
 
       $pubUrl = addslashes(trim($pubUrl));
 
       $query =  "INSERT INTO `package_publish_links`(`order_id`,	`for_post`,	`url`, `status`, `added_on`, `added_by`)
-                                              VALUES ('$orderId', '$for_post', '$pubUrl', '1', now(), '$added_by')";
+                                              VALUES ('$orderId', '$for_post', '$pubUrl', '1', '$time', '$added_by')";
       $res = $this->conn->query($query);
       // $count = $this->conn->insert_id();
       return $res;
@@ -413,11 +414,14 @@ class PackageOrder extends DatabaseConnection{
 
   }
 
-  function raiseIssue($linkId, $orderId, $issue, $status, $updatedBy){
+  function raiseIssue($linkId, $orderId, $issue, $status, $updatedBy, $time = NOW){
 
     try {
-      $sql  = "UPDATE `package_publish_links` SET status = '$status', issue = '$issue', updated_by = '$updatedBy', updated_on = now()
-                                              WHERE id = '$linkId' AND order_id = '$orderId'";
+      $sql  = "UPDATE `package_publish_links` SET status      = '$status',
+                                                  issue       = '$issue',
+                                                  updated_by  = '$updatedBy',
+                                                  updated_on  = '$time'
+                                                  WHERE id    = '$linkId' AND order_id = '$orderId'";
       $res  = $this->conn->query($sql);
         return $res;
     } catch (Exception $e) {
@@ -426,11 +430,15 @@ class PackageOrder extends DatabaseConnection{
 
   }
 
-  function updateLiveURLS($linkId, $orderId, $url, $status, $updatedBy){
+  function updateLiveURLS($linkId, $orderId, $url, $status, $updatedBy, $time = NOW){
 
     try {
-      $sql  = "UPDATE `package_publish_links` SET url = '$url', status = '$status', issue = '', updated_by = '$updatedBy', updated_on = now()
-                                              WHERE id = '$linkId' AND order_id = '$orderId'";
+      $sql  = "UPDATE `package_publish_links` SET url         = '$url', 
+                                                  status      = '$status',
+                                                  issue       = '',
+                                                  updated_by  = '$updatedBy',
+                                                  updated_on  = '$time'
+                                                  WHERE id = '$linkId' AND order_id = '$orderId'";
       $res  = $this->conn->query($sql);
         return $res;
     } catch (Exception $e) {

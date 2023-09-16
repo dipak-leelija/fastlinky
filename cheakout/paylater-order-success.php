@@ -2,16 +2,19 @@
 session_start();
 require_once dirname(__DIR__) .  "/includes/constant.inc.php";
 
+require_once ROOT_DIR . "/_config/dbconnect.php";
 require_once ROOT_DIR . "/includes/user.inc.php";
 require_once ROOT_DIR . "/includes/content.inc.php";
 require_once ROOT_DIR . "/includes/order-constant.inc.php";
 require_once ROOT_DIR . "/includes/email.inc.php";
 require_once ROOT_DIR . "/includes/registration.inc.php";
-require_once ROOT_DIR . "/includes/mail-functions.php";
 require_once ROOT_DIR . "/includes/paypal.inc.php";
 
-require_once ROOT_DIR . "/_config/dbconnect.php";
+require_once ROOT_DIR."/classes/class.phpmailer.php";
+require_once ROOT_DIR."/mail-sending/order-placed-template.php";
+
 require_once ROOT_DIR . "/classes/customer.class.php";
+require_once ROOT_DIR . "/classes/encrypt.inc.php";
 require_once ROOT_DIR . "/classes/domain.class.php"; 
 require_once ROOT_DIR . "/classes/blog_mst.class.php"; 
 require_once ROOT_DIR . "/classes/orderStatus.class.php";
@@ -24,23 +27,25 @@ require_once ROOT_DIR . "/classes/wishList.class.php";
 require_once ROOT_DIR . "/classes/location.class.php";
 
 require_once ROOT_DIR . "/classes/utility.class.php"; 
-require_once ROOT_DIR . "/classes/utilityMesg.class.php"; 
+require_once ROOT_DIR . "/classes/utilityMesg.class.php";
+
 
 /* INSTANTIATING CLASSES */
 $customer		= new Customer();
 $domain			= new Domain();
 $BlogMst		= new BlogMst();
 $OrderStatus	= new OrderStatus();
-$error			= new MyError();
+$MyError		= new MyError();
 $ContentOrder	= new ContentOrder();
 $Notifications  = new Notifications();
 
 $WishList		= new WishList();
 $Location		= new Location();
 
-$dateUtil		= new DateUtil();
+$DateUtil		= new DateUtil();
+$PHPMailer      = new PHPMailer();
+$MyError 		= new MyError();
 $utility		= new Utility();
-$uMesg 			= new MesgUtility();
 
 ###############################################################################################
 //declare vars
@@ -69,6 +74,7 @@ if (!isset($_SESSION[ORDERDOMAIN]) && !isset($_SESSION[ORDERSITECOST]) && !isset
 	
 	$clientUserId       = $_SESSION['userid'];
 	$clientName         = $_SESSION['name'];
+	$clientFName        = $_SESSION['welcome_name'];
 	$clientEmail        = $_SESSION[USR_SESS];
 	$orderId			= $_SESSION[ORDERID];
 	$reference_link		= URL."/guest-post-article-submit.php?order=".base64_encode(urlencode($orderId));
@@ -81,8 +87,14 @@ if (!isset($_SESSION[ORDERDOMAIN]) && !isset($_SESSION[ORDERSITECOST]) && !isset
 
 	
 		$domain = $BlogMst->showBlogbyDomain($clientOrderedSite);
-    	$itemAmount = $domain['cost']+$domain['ext_cost']; // cost + ext_cost
+    	$itemAmount = $domain['ext_cost']; //ext_cost
 		
+		$content = $ContentOrder->getOrderContent($orderId);
+		$nicheType = $content['niche_type'];
+		if ($nicheType == GREYNICHECONTENT) {
+			$itemAmount = $domain['grey_niche_cost'];
+		}
+
 		// $sess_arr = array(ORDERDOMAIN,'sitePrice');
 		// $utility->delSessArr($sess_arr);
 
@@ -96,21 +108,11 @@ if ( isset($_POST['blogId'])) {
 	$amount 				= 00;
 	$paid_amount 			= 00;   // paid ammount
 	$trxnId 				= '';	//geting the transection id 
-	$trxnStatus 			= PENDING;	//geting the transection status
+	$trxnStatus 			= PENDINGCODE;	//geting the transection status
 	$_SESSION['trxn_id']	= $trxnId;	
 	$_SESSION['pay_success']  = true;
 
 
-
-	/**
-	 * 
-	 * ORDER STATUS CODE
-	 * 1 = Delivered
-	 * 2 = Pending
-	 * 3 = Processing
-	 * 4 = Oedered
-	 * 
-	 *  */ 
 	$ContentOrder->contentOrderStatusUpdate($orderId, ORDEREDCODE);
 	
 	$ContentOrder->addOrderTransection($orderId, $trxnId, PAYLATER, $trxnStatus, $itemAmount, $contetPrice, $clientOrderPrice, $clientOrderPrice, $paid_amount, $clientEmail);
@@ -128,6 +130,7 @@ if ( isset($_POST['blogId'])) {
 // if(isset($_SESSION['ordId'])) {
 if(isset($_SESSION[ORDERID])) {
 
+	$mailMsg = '';
 	//fetch the order details
 	$orderDetail 	= $ContentOrder->showOrderdContentsByCol('order_id', $orderId, '', '');
 
@@ -137,29 +140,26 @@ if(isset($_SESSION[ORDERID])) {
 	
 
 	//order status
-	$statusCode			= $orderDetail[0]['order_status'];
-	$statusName 		= $OrderStatus->getOrdStatName($statusCode);
+	// $statusCode			= $orderDetail[0]['order_status'];
+	$statusName 		= $OrderStatus->getOrdStatName($orderDetail[0]['order_status']);
+	$orderDate 			= $DateUtil->dateTimeNumber($orderDetail[0]['added_on']);
 
 
 	// Client Details 
 	$client		= $customer->getCustomerData($orderDetail[0]['clientUserId']);
 
-	//country details
-	$countryDetails = $Location->getCountyById($client[0][30]);
-	$countryName   	= $countryDetails['name'];
+	$customerFullName 	= $client[0][5].' '.$client[0][6]; 
+	$customerFName		= $client[0][5];
+	$customerEmail 		= $client[0][3];
 
-	//city details
-	$cityDetails 	= $Location->getCityDataById($client[0][27]);
-	$cityName = '';
-	if (isset($cityDetails['city'])) {
-		$cityName = $cityDetails['city'];
-	}
-
-	//state details
-	$stateDetails 	= $Location->getStateData($client[0][28]);
-	$stateName = '';
-	if (isset($stateName['state_name'])) {
-		$stateName 		= $stateDetails['state_name'];
+	if ($client[0][31] != '') {
+		$customerPhone = $client[0][31];
+	}elseif ($client[0][32 != '']) {
+		$customerPhone = $client[0][32];
+	}elseif ($client[0][32] != '') {
+		$customerPhone = $client[0][34];
+	}else {
+		$customerPhone = '';
 	}
 
 
@@ -170,42 +170,21 @@ if(isset($_SESSION[ORDERID])) {
 	
 	// transection details
 	$txn = $ContentOrder->showTrxnByOrderId($orderId);
-	
+	$orderDomain = $utility->url_to_domain($clientOrderedSite);
+	$domainArr = explode('.', $orderDomain);
+	// $orderDomain = md5_encrypt($orderDomain, ADV_PASS);
+	// echo $domainArr[0];
+	// exit;
 
 	// ===================================================================================================================
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
 	// ===================================================================================================================
 
-	/*
-	$addedOn 	= date('l, jS \of F Y, h:i a', strtotime($orderDetail[0]['added_on']));
-
-
 	// customer details 
-	$cusDtls_arr = array(
-					'CUSTOMER NAME',		//0
-					'CUSTOMER EMAIL', 		//1
-					'BUSINESS NAME', 		//2
-					'CITY',					//3
-					'STATE',				//4
-					'POSTAL CODE',			//5
-					'PHONE',				//6
-					'PLACED ON'				//7
-					);
+	$cusMailDataArr     = array( 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
+	$cusMailValueArr  	= array( ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
 
-	$cusData_arr = array(
-						$clientName,						//0
-						$orderDetail[0]['clientEmail'],		//1
-						$client[0][12],						//2
-						$cityName,							//3
-						$stateName,							//4
-						$client[0][29],						//5
-						$client[0][34],						//6
-						$addedOn							//7
-					);
-
-
-
-	
+	/*
 	// order details for admin and customer
 	$orddtls_arr = array(
 						'NAME', 		//0
@@ -295,12 +274,51 @@ if(isset($_SESSION[ORDERID])) {
 	// =========================================		SEND MAIL TO CLIENT		 =========================================
 	// ===================================================================================================================
 
-	// $fromMail       = SITE_EMAIL;
-	// $toMail         = $orderDetail[0]['clientEmail'];
-	// $toName         = $clientName;
+    $toMail  		= $customerEmail;
+	$toName   		= $customerFullName;
+	$subject        = "Guest Post Order Placed Successfully!";
+	$messageBody    = orderPlacedtoCustomerTemplate('#'.$orderId, $customerFName, $cusMailDataArr, $cusMailValueArr, $domainArr);
+	$invalidEmail 	= $MyError->invalidEmail($toMail);
 	
 
-	// $mailSended = customerOrderPlacedMail($fromMail, $toMail, $toName, $orddtls_arr, $orddata_arr, $txndtls_arr, $txndata_arr, $addedOn);
+    if(($toMail == '')||(mb_ereg("^ER",$invalidEmail))){
+        $mailMsg = 'Receiver Email Address May Invalid or Not Found!';
+	}elseif($toName == ''){
+        $mailMsg = 'Receiver Name Not Found!';
+    }else{
+
+        try {
+            $PHPMailer->IsSMTP();
+            $PHPMailer->IsHTML(true);
+			// $PHPMailer->Encoding = 'quoted-printable';
+            $PHPMailer->Host        = gethostname();
+            $PHPMailer->SMTPAuth    = true;
+            $PHPMailer->Username    = SITE_EMAIL;
+            $PHPMailer->Password    = SITE_EMAIL_P;
+            $PHPMailer->From        = SITE_EMAIL;
+            $PHPMailer->FromName    = COMPANY_FULL_NAME;
+            $PHPMailer->Sender      = SITE_EMAIL;
+            $PHPMailer->addAddress($toMail, $toName);
+            $PHPMailer->Subject     = $subject;
+            $PHPMailer->Body        = $messageBody;
+            // $PHPMailer->send();
+
+			// exit;
+
+            if ($PHPMailer->send()) {
+                $mailMsg = 'Message has been sent';
+            }else {
+                $mailMsg = "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+            }
+            $PHPMailer->ClearAllRecipients();
+
+
+        } catch (Exception $e) {
+            $mailMsg = "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+        }
+    }
+
+
 
 	// ================================== MAIL SENDED TO CLIENT ================================== 
 	
@@ -363,8 +381,8 @@ if(isset($_SESSION[ORDERID])) {
             <div class="col-11 col-md-10">
                 <div class="mt-4 p-5 bg-lighter-blue text-white rounded">
                     <h2 class="text-primary">Thanking you for your order.</h2>
-                    <p><i class="fas fa-check-circle fs-5 text-primary"></i> We have received your order. You will
-                        receive email shortly in your account.</p>
+                    <p><i class="fas fa-check-circle fs-5 text-primary"></i> We have received your order. 
+						<?= $mailMsg != '' ? $mailMsg : ''; ?> </p>
                     <p><i class="fas fa-exclamation-circle fs-5 text-warning"></i> If you find any difficulty, drop an
                         email to <?php echo SITE_EMAIL ?></p>
                     <?php

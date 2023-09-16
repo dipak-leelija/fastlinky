@@ -118,7 +118,11 @@ $orUpdates = $Notifications->allNotifications($cusId);
 
                                 <?php 
                                 if (count($orUpdates) > 0) {
-                                    foreach ($orUpdates as $update) { ?>
+                                    foreach ($orUpdates as $update) {
+                                        
+                                        $notificationDate = $DateUtil->timeZoneConvert($update['added_on']);
+
+                                ?>
                                 <!-- Notification start  -->
                                 <div class="notification-main-division my-2 item_order_bx coloring-cd">
                                     <div class="row">
@@ -145,9 +149,9 @@ $orUpdates = $Notifications->allNotifications($cusId);
                                         <div
                                             class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-sm-flex flex-column align-items-end d-none m-auto">
                                             <a class="btn btn-sm btn-primary"
-                                                href="<?= $update['reference_link'];?>">View</a>
+                                                href="<?=trim($update['reference_link']);?>">View</a>
                                             <br>
-                                            <small class="notify-time"><?= $DateUtil->dateTimeNumber($update['added_on']);?></small>
+                                            <small class="notify-time"><?= $DateUtil->dateTimeNumber($notificationDate);?></small>
                                         </div>
                                     </div>
                                 </div>
@@ -292,6 +296,7 @@ $orUpdates = $Notifications->allNotifications($cusId);
     <!-- alax custom library  -->
     <script src="js/ajax.js"></script>
     <script src="js/customerSwitchMode.js"></script>
+    <script src="js/script.js"></script>
 
 
 

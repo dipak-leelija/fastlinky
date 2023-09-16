@@ -1,11 +1,12 @@
 <?php
-require_once("../includes/constant.inc.php");
 session_start();
-include_once('checkSession.php');
-require_once("../_config/dbconnect.php");
+require_once  dirname(__DIR__)."/includes/constant.inc.php";
+include_once ADM_DIR.'/checkSession.php';
+require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/classes/encrypt.inc.php";
 
-require_once("../classes/adminLogin.class.php"); 
-require_once("../classes/utility.class.php");
+require_once ROOT_DIR."/classes/adminLogin.class.php"; 
+require_once ROOT_DIR."/classes/utility.class.php";
 
 /* INSTANTIATING CLASSES */
 $adminLogin 	= new adminLogin();
@@ -16,51 +17,41 @@ $utility		= new Utility();
 //declare variables
 $typeM		    = $utility->returnGetVar('typeM','');
 //admin detail
-$userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
 
-if(isset($_GET['id']))
-{
-	$admin_user = $_GET['id'];
-	
+if(isset($_GET['user'])){
+	$userName = url_dec($_GET['user']);	
 }
 
 
-if(isset($_POST['btnEditPass']))
-{
+if(isset($_POST['btnEditPass'])){
+
 	$password 	= $_POST['txtPass'];
 	$cnfPass  	= $_POST['txtCnfPass'];
 	
 	//defining error variables
 	$action		= 'edit_pass';
 	$url		= $_SERVER['PHP_SELF'];
-	$id			= $admin_user;
+	$id			= $userName;
 	$id_var		= 'id';
 	$anchor		= 'editPass';
 	$typeM		= 'ERROR';
 	
 	
-	if(strlen($password) < 6)
-	{
+	if(strlen($password) < 6){
 		echo "<script>alert('Password minimum 6 chars');</script>";
-	}
-	elseif($password != $cnfPass )
-	{
+	}elseif($password != $cnfPass ){
 		echo "<script>alert('Password Not Matched');</script>";
-	}
-	else
-	{
+	}else{
 		//change the password
-		$update = $adminLogin->changePassword($admin_user, $password);
+		$update = $adminLogin->changePassword($userName, $password);
 	
             echo "<script>alert('Change User Password');</script>";
-
-		//forward
-		// $uMesg->showSuccessT('success', $id, 'id', $_SERVER['PHP_SELF'], SUADM004, 'SUCCESS');
 	}
   
 }
 
-$userDetail = $adminLogin->getUserDetail($_GET['id']);
+$userDetail 		=  $adminLogin->getUserDetail($userName);
+
 ?>
 
 <!DOCTYPE html>
@@ -95,13 +86,13 @@ $userDetail = $adminLogin->getUserDetail($_GET['id']);
                     </div>
                     <div class="row">
 
-                        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']."?id=".$_GET['id'].""?>"
+                        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']."?id=".$userName.""?>"
                             class="row ml-3 m-3 bg-white text-dark rounded needs-validation" enctype="multipart/form-data" novalidate>
 
                             <div class="col-12 m-3">
                                 <label for="inputAddress" class="form-label">User Name</label>
                                 <input type="text" name="niche_name" class="form-control w-75" id="inputAddress"
-                                    value="<?php echo $_GET['id']; ?>" readonly>
+                                    value="<?=$userName?>" readonly>
                             </div>
 
                             <div class="col-12 m-3">

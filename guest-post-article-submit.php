@@ -144,7 +144,8 @@ if ($showOrder == false) {
     $orderStatusCode        = $showOrder['order_status'];
     $orderStatusName             = $OrderStatus->getOrdStatName($orderStatusCode);
 
-    $orderDate              = $DateUtil->dateTimeText($showOrder['added_on']);
+    $orderDate              = $DateUtil->timeZoneConvert($showOrder['added_on']);
+    $orderDate              = $DateUtil->dateTimeText($orderDate);
 
 
 
@@ -163,8 +164,9 @@ if ($ordTxn != false) {
 
     if ($ordTxn['transection_status'] != null) {
         $txnStatus = $ordTxn['transection_status'];
+        $txnStatusName = $OrderStatus->getOrdStatName($txnStatus);
     }
-
+    
     if ($ordTxn['item_amount'] != null) {
         $itemAmount = $ordTxn['item_amount'];
     }
@@ -184,9 +186,8 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
     <div id="home">
         <!-- header -->
         <?php  require_once "partials/navbar.php" ?>
-        <?php //include 'header-user-profile.php'?>
+        <!-- header end -->
 
-        <!-- //header -->
         <!-- banner -->
         <div class="edit_profile">
             <div class="container-fluid">
@@ -243,7 +244,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                                 
                                                 if ($orderStatusCode != INCOMPLETECODE) {
                                                 ?>
-                                                <li> Item Amount : <?= CURRENCY.$itemAmount ?></li>
+                                                <li> Item Price : <?= CURRENCY.$itemAmount ?></li>
                                                 <li> Paid Amount : <?= CURRENCY.$paidAmount ?></li>
                                                 <li> Transection Mode : <?= $txnMode; ?></li>
                                                 <?php
@@ -252,7 +253,7 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
 
                                                 <?php
                                                 if ($txnStatus  != null) {
-                                                    echo '<li> Payment Status : '.$txnStatus.'</li>';
+                                                    echo '<li> Payment Status : '.$txnStatusName.'</li>';
                                                 }
                                                 ?>
                                                 <li> Date : <?= $orderDate; ?></li>
@@ -325,23 +326,28 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
 
                                 <?php if( $orderStatusCode == COMPLETEDCODE):
                                         $ordUpdate = $ContentOrder->lastUpdate($orderId);
-                                        $updateDate = date('l jS \of F Y h:i:s A', strtotime($ordUpdate['updated_on']));
+                                        
+                                        $updateZoneDate              = $DateUtil->timeZoneConvert($ordUpdate['updated_on']);
+                                        $updateDate                  = $DateUtil->dateTimeText($updateZoneDate);
+
                                         echo '
                                         <div class="text-center">
                                             <p class="text-center fw-bold my-3">Order Completed on '.$updateDate.'</p>';
 
-                                            $dueDate = date_create($ordUpdate['updated_on']);
-                                            date_add($dueDate, date_interval_create_from_date_string("2 days"));
-                                            $dueDate = date_format($dueDate, "l jS \of F Y h:i:s A");
+                                            $updateDate = date("Y-m-d h:i", strtotime($updateZoneDate));
+                                            $days = 2;
+                                            $dueDate = strtotime("+".$days."days", strtotime($updateDate));
+                                            $dueDate = date("Y-m-d h:ia", $dueDate);
+                                            $dueDate = $DateUtil->dateTimeText($dueDate);
+                                            
 
-
-                                            if ($ordTxn['transection_status'] == PENDING) {
+                                            if ($ordTxn['transection_status'] == PENDINGCODE) {
                                             echo '<small class="d-block text-capitalize text-danger fw-bold my-1">Pay Before
                                                 '.$dueDate.'</small>';
                                             }
 
 
-                                            if ($ordTxn['transection_status'] == PENDING) {
+                                            if ($ordTxn['transection_status'] == PENDINGCODE) {
                                             echo '<a class="btn btn-primary text-center"
                                                 href="payments/paylater-pay-now.php?order='.base64_encode($orderId).'">Pay
                                                 Now</a>';
@@ -564,9 +570,6 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
         <script src="plugins/jquery-3.6.0.min.js"></script>
         <script src="plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
         <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
-        <!-- <script src="plugins/data-table/simple-datatables.js"></script> -->
-        <!-- <script src="plugins/tinymce/tinymce.js"></script> -->
-        <!-- <script src="plugins/main.js"></script> -->
         <script src="js/customerSwitchMode.js"></script>
         <script src="js/script.js"></script>
         <script src="js/ajax.js" type="text/javascript"></script>

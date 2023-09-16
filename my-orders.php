@@ -135,7 +135,7 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                                 $ordNiche   = $eachPackOrder['niche'];
                                                 $packOrdStatus = $eachPackOrder['order_status'];
                                                 $packPayType = $eachPackOrder['payment_type'];
-                                                $packOrdDate = $eachPackOrder['date'];
+                                                $packOrdDate = $DateUtil->timeZoneConvert($eachPackOrder['date']);
 
                                                 $ordPack    = $GPPackage->packDetailsById($eachPackOrder['package_id']);
                                                 $packCat    = $GPPackage->packCatById($ordPack['category_id']);
@@ -215,7 +215,12 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                                 <td><span class="badge <?= $statusName;?>"><?= $statusName;?></span>
                                                 </td>
                                                 <td><?= $transectionMode;?></td>
-                                                <td><?= $DateUtil->printDate2($order['added_on']); ?></td>
+                                                <td>
+                                                    <?php
+                                                    $gpOrddate = $DateUtil->timeZoneConvert($order['added_on']);
+                                                    echo $DateUtil->printDate2($gpOrddate);
+                                                    ?>
+                                                </td>
                                             </tr>
                                             <?php
                                                 $showItems++;

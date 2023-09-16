@@ -1,12 +1,12 @@
 <?php
-require_once "../../includes/constant.inc.php";
 session_start();
+require_once dirname(dirname(__DIR__))."/includes/constant.inc.php";
 
-require_once "../../_config/dbconnect.php";
+require_once ADM_DIR."/_config/dbconnect.php";
 
-require_once "../../classes/date.class.php"; 
-require_once "../../classes/utility.class.php"; 
-require_once "../../classes/blog_mst.class.php";
+require_once ADM_DIR."/classes/date.class.php"; 
+require_once ADM_DIR."/classes/utility.class.php"; 
+require_once ADM_DIR."/classes/blog_mst.class.php";
 
 
 /* INSTANTIATING CLASSES */

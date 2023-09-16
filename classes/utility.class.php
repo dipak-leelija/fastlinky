@@ -4221,6 +4221,79 @@ function word_teaser_end($string, $count){
 	}
 
 
+	/*****************************************************************************
+	*																			 *
+	*								URL MANIPULATION							 *
+	*																			 *
+	*****************************************************************************/
+
+	function url_to_domain($url){
+		$pieces = parse_url($url);
+		$domain = isset($pieces['host']) ? $pieces['host'] : $pieces['path'];
+		if (preg_match('/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i', $domain, $regs)) {
+			return trim($regs['domain']);
+		}
+		return false;
+	}
+
+
+
+	/*****************************************************************************
+	*																			 *
+	*								URL MANIPULATION							 *
+	*																			 *
+	*****************************************************************************/
+
+	// PHP code to extract IP
+	function getVisIpAddr() {
+		
+		if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+			return $_SERVER['HTTP_CLIENT_IP'];
+		}
+		else if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+			return $_SERVER['HTTP_X_FORWARDED_FOR'];
+		}
+		else {
+			return $_SERVER['REMOTE_ADDR'];
+		}
+	}
+
+
+	/*****************************************************************************
+	*																			 *
+	*								DATABASE UPDATES							 *
+	*																			 *
+	*****************************************************************************/
+
+	function getMysqlTimeZone() {
+		
+		try {
+
+			$sql = 'SELECT @@global.time_zone as Time_Zone';
+			$query   = $this->conn->query($sql);
+			while($row  = $query->fetch_object()){
+				$res	= $row->Time_Zone;
+			}
+
+			echo $res;
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	function setMysqlTimeZone($zone) {
+		
+		try {
+
+			$sql = "SET GLOBAL time_zone = '$zone'";
+			$query   = $this->conn->query($sql);
+			var_dump($query);
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
+	}
 
 }//eoc
 ?>

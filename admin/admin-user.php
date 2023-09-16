@@ -4,6 +4,7 @@ session_start();
 $page = "adminAdminUser";
 include_once ADM_DIR .'checkSession.php';
 require_once ROOT_DIR ."/_config/dbconnect.php";
+require_once ROOT_DIR."/classes/encrypt.inc.php";
 
 require_once ROOT_DIR . "/classes/adminLogin.class.php";
 require_once ROOT_DIR . "/classes/date.class.php";
@@ -113,7 +114,7 @@ $adminData	   = $adminLogin->ShowUserData();
                                                 <?php
                                                 $i=1;                                             
                                                 foreach($adminData as $row){
-                                                $id = $row['username'];
+                                                $id = url_enc($row['username']);
                                                 ?>
 
                                                 <tr >
@@ -134,14 +135,14 @@ $adminData	   = $adminLogin->ShowUserData();
                                                     </td>
                                                     <td>
                                                         <a class="text-decoration-none mx-1"
-                                                            href="admin_edit.php?action=edit_user&id=<?php echo $id; ?>">
+                                                            href="admin-profile.php?user=<?=$id?>">
                                                             <i class="fa-regular fa-eye"></i>
                                                         </a>
                                                         <a class="text-decoration-none mx-1"
-                                                            href="admin_password.php?action=edit_pass&id=<?php echo $id; ?>">
+                                                            href="admin_password.php?user=<?=$id?>">
                                                             <i class="fa-regular fa-pen-to-square mx-1"></i>
                                                         </a>
-                                                        <a href='admin_delete.php?id=<?php    echo $id;  ?>'
+                                                        <a href='admin_delete.php?id=<?=$id?>'
                                                             class="text-decoration-none mx-1">
                                                             <i class="fa-regular fa-trash-can-xmark text-danger mx-1"
                                                                 onclick="return deleteUser();"></i>

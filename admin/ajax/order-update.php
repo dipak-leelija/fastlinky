@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once "../../includes/constant.inc.php";
+require_once dirname(dirname(__DIR__))."/includes/constant.inc.php";
 require_once ROOT_DIR."/includes/order-constant.inc.php";
 require_once ROOT_DIR."/includes/content.inc.php";
 
-include_once('checkSession.php');
+include_once ADM_DIR."/checkSession.php";
 
 
 require_once ROOT_DIR."/_config/dbconnect.php";

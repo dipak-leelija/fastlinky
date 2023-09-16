@@ -4,7 +4,7 @@
 	define('PAYPAL_LIVE_ID',				"AVfNiFu9M4brh84SlYmeHtHJCtdjW1CUmWl5T0wLsU2JOm6VNB6pCRcxi8zKxBbCO9p0t54pPtF65Tim"); //
 	define('PAYPAL_SANDBOX_ID',				"Ad-k2bukRixHHQ6YLq08lkeobaQU8EJtuiiW6vuuthWJIOdqEpUlpz73mKZBxU_pvTPy9q086XgtFw2d"); //
 
-	define('PAYPAL_CLIENT_ID',				PAYPAL_LIVE_ID);	// get it from paypal and Choose from above 
+	define('PAYPAL_CLIENT_ID',				PAYPAL_SANDBOX_ID);	// get it from paypal and Choose from above 
 	define('PAYPAL_SITE_URL',       		URL); 				// URL is defined in constant.inc.php in includes folder 			 	 
 	define('PAYPAL_IMAGE_URL',     			"");
 	define('PAYPAL_SUCCESS_URL',    		PAYPAL_SITE_URL."/payments/paypal-payment-response.php");

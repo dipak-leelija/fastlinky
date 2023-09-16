@@ -10,6 +10,9 @@
 .bg_mustard{
   background: var(--mustard) !important;
 }
+.w-10{
+  width: 10% !important;
+}
 /*
  * Container style
  */

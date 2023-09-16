@@ -61,8 +61,8 @@
             <div class="collapse  <?php if($page == "adminBlogMaster" || $page == "adminBlogNiches" || $page == "adminNicheAdd" || $page == "adminNicheEdit" || $page == "adminBlogAdd" || $page == "adminBlogEdit"){echo "show";} ?>"
                 id="blogs">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="blog-master.php">Pages</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="blog-niche.php">Faqs</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="blog-master.php">Blogs</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="blog-niche.php">Niche</a></li>
                 </ul>
             </div>
         </li>
@@ -152,7 +152,7 @@
             <div class="collapse <?php if($page == "adminAdminEdit" || $page == "adminAddUser" || $page == "adminAdminUser"){echo "show";} ?>"
                 id="sitesetup">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="admin_user.php">Admin Users</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="admin-user.php">Admin Users</a></li>
                     <li class="nav-item"> <a class="nav-link" href="database.php">Database backup</a></li>
                 </ul>
             </div>

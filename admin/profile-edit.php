@@ -1,9 +1,10 @@
 <?php 
-require_once dirname(__DIR__) . "/includes/constant.inc.php";
 session_start();
+require_once dirname(__DIR__) . "/includes/constant.inc.php";
 
 require_once ADM_DIR  . "checkSession.php";
 require_once ROOT_DIR . "/_config/dbconnect.php";
+require_once ROOT_DIR . "/classes/encrypt.inc.php";
 require_once ROOT_DIR . "/classes/adminLogin.class.php"; 
 require_once ROOT_DIR . "/classes/utility.class.php";
 require_once ROOT_DIR . "/classes/utilityImage.class.php";
@@ -18,7 +19,14 @@ $uImg 			= new ImageUtility();
 //declare variables
 $typeM		    = $utility->returnGetVar('typeM','');
 //admin detail
-$userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
+
+if (isset($_GET['user'])) {
+    $userName = url_dec($_GET['user']);
+}else {
+    $userName = $_SESSION[ADM_SESS];
+}
+
+$userDetails 		=  $adminLogin->getUserDetail($userName);
 
 ?>
 
@@ -120,22 +128,22 @@ $userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
                                         <div class="col-12">
                                             <div class="d-flex justify-content-center align-items-center">
                                                 <?php
-                                            if ($userData[5] != null) {
-                                                $img = '../images/admin/user/'.$userData[5];
+                                            if ($userDetails[5] != null) {
+                                                $img = '../images/admin/user/'.$userDetails[5];
                                             }
                                             ?>
                                                 <div class="form-input">
                                                     <div class="preview">
                                                         <?php
-                                                        if ($userData[5] != null) {
+                                                        if ($userDetails[5] != null) {
                                                             echo 
-                                                            '<img src="../images/admin/user/'.$userData[5].'" id="file-ip-1-preview" style="display: block;">'; 
+                                                            '<img src="'.URL.'/images/admin/user/'.$userDetails[5].'" id="file-ip-1-preview" style="display: block;">'; 
                                                         }else {
                                                             echo  '<img id="file-ip-1-preview">';
                                                         }
                                                         ?>
                                                     </div>
-                                                    <label for="file-ip-1">Upload Image</label>
+                                                    <label for="file-ip-1">CHange Image</label>
                                                     <input type="file" id="file-ip-1" name="profile-image"
                                                         accept="image/*" onchange="showPreview(event);">
 
@@ -170,23 +178,23 @@ $userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
                                         <div class="col-12 col-md-6">
                                             <label for="fname" class="form-label">First Name</label>
                                             <input type="text" name="fname" class="form-control" id="fname"
-                                                value="<?php echo $userData[0]; ?>">
+                                                value="<?php echo $userDetails[0]; ?>">
                                         </div>
 
                                         <div class="col-12 col-md-6">
                                             <label for="lname" class="form-label">Last Name</label>
                                             <input type="text" name="lname" class="form-control"
-                                                value="<?php echo $userData[1]; ?>">
+                                                value="<?php echo $userDetails[1]; ?>">
                                         </div>
                                         <div class="col-12 mt-3">
                                             <label for="city" class="form-label">City</label>
                                             <input type="text" name="city" class="form-control"
-                                                value="<?php echo $userData[2]; ?>">
+                                                value="<?php echo $userDetails[2]; ?>">
                                         </div>
                                         <div class="col-12 mt-3">
                                             <label for="mail-id" class="form-label">Email</label>
                                             <input type="text" name="mail-id" class="form-control"
-                                                value="<?php echo $userData[4]; ?>">
+                                                value="<?php echo $userDetails[4]; ?>">
                                         </div>
 
                                         <div class="col-12 text-center mt-3">
@@ -228,6 +236,9 @@ $userData 		=  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
                     </div>
                 </div>
                 <!-- content-wrapper ends -->
+                <!-- partial footer -->
+                <?php require_once ADM_DIR . 'partials/_footer.php'; ?>
+                <!-- partial footer end-->
             </div>
             <!-- main-panel ends -->
         </div>

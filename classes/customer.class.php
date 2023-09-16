@@ -866,7 +866,7 @@ class Customer extends Utility{
 			$sql2 = "SELECT * FROM customer C, customer_info CI, customer_address CD
 			WHERE C.customer_id = CI.customer_id
 				AND	C.customer_id = CD.customer_id
-				AND C.username = '$email'";
+				AND C.user_name = '$email'";
 
 			$query2 = $this->conn->query($sql2);
 			$rows2 = $query->num_rows;

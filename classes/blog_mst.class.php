@@ -39,7 +39,7 @@ class BlogMst extends DatabaseConnection{
 	*/
 	function addBlog($domain,$niche, $da, $pa, $cf, $tf, $gip, $mozr,$alexa_traffic,$organic_trafic, $follow, $internal,
 						$cost, $review_type, $issue, $issue_comment, $int_email, $ext_email, $ext_contact_name,$ext_cost, 
-						$ex_url, $domain_comments,$deliver_time,$created_by,$approved){
+						$ex_url, $domain_comments,$deliver_time,$created_by,$approved, $time = NOW){
 							
 		$domain				=	addslashes(trim($domain));
 		$niche				=	addslashes(trim($niche));
@@ -77,7 +77,7 @@ class BlogMst extends DatabaseConnection{
 						('$domain','$niche','$da','$pa','$cf',
 						'$tf', '$gip', '$mozr','$alexa_traffic','$organic_trafic', '$follow', '$internal','$cost'
 						,'$review_type', '$issue', '$issue_comment', '$int_email', '$ext_email','$ext_contact_name',
-						'$ext_cost', '$ex_url','$domain_comments','$deliver_time','$created_by',now(),'$updated_by',now(),'$approved')
+						'$ext_cost', '$ex_url','$domain_comments','$deliver_time','$created_by', '$time','$updated_by','$time','$approved')
 						";
 		
 	
@@ -123,7 +123,7 @@ class BlogMst extends DatabaseConnection{
 	*/
 	function editBlog($blog_id,$domain,$niche, $da, $pa, $cf, $tf, $gip, $mozr,$alexa_traffic,$organic_trafic, $follow, $internal,
 						$cost, $review_type, $issue, $issue_comment, $int_email, $ext_email, $ext_contact_name,$ext_cost, 
-						$ex_url, $domain_comments,$deliver_time,$updated_by){
+						$ex_url, $domain_comments,$deliver_time,$updated_by, $time = NOW){
 
 		$domain				=	addslashes(trim($domain));
 		$niche				=	addslashes(trim($niche));
@@ -152,31 +152,31 @@ class BlogMst extends DatabaseConnection{
 		
 		//statement
 		$sql	= "UPDATE blog_mst SET
-				  domain			='$domain',
-				  niche				='$niche',
-				  da				= '$da',
-				  pa 				='$pa',
-				  cf				='$cf',
-				  tf				='$tf',
-				  gip				='$gip',
-				  mozr				='$mozr',
-				  alexa_traffic		='$alexa_traffic',
-				  organic_trafic	='$organic_trafic',
-				  follow			='$follow',
-				  internal			='$internal',
-				  cost				='$cost',
-				  review_type		='$review_type',
-				  issue				='$issue',
-				  issue_comment		='$issue_comment',
-				  int_email			='$int_email',
-				  ext_email			='$ext_email',
-				  ext_contact_name	='$ext_contact_name',
-				  ext_cost			='$ext_cost',
-				  ex_url			='$ex_url',
-				  domain_comments	='$domain_comments',
-				  deliver_time		='$deliver_time',
-				  updated_on 		= now(),
-				  updated_by		='$updated_by'
+				  domain			= '$domain',
+				  niche				= '$niche',
+				  da				=  '$da',
+				  pa 				= '$pa',
+				  cf				= '$cf',
+				  tf				= '$tf',
+				  gip				= '$gip',
+				  mozr				= '$mozr',
+				  alexa_traffic		= '$alexa_traffic',
+				  organic_trafic	= '$organic_trafic',
+				  follow			= '$follow',
+				  internal			= '$internal',
+				  cost				= '$cost',
+				  review_type		= '$review_type',
+				  issue				= '$issue',
+				  issue_comment		= '$issue_comment',
+				  int_email			= '$int_email',
+				  ext_email			= '$ext_email',
+				  ext_contact_name	= '$ext_contact_name',
+				  ext_cost			= '$ext_cost',
+				  ex_url			= '$ex_url',
+				  domain_comments	= '$domain_comments',
+				  deliver_time		= '$deliver_time',
+				  updated_on 		= '$time',
+				  updated_by		= '$updated_by'
 				  WHERE 
 				  blog_id 			= '$blog_id'
 				  ";
@@ -199,7 +199,7 @@ class BlogMst extends DatabaseConnection{
 	
 	
 	//Blog Niche edit
-	function editBlogMstNiche($blog_id, $niche, $updated_by){
+	function editBlogMstNiche($blog_id, $niche, $updated_by, $time = NOW){
 
 		$blog_id							=	addslashes(trim($blog_id));
 		$niche								=	addslashes(trim($niche));
@@ -208,8 +208,8 @@ class BlogMst extends DatabaseConnection{
 		//statement
 		$sql	= "UPDATE blog_mst SET
 				  niche							= '$niche',
-				  updated_on 					= now(),
-				  updated_by					='$updated_by'
+				  updated_on 					= '$time',
+				  updated_by					= '$updated_by'
 				  WHERE 
 				  blog_id 						= '$blog_id'
 				  ";
@@ -231,7 +231,7 @@ class BlogMst extends DatabaseConnection{
 	
 
 	//Status updated
-	function updateStatus($blog_id, $approved, $updated_by){
+	function updateStatus($blog_id, $approved, $updated_by, $time = NOW){
 
 		$blog_id							=	addslashes(trim($blog_id));
 		$approved							=	addslashes(trim($approved));
@@ -241,7 +241,7 @@ class BlogMst extends DatabaseConnection{
 		$sql	= "UPDATE blog_mst 
 					SET 
 					approved   = '$approved',
-					updated_on = now(),
+					updated_on = '$time',
 					updated_by = '$updated_by' 
 					WHERE 
 					blog_id = '$blog_id'";
@@ -308,7 +308,9 @@ class BlogMst extends DatabaseConnection{
 					$result->approved,			//24
 					$result->alexa_traffic,		//25
 					$result->organic_trafic,	//26
-					$result->deliver_time		//27
+					$result->deliver_time,		//27
+					$result->grey_niche,		//28
+					$result->grey_niche_cost	//29
 					);
 		}
 		// print_r($data);exit;
@@ -495,7 +497,7 @@ class BlogMst extends DatabaseConnection{
 	*	@return int
 	*/
 	function addBlogAcDetails($blog_id, $user_account_type, $user_account_id,$user_account_pass,$user_account_email
-	,$user_account_status,$user_account_comments,$added_by)
+	,$user_account_status,$user_account_comments,$added_by, $time = NOW)
 	{
 		$blog_id							=	addslashes(trim($blog_id));
 		$user_account_type					=	addslashes(trim($user_account_type));
@@ -516,7 +518,7 @@ class BlogMst extends DatabaseConnection{
 						user_account_comments,added_on,added_by,modified_on,modified_by)
 						VALUES
 						('$blog_id','$user_account_type','$user_account_id','$x_password',
-						'$user_account_email','$user_account_status','$user_account_comments',now(),'$added_by',now(),'$modified_by')
+						'$user_account_email','$user_account_status','$user_account_comments','$time','$added_by','$time','$modified_by')
 						";
 		
 		//execute query
@@ -607,7 +609,7 @@ class BlogMst extends DatabaseConnection{
 	
 	// blog account details update
 	function editBlogAcDetails($blog_accounts_id, $user_account_type, $user_account_id,$user_account_email
-	,$user_account_status,$user_account_comments,$modified_by)
+	,$user_account_status,$user_account_comments,$modified_by, $time = NOW)
 						
 	{
 		$user_account_type					=	addslashes(trim($user_account_type));
@@ -625,7 +627,7 @@ class BlogMst extends DatabaseConnection{
 				  user_account_email 			='$user_account_email',
 				  user_account_status			='$user_account_status',
 				  user_account_comments			='$user_account_comments',
-				  modified_on 					= now(),
+				  modified_on 					= '$time',
 				  modified_by					='$modified_by'
 				  WHERE 
 				  blog_accounts_id 			= '$blog_accounts_id'
@@ -715,7 +717,7 @@ class BlogMst extends DatabaseConnection{
 
 
 
-	function addNiche($niche_name, $seo_url, $added_by)
+	function addNiche($niche_name, $seo_url, $added_by, $time = NOW)
 	
 		{
 		$niche_name				=	addslashes(trim($niche_name));
@@ -726,7 +728,7 @@ class BlogMst extends DatabaseConnection{
 		$sql	=   "INSERT INTO niche_master
 			(niche_name,seo_url,added_by,added_on)
 			VALUES
-			('$niche_name','$seo_url','$added_by', now())
+			('$niche_name','$seo_url','$added_by', '$time')
 			";
 		$query = $this->conn->query($sql);
 		$blog_id		= $this->conn->insert_id;
@@ -736,7 +738,7 @@ class BlogMst extends DatabaseConnection{
 
 
 	//niche updated
-	function updateNiche($niche_name, $seo_url, $modified_on, $added_by, $id){
+	function updateNiche($niche_name, $seo_url, $modified_on, $added_by, $id, $time = NOW){
 
 		$id							=	addslashes(trim($id));
 		$niche_name					=	addslashes(trim($niche_name));
@@ -749,7 +751,7 @@ class BlogMst extends DatabaseConnection{
 					SET 
 					niche_name    = '$niche_name',
 					seo_url       = '$seo_url',
-					modified_on   = now(),
+					modified_on   = '$time',
 					added_by      = '$added_by' 
 					WHERE 
 					niche_id      = '$id'";
@@ -879,13 +881,13 @@ class BlogMst extends DatabaseConnection{
 	*
 	*	@return int
 	*/
-	function addBlogFavList($customer_id, $blog_id)
+	function addBlogFavList($customer_id, $blog_id, $time = NOW)
 	{
 		$customer_id					=	addslashes(trim($customer_id));
 		$blog_id						=	addslashes(trim($blog_id));
 		// echo $customer_id.'-'.$blog_id; 
 		//satement to insert in product table
-		$sql	=   "INSERT INTO blog_fav_list (customer_id,blog_id,added_on) VALUES ('$customer_id','$blog_id', now())";
+		$sql	=   "INSERT INTO blog_fav_list (customer_id,blog_id,added_on) VALUES ('$customer_id','$blog_id', '$time')";
 
 		//execute query
 		$query = $this->conn->query($sql);

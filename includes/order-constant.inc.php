@@ -69,9 +69,13 @@ define("PAYLATER",                          'PayLater');
 define("SUMMARYDOMAIN",                     'SUMMARYDOMAIN');
 define("ORDERDOMAIN",                       'ORDERDOMAIN');
 
-define("SUMMARYSITECOST",                   'SUMMARYSITECOST');
-define("ORDERSITECOST",                     'ORDERSITECOST');
-define("ORDERID",                           'ORDERID');
+const SUMMARYSITECOST                   = 'SUMMARYSITECOST';
+const SUMMARYGREYNICHECOST              = 'SUMMARYGREYNICHECOST';
+const ORDERSITECOST                     = 'ORDERSITECOST';
+const ORDERID                           = 'ORDERID';
+
+const REGULARCONTENT                    = 'Regular Niche';
+const GREYNICHECONTENT                  = 'Grey Niche';
 
 define("ORD_PLCD_M",                          "Thank you for placing your order! We have successfully received it and will begin processing it promptly. Stay tuned!");
 

@@ -3125,7 +3125,7 @@ form.pack-form textarea {
     font-size: 14px;
 }
 
-.siteName p {
+.siteName{
     font-size: 20px;
     font-weight: 700;
 }
@@ -3593,8 +3593,7 @@ h2,
 h3,
 h4,
 h5,
-span,
-strong {
+{
     text-transform: capitalize !important;
 }
 

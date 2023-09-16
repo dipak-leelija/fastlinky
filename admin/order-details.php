@@ -122,7 +122,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
     if ($ordTxn != false) {
         $transectionId  = $ordTxn['transection_id'];
         $paymentMode    = $ordTxn['transection_mode'];
-        $paymentStatus  = $ordTxn['transection_status'];
+        $paymentStatus  = $OrderStatus->getOrdStatName($ordTxn['transection_status']);
         $itemAmount     = $ordTxn['item_amount'];
         $paidAmount     = $ordTxn['paid_amount'];
         $paymentTime    = $ordTxn['updated_on'];
@@ -150,6 +150,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
     //blog creator / seller
     $seller     = $customer->getCustomerByemail($item['created_by']);
+    // print_r($seller);exit;
 
     //customer / buyer
     $buyer      = $customer->getCustomerData($customerId);
@@ -432,6 +433,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                 <div>
                                                     <h5 class="pkage-title border-bottom border-primary py-2">
                                                         Seller Details:</h5>
+                                                        <?php if (!empty($seller)): ?>
                                                     <table class="ordered-details-table-css ">
                                                         <tr>
                                                             <td>Customer Name</td>
@@ -531,6 +533,12 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                             </td>
                                                         </tr>
                                                     </table>
+                                                    <?php else: ?>
+                                                        <div class="text-center text-primary p-4">
+                                                            <h5><i class="fa-regular fa-store"></i><strong> This item is sold by <?= COMPANY_S ?></strong></h5>
+                                                        </div>
+                                                    <?php endif; ?>
+
                                                 </div>
                                             </div>
                                             <!-- seller details end  -->
@@ -779,7 +787,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                                 </div>
                                                 <div class="text-wrap mb-2">
                                                     <input type="text" class="form-control" id="target-url"
-                                                        value="<?= $contentLink['reference_url1']; ?>">
+                                                        value="<?= $contentLink['reference_url2']; ?>">
                                                     <div id="copyTargetUrl" class="clipboard icon">
                                                     </div>
                                                 </div>

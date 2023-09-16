@@ -1,7 +1,7 @@
 <?php
-require_once "../../includes/constant.inc.php";
-require_once "../../_config/dbconnect.php";
-require_once "../../classes/backup.class.php";
+require_once dirname(dirname(__DIR__))."/includes/constant.inc.php";
+require_once ROOT_DIR."/_config/dbconnect.php";
+require_once ROOT_DIR."/classes/backup.class.php";
 $Backup = new Backup();
 
 print_r($_POST);

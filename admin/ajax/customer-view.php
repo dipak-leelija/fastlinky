@@ -1,27 +1,26 @@
 <?php 
-require_once "../../includes/constant.inc.php";
 session_start();
-include_once('checkSession.php');
-// include_once('../_config/connect.php');
-require_once "../../_config/dbconnect.php";
+require_once dirname(dirname(__DIR__))."/includes/constant.inc.php";
+include_once ADM_DIR.'/checkSession.php';
+require_once ROOT_DIR."/_config/dbconnect.php";
 
-require_once("../../includes/user.inc.php");
-require_once('../../classes/encrypt.inc.php');
+require_once ROOT_DIR."/includes/user.inc.php";
+require_once ROOT_DIR."/classes/encrypt.inc.php";
 
-require_once("../../classes/adminLogin.class.php"); 
-require_once("../../classes/date.class.php");  
-require_once("../../classes/error.class.php");  
-require_once("../../classes/customer.class.php"); 
-require_once("../../classes/location.class.php"); 
-require_once("../../classes/subscriber.class.php");
-require_once("../../classes/pagination.class.php");
-require_once("../../classes/search.class.php");
+require_once ROOT_DIR."/classes/adminLogin.class.php"; 
+require_once ROOT_DIR."/classes/date.class.php";  
+require_once ROOT_DIR."/classes/error.class.php";  
+require_once ROOT_DIR."/classes/customer.class.php"; 
+require_once ROOT_DIR."/classes/location.class.php"; 
+require_once ROOT_DIR."/classes/subscriber.class.php";
+require_once ROOT_DIR."/classes/pagination.class.php";
+require_once ROOT_DIR."/classes/search.class.php";
 
-require_once("../../classes/utility.class.php"); 
-require_once("../../classes/utilityMesg.class.php"); 
-require_once("../../classes/utilityImage.class.php");
-require_once("../../classes/utilityNum.class.php");
-require_once("../../classes/utilityStr.class.php");
+require_once ROOT_DIR."/classes/utility.class.php"; 
+require_once ROOT_DIR."/classes/utilityMesg.class.php"; 
+require_once ROOT_DIR."/classes/utilityImage.class.php";
+require_once ROOT_DIR."/classes/utilityNum.class.php";
+require_once ROOT_DIR."/classes/utilityStr.class.php";
 
 /* INSTANTIATING CLASSES */
 $adminLogin 	= new adminLogin();

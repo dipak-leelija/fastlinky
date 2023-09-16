@@ -71,7 +71,10 @@ $blogsDtls	   = $blogMst->ShowBlogData();
                                     </div>
 
                                     <div class="table-responsive" id="table">
-
+                                        <div class="container text-center text-primary p-4">
+                                            <img class="w-10 p-4"src="<?= IMG_PATH ?>preloader/loading-preloader.gif" alt="">
+                                            <h3>Loding List...</h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +103,7 @@ $blogsDtls	   = $blogMst->ShowBlogData();
     <script src="<?php echo ADM_URL; ?>/js/settings.js"></script>
     <script src="<?php echo ADM_URL; ?>/js/todolist.js"></script>
     <script src="<?php echo ADM_URL; ?>/js/fastlinky-admin.js"></script>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
     $(document).ready(function() {
@@ -174,8 +177,8 @@ $blogsDtls	   = $blogMst->ShowBlogData();
                         } else {
                             // $("success-message").slideUp();
                             Swal.fire(
-                                'failed!',
-                                'Item Can Not Deleted 😥.',
+                                'Failed! 😥',
+                                response,
                                 'error'
                             )
                         }

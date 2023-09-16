@@ -50,17 +50,27 @@ if($cusDtl[0][0] == 2){
 }
 
 //echo $cusId;exit;
-$blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
+// $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
 
-$wishListsingleData = $blogMst->showBlog($id);
+$item = $blogMst->showBlog($id);
+$sitename       = $item[0];
+$siteNiche      = $item[23];
+$blogPrice      = $item[9];
+$greyNiche      = $item[28];
+$greyNicheCost  = $item[29];
+$sellingPrice   = $item[16];
 
-$contentPlacementPrice = $wishListsingleData[9]+$wishListsingleData[16];
-$contetCreationPlacementPrice = CONTENTPRICE +  $contentPlacementPrice;
 
-$_SESSION[SUMMARYDOMAIN]     = $wishListsingleData[0];
-$_SESSION[SUMMARYSITECOST]      = $contentPlacementPrice;
-$_SESSION['ConetntCreationPlacementPrice']  = $contetCreationPlacementPrice;
 
+$_SESSION[SUMMARYDOMAIN]        = $sitename;
+$_SESSION[SUMMARYSITECOST]      = $sellingPrice;
+$_SESSION[SUMMARYGREYNICHECOST] = $greyNicheCost;
+
+// $contetCreationPlacementPrice                       = CONTENTPRICE +  $sellingPrice;
+$_SESSION['ConetntCreationPlacementPrice']           = CONTENTPRICE +  $sellingPrice;
+$_SESSION['GreyNicheConetntCreationPlacementPrice']  = CONTENTPRICE +  $greyNicheCost;
+$generallNicheWithContent                            = $_SESSION['ConetntCreationPlacementPrice'];
+$greyNicheWithContent                                = $_SESSION['GreyNicheConetntCreationPlacementPrice'];
 
 // Variable decleared to fetch content from session  
 $SESSclientContentTitle = '';
@@ -122,7 +132,7 @@ if (isset($_SESSION['content-data'])) {
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $wishListsingleData[0]; ?> - Order | <?php echo COMPANY_S; ?></title>
+    <title><?= $sitename; ?> - Order | <?php echo COMPANY_S; ?></title>
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
@@ -208,12 +218,23 @@ if (isset($_SESSION['content-data'])) {
                                 <div class="tab-pane fade show active" id="guest-post-tab-pane" role="tabpanel"
                                     aria-labelledby="guest-post-tab" tabindex="0">
 
-                                    <div class="siteName">
-                                        <p><?= $wishListsingleData[0];  ?></p>
+                                    <div class="d-md-flex d-block">
+                                        <p class="pe-4">Domain: <span class="siteName"><?= $sitename; ?></span></p>
+                                        <p class="pe-4">Niche: <span class="siteName"
+                                                id="nicheName"><?= $siteNiche ?></span>
+                                            <span class="siteName d-none"
+                                                id="GreyNicheName"><?= $greyNiche == 'Allowed' ?  'Grey Niche': ''; ?></span>
+                                        </p>
+                                        <p class="pe-4">Price: <span class="siteName"
+                                                id="sitePrice"><?= CURRENCY.$sellingPrice ?></span>
+                                            <span class="siteName d-none"
+                                                id="greyNichePrice"><?= CURRENCY.$greyNicheCost ?></span>
+                                        </p>
                                     </div>
-                                    <small><b><?= CURRENCY,$contentPlacementPrice;?></b> is the total cost for guest
-                                        post on
-                                        the selected site</small>
+
+                                    <div>
+                                        <p class="small">Estimated completion: <span class="deviveryDt">Approx 3 days after order confirmation <?= date('jS M Y',strtotime("+3 day"));?></span></p>
+                                    </div>
 
                                     <hr class="border-primary mb-2">
 
@@ -222,13 +243,39 @@ if (isset($_SESSION['content-data'])) {
                                         <form method="post" id="orderForm" name="contentPlacementForm"
                                             enctype="multipart/form-data">
 
+                                            <div class="form-group mt-3">
+                                                <small class="text-danger">**Casino, CBD, Cannabis and etc except Adult
+                                                    content</small>
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input shadow-none" type="checkbox"
+                                                        role="switch" id="niche" name="niche">
+                                                    <label class="form-check-label" for="niche">Are You Posting Grey
+                                                        Niche Content?</label>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- <div class="form-group"> -->
+                                            <!-- <label for="">Are You Posting Grey Niche Cintent?</label> -->
+
+                                            <!-- <label for="niche">
+                                                    <h5>Niche</h5>
+                                                </label>
+                                                <select name="niche" id="niche" class="form-control" required>
+                                                    <option value="" selected disabled>Select</option>
+                                                    <option value="<?= GREYNICHECONTENT ?>">Grey Niche Content</option>
+                                                    <option value="<?= REGULARCONTENT ?>"><?= $siteNiche ?> Niche Content</option>
+
+                                                </select> -->
+                                            <!-- </div> -->
+
                                             <div class="form-group">
                                                 <label for="clientContentTitle1">
                                                     <h5>Title</h5>
                                                 </label>
                                                 <input type="text" class="form-control"
                                                     placeholder="Enter the article title" name="clientContentTitle1"
-                                                    value="<?= $SESSclientContentTitle; ?>">
+                                                    value="<?= $SESSclientContentTitle != '' ? $SESSclientContentTitle : ''; ?>">
                                             </div>
 
                                             <!-- content upload section start -->
@@ -371,7 +418,8 @@ if (isset($_SESSION['content-data'])) {
                                         </form>
 
                                         <div class="d-flex justify-content-between py-3">
-                                            <button class="btn btn-secondary w-25">Cancel</button>
+                                            <button class="btn btn-secondary w-25"
+                                                onclick="history.back()">Back</button>
                                             <button class="btn btn-primary w-25"
                                                 onclick="gotoSummary()">Continue</button>
                                         </div>
@@ -383,15 +431,26 @@ if (isset($_SESSION['content-data'])) {
                                 <div class="tab-pane fade" id="guest-post-with-content-tab-pane" role="tabpanel"
                                     aria-labelledby="guest-post-with-content-tab" tabindex="0">
 
-                                    <div class="siteName">
-                                        <p><?= $wishListsingleData[0];  ?></p>
+                                    <!-- <div class="siteName">
+                                        <p><?= $sitename;  ?></p>
+                                    </div> -->
+                                    <!-- <small><b><?= CURRENCY,$contetCreationPlacementPrice;?></b> includes content
+                                        price</small> -->
+
+                                    <div class="d-md-flex d-block">
+                                        <p class="pe-4">Domain: <span class="siteName"><?= $sitename; ?></span></p>
+                                        <p class="pe-4">Niche:
+                                            <span class="siteName" id="nicheName2"><?= $siteNiche ?></span>
+                                            <span class="siteName d-none" id="GreyNicheName2"><?= $greyNiche == 'Allowed' ?  'Grey Niche': ''; ?></span>
+                                        </p>
+                                        <p class="pe-4">Price: 
+                                            <span class="siteName" id="sitePrice2"><?= CURRENCY.$generallNicheWithContent; ?></span>
+                                            <span class="siteName d-none" id="greyNichePrice2"><?= CURRENCY.$greyNicheWithContent ?></span>
+                                        </p>
                                     </div>
-                                    <small><b><?= CURRENCY,$contetCreationPlacementPrice;?></b> includes content
-                                        price</small>
+
                                     <div>
-                                        <p class="small">Estimated completion: <span class="deviveryDt">Approx 3 days
-                                                after order confirmation
-                                                <?= date('jS M Y',strtotime("+3 day"));?></span></p>
+                                        <p class="small">Estimated completion: <span class="deviveryDt">Approx 3 days after order confirmation <?= date('jS M Y',strtotime("+3 day"));?></span></p>
                                     </div>
 
                                     <hr class="border-primary mb-2">
@@ -401,6 +460,18 @@ if (isset($_SESSION['content-data'])) {
                                     <div class="contentCreationPlacement">
                                         <form method="post" action="cheakout/order-summary.php"
                                             name="contentCreationPlacementForm" id="orderForm2">
+
+
+                                            <div class="form-group mt-3">
+                                                <small class="text-danger">**Casino, CBD, Cannabis and etc except Adult
+                                                    content</small>
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input shadow-none" type="checkbox"
+                                                        role="switch" id="niche2" name="niche2">
+                                                    <label class="form-check-label" for="niche">Are You Posting Grey
+                                                        Niche Content?</label>
+                                                </div>
+                                            </div>
 
                                             <div class="form-group">
                                                 <label for="clientContentTitle2">
@@ -522,22 +593,86 @@ if (isset($_SESSION['content-data'])) {
 
 
     <script>
+    let nichecheck = document.getElementById('niche');
+    const changeNiche = () => {
+        let sitePrice = document.getElementById('sitePrice');
+        let nicheName = document.getElementById('nicheName');
+        let greyNichePrice = document.getElementById('greyNichePrice');
+        let GreyNicheName = document.getElementById('GreyNicheName');
+
+        if (nichecheck.checked) {
+            sitePrice.classList.add('d-none');
+            nicheName.classList.add('d-none');
+
+            GreyNicheName.classList.remove('d-none');
+            greyNichePrice.classList.remove('d-none');
+
+        } else {
+            sitePrice.classList.remove('d-none');
+            nicheName.classList.remove('d-none');
+
+            GreyNicheName.classList.add('d-none');
+            greyNichePrice.classList.add('d-none');
+
+        }
+    }
+
+    nichecheck.addEventListener('change', changeNiche);
+
+
+    let nichecheck2 = document.getElementById('niche2');
+    const changeNiche2 = () => {
+        let sitePrice = document.getElementById('sitePrice2');
+        let nicheName = document.getElementById('nicheName2');
+        let greyNichePrice = document.getElementById('greyNichePrice2');
+        let GreyNicheName = document.getElementById('GreyNicheName2');
+
+        if (nichecheck2.checked) {
+            // alert('Hi there');
+            sitePrice.classList.add('d-none');
+            nicheName.classList.add('d-none');
+
+            GreyNicheName.classList.remove('d-none');
+            greyNichePrice.classList.remove('d-none');
+
+        } else {
+            // alert('unchecked');
+            sitePrice.classList.remove('d-none');
+            nicheName.classList.remove('d-none');
+
+            GreyNicheName.classList.add('d-none');
+            greyNichePrice.classList.add('d-none');
+
+        }
+    }
+
+    nichecheck2.addEventListener('change', changeNiche2);
+
     const gotoSummary = () => {
 
         let orderForm = document.getElementById("orderForm");
         let orderName = document.getElementById("order-name");
         orderForm.action = "cheakout/order-summary.php";
         document.getElementById("order-name").value = "onlyPlacementWithFile";
-        
+
         /* Title validation start here */
-        let title = orderForm[0].value;
+        let niche = orderForm[0].value;
+        if (niche == '') {
+            alert(`Please Select Niche Type`);
+            return false;
+        }
+        /* ----------------------------------------------------------- */
+
+
+        /* Title validation start here */
+        let title = orderForm[1].value;
         if (title == '') {
             alert(`Please Write a post title`);
             return false;
         }
         /* ----------------------------------------------------------- */
-        
-        /* Content validation start here */  
+
+        /* Content validation start here */
         let contentFile = document.getElementsByName("content-file");
         let clientContent1 = document.getElementsByName("clientContent1");
         let existingFile = document.querySelector('.file-upload-image').src;
@@ -576,19 +711,19 @@ if (isset($_SESSION['content-data'])) {
 
 
         /* HyperLinks validation start here */
-        let clientAnchor = orderForm[4].value;
-        let clientURL = orderForm[5].value;
-        if (clientAnchor == '' || clientURL =='') {
+        let clientAnchor = orderForm[5].value;
+        let clientURL = orderForm[6].value;
+        if (clientAnchor == '' || clientURL == '') {
             alert(`Please Provide Client Anchor and URL!`);
             return false;
         }
 
-        let refAnc1 = orderForm[6].value;
-        let refURL1 = orderForm[7].value;
-        let refAnc2 = orderForm[8].value;
-        let refURL2 = orderForm[9].value;
+        let refAnc1 = orderForm[7].value;
+        let refURL1 = orderForm[8].value;
+        let refAnc2 = orderForm[9].value;
+        let refURL2 = orderForm[10].value;
         if (refAnc1 == "" && refURL1 == '' && refAnc2 == '' && refURL2 == '') {
-            alert(`Looks Like you have not provided any reference links yet, well you can do is later` );
+            alert(`Looks Like you have not provided any reference links yet, well you can do is later`);
         }
         /* ----------------------------------------------------------- */
 
@@ -608,13 +743,13 @@ if (isset($_SESSION['content-data'])) {
 
 
         /* Title validation start here */
-        let title = document.getElementsByName("clientContentTitle1")[0].value;
+        let title = document.getElementsByName("clientContentTitle2")[0].value;
         if (title == '') {
             alert(`Please Write a post title`);
             return false;
         }
         /* ----------------------------------------------------------- */
-        
+
 
         /* HyperLinks validation start here */
         let clientAnchor = document.getElementsByName("clientAnchorText2")[0].value;

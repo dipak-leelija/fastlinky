@@ -31,6 +31,7 @@ $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 $wishes     = $WishList->countWishlistByUser($cusId);
 
+
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
 $notifies           = $Notifications->allNotifications($cusId, 3);
@@ -47,6 +48,7 @@ $openGPOrdCount         = $PackageOrder->openGPOrders($cusId, PENDINGCODE, REJEC
 $totalOpenOrders    = $openGPOrdCount[0]+$openContOrdCount[0];
 $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
 
+$oldNotifications = $Notifications->delByDaysOldNotification(NOW, 7, $cusId);
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
@@ -247,7 +249,7 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                             <?php if ($packageOrderCount > 0 ) { ?>
 
                                             <div class="card table-responsive db_shadow border-0 p-2">
-                                                <h4 class="border-bottom border-2">Recent Guest Posts</h4>
+                                                <h4 class="border-bottom border-2">Recent Package Orders</h4>
                                                 <table class="table  table-hover">
                                                     <thead class="table-light">
                                                         <tr>
@@ -290,7 +292,7 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                                     class="text-center text-danger d-flex flex-column align-items-center p-5">
                                                     <i class="fa-light fa-clipboard fs-1"></i>
                                                     <span class="mt-n1 fs-6">No Recent Package Order</span>
-                                                    <a href="blogs-list" class="badge text-bg-primary mt-2">
+                                                    <a href="./customer-packages" class="badge text-bg-primary mt-2">
                                                         Order Now
                                                     </a>
                                                 </p>
@@ -314,7 +316,12 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                                 <div class="alert alert-primary db_shadow mb-2 px-2 py-1" role="alert">
                                                     <span class="d-flex justify-content-between">
                                                         <b><small><?= $eachNotify['title'] ?></small></b>
-                                                        <small><?= $DateUtil->dateTimeNumber($eachNotify['added_on']) ?></small>
+                                                        <small>
+                                                            <?php
+                                                            $notifyDate = $DateUtil->timeZoneConvert($eachNotify['added_on']);
+                                                            echo $DateUtil->dateTimeNumber($notifyDate);
+                                                            ?>
+                                                        </small>
                                                     </span>
                                                     <small><?= substr($eachNotify['message'], 0, 85); ?>..</small>
                                                 </div>
@@ -333,8 +340,7 @@ $totalPendingOrders = count($pendingPackOrd) + count($pendingContOrd);
                                         </a>
                                         <div class="col-lg-12 mt-5">
                                             <a href="./exclusive-guest-post.php">
-                                                <div class="card package-details-pricing-crd db_shadow pb-5">
-                                                    <h4> Exclusive Blogs </h4>
+                                                <div class="card package-details-pricing-crd db_shadow py-4">
                                                     <div class="m-auto p-5 bg-light text-primary rounded">
                                                         <h1>Coming Soon..</h1>
                                                         <p class="text-primary">Some Exclusive Guest Posting Sites are

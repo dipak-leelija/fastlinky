@@ -10,7 +10,7 @@ require_once ROOT_DIR . "/classes/date.class.php";
  
 require_once("../classes/error.class.php"); 
 require_once("../classes/customer.class.php"); 
-require_once("../classes/category.class.php");
+// require_once("../classes/category.class.php");
 require_once("../classes/search.class.php");
 require_once("../classes/pagination.class.php");
 include_once('../classes/hits.class.php');
@@ -26,7 +26,7 @@ require_once("../classes/utilityNum.class.php");
 $adminLogin 	= new adminLogin();
 $dateUtil      	= new DateUtil();
 $error 			= new Error();
-$cat			= new Cat();
+// $cat			= new Cat();
 $search_obj		= new Search();
 $page			= new Pagination();
 $hits			= new Hits();

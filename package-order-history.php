@@ -139,9 +139,17 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                             ?>
                                                 </li>
                                                 <li> Price : <?='$'.$orderPrice; ?></li>
-                                                <!-- <li> Order : <?= $ordStatus[0][1]; ?></li> -->
                                                 <li> Payment : <span class="badge <?= $payStatus[0][1]; ?>"><?= $payStatus[0][1]; ?></span></li>
-                                                <li> Date : <?= $DateUtil->fullDateTimeText($order['date']); ?></li>
+                                                <li> Date : <?php 
+                                                                // $ordDate = date('Y-m-d H:i:s');
+                                                                // $ordDate = $DateUtil->timeZoneConvert($ordDate);
+                                                                // echo date_default_timezone_get();
+                                                                // echo $DateUtil->fullDateTimeText($order['date']);
+
+                                                                $ordDate = $DateUtil->timeZoneConvert($order['date']);
+                                                                echo $DateUtil->fullDateTimeText($ordDate);
+                                                            ?>
+                                                </li>
                                             </ul>
                                         </div>
                                         <!-- Order Details End -->
@@ -388,6 +396,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
 
                                                 <?php if ($orderStatus == COMPLETEDCODE){
                                                     $LastUpdate = $PackageOrder->getLastUpdateTime($orderId);
+                                                    $LastUpdate = $DateUtil->timeZoneConvert($LastUpdate);
                                                     $LastUpdate = $DateUtil->fullDateTimeText($LastUpdate);
                                                     
                                                     echo '<p class="fw-bold text-center mt-3">Order Completed On '.$LastUpdate.'</p>';
@@ -445,7 +454,12 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                         </p>
 
                                                                         <p class=" mb-0">
-                                                                            <small><?php echo $ordUpdate['added_on']; ?></small>
+                                                                            <small>
+                                                                            <?php
+                                                                            $updateTime = $DateUtil->timeZoneConvert($ordUpdate['added_on']);
+                                                                            echo $DateUtil->fullDateTimeText($updateTime)
+                                                                            ?>
+                                                                            </small>
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -495,31 +509,29 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
                                                                                                 <img src="<?php echo URL?>/images/user/default-user-icon.png"
                                                                                                     alt="user">
                                                                                                 <div>
-                                                                                                    <!-- <p class="text-primary mb-0">
-                                                                            <?php
-                                                                $updateShow = $OrderStatus->singleOrderStatus($ordUpdate['status']);
-                                                                echo $updateShow[0][1];
-                                                                ?>
-                                                                        </p> -->
-                                                                                                    <p
-                                                                                                        class="text-primary mb-0">
-                                                                                                        <?php
-                                                                        if ($ordUpdate['dsc'] != null) {
-                                                                            echo $ordUpdate['dsc'] . '<br>';
-                                                                        }
-                                                                        ?>
+                                                                                                    <p class="text-primary mb-0">
+                                                                                                    <?php
+                                                                                                    if ($ordUpdate['dsc'] != null) {
+                                                                                                        echo $ordUpdate['dsc'] . '<br>';
+                                                                                                    }
+                                                                                                    ?>
                                                                                                     </p>
 
                                                                                                     <p class=" mb-0">
-                                                                                                        <?php
-                                                                        if ($ordUpdate['updator'] != null) {
-                                                                            echo '<small>By ' . $ordUpdate['updator'] . '</small> <br>';
-                                                                        }
-                                                                        ?>
+                                                                                                    <?php
+                                                                                                    if ($ordUpdate['updator'] != null) {
+                                                                                                        echo '<small>By ' . $ordUpdate['updator'] . '</small> <br>';
+                                                                                                    }
+                                                                                                    ?>
                                                                                                     </p>
 
                                                                                                     <p class=" mb-0">
-                                                                                                        <small><?php echo $ordUpdate['added_on']; ?></small>
+                                                                                                        <small>
+                                                                                                        <?php
+                                                                                                        $ordDate = $DateUtil->timeZoneConvert($ordUpdate['added_on']);
+
+                                                                                                        echo $DateUtil->fullDateTimeText($ordDate) ?>
+                                                                                                        </small>
                                                                                                     </p>
                                                                                                 </div>
                                                                                             </div>

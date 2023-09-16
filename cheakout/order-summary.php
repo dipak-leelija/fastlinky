@@ -43,6 +43,8 @@ if (isset($_SESSION[SUMMARYDOMAIN]) && isset($_SESSION[SUMMARYSITECOST]) && isse
     $clientOrderedSite        = $_SESSION[SUMMARYDOMAIN];
     $clientOrderedSiteNos     = count( (array) $_SESSION[SUMMARYDOMAIN]);
     $sitePrice                = $_SESSION[SUMMARYSITECOST];
+    $greyNicheCost            = $_SESSION[SUMMARYGREYNICHECOST];
+
     
     
     if (isset($_POST['order-name'])) {
@@ -55,11 +57,19 @@ if (isset($_SESSION[SUMMARYDOMAIN]) && isset($_SESSION[SUMMARYSITECOST]) && isse
 
         if($_POST['order-name'] == "onlyPlacementWithFile" ):
 
-            $clientOrderPrice               = $sitePrice;
+            
+            $clientOrderPrice = $sitePrice;
+            $nicheType = REGULARCONTENT;
+
+            if (isset($_POST['niche'])){
+                if ($_POST['niche'] == 'on') {
+                    $clientOrderPrice = $greyNicheCost;
+                    $nicheType = GREYNICHECONTENT;
+                }
+            }
             // $_SESSION['clientOrderPrice']   = $clientOrderPrice;
-	        $_SESSION['contetPrice'] 		= 00;
-
-
+            $_SESSION['contetPrice'] 		= 00;
+            
             $content_type       = 'doc';
             $clientContentTitle = $_POST['clientContentTitle1'];
 
@@ -86,7 +96,7 @@ if (isset($_SESSION[SUMMARYDOMAIN]) && isset($_SESSION[SUMMARYSITECOST]) && isse
 
                     $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
                     
-                    $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle, $uploadedPath);
+                    $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle, $nicheType, $uploadedPath);
     
                     $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1,$refAnc2, $refUrl2);
 
@@ -159,12 +169,23 @@ if (isset($_SESSION[SUMMARYDOMAIN]) && isset($_SESSION[SUMMARYSITECOST]) && isse
         |                                                                               |
         |------------------------------------------------------------------------------*/ 
 
-        if($_POST['order-name2'] == "placementWOC" ):
+        $clientOrderPrice = $_SESSION['ConetntCreationPlacementPrice'];
         
-            $clientOrderPrice               = $_SESSION['ConetntCreationPlacementPrice'];
+        if($_POST['order-name2'] == "placementWOC" ):
+
+            $nicheType = REGULARCONTENT;
+
+            if (isset($_POST['niche2'])) {
+                if($_POST['niche2'] == 'on'){
+                    $nicheType  = GREYNICHECONTENT;
+                    $clientOrderPrice  = $_SESSION['GreyNicheConetntCreationPlacementPrice'];
+                }
+            }
+
             $_SESSION['clientOrderPrice']   = $clientOrderPrice;
 	        $_SESSION['contetPrice'] 		= CONTENTPRICE;
             
+
             $_FILES['content-file'] = '';
             $uploadedPath           = '';
             $clientContent          = '';
@@ -187,7 +208,7 @@ if (isset($_SESSION[SUMMARYDOMAIN]) && isset($_SESSION[SUMMARYSITECOST]) && isse
 
             $orderId = $ContentOrder->addGuestPostOrder($clientUserId, $clientEmail, $clientOrderedSite, $clientRequirement, $clientOrderPrice, INCOMPLETECODE);
             
-            $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle);
+            $contentId = $ContentOrder->addContent($orderId, $content_type, $clientContentTitle, $nicheType);
             
             $ContentOrder->addContentHyperlink($contentId, $clientAnchorText, $clientTargetUrl, $refAnc1, $refUrl1, $refAnc2, $refUrl2);
 
@@ -343,8 +364,8 @@ $_SESSION['content-data'] = array(
                             <tr>
                                 <td><b><?php echo $clientOrderedSite; ?></b> </td>
                                 <td><?php echo $clientOrderedSiteNos; ?></td>
-                                <td><?php echo CURRENCY.$sitePrice; ?></td>
-                                <td> <?php echo CURRENCY.$sitePrice; ?></span>
+                                <td><?php echo CURRENCY.$clientOrderPrice; ?></td>
+                                <td> <?php echo CURRENCY.$clientOrderPrice; ?></span>
                                 </td>
                             </tr>
                             <?php if (isset($_POST['order-name2'])): ?>
@@ -432,7 +453,9 @@ $_SESSION['content-data'] = array(
         src="https://www.paypal.com/sdk/js?client-id=<?= PAYPAL_CLIENT_ID; ?>&disable-funding=credit,card&currency=USD">
     </script>
     <script>
-    let amount = document.getElementById("amount").innerText;
+    // let amount = document.getElementById("amount").innerText;
+    
+    let amount = <?= $clientOrderPrice ?>;
 
     let formInp = document.getElementById('form-inp');
     let form = document.getElementById('send-data');
@@ -463,7 +486,7 @@ $_SESSION['content-data'] = array(
                 // This function shows a transaction success message to your buyer.
 
                 document.getElementById('payBtn').innerHTML =
-                    `<div class="bg-secondary border border-info rounded text-center"><p class="fw-bold py-2 mb-0"><span><img src="images/icons/loading-2.gif" alt="loading"></span> Please Wait..</p></div>`;
+                    `<div class="bg-secondary border border-info rounded text-center"><p class="fw-bold py-2 mb-0"><span><img src="../images/icons/loading-2.gif" alt="loading"></span> Please Wait..</p></div>`;
                 formInp.value = JSON.stringify(details);
                 form.submit();
 
