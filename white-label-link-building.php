@@ -191,11 +191,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card  how-it-work-f-u-card h-100">
 
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Results Operated:</h4>
+                            <h4 class="how-fonts-h4  py-2">Results Operated:</h4>
                             <p class="lbp-texting">
                                 Because we enjoy what we do and are results, we won't tie you down to longer
                                 contracts. We're dedicated to creating links and trust by proving our value and
@@ -209,11 +209,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card how-it-work-f-u-card h-100">
 
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Use The Best Practices:</h4>
+                            <h4 class="how-fonts-h4 py-2">Use The Best Practices:</h4>
                             <p class="lbp-texting">
                                 In order to impress your clients, we handle your clients as if they were our own,
                                 only using the greatest procedures and quality controls. We work hard so that you
@@ -226,11 +226,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card how-it-work-f-u-card h-100">
 
-                            <div class=" pb-3 text-center text-md-start">
+                            <div class=" pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Complete Transparency: </h4>
+                            <h4 class="how-fonts-h4 py-2">Complete Transparency: </h4>
                             <p class="lbp-texting">
                                 Real-time, white label link building friendly progress reports are accessible
                                 around-the-clock. For each individual client, we customize our services to meet your
@@ -241,11 +241,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card how-it-work-f-u-card h-100">
 
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Totally Controlled Process:</h4>
+                            <h4 class="how-fonts-h4 py-2">Totally Controlled Process:</h4>
                             <p class="lbp-texting">
                                 With a completely controlled work process and a private account manager, our
                                 procedure allows you to have as little or as much engagement in it as you like. Get
@@ -256,11 +256,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card how-it-work-f-u-card h-100">
 
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Cost Limitation:</h4>
+                            <h4 class="how-fonts-h4 py-2">Cost Limitation:</h4>
                             <p class="lbp-texting">
                                 We'll give you the cost basis you need to increase your profitability. There are no
                                 restrictions on scale, quality, or size. We will beat or match all other prices.
@@ -273,11 +273,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-4 my-2 my-md-4 ">
                         <div class="card how-it-work-f-u-card h-100">
 
-                            <div class=" pb-3 text-center text-md-start">
+                            <div class=" pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Great Experience:</h4>
+                            <h4 class="how-fonts-h4  py-2">Great Experience:</h4>
                             <p class="lbp-texting">
                                 We can assure you our effort,dedications and relentless work going to match your
                                 expectations.We have over 100,000 publishers, thousands of satisfied customers, and
@@ -678,11 +678,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 <div class="row">
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card  how-it-work-f-u-card h-100">
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Managers With A Specialized
+                            <h4 class="how-fonts-h4 py-2">Managers With A Specialized
                                 Role:</h4>
                             <p class="lbp-texting">
                                 When you make your investment. We designate a committed manager to oversee. As a
@@ -694,11 +694,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card how-it-work-f-u-card h-100">
 
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Superior Keyword Research: </h4>
+                            <h4 class="how-fonts-h4 py-2">Superior Keyword Research: </h4>
                             <p class="lbp-texting">
                                 Our experienced staff identifies the top-ranking and trending keywords for you. </p>
 
@@ -709,11 +709,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card how-it-work-f-u-card h-100">
 
-                            <div class=" pb-3 text-center text-md-start">
+                            <div class=" pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Zero Spam Service: </h4>
+                            <h4 class="how-fonts-h4 py-2">Zero Spam Service: </h4>
                             <p class="lbp-texting">
                                 Our staff abstains from using PBNs and never violates the spam policy. Our original
                                 content attracts readers and is well-liked. </p>
@@ -724,11 +724,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card how-it-work-f-u-card h-100">
 
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Existing Link Analysis: </h4>
+                            <h4 class="how-fonts-h4 py-2">Existing Link Analysis: </h4>
                             <p class="lbp-texting">
                                 We make sure that no backlinks are ever replicated for our clients. Also, our
                                 skilled staff carefully examines the client's link profile before conducting
@@ -741,11 +741,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card how-it-work-f-u-card h-100">
 
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Native Professionals: </h4>
+                            <h4 class="how-fonts-h4 py-2">Native Professionals: </h4>
                             <p class="lbp-texting">
                                 Our PR specialists and content writers are from the US and the UK, respectively.
                                 that the authenticity of the material is never compromised.
@@ -758,11 +758,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-4 my-2 my-md-4">
                         <div class="card how-it-work-f-u-card h-100">
 
-                            <div class=" pb-3 text-center text-md-start">
+                            <div class=" pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Huge Database Of Real
+                            <h4 class="how-fonts-h4 py-2">Huge Database Of Real
                                 Influencers:</h4>
                             <p class="lbp-texting">
                                 We work with more than a thousand genuine bloggers and influencers from every

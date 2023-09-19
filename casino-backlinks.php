@@ -226,24 +226,24 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
             </p>
 
             <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="text-center text-sm-start ">
+                <div class="col-lg-6 col-md-6 mb-2">
+                    <div class="">
                         <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                     </div>
                     <h3>Manual Outreach</h3>
-                    <div class="text-start">
+                    <div class="">
                         We manage manual outreach to niche-relevant to obtain high-quality backlinks for your website.
                         We work together with these websites to publish our original content so that the proper
                         authorities may access it. Our outreach program also attempts to keep increasing the domain
                         authority of your website.
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="text-center text-sm-start ">
+                <div class="col-lg-6 col-md-6 mb-2">
+                    <div class="">
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                     </div>
                     <h3>Content Creation </h3>
-                    <div class="text-start">
+                    <div class="">
                         Our skilled writers can provide outstanding, informative, and interesting content that is also
                         specific to the requirements of companies. Before publication, the content is created to follow
                         the blog's rules.
@@ -253,12 +253,12 @@ Online Gaming Link Building,Online Gaming And Casino Link Building
 
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="text-center text-sm-start ">
+                <div class="col-lg-6 col-md-6 mb-2">
+                    <div class="">
                         <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                     </div>
                     <h3>Monitoring Results</h3>
-                    <div class="text-start">
+                    <div class="">
                         The results are the most important part of any marketing strategy. We deliver fast, accurate
                         information while regularly monitoring the performance of each campaign. So, clients can observe
                         the outcomes for themselves. Even though it's not possible to predict the immediate results of

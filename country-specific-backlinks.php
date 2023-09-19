@@ -182,33 +182,33 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </p>
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                    <div class="text-center text-sm-start">
+                    <div class="">
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                     </div>
                     <h3><b>Research</b> </h3>
-                    <div class="text-start mb-5">
+                    <div class="mb-5">
                         Our team of specialists thoroughly analyzes your website, the sector, and the competition. After
                         that, the optimum keywords and the engaged country are preferred for the ideal placements in
                         search ranking results.
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="text-center text-sm-start ">
+                    <div class="">
                         <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                     </div>
                     <h3><b> Outreach</b></h3>
-                    <div class="text-start mb-5">
+                    <div class="mb-5">
                         In order to get high-authority guest post services, we at Fastlinky create strong links with
                         multiple international bloggers and influencers. We guarantee our client that the link will be
                         placed only based on the targeted country with stable organic traffic.
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="text-center text-sm-start ">
+                    <div class=" ">
                         <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                     </div>
                     <h3><b>Content That Is Available In Several Languages</b> </h3>
-                    <div class="text-start mb-5">
+                    <div class="mb-5">
                         Our professional outreach staff collaborates with well-known authors to produce acceptable,
                         international content for link-building articles.
                     </div>

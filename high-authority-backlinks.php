@@ -244,10 +244,10 @@ benefits of high domain authority website, domain authority rank" />
                     <div class="col my-2 my-md-0">
                         <div class="card h-100 how-it-work-f-u-card">
 
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Significant Growth In Ranking:</h4>
+                            <h4 class="how-fonts-h4 py-2">Significant Growth In Ranking:</h4>
                             <p class="lbp-texting">
                                 Our general authority backlink service will draw links from quality, highly
                                 authoritative websites. We will provide you with the best SEO services to increase your
@@ -260,10 +260,10 @@ benefits of high domain authority website, domain authority rank" />
                     <div class="col my-2  my-md-0">
                         <div class="card h-100 how-it-work-f-u-card">
 
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Backlink Strategy:</h4>
+                            <h4 class="how-fonts-h4 py-2">Backlink Strategy:</h4>
                             <p class="lbp-texting">
                                 Competitors analysis is one of many important strategies we do follow. First, we go
                                 through the backlinks of your competitors and client’s site deeply. We analyze each and
@@ -281,10 +281,10 @@ benefits of high domain authority website, domain authority rank" />
                     <div class="col my-2  my-md-0 ">
                         <div class="card h-100 how-it-work-f-u-card">
 
-                            <div class=" pb-3 text-center text-md-start">
+                            <div class=" pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Comprehensive Backlinks Database:
+                            <h4 class="how-fonts-h4 py-2">Comprehensive Backlinks Database:
                             </h4>
                             <p class="lbp-texting">
                                 In order to improve website SEO, FastLinky provides a well-managed database of <b>high
@@ -488,10 +488,10 @@ benefits of high domain authority website, domain authority rank" />
                     <div class="col my-2 my-md-0">
                         <div class="card h-100 how-it-work-f-u-card">
 
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Analysis Of Backlinks:</h4>
+                            <h4 class="how-fonts-h4 py-2">Analysis Of Backlinks:</h4>
                             <p class="lbp-texting">
                                 In order to rapidly activate your link portfolio, we identify websites that are linking
                                 to you and create a strategy to get high-quality backlinks from them. To increase your
@@ -504,10 +504,10 @@ benefits of high domain authority website, domain authority rank" />
                     <div class="col my-2 my-md-0">
                         <div class="card h-100 how-it-work-f-u-card">
 
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Reverse Link Strategy:</h4>
+                            <h4 class="how-fonts-h4 py-2">Reverse Link Strategy:</h4>
                             <p class="lbp-texting">
                                 We buy engaging backlinks based on statistics and competitive backlink analysis to
                                 improve your backlink portfolio and increase the authority of your brand. We use
@@ -522,10 +522,10 @@ benefits of high domain authority website, domain authority rank" />
                     <div class="col my-2  my-md-0">
                         <div class="card h-100 how-it-work-f-u-card">
 
-                            <div class=" pb-3 text-center text-md-start">
+                            <div class=" pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Contribution Of Backlinks:
+                            <h4 class="how-fonts-h4 py-2">Contribution Of Backlinks:
                             </h4>
                             <p class="lbp-texting">
                                 We create domain target lists using data from research and statistics. We create

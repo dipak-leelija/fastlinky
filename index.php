@@ -171,7 +171,7 @@ if(isset($_GET['seo_url']))
                     <div class="row">
                         <div class="col-md-6 mb-2">
                             <div class="our-secret-delivering-main-card2 h-100">
-                                <div class="text-chnging-css pb-3 ">
+                                <div class=" pb-3 ">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" style="width: 75px;" alt="">
                                 </div>
                                 <h4 class="how-fonts-h4 ">Services For Fully Customized Link Building</h4>
@@ -184,7 +184,7 @@ if(isset($_GET['seo_url']))
                         </div>
                         <div class="col-md-6 mb-2">
                             <div class="our-secret-delivering-main-card2 h-100">
-                                <div class="text-chnging-css pb-3 ">
+                                <div class=" pb-3 ">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" style="width: 75px;" alt="">
                                 </div>
                                 <h4 class="how-fonts-h4 ">Increased Readership</h4>
@@ -197,7 +197,7 @@ if(isset($_GET['seo_url']))
                         </div>
                         <div class="col-md-6 mb-2">
                             <div class="our-secret-delivering-main-card2 h-100">
-                                <div class="text-chnging-css pb-3 ">
+                                <div class=" pb-3 ">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" style="width: 75px;" alt="">
                                 </div>
                                 <h4 class="how-fonts-h4 ">Perfect Reliable Outcomes</h4>
@@ -210,7 +210,7 @@ if(isset($_GET['seo_url']))
                         </div>
                         <div class="col-md-6 mb-2">
                             <div class="our-secret-delivering-main-card2 h-100">
-                                <div class="text-chnging-css pb-3 ">
+                                <div class=" pb-3 ">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" style="width: 75px;" alt="">
                                 </div>
                                 <h4 class="how-fonts-h4 ">Business Expertise</h4>
@@ -250,10 +250,10 @@ if(isset($_GET['seo_url']))
                 <div class="row row-cols-1 row-cols-sm-3">
                     <div class="col my-2 my-md-4 px-md-3">
                         <div class="card h-100 service-index-card-box pt-md-5">
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Blogger Outreach Service</h4>
+                            <h4 class="how-fonts-h4  py-2">Blogger Outreach Service</h4>
                             <p class="h-100">
                                 Get authoritative, high-quality links that lead to editorial content on real,
                                 traffic-generating websites.</p>
@@ -266,10 +266,10 @@ if(isset($_GET['seo_url']))
                     </div>
                     <div class="col my-2 my-md-4 px-md-3">
                         <div class="card h-100 service-index-card-box pt-md-5">
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">White Label Link Building</h4>
+                            <h4 class="how-fonts-h4  py-2">White Label Link Building</h4>
                             <p class="h-100">
                                 We offer trustworthy, <b>excellent link-building services</b> that are totally
                                 accessible.
@@ -283,10 +283,10 @@ if(isset($_GET['seo_url']))
 
                     <div class="col my-2 my-md-4 px-md-3">
                         <div class="card h-100 service-index-card-box pt-md-5">
-                            <div class=" pb-3 text-center text-md-start">
+                            <div class=" pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Country-Specific Backlinks
+                            <h4 class="how-fonts-h4  py-2">Country-Specific Backlinks
                             </h4>
                             <p class="h-100">
                                 Improve SEO with <b>country-specific backlinks</b> from multilingual content.</p>
@@ -298,10 +298,10 @@ if(isset($_GET['seo_url']))
                     </div>
                     <div class="col my-2 my-md-4 px-md-3">
                         <div class="card h-100 service-index-card-box pt-md-5">
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">High Authority Backlinks</h4>
+                            <h4 class="how-fonts-h4  py-2">High Authority Backlinks</h4>
                             <p class="h-100">
                                 Direct your organic growth to search engines with high DR SaaS backlinks.</p>
                             <div class="my-3">
@@ -312,10 +312,10 @@ if(isset($_GET['seo_url']))
                     </div>
                     <div class="col my-2 my-md-4 px-md-3">
                         <div class="card h-100 service-index-card-box pt-md-5">
-                            <div class="pb-3 text-center text-md-start">
+                            <div class="pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Link Insertion Service</h4>
+                            <h4 class="how-fonts-h4  py-2">Link Insertion Service</h4>
                             <p class="h-100">
                                 Get a variety of helpful and work-based backlinks from the previous posts.
                             </p>
@@ -327,10 +327,10 @@ if(isset($_GET['seo_url']))
                     </div>
                     <div class="col my-2 my-md-4 px-md-3">
                         <div class="card h-100 service-index-card-box pt-md-5">
-                            <div class=" pb-3 text-center text-md-start">
+                            <div class=" pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Managed Link Building
+                            <h4 class="how-fonts-h4  py-2">Managed Link Building
                             </h4>
                             <p class="h-100">
                                 With FastLinky, you can organize regular links from high-ranking websites and set up
@@ -343,10 +343,10 @@ if(isset($_GET['seo_url']))
                     </div>
                     <div class="col my-2 my-md-4 px-md-3">
                         <div class="card h-100 service-index-card-box pt-md-5">
-                            <div class=" pb-3 text-center text-md-start">
+                            <div class=" pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Cannabis Backlink
+                            <h4 class="how-fonts-h4  py-2">Cannabis Backlink
                             </h4>
                             <p class="h-100">
                                 Get powerful backlinks for <b>Cannabis</b> and <b>CBD link-building services.</b> </p>
@@ -358,10 +358,10 @@ if(isset($_GET['seo_url']))
                     </div>
                     <div class="col my-2 my-md-4 px-md-3">
                         <div class="card h-100 service-index-card-box pt-md-5">
-                            <div class=" pb-3 text-center text-md-start">
+                            <div class=" pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Guest Posting
+                            <h4 class="how-fonts-h4  py-2">Guest Posting
                             </h4>
                             <p class="h-100">
                                 We offer high-quality <b>guest posting services</b> with useful backlinks and content
@@ -374,10 +374,10 @@ if(isset($_GET['seo_url']))
                     </div>
                     <div class="col my-2 my-md-4 px-md-3">
                         <div class="card h-100 service-index-card-box pt-md-5">
-                            <div class=" pb-3 text-center text-md-start">
+                            <div class=" pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 text-center text-md-start py-2">Casino Backlinks
+                            <h4 class="how-fonts-h4  py-2">Casino Backlinks
                             </h4>
                             <p class="h-100">
                                 Buy <b>casino backlinks</b> to grow your <b>online gambling and casino websites</b> .
@@ -439,7 +439,7 @@ if(isset($_GET['seo_url']))
                     <div class="col-md-6 my-3">
                         <div class="our-secret-delivering-main-card h-100">
 
-                            <div class="text-center pb-3 ">
+                            <div class="pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                             </div>
                             <h4 class="how-fonts-h4 ">Analyze And Plan</h4>
@@ -455,7 +455,7 @@ if(isset($_GET['seo_url']))
                     <div class="col-md-6 my-3">
                         <div class="our-secret-delivering-main-card h-100">
 
-                            <div class="text-center pb-3 ">
+                            <div class="pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" alt="">
                             </div>
                             <h4 class="how-fonts-h4  ">Customized Outreach Strategy</h4>
@@ -470,7 +470,7 @@ if(isset($_GET['seo_url']))
 
                     <div class="col-md-6 my-3">
                         <div class="our-secret-delivering-main-card h-100">
-                            <div class="text-center pb-3">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" alt="">
                             </div>
                             <h4 class="how-fonts-h4  ">Creating High-Quality Backlinks</h4>
@@ -484,7 +484,7 @@ if(isset($_GET['seo_url']))
                     <div class="col-md-6 my-3">
                         <div class="our-secret-delivering-main-card h-100">
 
-                            <div class="text-center pb-3">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                             </div>
                             <h4 class="how-fonts-h4 ">Help You Outrank Your Competitors</h4>
@@ -515,7 +515,7 @@ if(isset($_GET['seo_url']))
                 <div class="row ">
                     <div class="col-xl-3 col-sm-6">
                         <div class="our-secret-delivering-main-card2 h-100">
-                            <div class="text-chnging-css pb-3 ">
+                            <div class=" pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                             </div>
                             <h4 class="how-fonts-h4 ">Increase Company Awareness</h4>
@@ -532,7 +532,7 @@ if(isset($_GET['seo_url']))
 
                     <div class="col-xl-3 col-sm-6">
                         <div class="our-secret-delivering-main-card2 h-100">
-                            <div class="text-chnging-css pb-3 ">
+                            <div class=" pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" alt="">
                             </div>
                             <h4 class="how-fonts-h4  ">Build Connections</h4>
@@ -551,7 +551,7 @@ if(isset($_GET['seo_url']))
 
                     <div class="col-xl-3 col-sm-6">
                         <div class="our-secret-delivering-main-card2 h-100">
-                            <div class="text-chnging-css pb-3">
+                            <div class=" pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" alt="">
                             </div>
                             <h4 class="how-fonts-h4  ">Better And High-Quality Content </h4>
@@ -567,7 +567,7 @@ if(isset($_GET['seo_url']))
                     </div>
                     <div class="col-xl-3 col-sm-6">
                         <div class="our-secret-delivering-main-card2 h-100">
-                            <div class="text-chnging-css pb-3">
+                            <div class=" pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                             </div>
                             <h4 class="how-fonts-h4  ">Cost Savings</h4>

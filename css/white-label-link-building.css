@@ -139,6 +139,7 @@
     border-bottom-right-radius: 65px;
     border-bottom: 2px solid var(--mustard);
     transition: all .5s ease;
+    text-align: center;
 }
 
 .how-it-work-f-u-card:hover {

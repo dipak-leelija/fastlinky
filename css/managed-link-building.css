@@ -164,15 +164,15 @@
 }
 
 .lbp-texting {
-    text-align: justify;
+    text-align: start;
     color: #747880;
     font-size: 1.2rem;
     line-height: 1.4;
 }
 
-.ibp-centering-b {
+/* .ibp-centering-b {
     text-align: start !important;
-}
+} */
 
 .lbp-texting b {
     margin: 0 0 11px 0;
@@ -298,6 +298,7 @@
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
     border: none;
     border-radius: 15px;
+    text-align: center;
 }
 
 .our-secret-delivering-main-card:hover {
@@ -313,7 +314,6 @@
 }
 
 .our-secret-delivering-main-card p {
-    text-align: justify;
     color: #747880;
     font-size: 1.2rem;
     font-weight: 400;
@@ -326,6 +326,7 @@
     border-radius: unset;
     background: #fff;
     border: none;
+    text-align: center;
 }
 
 .our-secret-delivering-main-card2:hover {
@@ -338,14 +339,12 @@
 }
 
 .our-secret-delivering-main-card2 h4 {
-    text-align: start;
     color: #171C30;
     font-size: 20px;
     font-weight: 700;
 }
 
 .our-secret-delivering-main-card2 p {
-    text-align: justify;
     color: #747880;
     font-size: 1.19rem;
     font-weight: 400;
@@ -358,9 +357,6 @@
     color: var(--mustard) !important;
 }
 
-.text-chnging-css {
-    text-align: start;
-}
 
 /* We Employ An Efficient And Open Link-Building Strategy ends */
 /* _____________________________________________________________________________________________________ */
@@ -419,6 +415,9 @@
 }
 
 @media (max-width:767px) {
+    .lbp-texting {
+       text-align: center;
+    }
     .managed-link-building-main-banner {
         padding: 4rem 1rem;
     }
@@ -509,8 +508,6 @@
     }
 }
 
-
-
 @media (min-width:313px) and (max-width:399px) {
     .mlb-starting-main-h1 {
         font-size: 1.7rem;
@@ -530,10 +527,6 @@
     .a-brand-need-link-main-h1 {
         font-size: 1.7rem !important;
         margin-bottom: 0rem !important;
-    }
-
-    .text-chnging-css {
-        text-align: center !important;
     }
 
     .tick-check-p {

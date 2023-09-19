@@ -523,6 +523,9 @@
 }
 
 @media (min-width:250px) and (max-width:451px) {
+    .lbp-texting{
+text-align: center;
+    }
     .tick-check-p {
         font-size: 18px;
     }

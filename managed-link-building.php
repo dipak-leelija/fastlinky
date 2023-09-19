@@ -283,7 +283,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 my-2">
                         <div class="our-secret-delivering-main-card h-100">
 
-                            <div class="text-center pb-3 ">
+                            <div class="pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
@@ -300,7 +300,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 my-2">
                         <div class="our-secret-delivering-main-card h-100">
 
-                            <div class="text-center pb-3 ">
+                            <div class="pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
@@ -317,7 +317,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 my-2">
                         <div class="our-secret-delivering-main-card h-100">
 
-                            <div class="text-center pb-3">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
@@ -333,7 +333,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 my-2">
                         <div class="our-secret-delivering-main-card h-100">
 
-                            <div class="text-center pb-3">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
@@ -376,7 +376,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 col-xl-3 my-2">
                         <div class="our-secret-delivering-main-card2 h-100">
 
-                            <div class="text-chnging-css pb-3 ">
+                            <div class="pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
@@ -392,7 +392,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 col-xl-3 my-2">
                         <div class="our-secret-delivering-main-card2 h-100">
 
-                            <div class="text-chnging-css pb-3 ">
+                            <div class="pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
@@ -408,7 +408,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 col-xl-3 my-2">
                         <div class="our-secret-delivering-main-card2 h-100">
 
-                            <div class="text-chnging-css pb-3">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
@@ -423,7 +423,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 col-xl-3 my-2">
                         <div class="our-secret-delivering-main-card2 h-100">
 
-                            <div class="text-chnging-css pb-3">
+                            <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
                                     alt="">
                             </div>
@@ -458,7 +458,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row  ">
             <div class="col-lg-6 col-md-6  m-auto ">
                 <div class="">
-
                     <div>
                         <img src="./images/searching-fastlinky-image.png" class="w-100  mb-4 " alt="">
                     </div>
@@ -466,7 +465,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6 a-brand-need-link-main-col-1">
                 <div class="">
-
                     <div>
                         <div class="py-4">
                             <div class="why-fastlinky-main-for-card">
@@ -474,7 +472,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-chnging-css "><b>Guarantee Of Satisfaction :</b> <br>
+                                <div class="text-center text-md-start  "><b>Guarantee Of Satisfaction :</b> <br>
                                     It is important to us that you are satisfied with the service we offer. And don't
                                     worry, we'll keep expanding the post even after we complete your task!
                                 </div>
@@ -484,7 +482,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-chnging-css "><b>Responsible Account Manager :</b> <br>
+                                <div class="text-center text-md-start "><b>Responsible Account Manager :</b> <br>
                                     We have a responsible account manager to handle all your inquiries with commitment
                                     and quick response.
                                 </div>
@@ -495,7 +493,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-chnging-css"><b>Handy Dashboard :</b> <br>
+                                <div class="text-center text-md-start "><b>Handy Dashboard :</b> <br>
                                     Place new orders, renew existing ones, and check the progress of existing orders all
                                     from one place
                                 </div>
@@ -505,7 +503,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-chnging-css "><b>Creating Content Internally :</b> <br>
+                                <div class="text-center text-md-start "><b>Creating Content Internally :</b> <br>
                                     We use unique content that was created internally by skilled writers. Quality is
                                     thus guaranteed. The content for your business will be created by writers who are
                                     experts in your field.
@@ -516,7 +514,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-chnging-css "> <b>Huge Database Of Important Websites :</b> <br>
+                                <div class="text-center text-md-start "> <b>Huge Database Of Important Websites :</b> <br>
                                     Working with more than 5000 websites, bloggers, and influencers has allowed us to
                                     develop numerous commercial links over the years. You may be guaranteed that your
                                     content will only be published on blogs that are relevant to your industry.
@@ -527,7 +525,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png"
                                         class="managed-page-second-ul-li-img" alt="">
                                 </div>
-                                <div class="text-chnging-css "><b>Nothing Duplicate :</b> <br>
+                                <div class="text-center text-md-start "><b>Nothing Duplicate :</b> <br>
                                     As we begin working on the project, we use the latest techniques to analyze your
                                     current link profile and make sure that your website doesn't receive duplicate
                                     backlinks.

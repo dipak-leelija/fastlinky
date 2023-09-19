@@ -134,6 +134,7 @@ b{
     border-bottom-right-radius: 65px;
     border-bottom: 2px solid var(--mustard);
     transition: all .5s ease;
+    text-align: center;
 }
 
 .service-index-card-box:hover {
@@ -182,6 +183,7 @@ b{
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
     border: none;
     border-radius: 15px;
+    text-align: center;
 }
 
 .our-secret-delivering-main-card:hover {
@@ -197,7 +199,7 @@ b{
 }
 
 .our-secret-delivering-main-card p {
-    text-align: justify;
+    /* text-align: justify; */
     color: #747880;
     font-size: 18px;
     font-weight: 400;
@@ -211,6 +213,7 @@ b{
     padding: 1.5rem;
     border-radius: unset;
     border: none;
+    text-align: center;
 }
 
 .our-secret-delivering-main-card2:hover {
@@ -225,7 +228,7 @@ b{
 }
 
 .our-secret-delivering-main-card2 h4 {
-    text-align: start;
+    text-align: center;
     color: var(--black);
     font-size: 20px;
     font-weight: 700;
@@ -280,15 +283,15 @@ b{
     background: var(--mustard);
 }
 
-.text-chnging-css {
+/* .text-chnging-css {
     text-align: start;
-}
+} */
 
-@media (max-width:767px) {
+/* @media (max-width:767px) {
     .text-chnging-css {
         text-align: center;
     }
-}
+} */
 
 @media (max-width:575px) {
     .service-index-h2 {
