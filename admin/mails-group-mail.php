@@ -46,6 +46,8 @@ $typeM		= $utility->returnGetVar('typeM','');
     <title>Customer Emails | <?php echo COMPANY_S; ?></title>
 
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <!-- <link rel="stylesheet" href="<?= URL ?>/plugins/summernote/summernote.css"> -->
+    <link rel="stylesheet" href="<?= URL ?>/plugins/summernote/summernote-lite.min.css">
 </head>
 
 <body>
@@ -95,7 +97,7 @@ $typeM		= $utility->returnGetVar('typeM','');
                                                 <div class="form-group">
                                                     <label for="mailMessage">Message</label>
                                                     <textarea class="form-control" name="mail-message"
-                                                        rows="20"></textarea>
+                                                        id="summernote"></textarea>
 
                                                 </div>
 
@@ -125,10 +127,10 @@ $typeM		= $utility->returnGetVar('typeM','');
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-    
-    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
-    <script src="<?= URL ?>/plugins/main.js"></script>    
+
     <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
 
     <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
     <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
@@ -136,6 +138,15 @@ $typeM		= $utility->returnGetVar('typeM','');
     <script src="<?= ADM_URL ?>js/template.js"></script>
     <script src="<?= ADM_URL ?>js/settings.js"></script>
     <script src="<?= ADM_URL ?>js/todolist.js"></script>
+    <script src="<?= URL ?>/plugins/summernote/summernote-lite.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#summernote').summernote({
+            height: "450px"
+        });
+    });
+    </script>
 
 </body>
 
