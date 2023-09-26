@@ -43,41 +43,9 @@ $uStr 			= new StrUtility();
 
 //declare vars
 $typeM		= $utility->returnGetVar('typeM','');
-$numResDisplay	= (int)$utility->returnGetVar('numResDisplay', 10);
 
-/*if($numResDisplay == 0)
-{
-	$numResDisplay = 10;
-}*/
-
-//no of customer
-if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'Search'))
-{
-	$selStatus		= $utility->returnGetVar('selStatus','');
-	$cId			= $utility->returnGetVar('cId',0);
-	$loc			= $utility->returnGetVar('loc','');
-	$keyword		= $utility->returnGetVar('keyword','');
-	$numResDisplay	= $utility->returnGetVar('numResDisplay',10);
-	
-	$statVar	= "&selStatus=".$selStatus;
-	$cntVar		= "&cId=".$cId;
-	$numVar		= "&numResDisplay=".$numResDisplay;
-	$keyVar		= "&keyword=".$keyword;
-	$srchVar	= "&btnSearch=Search";
-	$locVar		= "&loc=".$loc;
-	
-	$link =	$keyVar.$statVar.$cntVar.$numVar.$srchVar.$locVar;
-	
-	$noOfCus = $search_obj->searchCus($keyword, $selStatus, $loc);
-	
-}
-else
-{
-	$link = '';
-	$noOfCus	= $Customer->getAllCustomer('ALL', "added_on", "DESC");
-}
-
-$noOfCus	= $Customer->getAllCustomer('ALL', "added_on", "DESC");
+$allCustomerIds	= $Customer->getAllCustomerId();
+$allCustomerIds = json_decode($allCustomerIds);
 // print_r($noOfCus);
 // exit;
 
@@ -158,7 +126,7 @@ $allCusatomer = $Customer->getAllCust();
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                foreach ($noOfCus as $customerId) {
+                                                foreach ($allCustomerIds as $customerId) {
                                                     // echo $customer;
                                                     $dtls = $Customer->getCustomerData($customerId);
                                                 ?>
