@@ -6,23 +6,44 @@ require_once "../_config/dbconnect.php";
 
 require_once "../classes/customer.class.php";
 require_once "../classes/emails.class.php";
+require_once "../classes/subscriber.class.php";
 require_once "../classes/class.phpmailer.php";
 
 require_once "../classes/utility.class.php";
 
 /* INSTANTIATING CLASSES */
-$Customer	    = new Customer();
-$emailObj   	= new Emails();
-$PHPMailer      = new PHPMailer();
-$Utility		= new Utility();
+$Customer	        = new Customer();
+$emailObj   	    = new Emails();
+$EmailSubscriber    = new EmailSubscriber();
+$PHPMailer          = new PHPMailer();
+$Utility		    = new Utility();
 
 ########################################################################################################
 
-$allCustomerIds	= $Customer->getAllCustomer('ALL', "added_on", "DESC");
-
-
 
 if(isset($_POST["btnSendMail"])){
+
+    if($_POST['mailTo'] === 'all-subscriber'){
+        
+        $allMails = $EmailSubscriber->getAllMail();
+        $allMails = json_decode($allMails);
+
+    }elseif($_POST['mailTo'] === 'all-customer') {
+        
+        $allIds	= $Customer->getAllCustomerId();
+        $allIds = json_decode($allIds);
+
+    }elseif($_POST['mailTo'] === 'seller-only') {
+
+        $allIds = $Customer->getAllSellerId();
+        $allIds = json_decode($allIds);
+
+    }elseif($_POST['mailTo'] === 'client-only') {
+
+        $allIds = $Customer->getAllClientId();
+        $allIds = json_decode($allIds);
+
+    }
 
     $fromMail       = MARKETING_MAIL;
 	$subject        = $_POST['mail-subject'];
@@ -42,17 +63,16 @@ if(isset($_POST["btnSendMail"])){
             $PHPMailer->Subject     = $subject;
             $PHPMailer->Body        = $messageBody;
 
-            foreach ($allCustomerIds as $eachId) {
+            if($_POST['mailTo'] !== 'all-subscriber'){
+
+                foreach ($allIds as $eachId) {
                     $allCustomers   = $Customer->getCustomerData($eachId);
                 
                     $toName   = $allCustomers[0][5].' '.$allCustomers[0][6];
                     $toMail  = $allCustomers[0][3];
 
                     if ($toMail != null) {
-                        // echo $toMail.'=>'.$toName.'<br>';
-                        
-                        // $toMail = 'dipakmajumdar.leelija@gmail.com';
-                        // $toName = 'Dipak Majumdar';
+
                         $PHPMailer->addAddress($toMail, $toName);
                         $PHPMailer->send();
                         $PHPMailer->ClearAllRecipients();
@@ -60,15 +80,30 @@ if(isset($_POST["btnSendMail"])){
                     }
                 }
 
+            }else {
+                 foreach ($allMails as $eachMail) {
+
+                    $toName   = '';
+                    $toMail   = $eachMail;
+
+                    if ($toMail != null) {
+                        $PHPMailer->addAddress($toMail, $toName);
+                        $PHPMailer->send();
+                        $PHPMailer->ClearAllRecipients();
+                        // $PHPMailer->ClearAddresses();
+                    }
+                }
+            }
+
+
             echo 'Message has been sent';
     
             // $addemaildetails  = $emailObj->emaildetails($toName, $toMail, $subject, $messageBody, $fromMail);
                 
         } catch (Exception $e) {
+            echo $e->getMessage().'<br>';
             echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
         }
-   
-   
    
 }
 ?> 

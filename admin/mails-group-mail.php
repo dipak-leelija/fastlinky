@@ -1,21 +1,22 @@
 <?php
-require_once("../includes/constant.inc.php");
 session_start();
+require_once dirname(__DIR__)."/includes/constant.inc.php";
 $page = "Mail-groups-mail";
 include_once('checkSession.php');
-require_once "../_config/dbconnect.php";
 
-require_once("../includes/email.inc.php"); 
+require_once ROOT_DIR."/_config/dbconnect.php";
 
-require_once("../classes/adminLogin.class.php"); 
-require_once("../classes/customer.class.php");
-require_once("../classes/search.class.php");
-include_once("../classes/emails.class.php");
-require_once("../classes/error.class.php"); 
-require_once("../classes/date.class.php"); 
-require_once("../classes/utility.class.php"); 
-require_once("../classes/utilityMesg.class.php"); 
-require_once("../classes/customer.class.php"); 
+require_once ROOT_DIR."/includes/email.inc.php"; 
+
+require_once ROOT_DIR."/classes/adminLogin.class.php"; 
+require_once ROOT_DIR."/classes/customer.class.php";
+require_once ROOT_DIR."/classes/search.class.php";
+include_once ROOT_DIR."/classes/emails.class.php";
+require_once ROOT_DIR."/classes/error.class.php"; 
+require_once ROOT_DIR."/classes/date.class.php"; 
+require_once ROOT_DIR."/classes/utility.class.php"; 
+require_once ROOT_DIR."/classes/utilityMesg.class.php"; 
+require_once ROOT_DIR."/classes/customer.class.php"; 
 
 /* INSTANTIATING CLASSES */
 $adminLogin 	= new adminLogin();
@@ -35,36 +36,6 @@ $Customer		= new Customer();
 //declare vars
 $typeM		= $utility->returnGetVar('typeM','');
 
-//declare vars
-$numResDisplay	= (int)$utility->returnGetVar('numResDisplay', 10);
-
-
-//no of customer
-if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'Search'))
-{
-	$selStatus		= $utility->returnGetVar('selStatus','');
-	$cId			= $utility->returnGetVar('cId',0);
-	$loc			= $utility->returnGetVar('loc','');
-	$keyword		= $utility->returnGetVar('keyword','');
-	$numResDisplay	= $utility->returnGetVar('numResDisplay',10);
-	
-	$statVar	= "&selStatus=".$selStatus;
-	$cntVar		= "&cId=".$cId;
-	$numVar		= "&numResDisplay=".$numResDisplay;
-	$keyVar		= "&keyword=".$keyword;
-	$srchVar	= "&btnSearch=Search";
-	$locVar		= "&loc=".$loc;
-	
-	$link =	$keyVar.$statVar.$cntVar.$numVar.$srchVar.$locVar;
-	
-	$noOfCus = $search_obj->searchCus($keyword, $selStatus, $loc);
-	
-}else{
-	$link = '';
-	$noOfCus	= $Customer->getAllCustomer('ALL', "added_on", "DESC");
-}
-
-
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +46,6 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'Search'))
     <title>Customer Emails | <?php echo COMPANY_S; ?></title>
 
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="../plugins/data-table/style.css">
 </head>
 
 <body>
@@ -104,6 +74,18 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'Search'))
                                         <div class="border rounded mx-auto col-md-8 col-lg-7 py-3">
                                             <form action="email_sendall_acction.php" method="post"
                                                 name="formCustomerMail">
+
+                                                <div class="form-group">
+                                                    <label for="mailTo">Send Mail to</label>
+                                                    <select class="form-control" name="mailTo" id="mailTo">
+                                                        <option value="" selected disabled>Select</option>
+                                                        <option value="all-subscriber">All Subscriber</option>
+                                                        <option value="all-customer">All Customer</option>
+                                                        <option value="seller-only">Seller Only</option>
+                                                        <option value="client-only">Client Only</option>
+                                                    </select>
+                                                </div>
+
                                                 <div class="form-group">
                                                     <label for="mailSubject">Subject</label>
                                                     <input type="text" class="form-control" name="mail-subject">
@@ -143,28 +125,18 @@ if((isset($_GET['btnSearch'])) &&($_GET['btnSearch'] == 'Search'))
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <script src="../plugins/jquery-3.6.0.min.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
+    
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>    
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
 
-    <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
-    <script src="../plugins/data-table/simple-datatables.js"></script>
-    <script src="../plugins/tinymce/tinymce.js"></script>
-    <script src="../plugins/main.js"></script>
+    <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
+    <script src="<?= ADM_URL ?>js/hoverable-collapse.js"></script>
+    <script src="<?= ADM_URL ?>js/template.js"></script>
+    <script src="<?= ADM_URL ?>js/settings.js"></script>
+    <script src="<?= ADM_URL ?>js/todolist.js"></script>
 
-
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!-- End custom js for this page-->
 </body>
 
 </html>

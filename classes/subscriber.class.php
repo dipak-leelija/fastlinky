@@ -124,6 +124,14 @@
 		}//end of add subscriber
 		
 
+		public function getAllMail(){
+			$sql = "SELECT email FROM email_subscriber";
+			$res = $this->conn->query($sql);
+			while ($data = $res->fetch_object()) {
+				$result[] = $data->email;
+			}
+			return json_encode($result);
+		}
 
 		function getUserByEmail($email){
 			$email	= trim(addslashes($email));
@@ -210,38 +218,6 @@
 			return $id;
 		}//eof
 		
-		/**
-		*	Get email by category
-		*
-		*	@param
-		*			$cat		Category of the subscriber
-		*
-		*	@return array
-		*/
-		function getSubsByCat($cat)
-		{
-			$cat	= (int)$cat;
-			if($cat > 0)
-			{
-				$sql = "SELECT * FROM email_subscriber WHERE cat_id = '$cat' ORDER BY email";
-			}
-			else
-			{
-				$sql = "SELECT * FROM email_subscriber ORDER BY email";
-			}
-			
-			$query	= mysql_query($sql);
-			$id		= array();
-			
-			if(mysql_num_rows($query) > 0)
-			{
-				while($result = mysql_fetch_array($query))
-				{
-					$id[] = $result['subscriber_id'];
-				}
-			}
-			return $id;
-		}//eof
 		
 		/**
 		*	Search subscriber by key word only
@@ -285,103 +261,6 @@
 				return $data;
 			 }
 		}//eof
-		
-		
-		/**
-		*	Get the subscriber
-		*/
-		function getAllSubId($letter, $status, $cat, $keyword)
-		{
-			$allIds	= array();
-			
-			$letIds	= $this->getSubsByAlpha($letter);
-			$staIds	= $this->getSubsByStatus($status);
-			$catIds	= $this->getSubsByCat($cat);
-			$keyIds	= $this->getSubsKeyword($keyword);
-			
-			$allIds	= array_intersect($letIds, $staIds, $catIds, $keyIds);
-			
-			//return
-			return $allIds;
-		}//eof
-		
-		/**
-		*	Get the subscriber
-		*/
-		function getIdByCatStatus($status, $cat)
-		{
-			$allIds	= array();
-			
-			$staIds	= $this->getSubsByStatus($status);
-			$catIds	= $this->getSubsByCat($cat);
-			
-			$allIds	= array_intersect($staIds, $catIds);
-			
-			//return
-			return $allIds;
-		}//eof
-		
-		/////////////////////////////////////////////////////////////////////////////////
-		
-		/**
-		*	Returns subscriber detail corresponding to subscriber id
-		*	@return array
-		*/
-		function getSubsDtl($id)
-		{
-			$sql 	= "SELECT * FROM email_subscriber WHERE subscriber_id='$id'";
-			$query 	= mysql_query($sql);
-			$data	= array();
-			
-			if(mysql_num_rows($query) > 0)
-			{
-				while($result = mysql_fetch_array($query))
-				{
-					$data = array(
-							$result['customer_id'],		//0
-							$result['cat_id'],			//1
-							$result['email'],			//2
-							$result['fname'],			//3
-							$result['lname'],			//4
-							$result['company'],			//5
-							$result['phone'],			//6
-							$result['added_on'],		//7
-							$result['modified_on'],		//8
-							$result['status']			//9				
-							);
-				}
-			}
-			return $data;
-		}//eof
-		
-		
-		/**
-		*	Check  subscriber id
-		*	@author		Ranjan Kuamr Basak
-		*	@date   	October 02, 2013
-		*	@return name
-		*/
-		
-		function checkName($id)
-		{
-			$sql 	= "SELECT * FROM email_subscriber WHERE subscriber_id='$id'";
-			$query 	= mysql_query($sql);
-			if(mysql_num_rows($query) > 0)
-			{
-				while($result = mysql_fetch_array($query))
-				{
-					if($result['customer_id']==0)
-					{
-						$name	='Guest';
-					}
-					else
-					{
-						$name	=$result['fname'];
-					}
-				}
-			}
-			return $name;
-		}
 		
 		
 		/**

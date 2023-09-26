@@ -1,19 +1,6 @@
 <?php 
-// include_once "_config/dbconnect.trait.php";
-
-/**
-*	Register a new user, edit or update registration information.
-*
-*	UPDATE	Dec 10, 2017
-*	Customer type has been added to the system.
-*
-*	UPDATE	Dec 10, 2017
-*	Customer verification has been added.
-*/
-
 include_once 'encrypt.inc.php'; 
 include_once 'utility.class.php';
-
 
 class Customer extends Utility{
 
@@ -623,85 +610,124 @@ class Customer extends Utility{
 	}//eof
 	
 	
-	/*/**
+	/**
 	*	Retrieve all customer id 
 	*
 	*	@return array
 	*/
-	// function getAllCustomerId()
-	// {
-	// 	//Declare array
-	// 	$data	= array();
+	function getAllCustomerId(){
+
+		//Declare array
+		$data	= array();
 		
-	// 	//
-	// 	$sql	= "SELECT 		C.customer_id 
-	// 			   FROM 		customer C, customer_info CI
-	// 			   WHERE		C.customer_id = CI.customer_id
-	// 			   ORDER BY 	CI.added_on 
-	// 			   DESC";
+		$sql	= "SELECT 		C.customer_id FROM customer C, customer_info CI
+				   WHERE		C.customer_id = CI.customer_id
+				   ORDER BY 	CI.added_on ASC";
 		
-	// 	//execute query
-	// 	$query	= mysql_query($sql);
+		//execute query
+		$query	= $this->conn->query($sql);
 		
-	// 	//fetch the data
-	// 	if(mysql_num_rows($query) > 0)
-	// 	{
-	// 		while($result = mysql_fetch_object($query))
-	// 		{
-	// 			$data[] = $result->customer_id;
-	// 		}
-	// 	}
+		//fetch the data
+		if($query->num_rows > 0){
+			while($result = $query->fetch_object()){
+				$data[] = $result->customer_id;
+			}
+		}
 		
-	// 	//return data
-	// 	return $data;
+		//return data
+		return json_encode($data);
 		
-	// }//eof
+	}//eof
 	
+
+
+	/**
+	*	Retrieve all customer id 
+	*
+	*	@return array
+	*/
+	function getAllClientId(){
+
+		//Declare array
+		// $data	= array();
+		
+		$sql	= "SELECT customer_id FROM customer WHERE customer_type = 1 ORDER BY verified_on ASC";
+		
+		//execute query
+		$query	= $this->conn->query($sql);
+		
+		//fetch the data
+		if($query->num_rows > 0){
+			while($result = $query->fetch_object()){
+				$data[] = $result->customer_id;
+			}
+		}
+		
+		//return data
+		return json_encode($data);
+		
+	}//eof
+
+
+	/**
+	*	Retrieve all customer id 
+	*
+	*	@return array
+	*/
+	function getAllSellerId(){
+
+		//Declare array
+		// $data	= array();
+		
+		$sql	= "SELECT customer_id FROM customer WHERE customer_type = 2 ORDER BY verified_on ASC";
+		
+		//execute query
+		$query	= $this->conn->query($sql);
+		
+		//fetch the data
+		if($query->num_rows > 0){
+			while($result = $query->fetch_object()){
+				$data[] = $result->customer_id;
+			}
+		}
+		
+		//return data
+		return json_encode($data);
+		
+	}//eof
+
+
 	
 	/**
 	*	Returns the list of client
 	*
 	*	@param
-	*			$num		Number of client to find. If it is set to ALL, it will search for
+	*			$sort		Order by clause
+	*			$limit		Number of client to find. If it is set to ALL, it will search for
 	*						all the registered client
-	*			$ordBy		Order by clause
-	*			$ordType	Order by type, either ascending or descending
-	*
 	*	@return array
 	*/
-	
-	function getAllCustomer($num, $ordBy, $ordType){
-		//declare vars
-		$data		= array();
-	
+	function getAllCustomerMail($sort, $limit="ALL"){
+		
+		// $data = array();
+		
 		//generate the statement
-		if($num == 'ALL'){
-			$select		= "SELECT 	CI.customer_id AS CUSID 
-						   FROM 	customer_info CI, customer C, customer_address CA 
-						   WHERE 	CI.customer_id = C.customer_id
-						   AND		CI.customer_id = CA.customer_id
-						   ORDER BY ".$ordBy." ".$ordType;
-		}else if($num > 0){
-
-			$select		= "SELECT CI.customer_id AS CUSID FROM customer_info CI ORDER BY ".$ordBy." ".$ordType." LIMIT $num";
-		
-		}else{
-			$select		= "SELECT CI.customer_id AS CUSID  FROM customer_info CI ORDER BY ".$ordBy." ".$ordType;
+		if ($limit > 0 && $limit != "ALL") {
+			$select		= "SELECT email FROM customer ORDER BY verified_on {$sort} LIMIT {$limit}";
+		}else {
+			$select		= "SELECT email FROM customer ORDER BY verified_on {$sort}";
 		}
-		
 		
 		//execute query
 		$query		= $this->conn->query($select);
-		//echo $select.mysql_error();exit;
 		
 		//fetch the values
-		while($result	= 	$query->fetch_object())
-		{
-			$data[]		= $result->CUSID;
+		while($result	= 	$query->fetch_object()){
+			$data[]		= $result->email;
 		}
 		
 		//return the data
-		return $data;
+		return json_encode($data);
 		
 	}//eof
 	
