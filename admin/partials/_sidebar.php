@@ -134,7 +134,7 @@
             <div class="collapse <?php if($page == "Mail-groups-mail" || $page == "Mails-historys" || $page == "viewEmail-history" || $page == "view_All-mail"){echo "show";} ?>"
                 id="marketing">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="mails-group-mail.php">Group Mail</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="group-mail.php">Group Mail</a></li>
                     <li class="nav-item"> <a class="nav-link" href="mails-history.php">Mail History</a></li>
                 </ul>
             </div>

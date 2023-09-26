@@ -72,14 +72,14 @@ $typeM		= $utility->returnGetVar('typeM','');
                                     <h4 class="card-title">Sending Group Mail</h4>
                                 </div>
                                 <div class="card-body">
-                                    <div class="row justify-content-center">
-                                        <div class="border rounded mx-auto col-md-8 col-lg-7 py-3">
-                                            <form action="email_sendall_acction.php" method="post"
+                                    <!-- <div class="row justify-content-center">
+                                        <div class="border rounded mx-auto col-md-8 col-lg-7 py-3"> -->
+                                            <form action="group-mail-action.php" method="post"
                                                 name="formCustomerMail">
 
                                                 <div class="form-group">
                                                     <label for="mailTo">Send Mail to</label>
-                                                    <select class="form-control" name="mailTo" id="mailTo">
+                                                    <select class="form-control" name="mailTo" id="mailTo" required>
                                                         <option value="" selected disabled>Select</option>
                                                         <option value="all-subscriber">All Subscriber</option>
                                                         <option value="all-customer">All Customer</option>
@@ -90,14 +90,14 @@ $typeM		= $utility->returnGetVar('typeM','');
 
                                                 <div class="form-group">
                                                     <label for="mailSubject">Subject</label>
-                                                    <input type="text" class="form-control" name="mail-subject">
+                                                    <input type="text" class="form-control" name="mail-subject" required>
                                                 </div>
 
 
                                                 <div class="form-group">
                                                     <label for="mailMessage">Message</label>
                                                     <textarea class="form-control" name="mail-message"
-                                                        id="summernote"></textarea>
+                                                     id="summernote" required></textarea>
 
                                                 </div>
 
@@ -112,8 +112,8 @@ $typeM		= $utility->returnGetVar('typeM','');
 
                                             </form>
 
-                                        </div>
-                                    </div>
+                                        <!-- </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
