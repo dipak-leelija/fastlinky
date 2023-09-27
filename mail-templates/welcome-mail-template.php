@@ -2,259 +2,34 @@
 require_once dirname(__DIR__) . '/includes/constant.inc.php';
 
 
-// echo welcomeMailToUser('Dipak', 'http://localhost/fastlinky/mail-templates/welcome-mail-template.php');
-
-
-
-function commonCss(){
-    $css = '
-    @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-    
-    body {
-        margin: 0;
-        padding: 0;
-        word-spacing: normal;
-    }
-    
-    .maindivofpage {
-        text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-    }
-    
-    .table-first {
-        width: 100%;
-        border: none;
-        border-spacing: 0;
-    }
-    
-    .table-second {
-        width: 94%;
-        max-width: 600px;
-        /* border: 1px solid #c9c6c6; */
-        border-spacing: 0;
-        text-align: left;
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        line-height: 22px;
-        color: #363636;
-    }
-    
-    .ts-td1-img-div {
-        padding: 15px 30px 0px 30px;
-        text-align: center;
-        font-size: 24px;
-        background: aliceblue;
-    }
-    
-    .ts-td-image {
-        width: 270px;
-        max-width: 100%;
-        height: auto;
-        border: none;
-        text-decoration: none;
-        color: #ffffff;
-    }
-
-    .t-d-none{
-        text-decoration: none;
-    }
-
-    .p-0 {
-        padding: 0;
-    }
-    .pt-12p{
-        padding-top: 12px;
-    }
-    .fs-14p{
-        font-size: 14px;
-    }
-    .fw-bold{
-        font-weight: bold;
-    }
-    .text-center{
-        text-align: center;
-    }
-    .m-auto{
-        margin: auto;
-    }
-    .bg-darkLight{
-        background-color: #e7e7e74a;
-    }
-    ';
-    return $css;
-}
-// function verifiedCss(){
-
-// }
-
-function headerCss(){
-
-    $css = commonCss();
-    $css .= '
-    /* ============== */
-    .ts-td1-img-div h1{
-        margin: 0px;
-        color: #843fa1;
-        line-height: 140%;
-        text-align: center;
-        word-wrap: break-word;
-        font-weight: normal;
-        font-size: 25px;
-    }
-    .ts-td1-img-div p{
-        color: #3598db;
-        font-size: 22px;
-        line-height: 1;
-        margin: 5px 0px 38px;
-    }
-    /* ============== */
-
-    .ts-td-image {
-        width: 270px;
-        max-width: 100%;
-        height: auto;
-        border: none;
-        text-decoration: none;
-        color: #ffffff;
-    }
-    
-    .ts-td2-text-div {
-        padding-bottom: 0px !important;
-        padding: 20px 10px;
-        background-color: #e7e7e74a;
-    }
-    /* ============== */
-
-    .ts-td2-text-div-p{
-        color: #000000;
-        font-family: cabin, sans-serif;
-        font-size: 14px;
-        line-height: 21px;
-    }
-    
-    .ts-td3-image {
-        background-color: #f3b165;
-        height: auto;
-        display: block;
-        border: none;
-        text-decoration: none;
-        color: #363636;
-        margin: auto;
-    }
-    
-    .ts-td4-img-section {
-        background-color: #e7e7e74a;
-        padding:10px;
-    }
-    
-    .btn{
-        box-sizing: border-box;
-        padding: 6px 20px;
-        display: inline-block;
-        font-family: arial,helvetica,sans-serif;
-        text-decoration: none;
-        -webkit-text-size-adjust: none;
-        text-align: center;
-        color: #FFFFFF;
-        background-color: #843fa1;
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        width: auto;
-        max-width: 100%;
-        overflow-wrap: break-word;
-        word-break: break-word;
-        word-wrap: break-word;
-    }
-    
-    table,
-    td,
-    div,
-    h1 {
-        font-family: Arial, sans-serif;
-    }
-    
-    @media screen and (max-width: 530px) {
-     
-        .ts-td2-text-div-p{
-            margin: 0;
-            /* text-align: center; */
-        }
-       
-    }
-    
-    ';
-    return $css;
-}
-
+echo welcomeMailToUser('Dipak', 'http://localhost/fastlinky/mail-templates/welcome-mail-template.php');
 
 
 function mailFooter(){
     $body = '
-        <style>
-        /* FOOTER DIVISION CSS STARTS */
-        /* footer */
-        .ts-td7-footer-div {
-            padding: 0px;
-            text-align: center;
-            font-size: 12px;
-            background-color: #f3b165;
-        }
-        .footer-text-address{
-            margin-bottom: 2rem;
-            margin-top: 2rem;
-        }
-        .footer-text-address h1{
-            font-size: 2rem;
-            color: darkblue;
-            border-bottom: 2px solid #003399;
-            padding-bottom: 5px;
-            width: fit-content;
-            margin: auto;
-            margin-bottom: 20px;
-        }
-        .footer-text-address p{
-            margin: 0;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-        .social-icons-div{
-            background: darkblue;
-                padding: 12px;
-                margin: 0px;
-        }
-        .social-icons-div a{
-            text-decoration:none;
-        }
-        .social-icons-div img{
-            display:inline-block;
-            padding: 4px;
-            vertical-align: sub !important;
-        }
-    </style>
-        <tr>
-            <td class="ts-td7-footer-div">
-                <div class="footer-text-address">
-                    <h1>Get In Touch</h1>
+        <tr style="padding: 0px; text-align: center; font-size: 12px; background-color: #f3b165;">
+            <td style="padding: 0px; text-align: center; font-size: 12px; background-color: #f3b165;">
+                <div style="margin-bottom: 2rem;
+                margin-top: 2rem;" class="footer-text-address">
+                    <h1 style="font-size: 2rem; color: darkblue; border-bottom: 2px solid #003399; padding-bottom: 5px; width: fit-content; margin: auto; margin-bottom: 20px;" >Get In Touch</h1>
                     <div>
-                        <p>Barasat, Kolkata, West Bengal, 700125, India</p>
-                        <p style="font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
-                            <a class="t-d-none" style="color: #000;" rel="noopener" href="tel:'.SITE_CONTACT_NO.'" target="_blank">
+                        <p style="margin: 0; font-size: 14px; line-height: 1.4;">Barasat, Kolkata, West Bengal, 700125, India</p>
+                        <p style="margin: 0; font-size: 14px; line-height: 1.4; font-weight: 600; text-align: center;">
+                            <a style="text-decoration: none; color: #000;" rel="noopener" href="tel:'.SITE_CONTACT_NO.'" target="_blank">
                             '.SITE_CONTACT_NO.'
                             </a>
                         </p>
-                        <p style="font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center; color: #fff;">
+                        <p style="margin: 0; font-size: 14px; line-height: 1.4; font-weight: 600; text-align: center; color: #fff;">
                             <a style="text-decoration: none; color: #000;" rel="noopener" href="tel:'.SITE_BILLING_CONTACT_NO.'" target="_blank">
                             '.SITE_BILLING_CONTACT_NO.'
                             </a>
                         </p>
-                        <p style="font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
+                        <p style="margin: 0; font-size: 14px; line-height: 1.4; font-weight: 600; text-align: center;">
                             <a style="text-decoration: none;" rel="noopener" href="mailto:'.SITE_EMAIL.'" target="_blank">
                             '.SITE_EMAIL.'
                             </a>
                         </p>
-                        <p style="font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center;">
+                        <p style="margin: 0; font-size: 14px; line-height: 1.4; font-weight: 600; text-align: center;">
                             <a style="text-decoration: none;" rel="noopener" href="mailto:'.SITE_BILLING_EMAIL.'" target="_blank">
                             '.SITE_BILLING_EMAIL.'
                             </a>
@@ -263,18 +38,18 @@ function mailFooter(){
 
                 </div>
 
-                <p class="social-icons-div">
-                    <a href="'.FB_LINK.'" title="Facebook" target="_blank">
-                        <img src="https://fastlinky.com/images/icons/social-media-icons/facebook2x.png" width="35" height="35" alt="facebook">
+                <p class="social-icons-div" style="display: flex; justify-content: center; margin: 0; font-size: 14px; line-height: 1.4; text-align: center; background: #00008b; padding: 12px;">
+                    <a href="'.FB_LINK.'" title="Facebook" target="_blank" style="text-decoration: none;">
+                        <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/facebook2x.png" width="35" height="35" alt="facebook">
                     </a>
-                    <a href="'.TWITTER_LINK.'" title="Twitter" target="_blank">
-                        <img src="https://fastlinky.com/images/icons/social-media-icons/twitter2x.png" width="35" height="35" alt="t">
+                    <a href="'.TWITTER_LINK.'" title="Twitter" target="_blank" style="text-decoration: none;">
+                        <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/twitter2x.png" width="35" height="35" alt="t">
                     </a>
-                    <a href="'.LINKDIN_LINK.'" title="Linkedin" target="_blank">
-                        <img src="https://fastlinky.com/images/icons/social-media-icons/linkedin2x.png" width="35" height="35" alt="Li">
+                    <a href="'.LINKDIN_LINK.'" title="Linkedin" target="_blank" style="text-decoration: none;">
+                        <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/linkedin2x.png" width="35" height="35" alt="Li">
                     </a>
-                    <a href="'.INSTA_LINK.'" title="Instagram" target="_blank">
-                        <img src="https://fastlinky.com/images/icons/social-media-icons/instagram2x.png" width="35" height="35" alt="insta">
+                    <a href="'.INSTA_LINK.'" title="Instagram" target="_blank" style="text-decoration: none;">
+                        <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/instagram2x.png" width="35" height="35" alt="insta">
                     </a>
                 </p>
             </td>
@@ -303,31 +78,97 @@ function welcomeMailToUser($fistName, $verifyLink){
         <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
 
-        <style>';
-        $body .= headerCss();
-        $body .= '</style>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+            
+            
+            .ts-td2-text-div {
+                padding-bottom: 0px !important;
+                padding: 20px 10px;
+                background-color: #e7e7e74a;
+            }
+            /* ============== */
+
+            .ts-td2-text-div-p{
+                color: #000000;
+                font-family: cabin, sans-serif;
+                font-size: 14px;
+                line-height: 21px;
+            }
+            
+            .ts-td3-image {
+                background-color: #f3b165;
+                height: auto;
+                display: block;
+                border: none;
+                text-decoration: none;
+                color: #363636;
+                margin: auto;
+            }
+            
+            .ts-td4-img-section {
+                background-color: #e7e7e74a;
+                padding:10px;
+            }
+            
+            .btn{
+                box-sizing: border-box;
+                padding: 6px 20px;
+                display: inline-block;
+                font-family: arial,helvetica,sans-serif;
+                text-decoration: none;
+                -webkit-text-size-adjust: none;
+                text-align: center;
+                color: #FFFFFF;
+                background-color: #843fa1;
+                border-radius: 20px;
+                -webkit-border-radius: 20px;
+                -moz-border-radius: 20px;
+                width: auto;
+                max-width: 100%;
+                overflow-wrap: break-word;
+                word-break: break-word;
+                word-wrap: break-word;
+            }
+            
+            table,
+            td,
+            div,
+            h1 {
+                font-family: Arial, sans-serif;
+            }
+            
+            @media screen and (max-width: 530px) {
+            
+                .ts-td2-text-div-p{
+                    margin: 0;
+                    /* text-align: center; */
+                }
+            
+            }
+        </style>
 
     </head>
 
-    <body>
-        <div role="article" aria-roledescription="email" lang="en" class="maindivofpage">
-            <table role="presentation" class="table-first">
+    <body style="margin: 0; padding: 0; word-spacing: normal;">
+        <div role="article" aria-roledescription="email" lang="en" style="text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+            <table role="presentation" style="width: 100%; border: none; border-spacing: 0;">
                 <tr>
                     <td align="center" style="padding:0;">
-                        <table role="presentation" class="table-second">
+                        <table role="presentation" style="width: 94%; max-width: 600px; border-spacing: 0; text-align: left; font-family: Arial, sans-serif; font-size: 16px; line-height: 22px;color: #363636;">
                             <!-- **************************  LOGO IMAGE SECTION ************************ -->
                             <tr>
                                 <!--|| ts=table-second ||  -->
-                                <td class="ts-td1-img-div fw-bold">
-                                    <h1> <strong> Hi '.$fistName.'!</strong></h1>
+                                <td style="font-weight: bold;">
+                                    <h1 style="margin: 0px; color: #843fa1; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-size: 25px;"> <strong> Hi '.$fistName.'!</strong></h1>
                                     <p>
                                         <strong>Welcome to '.COMPANY_FULL_NAME.'</strong>
                                     </p>
                                 </td>
                             </tr>
                             <!-- **************************  LOGO IMAGE SECTION ENDS ************************ -->
-                            <tr class="bg-darkLight">
-                                <td class="p-0">
+                            <tr style="background-color: #e7e7e74a;">
+                                <td style="padding: 0;">
                                     <a href="#" style="text-decoration:none;">
                                         <div>
                                             <img class="ts-td3-image" src="'.URL.'/mail-templates/images/verify-welcome.png"
@@ -339,15 +180,15 @@ function welcomeMailToUser($fistName, $verifyLink){
                             </tr>
                             <tr>
                                 <td class="ts-td2-text-div">
-                                    <p class="ts-td2-text-div-p pt-12p" style="margin:0;">
+                                    <p class="ts-td2-text-div-p" style="margin:0; padding-top: 12px;">
                                         <span style="font-family: Cabin, sans-serif;">
                                         We have received your registration on our site and we are excited to have you join our community. In order to ensure the security of your account and to keep our site safe for all users, we kindly request that you verify your account.
                                         </span>
 
 
                                     </p>
-                                    <p class="ts-td2-text-div-p pt-12p" style="text-align: left;">
-                                        <strong class="fs-14p">Click on the verify button bellow or copy the link to another tab to verify your account:</strong>
+                                    <p class="ts-td2-text-div-p" style="text-align: left; padding-top: 12px;">
+                                        <strong style="font-size: 14px;">Click on the verify button bellow or copy the link to another tab to verify your account:</strong>
                                     </p>
                                     <p class="ts-td2-text-div-p" style="color: #3a47f8;margin: 2px;text-align: center;">
                                     '.$verifyLink.'
@@ -357,7 +198,7 @@ function welcomeMailToUser($fistName, $verifyLink){
                             </tr>
 
                             <tr>
-                                <td class="text-center bg-darkLight pt-12p">
+                                <td style="background-color: #e7e7e74a; padding-top: 12px; text-align: center;">
                                     <a class="btn " href="'.$verifyLink.'" target="_blank">Verify</a>
                                 </td>
                             </tr>
@@ -409,179 +250,178 @@ function VerifiedMailtoUser($fastName){
                 <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet" type="text/css">
 
 
-                <style>';
-        $body .= commonCss();
-        $body .= '
-        /* =================== */
-        
-        .ts-td2-text-div {
-            padding-bottom: 0px !important;
-            padding: 30px;
-        }
-        
-        .ts-td2-text-div-p {
-            margin: 0;
-        }
-        /* ============== */
-        
-        .ts-td2-text-div-h1 {
-            margin-top: 0;
-            margin-bottom: 16px;
-            font-size: 26px;
-            line-height: 32px;
-            font-weight: bold;
-            letter-spacing: -0.02em;
-            font-family: "Satoshi-Variable";
-        }
-        
-        .ts-td3-img-div {
-            font-size: 24px;
-            line-height: 28px;
-        }
-        
-        .ts-td3-image {
-            background-color: aliceblue;
-            width: 70%;
-            height: auto;
-            display: block;
-            border: none;
-            text-decoration: none;
-            color: #363636;
-        }
-        
-        .explore-section {
-            padding: 35px 30px 11px 30px;
-            font-size: 0;
-            border-bottom: 1px solid #f0f0f5;
-            border-color: rgba(201, 201, 207, .35);
-            font-family: cabin, sans-serif;
-        }
-        
-        .col-sml {
-            display: inline-block;
-            width: 100%;
-            max-width: 145px;
-            vertical-align: top;
-            text-align: left;
-            font-family: cabin, sans-serif;
-            font-size: 14px;
-            color: #363636;
-        }
-        
-        .col-sml-img {
-            width: 115px;
-            max-width: 80%;
-            margin-bottom: 20px;
-        }
-        
-        .col-lge {
-            display: inline-block;
-            width: 100%;
-            max-width: 395px;
-            vertical-align: top;
-            padding-bottom: 20px;
-            font-family: cabin, sans-serif;
-            font-size: 16px;
-            line-height: 22px;
-            color: #363636;
-        }
-        
-        .col-lge-p1 {
-            margin-top: 0;
-            margin-bottom: 12px;
-        }
-        
-        .col-lge-p2 {
-            margin-top: 0;
-            margin-bottom: 18px;
-        }
-        
-        .col-lge-p3 {
-            margin: 0;
-            text-align: center;
-        }
-        
-        .col-lge-p3-atag {
-            background: #ff3884;
-            text-decoration: none;
-            padding: 10px 25px;
-            color: #ffffff;
-            border-radius: 4px;
-            display: inline-block;
-            mso-padding-alt: 0;
-            text-underline-color: #ff3884;
-        }
-        
-        .col-lge-p3-span {
-            mso-text-raise: 10pt;
-            font-weight: bold;
-        }
-        
-        .ts-td6-text-div {
-            padding: 30px;
-            background-color: aliceblue;
-        }
-        
-        table,
-        td,
-        div,
-        h1,
-        p {
-            font-family: cabin, sans-serif;
-            
-        }
-        
-        @media screen and (max-width: 530px) {
-            .col-lge {
-                max-width: 100% !important;
-                text-align: center;
-            }
-            .ts-td2-text-div-h1 {
-                text-align: center;
-            }
-            .ts-td2-text-div-p {
-                margin: 0;
-                text-align: center;
-            }
-            .col-sml {
-                max-width: 100%;
-                text-align: center;
-            }
-        }
-        
-        @media screen and (min-width: 531px) {
-            .col-sml {
-                max-width: 27% !important;
-            }
-            .col-lge {
-                max-width: 73% !important;
-            }
-        }
-
-        </style>
+                <style>
+                @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+    
+                /* =================== */
+                
+                .ts-td2-text-div {
+                    padding-bottom: 0px !important;
+                    padding: 30px;
+                }
+                
+                .ts-td2-text-div-p {
+                    margin: 0;
+                }
+                /* ============== */
+                
+                .ts-td2-text-div-h1 {
+                    margin-top: 0;
+                    margin-bottom: 16px;
+                    font-size: 26px;
+                    line-height: 32px;
+                    font-weight: bold;
+                    letter-spacing: -0.02em;
+                    font-family: "Satoshi-Variable";
+                }
+                
+                .ts-td3-img-div {
+                    font-size: 24px;
+                    line-height: 28px;
+                }
+                
+                .ts-td3-image {
+                    background-color: aliceblue;
+                    width: 70%;
+                    height: auto;
+                    display: block;
+                    border: none;
+                    text-decoration: none;
+                    color: #363636;
+                }
+                
+                .explore-section {
+                    padding: 35px 30px 11px 30px;
+                    font-size: 0;
+                    border-bottom: 1px solid #f0f0f5;
+                    border-color: rgba(201, 201, 207, .35);
+                    font-family: cabin, sans-serif;
+                }
+                
+                .col-sml {
+                    display: inline-block;
+                    width: 100%;
+                    max-width: 145px;
+                    vertical-align: top;
+                    text-align: left;
+                    font-family: cabin, sans-serif;
+                    font-size: 14px;
+                    color: #363636;
+                }
+                
+                .col-sml-img {
+                    width: 115px;
+                    max-width: 80%;
+                    margin-bottom: 20px;
+                }
+                
+                .col-lge {
+                    display: inline-block;
+                    width: 100%;
+                    max-width: 395px;
+                    vertical-align: top;
+                    padding-bottom: 20px;
+                    font-family: cabin, sans-serif;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #363636;
+                }
+                
+                .col-lge-p1 {
+                    margin-top: 0;
+                    margin-bottom: 12px;
+                }
+                
+                .col-lge-p2 {
+                    margin-top: 0;
+                    margin-bottom: 18px;
+                }
+                
+                .col-lge-p3 {
+                    margin: 0;
+                    text-align: center;
+                }
+                
+                .col-lge-p3-atag {
+                    background: #ff3884;
+                    text-decoration: none;
+                    padding: 10px 25px;
+                    color: #ffffff;
+                    border-radius: 4px;
+                    display: inline-block;
+                    mso-padding-alt: 0;
+                    text-underline-color: #ff3884;
+                }
+                
+                .col-lge-p3-span {
+                    mso-text-raise: 10pt;
+                    font-weight: bold;
+                }
+                
+                .ts-td6-text-div {
+                    padding: 30px;
+                    background-color: aliceblue;
+                }
+                
+                table,
+                td,
+                div,
+                h1,
+                p {
+                    font-family: cabin, sans-serif;
+                    
+                }
+                
+                @media screen and (max-width: 530px) {
+                    .col-lge {
+                        max-width: 100% !important;
+                        text-align: center;
+                    }
+                    .ts-td2-text-div-h1 {
+                        text-align: center;
+                    }
+                    .ts-td2-text-div-p {
+                        margin: 0;
+                        text-align: center;
+                    }
+                    .col-sml {
+                        max-width: 100%;
+                        text-align: center;
+                    }
+                }
+                
+                @media screen and (min-width: 531px) {
+                    .col-sml {
+                        max-width: 27% !important;
+                    }
+                    .col-lge {
+                        max-width: 73% !important;
+                    }
+                }
+            </style>
 
             
             </head>
             
-            <body>
-                <div role="article" aria-roledescription="email" lang="en" class="maindivofpage">
-                    <table role="presentation" class="table-first">
+            <body style="margin: 0; padding: 0; word-spacing: normal;">
+                <div role="article" aria-roledescription="email" lang="en" style="text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+                    <table role="presentation" style="width: 100%; border: none; border-spacing: 0;">
                         <tr>
-                            <td align="center" class="p-0">
-                                <table role="presentation" class="table-second">
+                            <td align="center" style="padding: 0;">
+                                <table role="presentation" style="width: 94%; max-width: 600px; border-spacing: 0; text-align: left; font-family: Arial, sans-serif; font-size: 16px; line-height: 22px; color: #363636;">
                                     <!-- **************************  LOGO IMAGE SECTION ************************ -->
                                     <tr>
                                         <!--|| ts=table-second ||  -->
-                                        <td class="ts-td1-img-div">
+                                        <td style="padding: 15px 30px 0px 30px; text-align: center; font-size: 24px; background: aliceblue;">
                                             <a href="#" style="text-decoration:none;">
-                                                <img class="ts-td-image" src="'.LOGO_WITH_PATH.'" width="300" alt="Logo">
+                                                <img style="width: 270px; max-width: 100%; height: auto; border: none; text-decoration: none; color: #ffffff;" src="'.LOGO_WITH_PATH.'" width="300" alt="Logo">
                                             </a>
                                         </td>
                                     </tr>
                                     <!-- **************************  LOGO IMAGE SECTION ENDS ************************ -->
-                                    <tr class="bg-darkLight">
-                                        <td class="ts-td3-img-div fw-bold p-0">
-                                            <img class="ts-td3-image m-auto" src="'.URL.'/mail-templates/images/emails-img1.png" width="600" alt="">
+                                    <tr style="background-color: #e7e7e74a;">
+                                        <td class="ts-td3-img-div" style="padding: 0; font-weight: bold;">
+                                            <img class="ts-td3-image" style="margin: auto;" src="'.URL.'/mail-templates/images/emails-img1.png" width="600" alt="">
                                         </td>
                                     </tr>
                                     <tr>
@@ -592,7 +432,7 @@ function VerifiedMailtoUser($fastName){
                                             </p>
                                         </td>
                                     </tr>
-                                    <tr class="bg-darkLight">
+                                    <tr style="background-color: #e7e7e74a;">
                                         <td class="explore-section">
                                             <div class="col-sml">
                                                 <img class="col-sml-img" src="'.URL.'/mail-templates/images/email-verify.png" width="115" alt="">
@@ -760,7 +600,7 @@ function welcomeMailToAdmin($data, $data_val){
     
     </head>
     
-    <body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #e7e7e7;color: #000000">
+    <body class="clean-body u_body" style="margin: 0;padding: 0; word-spacing: normal; -webkit-text-size-adjust: 100%;background-color: #e7e7e7;color: #000000;">
         <!--[if IE]><div class="ie-container"><![endif]-->
         <!--[if mso]><div class="mso-container"><![endif]-->
         <table id="u_body" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #e7e7e7;width:100%" cellpadding="0" cellspacing="0">
