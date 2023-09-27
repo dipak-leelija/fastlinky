@@ -141,16 +141,13 @@ if(isset($_POST['btnLogin'])){
                                         <div class="mb-2">
                                             <h3 class="h4 font-weight-bold text-theme">Login</h3>
                                         </div>
-                                        <h6 class="h5 mb-0">Welcome back!</h6>
-                                        <p class="text-muted mt-2 mb-2">Enter your email address and password to
-                                            access
-                                            admin panel.</p>
+                                        <h6 class="h5 mb-4">Welcome back!</h6>
 
                                         <form role="form" class="form-horizontal-login needs-validation"
-                                            action="<?php echo $_SERVER['PHP_SELF'] ?>" name="formContactform"
+                                            action="<?= $_SERVER['PHP_SELF'] ?>" name="formContactform"
                                             method="POST" enctype="multipart/form-data" autocomplete="off" novalidate>
                                             <div class="form-group">
-                                                <label>Email address</label>
+                                                <label for="txtUser" class="form-label mb-0">Email address</label>
                                                 <input type="email" placeholder="example@gmail.com" id="txtUser"
                                                     name="txtUser" class="form-control" required>
                                                 <div class="invalid-feedback">
@@ -159,8 +156,8 @@ if(isset($_POST['btnLogin'])){
                                             </div>
 
                                             <div class="form-group ">
-                                                <label>Password</label>
-                                                <input type="password" placeholder="Valid Password" minlength="6"
+                                                <label for="txtPass" class="form-label mb-0">Password</label>
+                                                <input type="password" placeholder="********" minlength="6"
                                                     id="txtPass" name="txtPass" class="form-control" required>
                                                 <div class="invalid-feedback">
                                                     Please enter your Password!
