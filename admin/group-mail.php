@@ -68,51 +68,59 @@ $typeM		= $utility->returnGetVar('typeM','');
                     <div class="row">
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
-                                <div class="card-header bg-light">
+                                <!-- <div class="card-header bg-light">
                                     <h4 class="card-title">Sending Group Mail</h4>
-                                </div>
+                                </div> -->
                                 <div class="card-body">
                                     <!-- <div class="row justify-content-center">
                                         <div class="border rounded mx-auto col-md-8 col-lg-7 py-3"> -->
-                                            <form action="group-mail-action.php" method="post"
-                                                name="formCustomerMail">
+                                    <form class="mail-form needs-validation" action="ajax/group-mail-action.php"
+                                        method="post" name="formCustomerMail" novalidate>
+                                        <div class="form-group">
+                                            <label for="mailTo">Send Mail to</label>
+                                            <select class="form-control" name="mailTo" id="mailTo" required>
+                                                <option value="" selected disabled>Select</option>
+                                                <option value="all-subscriber">All Subscriber</option>
+                                                <option value="all-customer">All Customer</option>
+                                                <option value="seller-only">Seller Only</option>
+                                                <option value="client-only">Client Only</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please select user.
+                                            </div>
+                                        </div>
 
-                                                <div class="form-group">
-                                                    <label for="mailTo">Send Mail to</label>
-                                                    <select class="form-control" name="mailTo" id="mailTo" required>
-                                                        <option value="" selected disabled>Select</option>
-                                                        <option value="all-subscriber">All Subscriber</option>
-                                                        <option value="all-customer">All Customer</option>
-                                                        <option value="seller-only">Seller Only</option>
-                                                        <option value="client-only">Client Only</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="mailSubject">Subject</label>
-                                                    <input type="text" class="form-control" name="mail-subject" required>
-                                                </div>
-
-
-                                                <div class="form-group">
-                                                    <label for="mailMessage">Message</label>
-                                                    <textarea class="form-control" name="mail-message"
-                                                     id="summernote" required></textarea>
-
-                                                </div>
+                                        <div class="form-group">
+                                            <label for="mailSubject">Subject</label>
+                                            <input type="text" class="form-control" name="mail-subject" required>
+                                            <div class="invalid-feedback">
+                                                Please write a subject for mail.
+                                            </div>
+                                        </div>
 
 
-                                                <div class="d-flex justify-content-around justify-content-md-end">
-                                                    <button class="btn btn-danger mr-2"
-                                                        onclick="history.back()">Cancel</button>
-                                                    <button type="submit" class="btn btn-primary"
-                                                        onclick="mailSubmit(this)" name="btnSendMail"
-                                                        id="btnSendMail">Submit</button>
-                                                </div>
+                                        <div class="form-group">
+                                            <label for="mailMessage">Message</label>
+                                            <textarea class="form-control" name="mail-message" id="summernote"
+                                                required></textarea>
+                                            <div class="invalid-feedback">
+                                                Mail can't be blank.
+                                            </div>
 
-                                            </form>
+                                        </div>
 
-                                        <!-- </div>
+
+                                        <div class="d-flex justify-content-around justify-content-md-end">
+                                            <button class="btn btn-danger mr-2" onclick="history.back()">Cancel</button>
+                                            <button type="submit" class="btn btn-primary" id="sendMail"
+                                                name="btnSendMail">
+                                                Submit
+                                            </button>
+                                        </div>
+
+                                    </form>
+
+                                    <!-- </div>
                                     </div> -->
                                 </div>
                             </div>
@@ -128,7 +136,21 @@ $typeM		= $utility->returnGetVar('typeM','');
     </div>
     <!-- container-scroller -->
 
-    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 999; right: 0; bottom: 0;">
+        <div id="sendingToast" class="toast border border-info hide" role="alert" aria-live="assertive"
+            aria-atomic="true" data-autohide="false">
+            <div class="toast-header bg-info">
+                <img src="../images/icons/loading-iconic.gif" class="rounded mr-2" alt="...">
+                <strong class="mr-auto text-light">Sending Mail...</strong>
+            </div>
+            <div class="toast-body align-text-bottom">
+                <img src="../images/icons/error.gif" alt="" width="18px" style="margin-bottom: 5px">
+                Please Do not click anywhere or close the tab.
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script> -->
     <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
     <script src="<?= URL ?>/plugins/main.js"></script>
 
@@ -141,11 +163,51 @@ $typeM		= $utility->returnGetVar('typeM','');
     <script src="<?= URL ?>/plugins/summernote/summernote-lite.min.js"></script>
 
     <script>
-    $(document).ready(function() {
-        $('#summernote').summernote({
-            height: "450px"
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+        const mainWrapperDiv = document.querySelector(".main-panel");
+        const sendingToast = document.getElementById("sendingToast");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else {
+                    disableDivWithToast()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+
+        const disableDivWithToast = () => {
+            const toast = new bootstrap.Toast(sendingToast)
+            toast.show()
+
+            // disable the main-wrapper div
+            mainWrapperDiv.style.pointerEvents = "none";
+            mainWrapperDiv.style.opacity = "0.5";
+            mainWrapperDiv.style.background = "#000";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var summernote = document.getElementById("summernote");
+
+            if (summernote) {
+                // Initialize the summernote editor
+                $(summernote).summernote({
+                    height: "300px"
+                });
+            }
         });
-    });
+    })()
     </script>
 
 </body>
