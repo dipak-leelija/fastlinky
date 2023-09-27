@@ -1,6 +1,10 @@
 <?php
-require_once dirname(dirname(__DIR__))."/includes/constant.inc.php";
+error_reporting(E_ALL);
+error_reporting(-1);
+ini_set('error_reporting', E_ALL);
+
 session_start();
+require_once dirname(dirname(__DIR__))."/includes/constant.inc.php";
 include_once ADM_DIR.'/checkSession.php';
 require_once ROOT_DIR."/_config/dbconnect.php";
 
