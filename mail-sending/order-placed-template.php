@@ -153,51 +153,28 @@ function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $o
                                                 </div>';
                                     }
 
-                            // <td>
-                        
-                            //     <div style="word-break: break-word; padding: 0 2rem; font-weight: 600; font-family: "Cabin", sans-serif;">
-                            //         <h4 style="display: flex; width: 100%; word-break: break-word; margin: 20px 0px 5px;">
-                            //             <div style="width: 50%;"> Order ID :</div>
-                            //             <div style="width: 50%;"> '.$orderId.'</div>
-                            //         </h4>';
-
-                            //         if ($domain != '') {
-                            //             $mail .='<div style="display: flex; width: 100%;">
-                            //                         <div class="extra-font" style="width: 50%;">Site Name :</div>
-                            //                         <div class="extra-space" style="width: 50%;"><span>'.$domain[0].'</span></div>
-                            //                     </div>';
-                            //         }
-                            //         // $orderDataArray, $orderDetailsArray
-                            //         for ($i=0; $i<count($orderDataArray); $i++) {
-                            //             $mail .= '<div style="display: flex; width: 100%;">
-                            //                         <div class="extra-font" style="width: 50%;">'.$orderDataArray[$i].' :</div>
-                            //                         <div class="extra-space" style="width: 50%;">'.$orderDetailsArray[$i].'</div>
-                            //                     </div>';
-                            //         }
                         $mail .= '</div>
 
                             </td>
-                        </tr>
+                        </tr>';
 
-                        <tr>
-                            <td style="text-align: justify; padding: 30px 2rem 11px 2rem; font-size: 0; border-bottom: 1px solid #f0f0f5; border-color: rgba(201, 201, 207, .35);">
-                                <div style="display: inline-block; width: 100%; vertical-align: top; padding-bottom: 20px; font-size: 16px; line-height: 22px; color: #363636; font-family: inherit;">
-                                    <p style="margin-top: 0; margin-bottom: 12px; font-family: inherit;">Nullam mollis sapien vel cursus
-                                        fermentum. Integer porttitor augue id ligula facilisis pharetra. In eu ex et
-                               elit ultricies ornare nec ac ex. Mauris sapien massa, placerat non venenatis et,
-                                        tincidunt eget leo.</p>
-                                    <p style="margin-top: 0; margin-bottom: 18px; font-family: inherit;">Nam non ante risus. Vestibulum vitae
-                                        eleifend nisl, quis vehicula justo. Integer viverra efficitur pharetra. Nullam
-                                        eget erat nibh.</p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
+                        // <tr>
+                        //     <td style="text-align: justify; padding: 30px 2rem 11px 2rem; font-size: 0; border-bottom: 1px solid #f0f0f5; border-color: rgba(201, 201, 207, .35);">
+                        //         <div style="display: inline-block; width: 100%; vertical-align: top; padding-bottom: 20px; font-size: 16px; line-height: 22px; color: #363636; font-family: inherit;">
+                        //             <p style="margin-top: 0; margin-bottom: 12px; font-family: inherit;">Nullam mollis sapien vel cursus
+                        //                 fermentum. Integer porttitor augue id ligula facilisis pharetra. In eu ex et
+                        //        elit ultricies ornare nec ac ex. Mauris sapien massa, placerat non venenatis et,
+                        //                 tincidunt eget leo.</p>
+                        //             <p style="margin-top: 0; margin-bottom: 18px; font-family: inherit;">Nam non ante risus. Vestibulum vitae
+                        //                 eleifend nisl, quis vehicula justo. Integer viverra efficitur pharetra. Nullam
+                        //                 eget erat nibh.</p>
+                        //         </div>
+                        //     </td>
+                        // </tr>
+
+                $mail .= '<tr>
                             <td style="padding: 15px 30px; background-color: aliceblue;">
-                                <small style="margin:0;text-align: justify;">Duis sit amet accumsan nibh, varius tincidunt
-                                    lectus. Quisque
-                                    commodo, nulla ac feugiat cursus, arcu orci condimentum tellus, vel placerat libero
-                                    sapien et libero. Suspendisse auctor vel orci nec finibus.</small>
+                                <small style="margin:0;text-align: justify;">We kindly request that you promptly inform us of any discrepancies, inaccuracies, or missing details in the information provided to ensure we can promptly address and rectify any issues.</small>
                             </td>
                         </tr>';
 
