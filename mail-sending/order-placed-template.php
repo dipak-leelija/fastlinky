@@ -13,16 +13,16 @@ function mailFooter(){
         <tr>
             <td style="padding: 0px; text-align: center; font-size: 12px; background-color: #f3b165;">
                 <div class="footer-text-address" style="margin: 2rem auto; ">
-                    <h1 style="font-size: 2rem; color: darkblue; border-bottom: 2px solid #003399; padding-bottom: 5px; width: fit-content; margin: auto; margin-bottom: 20px; font-family: inherit;">Get In Touch</h1>
+                    <h1 style="font-size: 2rem; color: #00008b; border-bottom: 2px solid #003399; padding-bottom: 5px; width: fit-content; margin: auto; margin-bottom: 20px; font-family: inherit;">Get In Touch</h1>
                     <div>
                         <p style="margin: 0; font-size: 14px; line-height: 1.4 font-family: inherit;">Barasat, Kolkata, West Bengal, 700125, India</p>
                         <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center; font-family: inherit;">
-                            <a style="color: #000; text-decoration: none;" rel="noopener" href="tel:'.SITE_CONTACT_NO.'" target="_blank">
+                            <a style="color: #000000; text-decoration: none;" rel="noopener" href="tel:'.SITE_CONTACT_NO.'" target="_blank">
                             '.SITE_CONTACT_NO.'
                             </a>
                         </p>
                         <p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 23.8px; text-align: center; color: #fff;font-family: inherit;">
-                            <a style=" color: #000; text-decoration: none;" rel="noopener" href="tel:'.SITE_BILLING_CONTACT_NO.'" target="_blank">
+                            <a style=" color: #000000; text-decoration: none;" rel="noopener" href="tel:'.SITE_BILLING_CONTACT_NO.'" target="_blank">
                             '.SITE_BILLING_CONTACT_NO.'
                             </a>
                         </p>
@@ -40,7 +40,7 @@ function mailFooter(){
 
                 </div>
 
-                <p style="background: darkblue; padding: 12px; margin: 0px; font-family: inherit;">
+                <p style="background: #00008b; padding: 12px; margin: 0px; font-family: inherit;">
                     <a href="'.FB_LINK.'" title="Facebook" target="_blank" style="text-decoration:none;">
                         <img style="display:inline-block; padding: 4px; vertical-align: sub !important;" src="https://fastlinky.com/images/icons/social-media-icons/facebook2x.png" width="35" height="35" alt="facebook">
                     </a>
