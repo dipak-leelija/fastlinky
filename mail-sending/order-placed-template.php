@@ -367,7 +367,7 @@ function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $o
     $mail = '
             <h4> Order ID :'.$orderId.' </h4>';
             if ($domain != '') {
-                $mail .=$domain[0];
+                $mail .=$domain;
             }
             // $orderDataArray, $orderDetailsArray
             for ($i=0; $i<count($orderDataArray); $i++) {

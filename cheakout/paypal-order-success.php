@@ -182,7 +182,7 @@ if(isset($_SESSION[ORDERID])) {
 
 	// transection details
 	$txn = $ContentOrder->showTrxnByOrderId($orderId);
-	$orderDomain = $utility->url_to_domain($clientOrderedSite);
+	echo $orderDomain = $utility->url_to_domain($clientOrderedSite);
 
 	// ===================================================================================================================
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
@@ -190,7 +190,7 @@ if(isset($_SESSION[ORDERID])) {
 
 	// customer details 
 	$cusMailDataArr     = array( 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
-	$cusMailValueArr  	= array( ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
+	$cusMailValueArr  	= array( ORDERED, PAYLATER, $clientOrderedSite, $customerEmail, $orderDate);
 
 
 	
