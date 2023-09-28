@@ -2,7 +2,7 @@
 require_once dirname(__DIR__) . '/includes/constant.inc.php';
 
 
-echo welcomeMailToUser('Dipak', 'http://localhost/fastlinky/mail-templates/welcome-mail-template.php');
+// echo welcomeMailToUser('Dipak', 'http://localhost/fastlinky/mail-templates/welcome-mail-template.php');
 
 
 function mailFooter(){
