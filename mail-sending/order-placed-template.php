@@ -131,27 +131,49 @@ function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $o
                         </tr>
                     
                         <tr>
-                            <td>
-                        
-                                <div style="word-break: break-word; padding: 0 2rem; font-weight: 600; font-family: "Cabin", sans-serif;">
-                                    <h4 style="display: flex; width: 100%; word-break: break-word; margin: 20px 0px 5px;">
-                                        <div style="width: 50%;"> Order ID :</div>
-                                        <div style="width: 50%;"> '.$orderId.'</div>
+                            <td style="padding:0 2.5rem;">            
+                                <div>
+                                    <h4 style="display:flex;width:100%;word-break:break-word;margin:20px 0px 5px">
+                                        <div style="width:50%"> Order ID :</div>
+                                        <div style="width:50%"> '.$orderId.'</div>
                                     </h4>';
 
                                     if ($domain != '') {
                                         $mail .='<div style="display: flex; width: 100%;">
-                                                    <div class="extra-font" style="width: 50%;">Site Name :</div>
-                                                    <div class="extra-space" style="width: 50%;"><span>'.$domain[0].'</span></div>
+                                                    <div style="width: 50%;">Site Name :</div>
+                                                    <div style="width: 50%;"><span>'.$domain.'</span></div>
                                                 </div>';
-                                    }
+                                                }
+
                                     // $orderDataArray, $orderDetailsArray
                                     for ($i=0; $i<count($orderDataArray); $i++) {
                                         $mail .= '<div style="display: flex; width: 100%;">
-                                                    <div class="extra-font" style="width: 50%;">'.$orderDataArray[$i].' :</div>
-                                                    <div class="extra-space" style="width: 50%;">'.$orderDetailsArray[$i].'</div>
+                                                    <div style="width: 50%;">'.$orderDataArray[$i].' :</div>
+                                                    <div style="width: 50%;">'.$orderDetailsArray[$i].'</div>
                                                 </div>';
                                     }
+
+                            // <td>
+                        
+                            //     <div style="word-break: break-word; padding: 0 2rem; font-weight: 600; font-family: "Cabin", sans-serif;">
+                            //         <h4 style="display: flex; width: 100%; word-break: break-word; margin: 20px 0px 5px;">
+                            //             <div style="width: 50%;"> Order ID :</div>
+                            //             <div style="width: 50%;"> '.$orderId.'</div>
+                            //         </h4>';
+
+                            //         if ($domain != '') {
+                            //             $mail .='<div style="display: flex; width: 100%;">
+                            //                         <div class="extra-font" style="width: 50%;">Site Name :</div>
+                            //                         <div class="extra-space" style="width: 50%;"><span>'.$domain[0].'</span></div>
+                            //                     </div>';
+                            //         }
+                            //         // $orderDataArray, $orderDetailsArray
+                            //         for ($i=0; $i<count($orderDataArray); $i++) {
+                            //             $mail .= '<div style="display: flex; width: 100%;">
+                            //                         <div class="extra-font" style="width: 50%;">'.$orderDataArray[$i].' :</div>
+                            //                         <div class="extra-space" style="width: 50%;">'.$orderDetailsArray[$i].'</div>
+                            //                     </div>';
+                            //         }
                         $mail .= '</div>
 
                             </td>
