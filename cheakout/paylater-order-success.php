@@ -55,9 +55,6 @@ $cusId		= $utility->returnSess('userid', 0);
 $cusDtl		= $customer->getCustomerData($cusId);
 
 
-
-// $clientName = $cusDtl[0][5].' '.$cusDtl[0][5];
-
 ###############################################################################################
 
 
@@ -171,10 +168,7 @@ if(isset($_SESSION[ORDERID])) {
 	// transection details
 	$txn = $ContentOrder->showTrxnByOrderId($orderId);
 	$orderDomain = $utility->url_to_domain($clientOrderedSite);
-	// $domainArr = explode('.', $orderDomain);
-	// $orderDomain = md5_encrypt($orderDomain, ADV_PASS);
-	// echo $domainArr[0];
-	// exit;
+
 
 	// ===================================================================================================================
 	// =========================================		SEND MAIL TO ADMIN		 =========================================
@@ -183,81 +177,6 @@ if(isset($_SESSION[ORDERID])) {
 	// customer details 
 	$cusMailDataArr     = array( 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
 	$cusMailValueArr  	= array( ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
-
-	/*
-	// order details for admin and customer
-	$orddtls_arr = array(
-						'NAME', 		//0
-						'SERVICE',		//1
-						'SITE',			//2
-						'CITY', 		//3
-						'ZIP CODE', 	//4
-						'COUNTRY', 		//5
-						'PHONE', 		//6
-						'EMAIL', 		//7
-						'STATUS', 		//8
-						'PLACED ON',	//9
-					);
-
-	$orddata_arr = array(
-						$clientName,					//0 
-						'Guest Posting', 				//1
-						$clientOrderedSite,				//2
-						$cityName,			 			//3
-						$client[0][29], 				//4
-						$countryName,	 				//5
-						$client[0][34], 				//6
-						$orderDetail[0]['clientEmail'], //7
-						$statusName,					//8
-						$addedOn
-					);
-	
-
-	// order details for admin and customer
-	$orddtls_arr_seller = array(
-						'NAME', 		//0
-						'SERVICE',		//1
-						'SITE',			//2
-						'CITY', 		//3
-						'ZIP CODE', 	//4
-						'COUNTRY', 		//5
-						'STATUS', 		//6
-						'PLACED ON',	//7
-					);
-
-	$orddata_arr_seller = array(
-						$clientName,					//0 
-						'Guest Posting', 				//1
-						$clientOrderedSite,				//2
-						$cityName,			 			//3
-						$client[0][29], 				//4
-						$countryName,	 				//5
-						$statusName,					//6
-						$addedOn						//7
-					);
-
-
-
-	// transection details 
-	$txndtls_arr = array(
-						'ORDER ID',			//0
-						'TRANSECTION ID', 	//1
-						'AMOUNT', 			//2
-						'PAYMENT MODE',		//3
-						'PAYMENT STATUS',	//4
-						'PLACED ON'			//5
-					);
-
-	$txndata_arr = array(
-						'#'.$orderDetail[0]['order_id'], 			//0
-						'#'.$txn['transection_id'],					//1
-						'$'.$txn['item_amount'],					//2
-						'PayLater',									//3
-						$txn['transection_status'],					//4
-						$addedOn
-					);
-	
-	*/
 
 
 	// $fromMail_admin 	=	SITE_ADMIN_EMAIL;
@@ -378,6 +297,7 @@ if(isset($_SESSION[ORDERID])) {
         <div class="row flex-column  align-items-center mt-5">
 
             <!--======= column 1 =======-->
+
             <div class="col-11 col-md-10">
                 <div class="mt-4 p-5 bg-lighter-blue text-white rounded">
                     <h2 class="text-primary">Thanking you for your order.</h2>
@@ -385,13 +305,6 @@ if(isset($_SESSION[ORDERID])) {
 						<?= $mailMsg != '' ? $mailMsg : ''; ?> </p>
                     <p><i class="fas fa-exclamation-circle fs-5 text-warning"></i> If you find any difficulty, drop an
                         email to <?php echo SITE_EMAIL ?></p>
-                    <?php
-					// if ($mailSended) {
-					?>
-                    <!-- // 	<p><small>Order details has been sent to your email.</small></p> -->
-                    <?php
-					// }
-					?>
                 </div>
             </div>
 
@@ -412,8 +325,8 @@ if(isset($_SESSION[ORDERID])) {
     <!-- Start Foter -->
     <?php require_once ROOT_DIR . "/partials/footer.php"; ?>
     <!-- End Foter -->
-    <script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
-    <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
+    <script src="<?= URL;?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>

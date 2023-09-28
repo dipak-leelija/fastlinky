@@ -190,61 +190,7 @@ if(isset($_SESSION[ORDERID])) {
 
 	// customer details 
 	$cusMailDataArr     = array( 'Order Status', 'Payment Mode', 'Phone', 'Email', 'Placed on');
-	$cusMailValueArr  	= array( ORDERED, PAYLATER, $customerPhone, $customerEmail, $orderDate);
-
-
-	
-	// // order details 
-	// $orddtls_arr = array(
-	// 					'NAME', 		//0
-	// 					'SERVICE',		//1
-	// 					'SITE',			//2
-	// 					'CITY', 		//3
-	// 					'ZIP CODE', 	//4
-	// 					'COUNTRY', 		//5
-	// 					'PHONE', 		//6
-	// 					'EMAIL', 		//7
-	// 					'STATUS', 		//8
-	// 					'PLACED ON',	//9
-	// 				);
-
-	// $orddata_arr = array(
-	// 					$clientName,					//0 
-	// 					'Guest Posting', 				//1
-	// 					$clientOrderedSite,				//2
-	// 					$client[0][27],		 			//3
-	// 					$client[0][29], 				//4
-	// 					$client[0][30], 				//5
-	// 					$client[0][34], 				//6
-	// 					$orderDetail[0]['clientEmail'], //7
-	// 					$statusName,					//8
-	// 					$addedOn
-	// 				);
-	
-
-
-
-	// // transection details 
-	// $txndtls_arr = array(
-	// 					'ORDER ID',			//0
-	// 					'TRANSECTION ID', 	//1
-	// 					'AMOUNT', 			//2
-	// 					'PAYMENT MODE',		//3
-	// 					'PAYMENT STATUS',	//4
-	// 					'PLACED ON'			//5
-	// 				);
-
-	// $txndata_arr = array(
-	// 					'#'.$orderDetail[0]['order_id'], 			//0
-	// 					'#'.$txn['transection_id'],					//1
-	// 					'$'.$txn['item_amount'],					//2
-	// 					'Paypal',									//3
-	// 					$txn['transection_status'],					//4
-	// 					$addedOn
-	// 				);
-	
-	
-
+	$cusMailValueArr  	= array( ORDERED, PAYPAL, $customerPhone, $customerEmail, $orderDate);
 
 	// $fromMail_admin 		=	SITE_EMAIL;
 	// $toMail_admin		=	SITE_BILLING_EMAIL;

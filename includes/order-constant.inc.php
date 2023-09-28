@@ -64,6 +64,8 @@ define("PACKAGE_ORDER",                      'Package Order');
 
 define("CONTENTPRICE",                      10);
 define("PAYLATER",                          'PayLater');
+define("PAYPAL",                            'Paypal');
+
 
 
 define("SUMMARYDOMAIN",                     'SUMMARYDOMAIN');
