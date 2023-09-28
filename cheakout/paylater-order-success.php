@@ -171,7 +171,7 @@ if(isset($_SESSION[ORDERID])) {
 	// transection details
 	$txn = $ContentOrder->showTrxnByOrderId($orderId);
 	$orderDomain = $utility->url_to_domain($clientOrderedSite);
-	$domainArr = explode('.', $orderDomain);
+	// $domainArr = explode('.', $orderDomain);
 	// $orderDomain = md5_encrypt($orderDomain, ADV_PASS);
 	// echo $domainArr[0];
 	// exit;
