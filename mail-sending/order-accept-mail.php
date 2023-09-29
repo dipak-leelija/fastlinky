@@ -40,11 +40,17 @@ if(($toMail == '')||(mb_ereg("^ER",$invalidEmail))){
         // $PHPMailer->send();
 
         if ($PHPMailer->send()) {
-            echo 'Message has been sent';
+            
+            $PHPMailer->ClearAllRecipients();
+            $Utility->redirectURL($redirectURL, 'SUCCESS', ORD_ACPT);
+
         }else {
-            echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+
+            $PHPMailer->ClearAllRecipients();
+            $msg =  ERR."Mailer Error:-> {$PHPMailer->ErrorInfo}";
+            $Utility->redirectURL($redirectURL, 'SUCCESS', $msg);
+
         }
-        $PHPMailer->ClearAllRecipients();
 
 
     } catch (Exception $e) {

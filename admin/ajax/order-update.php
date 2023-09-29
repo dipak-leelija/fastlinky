@@ -16,13 +16,15 @@ require_once ROOT_DIR."/mail-sending/order-placed-template.php";
 
 require_once ROOT_DIR."/classes/content-order.class.php";
 require_once ROOT_DIR."/classes/customer.class.php";
+require_once ROOT_DIR."/classes/utility.class.php";
 require_once ROOT_DIR."/classes/utilityMesg.class.php";
 require_once ROOT_DIR."/classes/notification.class.php";
 
 $ContentOrder   = new ContentOrder();
+$Customer       = new Customer();
+$Utility        = new Utility();
 $uMesg 			= new MesgUtility();
 $Notifications  = new Notifications();
-$Customer       = new Customer();
 
 $updatedBy = 0;
 $reference_link =   URL.'/guest-post-article-submit.php?order=';
@@ -39,9 +41,10 @@ if (isset($_GET['order-id']) && isset($_GET['customer-id']) ) {
         $Notifications->addNotification(ORD_UPDATE, ORD_ACPT, ORD_ACPT_M, $reference_link, $customerId);
         if ($updated) {
             $user = $Customer->getCustomerData($customerId);
-            $toMail  	= $user[0][3];
-            $toName   	= $user[0][5];
-            $domain     = $ContentOrder->getOrderBlog($orderId);
+            $toMail  	 = $user[0][3];
+            $toName   	 = $user[0][5];
+            $domain      = $ContentOrder->getOrderBlog($orderId);
+            $redirectURL = ADM_URL."order-details.php?ord_id={$orderId}";
             require_once ROOT_DIR."/mail-sending/order-accept-mail.php";
             // $uMesg->showSuccessT('success', 0, '', ADM_URL.'order-details.php?ord_id='.$orderId, ORD_ACPT, 'SUCCESS');
         }
