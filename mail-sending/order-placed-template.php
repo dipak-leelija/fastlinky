@@ -132,9 +132,9 @@ function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $o
                         </tr>
                     
                         <tr>
-                            <td style="padding:0 2rem;">            
+                            <td style="padding:1rem 2rem;">            
                                 <div>
-                                    <h4 style="display:flex;width:100%;word-break:break-word;margin:20px 0px 5px">
+                                    <h4 style="display:flex; width:100%; word-break:break-word; margin:0px">
                                         <div style="width:50%"> Order ID :</div>
                                         <div style="width:50%"> '.$orderId.'</div>
                                     </h4>';
