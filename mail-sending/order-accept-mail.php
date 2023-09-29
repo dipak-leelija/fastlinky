@@ -40,8 +40,7 @@ if(($toMail == '')||(mb_ereg("^ER",$invalidEmail))){
         // $PHPMailer->send();
 
         if ($PHPMailer->send()) {
-            // echo 'Message has been sent';
-            $completed[] = true;
+            echo 'Message has been sent';
         }else {
             echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
         }
