@@ -1,22 +1,15 @@
 <?php
-session_start();
 
-require_once dirname(__DIR__)."/includes/constant.inc.php";
-require_once ROOT_DIR."/_config/dbconnect.php";
-
-require_once ROOT_DIR."/includes/content.inc.php";
 require_once ROOT_DIR."/includes/order-constant.inc.php";
 require_once ROOT_DIR."/classes/class.phpmailer.php";
 require_once ROOT_DIR."/includes/email.inc.php";
-// require_once ROOT_DIR."/mail-sending/order-placed-template.php";
 require_once ROOT_DIR."/mail-sending/mail-page.php";
+require_once ROOT_DIR."/classes/error.class.php";
 
-require_once ROOT_DIR."/classes/customer.class.php";
 
 
 $PHPMailer      = new PHPMailer();
 $MyError 		= new MyError();
-$customer		= new Customer();
 
 $subject        = "Order Accepted - {$orderId}";
 $messageBody    = orderAccepted ($orderId, $firstName, $domain);
