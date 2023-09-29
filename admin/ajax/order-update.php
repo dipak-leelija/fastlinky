@@ -41,7 +41,7 @@ if (isset($_GET['order-id']) && isset($_GET['customer-id']) ) {
             $user = $Customer->getCustomerData($customerId);
             $toMail  		= $user[0][3];
             $toName   		= $user[0][5];
-            require_once ROOT_DIR."mail-sending/order-accept-mail.php";
+            require_once ROOT_DIR."/mail-sending/order-accept-mail.php";
             // $uMesg->showSuccessT('success', 0, '', ADM_URL.'order-details.php?ord_id='.$orderId, ORD_ACPT, 'SUCCESS');
         }
     }
