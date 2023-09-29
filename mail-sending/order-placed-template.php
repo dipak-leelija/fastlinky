@@ -59,7 +59,7 @@ function mailFooter(){
     ';
     return $body;
 }
-
+// max-width: 600px; border: 1px solid #c9c6c6; border-spacing: 0; text-align: left; font-family: "Cabin", sans-serif; font-size: 16px; line-height: 22px; 
 
 function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $orderDetailsArray, $domain = ''){
 
@@ -106,8 +106,9 @@ function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $o
         <table role="presentation" style="width: 100%; border: none; border-spacing: 0;">
             <tr>
                 <td align="center" style="padding:0;">
-                    <table role="presentation" style="width: 100%; max-width: 600px; border: 1px solid #c9c6c6; border-spacing: 0; text-align: left; font-family: "Cabin", sans-serif; font-size: 16px; line-height: 22px; color: #363636;">
+                    <table role="presentation" style="width: 600px; color: #363636;">
                         <!-- **************************  LOGO IMAGE HEADER SECTION ************************ -->
+                        <tbody>
                         <tr>
                             <td>
                                 <div style="display: flex; flex-direction: row; padding: 15px 10px; font-size: 24px; font-weight: bold; background: aliceblue; font-family: inherit;">
@@ -181,7 +182,8 @@ function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $o
                         // <!-- ************************** FOOTER STARTS ************************ -->
                         $mail .= mailFooter();
                         // <!-- ************************** FOOTER ENDS ************************ -->
-            $mail .= '</table>
+                $mail .= '<tbody>
+                    </table>
                 </td>
             </tr>
         </table>
