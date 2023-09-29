@@ -12,7 +12,7 @@ $PHPMailer      = new PHPMailer();
 $MyError 		= new MyError();
 
 $subject        = "Order Accepted - #{$orderId}";
-$messageBody    = orderAccepted ($orderId, $toName, '');
+$messageBody    = orderAccepted ($orderId, $toName, $domain);
 $messageBody    = mainTemplate($messageBody);
 
 $invalidEmail 	= $MyError->invalidEmail($toMail);

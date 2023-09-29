@@ -39,8 +39,9 @@ if (isset($_GET['order-id']) && isset($_GET['customer-id']) ) {
         $Notifications->addNotification(ORD_UPDATE, ORD_ACPT, ORD_ACPT_M, $reference_link, $customerId);
         if ($updated) {
             $user = $Customer->getCustomerData($customerId);
-            $toMail  		= $user[0][3];
-            $toName   		= $user[0][5];
+            $toMail  	= $user[0][3];
+            $toName   	= $user[0][5];
+            $domain     = $ContentOrder->getOrderBlog($orderId);
             require_once ROOT_DIR."/mail-sending/order-accept-mail.php";
             // $uMesg->showSuccessT('success', 0, '', ADM_URL.'order-details.php?ord_id='.$orderId, ORD_ACPT, 'SUCCESS');
         }

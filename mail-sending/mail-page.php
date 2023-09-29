@@ -58,7 +58,7 @@ function orderAccepted ($orderId, $firstName, $domain){
     $mail ="<tr>
                 <td style='padding-bottom: 0px !important; padding: 2rem;'>
                     <h1 style='margin: 0; font-size: 22px; line-height: 1.1; font-weight: bold; letter-spacing: -0.02em; font-family: \"Cabin\", sans-serif;'>Hi {$firstName}, Your order has been accepted</h1>
-                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>We are pleased to confirm that your order for the domain <strong>{$domain}</strong> and order id <strong>{$orderId}</strong> has been accepted.</p>
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>We are pleased to confirm that your order for the domain <strong>{$domain}</strong> and order id <strong>#{$orderId}</strong> has been accepted.</p>
                 </td>
             </tr>
             
