@@ -6,15 +6,26 @@ require_once ROOT_DIR."/includes/content.inc.php";
 
 include_once ADM_DIR."/checkSession.php";
 
-
 require_once ROOT_DIR."/_config/dbconnect.php";
+
+// =============== Email Files Start ===============
+require_once ROOT_DIR."/classes/class.phpmailer.php";
+require_once ROOT_DIR."/includes/email.inc.php";
+require_once ROOT_DIR."/mail-sending/order-placed-template.php";
+require_once ROOT_DIR."/mail-sending/mail-page.php";
+
+$PHPMailer       = new PHPMailer();
+
+// ================ Email Files End ================
 
 require_once ROOT_DIR."/classes/utilityMesg.class.php";
 require_once ROOT_DIR."/classes/content-order.class.php";
+require_once ROOT_DIR."/classes/customer.class.php";
 require_once ROOT_DIR."/classes/notification.class.php";
 
 $ContentOrder   = new ContentOrder();
 $uMesg 			= new MesgUtility();
+$Customer       = new Customer();
 $Notifications  = new Notifications();
 
 $updatedBy = 0;
@@ -26,12 +37,54 @@ if (isset($_GET['order-id']) && isset($_GET['customer-id']) ) {
     $customerId = $_GET['customer-id'];
     $reference_link .=  base64_encode(urlencode($orderId));
     
+    $user = $Customer->getCustomerData($customer_id);
+
     $accepted = $ContentOrder->ClientOrderOrderUpdate($orderId, PROCESSINGCODE, '', '');
     if ($accepted) {
         $updated = $ContentOrder->addOrderUpdate($orderId, ORD_ACPT, '', 0);
         $Notifications->addNotification(ORD_UPDATE, ORD_ACPT, ORD_ACPT_M, $reference_link, $customerId);
         if ($updated) {
-            $uMesg->showSuccessT('success', 0, '', '../order-details.php?ord_id='.$orderId, ORD_ACPT, 'SUCCESS');
+
+            $toName = $user[0][5];
+            $toMail = $user[0][3];
+
+            $mailBody = orderAccepted ("#{$orderId}", $toName, $toMail);
+
+            $messageBody = mainTemplate($mailBody);
+            $subject     = "Order Accepted - #{$orderId}";
+
+            try {
+                $PHPMailer->IsSMTP();
+                $PHPMailer->IsHTML(true);
+                $PHPMailer->Host        = gethostname();
+                $PHPMailer->SMTPAuth    = true;
+                $PHPMailer->Username    = SITE_EMAIL;
+                $PHPMailer->Password    = SITE_EMAIL_P;
+                $PHPMailer->From        = SITE_EMAIL;
+                $PHPMailer->FromName    = COMPANY_FULL_NAME;
+                $PHPMailer->Sender      = SITE_EMAIL;
+                $PHPMailer->addAddress($toMail, $toName);
+                $PHPMailer->Subject     = $subject;
+                $PHPMailer->Body        = $messageBody;
+                // $PHPMailer->send();
+
+                if ($PHPMailer->send()) {
+                    // echo 'Message has been sent';
+                    // $completed[] = true;
+                    $uMesg->showSuccessT('success', 0, '', ADM_URL.'order-details.php?ord_id='.$orderId, ORD_ACPT, 'SUCCESS');
+
+                }else {
+                    $msg =  "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+                    $uMesg->showSuccessT('error', 0, '', ADM_URL.'order-details.php?ord_id='.$orderId, $msg, 'ERROR');
+
+                }
+                $PHPMailer->ClearAllRecipients();
+
+
+            } catch (Exception $e) {
+                echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+            }
+
         }
     }
 }
