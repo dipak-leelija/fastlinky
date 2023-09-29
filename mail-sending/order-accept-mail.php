@@ -11,8 +11,10 @@ require_once ROOT_DIR."/classes/error.class.php";
 $PHPMailer      = new PHPMailer();
 $MyError 		= new MyError();
 
-$subject        = "Order Accepted - {$orderId}";
+$subject        = "Order Accepted - #{$orderId}";
 $messageBody    = orderAccepted ($orderId, $toName, '');
+$messageBody    = mainTemplate($messageBody);
+
 $invalidEmail 	= $MyError->invalidEmail($toMail);
                             
 
