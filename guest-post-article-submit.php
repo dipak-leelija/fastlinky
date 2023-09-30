@@ -47,86 +47,7 @@ $reference_link = $thisPage;
 $sess_arr = array('contetPrice', ORDERDOMAIN, ORDERSITECOST, ORDERID, SUMMARYDOMAIN, SUMMARYSITECOST, 'content-data', 'ConetntCreationPlacementPrice');
 $Utility->delSessArr($sess_arr);
 
-?>
 
-
-<!DOCTYPE HTML>
-<html lang="en">
-
-<head>
-    <meta name="robots" content="noindex,nofollow">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Order Details - <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
-
-    <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
-    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
-
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="css/my-orders.css" rel='stylesheet' type='text/css' />
-    <link href="css/order-list.css" rel='stylesheet' type='text/css' />
-
-    <!--//webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
-
-</head>
-<body>
-
-<?php
-
-if (isset($_POST['changesReq'])) {
-
-    $contentId              = $_POST['content-id'];
-
-    $clientContentTitle     = $_POST['clientContentTitle'];
-
-    $clientAnchor           = $_POST['clientAnchorText'];
-    $clientTargetUrl        = $_POST['clientTargetUrl'];
-
-    $refAnchor1             = $_POST['reference-anchor1'];
-    $refUrl1                = $_POST['reference-url1'];
-    $refAnchor2             = $_POST['reference-anchor2'];
-    $refUrl2                = $_POST['reference-url2'];
-
-    $clientRequirement      = $_POST['clientRequirement'];
-
-    $orderStatus        = PROCESSINGCODE; // Processesing
-
-    $updatedTitle = $ContentOrder->titleUpdate($orderId, $clientContentTitle);
-
-    $updatedLinks = $ContentOrder->updateHyperLinks($contentId, $clientAnchor, $clientTargetUrl, $refAnchor1, $refUrl1, $refAnchor2, $refUrl2);
-
-
-    $showOrder  = $ContentOrder->clientOrderById($orderId);
-    $updated    = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'changesReq', $showOrder['changesReq']+1 );
-
-    $updateResponse  = [$updatedTitle, $updatedLinks, $updated];
-
-    if (!in_array(false, $updateResponse) || !in_array(0, $updateResponse)) {
-        $statusUpdated = $ContentOrder->addOrderUpdate($orderId, ORD_CNG_REQ, '', $cusId);
-        $Notifications->addNotification(ORD_UPDATE, ORD_CNG_REQ, ORD_CNG_REQ_M, $reference_link, $cusId);
-
-        if ($statusUpdated) {        
-    ?>
-    <script>
-    Swal.fire({
-        title: 'Requested!',
-        text: 'Changes Request Sended ',
-        icon: 'success',
-        confirmButtonText: 'Continue'
-    })
-    </script>
-    <?php
-        }
-    }
-
-}
 
 $txnStatus  ='';
 $txnMode    = '';
@@ -180,6 +101,99 @@ if ($ordTxn != false) {
 
 $buyer          = $customer->getCustomerData($showOrder['clientUserId']);
 $customerName   = $buyer[0][5].' '.$buyer[0][6];
+
+?>
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Order Details - <?php echo COMPANY_S; ?></title>
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
+    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
+
+    <!-- Plugins Files -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="css/my-orders.css" rel='stylesheet' type='text/css' />
+    <link href="css/order-list.css" rel='stylesheet' type='text/css' />
+
+    <!--//webfonts-->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
+    <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+<?php
+
+if (isset($_POST['changesReq'])) {
+
+    // $contentId              = $_POST['content-id'];
+
+    $clientContentTitle     = $_POST['clientContentTitle'];
+
+    $clientAnchor           = $_POST['clientAnchorText'];
+    $clientTargetUrl        = $_POST['clientTargetUrl'];
+
+    $refAnchor1             = $_POST['reference-anchor1'];
+    $refUrl1                = $_POST['reference-url1'];
+    $refAnchor2             = $_POST['reference-anchor2'];
+    $refUrl2                = $_POST['reference-url2'];
+
+    $clientRequirement      = $_POST['clientRequirement'];
+
+    $orderStatus        = PROCESSINGCODE; // Processesing
+
+    $updatedTitle = $ContentOrder->titleUpdate($orderId, $clientContentTitle);
+
+    $updatedLinks = $ContentOrder->updateHyperLinks($orderContentId, $clientAnchor, $clientTargetUrl, $refAnchor1, $refUrl1, $refAnchor2, $refUrl2);
+
+
+    $showOrder  = $ContentOrder->clientOrderById($orderId);
+    $updated    = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'changesReq', $showOrder['changesReq']+1 );
+
+    $updateResponse  = [$updatedTitle, $updatedLinks, $updated];
+
+    if (!in_array(false, $updateResponse) || !in_array(0, $updateResponse)) {
+        // send mail
+        $toName = $buyer[0][5];
+        $toMail = $buyer[0][3];
+        $domain = $showOrder['clientOrderedSite'];
+
+        require_once ROOT_DIR."/mail-sending/order-change-request-mail.php";
+        
+        $statusUpdated = $ContentOrder->addOrderUpdate($orderId, ORD_CNG_REQ, '', $cusId);
+        $Notifications->addNotification(ORD_UPDATE, ORD_CNG_REQ, ORD_CNG_REQ_M, $reference_link, $cusId);
+
+        if ($statusUpdated) {        
+    ?>
+    <script>
+    Swal.fire({
+        title: 'Requested!',
+        text: 'Changes Request Sended ',
+        icon: 'success',
+        confirmButtonText: 'Continue'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Reload the page
+            window.location = window.location.href;
+        }
+    });
+    </script>
+    <?php
+        }
+    }
+
+}
 
 ?>
 
@@ -496,8 +510,8 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
                                         <!-- ================================================================ -->
 
                                         <div class="form-group">
-                                            <input type="number" id="tid" name="content-id"
-                                                value="<?= $orderContentId; ?>">
+                                            <!-- <input type="number" id="tid" name="content-id"
+                                                value="<?= $orderContentId; ?>"> -->
                                             <input type="number" id="tid" name="order-id" value="<?= $orderId; ?>">
                                             <input type="number" class="d-none" id="formAction"
                                                 name="updateBeforeProcess">
