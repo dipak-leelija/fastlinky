@@ -46,7 +46,10 @@ if (isset($_GET['order-id']) && isset($_GET['customer-id']) ) {
             $domain      = $ContentOrder->getOrderBlog($orderId);
             $redirectURL = ADM_URL."order-details.php?ord_id={$orderId}";
             require_once ROOT_DIR."/mail-sending/order-accept-mail.php";
+
             // $uMesg->showSuccessT('success', 0, '', ADM_URL.'order-details.php?ord_id='.$orderId, ORD_ACPT, 'SUCCESS');
+        }else {
+            $Utility->redirectURL($redirectURL, ERR, $msg);
         }
     }
 }

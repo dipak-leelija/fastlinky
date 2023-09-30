@@ -47,8 +47,8 @@ if(($toMail == '')||(mb_ereg("^ER",$invalidEmail))){
         }else {
 
             $PHPMailer->ClearAllRecipients();
-            $msg =  ERR."Mailer Error:-> {$PHPMailer->ErrorInfo}";
-            $Utility->redirectURL($redirectURL, 'SUCCESS', $msg);
+            $msg = "Mailer Error:-> {$PHPMailer->ErrorInfo}";
+            $Utility->redirectURL($redirectURL, 'ERROR', $msg);
 
         }
 
