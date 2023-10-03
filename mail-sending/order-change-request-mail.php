@@ -1,5 +1,5 @@
 <?php
-if (isset($orderId) && isset($toName) && isset($toMail) && isset($domain)):
+if (isset($orderId) && isset($toName) && isset($toMail) && isset($domain) && isset($_DIFFARR)):
 
     require_once ROOT_DIR."/includes/order-constant.inc.php";
     require_once ROOT_DIR."/classes/class.phpmailer.php";
@@ -11,7 +11,7 @@ if (isset($orderId) && isset($toName) && isset($toMail) && isset($domain)):
     $MyError 		= new MyError();
 
     $subject        = "Change Request to Order - #{$orderId}";
-    $messageBody    = orderAccepted ($orderId, $toName, $domain);
+    $messageBody    = changeRequest($orderId, $toName, $domain, $_DIFFARR);
     $messageBody    = mainTemplate($messageBody);
 
     $invalidEmail 	= $MyError->invalidEmail($toMail);
