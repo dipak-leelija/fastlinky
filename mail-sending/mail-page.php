@@ -84,6 +84,29 @@ function orderAccepted ($orderId, $firstName, $domain){
 }
 
 
+
+function changeRequest($orderId, $firstName, $domain, $_DIFFARR){
+
+    $mail ="<tr>
+                <td style='padding-bottom: 0px !important; padding: 2rem;'>
+                    <h1 style='margin: 0; font-size: 22px; line-height: 1.1; font-weight: bold; letter-spacing: -0.02em; font-family: \"Cabin\", sans-serif;'>Hi {$firstName}, We Have Recived Your Change Request!</h1>
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>We are pleased to inform that we have seen a changes request to your order for the domain <strong>{$domain}</strong> and order id <strong>#{$orderId}</strong></p>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style='padding: 1rem 2rem;'>";
+                foreach($_DIFFARR as $diff){
+                    $mail .= "<p style='margin-bottom: 0; text-align: justify; font-family: inherit; color: #a53232;'><strong>Previous:</strong>'.$diff[0]<p>
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit; color: #3153b3;'><strong>Updated:</strong>'.$diff[1]<p>";
+                }
+        $mail .= "</td>
+            </tr>";
+            
+    return $mail;
+}
+
+
 function mainTemplate($mailBody){
 
     $mail = 

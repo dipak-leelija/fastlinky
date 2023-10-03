@@ -74,6 +74,13 @@ if ($showOrder == false) {
 $orderContent   = $ContentOrder->getOrderContent($orderId);
     $orderContentId = $orderContent['id'];
 $contentLink    = $ContentOrder->getContentHyperLinks($orderContentId);
+$clientAnchor       = $contentLink['client_anchor'];
+$clientURL          = $contentLink['client_url'];
+$referenceAnchor1   = $contentLink['reference_anchor1'];
+$referenceURL1      = $contentLink['reference_url1'];
+$referenceAnchor2   = $contentLink['reference_anchor2'];
+$referenceURL2      = $contentLink['reference_url2'];
+
 
 $ordTxn         = $ContentOrder->showTransectionByOrder($orderId);
 if ($ordTxn != false) {
@@ -138,24 +145,55 @@ $customerName   = $buyer[0][5].' '.$buyer[0][6];
 if (isset($_POST['changesReq'])) {
 
     // $contentId              = $_POST['content-id'];
+    $_DIFFARR             = array();
 
-    $clientContentTitle     = $_POST['clientContentTitle'];
+    $clientContentTitle     = trim($_POST['clientContentTitle']);
 
-    $clientAnchor           = $_POST['clientAnchorText'];
-    $clientTargetUrl        = $_POST['clientTargetUrl'];
+    $clientAnchorText       = trim($_POST['clientAnchorText']);
+    $clientTargetUrl        = trim($_POST['clientTargetUrl']);
 
-    $refAnchor1             = $_POST['reference-anchor1'];
-    $refUrl1                = $_POST['reference-url1'];
-    $refAnchor2             = $_POST['reference-anchor2'];
-    $refUrl2                = $_POST['reference-url2'];
+    $refAnchor1             = trim($_POST['reference-anchor1']);
+    $refUrl1                = trim($_POST['reference-url1']);
+    $refAnchor2             = trim($_POST['reference-anchor2']);
+    $refUrl2                = trim($_POST['reference-url2']);
 
-    $clientRequirement      = $_POST['clientRequirement'];
+    $clientRequirement      = trim($_POST['clientRequirement']);
+
+    if ($clientAnchorText !== $clientAnchor) {
+        
+        array_push($_DIFFARR, array($clientAnchorText, $clientAnchor));
+    }
+
+    if ($clientTargetUrl !== $clientURL) {
+        
+        array_push($_DIFFARR, array($clientTargetUrl, $clientURL));
+    }
+
+    if ($refAnchor1 !== $referenceAnchor1) {
+        
+        array_push($_DIFFARR, array($refAnchor1, $referenceAnchor1));
+    }
+
+    if ($refUrl1 !== $referenceURL1) {
+
+        array_push($_DIFFARR, array($refUrl1, $referenceURL1));
+    }
+
+    if ($refAnchor2 !== $referenceAnchor2) {
+        
+        array_push($_DIFFARR, array($refAnchor2, $referenceAnchor2));
+    }
+
+    if ($refUrl2 !== $referenceURL2) {
+        
+        array_push($_DIFFARR, array($refUrl2, $referenceURL2));
+    }
 
     $orderStatus        = PROCESSINGCODE; // Processesing
 
     $updatedTitle = $ContentOrder->titleUpdate($orderId, $clientContentTitle);
 
-    $updatedLinks = $ContentOrder->updateHyperLinks($orderContentId, $clientAnchor, $clientTargetUrl, $refAnchor1, $refUrl1, $refAnchor2, $refUrl2);
+    $updatedLinks = $ContentOrder->updateHyperLinks($orderContentId, $clientAnchorText, $clientTargetUrl, $refAnchor1, $refUrl1, $refAnchor2, $refUrl2);
 
 
     $showOrder  = $ContentOrder->clientOrderById($orderId);
@@ -440,13 +478,13 @@ if (isset($_POST['changesReq'])) {
                                                     <input type="text" class="form-control"
                                                         placeholder="Enter the anchor text for client url"
                                                         name="clientAnchorText"
-                                                        value="<?= $contentLink['client_anchor']?>">
+                                                        value="<?= $clientAnchor?>">
                                                 </div>
 
                                                 <div class="col-md-6 mb-2">
                                                     <input type="text" class="form-control"
                                                         aria-describedby="Target Url" placeholder="Enter the client url"
-                                                        name="clientTargetUrl" value="<?= $contentLink['client_url']?>">
+                                                        name="clientTargetUrl" value="<?= $clientURL?>">
                                                 </div>
                                             </div>
                                             <div class="row mb-3 mb-md-0">
@@ -454,13 +492,13 @@ if (isset($_POST['changesReq'])) {
                                                     <input type="text" class="form-control"
                                                         placeholder="Enter the reference anchor text"
                                                         name="reference-anchor1"
-                                                        value="<?= $contentLink['reference_anchor1']?>">
+                                                        value="<?= $referenceAnchor1 ?>">
                                                 </div>
 
                                                 <div class="col-md-6 mb-2">
                                                     <input type="text" class="form-control"
                                                         placeholder="Enter the reference URL" name="reference-url1"
-                                                        value="<?= $contentLink['reference_url1']?>">
+                                                        value="<?= $referenceURL1 ?>">
                                                 </div>
                                             </div>
                                             <div class="row mb-3 mb-md-0">
@@ -468,14 +506,14 @@ if (isset($_POST['changesReq'])) {
                                                     <input type="text" class="form-control"
                                                         placeholder="Enter the reference anchor text"
                                                         name="reference-anchor2"
-                                                        value="<?= $contentLink['reference_anchor2']?>">
+                                                        value="<?= $referenceAnchor2?>">
                                                 </div>
 
                                                 <div class="col-md-6 mb-2">
                                                     <input type="text" class="form-control"
                                                         aria-describedby="Target Url"
                                                         placeholder="Enter the reference URL" name="reference-url2"
-                                                        value="<?= $contentLink['reference_url2']?>">
+                                                        value="<?= $referenceURL2 ?>">
                                                 </div>
                                             </div>
 
