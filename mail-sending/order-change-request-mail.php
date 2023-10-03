@@ -40,37 +40,18 @@ if (isset($orderId) && isset($toName) && isset($toMail) && isset($domain)):
 
             if ($PHPMailer->send()) { 
                 $PHPMailer->ClearAllRecipients();
-                ?>
-<script>
-Swal.fire({
-    // title: 'Requested!',
-    text: 'Changes mail sent to you. ',
-    icon: 'success',
-    confirmButtonText: 'Continue'
-})
-</script>
-<!-- echo 'Mail sent'; -->
-<!-- // $Utility->redirectURL($redirectURL, 'SUCCESS', ORD_ACPT); -->
-<?php
+                echo 'mail sent';exit;
             }else {
 
                 $PHPMailer->ClearAllRecipients();
                 echo $msg = "Mailer Error:-> {$PHPMailer->ErrorInfo}";
                 // $Utility->redirectURL($redirectURL, 'ERROR', $msg);
-                ?>
-                <script>
-                Swal.fire({
-                    // title: 'Requested!',
-                    text: <?= $msg ?>,
-                    icon: 'error',
-                    confirmButtonText: 'Continue'
-                })
-                </script>
-                <?php
 
             }
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+            echo "Error:-> {$e->getMessage()}";
+
         }
     }
 endif;
