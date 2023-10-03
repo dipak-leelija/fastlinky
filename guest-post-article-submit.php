@@ -161,32 +161,32 @@ if (isset($_POST['changesReq'])) {
 
     if ($clientAnchorText !== $clientAnchor) {
         
-        array_push($_DIFFARR, array($clientAnchorText, $clientAnchor));
+        array_push($_DIFFARR, array($clientAnchor, $clientAnchorText));
     }
 
     if ($clientTargetUrl !== $clientURL) {
         
-        array_push($_DIFFARR, array($clientTargetUrl, $clientURL));
+        array_push($_DIFFARR, array($clientURL, $clientTargetUrl));
     }
 
     if ($refAnchor1 !== $referenceAnchor1) {
         
-        array_push($_DIFFARR, array($refAnchor1, $referenceAnchor1));
+        array_push($_DIFFARR, array($referenceAnchor1, $refAnchor1));
     }
 
     if ($refUrl1 !== $referenceURL1) {
 
-        array_push($_DIFFARR, array($refUrl1, $referenceURL1));
+        array_push($_DIFFARR, array($referenceURL1, $refUrl1));
     }
 
     if ($refAnchor2 !== $referenceAnchor2) {
         
-        array_push($_DIFFARR, array($refAnchor2, $referenceAnchor2));
+        array_push($_DIFFARR, array($referenceAnchor2, $refAnchor2));
     }
 
     if ($refUrl2 !== $referenceURL2) {
         
-        array_push($_DIFFARR, array($refUrl2, $referenceURL2));
+        array_push($_DIFFARR, array($referenceURL2, $refUrl2));
     }
 
     $orderStatus        = PROCESSINGCODE; // Processesing
