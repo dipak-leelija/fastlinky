@@ -41,8 +41,8 @@ $utility            = new Utility();
 $uMesg              = new MesgUtility();
 ######################################################################################################################
 
-$currentUrl = $utility->currentUrl();
-
+echo $currentUrl = $utility->currentUrl();
+exit;
 // echo $_GET['ord_id'];
 $orderId = $_GET['ord_id'];
 
