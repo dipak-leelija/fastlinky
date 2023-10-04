@@ -148,7 +148,7 @@ function orderDelivered($orderId, $firstName, $domain, $deliveredLink, $contentT
                     <br>
                     Title: <strong>{$contentTitle}</strong>
                     <br>
-                    Order Id: <strong>{$orderId}</strong>
+                    Order Id: <strong>#{$orderId}</strong>
                     <br>
                     Publication Date: <strong>{$publishDate}</strong>
                     <br>
