@@ -139,7 +139,7 @@ if (isset($_POST['deliver-order'])) {
         $updated = $ContentOrder->addOrderUpdate($orderId, ORD_DEL, '', 0);
         if ($updated) {
             require_once ROOT_DIR."/mail-sending/delivered-mail.php";
-            $uMesg->redirectURL($currentUrl, 'WARNING', 'Order Delivered But Mail Skipped');
+            // $uMesg->redirectURL($currentUrl, 'WARNING', 'Order Delivered But Mail Skipped');
         }
 
     }
