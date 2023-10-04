@@ -131,6 +131,43 @@ function contentUploaded($orderId, $firstName, $domain){
     return $mail;
 }
 
+
+function orderDelivered($orderId, $firstName, $domain, $deliveredLink, $contentTitle, $publishDate){
+
+    $mail ="<tr>
+                <td style='padding-bottom: 0px !important; padding: 2rem;'>
+                    <h1 style='margin: 0; font-size: 22px; line-height: 1.1; font-weight: bold; letter-spacing: -0.02em; font-family: \"Cabin\", sans-serif;'>Hi {$firstName}, Your Guest Post is Posted!</h1>
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'> We are thrilled to inform you that your guest post, titled <strong>{$contentTitle}</strong>, is now live on {$domain}.<p>
+
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>You can view your published article by clicking on the following link: {$deliveredLink}. 
+                    <br>
+                    We encourage you to share this link with your network, friends, and followers to maximize its reach. Your insights and expertise will undoubtedly provide valuable information and inspiration to our readers.
+                    <p>
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>
+                    Here are some additional details about your guest post:
+                    <br>
+                    Title: <strong>{$contentTitle}</strong>
+                    <br>
+                    Order Id: <strong>{$orderId}</strong>
+                    <br>
+                    Publication Date: <strong>{$publishDate}</strong>
+                    <br>
+                    URL: <strong>{$deliveredLink}</strong>
+                    <br>
+                    We believe that your article will resonate with our audience and contribute significantly to the ongoing discussions in our niche. Your unique perspective and well-researched content are much appreciated.
+                    </p>
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>Please feel free to let us know if you have any questions or if there are any other ways we can assist you. We are open to future collaborations and welcome additional guest contributions from you in the future.<p>
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>Once again, thank you for your valuable contribution to {$domain}. We look forward to seeing more of your work in the future.<p>
+
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>Plaese make sure to check the uploaded content and ask for any correction if required.</p>
+                </td>
+            </tr>";
+            
+    return $mail;
+
+}
+
+
 function mainTemplate($mailBody){
 
     $mail = 

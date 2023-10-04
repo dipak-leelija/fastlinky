@@ -335,15 +335,16 @@ class ContentOrder extends DatabaseConnection{
 
 
 
-      function ClientOrderOrderUpdate($orderId, $orderStatus, $column='', $columnData='' ){
+      function ClientOrderOrderUpdate($orderId, $orderStatus, $column='', $columnData='', $now=''){
 
             if ($column == '' || $columnData == '') {
                   
-                  $sql= "UPDATE `order_details` SET  `order_status`      ='$orderStatus'
+                  $sql= "UPDATE `order_details` SET  `order_status`      = '$orderStatus'
+                                                      `modified_on`      = '$now'
                                                 WHERE 
                                                 `order_id`= '$orderId'";
             }else {
-                  $sql= "UPDATE `order_details` SET  `order_status` = '$orderStatus', `$column` = '$columnData'
+                  $sql= "UPDATE `order_details` SET  `order_status` = '$orderStatus', `$column` = '$columnData', `modified_on` = '$now'
                                                 WHERE 
                                                 `order_id`= '$orderId'";
             }

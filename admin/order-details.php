@@ -88,6 +88,7 @@ if ($ordTxn != false) {
 $orderContent   = $ContentOrder->getOrderContent($orderId);
     $orderContentId = $orderContent['id'];
     $contentPath    = $orderContent['path'];
+    $contentTitle   = $orderContent['title'];
 $contentLink    = $ContentOrder->getContentHyperLinks($orderContentId);
 
 
@@ -111,8 +112,10 @@ if (isset($_POST['delivered'])) {
     $deliveredLink  = $_POST['post-link'];
     $deliveredLink  = rawurlencode($deliveredLink);
 
-    $delivered = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'deliveredLink', $deliveredLink);
+    $delivered = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'deliveredLink', $deliveredLink, NOW);
     if ($delivered) {
+        $publishDate = '';
+        require_once ROOT_DIR."/mail-sending/delivered-mail.php";
         $uMesg->showSuccessT('success', 0, '', '' . $currentUrl . '', "Order Delivered", 'SUCCESS');
     }
 }
@@ -591,7 +594,7 @@ if (isset($_FILES['content-file'])) {
 
                                                 <div class="text-wrap">
                                                     <input type="text" class="form-control" id="anchor-text"
-                                                        value="<?= $orderContent['title'] ?>">
+                                                        value="<?= $contentTitle ?>">
                                                     <div id="copyAnchorText" class="clipboard icon">
                                                     </div>
                                                 </div>
