@@ -339,7 +339,7 @@ class ContentOrder extends DatabaseConnection{
 
             if ($column == '' || $columnData == '') {
                   
-                  $sql= "UPDATE `order_details` SET  `order_status`      = '$orderStatus'
+                  $sql= "UPDATE `order_details` SET  `order_status`      = '$orderStatus',
                                                       `modified_on`      = '$now'
                                                 WHERE 
                                                 `order_id`= '$orderId'";

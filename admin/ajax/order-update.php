@@ -79,7 +79,7 @@ if (isset($_GET['cancel-order'])) {
     
     $orderStatus    = REJECTEDCODE; 
 
-    $cancelled = $ContentOrder->ClientOrderOrderUpdate($_GET['cancel-order'], $orderStatus, '', '');
+    $cancelled = $ContentOrder->ClientOrderOrderUpdate($_GET['cancel-order'], $orderStatus, '', '', NOW);
     if ($cancelled) {
         $updated = $ContentOrder->addOrderUpdate($_GET['cancel-order'], 'Rejected', '', 0);
         if ($updated) {
@@ -107,25 +107,26 @@ if (isset($_POST['reject-order'])) {
 
 
 
-if (isset($_POST['deliver-order'])) {
-    $deliveredLink      = $_POST['deliver-link'];
-    $customerId         = $_POST['customer-id'];
-    $orderId            = $_POST['order-id'];
-    $reference_link    .= base64_encode(urlencode($orderId));
+// if (isset($_POST['deliver-order'])) {
+//     $deliveredLink      = $_POST['deliver-link'];
+//     $customerId         = $_POST['customer-id'];
+//     $orderId            = $_POST['order-id'];
+//     $reference_link    .= base64_encode(urlencode($orderId));
     
-    $deliveredLink  = rawurlencode($deliveredLink);
+//     $deliveredLink  = rawurlencode($deliveredLink);
 
-    $delivered = $ContentOrder->ClientOrderOrderUpdate($orderId, DELIVEREDCODE, 'deliveredLink', $deliveredLink);
-    $Notifications->addNotification(ORD_UPDATE, ORD_DEL, ORD_DLVRD_M, $reference_link, $customerId);
+//     $delivered = $ContentOrder->ClientOrderOrderUpdate($orderId, DELIVEREDCODE, 'deliveredLink', $deliveredLink, NOW);
+//     $Notifications->addNotification(ORD_UPDATE, ORD_DEL, ORD_DLVRD_M, $reference_link, $customerId);
 
-    if ($delivered) {
-        $updated = $ContentOrder->addOrderUpdate($orderId, ORD_DEL, '', 0);
-        if ($updated) {
-            $uMesg->showSuccessT('success', 0, '', $_POST['return-page'], "Order Delivered", 'SUCCESS');
-        }
+//     if ($delivered) {
+//         $updated = $ContentOrder->addOrderUpdate($orderId, ORD_DEL, '', 0);
+//         if ($updated) {
+//             require_once ROOT_DIR."/mail-sending/delivered-mail.php";
+//             $uMesg->redirectURL($currentUrl, 'WARNING', 'Order Delivered But Mail Skipped');
+//         }
 
-    }
-}
+//     }
+// }
 
 
 

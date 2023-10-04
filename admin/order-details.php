@@ -19,23 +19,26 @@ require_once ROOT_DIR . "/classes/blog_mst.class.php";
 
 require_once ROOT_DIR . "/classes/content-order.class.php";
 require_once ROOT_DIR . "/classes/orderStatus.class.php";
+require_once ROOT_DIR . "/classes/notification.class.php";
 
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php";
 require_once ROOT_DIR . "/classes/utilityMesg.class.php";
 
 /* INSTANTIATING CLASSES */
-$dateUtil          = new DateUtil();
-$error             = new Error();
-$customer        = new Customer();
-$Location       = new Location();
+$dateUtil           = new DateUtil();
+$error              = new Error();
+$customer           = new Customer();
+$Location           = new Location();
 
-$BlogMst        = new BlogMst();
-$ContentOrder   = new ContentOrder();
-$OrderStatus    = new OrderStatus();
-$DateUtil       = new DateUtil();
-$utility        = new Utility();
-$uMesg             = new MesgUtility();
+$BlogMst            = new BlogMst();
+$ContentOrder       = new ContentOrder();
+$OrderStatus        = new OrderStatus();
+$Notifications      = new Notifications();
+
+$DateUtil           = new DateUtil();
+$utility            = new Utility();
+$uMesg              = new MesgUtility();
 ######################################################################################################################
 
 $currentUrl = $utility->currentUrl();
@@ -44,7 +47,7 @@ $currentUrl = $utility->currentUrl();
 $orderId = $_GET['ord_id'];
 
 ######################################################################################################################
-
+$reference_link =   URL.'/guest-post-article-submit.php?order=';
 $transectionId  = '';
 $itemAmount     = '00';
 $paidAmount     = '00';
@@ -105,20 +108,44 @@ $buyerName  = $buyer[0][5].' '.$buyer[0][6];
 $toName     = $buyer[0][5];
 
 
-#################################################################################
+########################################################################################################
 
-if (isset($_POST['delivered'])) {
-    $orderStatus    = 1; // Deliverd 
-    $deliveredLink  = $_POST['post-link'];
+// if (isset($_POST['delivered'])) {
+//     echo 'here'; exit;
+//     // $orderStatus    = 1; // Deliverd 
+//     // $deliveredLink  = $_POST['post-link'];
+//     // $deliveredLink  = rawurlencode($deliveredLink);
+
+//     // $delivered = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'deliveredLink', $deliveredLink, NOW);
+//     // if ($delivered) {
+//     //     $publishDate = '';
+//     //     require_once ROOT_DIR."/mail-sending/delivered-mail.php";
+//     //     $uMesg->redirectURL($currentUrl, 'WARNING', 'Order Delivered But Mail Skipped');
+//     // }
+// }
+
+if (isset($_POST['deliver-order'])) {
+    $deliveredLink      = $_POST['deliver-link'];
+    // $customerId         = $_POST['customer-id'];
+    // $orderId            = $_POST['order-id'];
+    $reference_link    .= base64_encode(urlencode($orderId));
+    
     $deliveredLink  = rawurlencode($deliveredLink);
 
-    $delivered = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'deliveredLink', $deliveredLink, NOW);
+    $delivered = $ContentOrder->ClientOrderOrderUpdate($orderId, DELIVEREDCODE, 'deliveredLink', $deliveredLink, NOW);
+    $Notifications->addNotification(ORD_UPDATE, ORD_DEL, ORD_DLVRD_M, $reference_link, $customerId);
+
     if ($delivered) {
-        $publishDate = '';
-        require_once ROOT_DIR."/mail-sending/delivered-mail.php";
-        $uMesg->redirectURL($currentUrl, 'WARNING', 'Order Delivered But Mail Skipped');
+        $updated = $ContentOrder->addOrderUpdate($orderId, ORD_DEL, '', 0);
+        if ($updated) {
+            require_once ROOT_DIR."/mail-sending/delivered-mail.php";
+            $uMesg->redirectURL($currentUrl, 'WARNING', 'Order Delivered But Mail Skipped');
+        }
+
     }
 }
+
+########################################################################################################
 
 if (isset($_FILES['content-file'])) {
 
@@ -903,7 +930,7 @@ if (isset($_FILES['content-file'])) {
                                                             <div class="d-flex justify-content-center my-3">
                                                                 <button class="btn btn-danger w-25 mx-2" onclick="cancelOrder(' . $orderId . ')">Cancel Order</button>
 
-                                                                <button class="btn w-25 btn-primary mx-2" data-toggle="modal" data-target="#deliverModal" onclick="deliverOrder()">Update Deliver</button>
+                                                                <button class="btn w-25 btn-primary mx-2" data-toggle="modal" data-target="#deliverModal">Update Deliver</button>
                                                             </div>';
 
                                                             }
@@ -1053,7 +1080,7 @@ if (isset($_FILES['content-file'])) {
         <div class="modal fade" id="deliverModal" tabindex="-1" aria-labelledby="deliverModallLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="ajax/order-update.php" method="POST" onsubmit="return validateForm()">
+                    <form action="<?= $currentUrl ?>" method="POST" onsubmit="return validateForm()">
                         <div class="modal-header">
                             <h5 class="modal-title">Successfull Delivery Link</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1061,8 +1088,8 @@ if (isset($_FILES['content-file'])) {
                             </button>
                         </div>
                         <input type="hidden" name="return-page" value="<?= $utility->currentUrl() ?>">
-                        <input type="hidden" name="order-id" value="<?= $orderId ?>">
-                        <input type="hidden" name="customer-id" value="<?= $customerId; ?>">
+                        <!-- <input type="hidden" name="order-id" value="<?= $orderId ?>"> -->
+                        <!-- <input type="hidden" name="customer-id" value="<?= $customerId; ?>"> -->
                         <div class="modal-body p-2" id="deliverModalBody">
                             <input type="text" class="form-control" name="deliver-link" id="deliver-link"
                                 placeholder="Paste the link here">
@@ -1136,14 +1163,6 @@ if (isset($_FILES['content-file'])) {
         }
 
     }
-
-
-    const deliverOrder = () => {
-
-
-
-    }
-
 
     const validateForm = () => {
 

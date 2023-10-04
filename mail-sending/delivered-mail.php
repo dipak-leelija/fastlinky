@@ -1,5 +1,5 @@
 <?php
-if (isset($orderId) && isset($toName) && isset($toMail) && isset($domain) && isset($deliveredLink) && isset($contentTitle) && isset($publishDate)):
+if (isset($orderId) && isset($toName) && isset($toMail) && isset($domain) && isset($deliveredLink) && isset($contentTitle)):
 
     require_once ROOT_DIR."/includes/order-constant.inc.php";
     require_once ROOT_DIR."/classes/class.phpmailer.php";
