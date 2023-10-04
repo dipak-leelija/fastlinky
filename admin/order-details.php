@@ -129,7 +129,11 @@ if (isset($_FILES['content-file'])) {
     }
     ?>
 <script>
-alert('Content Uploded');
+    alert('Content Uploded').then((result)=>{
+        if (result.isConfirmed) {
+            window.location = window.location.href;
+        }
+    });
 </script>
 <?php
 }
