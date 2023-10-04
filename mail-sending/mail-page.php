@@ -94,8 +94,12 @@ function changeRequest($orderId, $firstName, $domain, $_DIFFARR){
                 </td>
             </tr>
             
+            <style>
+            .contents a{
+            }
+            </style>
             <tr>
-                <td style='padding: 1rem 2rem;'>";
+                <td class='contents' style='padding: 1rem 2rem;'>";
                 foreach($_DIFFARR as $diff){
                     $mail .= "<p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>
                                 <strong>Previous: </strong>
@@ -103,7 +107,7 @@ function changeRequest($orderId, $firstName, $domain, $_DIFFARR){
                             <p>
                             <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>
                                 <strong>Updated: </strong>
-                                <span style='color: #a53232;'>{$diff[1]}</span>
+                                <span style='color: #2a1ca1;'>{$diff[1]}</span>
                             <p>";
                 }
         $mail .= "</td>
