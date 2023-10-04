@@ -40,19 +40,23 @@ if (isset($orderId) && isset($toName) && isset($toMail) && isset($domain) && iss
 
             if ($PHPMailer->send()) { 
                 $PHPMailer->ClearAllRecipients();
-                echo 'mail sent';exit;
-                // $uMesg->redirectURL($currentUrl, 'SUCCESS', 'Order Delivered and Mail Sent!');
+                // echo 'mail sent';exit;
+                $uMesg->redirectURL($currentUrl, 'SUCCESS', 'Order Delivered and Mail Sent!');
             }else {
                 $PHPMailer->ClearAllRecipients();
                 $msg = "Mailer Error:-> {$PHPMailer->ErrorInfo}";
-                echo 'mail sent';exit;
-
-                // $uMesg->redirectURL($currentUrl, 'WARNING', 'Order Delivered but'.$msg);
+                // echo 'mail sent';exit;
+                $uMesg->redirectURL($currentUrl, 'WARNING', 'Order Delivered but'.$msg);
             }
         } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
-            echo "Error:-> {$e->getMessage()}";
-
+            $msg = '';
+            if (!empty($PHPMailer->ErrorInfo)){
+                $msg .= "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";
+            }
+            if (!empty($PHPMailer->ErrorInfo)){
+                $msg .= "Error:-> {$e->getMessage()}";
+            }
+            $uMesg->redirectURL($currentUrl, 'WARNING', 'Order Delivered but'.$msg);
         }
     }
 endif;
