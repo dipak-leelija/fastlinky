@@ -43,7 +43,68 @@ $currentUrl = $utility->currentUrl();
 // echo $_GET['ord_id'];
 $orderId = $_GET['ord_id'];
 
+######################################################################################################################
 
+$transectionId  = '';
+$itemAmount     = '00';
+$paidAmount     = '00';
+$paymentMode    = '';
+$paymentStatus  = '';
+$itemAmount     = '';
+$paidAmount     = '';
+$paymentTime    = '';
+    
+//order details
+$showOrder      = $ContentOrder->clientOrderById($orderId);
+    
+if ($showOrder == false) {
+    header("Location: orders.php");exit;
+}
+
+$customerId     = $showOrder['clientUserId'];
+$domain         = $showOrder['clientOrderedSite'];
+$toMail         = $showOrder['clientEmail'];
+$orderDate      = $showOrder['added_on'];
+$ordStatCode    = $showOrder['order_status'];
+    
+// order status names
+$statusName = $OrderStatus->getOrdStatName($ordStatCode);
+
+//transection details
+$ordTxn     = $ContentOrder->showTransectionByOrder($orderId);
+
+if ($ordTxn != false) {
+    $transectionId  = $ordTxn['transection_id'];
+    $paymentMode    = $ordTxn['transection_mode'];
+    $paymentStatus  = $OrderStatus->getOrdStatName($ordTxn['transection_status']);
+    $itemAmount     = $ordTxn['item_amount'];
+    $paidAmount     = $ordTxn['paid_amount'];
+    $paymentTime    = $ordTxn['updated_on'];
+}
+// $ordTxn['transection_id'];
+
+
+// contents of the order
+$orderContent   = $ContentOrder->getOrderContent($orderId);
+    $orderContentId = $orderContent['id'];
+    $contentPath    = $orderContent['path'];
+$contentLink    = $ContentOrder->getContentHyperLinks($orderContentId);
+
+
+//blog details
+$item       = $BlogMst->showBlogbyDomain($domain);
+
+//blog creator / seller
+$seller     = $customer->getCustomerByemail($item['created_by']);
+// print_r($seller);exit;
+
+//customer / buyer
+$buyer      = $customer->getCustomerData($customerId);
+$buyerName  = $buyer[0][5].' '.$buyer[0][6];
+$toName     = $buyer[0][5];
+
+
+#################################################################################
 
 if (isset($_POST['delivered'])) {
     $orderStatus    = 1; // Deliverd 
@@ -62,100 +123,15 @@ if (isset($_FILES['content-file'])) {
     if ($uploadedPath != false ) {
         $ContentOrder->contentUpdate($orderId, 'doc', $uploadedPath);
         $ContentOrder->addOrderUpdate($orderId, 'Content Updated', CONT_UPDT, 0);
+
+        require_once ROOT_DIR."/mail-sending/content-uploaded-mail.php";
+
     }
     ?>
 <script>
 alert('Content Uploded');
 </script>
 <?php
-}
-
-######################################################################################################################
-
-//declare vars
-$typeM            = $utility->returnGetVar('typeM', '');
-$keyword        = $utility->returnGetVar('keyword', '');
-$type            = $utility->returnGetVar('type', '');
-$mode            = $utility->returnGetVar('mode', '');
-$noOfOrd        = array();
-
-
-
-$transectionId  = '';
-$itemAmount     = '00';
-$paidAmount     = '00';
-
-
-
-if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
-    $link    = "&btnSearch=search&keyword=" . $_GET['keyword'] . "&mode=&type=" . $_GET['type'];
-    $noOfOrd = $search_obj->searchOrder($mode, $keyword, $type);
-} else {
-    if (isset($_GET['user_id']) && isset($_GET['status'])) {
-        $user_id    = $_GET['user_id'];
-        //echo $user_id ; exit;
-        $status        = $_GET['status'];
-    } else {
-        $user_id    = 'all';
-        $status        = 'all';
-    }
-
-    
-    //order details
-    $showOrder      = $ContentOrder->clientOrderById($orderId);
-    
-    if ($showOrder == false) {
-        header("Location: orders.php");
-        exit;
-    }
-
-    $orderDate      = $showOrder['added_on'];
-    $ordStatCode    = $showOrder['order_status'];
-    $customerId     = $showOrder['clientUserId'];
-    
-    // order status names
-    $statusName = $OrderStatus->getOrdStatName($ordStatCode);
-
-    //transection details
-    $ordTxn     = $ContentOrder->showTransectionByOrder($orderId);
-
-    if ($ordTxn != false) {
-        $transectionId  = $ordTxn['transection_id'];
-        $paymentMode    = $ordTxn['transection_mode'];
-        $paymentStatus  = $OrderStatus->getOrdStatName($ordTxn['transection_status']);
-        $itemAmount     = $ordTxn['item_amount'];
-        $paidAmount     = $ordTxn['paid_amount'];
-        $paymentTime    = $ordTxn['updated_on'];
-    }else{
-        $transectionId  = '';
-        $paymentMode    = '';
-        $paymentStatus  = '';
-        $itemAmount     = '';
-        $paidAmount     = '';
-        $paymentTime    = '';
-    }
-    // $ordTxn['transection_id'];
-
-
-    // contents of the order
-    $orderContent   = $ContentOrder->getOrderContent($orderId);
-        $orderContentId = $orderContent['id'];
-        $contentPath    = $orderContent['path'];
-    $contentLink    = $ContentOrder->getContentHyperLinks($orderContentId);
-
-
-
-    //blog details
-    $item       = $BlogMst->showBlogbyDomain($showOrder['clientOrderedSite']);
-
-    //blog creator / seller
-    $seller     = $customer->getCustomerByemail($item['created_by']);
-    // print_r($seller);exit;
-
-    //customer / buyer
-    $buyer      = $customer->getCustomerData($customerId);
-    $buyerName  = $buyer[0][5].' '.$buyer[0][6];
-
 }
 ?>
 
@@ -165,7 +141,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 <head>
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
 
-    <title><?= $showOrder['clientOrderedSite']; ?> - Order Details | <?php echo COMPANY_FULL_NAME; ?></title>
+    <title><?= $domain; ?> - Order Details | <?php echo COMPANY_FULL_NAME; ?></title>
 
     <link rel="stylesheet" href="<?= URL?>/plugins/sweetalert/sweetalert2.css">
 
@@ -219,11 +195,11 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div>
-                                                    <h5 class="pkage-title border-bottom border-primary py-2">
+                                                    <h5 class="border-bottom border-primary py-2">
                                                         Order Details:
                                                     </h5>
                                                     <h5 class="pkage-headline pt-1">
-                                                        <?php echo $showOrder['clientOrderedSite']; ?><span
+                                                        <?= $domain; ?><span
                                                             class="ms-2 badge <?php echo $statusName; ?>"><?php echo $statusName; ?></span>
                                                     </h5>
                                                     <table class="ordered-details-table-css ">
@@ -259,7 +235,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                             <!-- payment details start -->
                                             <div class="col-md-6">
                                                 <div>
-                                                    <h5 class="pkage-title border-bottom border-primary py-2">
+                                                    <h5 class="border-bottom border-primary py-2">
                                                         Payment Details:
                                                     </h5>
                                                     <table class="ordered-details-table-css ">
@@ -320,7 +296,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                             <!-- customer details start  -->
                                             <div class="col-md-6">
                                                 <div>
-                                                    <h5 class="pkage-title border-bottom border-primary py-2">
+                                                    <h5 class="border-bottom border-primary py-2">
                                                         Customer Details:
                                                     </h5>
                                                     <table class="ordered-details-table-css ">
@@ -431,7 +407,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                             <!-- seller details start  -->
                                             <div class="col-md-6">
                                                 <div>
-                                                    <h5 class="pkage-title border-bottom border-primary py-2">
+                                                    <h5 class="border-bottom border-primary py-2">
                                                         Seller Details:</h5>
                                                         <?php if (!empty($seller)): ?>
                                                     <table class="ordered-details-table-css ">
