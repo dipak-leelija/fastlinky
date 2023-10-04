@@ -3553,7 +3553,8 @@ class Utility extends DatabaseConnection{
 	
 	function currentUrl(){
 
-		$url      = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		$protocol = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
+		$url      = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		$validURL = str_replace("&", "&amp;", $url);
 		$validURL = str_replace(".php", "", $url);
 		// $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
