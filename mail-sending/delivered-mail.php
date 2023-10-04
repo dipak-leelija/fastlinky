@@ -40,10 +40,11 @@ if (isset($orderId) && isset($toName) && isset($toMail) && isset($domain) && iss
 
             if ($PHPMailer->send()) { 
                 $PHPMailer->ClearAllRecipients();
-                $msg =  'Mail sent';
+                $uMesg->redirectURL($currentUrl, 'SUCCESS', 'Order Delivered and Mail Sent!');
             }else {
                 $PHPMailer->ClearAllRecipients();
                 $msg = "Mailer Error:-> {$PHPMailer->ErrorInfo}";
+                $uMesg->redirectURL($currentUrl, 'WARNING', 'Order Delivered but'.$msg);
             }
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error:-> {$PHPMailer->ErrorInfo}";

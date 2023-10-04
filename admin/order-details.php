@@ -116,7 +116,7 @@ if (isset($_POST['delivered'])) {
     if ($delivered) {
         $publishDate = '';
         require_once ROOT_DIR."/mail-sending/delivered-mail.php";
-        $uMesg->showSuccessT('success', 0, '', '' . $currentUrl . '', "Order Delivered", 'SUCCESS');
+        $uMesg->redirectURL($currentUrl, 'WARNING', 'Order Delivered But Mail Skipped');
     }
 }
 
