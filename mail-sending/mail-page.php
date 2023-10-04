@@ -139,7 +139,7 @@ function orderDelivered($orderId, $firstName, $domain, $deliveredLink, $contentT
                     <h1 style='margin: 0; font-size: 22px; line-height: 1.1; font-weight: bold; letter-spacing: -0.02em; font-family: \"Cabin\", sans-serif;'>Hi {$firstName}, Your Guest Post is Posted!</h1>
                     <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'> We are thrilled to inform you that your guest post, titled <strong>{$contentTitle}</strong>, is now live on {$domain}.<p>
 
-                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>You can view your published article by clicking on the following link: {$deliveredLink}. 
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>You can view your published article by clicking on the following link: <a href='{$deliveredLink}'>{$deliveredLink}</a>.
                     <br>
                     We encourage you to share this link with your network, friends, and followers to maximize its reach. Your insights and expertise will undoubtedly provide valuable information and inspiration to our readers.
                     <p>
@@ -152,7 +152,7 @@ function orderDelivered($orderId, $firstName, $domain, $deliveredLink, $contentT
                     <br>
                     Publication Date: <strong>{$publishDate}</strong>
                     <br>
-                    URL: <strong>{$deliveredLink}</strong>
+                    URL:<strong><a href='{$deliveredLink}'>{$deliveredLink}</a></strong>
                     <br>
                     We believe that your article will resonate with our audience and contribute significantly to the ongoing discussions in our niche. Your unique perspective and well-researched content are much appreciated.
                     </p>
