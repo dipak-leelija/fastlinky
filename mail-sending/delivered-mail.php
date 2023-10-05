@@ -10,6 +10,7 @@ if (isset($orderId) && isset($toName) && isset($toMail) && isset($domain) && iss
     $PHPMailer      = new PHPMailer();
     $MyError 		= new MyError();
 
+    $deliveredLink  = rawurldecode($deliveredLink);
     $subject        = "Your Guest Post Is Now Live on {$domain}";
     $messageBody    = orderDelivered($orderId, $toName, $domain, $deliveredLink, $contentTitle, NOW);
     $messageBody    = mainTemplate($messageBody);
