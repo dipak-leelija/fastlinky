@@ -2,6 +2,8 @@
 require_once __DIR__ . "/includes/common-service-class-functions.inc.php";
 
 $packages = $GPPackage->packDetailsByCat(5);
+$packCat  = $GPPackage->packCatById(5);
+
 require_once ROOT_DIR."/includes/package-submission.inc.php";
 
 ?>
@@ -14,9 +16,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <title>Buy Backlinks and Link Building Service for Gambling, Casino & Betting SEO - <?php echo COMPANY_S; ?></title>
     <meta name="description"
         content="Fastlinky provides quality Link Building Service for casino, gambling, igaming, and betting SEO and help you increase ranking and boost your traffic." />
-    <meta name="keywords" content="buy casino backlinks cheapbuy casino website,buy casino backlinks,igaming link building,gambling link,gambling seo agency,casino backlinks,gambling seo,sports gambling links,
-Online Gaming Link Building,Online Gaming And Casino Link Building
-" />
+    <meta name="keywords"
+        content="buy casino backlinks cheapbuy casino website,buy casino backlinks,igaming link building,gambling link,gambling seo agency,casino backlinks,gambling seo,sports gambling links, Online Gaming Link Building,Online Gaming And Casino Link Building" />
 
     <!-- Plugins Files -->
     <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
