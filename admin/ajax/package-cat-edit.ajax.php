@@ -32,9 +32,10 @@ $tColor     = '';
 if (isset($_POST['update'])) {
     // print_r($_POST['features']);exit;
     $category    = $_POST['category'];
+    $dicount     = $_POST['discount'];
     $modifiedBy     = '';
 
-    $updated = $GPPackage->updatePackCat($packCatId, $category, $modifiedBy);
+    $updated = $GPPackage->updatePackCat($packCatId, $category, $dicount, $modifiedBy);
         if ($updated) {
             $msgShow    = 'd-block';
             $tColor     = 'text-primary'; 
@@ -49,8 +50,7 @@ if (isset($_POST['update'])) {
 
 
 $package        = $GPPackage->packCatById($packCatId);
-// $packageCats    = $GPPackage->allPackagesCat();
-// $allFeatures       = $GPPackage->featureByPackageId($packageId);
+$discount       = str_replace("%", "", $package['discount']);
 
 
 ?>
@@ -77,11 +77,21 @@ $package        = $GPPackage->packCatById($packCatId);
 
                         <div class="card-body">
                             <form class="row" action="<?php $_SERVER['REQUEST_URI']?>" method="POST">
-                                <div class="col-md-12 mt-3">
+                                <div class="form-group col-md-12 mt-3">
                                     <label for="" class="mb-1">Package Category name</label>
                                     <input type="text" class="form-control" name="category"
-                                        value="<?php echo $package['category_name']; ?>">
+                                        value="<?= $package['category_name']; ?>">
                                 </div>
+
+                                <div class="form-group col-md-12 mt-3">
+                                    <label for="" class="mb-1">Discount It's Packages</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Discount"
+                                            aria-label="Discount It's Packages" name="discount" value="<?= $discount; ?>" aria-describedby="basic-addon2">
+                                        <span class="input-group-text" id="basic-addon2"> % </span>
+                                    </div>
+                                </div>
+
 
                                 <div class="col-md-12 text-right mt-3">
                                     <button type="submit" name="update" class="btn btn-primary">update</button>

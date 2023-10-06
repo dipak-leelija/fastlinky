@@ -21,10 +21,10 @@ class GuestPostpackage extends DatabaseConnection{
   #                                                                                                    #
   ######################################################################################################
 
-  function addNewPackageCat($packageName, $addedBy){
+  function addNewPackageCat($packageName, $discount, $addedBy){
 
-    $sql ="INSERT INTO  `gp_package_category`( `category_name`, `added_by`, `added_on`)
-                          VALUES ('$packageName','$addedBy', now())";
+    $sql ="INSERT INTO  `gp_package_category`( `category_name`, `discount`, `added_by`, `added_on`)
+                          VALUES ('$packageName', CONCAT('$discount', '%'), '$addedBy', now())";
     $res= $this->conn->query($sql);
     if ($res) {
       return true;
@@ -74,11 +74,12 @@ class GuestPostpackage extends DatabaseConnection{
   }
 
 
-  function updatePackCat($id, $category, $modifiedBy){
+  function updatePackCat($id, $category, $discount, $modifiedBy){
     $response = false;
     $sql = "UPDATE `gp_package_category` 
             SET
             `category_name`   = '$category',
+            `discount`        = CONCAT('$discount', '%'),
             `modified_by`     = '$modifiedBy',
             `modified_on`     = now()
             WHERE
