@@ -130,10 +130,22 @@ if (isset($_POST['reject-order'])) {
 
 
 
-
+// Finished Order 
 if(isset($_POST["ordId"])){
     $orderId         = $_POST["ordId"];
     $customerId      = $_POST["customerId"];
+    
+    $cusDtls         = $Customer->getCustomerData($customerId);
+    $showOrder       = $ContentOrder->clientOrderById($orderId);
+    $contentTitle    = $ContentOrder->getOrderContent($orderId);
+
+    $toName          = $cusDtls[0][5].' '.$cusDtls[0][6];
+    $firstName       = $cusDtls[0][5];
+    $toMail          = $cusDtls[0][3];
+    $domain          = $showOrder['clientOrderedSite'];
+    $publishedDate   = $showOrder['delivered_date'];
+    $contentTitle    = $contentTitle['title'];
+
     $reference_link .= base64_encode(urlencode($orderId));
 
     $completed = $ContentOrder->ClientOrderOrderUpdate($orderId, COMPLETEDCODE, '', '');
@@ -141,7 +153,8 @@ if(isset($_POST["ordId"])){
         $updated = $ContentOrder->addOrderUpdate($orderId, ORD_COMP, '', $updatedBy);
         $Notifications->addNotification(ORD_UPDATE, ORD_COMP, ORD_CMPLT_M, $reference_link, $customerId);
         if ($updated) {
-         echo 'finished';   
+            require_once ROOT_DIR."/mail-sending/order-finished-mail.php";
+            echo 'finished';   
         }
     }
 }

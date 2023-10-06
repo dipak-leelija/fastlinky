@@ -207,24 +207,52 @@ class ContentOrder extends DatabaseConnection{
       /**
        * @param $id = table `id` of tha table
        */
+      // function clientOrderById($id){
+
+      //       try {
+      //             $data = false;
+      //             $sql  = "SELECT * FROM `order_details` WHERE `order_id` = '$id'";
+      //             $res  = $this->conn->query($sql);
+      //             $rows = $res->num_rows;
+      //             if ($rows > 0 ) {
+      //                   while ($result = $res->fetch_assoc()) {
+      //                         $data = $result;
+      //                   }
+      //             }
+      //             return $data;
+      //       } catch (Exception $e) {
+      //             echo $e->getMessage();
+      //       }
+
+      // }//eof
       function clientOrderById($id){
-
+            $data = false;
+            
             try {
-                  $data = false;
-                  $sql  = "SELECT * FROM `order_details` WHERE `order_id` = '$id'";
-                  $res  = $this->conn->query($sql);
-                  $rows = $res->num_rows;
-                  if ($rows > 0 ) {
-                        while ($result = $res->fetch_assoc()) {
-                              $data = $result;
-                        }
-                  }
-                  return $data;
+                $sql = "SELECT * FROM `order_details` WHERE `order_id` = ?";
+                $stmt = $this->conn->prepare($sql);
+        
+                if ($stmt) {
+                    $stmt->bind_param("s", $id);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    
+                    if ($result->num_rows > 0) {
+                        $data = $result->fetch_assoc();
+                    }
+                    
+                    $stmt->close();
+                } else {
+                  throw new Exception("SQL statement preparation failed: " . $this->conn->error);
+                }
             } catch (Exception $e) {
-                  echo $e->getMessage();
+                throw $e;
             }
+        
+            return $data;
+        }
 
-      }//eof
+        
 
             /**
        * @param $id = table `id` of tha table

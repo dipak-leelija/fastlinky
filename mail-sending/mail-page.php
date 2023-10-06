@@ -168,6 +168,39 @@ function orderDelivered($orderId, $firstName, $domain, $deliveredLink, $contentT
 }
 
 
+
+function orderFinished($orderId, $firstName, $contentTitle, $publishDate) {
+    $mail = "<tr>
+                <td style='padding-bottom: 0px !important; padding: 2rem;'>
+                    <h1 style='margin: 0; font-size: 22px; line-height: 1.1; font-weight: bold; letter-spacing: -0.02em; font-family: \"Cabin\", sans-serif;'>Hi {$firstName}, Your Order is Successfully Completed!</h1>
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'> We are delighted to inform you that your order, with Order ID #{$orderId}, has been completed successfully.<p>
+
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>Here are the details of your order:
+                    <br>
+                    Title: <strong>{$contentTitle}</strong>
+                    <br>
+                    Order ID: <strong>#{$orderId}</strong>
+                    <br>
+                    Publication Date: <strong>{$publishDate}</strong>
+                    <p>
+
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>
+                    We have successfully delivered your order, and we are pleased to inform you that it has been completed without any issues. You can now access your live url of the post anytime.
+                    </p>
+
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>If you have any questions or need further assistance, please do not hesitate to reach out to our customer support team. We are here to help you with any additional requests or concerns you may have.
+                    </p>
+
+                    <p style='margin-bottom: 0; text-align: justify; font-family: inherit;'>Thank you for choosing our services. We value your trust and look forward to serving you again in the future.
+                    </p>
+                </td>
+            </tr>";
+
+    return $mail;
+}
+
+
+
 function mainTemplate($mailBody){
 
     $mail = 

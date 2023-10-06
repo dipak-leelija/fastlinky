@@ -58,6 +58,7 @@ $transectionId  =   '';
 #####################################################################
 
 $showOrder                  = $ContentOrder->clientOrderById($orderId);
+
 if ($showOrder == false) {
     header("Location: my-orders.php");
     exit;
@@ -196,7 +197,7 @@ if (isset($_POST['changesReq'])) {
     $updatedLinks = $ContentOrder->updateHyperLinks($orderContentId, $clientAnchorText, $clientTargetUrl, $refAnchor1, $refUrl1, $refAnchor2, $refUrl2);
 
 
-    $showOrder  = $ContentOrder->clientOrderById($orderId);
+    // $showOrder  = $ContentOrder->clientOrderById($orderId);
     $updated    = $ContentOrder->ClientOrderOrderUpdate($orderId, $orderStatus, 'changesReq', $showOrder['changesReq']+1 );
 
     $updateResponse  = [$updatedTitle, $updatedLinks, $updated];
