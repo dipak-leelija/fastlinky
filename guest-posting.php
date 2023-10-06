@@ -163,7 +163,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
-
+    <?php require_once "partials/blogs-sites.php"; ?>
     <!-- --------------------------------------------------------------------------------------------- -->
     <!-- clients-logo -->
     <?php require_once "partials/clientssides-logos.php"; ?>
