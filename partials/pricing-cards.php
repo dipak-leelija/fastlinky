@@ -10,27 +10,30 @@
                         $feature = $GPPackage->featureByPackageId($eachPack['id']);
                     ?>
                         <div class="col-md-4 px-0 px-md-1 px-lg-2">
-                            <input type="radio" class="d-none" id="radio-id-<?php echo $eachPack['id'];?>" name="packageid"
-                                value="<?php echo $eachPack['id'];?>">
+                            <input type="radio" class="d-none" id="radio-id-<?php echo $eachPack['id'];?>"
+                                name="packageid" value="<?php echo $eachPack['id'];?>">
                             <label class="w-100" for="radio-id-<?php echo $eachPack['id'];?>">
                                 <div class="price-box-content" id="">
+                                    <div class="sale-offer-div">
+                                        20% Off</div>
                                     <p class="package_type_category"><?php echo $eachPack['package_name']; ?></p>
                                     <div class="packHr"></div>
                                     <p class="price-box-title"><span class="dollar"><?php echo CURRENCY; ?></span><span
-                                            class="main-price"><?php echo $eachPack['price']; ?></span> 
-                                            <!-- <span class="fs-4">&#8725;</span>month -->
+                                            class="main-price"><?php echo $eachPack['price']; ?></span>
+                                        <!-- <span class="fs-4">&#8725;</span>month -->
                                     </p>
-                                    <p><small class="small text-secondary">Including <?= $eachPack['blog_post']; ?> Blog Posts</small></p>
+                                    <p><small class="small text-secondary">Including <?= $eachPack['blog_post']; ?> Blog
+                                            Posts</small></p>
                                     <p class="chooseNiche"></p>
                                     <ul class="price-box-ul">
-                                    <?php
+                                        <?php
                                     foreach ($feature as $eachFeature) {
                                         echo '<li>'.$eachFeature['features'].'</li>';
                                     }
                                     ?>
                                     </ul>
-                                    <button type="button" id="package-purchase-btn"
-                                        class="package-purchase-btn" onClick="purchasePackage(this)">purchase now</button>
+                                    <button type="button" id="package-purchase-btn" class="package-purchase-btn"
+                                        onClick="purchasePackage(this)">purchase now</button>
                                 </div>
                             </label>
                         </div>
@@ -44,8 +47,8 @@
     </div>
 </section>
 <script>
-    const purchasePackage = (elem) =>{
-        elem.parentNode.click();
-        document.getElementById('package-cards').submit();
-    }
+const purchasePackage = (elem) => {
+    elem.parentNode.click();
+    document.getElementById('package-cards').submit();
+}
 </script>
