@@ -214,10 +214,11 @@ benefits of high domain authority website, domain authority rank" />
         <?php require_once "partials/pricing-cards.php"; ?>
     </section>
 
+
     <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
-
+        <?php require_once "partials/blogs-sites.php"; ?>
     <!-- ================================================================================================ -->
     <!-- more information link-building start -->
 
