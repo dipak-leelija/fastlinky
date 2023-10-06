@@ -18,10 +18,9 @@
                                     <div class="packHr"></div>
                                     <p class="price-box-title"><span class="dollar"><?php echo CURRENCY; ?></span><span
                                             class="main-price"><?php echo $eachPack['price']; ?></span> 
-                                            <span class="fs-4">&#8725;</span>month
-                                           
-                                            
+                                            <!-- <span class="fs-4">&#8725;</span>month -->
                                     </p>
+                                    <p><small class="small text-secondary">Including <?= $eachPack['blog_post']; ?> Blog Posts</small></p>
                                     <p class="chooseNiche"></p>
                                     <ul class="price-box-ul">
                                     <?php
