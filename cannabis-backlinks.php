@@ -2,6 +2,8 @@
 require_once __DIR__ . "/includes/common-service-class-functions.inc.php";
 
 $packages = $GPPackage->packDetailsByCat(8);
+$packCat  = $GPPackage->packCatById(8);
+
 require_once ROOT_DIR."/includes/package-submission.inc.php";
 
 ?>

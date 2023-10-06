@@ -14,8 +14,11 @@
                                 name="packageid" value="<?php echo $eachPack['id'];?>">
                             <label class="w-100" for="radio-id-<?php echo $eachPack['id'];?>">
                                 <div class="price-box-content" id="">
+                                    <?php if (!empty($packCat['discount']) || $packCat['discount'] != ''): ?>
                                     <div class="sale-offer-div">
-                                        20% Off</div>
+                                        <?= $packCat['discount'] ?> Off
+                                    </div>
+                                    <?php endif; ?>
                                     <p class="package_type_category"><?php echo $eachPack['package_name']; ?></p>
                                     <div class="packHr"></div>
                                     <p class="price-box-title"><span class="dollar"><?php echo CURRENCY; ?></span><span
