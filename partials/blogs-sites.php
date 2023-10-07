@@ -1,5 +1,14 @@
+<?php
+// require_once ROOT_DIR."/classes/blog_mst.class.php";
+// $BlogMst    = new BlogMst;
+
+// $blogs = $BlogMst->staticBlogLists(12);
+// $noOfBlogs = count ($blogs);
+
+?>
+<!-- 
 <section class="blogs-sites-table-cards">
-    <h2 class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit</h2> 
+    <h2 class="text-center">Avilable Guest Posting Sites</h2> 
     <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, quia est sunt odit eum molestiae itaque quaerat blanditiis iste? Perspiciatis id quibusdam eveniet rerum sapiente asperiores, exercitationem aperiam necessitatibus atque!</p>
     <div class="row">
         <div class="col-md-8 pt-5 m-auto">
@@ -72,10 +81,5 @@
             </a>
         </div>
         </div>
-        <!-- <div class="col-md-6 m-auto">
-            <img src="./images/freepik-img/blogsite.webp" class="w-100" alt="">
-        </div> -->
-    
     </div>
-
-</section>
+</section> -->

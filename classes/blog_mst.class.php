@@ -424,6 +424,18 @@ class BlogMst extends DatabaseConnection{
      }
 	 
 	
+	//  Display Blog Niches Master limited
+	public function staticBlogLists($limit){
+		$temp_arr = array();
+		$sql = "SELECT * FROM niche_master order by niche_name DESC LIMIT $limit";
+		$res = $this->conn->query($sql) or die($this->conn->error);
+		$count = $res->num_rows;
+		while($row = $res->fetch_object()) {
+			$temp_arr[] =$row;
+		}
+		return $temp_arr;
+	}
+
 	//  Display 
 	public function incrBlogSoldQty($blogId, $soldQty){
 		$query 	= "UPDATE blog_mst 
@@ -846,18 +858,6 @@ class BlogMst extends DatabaseConnection{
      }
      return $temp_arr;  
      }
-
-	 	 //  Display Blog Niches Master limited
-		  public function ShowLimitedBlog($limit){
-			$temp_arr = array();
-			$res = mysql_query("SELECT * FROM niche_master order by niche_name DESC LIMIT $limit") or die(mysql_error());
-			$count=mysql_num_rows($res);
-		   while($row = mysql_fetch_array($res)) {
-				$temp_arr[] =$row;
-  
-			}
-			return $temp_arr;
-			}
   
   
 	
