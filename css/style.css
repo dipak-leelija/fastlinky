@@ -3758,3 +3758,24 @@ h5{
         font-size: 1.07rem !important;
     }
 }
+
+/* blogs sites name da dr showing */
+.blogs-sites-table-cards{
+    padding: 3rem 5rem;
+}
+.blogs-sites-table-cards .table>tbody>tr{
+    border: none;
+    border-style: hidden;
+}
+.blogs-sites-table-cards .table thead th {
+    border: none;
+    background: var(--mustard);
+    color: var(--bs-body-bg);
+}
+@media (max-width:991px) {
+    .blogs-sites-table-cards{
+        padding: 2rem 1rem;
+    }
+    
+}
+/* blogs sites name da dr showing */

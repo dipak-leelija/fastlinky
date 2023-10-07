@@ -189,7 +189,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
-
+    <?php require_once "partials/blogs-sites.php"; ?>
     <!-- Service For Link Building That Is Genuinely Important! starts -->
     <section class="lbs-actually-matters-main">
         <div>

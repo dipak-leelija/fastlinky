@@ -469,6 +469,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
+    <?php require_once "partials/blogs-sites.php"; ?>
     <!-- _________________________________________________________________________________ -->
     <!-- ==================== Does-Blogger-Outreach Work For You starts ============================ -->
     <section class="works-for-you-bo-section py-0">
