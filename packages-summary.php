@@ -79,15 +79,13 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 </head>
 
 <body>
-    <div id="home">
-        <?php require_once "partials/navbar.php"; ?>
-
-        <section class="order-summary-section pb-4">
+    <div>
+        <section class="order-summary-section pb-4 px-3 px-md-0">
             <div class="container">
 
                 <form id="paymentForm" name="paymentForm" action="" method="POST">
                     <div class="row">
-                        <div class="col-lg-7 p-4">
+                        <div class="col-lg-7 d-flex align-items-center p-4">
                             <?php
                                 if ($response != '' ) {
                                     echo 
@@ -96,10 +94,8 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                     </div>";
                                 }
                                 ?>
-                            <!-- <form id="addressForm" name="addressForm" action="<?php $_SERVER['PHP_SELF']?>" -->
-                            <!-- method="POST"> -->
                             <div class="row">
-                                <h4 class="pb-2">Billing Details:</h4>
+                                <h4 class="pb-2 mb-4 text-center">Billing Details</h4>
                                 <div class="col-sm-6 mb-3">
                                     <div class="form-group">
                                         <label class="required-field" for="firstname">First Name</label>
@@ -193,11 +189,10 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                         your
                                         details you can place order.
                                     </small>
-                                    <div class="d-flex justify-content-start p-4">
-                                        <button type="button" class="btn btn-secondary" onclick="goback()">Previous
-                                            Page</button>
-                                        <!-- <button type="submit" class="btn btn-secondary" name="update-address">Update
-                                                Address</button> -->
+                                    <div class="d-flex justify-content-start p-4 ps-0">
+                                        <button type="button" class="btn btn-secondary d-none d-lg-block" onclick="goback()">
+                                            Previous Page
+                                        </button>
                                     </div>
 
                                     <div class="form-group">
@@ -206,18 +201,32 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                                 <!-- card 1 -->
                                                 <?php
                                                     // echo count(($_POST[0]));exit;
-                                                    $totalCost = '00.00';
+                                                    // $totalCost      = 00.00;
+                                                    $grossTotal     = 00.00;
+                                                    $totalPayable   = 00.00;
+                                                    $totalDiscount  = 00.00;
                                                     foreach ($_SESSION[PACK_ORD] as $index => $packId) {
 
                                                         $pack           = $GPPackage->packDetailsById($packId);
+                                                        $itemPrice      = $pack['price'];
+
                                                         $packCat        = $GPPackage->packCatById($pack['category_id']);
                                                         $features       = $GPPackage->featureByPackageId($packId);
 
                                                         $packFullName   = $packCat['category_name'].' '.$pack['package_name'];
+                                                        $discountp       = $packCat['discount'];
+                                                        $discount = intval($discountp);
+                                                        $discountedAmount = ($discount / 100) * $itemPrice;
 
                                                         $selectedPacks[]    = $packFullName;
-                                                        $packsCosts[]       = $pack['price'];
-                                                        $totalCost += $pack['price'];
+                                                        $packsCosts[]       = $itemPrice;
+                                                        $discounts[]        = $discountp;
+
+                                                        $grossTotal     += $itemPrice;
+                                                        $totalPayable   += ($itemPrice - $discountedAmount);
+                                                        $totalDiscount  += $discountedAmount;
+
+
                                                     ?>
                                                 <?php
                                                     }
@@ -227,9 +236,8 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                     </div>
                                 </div>
                             </div>
-                            <!-- </form> -->
-
                         </div>
+
                         <div class="col-lg-5 order-details-right d-flex">
                             <div class="d-flex flex-column justify-content-between w-100">
 
@@ -237,47 +245,77 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
                                     <h2 class="mb-4">Summary</h2>
                                     <div class="cart-contents">
                                         <?php
-                                                if (count($selectedPacks) == count($packsCosts)) {
-                                                    for ($i=0; $i < count($packsCosts); $i++) {
-                                                        $selectedPacks[$i];
-                                                        $packsCosts[$i];
-                                                    ?>
+                                            if (count($selectedPacks) == count($packsCosts)) {
+                                                for ($i=0; $i < count($packsCosts); $i++) {
+                                                    $selectedPacks[$i];
+                                                    $packsCosts[$i];
+                                                    $discounts[$i];
+                                                ?>
                                         <div class="mb-4 d-flex justify-content-between">
                                             <div>
-                                                <div class="text-500"><?php echo $selectedPacks[$i]; ?></div>
-                                                <div>
-                                                    <span class="me-1 text-muted">Qty</span>
-                                                    1
-                                                </div>
+                                                <div class="text-500 text-start"><?= $selectedPacks[$i]; ?></div>
+                                                <?php
+                                                if (!empty($discounts[$i]) || $discounts[$i] > 0) {
+                                                    echo '<div class="text-500 text-muted text-start">Discount</div>';
+                                                }
+                                                ?>
+                                                <div><span class="me-1 text-muted text-start">Qty</span>1</div>
                                             </div>
-                                            <div class="text-right text-500">
-                                                <?php echo CURRENCY.$packsCosts[$i]; ?>
+                                            <div>
+                                                <div class="text-end text-500"><?= CURRENCY.$packsCosts[$i]; ?></div>
+                                                <?php
+                                                if (!empty($discounts[$i]) || $discounts[$i] > 0) {
+                                                    echo "<div>{$discounts[$i]}</div>";
+                                                }
+                                                ?>
                                             </div>
+
                                         </div>
                                         <?php
-                                                    }
+                                                }
                                             }?>
-                                        <hr>
-                                        <!-- Show total and payment terms -->
-                                        <div class="mb-4 d-flex justify-content-between">
-                                            <div>
-                                                <div class="text-500">Total</div>
-                                                <div class="text-muted"><?php echo CURRENCY_CODE; ?></div>
-                                            </div>
-                                            <div class="text-right">
-                                                <h2 class="m-0"><?php echo CURRENCY.$totalCost; ?></h2>
-                                                <div class="mt-1 text-muted small">
-                                                    <?php echo CURRENCY.$totalCost; ?> Total Cost</div>
-                                            </div>
-                                        </div>
-                                        <hr>
                                     </div>
                                 </div>
 
-                                <div class="form-group myformgrp">
+                                <div class="form-group total_cart">
+
+                                    <hr>
+                                    <!-- Show total and payment terms -->
+                                    <div class="mb-1 d-flex justify-content-between">
+                                        <div class="text-start">
+                                            <p>Gross Total</p>
+                                        </div>
+                                        <div class="text-end">
+                                            <p><?= CURRENCY.$grossTotal; ?></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-1 d-flex justify-content-between">
+                                        <div class="text-start">
+                                            Discount
+                                        </div>
+                                        <div class="text-end">
+                                            <?= "-{$totalDiscount}";?>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4 d-flex justify-content-between">
+                                        <div class="text-start">
+                                            <h2 class="text-500">Net Pay</h2>
+                                        </div>
+                                        <div class="text-end">    
+                                            <h2 class="text-500"><?php echo CURRENCY.$totalPayable; ?></h2>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
                                     <button type="button" id="continue-btn" class="btn btn-primary w-100">
                                         Continue
                                     </button>
+                                    <button type="button" class="btn btn-secondary w-100 mt-2 d-block d-lg-none" onclick="goback()">
+                                            Previous Page
+                                        </button>
                                 </div>
 
                             </div>
@@ -293,7 +331,6 @@ require_once ROOT_DIR."/includes/check-customer-login.inc.php";
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="js/script.js"></script>
     <script>
-    
     let continueBtn = document.getElementById('continue-btn');
 
     continueBtn.addEventListener("click", function() {

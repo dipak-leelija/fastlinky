@@ -4290,6 +4290,69 @@ function word_teaser_end($string, $count){
 
 	/*****************************************************************************
 	*																			 *
+	*								STRING MANIPULATION							 *
+	*																			 *
+	*****************************************************************************/
+
+	/**
+	 * This Function will remove some special charagter from the given string
+	 * Will Remove : %$?
+	 * $str	The given string
+	 */
+	function getLatersOnly($str) {
+
+		//Remove "#","'" and ";" using str_replace() function
+		$result = preg_replace('/[0-9%$?]/s','', $str);
+		
+		//The output after remove
+		// echo "<br/><b>Text after remove: </b> <br/>".$result;
+		return $result;	
+	}
+
+
+	function formatName($name) {
+		$name = basename($name);
+
+		// Remove the file extension if present
+		$name = preg_replace('/\\.[^.\\s]{3,4}$/', '', $name);
+	
+		// Replace special characters with spaces
+		$name = preg_replace('/[^a-zA-Z0-9]/', ' ', $name);
+	
+		// Capitalize the string
+		$name = ucwords($name);
+	
+		return $name;
+	}
+	
+	// function arrTostr(){
+
+	// 	// Declare an array
+	// 	$arr = array("Welcome","to", "GeeksforGeeks",
+	// 		"A", "Computer","Science","Portal");
+			
+	// 	// Converting array elements into
+	// 	// strings using implode function
+	// 	echo implode(" ",$arr);
+		
+	// }
+
+	function assArrToStr($array, $separator = ', ') {
+		$result = '';
+		foreach ($array as $key => $value) {
+			$result .= $value . $separator;
+		}
+		// Remove the trailing separator
+		if (!empty($result)) {
+			$result = rtrim($result, $separator);
+		}
+		return $result;
+	}
+
+	
+
+	/*****************************************************************************
+	*																			 *
 	*								DATABASE UPDATES							 *
 	*																			 *
 	*****************************************************************************/

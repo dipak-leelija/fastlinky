@@ -69,7 +69,7 @@
 .invoice-items {
     border-radius: 0.25rem;
     font-size: .81rem;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     padding: 2rem;
     position: relative;
 }
@@ -83,8 +83,17 @@
     ;
 }
 
-.invoice-items h2 {
+.invoice-items h2, .total_cart h2 {
     font-size: 1.35rem;
+}
+
+.total_cart {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.total_cart, .total_cart p{
+    color: white !important;
 }
 
 .text-500 {
@@ -92,6 +101,9 @@
     font-weight: 500;
 }
 
+.text-500 .fw-light{
+    font-weight: 300 !important;
+}
 .text-muted {
     color: hsla(0, 0%, 100%, .5)!important;
 }
@@ -166,10 +178,6 @@
     object-fit: cover;
 }
 
-.myformgrp {
-    position: relative;
-    padding-bottom: 10px;
-}
 
 @media(max-width:450px) {
     .cardBtn,
