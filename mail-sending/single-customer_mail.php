@@ -80,11 +80,11 @@ if(isset($_POST)){
             $PHPMailer->IsHTML($format);
             $PHPMailer->Host        = gethostname();
             $PHPMailer->SMTPAuth    = true;
-            $PHPMailer->Username    = MARKETING_MAIL;
-            $PHPMailer->Password    = 'Fast#/billing/#Linky@2022';
-            $PHPMailer->From        = MARKETING_MAIL;
+            $PHPMailer->Username    = CONTACT_MAIL;
+            $PHPMailer->Password    = CONTACT_MAIL_PASS;
+            $PHPMailer->From        = CONTACT_MAIL;
             $PHPMailer->FromName    = COMPANY_FULL_NAME;
-            $PHPMailer->Sender      = MARKETING_MAIL;
+            $PHPMailer->Sender      = CONTACT_MAIL;
             $PHPMailer->addAddress($toMail, $toName);
             $PHPMailer->Subject     = $subject;
             $PHPMailer->Body        = $messageBody;

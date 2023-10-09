@@ -59,7 +59,7 @@ if(isset($_POST["btnSendMail"])){
             $PHPMailer->Host        = gethostname();
             $PHPMailer->SMTPAuth    = true;
             $PHPMailer->Username    = MARKETING_MAIL;
-            $PHPMailer->Password    = 'Fast#/billing/#Linky@2022';
+            $PHPMailer->Password    = MARKETING_MAIL_PASS;
             $PHPMailer->From        = MARKETING_MAIL;
             $PHPMailer->FromName    = COMPANY_FULL_NAME;
             $PHPMailer->Sender      = MARKETING_MAIL;
