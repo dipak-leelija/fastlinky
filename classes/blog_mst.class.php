@@ -427,13 +427,14 @@ class BlogMst extends DatabaseConnection{
 	//  Display Blog Niches Master limited
 	public function staticBlogLists($limit){
 		$temp_arr = array();
-		$sql = "SELECT * FROM blog_mst ORDER BY blog_id DESC LIMIT $limit";
+		// $sql = "SELECT * FROM blog_mst ORDER BY da DESC, dr DESC LIMIT $limit";
+		$sql = "SELECT * FROM blog_mst ORDER BY RAND() LIMIT $limit;";
 		$res = $this->conn->query($sql) or die($this->conn->error);
 		$count = $res->num_rows;
-		while($row = $res->fetch_assoc()) {
+		while($row = $res->fetch_object()) {
 			$temp_arr[] =$row;
 		}
-		return $temp_arr;
+		return json_encode($temp_arr);
 	}
 
 

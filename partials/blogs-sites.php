@@ -2,9 +2,8 @@
 require_once ROOT_DIR."/classes/blog_mst.class.php";
 $BlogMst    = new BlogMst;
 
-$blogs = $BlogMst->staticBlogLists(12);
-$splitInto = 3;
-$lists = $BlogMst->splitArrayIntoParts($blogs, $splitInto);
+$blogs = $BlogMst->staticBlogLists(10);
+$blogs = json_decode($blogs);
 ?>
 
 <section class="blogs-sites-table-cards">
@@ -18,26 +17,29 @@ $lists = $BlogMst->splitArrayIntoParts($blogs, $splitInto);
                 <table class="table ">
                     <thead>
                         <tr>
-                            <?php for($i = 0; $i < $splitInto; $i++){ ?>
-                            <th scope="col-1" class="text-center py-3">Blog Site</th>
-                            <th scope="col-1" class="text-end py-3 pe-0">DA</th>
-                            <th scope="col-2" class="py-3">DR</th>
-                            <?php } ?>
+                            <th scope="col-1" class="text-start py-3">Blog Name</th>
+                            <th scope="col-1" class="text-center py-3">Niche</th>
+                            <th scope="col-1" class="text-center py-3">DA</th>
+                            <th scope="col-1" class="text-center py-3">DR</th>
+                            <th scope="col-1" class="text-center py-3">Traffic</th>
+                            <th scope="col-1" class="text-center py-3">Grey Niche Price</th>
+                            <th scope="col-1" class="text-center py-3">General Price</th>
                         </tr>
 
                     </thead>
                     <tbody>
-                        <?php
-                        foreach ($lists as $chunk) {
-                            echo '<tr>';
-                            foreach ($chunk as $item) {
-                                echo '<td class="text-center">' . $item['domain'] . '</td>';
-                                echo '<td class="text-end pe-0">' . $item['da'] . '</td>';
-                                echo '<td>' . $item['dr'] . '</td>';
-                            }
-                            echo '</tr>';
-                        }
-                        ?>
+                        <?php foreach ($blogs as $eachBlog) { ?>
+                            <tr>
+                                <td class="text-start"><?= $eachBlog->domain?></td>
+                                <td class="text-center"><?= $eachBlog->niche?></td>
+                                <td class="text-center"><?= $eachBlog->da?></td>
+                                <td class="text-center"><?= $eachBlog->dr?></td>
+                                <td class="text-center"><?= $eachBlog->organic_trafic?></td>
+                                <td class="text-center">$<?= $eachBlog->grey_niche_cost?></td>
+                                <td class="text-center">$<?= $eachBlog->ext_cost?></td>
+                            </tr>
+
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>

@@ -42,9 +42,9 @@ $currentPage    = $utility->setCurrentPageSession();
 
 //user id
 $cusId		= $utility->returnSess('userid', 0);
+$cusDtl		= $customer->getCustomerData($cusId);
 require_once ROOT_DIR."/includes/check-customer-login.inc.php";
 
-$cusDtl		= $customer->getCustomerData($cusId);
 $blogDtls	= $blogMst->ShowBlogApprData();
 
 ?>
