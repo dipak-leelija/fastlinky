@@ -42,7 +42,7 @@ $lists = $BlogMst->splitArrayIntoParts($blogs, $splitInto);
                 </table>
             </div>
             <div class=" text-center mt-3">
-                <a href="#pricing-cards">
+                <a href="<?= URL ?>/blogs-list">
                     <button type="button" class="btn srvc-common-btn py-2">View More</button>
                 </a>
             </div>

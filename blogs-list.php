@@ -38,21 +38,15 @@ $uNum 			= new NumUtility();
 $WishList		= new WishList();
 ######################################################################################################################
 $typeM		= $utility->returnGetVar('typeM','');
+$currentPage    = $utility->setCurrentPageSession();
+
 //user id
 $cusId		= $utility->returnSess('userid', 0);
+require_once ROOT_DIR."/includes/check-customer-login.inc.php";
+
 $cusDtl		= $customer->getCustomerData($cusId);
+$blogDtls	= $blogMst->ShowBlogApprData();
 
-if($cusId == 0){
-	header("Location: index.php");
-}
-
-if($cusDtl[0] == 2){ 
-	header("Location: dashboard.php");
-}
-	
-//echo $cusId;exit;
-$blogDtls		= $blogMst->ShowBlogApprData();
-/* PAGE ACTIVE */
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
