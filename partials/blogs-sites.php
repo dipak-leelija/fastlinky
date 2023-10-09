@@ -8,7 +8,7 @@ $blogs = json_decode($blogs);
 
 <section class="blogs-sites-table-cards">
     <h2 class="text-center">Avilable Guest Posting Sites</h2>
-    <p class=" ">We believe that <b>SEO Guest Posting Services</b> with maintaining high-quality content, definitely helps all brands to grow their business. We can assure you that your website will touch the vertex of the mountain after creating quality content for your brand through our <b>Premium Guest Posting Services</b>. There are <b>30000+</b> high <b>Domain Authority (DA)</b> websites spread worldwide. Hence you can choose easily any website to post by using our <b>Guest Posting Services</b>. </p>
+    <p class="text-center">We believe that <b>SEO Guest Posting Services</b> with maintaining high-quality content, definitely helps all brands to grow their business. We can assure you that your website will touch the vertex of the mountain after creating quality content for your brand through our <b>Premium Guest Posting Services</b>. There are <b>30000+</b> high <b>Domain Authority (DA)</b> websites spread worldwide. Hence you can choose easily any website to post by using our <b>Guest Posting Services</b>. Few blogs are given bellow-</p>
     <div class="row">
         <div class="col-md-8 pt-3 m-auto">
             <div class="table-responsive card">
