@@ -21,7 +21,7 @@
                                     <?php endif; ?>
                                     <p class="package_type_category"><?php echo $eachPack['package_name']; ?></p>
                                     <div class="packHr"></div>
-                                    <p class="price-box-title"><span class="dollar"><?php echo CURRENCY; ?></span><span
+                                    <p class="price-box-title"><sup class="dollar"><?php echo CURRENCY; ?></sup><span
                                             class="main-price"><?php echo $eachPack['price']; ?></span>
                                         <!-- <span class="fs-4">&#8725;</span>month -->
                                     </p>

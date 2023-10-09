@@ -3613,7 +3613,7 @@ h5{
     background: #F9F9F9;
 }
 .sale-offer-div{
-    color: #ffffff;
+    color: var(--pure-black);
     font-family: "Helvetica", Poppins;
     text-align: center;
     width: 188px;
@@ -3623,7 +3623,7 @@ h5{
     line-height: 2.3;
     font-weight: 800;
     text-transform: uppercase;
-    background: green;
+    background: var(--mustard);
 }
 
 
@@ -3666,17 +3666,20 @@ h5{
 .price-box-content .price-box-title {
     position: relative;
     font-size: 1rem;
+    line-height: 1.2;
 }
 
 .price-box-title .dollar {
     font-weight: 500;
     font-size: 20px;
-    position: absolute;
-    top: 0
+    /* position: absolute; */
+    /* top: 0 */
 }
-
+.price-box-title sup{
+        top: -1.5em;
+}
 .main-price {
-    font-size: 60px;
+    font-size: 55px;
     font-weight: 700;
 }
 
@@ -3687,7 +3690,7 @@ h5{
 }
 
 .price-box-ul {
-    padding: 20px 0;
+    padding: 3px 0;
     text-align: left;
     margin-left: 25px;
     font-size: 1.178rem;
