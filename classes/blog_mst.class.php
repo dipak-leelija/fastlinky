@@ -427,14 +427,26 @@ class BlogMst extends DatabaseConnection{
 	//  Display Blog Niches Master limited
 	public function staticBlogLists($limit){
 		$temp_arr = array();
-		$sql = "SELECT * FROM niche_master order by niche_name DESC LIMIT $limit";
+		$sql = "SELECT * FROM blog_mst ORDER BY blog_id DESC LIMIT $limit";
 		$res = $this->conn->query($sql) or die($this->conn->error);
 		$count = $res->num_rows;
-		while($row = $res->fetch_object()) {
+		while($row = $res->fetch_assoc()) {
 			$temp_arr[] =$row;
 		}
 		return $temp_arr;
 	}
+
+
+	function splitArrayIntoParts($arr, $splitInto) {
+		if (count($arr) % $splitInto !== 0) {
+			throw new InvalidArgumentException("Array length is not a multiple of {$splitInto}");
+		}
+	
+		// $partSize = count($arr) / $splitInto;
+		$parts = array_chunk($arr, $splitInto);
+		return $parts;
+	}
+
 
 	//  Display 
 	public function incrBlogSoldQty($blogId, $soldQty){
