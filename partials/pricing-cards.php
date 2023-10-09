@@ -1,9 +1,9 @@
 <section class="blogger-fourth-section" id="pricing-cards">
-    <div class="price-table">
+    <div class="price-table py-md-4 py-2">
         <div class="container">
             <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post" id="package-cards">
                 <div class="price-table-box">
-                    <div class="row mb-3">
+                    <div class="row">
                         <!-- card 1 -->
                         <?php
                     foreach ($packages as $eachPack) {
@@ -12,7 +12,7 @@
                         <div class="col-md-4 px-0 px-md-1 px-lg-2">
                             <input type="radio" class="d-none" id="radio-id-<?php echo $eachPack['id'];?>"
                                 name="packageid" value="<?php echo $eachPack['id'];?>">
-                            <label class="w-100" for="radio-id-<?php echo $eachPack['id'];?>">
+                            <label class="w-100 d-block" for="radio-id-<?php echo $eachPack['id'];?>">
                                 <div class="price-box-content" id="">
                                     <?php if (!empty($packCat['discount']) || $packCat['discount'] != ''): ?>
                                     <div class="sale-offer-div">
