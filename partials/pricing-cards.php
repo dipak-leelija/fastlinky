@@ -25,8 +25,17 @@
                                             class="main-price"><?php echo $eachPack['price']; ?></span>
                                         <!-- <span class="fs-4">&#8725;</span>month -->
                                     </p>
-                                    <p><small class="small text-secondary">Including <?= $eachPack['blog_post']; ?> Blog
-                                            Posts</small></p>
+                                    <p>
+                                        <small class="small text-secondary">
+                                            <?php
+                                            if ($packCat['id'] == 6) {
+                                                echo "{$eachPack['blog_post']} Links insertion";
+                                            }else {
+                                                echo "Including {$eachPack['blog_post']} Blog Posts";
+                                            }
+                                            ?>
+                                        </small>
+                                    </p>
                                     <p class="chooseNiche"></p>
                                     <ul class="price-box-ul">
                                         <?php
