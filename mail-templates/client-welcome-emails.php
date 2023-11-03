@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="x-apple-disable-message-reformatting">
     <title></title>
-    <link rel="stylesheet" href="css/client-welcome-emails.css">
-    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-
-    <style></style>
+    <link rel="stylesheet" href="<?= URL ?>/css/client-welcome-emails.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="<?= URL ?>/plugins/fontawesome-6.1.1/css/all.css" />
+    <link href="<?= URL ?>/fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i"
+        rel="stylesheet" />
+    <link href="<?= URL ?>/fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet" />
+    <link href="<?= URL ?>/fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet" />
 </head>
 
 <body>

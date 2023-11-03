@@ -10,20 +10,20 @@ $utility		= new Utility();
 $userData =  $numLogin->getUserDetail($_SESSION[ADM_SESS]);
 
 ?>
-<link rel="stylesheet" type="text/css" href="../style/admin/admin.css"/>
+<link rel="stylesheet" type="text/css" href="<?= URL ?>/style/admin/admin.css" />
 
     <div id="body-top">
     	<!-- Left -->
     	<div id="top-left">
-        	<a href="../" target="_blank">Website Home</a>
-            <a href="admin.php">Admin Home</a>
+        	<a href="<?= URL ?>/" target="_blank">Website Home</a>
+            <a href="<?= ADM_URL ?>admin.php">Admin Home</a>
         </div>
         
         <!-- Right -->
         <div id="top-right">
         	<div id="dropdown-options" title="Click Here to View Options">
             	<a href="javascript:void(0)">
-            		<img src="../images/admin/icon/admin-logo.png" width="30" height="30" alt="ansysoft-options" border="0" />
+            		<img src="<?= URL ?>/images/admin/icon/admin-logo.png" width="30" height="30" alt="ansysoft-options" border="0" />
                 </a>
                 <div id="dropdown-back">
                		<div>
@@ -36,7 +36,7 @@ $userData =  $numLogin->getUserDetail($_SESSION[ADM_SESS]);
 						?> 
                     </div>
                     <div class="logout">
-                    	I am done with my work. <a href="partials/logout.php" title="logout">Logout</a>
+                    	I am done with my work. <a href="components/logout.php" title="logout">Logout</a>
                     </div>
                 </div>
             </div>

@@ -174,16 +174,13 @@ if (isset($_FILES['content-file'])) {
 
 <head>
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
-
+    
     <title><?= $domain; ?> - Order Details | <?php echo COMPANY_FULL_NAME; ?></title>
-
-    <link rel="stylesheet" href="<?= URL?>/plugins/sweetalert/sweetalert2.css">
-
+    <link rel="stylesheet" href="<?= URL?>/plugins/sweetalert/sweetalert2.css" />
     <!-- inject:css -->
-    <link rel="stylesheet" href="<?= URL?>/css/order-now.css">
-    <link rel="stylesheet" href="<?= URL?>/css/order-list.css">
+    <link rel="stylesheet" href="<?= URL?>/css/order-now.css" />
+    <link rel="stylesheet" href="<?= URL?>/css/order-list.css" />
     <!-- endinject -->
-
 </head>
 <style>
      @media (max-width: 308px){
@@ -204,18 +201,10 @@ if (isset($_FILES['content-file'])) {
 </style>
 <body>
     <div class="container-scroller">
-        <?php require_once "partials/_navbar.php"; ?>
-
-        <!-- partial -->
+        <?php require_once "components/_navbar.php"; ?>
         <div class="container-fluid page-body-wrapper">
-            <?php require_once "partials/_settings-panel.php"; ?>
-
-
-            <!-- partial -->
-            <?php require_once "partials/_sidebar.php"; ?>
-            <!-- partial:../../ -->
-
-            <!-- partial -->
+            <?php require_once "components/_settings-panel.php"; ?>
+            <?php require_once "components/_sidebar.php"; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="card">
@@ -1112,22 +1101,17 @@ if (isset($_FILES['content-file'])) {
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
-
-    <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
-    <!-- <script src="../plugins/data-table/simple-datatables.js"></script> -->
-    <script src="../plugins/tinymce/tinymce.js"></script>
-    <script src="../plugins/main.js"></script>
-    <script src="../plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
-    <script src="../js/ajax.js" type="text/javascript"></script>
-    <script src="../js/content-upload.js"></script>
-
-
+    <script src="<?= URL?>/vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= URL?>/js/off-canvas.js"></script>
+    <script src="<?= URL?>/js/hoverable-collapse.js"></script>
+    <script src="<?= URL?>/js/template.js"></script>
+    <script src="<?= URL?>/js/settings.js"></script>
+    <script src="<?= URL?>/js/todolist.js"></script>
+    <script src="<?= ADM_URL ?>plugins/tinymce/tinymce.js"></script>
+    <script src="<?= ADM_URL ?>plugins/main.js"></script>
+    <script src="<?= ADM_URL ?>plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+    <script src="<?= ADM_URL ?>js/ajax.js" type="text/javascript"></script>
+    <script src="<?= ADM_URL ?>js/content-upload.js"></script>
     <script>
     const acceptOrder = (ordId, customerId) => {
 
@@ -1298,10 +1282,6 @@ if (isset($_FILES['content-file'])) {
         // });
     }
     </script>
-
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!-- End custom js for this page-->
 </body>
 
 </html>

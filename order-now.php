@@ -137,31 +137,22 @@ if (isset($_SESSION['content-data'])) {
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <!-- <link href="css/leelija.css" rel='stylesheet' type='text/css' /> -->
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="css/order-now.css" rel='stylesheet' type='text/css' />
-
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/order-now.css" rel='stylesheet' type='text/css' />
 </head>
 
 <body>
     <div id="home">
 
         <!-- navbar start -->
-        <?php require_once 'partials/navbar.php'; ?>
+        <?php require_once 'components/navbar.php'; ?>
         <!-- navbar end -->
-
-        <!-- main section start -->
         <div class="edit_profile pb-5">
             <div class="container-fluid">
                 <!--Row start-->
@@ -585,11 +576,11 @@ if (isset($_SESSION['content-data'])) {
 
     <!-- js-->
     <!-- //Bootstrap Core JavaScript -->
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/orderNow.js"></script>
-    <script src="js/content-upload.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/js/script.js"></script>
+    <script src="<?= URL ?>/js/orderNow.js"></script>
+    <script src="<?= URL ?>/js/content-upload.js"></script>
 
 
     <script>

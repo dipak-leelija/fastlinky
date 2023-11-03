@@ -44,25 +44,20 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, '*');
     <title>Package order history - <?php echo COMPANY_S; ?></title>
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/my-orders.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/order-list.css" rel='stylesheet' type='text/css' />
-
-    <!--//webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-
-
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/my-orders.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/order-list.css" rel='stylesheet' type='text/css' />
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="home">
         <!-- header -->
-        <?php  require_once ROOT_DIR."/partials/navbar.php" ?>
+        <?php  require_once ROOT_DIR."/components/navbar.php" ?>
         <!-- //header -->
         <!-- banner -->
         <div class="edit_profile">
@@ -180,16 +175,13 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, '*');
                 <!--// Row end-->
             </div>
         </div>
-        <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
-        <script src="<?php echo URL;?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
-        <script src="<?php echo URL;?>/plugins/data-table/simple-datatables.js"></script>
-        <script src="<?php echo URL;?>/plugins/tinymce/tinymce.js"></script>
-        <script src="<?php echo URL;?>/plugins/main.js"></script>
-        <script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
-
-        <!-- //fixed-scroll-nav-js -->
-        <!-- <script src="js/pageplugs/fixedNav.js"></script> -->
-        <script src="<?php echo URL;?>/js/customerSwitchMode.js"></script>
+        <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+        <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+        <script src="<?= URL ?>/plugins/main.js"></script>
+        <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+        <script src="<?= URL ?>/js/customerSwitchMode.js"></script>
 
         <script>
         /* jQuery Pagination */
@@ -286,7 +278,6 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, '*');
 
         $('.product_card').paginate(4);
         </script>
-
 </body>
 
 </html>

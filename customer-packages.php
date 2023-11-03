@@ -67,17 +67,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
-
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
 
     <style>
     #packageList {
@@ -121,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="home">
         <!-- header -->
-        <?php require_once 'partials/navbar.php'; ?>
+        <?php require_once 'components/navbar.php'; ?>
         <!-- //header -->
         <!-- banner -->
         <div class="edit_profile">
@@ -249,22 +241,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <!-- //end container sec -->
         </div>
         <!-- js-->
-        <script src="plugins/jquery-3.6.0.min.js"></script>
-        <script src="js/jquery.min.js" type="text/javascript"></script>
-        <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-        <script src="plugins/sweetalert/sweetalert2.all.js"></script>
+        <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+        <script src="<?= URL ?>/js/jquery.min.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+        <script src="<?= URL ?>/plugins/sweetalert/sweetalert2.all.js"></script>
         <!-- js-->
-        <script src="js/jquery-ui.js"></script>
-        <script src="js/cart.js"></script>
-        <script src="js/ajax.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/js/jquery-ui.js"></script>
+        <script src="<?= URL ?>/js/cart.js"></script>
+        <script src="<?= URL ?>/js/ajax.js" type="text/javascript"></script>
 
-        <script src="js/wishlist.js" type="text/javascript"></script>
-        <script src="js/customerSwitchMode.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/js/wishlist.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/js/customerSwitchMode.js" type="text/javascript"></script>
 
 
         <!-- DataTables -->
-        <script src="plugins/tinymce/tinymce.js"></script>
-        <script src="plugins/main.js"></script>
+        <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+        <script src="<?= URL ?>/plugins/main.js"></script>
 
         <script>
         const hideBlock = (elem) => {

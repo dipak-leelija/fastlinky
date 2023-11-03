@@ -66,11 +66,11 @@ $_SESSION['payment-process'] = true;
 
     <!-- <link rel="stylesheet" href="../css/payment-paylater-paynow.css"> -->
 
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- custom css  -->
-    <link rel="stylesheet" href="<?= URL; ?>/css/payment-summary-style.css">
+    <link href="<?= URL; ?>/css/payment-summary-style.css" rel="stylesheet" />
 
 </head>
 
@@ -256,7 +256,7 @@ $_SESSION['payment-process'] = true;
         }
     }).render('#paypal-payment-button');
     </script>
-    <script src="../plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>

@@ -54,28 +54,16 @@ $userData =  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
 
     <title><?php echo COMPANY_S.' Administrative Dashboard'; ?></title>
-
-    <!-- plugins:css -->
-    <!-- <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css"> -->
-    <link rel="stylesheet" href="css/admin-style.css">
-
+    <link rel="stylesheet" href="<?php echo ADM_URL ?>css/admin-style.css" />
 
 </head>
 
 <body>
     <div class="container-scroller">
-        <?php require_once ADM_DIR."/partials/_navbar.php"; ?>
-
-        <!-- partial -->
+        <?php require_once ADM_DIR."/components/_navbar.php"; ?>
         <div class="container-fluid page-body-wrapper">
-            <?php require_once ADM_DIR."/partials/_settings-panel.php"; ?>
-
-
-            <!-- partial -->
-            <?php require_once ADM_DIR."/partials/_sidebar.php"; ?>
-            <!-- partial:../../ -->
-
-            <!-- partial -->
+            <?php require_once ADM_DIR."/components/_settings-panel.php"; ?>
+            <?php require_once ADM_DIR."/components/_sidebar.php"; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
@@ -296,22 +284,16 @@ $userData =  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="<?php echo ADM_URL?>vendors/js/vendor.bundle.base.js"></script>
-    <script src="<?php echo URL; ?>/plugins/jquery-3.6.0.min.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="<?php echo ADM_URL?>js/off-canvas.js"></script>
-    <script src="<?php echo ADM_URL?>js/hoverable-collapse.js"></script>
-    <script src="<?php echo ADM_URL?>js/template.js"></script>
-    <script src="<?php echo ADM_URL?>js/settings.js"></script>
-    <script src="<?php echo ADM_URL?>js/todolist.js"></script>
-
-    <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
-    <script src="<?php echo URL; ?>/plugins/data-table/simple-datatables.js"></script>
-    <script src="<?php echo URL; ?>/plugins/tinymce/tinymce.js"></script>
-    <script src="<?php echo URL; ?>/plugins/main.js"></script>
+    <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
+    <script src="<?= ADM_URL ?>js/hoverable-collapse.js"></script>
+    <script src="<?= ADM_URL ?>js/template.js"></script>
+    <script src="<?= ADM_URL ?>js/settings.js"></script>
+    <script src="<?= ADM_URL ?>js/todolist.js"></script>
+    <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
 </body>
 
 </html>

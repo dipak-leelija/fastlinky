@@ -51,20 +51,15 @@ $packages   = $GPPackage->packDetailsByCat(1);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/logo/favicon.png" type="image/png">
     <title>Managed Link Building, Blogger Outreach: <?php echo COMPANY_S; ?></title>
-    
-
-
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
 </head>
 <body>
-    <?php require_once "partials/navbar.php"; ?>
-    <!--____________________________________________________________________________________________ -->
-    <!-- starting of managed-link-building main banner -->
+    <?php require_once "components/navbar.php"; ?>
     <section class="managed-link-building-main-banner">
         <div class="container mlb-main-cntainer">
             <div class="row mlb-main-start-row">
@@ -107,10 +102,10 @@ $packages   = $GPPackage->packDetailsByCat(1);
     </section>
 
     <!-- Footer -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
     <!-- /Footer -->
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 
 </body>
 

@@ -70,9 +70,9 @@ $_SESSION['payment-process'] = true;
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="../css/payment-paylater-paynow.css">
+    <link rel="stylesheet" href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" />
+    <link rel="stylesheet" href="<?= URL ?>/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="<?= URL ?>/css/payment-paylater-paynow.css" />
 </head>
 
 <body>
@@ -249,7 +249,7 @@ $_SESSION['payment-process'] = true;
         }
     }).render('#paypal-payment-button');
     </script>
-    <script src="../plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>

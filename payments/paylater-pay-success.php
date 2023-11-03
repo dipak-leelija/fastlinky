@@ -267,11 +267,11 @@ unset($_POST);
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <title>Successful Order - Order Received</title>
 
-	<link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+	<link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-    <link rel="stylesheet" href="<?php echo URL ?>/css/style.css">
-    <link rel="stylesheet" href="<?php echo URL ?>/css/payment-status.css">
+    <link href="<?= URL ?>/css/style.css" rel="stylesheet" />
+    <link href="<?= URL ?>/css/payment-status.css" rel="stylesheet" />
 
 </head>
 
@@ -279,7 +279,7 @@ unset($_POST);
 <body>
 
     <!-- Start  Header -->
-    <?php require_once "../partials/navbar.php"; ?>
+    <?php require_once "../components/navbar.php"; ?>
     <!-- End  Header -->
 
     <!-- Start  container -->
@@ -315,10 +315,10 @@ unset($_POST);
     <!-- End  MainWrap -->
 
     <!-- Start Foter -->
-    <?php require_once "../partials/footer.php"; ?>
+    <?php require_once "../components/footer.php"; ?>
     <!-- End Foter -->
-	<script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
-    <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
+	<script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>

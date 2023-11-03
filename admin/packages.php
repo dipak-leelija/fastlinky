@@ -51,33 +51,17 @@ $packageCats = $GPPackage->allPackagesCat();
 <head>
 <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Packages - <?php echo COMPANY_FULL_NAME;?></title>
-    <link rel="stylesheet" href="<?php echo ADM_URL; ?>/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="<?php echo URL; ?>/plugins/data-table/style.css">
-    <link rel="stylesheet" href="<?php echo URL; ?>/css/order-table.css">
-<!-- 
-    <style>
-    @media (max-width:1200px) {
-        .modal .modal-dialog .modal-content .modal-body {
-            padding: 0px !important;
-        }
-    }
-    </style> -->
+    <link rel="stylesheet" href="<?= ADM_URL ?>vendors/mdi/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="<?= URL ?>/plugins/data-table/style.css" />
+    <link rel="stylesheet" href="<?= URL ?>/css/order-table.css" />
 </head>
 
 <body>
     <div class="container-scroller">
-        <?php require_once "partials/_navbar.php"; ?>
-
-        <!-- partial -->
+        <?php require_once "components/_navbar.php"; ?>
         <div class="container-fluid page-body-wrapper">
-            <?php require_once "partials/_settings-panel.php"; ?>
-
-
-            <!-- partial -->
-            <?php require_once "partials/_sidebar.php"; ?>
-            <!-- partial:../../ -->
-
-            <!-- partial -->
+            <?php require_once "components/_settings-panel.php"; ?>
+            <?php require_once "components/_sidebar.php"; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row justify-content-between">
@@ -256,7 +240,7 @@ $packageCats = $GPPackage->allPackagesCat();
                 </div>
 
                 <!-- Footer Start  -->
-                <?php require_once "partials/_footer.php"; ?>
+                <?php require_once "components/_footer.php"; ?>
                 <!-- Footer End  -->
 
                 <!-- partial -->
@@ -267,30 +251,20 @@ $packageCats = $GPPackage->allPackagesCat();
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="<?php echo ADM_URL; ?>/vendors/js/vendor.bundle.base.js"></script>
-    <script src="<?php echo URL; ?>/plugins/jquery-3.6.0.min.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="<?php echo ADM_URL; ?>/js/fastlinky-admin.js"></script>
-    <script src="<?php echo ADM_URL; ?>/js/off-canvas.js"></script>
-    <script src="<?php echo ADM_URL; ?>/js/hoverable-collapse.js"></script>
-    <script src="<?php echo ADM_URL; ?>/js/template.js"></script>
-    <script src="<?php echo ADM_URL; ?>/js/settings.js"></script>
-    <script src="<?php echo ADM_URL; ?>/js/todolist.js"></script>
-
-    <script src="<?php echo URL; ?>/plugins/data-table/simple-datatables.js"></script>
-    <script src="<?php echo URL; ?>/plugins/tinymce/tinymce.js"></script>
-    <script src="<?php echo URL; ?>/plugins/main.js"></script>
-
-
-    <!-- Added Js  -->
-    <script src="<?php echo URL; ?>/js/utility.js"></script>
-    <script src="<?php echo URL; ?>/js/ajax.js"></script>
-    <script src="<?php echo URL; ?>/plugins/sweetalert/sweetalert2.all.js"></script>
-
-
+    <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= ADM_URL ?>js/fastlinky-admin.js"></script>
+    <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
+    <script src="<?= ADM_URL ?>js/hoverable-collapse.js"></script>
+    <script src="<?= ADM_URL ?>js/template.js"></script>
+    <script src="<?= ADM_URL ?>js/settings.js"></script>
+    <script src="<?= ADM_URL ?>js/todolist.js"></script>
+    <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
+    <script src="<?= URL ?>/js/utility.js"></script>
+    <script src="<?= URL ?>/js/ajax.js"></script>
+    <script src="<?= URL ?>/plugins/sweetalert/sweetalert2.all.js"></script>
     <script>
     function loadPage(pageUrl, lodedToId) {
         $.ajax({
@@ -350,9 +324,6 @@ $packageCats = $GPPackage->allPackagesCat();
         return false;
     }
     </script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!-- End custom js for this page-->
 </body>
 
 </html>

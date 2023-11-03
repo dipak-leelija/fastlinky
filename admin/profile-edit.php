@@ -40,15 +40,10 @@ $userDetails 		=  $adminLogin->getUserDetail($userName);
 
 <body>
     <div class="container-scroller">
-        <?php require_once "partials/_navbar.php"; ?>
-
-        <!-- partial -->
+        <?php require_once "components/_navbar.php"; ?>
         <div class="container-fluid page-body-wrapper">
-            <?php require_once "partials/_settings-panel.php"; ?>
-
-            <!-- partial -->
-            <?php require_once "partials/_sidebar.php"; ?>
-            <!-- partial -->
+            <?php require_once "components/_settings-panel.php"; ?>
+            <?php require_once "components/_sidebar.php"; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <?php
@@ -237,34 +232,22 @@ $userDetails 		=  $adminLogin->getUserDetail($userName);
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial footer -->
-                <?php require_once ADM_DIR . 'partials/_footer.php'; ?>
+                <?php require_once ADM_DIR . 'components/_footer.php'; ?>
                 <!-- partial footer end-->
             </div>
             <!-- main-panel ends -->
         </div>
         <!-- page-body-wrapper ends -->
     </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <script src="../plugins/jquery-3.6.0.min.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
-
-    <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
-    <script src="../plugins/tinymce/tinymce.js"></script>
-    <script src="../plugins/main.js"></script>
-
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!-- End custom js for this page-->
+    <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
+    <script src="<?= ADM_URL ?>js/hoverable-collapse.js"></script>
+    <script src="<?= ADM_URL ?>js/template.js"></script>
+    <script src="<?= ADM_URL ?>js/settings.js"></script>
+    <script src="<?= ADM_URL ?>js/todolist.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
 </body>
 
 </html>

@@ -28,9 +28,10 @@ $emailDetail = $Email->getemailDetail('id', $_GET['id']);
 
 <head>
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
+
     <title><?= $emailDetail[2]; ?> - <?= COMPANY_S ?></title>
-    <link rel="stylesheet" href="<?= ADM_URL ?>/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="<?= URL ?>/plugins/data-table/style.css">
+    <link rel="stylesheet" href="<?= ADM_URL ?>vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="<?= URL ?>/plugins/data-table/style.css" />
 </head>
 <style>
 @media(max-width:390px) {
@@ -46,17 +47,10 @@ $emailDetail = $Email->getemailDetail('id', $_GET['id']);
 
 <body>
     <div class="container-scroller">
-        <?php require_once "partials/_navbar.php"; ?>
-
-        <!-- partial -->
+        <?php require_once "components/_navbar.php"; ?>
         <div class="container-fluid page-body-wrapper">
-            <?php require_once "partials/_settings-panel.php"; ?>
-
-            <!-- partial -->
-            <?php require_once "partials/_sidebar.php"; ?>
-            <!-- partial:../../ -->
-            <!-- background-color: #cddbff; -->
-            <!-- partial -->
+            <?php require_once "components/_settings-panel.php"; ?>
+            <?php require_once "components/_sidebar.php"; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="ml-3 mb-3">
@@ -146,17 +140,6 @@ $emailDetail = $Email->getemailDetail('id', $_GET['id']);
                     </div> -->
                 </div>
                 <!-- content-wrapper ends -->
-                <!-- partial:../../partials/_footer.html -->
-                <footer class="footer">
-                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.
-                            Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin
-                                template</a> from BootstrapDash. All rights reserved.</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made
-                            with <i class="ti-heart text-danger ml-1"></i></span>
-                    </div>
-                </footer>
-                <!-- partial -->
             </div>
             <!-- main-panel ends -->
         </div>
@@ -164,26 +147,16 @@ $emailDetail = $Email->getemailDetail('id', $_GET['id']);
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <script src="../plugins/jquery-3.6.0.min.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
-
-    <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
-    <script src="../plugins/data-table/simple-datatables.js"></script>
-    <script src="../plugins/tinymce/tinymce.js"></script>
-    <script src="../plugins/main.js"></script>
-
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!-- End custom js for this page-->
+    <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
+    <script src="<?= ADM_URL ?>js/hoverable-collapse.js"></script>
+    <script src="<?= ADM_URL ?>js/template.js"></script>
+    <script src="<?= ADM_URL ?>js/settings.js"></script>
+    <script src="<?= ADM_URL ?>js/todolist.js"></script>
+    <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
 </body>
 
 </html>

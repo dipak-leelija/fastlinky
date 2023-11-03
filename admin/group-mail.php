@@ -45,22 +45,16 @@ $typeM		= $utility->returnGetVar('typeM','');
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Customer Emails | <?php echo COMPANY_S; ?></title>
 
-    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-    <!-- <link rel="stylesheet" href="<?= URL ?>/plugins/summernote/summernote.css"> -->
-    <link rel="stylesheet" href="<?= URL ?>/plugins/summernote/summernote-lite.min.css">
+    <link rel="stylesheet" href="<?= ADM_URL ?>vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="<?= URL ?>/plugins/summernote/summernote-lite.min.css" /> 
 </head>
 
 <body>
     <div class="container-scroller">
-        <?php require_once "partials/_navbar.php"; ?>
-
-        <!-- partial -->
+        <?php require_once "components/_navbar.php"; ?>
         <div class="container-fluid page-body-wrapper">
-            <?php require_once "partials/_settings-panel.php"; ?>
-
-
-            <!-- partial -->
-            <?php require_once "partials/_sidebar.php"; ?>
+            <?php require_once "components/_settings-panel.php"; ?>
+            <?php require_once "components/_sidebar.php"; ?>
 
             <!-- main-panel start -->
             <div class="main-panel">
@@ -150,10 +144,8 @@ $typeM		= $utility->returnGetVar('typeM','');
         </div>
     </div>
 
-    <!-- <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script> -->
     <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
     <script src="<?= URL ?>/plugins/main.js"></script>
-
     <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
     <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
     <script src="<?= ADM_URL ?>js/hoverable-collapse.js"></script>
@@ -163,16 +155,11 @@ $typeM		= $utility->returnGetVar('typeM','');
     <script src="<?= URL ?>/plugins/summernote/summernote-lite.min.js"></script>
 
     <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
     (() => {
         'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
         const mainWrapperDiv = document.querySelector(".main-panel");
         const sendingToast = document.getElementById("sendingToast");
-
-        // Loop over them and prevent submission
         Array.from(forms).forEach(form => {
             form.addEventListener('submit', event => {
 
@@ -191,7 +178,6 @@ $typeM		= $utility->returnGetVar('typeM','');
             const toast = new bootstrap.Toast(sendingToast)
             toast.show()
 
-            // disable the main-wrapper div
             mainWrapperDiv.style.pointerEvents = "none";
             mainWrapperDiv.style.opacity = "0.5";
             mainWrapperDiv.style.background = "#000";
@@ -201,7 +187,6 @@ $typeM		= $utility->returnGetVar('typeM','');
             var summernote = document.getElementById("summernote");
 
             if (summernote) {
-                // Initialize the summernote editor
                 $(summernote).summernote({
                     height: "300px"
                 });

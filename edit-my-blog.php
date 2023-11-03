@@ -104,34 +104,26 @@ if(isset($_POST['btnEditDomain']))
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <meta name="keywords" content="Precedence Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    
+
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link href="css/custom.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
+    <link href="<?= URL;?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL;?>/css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL;?>/css/custom.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
 </head>
+
 <body>
     <div id="home">
         <!-- header -->
-        <?php require_once 'partials/navbar.php'; ?>
+        <?php require_once 'components/navbar.php'; ?>
         <!-- //header -->
-        <!-- banner -->
         <div class="banner1">
 
         </div>
-        <!-- //banner -->
-        <!-- Main Content -->
-
         <div class="edit_profile" style="overflow: hidden;">
             <div class="container-fluid">
                 <div class=" display-table">
@@ -395,8 +387,6 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 			                                ?>
                                     </div>
                                 </section>
-                                <!-- //Main content -->
-                                <?php //include('more-info.php');?>
                             </div>
                         </div>
                     </div>
@@ -406,147 +396,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
         <!-- //contact top -->
 
         <!-- Footer -->
-        <?php require_once 'partials/footer.php'; ?>
+        <?php require_once 'components/footer.php'; ?>
         <!-- /Footer -->
     </div>
-    <!-- js-->
-    <!-- <script src="js/jquery-2.2.3.min.js"></script> -->
-    <!-- js-->
-    <!-- Scrolling Nav JavaScript -->
-    <!-- <script src="js/scrolling-nav.js"></script> -->
-    <!-- //fixed-scroll-nav-js -->
-    <!-- <script>
-		$(window).scroll(function () {
-			if ($(document).scrollTop() > 70) {
-				$('nav.pagescrollfix,nav.RWDpagescrollfix').addClass('shrink');
-			} else {
-				$('nav.pagescrollfix,nav.RWDpagescrollfix').removeClass('shrink');
-			}
-		});
-	</script> -->
-
-    <!-- <script src="js/jquery.uploadPreview.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-  $.uploadPreview({
-    input_field: "#image-upload",
-    preview_box: "#image-preview",
-    label_field: "#image-label"
-  });
-});
-</script> -->
-
-    <!--Add remove input field-->
-    <!-- <script>
-	$(document).ready(function(){
-    var next = 1;
-    $(".add-more").click(function(e){
-        e.preventDefault();
-        var addto = "#field" + next;
-        var addRemove = "#field" + (next);
-        next = next + 1;
-        var newIn = '<input autocomplete="off" class="input form-control" id="field' + next + '" name="txtFeatured[]' + next + '" type="text">';
-        var newInput = $(newIn);
-        var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div><div id="field">';
-        var removeButton = $(removeBtn);
-        $(addto).after(newInput);
-        $(addRemove).after(removeButton);
-        $("#field" + next).attr('data-source',$(addto).attr('data-source'));
-        $("#count").val(next);
-
-            $('.remove-me').click(function(e){
-                e.preventDefault();
-                var fieldNum = this.id.charAt(this.id.length-1);
-                var fieldID = "#field" + fieldNum;
-                $(this).remove();
-                $(fieldID).remove();
-            });
-		});
-
-	});
-
-	</script> -->
-    <!--//Add remove input field-->
-
-    <!-- Banner text Responsiveslides -->
-    <!-- <script src="js/responsiveslides.min.js"></script>
-	<script>
-		// You can also use"$(window).load(function() {"
-		$(function () {
-			// Slideshow 4
-			$("#slider3").responsiveSlides({
-				auto: true,
-				pager: true,
-				nav: false,
-				speed: 500,
-				namespace: "callbacks",
-				before: function () {
-					$('.events').append("<li>before event fired.</li>");
-				},
-				after: function () {
-					$('.events').append("<li>after event fired.</li>");
-				}
-			});
-
-		});
-	</script> -->
-    <!-- //Banner text  Responsiveslides -->
-    <!-- start-smooth-scrolling -->
-    <!-- <script src="js/move-top.js"></script>
-	<script src="js/easing.js"></script>
-	<script>
-		jQuery(document).ready(function ($) {
-			$(".scroll").click(function (event) {
-				event.preventDefault();
-
-				$('html,body').animate({
-					scrollTop: $(this.hash).offset().top
-				}, 1000);
-			});
-		});
-	</script> -->
-    <!-- //end-smooth-scrolling -->
-    <!-- smooth-scrolling-of-move-up -->
-    <!-- <script>
-		$(document).ready(function () {
-			/*
-			 var defaults = {
-				 containerID: 'toTop', // fading element id
-				 containerHoverID: 'toTopHover', // fading element hover id
-				 scrollSpeed: 1200,
-				 easingType: 'linear'
-			 };
-			 */
-
-			$().UItoTop({
-				easingType: 'easeOutQuart'
-			});
-
-		});
-	</script> -->
-    <!-- <script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    });
-}
-</script> -->
-    <!-- <script src="js/SmoothScroll.min.js"></script> -->
-    <!-- //smooth-scrolling-of-move-up -->
-    <!-- Bootstrap Core JavaScript -->
-    <!-- <script src="js/bootstrap.js"></script> -->
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-    <!-- //Bootstrap Core JavaScript -->
+    <script src="<?= URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>

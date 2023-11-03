@@ -51,32 +51,29 @@ $toEmail = $_GET['toEmail'];
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Send Mail to <?php echo $toName;?> | <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
-
+    <link rel="shortcut icon" href="<?php echo FAVCON_PATH; ?>" type="image/png" />
     <!-- Plugins Files -->
-    <!-- <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet"> -->
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-    <link rel="stylesheet" href="vendors/feather/feather.css">
-    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-    <!-- <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css"> -->
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../plugins/data-table/style.css">
-    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+    <link href="<?= URL ?>/vendors/feather/feather.css" rel="stylesheet" />
+    <link href="<?= URL ?>/vendors/ti-icons/css/themify-icons.css" rel="stylesheet" />
+    <link href="<?= URL ?>/vendors/css/vendor.bundle.base.css" rel="stylesheet" />
+    <link href="<?= URL ?>/plugins/data-table/style.css" rel="stylesheet" />
+    <link href="<?= URL ?>/css/vertical-layout-light/style.css" rel="stylesheet" />
     
 </head>
 
 <body class="modal-open">
     <div class="container-scroller">
-        <?php require_once "partials/_navbar.php"; ?>
+        <?php require_once "components/_navbar.php"; ?>
 
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
-            <?php require_once "partials/_settings-panel.php"; ?>
+            <?php require_once "components/_settings-panel.php"; ?>
 
 
             <!-- partial -->
-            <?php require_once "partials/_sidebar.php"; ?>
+            <?php require_once "components/_sidebar.php"; ?>
 
             <!-- partial -->
             <div class="main-panel">
@@ -188,27 +185,17 @@ $toEmail = $_GET['toEmail'];
         </div>
     </div>
 
-
     <!-- plugins:js -->
-    <script src="../plugins/jquery-3.6.0.min.js"></script>
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- inject:js -->
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
-
-    <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
-    <script src="../plugins/data-table/simple-datatables.js"></script>
-    <script src="../plugins/tinymce/tinymce.js"></script>
-    <script src="../plugins/main.js"></script>
-    <script>
-    // $(document).ready(function() {
-    //     $('#failedToast').toast('show');
-    // })
-    </script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= URL ?>/vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= URL ?>/js/off-canvas.js"></script>
+    <script src="<?= URL ?>/js/hoverable-collapse.js"></script>
+    <script src="<?= URL ?>/js/template.js"></script>
+    <script src="<?= URL ?>/js/settings.js"></script>
+    <script src="<?= URL ?>/js/todolist.js"></script>
+    <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
     <script>
     const sendMail = () => {
         $('#sendingToast').toast('show');

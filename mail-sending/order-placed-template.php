@@ -72,14 +72,14 @@ function orderPlacedtoCustomerTemplate($orderId, $firstName, $orderDataArray, $o
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="x-apple-disable-message-reformatting">
     <title></title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Pacifico&display=swap"
-        rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <style type="text/css">
+        rel="stylesheet" />
+    <link href="<?= URL ?>/fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet" />
+    <link href="<?= URL ?>/fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet" />
+    <link href="<?= URL ?>/fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet" />
+    <style type="text/css" />
     @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&family=Rubik:wght@300;400&display=swap");
 

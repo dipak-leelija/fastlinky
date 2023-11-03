@@ -435,14 +435,8 @@ $statusCode	= $orderDetail[13];
     <meta name="robots" content="noindex,nofollow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Payment Pending - Order Received</title>
-    <link rel="stylesheet" href="<?php /*?><?php echo URL ?><?php */?>style/ansysoft.css" type="text/css" />
-
-    <!-- JavaScript -->
-
-    <!-- eof JavaScript -->
-
+    <link rel="stylesheet" href="<?= URL ?>/style/ansysoft.css" type="text/css" />
 </head>
-
 
 <body>
 
@@ -452,8 +446,6 @@ $statusCode	= $orderDetail[13];
 
     <!-- Start  MainWrap -->
     <div id="mainWrap">
-
-
         <!-- Start header Image -->
         <div class="content-wrap">
 
@@ -472,19 +464,10 @@ $statusCode	= $orderDetail[13];
                         href="javascript:void()" title="Read More">Return to Home</a>
                 </div>
             </div>
-
-
-
         </div>
     </div>
     <div class="mainWrapBottom"></div>
-    <!-- End  MainWrap -->
-
-    <!-- Start Foter -->
     <?php require_once('footer.inc.php'); ?>
-
-
-    <!-- End Foter -->
 </body>
 
 </html>

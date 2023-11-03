@@ -24,30 +24,23 @@ $cusId	= $utility->returnSess('userid', 0);
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Payment Error - Order can not be processed</title>
-
-    <link rel="shortcut icon" href="../images/logo/favicon.png" type="image/png"/>
-    <link rel="apple-touch-icon" href="../images/logo/favicon.png" />
-
-    <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="../plugins/fontawesome-6.1.1/css/all.css">
-    <link rel="stylesheet" href="../css/style.css">
-
+    <link rel="shortcut icon" href="<?= URL ?>/images/logo/favicon.png" type="image/png"/>
+    <link rel="apple-touch-icon" href="<?= URL ?>/images/logo/favicon.png" />
+    <link rel="stylesheet" href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" />
+    <link rel="stylesheet" href="<?= URL ?>/plugins/fontawesome-6.1.1/css/all.css" />
+    <link rel="stylesheet" href="<?= URL ?>/css/style.css" />
 </head>
-
-
 <body>
-
     <!-- Start  Header -->
-    <?php require_once '../partials/navbar.php'; ?>
+    <?php require_once ROOT_DIR. '../components/navbar.php'; ?>
     <!-- End  Header -->
-
-    <!-- Start  MainWrap -->
+    <!-- Start  MainWrap --> 
     <div id="mainWrap" class="d-flex justify-content-center py-5">
         <div class="card rounded shadow border-0 w-75">
             <div class="row">
                 <div class="col-12 col-sm-4 img">
                     <div class="title-text" title="Payment Error" align="center">
-                        <img src="<?php echo URL;?>/images/icons/error.png" width="250" height="250" alt="Payment Error" />
+                        <img src="<?= URL ?>/images/icons/error.png" width="250" height="250" alt="Payment Error" />
                     </div>
                 </div>
                 <div class=" col-12 col-sm-8 card-body">
@@ -101,18 +94,13 @@ $cusId	= $utility->returnSess('userid', 0);
                         
                         <a class="cancel_btn" href="<?php echo BUYER_AREA ;?>">My Account</a>
                     </div>
-                    
                 </div>
             </div>
-
         </div>
-
     </div>
     </div>
-
     <!-- Start Foter -->
-    <?php require_once "../partials/footer.php"; ?>
-
+    <?php require_once ROOT_DIR."../components/footer.php"; ?>
     <!-- End Foter -->
 </body>
 

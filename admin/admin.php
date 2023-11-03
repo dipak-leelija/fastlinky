@@ -103,13 +103,13 @@ $userData =  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
 <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title><?php echo COMPANY_S.' Administrative Dashboard'; ?></title>
 
-    <link rel="stylesheet" href="../plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="css/admin-style.css">
+    <link rel="stylesheet" href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" />
+    <link rel="stylesheet" href="<?= ADM_URL ?>css/admin-style.css" />
 
 
 
     <!-- Custom styles for this template -->
-    <link href="sticky-footer-navbar.css" rel="stylesheet">
+    <link href="sticky-footer-navbar.css" rel="stylesheet" />
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -150,7 +150,7 @@ $userData =  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
                                 <i class="ti-settings text-primary"></i>
                                 Settings
                             </a>
-                            <a class="dropdown-item" href="partials/logout.php">
+                            <a class="dropdown-item" href="components/logout.php">
                                 <i class="ti-power-off text-primary"></i>
                                 Logout
                             </a>
@@ -169,7 +169,7 @@ $userData =  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
 
     <main class="flex-shrink-0" style="margin-top: 5rem;">
         <section class="admin-dashboard">
-            <h1>Welcome to Fast Linky Admin Dashboard</h1>
+            <h2 class="text-center">Welcome to Fast Linky Admin Dashboard</h2>
             <div class="container my-container-styles">
                 <div class="row">
 
@@ -362,23 +362,17 @@ $userData =  $adminLogin->getUserDetail($_SESSION[ADM_SESS]);
             </div>
         </div>
     </footer>
-    <script src="../plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <script src="../plugins/jquery-3.6.0.min.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
-
-    <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
-    <script src="../plugins/data-table/simple-datatables.js"></script>
-    <script src="../plugins/tinymce/tinymce.js"></script>
-    <script src="../plugins/main.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
+    <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
+    <script src="<?= ADM_URL ?>js/hoverable-collapse.js"></script>
+    <script src="<?= ADM_URL ?>js/template.js"></script>
+    <script src="<?= ADM_URL ?>js/settings.js"></script>
+    <script src="<?= ADM_URL ?>js/todolist.js"></script>
+    <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
 
 </body>
 

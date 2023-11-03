@@ -145,7 +145,7 @@ if(isset($_GET['msg'])){
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
+    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
 
     <title>Connect with <?php echo COMPANY_S; ?></title>
     <meta name="description"
@@ -154,12 +154,12 @@ if(isset($_GET['msg'])){
 Ready website for business, High Quality website sales, High quality blogs sales, expired domain sales" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/register.css">
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/register.css" rel="stylesheet" type='text/css' />
     <!-- //Custom Theme files -->
     <style>
     body {
@@ -168,9 +168,9 @@ Ready website for business, High Quality website sales, High quality blogs sales
     </style>
 </head>
 
-<body id="page-top" class="" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <!-- header -->
-    <?php require_once 'partials/navbar.php'; ?>
+    <?php require_once 'components/navbar.php'; ?>
     <!-- //header -->
     <div class="maincountainer d-flex  justify-content-center">
         <div id="main-wrapper" class="container my-3">
@@ -180,9 +180,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
                         <div class="card-body p-0">
                             <div class="row no-gutters ">
                                 <div class="col-lg-5 d-none d-lg-inline-block m-auto text-center">
-
                                     <div class=" m-auto text-center">
-
                                         <img src="./images/signup-img.webp" style="width: 90%;">
                                     </div>
                                 </div>
@@ -390,8 +388,8 @@ Ready website for business, High Quality website sales, High quality blogs sales
         </div>
     </div>
     <!-- js-->
-    <script src="plugins/jquery-3.6.0.min.js"></script>
-    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
     <script>
     (function() {
         'use strict'
@@ -410,7 +408,6 @@ Ready website for business, High Quality website sales, High quality blogs sales
             })
     })()
     </script>
-
     <script>
     $('#txtPassword, #txtPasswordConfirm').on('keyup', function() {
         'use strict'
@@ -429,12 +426,7 @@ Ready website for business, High Quality website sales, High quality blogs sales
         }
     });
     </script>
-
-
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
-    <!-- //Bootstrap Core JavaScript -->
-    <!-- <script src="js/regUser.js"></script>
-    <script src="js/jquery.validate.js"></script> -->
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>

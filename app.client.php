@@ -61,26 +61,21 @@ $oldNotifications = $Notifications->delByDaysOldNotification(NOW, 7, $cusId);
     <title>Dashboard - <?php echo COMPANY_S; ?></title>
 
     <!-- plugins  files -->
-    <!-- <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet"> -->
     <?php require_once ROOT_DIR.'/plugins/bootstrap-5.2.0/bootstrap-css-inc.php'?>
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-
     <!-- Custom CSS -->
-    <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/status-colors.css" rel='stylesheet' type='text/css' />
-
-
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/status-colors.css" rel='stylesheet' type='text/css' />
 </head>
 
 <body>
     <div id="home">
         <!-- header -->
-
         <?php 
-            require_once "partials/navbar.php";
+            require_once "components/navbar.php";
             // include('header-user-profile.php') ?>
         <!-- //header -->
         <!-- banner -->
@@ -357,18 +352,13 @@ $oldNotifications = $Notifications->delByDaysOldNotification(NOW, 7, $cusId);
                     </div>
                 </div>
                 <!-- //end display table-->
-
             </div>
         </div>
         <!-- js-->
-        <script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
-        <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
-
-        <!-- Switch Customer Type -->
-        <script src="<?php echo URL;?>/js/customerSwitchMode.js"></script>
-
-        <!-- Custom Javascript  -->
-        <script src="<?php echo URL;?>/js/script.js"></script>
+        <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+        <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
+        <script src="<?= URL ?>/js/customerSwitchMode.js"></script>
+        <script src="<?= URL ?>/js/script.js"></script>
 </body>
 
 </html>

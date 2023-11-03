@@ -11,91 +11,70 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
-    
+    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
+
     <title>Quality White hat guest post & Blogger outreach service - <?php echo COMPANY_S; ?></title>
     <meta name="description"
         content="Fastlinky enriches your ranking with High Quality White hat guest post & Blogger outreach services from Regular basis updated high authority blog sites list." />
     <meta name="keywords"
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
-
-
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/guest-posting.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/testimonials.css">
-    <link rel="stylesheet" href="css/clientside-logo.css">
-    
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/guest-posting.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/testimonials.css" rel="stylesheet" />
+    <link href="<?= URL ?>/css/clientside-logo.css" rel="stylesheet" />
 </head>
+
 <body>
-    <?php require_once "partials/navbar.php"; ?>
-    <!--____________________________________________________________________________________________ -->
+    <?php require_once "components/navbar.php"; ?>
     <!-- starting of high quality guestposting main banner -->
     <section class="high-quality-gp-banner">
-        <div class="">
-            <div class="row w-100 m-auto">
-                <div class=" col-md-6 order-2 order-md-1 px-0 px-md-3">
-                    <div class="">
-                        <h1 class="high-quality-gp-heading-main">High quality <span>guest posting </span> service </h1>
-                        <p class="  mb-3 py-0  high-quality-gp-main-p">Effective backlinks and content links
-                            that raise the organic growth of your website.
-                        </p>
-                        <div>
-                            <ul>
-                                <li class="tick-check"> &#10004; <b class="tick-check-p">Appropriate and suitable white
-                                        hat links. </b>
-                                </li>
-                                <li class="tick-check"> &#10004; <b class="tick-check-p">Experienced and skilled
-                                        employees
-                                    </b></li>
-                                <li class="tick-check"> &#10004; <b class="tick-check-p"> Mass discount for agencies
-                                    </b>
-                                </li>
-
-
-                            </ul>
-
-                        </div>
-                        <div class=" text-center text-md-start mb-4 mb-md-0 mt-md-5">
-                            <a href="#pricing-cards">
-                                <button type="button" class="btn srvc-common-btn">See
-                                    Pricing</button>
-                            </a>
-                        </div>
+        <div class="row w-100 m-auto">
+            <div class=" col-md-6 order-2 order-md-1 px-0 px-md-3">
+                <div class="">
+                    <h1 class="high-quality-gp-heading-main">High quality <span>guest posting </span> service </h1>
+                    <p class="  mb-3 py-0  high-quality-gp-main-p">Effective backlinks and content links
+                        that raise the organic growth of your website.
+                    </p> 
+                    <div>
+                        <ul>
+                            <li class="tick-check"> &#10004; <b class="tick-check-p">Appropriate and suitable white
+                                    hat links. </b>
+                            </li>
+                            <li class="tick-check"> &#10004; <b class="tick-check-p">Experienced and skilled
+                                    employees
+                                </b></li>
+                            <li class="tick-check"> &#10004; <b class="tick-check-p"> Mass discount for agencies
+                                </b>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class=" text-center text-md-start mb-4 mb-md-0 mt-md-5">
+                        <a href="#pricing-cards">
+                            <button type="button" class="btn srvc-common-btn">See
+                                Pricing</button>
+                        </a>
                     </div>
                 </div>
-                <div class=" col-md-6 order-1 order-md-2 mb-4 mb-md-0">
-                    <div class="px-2 px-md-0">
-                        <img src="./images/freepik-img/guest-posting-imgs-3.png" class="w-100" alt="">
-                    </div>
+            </div>
+            <div class=" col-md-6 order-1 order-md-2 mb-4 mb-md-0">
+                <div class="px-2 px-md-0">
+                    <img src="./images/freepik-img/guest-posting-imgs-3.png" class="w-100" alt="">
                 </div>
             </div>
         </div>
     </section>
-    <!-- -------------------------------------------- -->
     <!-- end of high quality guestposting main banner -->
     <!-- ------------------------------------------------------------------------- -->
     <!-- Best Blogs, Best Results start -->
-    <!-- ---------------------------- -->
     <section class="best-blogs-best-result-section">
         <div class="row mb-md-5">
-
             <div class="col-lg-6 col-md-6">
                 <div class="text-center">
-
                     <img src="./images/freepik-img/guest-posting-imgs-4.webp" class=" w-100  mb-4 " alt="">
                 </div>
             </div>
@@ -103,7 +82,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 <h1 class=" best-blogs-best-result-main-h1 ">Best Blogs, <span>Best Results</span>
                 </h1>
                 <div class="">
-
                     <p class="best-blogs-best-result-main-p mb-3">
                         FastLinky will provide you with a write option to select from. We will give you the essential
                         details and this will help you to choose the best options for the best blogs. Invest in
@@ -120,73 +98,49 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         ranking and
                         improves your website traffic.
                     </p>
-
                     <div class="text-center text-md-end  mt-md-5">
                         <a href="#pricing-cards">
                             <button type="button" class="btn srvc-common-btn">View Pricing</button>
                         </a>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </section>
-    <!-- --------------------- -->
     <!-- Best Blogs, Best Results end -->
-    <!-- ________________________________________________________________________________________ -->
-    <!-- _________________________________________________________________________________________________ -->
-
-    <!--================================= Client Review section Start =================================-->
-    <!-- ___________________________________________________________________________________________ -->
+    <!-- -------------------------------------------- -->
     <!-- testimonials customers reviews -->
-    <?php require_once "partials/testimonials.php"; ?>
+    <?php require_once "components/testimonials.php"; ?>
     <!-- testimonials customers reviews -->
-    <!-- _________________________________________________________________________________________ -->
-    <!------------------------------------ Client Review section End ------------------------------------->
-    <!-- ____________________________________________________________________________________________ -->
-
-
-    <!-- _______________________________________________________________________________________________ -->
+    <!-- -------------------------------------------->
     <!-- pricing section -->
-    <!-- ------------------------------------------- -->
-
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 mt-5 px-2">Guest posting pricing
         </h1>
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
             DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
-        <?php require_once "partials/pricing-cards.php"; ?>
+        <?php require_once "components/pricing-cards.php"; ?>
     </section>
-
-    <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
-    <?php require_once "partials/blogs-sites.php"; ?>
-    <!-- --------------------------------------------------------------------------------------------- -->
-    <!-- clients-logo -->
-    <?php require_once "partials/clientssides-logos.php"; ?>
-    <!-- clients-logo -->
-    <!-- _________________________________________________________________________________________________ -->
-    <!-- ______________________________________________________________________________________________ -->
-
-    <!-- ____________________________________________________________________________________________ -->
-
-    <!-- Who Can Take Advantage Of This Service? starts -->
+    <?php require_once "components/blogs-sites.php"; ?>
     <!-- ----------------------------------------------- -->
+    <!-- clients-logo -->
+    <?php require_once "components/clientssides-logos.php"; ?>
+    <!-- clients-logo -->
+    <!-- ------------------------------------------ -->
+    <!-- Who Can Take Advantage Of This Service? starts -->
     <section class="who-can-take-section">
         <div class="">
             <div>
                 <h2 class=" text-center mt-4 my-3 who-advantages-main-h2"> <span> Who Can Take Advantage Of This </span>
                     Service?</h2>
-
             </div>
             <div class="who-takes-adv-main mt-5">
                 <div class="row">
                     <div class="col-md-4 col-xl-4 ">
                         <div class="who-take-card">
-
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                             </div>
@@ -194,14 +148,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <p class="">
                                 Visibility is the only goal for any business that wants to thrive online. We can help
                                 you to improve your business in the SERP and get you high-quality backlinks. </p>
-
                         </div>
-
                     </div>
-
                     <div class="col-md-4 col-xl-4">
                         <div class="who-take-card">
-
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
@@ -209,14 +159,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <p class="">
                                 You can get the 100% white-label report that is provided by us. You will get full
                                 support from FastLinky for all your useful information shown in the SERP. </p>
-
                         </div>
-
                     </div>
-
                     <div class="col-md-4 col-xl-4">
                         <div class="who-take-card">
-
                             <div class="text-center pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
@@ -226,24 +172,20 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 give us
                                 this chance, and you will be satisfied. You are not to be disappointed, We guarantee it.
                             </p>
-
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
         <!-- Who Can Take Advantage Of This Service? ends -->
-        <!-- _______________________________________________________________ -->
+        <!-- ------------------------------------------------- -->
         <!-- How Does Our FastLinky’s Guest Posting Service Work? starts -->
-        <!-- ------------------------------------------------------------- -->
         <div class="howdoes-itwork-sec">
             <div>
                 <h2 class=" text-center mt-4 my-3 who-advantages-main-h2">How Does Our FastLinky’s <span> Guest Posting
                         Service
                         Work? </span>
                 </h2>
-
             </div>
             <div class="who-takes-adv-main mt-5">
                 <div class="row">
@@ -257,9 +199,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 We discuss all the details and then find a suitable placement. You could share the
                                 target URL with instructions. We provide you with a suitable content copy. </p>
                         </div>
-
                     </div>
-
                     <div class="col-md-4 col-xl-4">
                         <div class="who-take-card">
                             <div class="text-center pb-3 ">
@@ -269,11 +209,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <p class="">
                                 Once the placement is decided, our content writers design an effective content copy. We
                                 create content that readers find rich and valuable. </p>
-
                         </div>
-
                     </div>
-
                     <div class="col-md-4 col-xl-4">
                         <div class="who-take-card">
                             <div class="text-center pb-3">
@@ -285,90 +222,71 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 necessary quality checks then we share it in the form of a white-label report for
                                 review.
                             </p>
-
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-        <!-- How Does Our FastLinky’s Guest Posting Service Work? ends -->
-        <!-- --------------------------------------------- -->
     </section>
     <!-- who-can-take-section ends -->
-    <!-- ------------------------------------------ -->
-
     <!-- --------------------------------------------------------------------- -->
     <!-- We Work To Improve Your Vision -starts -->
-    <!-- ----------------------------------------------- -->
     <section class="work-to-improve-vision-main-sec">
-        <div>
-            <div class="row">
-                <div class=" col-xl-6 col-md-6">
-                    <h1 class="work-vision-h1 mb-3">
-                        We work to <br> <span>improve your vision </span>
-                    </h1>
-                    <p>
-                        Our website is well known for its digital goodness. Our staff has gone through a lot of trouble
-                        and hard work, and we are hoping that our <b>guest posting services</b> will be invaluable to
-                        you.
-                    </p>
-                    <div class="actually-card-div1">
-                        <div class="  actually-card-inn-img-div">
-                            <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
-                        </div>
-                        <div class="lbp-texting">
-                            Here you will see a huge database that is <b>still expanding</b>.
-                        </div>
+        <div class="row">
+            <div class=" col-xl-6 col-md-6">
+                <h1 class="work-vision-h1 mb-3">
+                    We work to <br> <span>improve your vision </span>
+                </h1>
+                <p>
+                    Our website is well known for its digital goodness. Our staff has gone through a lot of trouble
+                    and hard work, and we are hoping that our <b>guest posting services</b> will be invaluable to
+                    you.
+                </p>
+                <div class="actually-card-div1">
+                    <div class="  actually-card-inn-img-div">
+                        <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                     </div>
-
-
+                    <div class="lbp-texting">
+                        Here you will see a huge database that is <b>still expanding</b>.
+                    </div>
                 </div>
-                <div class="col-xl-6 col-md-6">
-
-                    <div class="actually-card-div1">
-                        <div class="  actually-card-inn-img-div">
-                            <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
-                        </div>
-                        <div class="lbp-texting">
-
-                            For all your demands and promotions, we deliver you a <b>white-label report</b> . Use it as
-                            you wish!
-                        </div>
-                    </div>
-                    <div class="actually-card-div1 ">
-                        <div class="  actually-card-inn-img-div">
-                            <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
-                        </div>
-                        <div class="lbp-texting">
-
-                            We are constantly trying to <b>improve your concepts</b> .
-                        </div>
-                    </div>
-
-                </div>
-                <a href="#pricing-cards">
-                    <div class="">
-                        <button type="button"
-                            class="btn srvc-common-btn  external-css-fr-size ">Get Your
-                            Links Now</button>
-                    </div>
-                </a>
             </div>
+            <div class="col-xl-6 col-md-6">
+                <div class="actually-card-div1">
+                    <div class="  actually-card-inn-img-div">
+                        <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
+                    </div>
+                    <div class="lbp-texting">
+
+                        For all your demands and promotions, we deliver you a <b>white-label report</b> . Use it as
+                        you wish!
+                    </div>
+                </div>
+                <div class="actually-card-div1 ">
+                    <div class="  actually-card-inn-img-div">
+                        <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
+                    </div>
+                    <div class="lbp-texting">
+
+                        We are constantly trying to <b>improve your concepts</b> .
+                    </div>
+                </div>
+            </div>
+            <a href="#pricing-cards">
+                <div class="">
+                    <button type="button" class="btn srvc-common-btn  external-css-fr-size ">Get Your
+                        Links Now</button>
+                </div>
+            </a>
         </div>
     </section>
-    <!-- ---------------------------------------- -->
     <!--We Work To Improve Your Visions-  ends -->
-    <!-- ________________________________________________________________________________________ -->
-    <!-- ___________________________________________________________________________________________ -->
-    <!-- ______________________________________________________________________________________________________ -->
+    <!-------------------------------------------------- -->
     <!-- features-section start -->
-    <?php require_once "partials/features-section.php"; ?>
+    <?php require_once "components/features-section.php"; ?>
     <!-- features-section ends -->
-    <!-- __________________________________________________________________________________________ -->
     <!-- --------------------------- -->
     <!-- Why Should You Choose FastLinky? starts -->
-
     <section class="why-choose-fastlinky-sec">
         <div>
             <h2>Why Should You Choose <strong>FastLinky?</strong> </h2>
@@ -386,17 +304,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <li>➔ We Help You To Improve Your Rank To the Top On SERP. We avoid black hat links and make sure
                         you get genuine links which is work perfectly. We know that only white hat links can make a real
                         difference in your website ranking. To get more instructions you can follow us. </li>
-
                 </ul>
             </div>
         </div>
     </section>
     <!-- Why Should You Choose FastLinky? ends -->
     <!-- ---------------------------------------------------- -->
-    <!-- Some Tips To Get The Best Guest Posting Service -->
-
+    <!--Some Tips To Get The Best Guest Posting Service -->
     <section class="some-tips-section">
-
         <h2>Some Tips To Get The <br> <strong>Best Guest Posting Service</strong> </h2>
 
         <div class="tipsto-get-best-gps">
@@ -425,14 +340,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     </section>
     <!-- Some Tips To Get The Best Guest Posting Service -->
     <!-- ----------------------------------------------------- -->
-
-
-
-    <!-- ---------------------------------------------------- -->
     <!-- What Is The Definition Of Guest Posting? -->
-
     <section class="definition-gp-section">
-
         <div class="definition-gp-div">
             <h2>What Is The Definition Of <br> <strong>Guest Posting</strong></h2>
             <p>Guest posting is the process of writing and publishing one or more articles for another website. It helps
@@ -446,7 +355,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 clients in the industries. The <b>guest posting service</b> from FastLinky is a genuine way to get
                 high-quality links. </p>
         </div>
-
         <div class="definition-gp-div">
             <h2>How Does <br> <strong>Guest Posting Enhance SEO?</strong></h2>
             <p><b>Guest posts</b> help SEO by exposing your content to new visitors and pointing backlinks to your
@@ -461,7 +369,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 strategy.
             </p>
         </div>
-
         <div class="definition-gp-div">
             <h2>Why Should You Use <br> <strong>Guest Posting Services?</strong></h2>
             <p><b>Guest posting</b> plays an important role in helping you build relationships with others in your
@@ -488,37 +395,29 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <p>We always supply the best <b>guest posting</b> SEO services to our clients. Your money will be safe with
                 us until you have profited, it is fully guaranteed. To buy <b>guest posts</b> from Fastlinky means you
                 are in safe hands. We are committed to 100% refunding you if we fail to fulfill our agreement as
-                promised. </p>
+                promised.
+            </p>
         </div>
     </section>
     <!-- What Is The Definition Of Guest Posting? -->
     <!-- ----------------------------------------------------- -->
-    <!-- ================================================================================================= -->
     <!-- Frequently Asked Questions starts -->
-    <!-- ================================================================================================ -->
-    <!-- new faq for indexpage -->
-
-    <?php require_once "partials/faqs-new.php"; ?>
-
-    <!-- ================================================================================================= -->
+    <?php require_once "components/faqs-new.php"; ?>
     <!-- Frequently Asked Questions ends -->
-    <!-- ================================================================================================ -->
-
+    <!-- ----------------------------------------- -->
     <div class="mt-4">
-        <?php include('partials/seller-action.php') ?>
+        <?php include('components/seller-action.php') ?>
     </div>
     <!-- --------------------------------------- -->
     <!-- feedback form -->
-    <?php require_once "partials/feedback.php"; ?>
+    <?php require_once "components/feedback.php"; ?>
     <!-- feedback form -->
     <!-- ----------------------------------------------- -->
     <!-- Footer -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
     <!-- footer -->
-    <!-- -------------------------------------- -->
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>

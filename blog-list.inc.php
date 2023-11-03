@@ -31,9 +31,7 @@ $cusDtl		= $customer->getCustomerData($cusId);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="plugins/bootstrap-5.2.0/css/bootstrap.css"> -->
-    <link rel="stylesheet" href="plugins/data-table/style.css">
-
+    <link href="<?= URL ?>/plugins/data-table/style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -108,25 +106,26 @@ if(isset($_POST["action"])){
                 <td><?= $sellingPrice ;?></td>
                 <td><?= $row['grey_niche_cost'];?></td>
                 <td>
-                <div class="d-flex justify-content-evenly" id="action-<?php echo $row['blog_id']?>">
+                    <div class="d-flex justify-content-evenly" id="action-<?php echo $row['blog_id']?>">
 
-                    <?php if($wishDtls == NULL || $wishDtls == 0){ ?>
-                        
-                    <a href="javascript:void()" id="<?php echo $row['blog_id']; ?>" class="far fa-heart text-danger"
-                        title="Add this Blog to Wishlist" onclick="addWishlist(<?php echo $row['blog_id']; ?>, this)">
-                    </a>
-                    <?php } else{ ?>
- 
-                    <a href="javascript:void()" class="fas fa-heart text-danger" style="color:red"
-                        title="Remove this Blog from Wishlist"
-                        onclick="RemoveWishlist(<?php echo $row['blog_id']; ?>, this)">
-                    </a>
-                    <?php }?>
-                    <a href="order-now.php?id=<?php echo $row['blog_id'] ?>" class="badge text-bg-success">
-                        <span><i class="fas fa-shopping-bag"></i></span>
-                        Buy
-                    </a>
-                </div>
+                        <?php if($wishDtls == NULL || $wishDtls == 0){ ?>
+
+                        <a href="javascript:void()" id="<?php echo $row['blog_id']; ?>" class="far fa-heart text-danger"
+                            title="Add this Blog to Wishlist"
+                            onclick="addWishlist(<?php echo $row['blog_id']; ?>, this)">
+                        </a>
+                        <?php } else{ ?>
+
+                        <a href="javascript:void()" class="fas fa-heart text-danger" style="color:red"
+                            title="Remove this Blog from Wishlist"
+                            onclick="RemoveWishlist(<?php echo $row['blog_id']; ?>, this)">
+                        </a>
+                        <?php }?>
+                        <a href="order-now.php?id=<?php echo $row['blog_id'] ?>" class="badge text-bg-success">
+                            <span><i class="fas fa-shopping-bag"></i></span>
+                            Buy
+                        </a>
+                    </div>
 
                 </td>
             </tr>
@@ -141,11 +140,10 @@ if(isset($_POST["action"])){
 }
 
 ?>
- 
-    <script src="plugins/data-table/simple-datatables.js"></script>
-    <script src="plugins/tinymce/tinymce.js"></script>
-    <script src="plugins/main.js"></script>
 
+    <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
 </body>
 
 </html>

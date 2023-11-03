@@ -11,30 +11,25 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
+
     <title>Buy Link Insertion & Niche Edits Service at Very Reasonable Prices - <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <meta name="description"
         content="We offer best quality link insertion service that also called niche edit. We placed your backlink contextually into relevant blog posts on authority sites. " />
     <meta name="keywords"
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
-
-
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/link-insertion-service.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/testimonials.css">
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/link-insertion-service.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/testimonials.css" rel="stylesheet" />
 </head>
 
 <body>
-    <?php require_once "partials/navbar.php"; ?>
-    <!--____________________________________________________________________________________________ -->
+    <?php require_once "components/navbar.php"; ?>
     <!-- Link Insertion Services main banner starting -->
     <section class="managed-link-building-main-banner">
         <div class="container mlb-main-cntainer">
@@ -73,10 +68,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- end of Link Insertion Service main banner -->
-    <!-- --------------------------------------------------------------------------------------------- -->
-    <!-- _______________________________________________________________________________________________ -->
+    <!-- --------------------------------------------------------------------- -->
     <!-- Advantages Of Link Insert start -->
-
     <section class="lbs-actually-matters-main">
         <div class="row">
             <div class="col-xl-6 col-md-6 m-auto order-md-1 order-2">
@@ -143,7 +136,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
             </div>
-
         </div>
         <div class=" text-center text-md-end mb-3 mb-md-0 mt-3">
             <a href="#pricing-cards">
@@ -152,40 +144,31 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- Advantages Of Link Insert ends -->
-    <!-- _________________________________________________________________________________________________ -->
-    <!-- ___________________________________________________________________________________________ -->
+    <!----------------------------------------------->
     <!-- testimonials customers reviews -->
-    <?php require_once "partials/testimonials.php"; ?>
+    <?php require_once "components/testimonials.php"; ?>
     <!-- testimonials customers reviews -->
-    <!-- _________________________________________________________________________________________ -->
-
     <!-- ------------------------------------------------ -->
     <!-- pricing section -->
     <!-- ------------------------------------------- -->
-
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 mt-5">Niche Edits Pricing
         </h1>
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
             DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
-        <?php  require_once "partials/pricing-cards.php"; ?>
+        <?php  require_once "components/pricing-cards.php"; ?>
     </section>
-
     <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
-    <?php require_once "partials/blogs-sites.php"; ?>
+    <?php require_once "components/blogs-sites.php"; ?>
     <!-- How It Works-section starts -->
-    <!-- __________________________________________________________________________________________ -->
-
     <section class="how-it-works-main-section">
         <h1>How Does <span> Our Link Insertion Service Works?</span></h1>
         <div class="text-center py-4">
             <img src="./images/dummy-img/link-inserting-123img.png" class="how-it-works-1st-img" alt="">
         </div>
-
-
         <div class="row m-0">
             <div class="col-md-4 col-xl-4">
                 <div class="how-it-works-main-card-div">
@@ -196,7 +179,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <p>
                         Choose anchor text in your <b>niche edit service</b>. At Fastlinky we search for real blog posts
                         on real websites to connect with site owners to get you suitable link placement on these posts.
-                        <!-- Be careful, otherwise, you can get links from low-quality sites that will damage your SEO. -->
                     </p>
                 </div>
             </div>
@@ -223,19 +205,15 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         is naturally included in the content.</p>
                 </div>
             </div>
-
         </div>
     </section>
-
     <!-- How It Works-section ends -->
-    <!--  -->
     <section class="who-can-take-section">
         <div class="">
             <div>
                 <h2 class=" text-center mt-4 my-3 who-advantages-main-h2">Why You Choose FastLinky <span> For Link
                         Insertion Service? </span>
                 </h2>
-
             </div>
             <div class=" mt-5">
                 <div class="row">
@@ -244,13 +222,12 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Skilled writers</h4>
+                            <h4 class="how-fonts-h4 ">Skilled writers</h4>
                             <p class="">
                                 We have a team of professional writers. They create quality content that improves the
                                 importance of existing posts. They ensure that the link seems completely natural and the
                                 blog owner also appreciates it. </p>
                         </div>
-
                     </div>
                     <div class="col-sm-6 col-lg-3 my-2">
                         <div class="who-take-card h-100">
@@ -262,7 +239,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 We will always help you to choose the right opportunity. The reason we achieve more
                                 success is that we always connect with choosy bloggers. </p>
                         </div>
-
                     </div>
                     <div class="col-sm-6  col-lg-3 my-2">
                         <div class="who-take-card h-100">
@@ -275,7 +251,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 confirm that they just exist to sell links.
                             </p>
                         </div>
-
                     </div>
                     <div class="col-sm-6 col-lg-3 my-2">
                         <div class="who-take-card h-100">
@@ -293,15 +268,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
             </div>
         </div>
-
-        <!-- How Does Our FastLinky’s Guest Posting Service Work? ends -->
-        <!-- --------------------------------------------- -->
     </section>
-
-
-    <!-- _______________________________________________________________________________________________ -->
+    <!-- How Does Our FastLinky’s Guest Posting Service Work? ends -->
+    <!-- --------------------------------------------------------------------->
     <!-- Advantages Of Link Insert start -->
-
     <section class="lbs-actually-matters-main">
         <div class="row">
             <div class=" col-xl-6 col-md-6 m-auto">
@@ -323,51 +293,34 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
             </div>
             <div class="col-xl-6 col-md-6 m-auto">
-
                 <img src="./images/freepik-img/guest-posting-imgs-3.png" class=" w-100  my-4 " alt="">
-
             </div>
         </div>
-
     </section>
     <!-- Advantages Of Link Insert ends -->
-    <!-- _________________________________________________________________________________________________ -->
-    <!-- __________________________________________________________________________________________ -->
-    <!-- ______________________________________________________________________________________________________ -->
+    <!-- ------------------------------------------>
     <!-- features-section start -->
-    <?php require_once "partials/features-section.php"; ?>
+    <?php require_once "components/features-section.php"; ?>
     <!-- features-section ends -->
-    <!-- __________________________________________________________________________________________ -->
-
-    <!-- ================================================================================================= -->
+    <!-- --------------------------------- -->
     <!-- Frequently Asked Questions starts -->
-    <!-- ================================================================================================ -->
-    <!-- new faq for indexpage -->
-
-    <?php require_once "partials/faqs-new.php"; ?>
-
-    <!-- ================================================================================================= -->
+    <?php require_once "components/faqs-new.php"; ?>
     <!-- Frequently Asked Questions ends -->
-    <!-- ================================================================================================ -->
-    <!-- ================================================================================================ -->
-
+    <!-- --------------------------------------->
     <div class="mt-4">
-        <?php include_once 'partials/seller-action.php'; ?>
+        <?php include_once 'components/seller-action.php'; ?>
     </div>
-    <!-- ============================================================== -->
     <!-- --------------------------------------- -->
     <!-- feedback form -->
-    <?php require_once "partials/feedback.php"; ?>
+    <?php require_once "components/feedback.php"; ?>
     <!-- feedback form -->
     <!-- ----------------------------------------------- -->
     <!-- Footer -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
     <!-- footer -->
     <!-- -------------------------------------- -->
-
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>

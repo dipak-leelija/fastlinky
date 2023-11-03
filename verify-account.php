@@ -123,18 +123,19 @@ if (isset($_GET['verify'])) {
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <!-- Plugins Files --> 
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/verified-account.css">
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/verified-account.css" rel="stylesheet" />
 </head>
+
 <body class="pt-0">
     <div id="home">
         <!-- header -->
-        <?php require_once 'partials/navbar.php'; ?>
+        <?php require_once 'components/navbar.php'; ?>
         <!-- //header -->
         <section class="verify-section">
             <div id="main-wrapper" class="">
@@ -179,10 +180,8 @@ if (isset($_GET['verify'])) {
         </section>
     </div>
     <!-- js-->
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
-    <script src="plugins/jquery-3.6.0.min.js"></script>
-
-
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>

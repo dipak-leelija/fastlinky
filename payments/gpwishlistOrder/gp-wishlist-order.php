@@ -46,17 +46,10 @@ $clientOrderPrice         = $_SESSION['sitePrice'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Summary | <?php echo COMPANY_S; ?></title>
 
-    <link rel="stylesheet" href="../../plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="../../css/fontawesome-all.min.css">
-
-
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap" rel="stylesheet"> -->
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
+    <link href="<?= URL ?>/css/fontawesome-all.min.css" rel="stylesheet" />
 </head>
-
 <body>
- 
 <?php 
 
     $x = file_get_contents("http://api.currencylayer.com/live?access_key=8a2f585d514c46191c359ccab7f7ebaf");

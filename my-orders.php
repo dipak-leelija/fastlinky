@@ -48,26 +48,21 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-    <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/my-orders.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/order-list.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/my-orders.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/order-list.css" rel='stylesheet' type='text/css' />
 
-
-    <!--//webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
 </head>
 
 <body>
     <div id="home">
         <!-- header -->
-        <?php  require_once ROOT_DIR."/partials/navbar.php" ?>
+        <?php  require_once ROOT_DIR."/components/navbar.php" ?>
         <!-- //header -->
-
-        <!-- banner -->
         <div class="edit_profile">
             <div class="container-fluid">
                 <div class=" display-table">
@@ -175,10 +170,6 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                         <a href="package-order-list.php">See All</a>
                                     </div>
                                 </div>
-                                <!-- Package Orders Section End-->
-
-
-                                <!-- Guest Post Orders  Section-->
                                 <div class="col-12 shadow_md rounded p-3 mt-5">
 
                                     <h4 class="">Guest Post Order:</h4>
@@ -242,30 +233,23 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
 
                                 </div>
                                 <!-- Guest Post Orders  Section End-->
-
-
                             </div>
                             <!-- row -->
-
                             </section>
                             <!-- Right area section start -->
-
                         </div>
                     </div>
                     <!-- //end display table-->
                 </div>
             </div>
-            <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
-            <script src="<?php echo URL;?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
-            <script src="<?php echo URL;?>/plugins/data-table/simple-datatables.js"></script>
-            <script src="<?php echo URL;?>/plugins/tinymce/tinymce.js"></script>
-            <script src="<?php echo URL;?>/plugins/main.js"></script>
-            <script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
-
-            <!-- //fixed-scroll-nav-js -->
-            <script src="<?php echo URL;?>/js/customerSwitchMode.js"></script>
-            <script src="<?php echo URL;?>/js/script.js"></script>
-
+            <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
+            <script src="<?= URL ?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+            <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+            <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+            <script src="<?= URL ?>/plugins/main.js"></script>
+            <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+            <script src="<?= URL ?>/js/customerSwitchMode.js"></script>
+            <script src="<?= URL ?>/js/script.js"></script>
 </body>
 
 </html>

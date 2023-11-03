@@ -275,12 +275,12 @@ if(isset($_SESSION[ORDERID])) {
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- plugins  files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
 	<!-- Custom css  -->
-    <link rel="stylesheet" href="<?php echo URL; ?>/css/style.css">
-    <link rel="stylesheet" href="<?php echo URL ?>/css/payment-status.css">
+    <link href="<?= URL ?>/css/style.css" rel="stylesheet"  />
+    <link href="<?= URL ?>/css/payment-status.css" rel="stylesheet" />
 
 </head>
 
@@ -288,7 +288,7 @@ if(isset($_SESSION[ORDERID])) {
 <body>
 
     <!-- Start  Header -->
-    <?php require_once ROOT_DIR . "/partials/navbar.php"; ?>
+    <?php require_once ROOT_DIR . "/components/navbar.php"; ?>
     <!-- End  Header -->
 
     <!-- Start  container -->
@@ -323,7 +323,7 @@ if(isset($_SESSION[ORDERID])) {
     <!-- End  MainWrap -->
 
     <!-- Start Foter -->
-    <?php require_once ROOT_DIR . "/partials/footer.php"; ?>
+    <?php require_once ROOT_DIR . "/components/footer.php"; ?>
     <!-- End Foter -->
     <script src="<?= URL;?>/plugins/jquery-3.6.0.min.js"></script>
     <script src="<?= URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>

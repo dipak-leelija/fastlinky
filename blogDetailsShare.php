@@ -61,18 +61,12 @@ $cusDtl		= $customer->getCustomerData($cusId);
     <title>User Dashboard - <?php echo COMPANY_S; ?></title>
 
     <!-- plugins  files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
-    
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
 
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <!--//webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -80,16 +74,10 @@ $cusDtl		= $customer->getCustomerData($cusId);
         <!-- header -->
         <?php include('header-user-profile.php') ?>
         <!-- //header -->
-        <!-- banner -->
         <div class="edit_profile">
             <div class="container-fluid1">
                 <div class=" display-table">
                     <div class="row ">
-                        <!--Row start-->
-                        <!-- <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
-
-
-</div> -->
                         <div class="col-md-12 mt-4 pl-0 display-table-cell v-align client_profile_dashboard_right">
 
                             <div class="container">
@@ -154,15 +142,13 @@ $cusDtl		= $customer->getCustomerData($cusId);
                 <!-- //end display table-->
 
                 <!-- Footer -->
-                <?php require_once 'partials/footer.inc.php'; ?>
+                <?php require_once 'components/footer.inc.php'; ?>
                 <!-- /Footer -->
             </div>
         </div>
         <!-- js-->
-        <script src="js/jquery-2.2.3.min.js"></script>
-        <!-- js-->
-        <!-- Scrolling Nav JavaScript -->
-        <script src="js/scrolling-nav.js"></script>
+        <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+        <script src="<?= URL ?>/js/scrolling-nav.js"></script>
         <script>
         $(document).ready(function() {
             $('[data-toggle="offcanvas"]').click(function() {
@@ -183,7 +169,7 @@ $cusDtl		= $customer->getCustomerData($cusId);
         });
         </script>
         <!-- Banner text Responsiveslides -->
-        <script src="js/responsiveslides.min.js"></script>
+        <script src="<?= URL ?>/js/responsiveslides.min.js"></script>
         <script>
         // You can also use"$(window).load(function() {"
         $(function() {
@@ -204,10 +190,8 @@ $cusDtl		= $customer->getCustomerData($cusId);
 
         });
         </script>
-        <!-- //Banner text  Responsiveslides -->
-        <!-- start-smooth-scrolling -->
-        <script src="js/move-top.js"></script>
-        <script src="js/easing.js"></script>
+        <script src="<?= URL ?>/js/move-top.js"></script>
+        <script src="<?= URL ?>/js/easing.js"></script>
         <script>
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event) {
@@ -262,14 +246,9 @@ $cusDtl		= $customer->getCustomerData($cusId);
             });
         });
         </script>
-        <script src="js/SmoothScroll.min.js"></script>
-        <!-- //smooth-scrolling-of-move-up -->
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.js">
-        </script>
-        <!-- //Bootstrap Core JavaScript -->
-        <script src="js/customerSwitchMode.js">
-        </script>
+        <script src="<?= URL ?>/js/SmoothScroll.min.js"></script>
+        <script src="<?= URL ?>/js/bootstrap.js"></script>
+        <script src="<?= URL ?>/js/customerSwitchMode.js"></script>
 </body>
 
 </html>

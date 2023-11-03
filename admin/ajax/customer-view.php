@@ -51,7 +51,7 @@ $typeM		= $utility->returnGetVar('typeM','');
 <head>
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Skydash Admin</title>
-    <link rel="stylesheet" href="../css/order-table.css">
+    <link rel="stylesheet" href="<?= URL ?>/css/order-table.css" />
     <style>
     .content-wrapper {
         background: #F5F7FF;
@@ -123,9 +123,7 @@ $typeM		= $utility->returnGetVar('typeM','');
 
 <body>
     <div class="container-scroller">
-        <!-- partial -->
         <div class="container-fluid">
-            <!-- partial -->
             <div class="content-wrapper">
                 <!-- ========================================== -->
                 <?php 
@@ -254,36 +252,24 @@ $typeM		= $utility->returnGetVar('typeM','');
             <!-- ========================================== -->
         </div>
         <!-- content-wrapper ends -->
-        <!-- partial -->
         <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <script src="../plugins/jquery-3.6.0.min.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
-
-    <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
-    <script src="../plugins/data-table/simple-datatables.js"></script>
-    <script src="../plugins/tinymce/tinymce.js"></script>
-    <script src="../plugins/main.js"></script>
-
-
+    <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
+    <script src="<?= ADM_URL ?>js/hoverable-collapse.js"></script>
+    <script src="<?= ADM_URL ?>js/template.js"></script>
+    <script src="<?= ADM_URL ?>js/settings.js"></script>
+    <script src="<?= ADM_URL ?>js/todolist.js"></script>
+    <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
     <!-- Added Js  -->
-    <script src="../js/utility.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!-- End custom js for this page-->
+    <script src="<?= URL ?>/js/utility.js"></script>
 </body>
 
 </html>

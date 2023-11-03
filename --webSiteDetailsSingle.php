@@ -60,26 +60,19 @@ $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
     <title>User Dashboard | Dashboard :: <?php echo COMPANY_S; ?></title>
     
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
 </head>
 <body>
     <div id="home">
         <!-- header -->
-        <?php include 'partials/navbar.php' ?>
+        <?php include 'components/navbar.php' ?>
         <!-- //header -->
-        <!-- banner -->
         <div class="edit_profile">
             <div class="container-fluid1">
                 <div class=" display-table">
@@ -102,8 +95,6 @@ $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
                             $id = $_REQUEST['id'];
                             $wishListsingleData = $blogMst->showBlog($id);
                         ?>
-
-
                             <div class="card rounded shadow  w-75">
                                 <div class="card-body">
                                     <h3 class="card-title"><?php echo $wishListsingleData [0]; ?></h3>
@@ -136,15 +127,13 @@ $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
                 <!-- //end display table-->
 
                 <!-- Footer -->
-                <?php require_once 'partials/footer.php' ?>
+                <?php require_once 'components/footer.php' ?>
                 <!-- /Footer -->
             </div>
         </div>
         <!-- js-->
-        <script src="js/jquery-2.2.3.min.js"></script>
-        <!-- js-->
-        <!-- Scrolling Nav JavaScript -->
-        <script src="js/scrolling-nav.js"></script>
+        <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+        <script src="<?= URL ?>/js/scrolling-nav.js"></script>
         <script>
         $(document).ready(function() {
             $('[data-toggle="offcanvas"]').click(function() {
@@ -152,8 +141,6 @@ $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
             });
         });
         </script>
-
-
         <!-- //fixed-scroll-nav-js -->
         <script>
         $(window).scroll(function() {
@@ -165,7 +152,7 @@ $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
         });
         </script>
         <!-- Banner text Responsiveslides -->
-        <script src="js/responsiveslides.min.js"></script>
+        <script src="<?= URL ?>/js/responsiveslides.min.js"></script>
         <script>
         // You can also use"$(window).load(function() {"
         $(function() {
@@ -188,8 +175,8 @@ $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
         </script>
         <!-- //Banner text  Responsiveslides -->
         <!-- start-smooth-scrolling -->
-        <script src="js/move-top.js"></script>
-        <script src="js/easing.js"></script>
+        <script src="<?= URL ?>/js/move-top.js"></script>
+        <script src="<?= URL ?>/js/easing.js"></script>
         <script>
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event) {
@@ -244,14 +231,9 @@ $blogsDtls 	= $blogMst->ShowUserBlogData($cusDtl[0][2]);
             });
         });
         </script>
-        <script src="js/SmoothScroll.min.js"></script>
-        <!-- //smooth-scrolling-of-move-up -->
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.js">
-        </script>
-        <!-- //Bootstrap Core JavaScript -->
-        <script src="js/customerSwitchMode.js">
-        </script>
+        <script src="<?= URL ?>/js/SmoothScroll.min.js"></script>
+        <script src="<?= URL ?>/js/bootstrap.js"></script>
+        <script src="<?= URL ?>/js/customerSwitchMode.js"></script>
 </body>
 
 </html>

@@ -39,7 +39,7 @@ TRUNCATE `package_publish_links`;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Toggle Password Visibility</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="<?= URL ?>/css/style.css" />
     <style>
     form i {
         margin-left: -30px;

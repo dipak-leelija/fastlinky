@@ -11,27 +11,25 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
+    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
 
     <title>Buy Backlinks and Link Building Service for Gambling, Casino & Betting SEO - <?php echo COMPANY_S; ?></title>
     <meta name="description"
         content="Fastlinky provides quality Link Building Service for casino, gambling, igaming, and betting SEO and help you increase ranking and boost your traffic." />
     <meta name="keywords"
         content="buy casino backlinks cheapbuy casino website,buy casino backlinks,igaming link building,gambling link,gambling seo agency,casino backlinks,gambling seo,sports gambling links, Online Gaming Link Building,Online Gaming And Casino Link Building" />
-
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/casino-backlinks.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/casino-backlinks.css" rel='stylesheet' type='text/css' />
 
 </head>
 
 <body>
-    <?php require_once "partials/navbar.php"; ?>
-    <!--___________________________________________________________________________________________________ -->
+    <?php require_once "components/navbar.php"; ?>
     <!-- starting of Casino Backlinks main banner  -->
     <section class="casino-banner-section">
         <div class="casino-sizing-div">
@@ -46,16 +44,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- end of Casino Backlinks  main banner -->
-    <!-- --------------------------------------------------------------------------------------------- -->
-
-
-    <!--Banner Dividor-->
-    <?php //include ('quote.php') ?>
-    <!--/End of baneer Dividor-->
-
-    <!-- ______________________________________________________________________________________________ -->
+    <!-- ------------------------------------------------------>
     <!-- Challenges Of Casino Backlinks-section start -->
-    <!-- -------------------------------------------------------------- -->
     <section class="challenges-casino-section mt-0">
         <div class="row">
             <div class="col-lg-6 col-md-6 order-2 order-md-1">
@@ -106,14 +96,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-    <!-- ---------------------------------------------------------------------------------------- -->
     <!-- Challenges Of Casino Backlinks-section end -->
-    <!-- _______________________________________________________________________________________________ -->
+    <!-- ----------------------------------------- -->
     <!-- Link Building For Casino Sites start -->
-    <!-- -------------------------------------------------------------------------------- -->
     <section class="challenges-casino-section mt-2">
         <div class="row ">
             <div class="col-lg-6 col-md-6 m-auto">
@@ -148,16 +135,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
         </div>
     </section>
-    <!-- --------------------------------------------------------------------------------------------- -->
     <!-- Link Building For Casino Sites end -->
     <!-- ................................................................ -->
-
-    <!-- _______________________________________________________________________________________________ -->
     <!-- What Are Casino Backlinks? start -->
-    <!-- -------------------------------------------------------------------------------- -->
     <section class="challenges-casino-section">
         <div class="row ">
-
             <div class="col-lg-6 col-md-6">
                 <div>
                     <h1 class="mb-5">What Are <br> <span>Casino Backlinks?</span>
@@ -183,38 +165,22 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
         </div>
     </section>
-    <!-- --------------------------------------------------------------------------------------------- -->
     <!-- What Are Casino Backlinks? end -->
-    <!-- ................................................................ -->
     <!-- ------------------------------------------------ -->
     <!-- pricing section -->
-    <!-- ------------------------------------------- -->
-
     <section class="my-sm-5 my-2 ">
         <h1 class="text-center pricing-bo-h1 mb-3">Casino Backlinks Pricing
         </h1>
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
             DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
-        <?php require_once "partials/pricing-cards.php"; ?>
+        <?php require_once "components/pricing-cards.php"; ?>
     </section>
-
-    <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
-    <?php require_once "partials/blogs-sites.php"; ?>
-    <!-- ================================================================================================ -->
-    <!-- more information blogger outreach start -->
-
-    <!-- contact top -->
-    <!-- <?php include('more-info.php');?> -->
-    <!-- //contact top -->
-
-    <!-- more information blogger outreach ends -->
-    <!-- ================================================================================================ -->
-    <!-- __________________________________________________________________________________________ -->
+    <?php require_once "components/blogs-sites.php"; ?>
+    <!-- ------------------------------ -->
     <!-- how it works section starts -->
-    <!-- --------------------------------------------------------------------------------------------->
     <section class="how-itsworks-casino-section">
         <div class="how-itsworks-main-div-casino">
             <h1>
@@ -225,7 +191,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 You need to collaborate with experts to help you rank in the competitive market. However, the basics of
                 FastLinky's link-building strategy for casinos are mentioned below.
             </p>
-
             <div class="row">
                 <div class="col-lg-6 col-md-6 mb-2">
                     <div class="">
@@ -269,11 +234,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
         </div>
     </section>
-    <!-- -=----------------------------------------------------------------------------------------------- -->
     <!-- how it works section ends -->
-    <!-- _______________________________________________________________________________________________ -->
+    <!-- ---------------------------------- -->
     <!-- Benefits Of Igaming Link Building starts -->
-    <!-- ------------------------------------------------------------------------- -->
     <section class="benifits-online-gaming-casino-section">
         <div>
             <h3>Benefits Of Igaming Link Building</h3>
@@ -317,14 +280,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 prominent leader.
             </p>
         </div>
-
     </section>
-    <!-- ------------------------------------------------------------------ -->
     <!-- Benefits Of Online Gaming And Casino Link Building- ending -->
-    <!-- _______________________________________________________________________________________________ -->
-    <!-- _______________________________________________________________________________________________ -->
+    <!-- --------------------------------------------->
     <!-- What Are Casino Backlinks? start -->
-    <!-- -------------------------------------------------------------------------------- -->
     <section class="challenges-casino-section">
         <div class="row ">
             <div class="col-lg-6 col-md-6 m-auto">
@@ -358,16 +317,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-    <!-- --------------------------------------------------------------------------------------------- -->
     <!-- What Are Casino Backlinks? end -->
-    <!-- ................................................................ -->
     <!-- ------------------------------------------------------------------ -->
     <!-- Why Choose Fast Linky WebSolution For Casino Link Building Services? starts -->
-    <!-- _______________________________________________________________________________________________ -->
-
     <section class="why-choose-leelija-casino-section">
         <div>
             <h3>Basics Of Online Gaming And Casino Link Building</h3>
@@ -400,12 +354,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
         </div>
     </section>
-    <!-- ------------------------------------------------------------------ -->
     <!-- Why Choose Fast Linky WebSolution For Casino Link Building Services? ending -->
-    <!-- _______________________________________________________________________________________________ -->
-    <!-- _______________________________________________________________________________________________ -->
+    <!-- --------------------------------------------------------- -->
     <!-- Benefits Of Igaming Link Building starts -->
-    <!-- ------------------------------------------------------------------------- -->
     <section class="benifits-online-gaming-casino-section">
         <div>
             <h3>Why Choose Fastlinky For Online Gaming And Casino Link Building Services?</h3>
@@ -435,44 +386,30 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 specialized skills. And we have covered it completely.
             </p>
         </div>
-
     </section>
-    <!-- ------------------------------------------------------------------ -->
     <!-- Benefits Of Online Gaming And Casino Link Building- ending -->
-    <!-- _______________________________________________________________________________________________ -->
-    <!-- ______________________________________________________________________________________________________ -->
+    <!-- ---------------------------------------------------->
     <!-- features-section start -->
-    <?php require_once "partials/features-section.php"; ?>
+    <?php require_once "components/features-section.php"; ?>
     <!-- features-section ends -->
-    <!-- __________________________________________________________________________________________ -->
-    <!-- ================================================================================================ -->
+    <!-- ------------------------------------------>
     <!-- Frequently Asked Questions starts -->
-    <!-- ================================================================================================ -->
-    <!-- new faq for indexpage -->
-
-    <?php require_once "partials/faqs-new.php"; ?>
-
-    <!-- ================================================================================================= -->
+    <?php require_once "components/faqs-new.php"; ?>
     <!-- Frequently Asked Questions ends -->
-    <!-- ================================================================================================= -->
-
+    <!------------------------------------------->
     <div class="mt-4">
-        <?php include_once 'partials/seller-action.php'; ?>
+        <?php include_once 'components/seller-action.php'; ?>
     </div>
-    <!-- ================================================================================================= -->
     <!-- --------------------------------------- -->
     <!-- feedback form -->
-    <?php require_once "partials/feedback.php"; ?>
+    <?php require_once "components/feedback.php"; ?>
     <!-- feedback form -->
     <!-- ----------------------------------------------- -->
     <!-- Footer -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
     <!-- footer -->
-    <!-- -------------------------------------- -->
-
-
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>

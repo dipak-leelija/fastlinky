@@ -58,23 +58,17 @@ require_once ROOT_DIR."/includes/check-seller-login.inc.php";
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/order-table.css">
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/order-list.css" rel='stylesheet' type='text/css' />
-    <link href="css/my-orders.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="plugins/data-table/style.css">
+    <link href="<?= URL ?>/css/order-table.css" rel="stylesheet" />
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/order-list.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/my-orders.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/plugins/data-table/style.css" rel="stylesheet" />
 
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
     <style>
     @media (min-width:768px) {
         .table-responsive {
@@ -88,9 +82,8 @@ require_once ROOT_DIR."/includes/check-seller-login.inc.php";
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="home">
         <!-- header -->
-        <?php require_once 'partials/navbar.php'; ?>
+        <?php require_once 'components/navbar.php'; ?>
         <!-- //header -->
-        <!-- banner -->
         <div class="edit_profile">
             <div class="container-fluid">
                 <div class=" display-table">
@@ -105,13 +98,9 @@ require_once ROOT_DIR."/includes/check-seller-login.inc.php";
                         <div class="col-md-9 ps-md-0 display-table-cell v-align ">
                             <!-- MY GUEST POST ORDER section starts -->
                             <div class="lists_of_blogs  montserrat-font ">
-
                                 <!-- <div class=""> -->
                                 <div class=" display-table">
                                     <div class="row ">
-                                        <!--Row start-->
-                                        <!-- <div class=""> -->
-                                        <!--Content sec start-->
                                         <div class="features your_blog_lists" id="features">
                                             <!--Features Content start-->
                                             <div class="wrap">
@@ -193,37 +182,23 @@ require_once ROOT_DIR."/includes/check-seller-login.inc.php";
                                             </div>
                                             <!--Wrap End-->
                                         </div>
-                                        <!--Features Content end-->
-                                        <!-- </div> -->
-                                        <!--Content end start-->
                                     </div>
                                     <!--Row end-->
                                 </div>
                                 <!-- </div> -->
                             </div>
-                            <!-- MY GUEST POST ORDER section starts -->
-
                         </div>
-
                     </div>
-
                 </div>
                 <!-- //end display table-->
             </div>
         </div>
-        <!-- js-->
-        <!-- <script src="js/jquery-2.2.3.min.js"></script> -->
-        <script src="plugins/jquery-3.6.0.min.js"></script>
-
-        <!-- js-->
-        <!-- Scrolling Nav JavaScript -->
-        <!-- <script src="js/scrolling-nav.js"></script> -->
-
-        <script src="js/customerSwitchMode.js"></script>
-        <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-        <script src="plugins/data-table/simple-datatables.js"></script>
-        <script src="plugins/tinymce/tinymce.js"></script>
-        <script src="plugins/main.js"></script>
+        <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+        <script src="<?= URL ?>/js/customerSwitchMode.js"></script>
+        <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+        <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+        <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+        <script src="<?= URL ?>/plugins/main.js"></script>
 </body>
 
 </html>

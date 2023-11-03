@@ -7,7 +7,7 @@ require_once "../../includes/constant.inc.php";
 
 <head>
     <title>Payment to <?php echo COMPANY_FULL_NAME?></title>
-    <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
+    <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH; ?>" />
 
 </head>
@@ -34,7 +34,7 @@ require_once "../../includes/constant.inc.php";
         <iframe src="<?php echo $production_url?>" id="paymentFrame" width="482" height="450" frameborder="0"
             scrolling="No"></iframe>
 
-        <script type="text/javascript" src="jquery-1.7.2.js"></script>
+        <script src="<?= URL ?>/jquery-1.7.2.js" type="text/javascript"></script>
         <script type="text/javascript">
         $(document).ready(function() {
             window.addEventListener('message', function(e) {

@@ -2,13 +2,10 @@
 session_start();
 require_once "includes/constant.inc.php";
 require_once "includes/paypal.inc.php";
-
 require_once "_config/dbconnect.php";
-
 require_once "classes/customer.class.php";
 require_once "classes/content-order.class.php";
 require_once "classes/utility.class.php";
-
 include "Crypto.php";
 
 $ContentOrder     = new ContentOrder();
@@ -72,10 +69,10 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
     <title>Order Summary | <?php echo COMPANY_S; ?></title>
     
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
 </head>
 <body>
     <section class="container d-flex align-items-center flex-column mt-5">
@@ -216,12 +213,9 @@ if (isset($_SESSION['domainName']) && isset($_SESSION['sitePrice'])) {
         }
     }).render('#paypal-payment-button');
     </script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
-
 </html>
-
-
 <script>
 window.onload = setInterval(() => {
     let paypalBtn = document.querySelector('paypal-button-label-container');

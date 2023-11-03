@@ -1,4 +1,3 @@
-
 <?php
 $pageName = $_SERVER['PHP_SELF'];
 
@@ -15,12 +14,12 @@ $allQuestions = $faqs->getfaqqu($pageName);
 ?>
 
 <section class=" index-faq-section">
-        <p class="faq-small-text">FAQs</p>
-        <h1>Frequently asked link building questions</h1>
-        <div class="row">
-            <div class="col-md-7">
-                <div class="accordion accordion-flush faq-acc-flush pe-1" id="accordionFlushExample">
-                    
+    <p class="faq-small-text">FAQs</p>
+    <h1>Frequently asked link building questions</h1>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="accordion accordion-flush faq-acc-flush pe-1" id="accordionFlushExample">
+
 
                 <?php
                 foreach($allQuestions as $eachQuestion){
@@ -46,14 +45,14 @@ $allQuestions = $faqs->getfaqqu($pageName);
                 }
                 ?>
 
-                </div>
             </div>
-            <div class="col-md-5 text-center ">
-                <div class="">
-                    <div>
-                        <img src="./images/FAQs.png.png" class="" alt="FAQs">
-                    </div>
+        </div>
+        <div class="col-md-5 text-center ">
+            <div class="">
+                <div>
+                    <img src="./images/FAQs.png.png" class="" alt="FAQs">
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>

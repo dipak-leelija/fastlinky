@@ -112,25 +112,16 @@ if(isset($_POST['btnAddDomain']))
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- plugins  files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
+    <link href="<?= URL ?>/plugins/sweetalert/sweetalert2.css" rel="stylesheet">
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
-    <link href="./plugins/sweetalert/sweetalert2.css" rel="stylesheet">
-
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link href="css/custom.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/custom.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
     <!-- font-awesome icons -->
-
-    <!-- //Custom Theme files -->
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <!--//webfonts-->
-
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
     <style>
     input::placeholder {
         font-size: 1rem !important;
@@ -141,8 +132,7 @@ if(isset($_POST['btnAddDomain']))
 <body>
     <div id="home">
         <!-- header -->
-        <!-- require_once "partials/ -->
-        <?php require_once 'partials/navbar.php'; ?>
+        <?php require_once 'components/navbar.php'; ?>
         <!-- //header -->
         <!-- banner -->
         <div class="banner1">
@@ -412,10 +402,10 @@ if(isset($_POST['btnAddDomain']))
         </div>
     </div>
     <!-- js-->
-    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
     <!-- js-->
     <!-- Scrolling Nav JavaScript -->
-    <script src="js/scrolling-nav.js"></script>
+    <script src="<?= URL ?>/js/scrolling-nav.js"></script>
     <!-- //fixed-scroll-nav-js -->
     <script>
     $(window).scroll(function() {
@@ -427,7 +417,7 @@ if(isset($_POST['btnAddDomain']))
     });
     </script>
 
-    <script src="js/jquery.uploadPreview.js"></script>
+    <script src="<?= URL ?>/js/jquery.uploadPreview.js"></script>
 
     <script type="text/javascript">
     $(document).ready(function() {
@@ -475,7 +465,7 @@ if(isset($_POST['btnAddDomain']))
     <!--//Add remove input field-->
 
     <!-- Banner text Responsiveslides -->
-    <script src="js/responsiveslides.min.js"></script>
+    <script src="<?= URL ?>/js/responsiveslides.min.js"></script>
     <script>
     // You can also use"$(window).load(function() {"
     $(function() {
@@ -498,8 +488,8 @@ if(isset($_POST['btnAddDomain']))
     </script>
     <!-- //Banner text  Responsiveslides -->
     <!-- start-smooth-scrolling -->
-    <script src="js/move-top.js"></script>
-    <script src="js/easing.js"></script>
+    <script src="<?= URL ?>/js/move-top.js"></script>
+    <script src="<?= URL ?>/js/easing.js"></script>
     <script>
     jQuery(document).ready(function($) {
         $(".scroll").click(function(event) {
@@ -547,12 +537,9 @@ if(isset($_POST['btnAddDomain']))
         });
     }
     </script>
-    <script src="js/SmoothScroll.min.js"></script>
-    <!-- //smooth-scrolling-of-move-up -->
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.js">
+    <script src="<?= URL ?>/js/SmoothScroll.min.js"></script>
+    <script src="<?= URL ?>/js/bootstrap.js">
     </script>
-    <!-- //Bootstrap Core JavaScript -->
 </body>
 
 </html>

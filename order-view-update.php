@@ -109,6 +109,7 @@ $lastUpdateTime = $dateUtil->dateTimeNum($lastUpdate['updated_on'], '/');
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
@@ -118,21 +119,15 @@ $lastUpdateTime = $dateUtil->dateTimeNum($lastUpdate['updated_on'], '/');
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="css/order-view-update.css" rel='stylesheet' type='text/css' />
-    <link href="css/order-list.css" rel='stylesheet' type='text/css' />
-    <link href="css/my-orders.css" rel='stylesheet' type='text/css' />
-
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/order-view-update.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/order-list.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/my-orders.css" rel='stylesheet' type='text/css' />
     <style>
     @media (min-width: 1280px) {
         .client_profile_dashboard_right {
@@ -161,12 +156,12 @@ $lastUpdateTime = $dateUtil->dateTimeNum($lastUpdate['updated_on'], '/');
     }
     </style>
 </head>
+
 <body>
     <div id="home">
         <!-- header -->
-        <?php require_once ROOT_DIR.'/partials/navbar.php'; ?>
+        <?php require_once ROOT_DIR.'/components/navbar.php'; ?>
         <!-- //header -->
-        <!-- banner -->
         <div class="edit_profile">
             <div class="container-fluid1">
                 <div class=" display-table">
@@ -606,19 +601,14 @@ $lastUpdateTime = $dateUtil->dateTimeNum($lastUpdate['updated_on'], '/');
                 <!-- //end display table-->
             </div>
         </div>
-
-
         <!-- //fixed-scroll-nav-js -->
-        <script src="plugins/jquery-3.6.0.min.js"></script>
-        <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-        <!-- <script src="js/pageplugs/fixedNav.js"></script> -->
-        <script src="plugins/sweetalert/sweetalert2.all.js"></script>
+        <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+        <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+        <script src="<?= URL ?>/plugins/sweetalert/sweetalert2.all.js"></script>
         <!-- Switch Customer Type -->
-        <script src="js/customerSwitchMode.js"></script>
-        <script src="js/script.js"></script>
-        <script src="js/ajax.js"></script>
-
-
+        <script src="<?= URL ?>/js/customerSwitchMode.js"></script>
+        <script src="<?= URL ?>/js/script.js"></script>
+        <script src="<?= URL ?>/js/ajax.js"></script>
         <script>
         function validateForm() {
 

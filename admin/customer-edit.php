@@ -231,9 +231,8 @@ if(isset($_POST['btnUpdateCustomer'])){
 }
 ?>
 
-
-<link href="../style/admin/style.css" rel="stylesheet" type="text/css">
-<link href="../style/admin/admin.css" rel="stylesheet" type="text/css">
+<link href="<?= URL ?>/style/admin/style.css" rel="stylesheet" type="text/css" />
+<link href="<?= URL ?>/style/admin/admin.css" rel="stylesheet" type="text/css" />
 
 <title><?php echo COMPANY_S; ?>- Edit Customer</title>
 
@@ -521,22 +520,24 @@ if(isset($_POST['btnUpdateCustomer'])){
 </div>
 
 <!-- Javascript Libraries -->
-<script language="JavaScript" type="text/javascript" src="../js/openwysiwyg/wysiwyg.js"></script>
-<script type="text/javascript" src="../js/js_calendar/dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20051112">
+<script src="<?= URL ?>/js/openwysiwyg/wysiwyg.js" language="JavaScript" type="text/javascript"></script>
+<script src="<?= URL ?>/js/js_calendar/dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20051112"
+    type="text/javascript">
 </script>
-<script language="JavaScript" type="text/javascript" src="js/openwysiwyg/scripts/wysiwyg-settings.js"></script>
-<script language="JavaScript" type="text/javascript" src="js/openwysiwyg/scripts/wysiwyg.js"></script>
-<script type="text/javascript" src="../js/ajax.js"></script>
-<script type="text/javascript" src="../js/utility.js"></script>
-<script type="text/javascript" src="../js/advertiser.js"></script>
-<script type="text/javascript" src="../js/location.js"></script>
-<script type="text/javascript" src="../js/checkEmpty.js"></script>
-<script type="text/javascript" src="../js/email.js"></script>
-<script type="text/javascript" src="../js/package.js"></script>
+<script src="<?= URL ?>/js/openwysiwyg/scripts/wysiwyg-settings.js" language="JavaScript" type="text/javascript">
+</script>
+<script src="<?= URL ?>/js/openwysiwyg/scripts/wysiwyg.js" language="JavaScript" type="text/javascript"></script>
+<script src="<?= URL ?>/js/ajax.js" type="text/javascript"></script>
+<script src="<?= URL ?>/js/utility.js" type="text/javascript"></script>
+<script src="<?= URL ?>/js/advertiser.js" type="text/javascript"></script>
+<script src="<?= URL ?>/js/location.js" type="text/javascript"></script>
+<script src="<?= URL ?>/js/checkEmpty.js" type="text/javascript"></script>
+<script src="<?= URL ?>/js/email.js" type="text/javascript"></script>
+<script src="<?= URL ?>/js/package.js" type="text/javascript"></script>
 <!-- eof JS Libraries -->
 
 <!-- TinyMCE -->
-<script type="text/javascript" src="../js/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script src="<?= URL ?>/js/tinymce/jscripts/tiny_mce/tiny_mce.js" type="text/javascript"></script>
 <script type="text/javascript">
 tinyMCE.init({
     // General options

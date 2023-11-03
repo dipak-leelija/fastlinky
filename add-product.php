@@ -133,17 +133,12 @@ if(isset($_POST['btnAddProduct']))
     <meta name="keywords" content="" />
 
     <!-- plugins  files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
     
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link href="css/custom.css" rel='stylesheet' type='text/css' />
-    
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <!--//webfonts-->
-
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/custom.css" rel='stylesheet' type='text/css' />
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -153,9 +148,7 @@ if(isset($_POST['btnAddProduct']))
         <!-- //header -->
         <!-- banner -->
         <div class="banner1">
-
         </div>
-        <!-- //banner -->
         <!-- Main Content -->
         <section class="py-5 branches position-relative" id="explore">
             <div class="container py-md-5 container-fluid text-center">
@@ -389,7 +382,7 @@ if(isset($_POST['btnAddProduct']))
                                 </div>
                             </form>
                         </div>
-                        <!--end from div-->
+                        <!--end form div-->
 
                     </div>
 
@@ -419,12 +412,8 @@ if(isset($_POST['btnAddProduct']))
         <?php include('footer.inc.php') ?>
         <!-- /Footer -->
     </div>
-    <!-- js-->
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <!-- js-->
-    <!-- Scrolling Nav JavaScript -->
-    <script src="js/scrolling-nav.js"></script>
-    <!-- //fixed-scroll-nav-js -->
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/js/scrolling-nav.js"></script>
     <script>
     $(window).scroll(function() {
         if ($(document).scrollTop() > 70) {
@@ -435,7 +424,7 @@ if(isset($_POST['btnAddProduct']))
     });
     </script>
 
-    <script src="js/jquery.uploadPreview.js"></script>
+    <script src="<?= URL ?>/js/jquery.uploadPreview.js"></script>
 
     <script type="text/javascript">
     $(document).ready(function() {
@@ -481,7 +470,7 @@ if(isset($_POST['btnAddProduct']))
     <!--//Add remove input field-->
 
     <!-- Banner text Responsiveslides -->
-    <script src="js/responsiveslides.min.js"></script>
+    <script src="<?= URL ?>/js/responsiveslides.min.js"></script>
     <script>
     // You can also use"$(window).load(function() {"
     $(function() {
@@ -504,8 +493,8 @@ if(isset($_POST['btnAddProduct']))
     </script>
     <!-- //Banner text  Responsiveslides -->
     <!-- start-smooth-scrolling -->
-    <script src="js/move-top.js"></script>
-    <script src="js/easing.js"></script>
+    <script src="<?= URL ?>/js/move-top.js"></script>
+    <script src="<?= URL ?>/js/easing.js"></script>
     <script>
     jQuery(document).ready(function($) {
         $(".scroll").click(function(event) {
@@ -553,12 +542,9 @@ if(isset($_POST['btnAddProduct']))
         });
     }
     </script>
-    <script src="js/SmoothScroll.min.js"></script>
-    <!-- //smooth-scrolling-of-move-up -->
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.js">
+    <script src="<?= URL ?>/js/SmoothScroll.min.js"></script>
+    <script src="<?= URL ?>/js/bootstrap.js">
     </script>
-    <!-- //Bootstrap Core JavaScript -->
 </body>
 
 </html>

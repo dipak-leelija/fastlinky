@@ -11,32 +11,26 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
+    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
 
     <title>#1 link building blogger outreach service for SEO agencies - <?php echo COMPANY_S; ?></title>
     <meta name="description"
         content="Fastlinky, a trusted link building agency provide top quality backlinks as per client's requirements.This Blogger Outreach Services help your brand grow globally." />
     <meta name="keywords"
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
-
-
     <!-- plugins  files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/blogger-outreach.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/testimonials.css">
-    <link rel="stylesheet" href="css/clientside-logo.css">
-
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/blogger-outreach.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/testimonials.css" rel="stylesheet" />
+    <link href="<?= URL ?>/css/clientside-logo.css" rel="stylesheet" />
 </head>
-
 <body>
-    <?php require_once "partials/navbar.php"; ?>
-    <!--___________________________________________________________________________________________________ -->
+    <?php require_once "components/navbar.php"; ?>
     <!-- starting of blogger-outreach main banner -->
-    <div class="">
         <section class="blogger_outreach_banner">
             <div class="">
                 <div class="row w-100 m-auto">
@@ -60,15 +54,12 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <div class="bo-wrap">
                             <img src="./images/freepik-img/blogger-outreach-banner.png" class="w-100" alt="">
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </section>
-    </div>
     <!-- end of blogger-outreach main banner -->
-    <!-- --------------------------------------------------------------------------------------------- -->
+    <!-- ---------------------------------------- -->
     <!-- paragraph_texts section start -->
     <section class="paragraph_texts">
         <div class="row w-100 m-auto">
@@ -81,7 +72,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 <div>
                     <h1 class="real-bo-text-h1 mb-3">Crafting Quality Backlinks <br> <span>to Enhance Domain
                             Authority</span>
-                        <!-- Backlinks for domain authority <span>with 100% responsibility </span> -->
                     </h1>
                 </div>
                 <div>
@@ -95,14 +85,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </a>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
-
     <!-- paragraph_texts section end -->
-    <!-- _______________________________________________________________________________________________ -->
+    <!-- -------------------------------------------------->
     <!-- real-blogger-outreach-section start -->
     <section class="real-bo-section">
         <div class="row  w-100 m-auto">
@@ -142,7 +129,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 </div>
                             </div>
                         </div>
-
                         <div class=" text-center text-md-start mb-5 mb-md-0 ">
                             <a href="#pricing-cards">
                                 <button type="button" class="btn srvc-common-btn ">Get Your Links Now</button>
@@ -150,13 +136,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="col-lg-6 col-md-6 real-bo-col-second">
                 <div class="text-center">
                     <img src="./images/freepik-img/blogger-outrech-Link-Building.webp" class="w-100 mb-md-4" alt="">
                 </div>
-
                 <p class="real-bo-text-p mb-3 text-md-start">Fastlinky collaborates with multiple contributors to get
                     relevant and
                     long-lasting links that increase your search engine results and develop targeted traffic. We filter
@@ -165,10 +149,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     indexed backlinks that can help clients to rank higher.</p>
             </div>
         </div>
-
     </section>
     <!-- real-blogger-outreach-section end -->
-    <!-- _________________________________________________________________________________ -->
     <!-- ==================== Does-Blogger-Outreach Work For You starts ============================ -->
     <section class="works-for-you-bo-section py-0">
         <div class="custom-cntainr">
@@ -232,7 +214,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     authority in order to get you the finest stats for your site.</p>
                             </div>
                         </div>
-
                         <div class="col-md-4 my-2 my-md-3 px-0 px-sm-2">
                             <div class="card how-it-work-f-u-card h-100">
                                 <div class=" pb-3">
@@ -265,12 +246,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- Does-Blogger-Outreach Work For You ends -->
-    <!-- _________________________________________________________________________________________ -->
     <!-- ---------------------------------------------------------------- -->
     <!-- AMAZING -blogger-outreach-section start -->
-
     <section class="real-bo-section">
-
         <div class="row  w-100 m-auto">
             <div class="col-lg-6 col-md-6 m-auto real-bo-col-second">
                 <div class="">
@@ -329,13 +307,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     following-up after placement
                                 </div>
                             </div>
-
                         </div>
-
-
                     </div>
                 </div>
-
             </div>
             <div class=" text-center text-md-end">
                 <a href="#pricing-cards">
@@ -344,10 +318,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </a>
             </div>
         </div>
-
     </section>
     <!-- AMAZING-blogger-outreach-section end -->
-    <!-- _________________________________________________________________________________ -->
     <!-- ==================== Does-Blogger-Outreach Work For You starts ============================ -->
     <section class="works-for-you-bo-section py-0">
         <div class="custom-cntainr">
@@ -406,7 +378,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     </section>
     <!-- Does-Blogger-Outreach Work For You ends -->
     <!-- _________________________________________________________________________________________ -->
-    <!-- _______________________________________________________________________________________________ -->
     <!-- real-blogger-outreach-section start -->
     <section class="real-bo-section">
         <div class="row m-auto w-100">
@@ -415,7 +386,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div>
                         <h1 class="real-bo-text-h1 mb-5">Blogger Outreach <span>Agency</span> </h1>
                     </div>
-
                     <p class="real-bo-text-p text-md-start mb-5">Being a reputable <b>blogger outreach agency</b> , our
                         distinctive strategy has helped our clients' websites secure content from blogs that link to
                         them, and enhance their SEO. Our experience staffs are always in touch with top blogs and
@@ -427,50 +397,38 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <button type="button" class="btn srvc-common-btn ">Get Your Links Now</button>
                         </a>
                     </div>
-
                 </div>
-
             </div>
             <div class="col-lg-6 col-md-6 real-bo-col-second">
                 <div class="text-center">
                     <img src="./images/freepik-img/link-insertion-banner.png" class="w-100 mb-md-4" alt="">
                 </div>
-
-
             </div>
         </div>
-
     </section>
     <!-- real-blogger-outreach-section end -->
-    <!-- _______________________________________________________________________________________________ -->
-    <!-- --------------------------------------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------- -->
     <!-- clients-logo -->
-    <?php require_once "partials/clientssides-logos.php"; ?>
+    <?php require_once "components/clientssides-logos.php"; ?>
     <!-- clients-logo -->
-    <!-- _________________________________________________________________________________________________ -->
-    <!-- ___________________________________________________________________________________________ -->
+    <!------------------------------------->
     <!-- testimonials customers reviews -->
-    <?php require_once "partials/testimonials.php"; ?>
+    <?php require_once "components/testimonials.php"; ?>
     <!-- testimonials customers reviews -->
-    <!-- _________________________________________________________________________________________ -->
     <!-- ------------------------------------------------ -->
     <!-- pricing section -->
     <!-- ------------------------------------------- -->
-
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 mt-5">Blogger Outreach Pricing
         </h1>
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
             DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
-        <?php require_once "partials/pricing-cards.php"; ?>
+        <?php require_once "components/pricing-cards.php"; ?>
     </section>
-
-    <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
-    <?php require_once "partials/blogs-sites.php"; ?>
-    <!-- _________________________________________________________________________________ -->
+    <?php require_once "components/blogs-sites.php"; ?>
     <!-- ==================== Does-Blogger-Outreach Work For You starts ============================ -->
     <section class="works-for-you-bo-section py-0">
         <div class="custom-cntainr">
@@ -574,12 +532,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- Does-Blogger-Outreach Work For You ends -->
-    <!-- _________________________________________________________________________________________ -->
-
     <!-- ------------------------------------------------------------------ -->
     <!-- Why Choose Fast Linky WebSolution For Casino Link Building Services? starts -->
-    <!-- _______________________________________________________________________________________________ -->
-
     <section class="advantages-of-using-bos-section">
         <div>
             <h3 class="text-center">Advantages Of Using Our <span>Blogger Outreach Service</span> </h3>
@@ -606,11 +560,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
         </div>
     </section>
-    <!-- ------------------------------------------------------------------ -->
     <!-- Why Choose Fast Linky WebSolution For Casino Link Building Services? ending -->
-    <!-- _______________________________________________________________________________________________ -->
-    <!-- --------------------------------------------------------------------------------------------- -->
-    <!--  -->
+<!-- ----------------------------------------- -->
     <!-- extra details -->
     <div class="features-sec">
         <div class="features">
@@ -629,7 +580,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </p>
                         </div>
                     </div>
-
                     <div class="col-sm-3">
                         <p class="features-sec-head-icon">
                             <i class="fas fa-th"></i>
@@ -643,7 +593,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </p>
                         </div>
                     </div>
-
                     <div class="col-sm-3">
                         <p class="features-sec-head-icon">
                             <i class="fas fa-truck"></i>
@@ -657,7 +606,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </p>
                         </div>
                     </div>
-
                     <div class="col-sm-3">
                         <p class="features-sec-head-icon">
                             <i class="fas fa-users"></i>
@@ -675,35 +623,25 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
         </div>
     </div>
-
     <!-- extra details -->
-
-    <!-- ================================================================================================= -->
+    <!-- ------------------------------->
     <!-- Frequently Asked Questions starts -->
-    <!-- ================================================================================================ -->
-    <!-- new faq for indexpage -->
-
-    <?php require_once "partials/faqs-new.php"; ?>
-
-    <!-- ================================================================================================= -->
+    <?php require_once "components/faqs-new.php"; ?>
     <!-- Frequently Asked Questions ends -->
-    <!-- ================================================================================================ -->
-
+    <!----------------------------------------->
     <div class="mt-4">
-        <?php include_once 'partials/seller-action.php'; ?>
+        <?php include_once 'components/seller-action.php'; ?>
     </div>
-
     <!-- --------------------------------------- -->
     <!-- feedback form -->
-    <?php require_once "partials/feedback.php"; ?>
+    <?php require_once "components/feedback.php"; ?>
     <!-- feedback form -->
     <!-- ----------------------------------------------- -->
     <!-- Footer -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
     <!-- footer -->
-    <!-- -------------------------------------- -->
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 
 </body>
 

@@ -11,26 +11,24 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
+    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
 
     <title> Boost International SEO By Country Specific Backlinks-fastlinky - <?php echo COMPANY_S; ?></title>
     <meta name="description"
         content="Fastlinky Enhances Your Website's Online Visibility with High-Quality Country-Specific Backlinks Services. Our Experts Will Help You To buy high-quality backlinks USA, Australia, U.K, etc in reasonable price." />
     <meta name="keywords"
         content="country specific backlinks,buy backlinks usa cheap,buy backlinks usa,buy high quality backlinks usa,buy quality backlinks Australia," />
-
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/country-specific-backlinks.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/country-specific-backlinks.css" rel='stylesheet' type='text/css' />
 </head>
 
 <body>
-    <?php require_once "partials/navbar.php"; ?>
-    <!--____________________________________________________________________________________________ -->
+    <?php require_once "components/navbar.php"; ?>
     <!-- Link Insertion Services main banner starting -->
     <section class="country-specific-main-banner">
         <div class="row ">
@@ -57,10 +55,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- end of Link Insertion Service main banner -->
-    <!-- --------------------------------------------------------------------------------------------- -->
-    <!-- _______________________________________________________________________________________________ -->
+    <!-- --------------------------------------------------- -->
     <!-- Benefit Of Buying Country Specific Backlinks From FastLinky start -->
-    <!-- -------------------------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------- -->
     <section class="reach-your-audience-globally-section mt-0">
         <div class="row ">
             <div class="col-lg-6 col-md-6">
@@ -98,14 +95,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <img src="./images/freepik-img/country-spc-research.webp" class=" w-100  mb-4 " alt="">
                 </div>
             </div>
-
         </div>
     </section>
-    <!-- --------------------------------------------------------------------------------------------- -->
     <!-- Benefit Of Buying Country Specific Backlinks From FastLinky end -->
-    <!-- _______________________________________________________________________________________________ -->
+    <!-- ------------------------------------------------------------ -->
     <!-- Why Country-Specific Link Buildings? starts -->
-    <!-- __________________________________________________________________________________________ -->
     <section class="why-country-specific-link-section">
         <h2>Why Choose Country Specific Backlinks?</h2>
         <p class="why-country-specific-link-section-p mb-4">To obtain a high-quality backlink that will improve your
@@ -145,31 +139,22 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
         </div>
     </section>
-    <!-- ---------------------------------------------------------------------- -->
     <!-- Why Country-Specific Link Buildings? ends -->
     <!-- ................................................................... -->
-
-
-    <!-- ------------------------------------------------ -->
     <!-- pricing section -->
-    <!-- ------------------------------------------- -->
-
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 px-2 mt-5">Country-Specific Outreach Pricing
         </h1>
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
             DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
-        <?php require_once "partials/pricing-cards.php"; ?>
+        <?php require_once "components/pricing-cards.php"; ?>
     </section>
-
-    <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
-    <?php require_once "partials/blogs-sites.php"; ?>
-    <!-- __________________________________________________________________________________________ -->
+    <?php require_once "components/blogs-sites.php"; ?>
     <!-- how it works section starts -->
-    <!-- --------------------------------------------------------------------------------------------->
+    <!-- --------------------------------------------------->
     <section class="how-itsworks-casino-section">
         <div class="how-itsworks-main-div-casino">
             <h1>
@@ -218,10 +203,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
         </div>
     </section>
-    <!-- -=----------------------------------------------------------------------------------------------- -->
     <!-- how it works section ends -->
-    <!-- _______________________________________________________________________________________________ -->
-    <!-- _______________________________________________________________________________________________ -->
+    <!-- -=------------------------------------------------------------ -->
     <!-- Advantages Of Link Insert start -->
     <section class="country-specific-international-section">
         <div class="row">
@@ -234,7 +217,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
             </div>
             <div class=" col-xl-6 col-md-6">
-
                 <div class="actually-card-div1">
                     <div class="  actually-card-inn-img-div">
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
@@ -243,7 +225,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <b>Buy Backlinks USA :</b>
                         It is effortless to sell and buy backlinks from this site. Anyone can join this website and get
                         backlinks. However, FastLinky is a link-building service that is completely secure.
-                        <!-- It helps you to buy quality backlinks Australia or buy high quality backlinks USA. Sign up now. Get high-quality Australian backlinks from popular, active websites to boost your ranking.  -->
                     </div>
                 </div>
                 <div class="actually-card-div1">
@@ -288,10 +269,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- Advantages Of Link Insert ends -->
-    <!-- _________________________________________________________________________________________________ -->
-    <!-- _______________________________________________________________________________________________ -->
-    <!-- Use Fastlinky To Buy Quality Backlinks In Australia start -->
     <!-- -------------------------------------------------------------------------------- -->
+    <!-- Use Fastlinky To Buy Quality Backlinks In Australia start -->
     <section class="reach-your-audience-globally-section mt-0 mb-3">
         <div class="row ">
             <div class="col-lg-6 col-md-6">
@@ -308,7 +287,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         buy backlinks USA cheap from us. We do have a massive database of country-wise blogs from where
                         we create links for our clients.
                     </p>
-
                 </div>
                 <div class=" text-md-start text-center mt-4">
                     <a href="#pricing-cards">
@@ -321,54 +299,39 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <img src="./images/freepik-img/blogger-outrech-cc.png" class=" w-100  mb-4 " alt="">
                 </div>
             </div>
-
         </div>
     </section>
-    <!-- --------------------------------------------------------------------------------------------- -->
     <!-- Use Fastlinky To Buy Quality Backlinks In Australia  end -->
-    <!-- _______________________________________________________________________________________________ -->
-    <!-- ================================================================================================ -->
+    <!-- --------------------------------------->
     <!-- more information link-building start -->
-
     <!-- contact top -->
     <!-- <?php include('more-info.php');?> -->
     <!-- //contact top -->
 
     <!-- more information link-building ends -->
-    <!-- ================================================================================================ -->
-    <!-- ______________________________________________________________________________________________________ -->
+    <!-- ------------------------------------- -->
     <!-- features-section start -->
-    <?php require_once "partials/features-section.php"; ?>
+    <?php require_once "components/features-section.php"; ?>
     <!-- features-section ends -->
-    <!-- __________________________________________________________________________________________ -->
-    <!-- ================================================================================================= -->
+    <!-- ---------------------------------->
     <!-- Frequently Asked Questions starts -->
-    <!-- ================================================================================================ -->
-    <!-- new faq for indexpage -->
-
-    <?php require_once "partials/faqs-new.php"; ?>
-
-    <!-- ================================================================================================= -->
+    <?php require_once "components/faqs-new.php"; ?>
+    <!-- -------------------------------- -->
     <!-- Frequently Asked Questions ends -->
-    <!-- ================================================================================================ -->
-    <!-- ================================================================================================ -->
-
+    <!-- ------------------------------------ -->
     <div class="mt-4">
-        <?php include_once 'partials/seller-action.php'; ?>
+        <?php include_once 'components/seller-action.php'; ?>
     </div>
     <!-- --------------------------------------- -->
     <!-- feedback form -->
-    <?php require_once "partials/feedback.php"; ?>
+    <?php require_once "components/feedback.php"; ?>
     <!-- feedback form -->
     <!-- ----------------------------------------------- -->
     <!-- Footer -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
     <!-- footer -->
-    <!-- -------------------------------------- -->
-
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>

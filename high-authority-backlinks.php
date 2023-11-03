@@ -11,31 +11,25 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
+
     <title>Authority Backlinks Service - <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <meta name="description"
         content="Fast Linky provided Guest Post Service at reasonable prices on fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement  or more." />
     <meta name="keywords" content="domain authority,
 what is domain authority,domain authority score, what is a good domain authority, high domain authority backlinks,
 benefits of high domain authority website, domain authority rank" />
-
-
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/high-authority-backlinks.css" rel='stylesheet' type='text/css' />
-
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/high-authority-backlinks.css" rel='stylesheet' type='text/css' />
 </head>
 
 <body data-scrollbar>
-    <?php require_once "partials/navbar.php"; ?>
-    <!--____________________________________________________________________________________________ -->
+    <?php require_once "components/navbar.php"; ?>
     <!-- High Authority Backlinks main banner starting -->
     <section class="managed-link-building-main-banner">
         <div class="row ">
@@ -87,25 +81,18 @@ benefits of high domain authority website, domain authority rank" />
                         </a>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
-
     <!-- paragraph_texts section end -->
     <!-- _______________________________________________________________________________________________ -->
     <!-- Backlinks From  High Authority And High Traffic Website start -->
-
     <section class="lbs-actually-matters-main">
         <div class="row">
-
             <div class=" col-xl-6 col-md-6">
                 <h1 class="lbs-actually-matters-main-h1 ">Backlinks From <br>
                     <span>High Authority And High Traffic Websites</span>
                 </h1>
-
-
                 <p>FastLinky will help your website grow. Our experts will work in a professional way that will help our
                     well-known clients. The expert outreach team closely examined each site to ensure that it would be
                     genuine, have considerable traffic, and have an exceptional readership.
@@ -114,9 +101,6 @@ benefits of high domain authority website, domain authority rank" />
                     these are the factors to consider by our team. We, therefore, assist our clients in defending such
                     sorts of things.
                 </p>
-
-
-
                 <div class=" text-center text-md-start mb-5 mb-md-0  mt-5">
                     <a href="#pricing-cards">
                         <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
@@ -129,13 +113,10 @@ benefits of high domain authority website, domain authority rank" />
                 </div>
             </div>
         </div>
-
     </section>
     <!-- Backlinks From High Authority And High Traffic Website ends -->
-    <!-- _________________________________________________________________________________________________ -->
     <!-- _______________________________________________________________________________________________ -->
     <!-- Relevant Topics, Value Adding Content- start -->
-
     <section class="lbs-actually-matters-main pt-0">
         <div class="row">
             <div class="col-xl-6 col-md-6 order-2 order-md-1 m-auto">
@@ -149,26 +130,19 @@ benefits of high domain authority website, domain authority rank" />
                 <h1 class="lbs-actually-matters-main-h1 ">Relevant Topics, <br>
                     <span>Value Adding Content-</span>
                 </h1>
-
-
                 <p> We create reputable and genuine link-building. Our expert team places great value on the site's
                     content and the business. We provide our customers with a suitable and genuine website that matches
                     their URLs. Also, we select topics that are pertinent to our selected niches. Our in-house native
                     writers from the UK and the US develop content by placing the client’s site URL on proper anchors.
                     Thus, the client has a good chance of publishing their work and getting appropriate backlinks.
                 </p>
-
-
-
                 <div class=" text-center  mb-5 mb-md-0  text-md-end mt-3">
                     <a href="#pricing-cards">
                         <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                     </a>
                 </div>
             </div>
-
         </div>
-
     </section>
     <!-- Relevant Topics, Value Adding Content- ends -->
     <!-- _________________________________________________________________________________________________ -->
@@ -197,12 +171,7 @@ benefits of high domain authority website, domain authority rank" />
             </div>
         </div>
     </section>
-
-
     <!---------- Guaranteed placement on the site of your choice-  End ---------------------->
-    <!-- ____________________________________________________________________________________________ -->
-
-
     <!-- ------------------------------------------------ -->
     <!-- pricing section -->
     <!-- ------------------------------------------- -->
@@ -213,27 +182,20 @@ benefits of high domain authority website, domain authority rank" />
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
             DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
-        <?php require_once "partials/pricing-cards.php"; ?>
+        <?php require_once "components/pricing-cards.php"; ?>
     </section>
-
-
     <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
-        <?php require_once "partials/blogs-sites.php"; ?>
+    <?php require_once "components/blogs-sites.php"; ?>
     <!-- ================================================================================================ -->
     <!-- more information link-building start -->
-
 
     <!-- contact top -->
     <!-- <?php include('more-info.php');?> -->
     <!-- //contact top -->
 
-
-
     <!-- more information link-building ends -->
-    <!-- ================================================================================================ -->
-
     <!-- __________________________________________________________________________________________ -->
     <!--  Why Choose Fastlinky  starts -->
     <section class="works-for-you-bo-section ">
@@ -246,7 +208,6 @@ benefits of high domain authority website, domain authority rank" />
                 <div class="row row-cols-1 row-cols-md-3 ">
                     <div class="col my-2 my-md-0">
                         <div class="card h-100 how-it-work-f-u-card">
-
                             <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
@@ -256,13 +217,10 @@ benefits of high domain authority website, domain authority rank" />
                                 authoritative websites. We will provide you with the best SEO services to increase your
                                 rankings in search engine results. If you purchase authority backlinks, your <b>domain
                                     authority rank</b> will significantly increase. </p>
-
                         </div>
                     </div>
-
                     <div class="col my-2  my-md-0">
                         <div class="card h-100 how-it-work-f-u-card">
-
                             <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                             </div>
@@ -276,14 +234,10 @@ benefits of high domain authority website, domain authority rank" />
                                 backlinks from highly authoritative quality sites your chances of ranking high on google
                                 look more bright.
                             </p>
-
                         </div>
-
                     </div>
-
                     <div class="col my-2  my-md-0 ">
                         <div class="card h-100 how-it-work-f-u-card">
-
                             <div class=" pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
@@ -295,20 +249,17 @@ benefits of high domain authority website, domain authority rank" />
                                 scale the search engine rankings ladders with the least amount of time and effort lost.
                                 The way we approach it makes it easy. </p>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Why Choose Fastlinky  ends -->
-    <!-- ____________________________________________________________________________________________________ -->
+    <!-- ------------------------------------->
     <!-- How It Works-section starts -->
-    <!-- __________________________________________________________________________________________ -->
     <!-- ------------------------------------------------------------------ -->
     <!-- Benefits Of High Domain Authority Website starts -->
-    <!-- _______________________________________________________________________________________________ -->
-
+    <!-- ----------------------------------------------------- -->
     <section class="advantages-of-using-bos-section">
         <div>
             <h3 class="text-center">Benefits Of <span>High Domain Authority Website</span> </h3>
@@ -348,7 +299,7 @@ benefits of high domain authority website, domain authority rank" />
     </section>
     <!-- ------------------------------------------------------------------ -->
     <!--Benefits Of High Domain Authority Website ending -->
-    <!-- _______________________________________________________________________________________________ -->
+    <!-- ------------------------------------------------------>
     <!-- How does it work? -->
     <!-- --------------------------------------------------------------- -->
     <section class="how-it-works-main-section">
@@ -356,12 +307,9 @@ benefits of high domain authority website, domain authority rank" />
         <div class="text-center py-4">
             <img src="./images/dummy-img/link-inserting-123img.png" class="how-it-works-1st-img" alt="">
         </div>
-
-
         <div class="row m-0 row-cols-1 row-cols-md-3">
             <div class="col">
                 <div class="how-it-works-main-card-div">
-
                     <h4>Put Order And <span>Provide Information</span> </h4>
                     <p>
                         Let's get started by placing orders for genuine link-building services with us. Simply provide
@@ -369,10 +317,8 @@ benefits of high domain authority website, domain authority rank" />
                         reviewing each factor. </p>
                 </div>
             </div>
-
             <div class="col">
                 <div class="how-it-works-main-card-div">
-
                     <h4>Reporting And <span>Publishing</span> </h4>
                     <p>You can expect that the authority link will be live very soon. When it has been posted, our team
                         will personally check each live URLs to see if it is still live or not. When the published
@@ -382,7 +328,6 @@ benefits of high domain authority website, domain authority rank" />
             </div>
             <div class="col">
                 <div class="how-it-works-main-card-div">
-
                     <h4>Selecting Sites <span>and Onwards</span> </h4>
                     <p>Whenever you submit your orders, our proficient staff will provide you with a list of several
                         trustworthy websites that match the client's URL. You have the choice to look over each one
@@ -395,10 +340,8 @@ benefits of high domain authority website, domain authority rank" />
     </section>
     <!-- -------------------------------------- -->
     <!-- How does it work? ends -->
-
     <!-- _______________________________________________________________________________________________ -->
     <!-- Your Rankings Are Carefully Monitored By Us start -->
-
     <section class="lbs-actually-matters-main">
         <div class="row">
             <div class="col-xl-6 col-md-6 m-auto">
@@ -412,8 +355,6 @@ benefits of high domain authority website, domain authority rank" />
                 <h1 class="lbs-actually-matters-main-h1 ">Your Rankings <br>
                     <span>Are Carefully Monitored By Us</span>
                 </h1>
-
-
                 <p> It’s not like links are created and it’s all done, we monitor each link after some period on a
                     continuous basis so that all links exist permanently. Our main aim is to keep each and every
                     do-follow link remain do follow, indexed permanently without any tag in it. So, the link juice
@@ -421,33 +362,23 @@ benefits of high domain authority website, domain authority rank" />
                     your backlinks are removed we instantly knock to admin so that it appears on your site
                     again.Dofollow, Indexed, Permanent links without any sponsor tag, we generally invest for.
                 </p>
-
-
-
                 <div class=" text-center  text-md-end mt-3">
                     <a href="#pricing-cards">
                         <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                     </a>
                 </div>
             </div>
-
         </div>
-
     </section>
     <!-- Your Rankings Are Carefully Monitored By Us- ends -->
-    <!-- _________________________________________________________________________________________________ -->
     <!-- _______________________________________________________________________________________________ -->
     <!-- Our High Authority Backlinks Approach Includes start -->
-
     <section class="lbs-actually-matters-main">
         <div class="row">
-
             <div class=" col-xl-6 col-md-6">
                 <h1 class="lbs-actually-matters-main-h1 ">Our High Authority Backlinks<br>
                     <span> Approach Includes</span>
                 </h1>
-
-
                 <p>The goal of our high domain authority backlinks service is to provide website owners with the best
                     outcomes possible. Authority backlinks are a part of the most important considerations for site
                     ranking. You will therefore require high-quality links suggesting to your website. As a result of
@@ -456,9 +387,6 @@ benefits of high domain authority website, domain authority rank" />
                     websites, we will contain the appropriate photos in our SEO-optimized content. It's important to
                     remember that while creating links, we prioritize quality above number.
                 </p>
-
-
-
                 <div class=" text-center text-md-start  mt-3">
                     <a href="#pricing-cards">
                         <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
@@ -471,13 +399,8 @@ benefits of high domain authority website, domain authority rank" />
                 </div>
             </div>
         </div>
-
     </section>
     <!-- Our High Authority Backlinks Approach Includes ends -->
-    <!-- _________________________________________________________________________________________________ -->
-
-    <!-- _______________________________________________________________________________________________ -->
-
     <!-- __________________________________________________________________________________________ -->
     <!--  What Are Our Plans? starts -->
     <section class="works-for-you-bo-section py-0">
@@ -490,7 +413,6 @@ benefits of high domain authority website, domain authority rank" />
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col my-2 my-md-0">
                         <div class="card h-100 how-it-work-f-u-card">
-
                             <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" alt="">
                             </div>
@@ -500,13 +422,10 @@ benefits of high domain authority website, domain authority rank" />
                                 to you and create a strategy to get high-quality backlinks from them. To increase your
                                 authority, we use cutting-edge backlink analysis technologies to analyze competitors'
                                 links and recreate their proper techniques. </p>
-
                         </div>
                     </div>
-
                     <div class="col my-2 my-md-0">
                         <div class="card h-100 how-it-work-f-u-card">
-
                             <div class="pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                             </div>
@@ -517,11 +436,8 @@ benefits of high domain authority website, domain authority rank" />
                                 techniques like in-depth content analysis, blogging, digital PR, and blogger outreach to
                                 achieve this.
                             </p>
-
                         </div>
-
                     </div>
-
                     <div class="col my-2  my-md-0">
                         <div class="card h-100 how-it-work-f-u-card">
 
@@ -536,18 +452,14 @@ benefits of high domain authority website, domain authority rank" />
                                 that will encourage backlinks and create audience identity for more precise targeting.
                             </p>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- What Are Our Plans? ends -->
-    <!-- ____________________________________________________________________________________________________ -->
-
     <!-- _______________________________________________________________________________________________ -->
     <!-- Fastlinky Will Raise Your Domain Authority And Enhance  start -->
-
     <section class="lbs-actually-matters-main">
         <div class="row">
             <div class="col-xl-6 col-md-6 m-auto">
@@ -562,53 +474,39 @@ benefits of high domain authority website, domain authority rank" />
                         Enhance Your</span> <br>
                     <span> Link-Building Strategy</span>
                 </h1>
-
-
                 <p> For many organizations, the process of creating high-quality links to enhance their DA and SEO
                     results is challenging. FastLinky differentiates itself from competitors who make promises but don't
                     follow through by providing businesses and organizations with practical solutions that promote
                     success. To know more about how FastLinky can help your trade requirements, please get in touch
                     right away.
                 </p>
-
-
-
                 <div class=" text-center  text-md-end mt-3">
                     <a href="#pricing-cards">
                         <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
                     </a>
                 </div>
             </div>
-
         </div>
-
     </section>
     <!-- Fastlinky Will Raise Your Domain Authority And Enhance  ends -->
-    <!-- _________________________________________________________________________________________________ -->
     <!-- _______________________________________________________________________________________________ -->
     <!-- Does A Domain Authority Checker Affect Page Authority? start -->
-
     <section class="lbs-actually-matters-main">
         <div class="row">
-
             <div class=" col-xl-6 col-md-6">
                 <h1 class="lbs-actually-matters-main-h1 ">Does A Domain Authority Checker <br>
                     <span> Affect Page Authority?</span>
                 </h1>
-
-
                 <p>No. Domain authority (DA) and page authority (PA) are two different ideas. While a <b>domain
                         authority score</b> informs you how sufficiently your website as a whole might rank, a page
                     authority score examines the possible ranking for a given page on your website. Tools that generate
                     a PA score rely on AI to set a range of criteria, much like the device language that operates a
                     domain authority checker.
                 </p>
-
                 <p>When you check your DA, you should match your PA score with the one that appears. Based on the
                     measurements of your SEO goals, you need to review them. You shouldn't assign a grade of "good" or
                     "poor" to the outcome of a domain authority or page authority check. Take a look at what it is
                     saying about the metrics you find important.</p>
-
                 <div class=" text-center text-md-start  mt-3">
                     <a href="#pricing-cards">
                         <button type="button" class="btn srvc-common-btn">Get Your Links Now</button>
@@ -621,44 +519,31 @@ benefits of high domain authority website, domain authority rank" />
                 </div>
             </div>
         </div>
-
     </section>
     <!-- Does A Domain Authority Checker Affect Page Authority? ends -->
     <!-- _________________________________________________________________________________________________ -->
-
-    <!-- ______________________________________________________________________________________________________ -->
     <!-- features-section start -->
-    <?php require_once "partials/features-section.php"; ?>
+    <?php require_once "components/features-section.php"; ?>
     <!-- features-section ends -->
     <!-- __________________________________________________________________________________________ -->
-    <!-- ================================================================================================= -->
     <!-- Frequently Asked Questions starts -->
-    <!-- ================================================================================================ -->
-    <!-- new faq for indexpage -->
-
-    <?php require_once "partials/faqs-new.php"; ?>
-
-    <!-- ================================================================================================= -->
+    <?php require_once "components/faqs-new.php"; ?>
     <!-- Frequently Asked Questions ends -->
     <!-- ================================================================================================ -->
-
-
-    <!-- ================================================================================================ -->
-
     <div class="mt-4">
-        <?php include_once 'partials/seller-action.php'; ?>
+        <?php include_once 'components/seller-action.php'; ?>
     </div>
     <!-- --------------------------------------- -->
     <!-- feedback form -->
-    <?php require_once "partials/feedback.php"; ?>
+    <?php require_once "components/feedback.php"; ?>
     <!-- feedback form -->
     <!-- ----------------------------------------------- -->
     <!-- Footer -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
     <!-- footer -->
     <!-- -------------------------------------- -->
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 
 </body>
 

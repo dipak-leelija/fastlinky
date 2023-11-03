@@ -288,15 +288,16 @@ if(isset($_SESSION[ORDERID])) {
 
     <!-- Plugins Files -->
     <?php require_once ROOT_DIR.'/plugins/bootstrap-5.2.0/bootstrap-css-inc.php'?>
+
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 	
     <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
-    <link href="<?= URL ?>/css/payment-status.css" rel="stylesheet" type='text/css'>
+    <link href="<?= URL ?>/css/payment-status.css" rel="stylesheet" type='text/css' />
 
 </head>
 <body>
     <!-- Start  Header -->
-    <?php require_once ROOT_DIR."/partials/navbar.php"; ?>
+    <?php require_once ROOT_DIR."/components/navbar.php"; ?>
     <!-- End  Header -->
 
     <!-- Start  container -->
@@ -337,7 +338,7 @@ if(isset($_SESSION[ORDERID])) {
     <!-- End  MainWrap -->
 
     <!-- Start Foter -->
-    <?php require_once ROOT_DIR."/partials/footer.php"; ?>
+    <?php require_once ROOT_DIR."/components/footer.php"; ?>
     <!-- End Foter -->
 </body>
 

@@ -36,26 +36,18 @@ $blogsDtls	   = $blogMst->ShowBlogData();
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Listed Blogs - <?php echo COMPANY_FULL_NAME; ?></title>
 
-    <link rel="stylesheet" href="<?php echo URL; ?>/plugins/data-table/style.css">
-    <link rel="stylesheet" href="<?php echo ADM_URL; ?>/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="<?php echo URL; ?>/plugins/sweetalert/sweetalert2.css">
+    <link rel="stylesheet" href="<?= URL ?>/plugins/data-table/style.css" />
+    <link rel="stylesheet" href="<?= ADM_URL ?>vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="<?= URL ?>/plugins/sweetalert/sweetalert2.css" />
 
 </head>
 
 <body>
     <div class="container-scroller">
-        <?php require_once "partials/_navbar.php"; ?>
-
-        <!-- partial -->
+        <?php require_once "components/_navbar.php"; ?>
         <div class="container-fluid page-body-wrapper">
-            <?php require_once "partials/_settings-panel.php"; ?>
-
-
-            <!-- sidebar start -->
-            <?php require_once "partials/_sidebar.php"; ?>
-            <!-- sidebar end-->
-
-            <!-- partial -->
+            <?php require_once "components/_settings-panel.php"; ?>
+            <?php require_once "components/_sidebar.php"; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
@@ -89,20 +81,18 @@ $blogsDtls	   = $blogMst->ShowBlogData();
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-    <script src="<?php echo URL; ?>/plugins/jquery-3.6.0.min.js"></script>
-    <script src="<?php echo URL; ?>/plugins/data-table/simple-datatables.js"></script>
-    <script src="<?php echo URL; ?>/plugins/tinymce/tinymce.js"></script>
-    <script src="<?php echo URL; ?>/plugins/main.js"></script>
-    <script src="<?php echo URL; ?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
-
-
-    <script src="<?php echo ADM_URL; ?>/vendors/js/vendor.bundle.base.js"></script>
-    <script src="<?php echo ADM_URL; ?>/js/off-canvas.js"></script>
-    <script src="<?php echo ADM_URL; ?>/js/hoverable-collapse.js"></script>
-    <script src="<?php echo ADM_URL; ?>/js/template.js"></script>
-    <script src="<?php echo ADM_URL; ?>/js/settings.js"></script>
-    <script src="<?php echo ADM_URL; ?>/js/todolist.js"></script>
-    <script src="<?php echo ADM_URL; ?>/js/fastlinky-admin.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
+    <script src="<?= URL ?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+    <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
+    <script src="<?= ADM_URL ?>js/hoverable-collapse.js"></script>
+    <script src="<?= ADM_URL ?>js/template.js"></script>
+    <script src="<?= ADM_URL ?>js/settings.js"></script>
+    <script src="<?= ADM_URL ?>js/todolist.js"></script>
+    <script src="<?= ADM_URL ?>js/fastlinky-admin.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>

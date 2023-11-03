@@ -202,23 +202,6 @@ footer .btn {
     color: #fff;
 }
 
-/* .btn:hover,
-.btn:focus,
-.btn.active {
-    background: #4b92dc;
-    color: #fff;
-    -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    -ms-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    -o-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    -webkit-transition: all 250ms ease-in-out 0s;
-    -moz-transition: all 250ms ease-in-out 0s;
-    -ms-transition: all 250ms ease-in-out 0s;
-    -o-transition: all 250ms ease-in-out 0s;
-    transition: all 250ms ease-in-out 0s;
-
-} */
 
 footer .socialsymbols {
     display: inline-block;
@@ -380,16 +363,7 @@ footer .thumb-content ::before {
                         </ul>
                     </div>
                 </div>
-                <!-- <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="widget no-box">
-                        <h5 class="widget-title">Follow up<span></span></h5>
-                        <a href="#"> <i class=" socialsymbols fa fa-facebook"> </i> </a>
-                        <a href="#"> <i class="socialsymbols fa fa-twitter"> </i> </a>
-                        <a href="#"> <i class="socialsymbols fa fa-youtube"> </i> </a>
-                    </div>
-                </div> -->
-                <!-- <br>
-                <br> -->
+            
 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="widget no-box">
@@ -398,9 +372,6 @@ footer .thumb-content ::before {
                             <a href="<?php echo FB_LINK; ?>"> <i class=" socialsymbols fa fa-facebook"> </i> </a>
                             <a href="<?php echo TWITTER_LINK; ?>"> <i class="socialsymbols fa fa-twitter"> </i> </a>
                             <a href="#"> <i class="socialsymbols fa fa-youtube"> </i> </a>
-
-                            <!-- define("PINTEREST_LINK", 	"");
-	define("LINKDIN_LINK", 		""); -->
                         </div>
                         <p class="quotings-for-footer-p">Keep up to date with latest news and update about Fastlinky,
                             simply subscribe with your email

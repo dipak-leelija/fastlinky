@@ -117,36 +117,23 @@ if(isset($_POST['btnCancel'])){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Edit My Profile | <?php echo COMPANY_S; ?></title>
-    <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
-
+    <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png" />
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <!-- <link href="css/form.css" rel='stylesheet' type='text/css' /> -->
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="css/edit-profile.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/edit-profile.css" rel='stylesheet' type='text/css' />
     <!-- //Custom Theme files -->
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <!--//webfonts-->
-
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-
 </head>
 
 <body>
     <div id="home">
         <!-- header -->
-        <?php require_once "partials/navbar.php"; ?>
-        <?php //include 'header-user-profile.php'?>
-
+        <?php require_once "components/navbar.php"; ?>
         <!-- //header -->
-        <!-- banner -->
-
         <div class="edit_profile" style="overflow: hidden;">
             <div class="container-fluid">
                 <div class="row ">
@@ -689,11 +676,11 @@ if(isset($_POST['btnCancel'])){
             </div>
         </div>
         <!-- js-->
-        <script src="plugins/jquery-3.6.0.min.js"></script>
-        <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-        <script src="js/customerSwitchMode.js"></script>
-        <script src="js/ajax.js" type="text/javascript"></script>
-        <script src="js/script.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+        <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+        <script src="<?= URL ?>/js/customerSwitchMode.js"></script>
+        <script src="<?= URL ?>/js/ajax.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/js/script.js" type="text/javascript"></script>
 
         <script>
         window.onload = function() {
@@ -732,12 +719,8 @@ if(isset($_POST['btnCancel'])){
             });
         }
 
-
         // Add an event listener to the submit button
         // $('#passUpdate').on('click', changePassword);
-
-
-
         // =========================================================================
 
         document.addEventListener("DOMContentLoaded", () => {

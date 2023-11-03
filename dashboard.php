@@ -45,27 +45,21 @@ $mostSelling    = $BlogMst->mostSellingBlogs($cusId);
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/form.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/order-list.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/order-list.css" rel='stylesheet' type='text/css' />
 
-    <!-- //Custom Theme files -->
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <!--//webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="home">
         <!-- header -->
-        <?php require_once ROOT_DIR.'/partials/navbar.php'; ?>
+        <?php require_once ROOT_DIR.'/components/navbar.php'; ?>
         <!-- //header -->
         <!-- banner -->
         <div class="edit_profile" style="overflow: hidden;">
@@ -267,10 +261,9 @@ $mostSelling    = $BlogMst->mostSellingBlogs($cusId);
             </div>
         </div>
         <!-- js-->
-        <script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
-        <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
-        <!-- Switch Customer Type -->
-        <script src="<?php echo URL;?>/js/customerSwitchMode.js"></script>
+        <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+        <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
+        <script src="<?= URL ?>/js/customerSwitchMode.js"></script>
 
 </body>
 

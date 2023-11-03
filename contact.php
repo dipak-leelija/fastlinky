@@ -140,9 +140,8 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
-
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
+    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
 
     <title><?php echo COMPANY_S; ?> Global Support - Contact Us </title>
     <meta name="description"
@@ -151,22 +150,20 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
         content="contact for SEO, contact for web development, support for on page SEO, support for technical SEO, contact for guest post" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/contact-us.css" rel='stylesheet' type='text/css' />
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link href="css/custom.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/contact-us.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/custom.css" rel='stylesheet' type='text/css' />
 </head>
-
 <body>
     <div id="home">
         <!-- header -->
-        <?php require_once "partials/navbar.php"; ?>
+        <?php require_once "components/navbar.php"; ?>
         <!-- //header -->
-
         <section class="contact-us-section mb-5">
             <h1 class="text-center">Contact us </h1>
             <p class="contact-us-p text-center">Fill out the form below to get your Free Proposal.</p>
@@ -201,15 +198,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
                                     </div>
                                 </li>
                             </ul>
-                            <!-- <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg"
-                        id="svg2" viewBox="0 0 354 194" version="1.1">
-                        <g id="layer1" fill="#ff7f50b3" transform="translate(-318 -550.36)">
-                            <path id="path3757" stroke="#ff7f50b3" stroke-width="4" d="m320 742.36h350v-190z"/>
-                        </g>
-                    </svg> -->
-
                         </div>
-
                         <div class="col-lg-7 contact-form__wrapper pb-2  order-lg-1">
                             <?php
                           if ($errMsg != '') {
@@ -292,21 +281,18 @@ if(isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['emai
                             </form>
                         </div>
                         <!-- End Contact Form Wrapper -->
-
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- Footer -->
-        <?php require_once "partials/footer.php"; ?>
-
+        <?php require_once "components/footer.php"; ?>
         <!-- /Footer -->
     </div>
 
-    <script src="plugins/jquery-3.6.0.min.js"></script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.min.js"></script>
     <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {

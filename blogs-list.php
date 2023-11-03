@@ -63,23 +63,14 @@ $blogDtls	= $blogMst->ShowBlogApprData();
 
 
     <!-- plugins  files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?= URL ?>/plugins/data-table/style.css" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
-    <link rel="stylesheet" href="plugins/data-table/style.css">
 
-
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="css/blog-list.css" rel='stylesheet' type='text/css' />
-    <link href="../css/jquery-ui.css" rel="stylesheet">
-
-    <!--//webfonts-->
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet"
-        type="text/css">
-
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/blog-list.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/jquery-ui.css" rel="stylesheet" />
 
     <style>
     .list-group-item+.list-group-item {
@@ -109,7 +100,7 @@ $blogDtls	= $blogMst->ShowBlogApprData();
 <body>
     <div id="home">
         <!-- header -->
-        <?php require_once 'partials/navbar.php'; ?>
+        <?php require_once 'components/navbar.php'; ?>
         <!-- //header -->
         <!-- banner -->
         <div class="edit_profile">
@@ -227,25 +218,20 @@ $blogDtls	= $blogMst->ShowBlogApprData();
         </div>
         <!-- js-->
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-        <script src="plugins/jquery-3.6.0.min.js"></script>
-        <script src="js/jquery.min.js" type="text/javascript"></script>
-        <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-        <script src="plugins/sweetalert/sweetalert2.all.js"></script>
+        <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+        <script src="<?= URL ?>/js/jquery.min.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+        <script src="<?= URL ?>/plugins/sweetalert/sweetalert2.all.js"></script>
         <!-- js-->
-        <script src="js/jquery-ui.js"></script>
-        <script src="js/cart.js"></script>
-        <script src="js/ajax.js" type="text/javascript"></script>
-
-        <script src="js/wishlist.js" type="text/javascript"></script>
-        <script src="js/customerSwitchMode.js" type="text/javascript"></script>
-
-
+        <script src="<?= URL ?>/js/jquery-ui.js"></script>
+        <script src="<?= URL ?>/js/cart.js"></script>
+        <script src="<?= URL ?>/js/ajax.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/js/wishlist.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/js/customerSwitchMode.js" type="text/javascript"></script>
         <!-- DataTables -->
-        <script src="plugins/data-table/simple-datatables.js"></script>
-        <script src="plugins/tinymce/tinymce.js"></script>
-        <script src="plugins/main.js"></script>
-
-
+        <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+        <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+        <script src="<?= URL ?>/plugins/main.js"></script>
         <!--Start fetching DATA-->
         <script>
         $(document).ready(function() {
@@ -319,8 +305,6 @@ $blogDtls	= $blogMst->ShowBlogApprData();
 
         });
         </script>
-
-
 </body>
 
 </html>

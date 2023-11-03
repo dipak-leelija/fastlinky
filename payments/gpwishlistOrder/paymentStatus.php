@@ -157,22 +157,19 @@ $utility		= new Utility();
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Payment Success - Order Received</title>
-    <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png">
+    <link rel="icon" href="<?php echo FAVCON_PATH; ?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH; ?>" />
-
-    <link rel="stylesheet" href="../../plugins/bootstrap-5.2.0/css/bootstrap.css">
-    <link rel="stylesheet" href="../../plugins/fontawesome-6.1.1/css/all.css">
-
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/payment-status.css">
+    <link rel="stylesheet" href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" />
+    <link rel="stylesheet" href="<?= URL ?>/plugins/fontawesome-6.1.1/css/all.css" />
+    <link rel="stylesheet" href="<?= URL ?>/css/style.css" />
+    <link rel="stylesheet" href="<?= URL ?>/css/payment-status.css" />
 
 </head>
 
 
 <body>
     <!-- Start  Header -->
-    <?php require_once "../../partials/navbar.php"; ?>
+    <?php require_once "../../components/navbar.php"; ?>
     <!-- End  Header -->
 
     <!-- Start  container -->
@@ -222,7 +219,7 @@ $utility		= new Utility();
     <!-- End  MainWrap -->
 
     <!-- Start Foter -->
-    <?php require_once "../../partials/footer.php"; ?>
+    <?php require_once "../../components/footer.php"; ?>
     <!-- End Foter -->
 </body>
 

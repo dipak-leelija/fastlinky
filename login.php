@@ -1,15 +1,12 @@
 <?php
 require_once("includes/constant.inc.php");
 session_start();
-
 require_once("_config/dbconnect.php");
-
 require_once("classes/date.class.php");
 require_once("classes/error.class.php");
 require_once("classes/search.class.php");
 require_once("classes/customer.class.php");
 require_once("classes/login.class.php");
-
 //require_once("../classes/front_photo.class.php");
 require_once("classes/blog_mst.class.php");
 require_once("classes/utility.class.php");
@@ -50,8 +47,6 @@ if($cusDtl != NULL){
     }
 }
 
-
-
 $invUser    = '';
 $errorMsg   = '';
 if(isset($_GET['action'])){
@@ -91,19 +86,19 @@ if(isset($_POST['btnLogin'])){
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
+    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
 
     <title>Login with <?php echo COMPANY_S; ?></title>
-    <meta name="description" content="">
+    <meta name="description" content="" />
     <meta name="keywords" content="" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-    <link rel="stylesheet" href="css/login.css">
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/login.css" rel="stylesheet" type='text/css' />
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
     <style>
     body {
         padding-top: 4.9rem !important;
@@ -113,7 +108,7 @@ if(isset($_POST['btnLogin'])){
 
 <body id="page-top" class="" data-spy="scroll" data-target=".navbar-fixed-top">
     <!-- header -->
-    <?php require_once "partials/navbar.php"; ?>
+    <?php require_once "components/navbar.php"; ?>
     <!-- //header -->
     <div class=" d-flex align-items-center justify-content-center" style="height:100vh;">
         <div id="main-wrapper" class="container ">
@@ -123,9 +118,7 @@ if(isset($_POST['btnLogin'])){
                         <div class="card-body p-0">
                             <div class="row no-gutters">
                                 <div class="col-lg-6 d-none d-lg-inline-block m-auto text-center">
-
                                     <div class="account-block rounded-right">
-
                                         <img src="./images/login.webp" width="400px" height="400px">
                                     </div>
                                 </div>
@@ -144,8 +137,8 @@ if(isset($_POST['btnLogin'])){
                                         <h6 class="h5 mb-4">Welcome back!</h6>
 
                                         <form role="form" class="form-horizontal-login needs-validation"
-                                            action="<?= $_SERVER['PHP_SELF'] ?>" name="formContactform"
-                                            method="POST" enctype="multipart/form-data" autocomplete="off" novalidate>
+                                            action="<?= $_SERVER['PHP_SELF'] ?>" name="formContactform" method="POST"
+                                            enctype="multipart/form-data" autocomplete="off" novalidate>
                                             <div class="form-group">
                                                 <label for="txtUser" class="form-label mb-0">Email address</label>
                                                 <input type="email" placeholder="example@gmail.com" id="txtUser"
@@ -157,8 +150,8 @@ if(isset($_POST['btnLogin'])){
 
                                             <div class="form-group ">
                                                 <label for="txtPass" class="form-label mb-0">Password</label>
-                                                <input type="password" placeholder="********" minlength="6"
-                                                    id="txtPass" name="txtPass" class="form-control" required>
+                                                <input type="password" placeholder="********" minlength="6" id="txtPass"
+                                                    name="txtPass" class="form-control" required>
                                                 <div class="invalid-feedback">
                                                     Please enter your Password!
                                                 </div>
@@ -185,18 +178,7 @@ if(isset($_POST['btnLogin'])){
     </div>
 
     <!-- js-->
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-
-    <!-- ==== js for smooth scrollbar ==== -->
-    <!-- <script src="plugins/smooth-scrollbar.js"></script>
-    <script>
-    var Scrollbar = window.Scrollbar;
-    Scrollbar.init(document.querySelector('body'));
-    </script> -->
-    <!-- ==== js for smooth scrollbar End ==== -->
-    <!-- //Bootstrap Core JavaScript -->
-
-
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
     <script>
     (function() {
         'use strict'

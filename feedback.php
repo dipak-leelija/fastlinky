@@ -50,16 +50,16 @@ $return_url		= "";
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
-    <meta name="description" content="">
+    <meta name="description" content="" />
     <meta name="keywords" content="" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-    <link rel="stylesheet" href="css/login.css">
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
+    <link rel="<?= URL ?>/stylesheet" href="css/login.css">
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
 
     <style>
     .feedback-main-card {
@@ -147,7 +147,7 @@ $return_url		= "";
 <body>
     <div id="home">
         <!-- header -->
-        <?php require_once "partials/navbar.php"; ?>
+        <?php require_once "components/navbar.php"; ?>
         <!-- //header -->
 
         <div class="auto-popup-feedback">
@@ -248,8 +248,8 @@ $return_url		= "";
     </div>
 
     <!-- js-->
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-    <script src="plugins/smooth-scrollbar.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>/plugins/smooth-scrollbar.js"></script>
     <script type="text/javascript">
     window.addEventListener("load", function() {
         setTimeout(

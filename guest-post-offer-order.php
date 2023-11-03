@@ -70,31 +70,16 @@ query_posts('showposts=3');
 
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
-
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
-
-
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/guest-post-offer.css" rel='stylesheet' type='text/css' />
 </head>
 
 <body data-scrollbar>
-    <?php require_once "partials/navbar.php"; ?>
-
-
-
-
-
-
+    <?php require_once "components/navbar.php"; ?>
 
     <div class="container text-center">
         <div class="row">
@@ -102,13 +87,8 @@ query_posts('showposts=3');
             <div id="msg">
                 <?php //$uMesg->dispMessage($typeM, 'images/icon/', 'blackLarge');?>
             </div>
-
-
-
             <div class="price-table">
                 <div class="container">
-
-
                     <div class="price-table-box">
                         <div class="row mb-3">
                             <?php
@@ -152,10 +132,8 @@ query_posts('showposts=3');
         <?php include('seller-action.php') ?>
     </div>
 
-
-
     <!-- Footer -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
 
     <script>
     let price = document.getElementById('item_price').innerText
@@ -208,11 +186,8 @@ query_posts('showposts=3');
     }
     initPayPalButton();
     </script>
-
-
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>

@@ -1,16 +1,13 @@
 <?php
 require_once "includes/constant.inc.php";
 session_start();
-
 require_once "_config/dbconnect.php";
-
 require_once "classes/date.class.php";
 require_once "classes/error.class.php";
 require_once "classes/search.class.php";
 require_once "classes/customer.class.php";
 require_once "classes/login.class.php";
 require_once "classes/services.class.php";
-
 require_once "classes/utility.class.php";
 require_once "classes/utilityMesg.class.php";
 require_once "classes/utilityImage.class.php";
@@ -35,28 +32,23 @@ $cusId		= $utility->returnSess('userid', 0);
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
-
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
+    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
 
     <title>About <?php echo COMPANY_S; ?></title>
-    <meta name="description" content="">
+    <meta name="description" content="" />
     <meta name="keywords" content="" />
-
-
     <!-- plugins  files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/about-us.css" rel='stylesheet' type='text/css' />
-
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/about-us.css" rel='stylesheet' type='text/css' />
 </head>
 
-
 <body>
-    <?php require_once "partials/navbar.php"; ?>
+    <?php require_once "components/navbar.php"; ?>
     <!-- Know More About Us section starts -->
     <section class="about-banner_section" id="about">
         <div class="container">
@@ -65,7 +57,6 @@ $cusId		= $utility->returnSess('userid', 0);
                 <div class="col-lg-6">
                     <div class="about-avatar">
                         <img class="about-banner-img" src="./images/about-us-banner.png" title="" alt="">
-
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -85,22 +76,17 @@ $cusId		= $utility->returnSess('userid', 0);
                             We pride ourselves on our transparency and customer service. We are confident that our
                             link-building services can make a real difference for your business.
                         </p>
-
                     </div>
                 </div>
-
             </div>
             <!-- ..................................... -->
             <!-- Know More About Us section ends -->
             <!-- ............................................. -->
-            <!-- row-2 -->
             <!-- our mission starts -->
             <div class="row align-items-center ">
-
                 <div class="col-lg-6">
                     <div class="about-text">
                         <h3 class="dark-color">Our Mission</h3>
-
                         <p>At Faslinky our mission is to help you attract targeted visitors to your website. Whether you
                             are just starting now or an experienced firm that wishes to take its firm to the next level.
                             We are committed to assisting our clients in using backlinks strategically to improve their
@@ -118,13 +104,11 @@ $cusId		= $utility->returnSess('userid', 0);
                             pleased with the backlink services we are dedicated to assisting our clients in achieving
                             their maximum potential.
                         </p>
-
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="about-avatar">
                         <img class="about-banner-img" src="./images/growing-time.png" title="" alt="">
-
                     </div>
                 </div>
             </div>
@@ -132,7 +116,6 @@ $cusId		= $utility->returnSess('userid', 0);
             <!-- our mission starts -->
             <!-- ....................................................... -->
             <!-- counter section starts -->
-
             <div class="counter-section mt-5">
                 <div class="row">
                     <div class="col-6 col-lg-3">
@@ -174,7 +157,6 @@ $cusId		= $utility->returnSess('userid', 0);
             <div class="text-center mb-2-9 mb-lg-6">
                 <h2 class="display-18 display-md-16 display-lg-14 font-weight-700">Why choose Us </h2>
                 <p class="fs-4 " style="font-family: sans-serif;">The trusted source for why choose us</p>
-
             </div>
             <div class="row align-items-center">
                 <div class="col-sm-6 col-lg-4 mb-2-9 mb-sm-0">
@@ -219,7 +201,6 @@ $cusId		= $utility->returnSess('userid', 0);
                                 greatest backlinks for your company and make sure they are of the highest caliber using
                                 our knowledge.</p>
                         </div>
-
                         <div class="text-center text-sm-left">
                             <div class="mb-4">
                                 <img src="./images/exellences.png" width="80px" height="80px" alt="..."
@@ -237,71 +218,10 @@ $cusId		= $utility->returnSess('userid', 0);
     </section>
     <!-- ............................................. -->
     <!-- why choose us section ends -->
-    <!-- ............................................................. -->
-    <!-- Our Workshop History section starts -->
-    <!-- .......................................................... -->
-    <!-- <section class="our-Workshop-History-section">
-        <div class="container">
-            <div class="">
-                <h2 class="our-Workshop-History-section-h2">Our Workshop History</h2>
-                <div class="heading-separator"></div>
-            </div>
-            <div class="row">
-                <div class="history-wrapper">
-                    <div class="title-wrap text-center one-of-two">
-                        <h2 class="h1 text-secondary mb-0 text-uppercase">fastlinky.com</h2>
-                        <p class="fs-3 font-weight-500">Lorem ipsum dolor </p>
-                    </div>
-                    <div class="timeline-box one-of-two">
-                        <img class="mb-1-6 rounded" src="./images/random1.jpg" width="280px" height="280px" alt="...">
-                        <div class="content">
-                            <h3 class="h4 mb-2 mb-md-3">Lorem ipsum dolor sit amet consectetur</h3>
-                            <p class="mb-0">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-                                molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-                                et iusto odio dignissim qui blandit praesent luptatum</p>
-                        </div>
-                        <div class="yearly-div">2015</div>
-                    </div>
-                    <div class="timeline-box one-of-two">
-                        <img class="mb-1-6 rounded" src="./images/random4.jpg" width="280px" height="280px" alt="...">
-                        <div class="content">
-                            <h3 class="h4 mb-2 mb-md-3">Lorem ipsum dolor sit amet consectetur</h3>
-                            <p class="mb-0">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-                                molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-                                et iusto odio dignissim qui blandit praesent luptatum</p>
-                        </div>
-                        <div class="yearly-div">2017</div>
-                    </div>
-                    <div class="timeline-box one-of-two">
-                        <img class="mb-1-6 rounded" src="./images/random2.png" width="280px" height="280px" alt="...">
-                        <div class="content">
-                            <h3 class="h4 mb-2 mb-md-3">Lorem ipsum dolor sit amet consectetur</h3>
-                            <p class="mb-0">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-                                molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-                                et iusto odio dignissim qui blandit praesent luptatum</p>
-                        </div>
-                        <div class="yearly-div">2019</div>
-                    </div>
-                    <div class="timeline-box one-of-two">
-                        <img class="mb-1-6 rounded" src="./images/random3.png" width="280px" height="280px" alt="...">
-                        <div class="content">
-                            <h3 class="h4 mb-2 mb-md-3">Lorem ipsum dolor sit amet consectetur</h3>
-                            <p class="mb-0">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-                                molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-                                et iusto odio dignissim qui blandit praesent luptatum</p>
-                        </div>
-                        <div class="yearly-div">2022</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- ..................................................... -->
-    <!-- Our Workshop History section ends -->
     <!-- ..................................................... -->
     <!-- Our features section starts -->
     <!-- ..................................................... -->
-    <section class="  mb-5">
+    <section class="mb-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
@@ -311,10 +231,7 @@ $cusId		= $utility->returnSess('userid', 0);
                             elit. Iste, inventore recusandae? Ad possimus, repellat delectus tempore minus.</p>
                     </div>
                 </div>
-                <!--end col-->
             </div>
-            <!--end row-->
-
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
                     <div class="card service-wrapper rounded border-0 shadow p-4">
@@ -348,9 +265,6 @@ $cusId		= $utility->returnSess('userid', 0);
                         </div>
                     </div>
                 </div>
-                <!--end col-->
-
-
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
                     <div class="card service-wrapper rounded border-0 shadow p-4">
                         <div class="icon text-center text-custom h1 shadow rounded bg-white">
@@ -388,7 +302,6 @@ $cusId		= $utility->returnSess('userid', 0);
                     </div>
                 </div>
                 <!--end col-->
-
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
                     <div class="card service-wrapper rounded border-0 shadow p-4">
                         <div class="icon text-center text-custom h1 shadow rounded bg-white">
@@ -432,7 +345,6 @@ $cusId		= $utility->returnSess('userid', 0);
                     </div>
                 </div>
                 <!--end col-->
-
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
                     <div class="card service-wrapper rounded border-0 shadow p-4">
                         <div class="icon text-center text-custom h1 shadow rounded bg-white">
@@ -471,7 +383,6 @@ $cusId		= $utility->returnSess('userid', 0);
                     </div>
                 </div>
                 <!--end col-->
-
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
                     <div class="card service-wrapper rounded border-0 shadow p-4">
                         <div class="icon text-center text-custom h1 shadow rounded bg-white">
@@ -516,7 +427,6 @@ $cusId		= $utility->returnSess('userid', 0);
                     </div>
                 </div>
                 <!--end col-->
-
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
                     <div class="card service-wrapper rounded border-0 shadow p-4">
                         <div class="icon text-center text-custom h1 shadow rounded bg-white">
@@ -558,11 +468,9 @@ $cusId		= $utility->returnSess('userid', 0);
             </div>
             <!--end row-->
         </div>
-
     </section>
-
-    <!-- ...................................................... -->
-    <!-- Our features section starts -->
+    <!-- ..................................................... -->
+    <!-- Our features section ends -->
     <!-- ..................................................... -->
     <!-- get started wrok with us  starts -->
     <!-- ............................. -->
@@ -571,35 +479,19 @@ $cusId		= $utility->returnSess('userid', 0);
         <div class="my-a-btn-div">
             <a class="my-a-btn" href="register.php">Register Now</a>
         </div>
-
     </section>
-
     <!-- ..................................................... -->
     <!-- get started wrok with us ends -->
     <!-- ............................. -->
     <!-- --------------------------------------- -->
     <!-- feedback form -->
-    <?php //require_once "partials/feedback.php"; ?>
+    <?php //require_once "components/feedback.php"; ?>
     <!-- feedback form -->
     <!-- ----------------------------------------------- -->
     <!-- Footer -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
     <!-- footer -->
     <!-- -------------------------------------- -->
-
-    <!-- </div> -->
-
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-
-    <!-- ==== js for smooth scrollbar ==== -->
-    <!-- <script src="plugins/smooth-scrollbar.js"></script> -->
-    <!-- <script>
-    var Scrollbar = window.Scrollbar;
-    Scrollbar.init(document.querySelector('body'));
-    </script> -->
-    <!-- ==== js for smooth scrollbar End ==== -->
-
-
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
-
 </html>

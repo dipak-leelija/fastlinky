@@ -56,23 +56,17 @@ session_destroy();
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/verification-email-sent.css">
-
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">    
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/verification-email-sent.css" rel="stylesheet" />
 </head>
 <body class="pt-0">
     <div id="home">
         <!-- header -->
-        <?php require_once 'partials/navbar.php'; ?>
+        <?php require_once 'components/navbar.php'; ?>
         <!-- //header -->
         <section class="verify-section">
             <div id="main-wrapper" class="">
@@ -91,7 +85,6 @@ session_destroy();
                                     If you have not received the verification email, please check your "Spam" or "Bulk
                                     Email" folder.You can also Contact to <a class="" style="color: coral;"
                                         href="contact.php"><?php echo COMPANY_FULL_NAME?></a>
-
                                 </p>
                             </div>
                         </div>
@@ -101,10 +94,8 @@ session_destroy();
         </section>
     </div>
     <!-- js-->
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
-    <script src="plugins/jquery-3.6.0.min.js"></script>
-
-
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>

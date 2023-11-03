@@ -10,33 +10,26 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
 <!DOCTYPE HTML>
 <html lang="zxx">
-
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
+    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
 
     <title> White Label Link Building Service for SEO agencies and Resellers - <?php echo COMPANY_S; ?></title>
-    <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
-    <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <meta name="description"
         content="With Fastlinky’s high-dominance White Label Link Building Service for SEO agencies & Resellers you will get outstanding backlinks. It will help you get the desired search engine rankings. " />
     <meta name="keywords"
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
-
-
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/white-label-link-building.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/testimonials.css">
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/white-label-link-building.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/testimonials.css" rel="stylesheet" type='text/css' />
 </head>
 
 <body>
-    <?php require_once "partials/navbar.php"; ?>
-    <!--___________________________________________________________________________________________________ -->
-    <!-- starting of white lebel links building main banner    -->
+    <?php require_once "components/navbar.php"; ?>
     <section class="white_lebel_link_banner">
         <div class="row">
             <div class="d-flex flex-column justify-content-center col-md-6 order-2 order-md-1  px-0 px-md-4">
@@ -62,7 +55,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- end of white lebel links building main banner -->
-    <!-- --------------------------------------------------------------------------------------------- -->
+    <!-- ---------------------------------------------------------------------- -->
     <!-- paragraph_texts section start -->
     <section class="paragraph_texts">
         <div class="row">
@@ -91,24 +84,20 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         </a>
                     </div>
                 </div>
-
             </div>
-
-
         </div>
     </section>
-
     <!-- paragraph_texts section end -->
-    <!-- _______________________________________________________________________________________________ -->
-    <!-- ______________________________________________________________________________________________ -->
+    <!--------------------------------------------------->
     <!-- A Reliable Method For Creating Links-section start -->
     <section class="trustwhite-section">
-        <div class="row  ">
+        <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div>
                     <h1 class="trustworthy-white-lebel-text-h1">A Reliable Method For Creating Links <span> For You And
                             Your
-                            Clients</span> </h1>
+                            Clients</span>
+                    </h1>
                 </div>
                 <div>
                     <div class="py-4">
@@ -177,13 +166,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- A Reliable Method For Creating Links-section end -->
-
-    <!-- ______________________________________________________________________________________________________ -->
-
+    <!-- -------------------------------------------------------- -->
     <!--  Why Choose Fastlinky To White Label Backlinks starts -->
     <section class="works-for-you-bo-section py-0">
         <div class="">
-
             <div>
                 <h2 class=" text-center mt-4 my-3 works-bo-h2">Why Choose Fastlinky To White Label Backlinks <span>
                         For Your Agency?</span></h2>
@@ -293,12 +279,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- Why Choose Fastlinky To White Label Backlinks ends -->
-    <!-- ____________________________________________________________________________________________________ -->
-
-    <!-- _______________________________________________________________________________________________ -->
-
+    <!-- ------------------------------------------------------ -->
     <!--  How Does It Work?-section start -->
-
     <section class="trustwhite-section">
         <h1 class="work-procedure-white-lebel-text-h1 wp-building2">How Does It Work? </h1>
         <div class="row">
@@ -362,19 +344,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </a>
             </div>
         </div>
-
     </section>
     <!-- How Does It Work?-section end -->
-    <!-- ______________________________________________________________________________________________________ -->
-    <!-- ___________________________________________________________________________________________ -->
+    <!-- ----------------------------------------------->
     <!-- testimonials customers reviews -->
-    <?php require_once "partials/testimonials.php"; ?>
+    <?php require_once "components/testimonials.php"; ?>
     <!-- testimonials customers reviews -->
-    <!-- _________________________________________________________________________________________ -->
-    <!-- _______________________________________________________________________________________________ -->
-
+    <!-- -------------------------------------------------------------------->
     <!-- How Can We Guard Your Clients?-section start -->
-
     <section class="trustwhite-section mb-0">
         <h1 class="work-procedure-white-lebel-text-h1">How Can We Guard Your Clients?</span> </h1>
         <div class="row">
@@ -491,13 +468,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </a>
             </div>
         </div>
-
     </section>
     <!-- How Can We Guard Your Clients?-section end -->
-
     <!-- ------------------------------------------------ -->
     <!-- pricing section -->
-    <!-- ------------------------------------------- -->
 
     <section class="mt-5">
         <h1 class="text-center pricing-bo-h1 mb-3 mt-5">White Label Link Building Pricing
@@ -505,15 +479,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
             DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
-        <?php require_once "partials/pricing-cards.php"; ?>
+        <?php require_once "components/pricing-cards.php"; ?>
     </section>
 
     <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
-    <?php require_once "partials/blogs-sites.php"; ?>
+    <?php require_once "components/blogs-sites.php"; ?>
     <!-- ------------------------------------------- -->
     <!-- What We Can Deliver?-section start -->
-
     <section class="trustwhite-section my-1">
         <h1 class="work-procedure-white-lebel-text-h1 mb-4">What We Can Deliver?</h1>
         <div class="row">
@@ -575,11 +548,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </a>
             </div>
         </div>
-
     </section>
     <!-- What We Can Deliver?-section end -->
-    <!-- ______________________________________________________________________________________________________ -->
-    <!-- ______________________________________________________________________________________________ -->
+    <!-- ---------------------------------------- -->
     <!-- Benefits Of White Hat Link Building Service-section start -->
     <section class="trustwhite-section">
         <div class="row">
@@ -667,9 +638,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- Benefits Of White Hat Link Building Service-section end -->
-    <!-- _______________________________________________________________________________________________ -->
-    <!-- ______________________________________________________________________________________________________ -->
-
+    <!-- ------------------------------------------------------------------->
     <!--  Why Fast Linky Can Give You That Top Level? starts -->
     <section class="works-for-you-bo-section py-3" style="background-color: #f9fafc;">
         <div class="custom-cntainr">
@@ -779,9 +748,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- Why Fast Linky Can Give You That Top Level? ends -->
-    <!-- ____________________________________________________________________________________________________ -->
-    <!-- _______________________________________________________________________________________________ -->
-
+    <!-- ----------------------------------------------- -->
     <!-- Why Are We Unique In This Category?-section start -->
 
     <section class="trustwhite-section">
@@ -849,8 +816,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
     </section>
     <!-- Why Are We Unique In This Category?-section end -->
-    <!-- ______________________________________________________________________________________________________ -->
-    <!-- ______________________________________________________________________________________________ -->
+    <!-- --------------------------------------------------->
     <!-- Things To Consider Before Selecting-section start -->
     <section class="trustwhite-section my-2">
         <div class="row">
@@ -934,41 +900,28 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </a>
             </div>
         </div>
-    </section>
-    <!-- Things To Consider Before Selecting-section end -->
-    <!-- _______________________________________________________________________________________________ -->
-    <!-- ______________________________________________________________________________________________________ -->
+    </section> 
     <!-- features-section start -->
-    <?php require_once "partials/features-section.php"; ?>
+    <?php require_once "components/features-section.php"; ?>
     <!-- features-section ends -->
-    <!-- __________________________________________________________________________________________ -->
-    <!-- ================================================================================================= -->
+    <!-- --------------------------------------->
     <!-- Frequently Asked Questions starts -->
-    <!-- ================================================================================================ -->
-    <!-- new faq for indexpage -->
-
-    <?php require_once "partials/faqs-new.php"; ?>
-
-    <!-- ================================================================================================= -->
+    <?php require_once "components/faqs-new.php"; ?>
     <!-- Frequently Asked Questions ends -->
-    <!-- ================================================================================================ -->
-
+    <!-- -------------------------------------------- -->
     <div class="mt-4">
-        <?php include('partials/seller-action.php') ?>
+        <?php include('components/seller-action.php') ?>
     </div>
-
     <!-- --------------------------------------- -->
     <!-- feedback form -->
-    <?php require_once "partials/feedback.php"; ?>
+    <?php require_once "components/feedback.php"; ?>
     <!-- feedback form -->
     <!-- ----------------------------------------------- -->
     <!-- Footer -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
     <!-- footer -->
-    <!-- -------------------------------------- -->
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>

@@ -281,20 +281,22 @@ function welcomeMailToUser($fistName, $verifyLink){
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="x-apple-disable-message-reformatting">
-    <title></title>
-    <link rel="stylesheet" href="css/client-welcome-emails.css">
-    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
+ <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="x-apple-disable-message-reformatting">
+<title></title>
+<link href="<?= URL ?>/css/client-welcome-emails.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet" type="text/css" />
+<link href="<?= URL ?>/plugins/fontawesome-6.1.1/css/all.css" rel="stylesheet" />
+<link href="<?= URL ?>/fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet" />
+<link href="<?= URL ?>/fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet" />
+<link href="<?= URL ?>/fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet" />
 
-    <style>';
-    $body .= headerCss();
-    $body .= '</style>
+<style>
+';
+$body .=headerCss();
+$body .='
+</style>
 
 </head>
 
@@ -319,8 +321,7 @@ function welcomeMailToUser($fistName, $verifyLink){
                             <td class="p-0">
                                 <a href="#" style="text-decoration:none;">
                                     <div style="background: #f3b165;" class="">
-                                        <img class="ts-td3-image" src="images/verify-welcome.png"
-                                            width="480" alt="">
+                                        <img class="ts-td3-image" src="images/verify-welcome.png" width="480" alt="">
                                     </div>
 
                                 </a>
@@ -330,14 +331,18 @@ function welcomeMailToUser($fistName, $verifyLink){
                             <td class="ts-td2-text-div">
                                 <p class="ts-td2-text-div-p" style="margin:0;">
                                     <span style="font-family: Cabin, sans-serif;">
-                                    We have received your registration on our site and we are excited to have you join our community. In order to ensure the security of your account and to keep our site safe for all users, we kindly request that you verify your account.
+                                        We have received your registration on our site and we are excited to have you
+                                        join our community. In order to ensure the security of your account and to keep
+                                        our site safe for all users, we kindly request that you verify your account.
                                     </span>
 
 
                                 </p>
-                                <p class="ts-td2-text-div-p" style="text-align: left;"><strong>Click on the verify button bellow or copy the link to another tab to verify your account:</strong></p>
+                                <p class="ts-td2-text-div-p" style="text-align: left;"><strong>Click on the verify
+                                        button bellow or copy the link to another tab to verify your account:</strong>
+                                </p>
                                 <p class="ts-td2-text-div-p" style="color: #3a47f8;margin: 2px;text-align: center;">
-                                '.$verifyLink.'
+                                    '.$verifyLink.'
                                 </p>
 
                             </td>
@@ -351,21 +356,24 @@ function welcomeMailToUser($fistName, $verifyLink){
                                 </div>
                                 <p class="ts-td2-text-div-p">
                                     <span style="font-family: Cabin, sans-serif;">
-                                    Once you have verified your account, you will be able to access all of the features and benefits of being a member of our community.
+                                        Once you have verified your account, you will be able to access all of the
+                                        features and benefits of being a member of our community.
                                     </span>
                                 </p>
                                 <p class="ts-td2-text-div-p">
                                     <span style="font-family: Cabin, sans-serif;">
-                                    Thank you for your time and we look forward to having you as a part of our community.
+                                        Thank you for your time and we look forward to having you as a part of our
+                                        community.
                                     </span>
                                 </p>
                             </td>
                         </tr>';
 
-                        // ====================  FOOTER STARTS ==================== -->
-                        $body .= mailFooter();   
+                        // ==================== FOOTER STARTS ==================== -->
+                        $body .= mailFooter();
                         // ==================== FOOTER ENDS ==================== -->
-            $body .='</table>
+                        $body .='
+                    </table>
                 </td>
             </tr>
         </table>
@@ -373,257 +381,266 @@ function welcomeMailToUser($fistName, $verifyLink){
 </body>
 
 </html>
-    ';
-    return $body;
+';
+return $body;
 }
 
 
 echo VerifiedMailtoUser();
 
 function VerifiedMailtoUser(){
-    $body = '
-            <!DOCTYPE html>
-            <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
-            
-            <head>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width,initial-scale=1">
-                <meta name="x-apple-disable-message-reformatting">
-                <title></title>
-                <link rel="stylesheet" href="plugins/fontawesome-6.1.1/css/all.css">
-                <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-                <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-                <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
+$body = '
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
-                <style>';
-        $body .= commonCss();
-        $body .= '
-        /* =================== */
-        
-        .ts-td2-text-div {
-            padding-bottom: 0px !important;
-            padding: 30px;
-        }
-        
-        .ts-td2-text-div-p {
-            margin: 0;
-        }
-        /* ============== */
-        
-        .ts-td2-text-div-h1 {
-            margin-top: 0;
-            margin-bottom: 16px;
-            font-size: 26px;
-            line-height: 32px;
-            font-weight: bold;
-            letter-spacing: -0.02em;
-            font-family: "Satoshi-Variable";
-        }
-        
-        .ts-td3-img-div {
-            font-size: 24px;
-            line-height: 28px;
-        }
-        
-        .ts-td3-image {
-            background-color: aliceblue;
-            width: 100%;
-            height: auto;
-            display: block;
-            border: none;
-            text-decoration: none;
-            color: #363636;
-        }
-        
-        .ts-td4-img-section {
-            padding: 35px 30px 11px 30px;
-            font-size: 0;
-            border-bottom: 1px solid #f0f0f5;
-            border-color: rgba(201, 201, 207, .35);
-        }
-        
-        .col-sml {
-            display: inline-block;
-            width: 100%;
-            max-width: 145px;
-            vertical-align: top;
-            text-align: left;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            color: #363636;
-        }
-        
-        .col-sml-img {
-            width: 115px;
-            max-width: 80%;
-            margin-bottom: 20px;
-        }
-        
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="x-apple-disable-message-reformatting">
+    <title></title>
+    <link href="<?= URL ?>/plugins/fontawesome-6.1.1/css/all.css" rel="stylesheet" />
+    <link href="<?= URL ?>/fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i"
+        rel="stylesheet" />
+    <link href="<?= URL ?>/fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet" />
+    <link href="<?= URL ?>/fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet" />
+
+    <style>
+    ';
+$body .=commonCss();
+    $body .='
+
+    /* =================== */
+
+    .ts-td2-text-div {
+        padding-bottom: 0px !important;
+        padding: 30px;
+    }
+
+    .ts-td2-text-div-p {
+        margin: 0;
+    }
+
+    /* ============== */
+
+    .ts-td2-text-div-h1 {
+        margin-top: 0;
+        margin-bottom: 16px;
+        font-size: 26px;
+        line-height: 32px;
+        font-weight: bold;
+        letter-spacing: -0.02em;
+        font-family: "Satoshi-Variable";
+    }
+
+    .ts-td3-img-div {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .ts-td3-image {
+        background-color: aliceblue;
+        width: 100%;
+        height: auto;
+        display: block;
+        border: none;
+        text-decoration: none;
+        color: #363636;
+    }
+
+    .ts-td4-img-section {
+        padding: 35px 30px 11px 30px;
+        font-size: 0;
+        border-bottom: 1px solid #f0f0f5;
+        border-color: rgba(201, 201, 207, .35);
+    }
+
+    .col-sml {
+        display: inline-block;
+        width: 100%;
+        max-width: 145px;
+        vertical-align: top;
+        text-align: left;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: #363636;
+    }
+
+    .col-sml-img {
+        width: 115px;
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .col-lge {
+        display: inline-block;
+        width: 100%;
+        max-width: 395px;
+        vertical-align: top;
+        padding-bottom: 20px;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+        color: #363636;
+    }
+
+    .col-lge-p1 {
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+
+    .col-lge-p2 {
+        margin-top: 0;
+        margin-bottom: 18px;
+    }
+
+    .col-lge-p3 {
+        margin: 0;
+        text-align: center;
+    }
+
+    .col-lge-p3-atag {
+        background: #ff3884;
+        text-decoration: none;
+        padding: 10px 25px;
+        color: #ffffff;
+        border-radius: 4px;
+        display: inline-block;
+        mso-padding-alt: 0;
+        text-underline-color: #ff3884;
+    }
+
+    .col-lge-p3-span {
+        mso-text-raise: 10pt;
+        font-weight: bold;
+    }
+
+    .ts-td6-text-div {
+        padding: 30px;
+        background-color: aliceblue;
+    }
+
+    table,
+    td,
+    div,
+    h1,
+    p {
+        font-family: Arial, sans-serif;
+    }
+
+    @media screen and (max-width: 530px) {
         .col-lge {
-            display: inline-block;
-            width: 100%;
-            max-width: 395px;
-            vertical-align: top;
-            padding-bottom: 20px;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            line-height: 22px;
-            color: #363636;
+            max-width: 100% !important;
+            text-align: center;
         }
-        
-        .col-lge-p1 {
-            margin-top: 0;
-            margin-bottom: 12px;
+
+        .ts-td2-text-div-h1 {
+            text-align: center;
         }
-        
-        .col-lge-p2 {
-            margin-top: 0;
-            margin-bottom: 18px;
-        }
-        
-        .col-lge-p3 {
+
+        .ts-td2-text-div-p {
             margin: 0;
             text-align: center;
         }
-        
-        .col-lge-p3-atag {
-            background: #ff3884;
-            text-decoration: none;
-            padding: 10px 25px;
-            color: #ffffff;
-            border-radius: 4px;
-            display: inline-block;
-            mso-padding-alt: 0;
-            text-underline-color: #ff3884;
+
+        .col-sml {
+            max-width: 100%;
+            text-align: center;
         }
-        
-        .col-lge-p3-span {
-            mso-text-raise: 10pt;
-            font-weight: bold;
-        }
-        
-        .ts-td6-text-div {
-            padding: 30px;
-            background-color: aliceblue;
-        }
-        
-        table,
-        td,
-        div,
-        h1,
-        p {
-            font-family: Arial, sans-serif;
-        }
-        
-        @media screen and (max-width: 530px) {
-            .col-lge {
-                max-width: 100% !important;
-                text-align: center;
-            }
-            .ts-td2-text-div-h1 {
-                text-align: center;
-            }
-            .ts-td2-text-div-p {
-                margin: 0;
-                text-align: center;
-            }
-            .col-sml {
-                max-width: 100%;
-                text-align: center;
-            }
-        }
-        
-        @media screen and (min-width: 531px) {
-            .col-sml {
-                max-width: 27% !important;
-            }
-            .col-lge {
-                max-width: 73% !important;
-            }
+    }
+
+    @media screen and (min-width: 531px) {
+        .col-sml {
+            max-width: 27% !important;
         }
 
-        </style>
+        .col-lge {
+            max-width: 73% !important;
+        }
+    }
+    </style>
 
-            
-            </head>
-            
-            <body>
-                <div role="article" aria-roledescription="email" lang="en" class="maindivofpage">
-                    <table role="presentation" class="table-first">
+
+</head>
+
+<body>
+    <div role="article" aria-roledescription="email" lang="en" class="maindivofpage">
+        <table role="presentation" class="table-first">
+            <tr>
+                <td align="center" class="p-0">
+                    <table role="presentation" class="table-second">
+                        <!-- **************************  LOGO IMAGE SECTION ************************ -->
                         <tr>
-                            <td align="center" class="p-0">
-                                <table role="presentation" class="table-second">
-                                    <!-- **************************  LOGO IMAGE SECTION ************************ -->
-                                    <tr>
-                                        <!--|| ts=table-second ||  -->
-                                        <td class="ts-td1-img-div">
-                                            <a href="#" style="text-decoration:none;">
-                                                <img class="ts-td-image" src="'.LOGO_WITH_PATH.'" width="300" alt="Logo">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <!-- **************************  LOGO IMAGE SECTION ENDS ************************ -->
-                                    <tr>
-                                        <td class="ts-td3-img-div fw-bold p-0">
-                                            <a href="#" style="text-decoration:none;">
-                                                <img class="ts-td3-image" src="images/emails-img1.png" width="600" alt="">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="ts-td2-text-div">
-                                            <h1 class="ts-td2-text-div-h1">
-                                                Congratulations! Your Account is Verified</h1>
-                                            <p class="ts-td2-text-div-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                                                tempus
-                                                adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor,
-                                                nisi
-                                                libero ultricies ipsum, in posuere mauris neque at erat.
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="ts-td4-img-section">
-                                            <div class="col-sml">
-                                                <img class="col-sml-img" src="images/email-verify.png" width="115" alt="">
-                                            </div>
-                                            <div class="col-lge">
-                                                <p class="col-lge-p1">Nullam mollis sapien vel cursus
-                                                    fermentum. Integer porttitor augue id ligula facilisis pharetra. In eu ex et
-                                                    elit ultricies ornare nec ac ex. Mauris sapien massa, placerat non venenatis et,
-                                                    tincidunt eget leo.</p>
-                                                <p class="col-lge-p2" style="">Nam non ante risus. Vestibulum vitae
-                                                    eleifend nisl, quis vehicula justo. Integer viverra efficitur pharetra. Nullam
-                                                    eget erat nibh.</p>
-                                                <p class="col-lge-p3">
-                                                    <a href="#" class="col-lge-p3-atag">
-                                                        <span class="col-lge-p3-span">Claim yours now</span>
-                                                    </a>
-                                                </p>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="ts-td6-text-div">
-                                            <p style="margin:0;">Duis sit amet accumsan nibh, varius tincidunt lectus. Quisque
-                                                commodo, nulla ac feugiat cursus, arcu orci condimentum tellus, vel placerat libero
-                                                sapien et libero. Suspendisse auctor vel orci nec finibus.</p>
-                                        </td>
-                                    </tr>';
-
-                                    // ====================  FOOTER STARTS ==================== -->
-                                    $body .= mailFooter();   
-                                    // ==================== FOOTER ENDS ==================== -->
-
-                        $body .= '</table>
+                            <!--|| ts=table-second ||  -->
+                            <td class="ts-td1-img-div">
+                                <a href="#" style="text-decoration:none;">
+                                    <img class="ts-td-image" src="'.LOGO_WITH_PATH.'" width="300" alt="Logo">
+                                </a>
                             </td>
                         </tr>
+                        <!-- **************************  LOGO IMAGE SECTION ENDS ************************ -->
+                        <tr>
+                            <td class="ts-td3-img-div fw-bold p-0">
+                                <a href="#" style="text-decoration:none;">
+                                    <img class="ts-td3-image" src="images/emails-img1.png" width="600" alt="">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ts-td2-text-div">
+                                <h1 class="ts-td2-text-div-h1">
+                                    Congratulations! Your Account is Verified</h1>
+                                <p class="ts-td2-text-div-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                                    tempus
+                                    adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor,
+                                    nisi
+                                    libero ultricies ipsum, in posuere mauris neque at erat.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ts-td4-img-section">
+                                <div class="col-sml">
+                                    <img class="col-sml-img" src="images/email-verify.png" width="115" alt="">
+                                </div>
+                                <div class="col-lge">
+                                    <p class="col-lge-p1">Nullam mollis sapien vel cursus
+                                        fermentum. Integer porttitor augue id ligula facilisis pharetra. In eu ex et
+                                        elit ultricies ornare nec ac ex. Mauris sapien massa, placerat non venenatis et,
+                                        tincidunt eget leo.</p>
+                                    <p class="col-lge-p2" style="">Nam non ante risus. Vestibulum vitae
+                                        eleifend nisl, quis vehicula justo. Integer viverra efficitur pharetra. Nullam
+                                        eget erat nibh.</p>
+                                    <p class="col-lge-p3">
+                                        <a href="#" class="col-lge-p3-atag">
+                                            <span class="col-lge-p3-span">Claim yours now</span>
+                                        </a>
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ts-td6-text-div">
+                                <p style="margin:0;">Duis sit amet accumsan nibh, varius tincidunt lectus. Quisque
+                                    commodo, nulla ac feugiat cursus, arcu orci condimentum tellus, vel placerat libero
+                                    sapien et libero. Suspendisse auctor vel orci nec finibus.</p>
+                            </td>
+                        </tr>';
+
+                        // ==================== FOOTER STARTS ==================== -->
+                        $body .= mailFooter();
+                        // ==================== FOOTER ENDS ==================== -->
+
+                        $body .= '
                     </table>
-                </div>
-            </body>
-            </html>
-    ';
-    return $body;
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
+';
+return $body;
 }
 
 

@@ -32,7 +32,7 @@ $Contact->markAsSeenContact($_GET['id']);
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Message From <?= $ContactDtl[1]; ?> - <?php echo COMPANY_S; ?></title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="<?= ADM_URL ?>vendors/ti-icons/css/themify-icons.css" />
     <style>
     @media(max-width:390px) {
         h3,
@@ -45,16 +45,10 @@ $Contact->markAsSeenContact($_GET['id']);
 
 <body>
     <div class="container-scroller">
-        <?php require_once "partials/_navbar.php"; ?>
-
-        <!-- partial -->
+        <?php require_once "components/_navbar.php"; ?>
         <div class="container-fluid page-body-wrapper">
-            <?php require_once "partials/_settings-panel.php"; ?>
-
-
-            <!-- partial -->
-            <?php require_once "partials/_sidebar.php"; ?>
-            <!-- partial:../../ -->
+            <?php require_once "components/_settings-panel.php"; ?>
+            <?php require_once "components/_sidebar.php"; ?>
           
             <div class="main-panel">
                 <div class="content-wrapper">
@@ -95,7 +89,7 @@ $Contact->markAsSeenContact($_GET['id']);
                 <!-- content-wrapper ends -->
 
                 <!-- footer start -->
-                <?php require_once "partials/_footer.php"; ?>
+                <?php require_once "components/_footer.php"; ?>
                 <!-- footer end -->
 
             </div>
@@ -105,25 +99,15 @@ $Contact->markAsSeenContact($_GET['id']);
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <script src="../plugins/jquery-3.6.0.min.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
-
-    <script src="../plugins/tinymce/tinymce.js"></script>
-    <script src="../plugins/main.js"></script>
-
-
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!-- End custom js for this page-->
+    <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
+    <script src="<?= ADM_URL ?>js/hoverable-collapse.js"></script>
+    <script src="<?= ADM_URL ?>js/template.js"></script>
+    <script src="<?= ADM_URL ?>js/settings.js"></script>
+    <script src="<?= ADM_URL ?>js/todolist.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
 </body>
 
 </html>

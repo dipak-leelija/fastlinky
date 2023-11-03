@@ -1,6 +1,6 @@
-<script src="js/jQuery/jquery-1.10.2.js"></script>
-<script type="text/javascript" src="js/ajax.js"></script>
-<script type="text/javascript" src="js/contact_form.js"></script>
+<script src="<?= URL ?>/js/jQuery/jquery-1.10.2.js"></script>
+<script type="<?= URL ?>/text/javascript" src="js/ajax.js"></script>
+<script type="<?= URL ?>/text/javascript" src="js/contact_form.js"></script>
 
 <div class="get_a_quote">
 	<div class="container">

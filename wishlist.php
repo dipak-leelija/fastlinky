@@ -1,16 +1,12 @@
 <?php
 session_start();
 require_once "includes/constant.inc.php";
-
 require_once("_config/dbconnect.php");
-
 require_once "classes/customer.class.php";
 require_once "classes/wishList.class.php";
 require_once "classes/blog_mst.class.php";
 require_once "classes/utility.class.php";
 require_once "classes/wishList.class.php";
-
-
 
 /* INSTANTIATING CLASSES */
 
@@ -34,20 +30,13 @@ if($cusId == 0){
 if($cusDtl[0] == 1){
     header("Location: dashboard.php");
 }
- 
 
 $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
-
-
 
 ?>
 
 <!DOCTYPE HTML>
-
 <html lang="zxx">
-
-
-
 <head>
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
@@ -55,20 +44,14 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
     <title>Wishlist | <?php echo COMPANY_S; ?></title>
-
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="css/wishlist.css" rel='stylesheet' type='text/css' />
-
-    <!--//webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/wishlist.css" rel='stylesheet' type='text/css' />
     <style>
     @media (min-width:768px) {
         .table-responsive {
@@ -81,17 +64,14 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
 
 <body>
     <div id="home">
-
         <!-- navbar start -->
-        <?php require_once 'partials/navbar.php' ?>
+        <?php require_once 'components/navbar.php' ?>
         <!-- navbar end -->
-
         <div class="edit_profile">
             <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
                         <div class="col-md-3 col-sm-12 hidden-xs display-table-cell v-align" id="navigation">
-
                             <!--*****************TOOGLE OFFCANVAS FOR SIDEBAR ONLY IN MOBILE TAB ******************* -->
                             <div class="extra-added-butn-for-mob-tab ">
                                 <button class="sidebar-icon-btn " type="button" data-bs-toggle="offcanvas"
@@ -111,7 +91,6 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
                                     </div>
                                 </div>
                             </div>
-
                             <div class="client_profile_dashboard_left">
                                 <?php include("dashboard-inc.php");?>
                                 <hr class="myhrline">
@@ -197,10 +176,10 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
                 <!-- //end display table-->
             </div>
         </div>
-        <script src="plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
-        <script src="plugins/jquery-3.6.0.min.js" type="text/javascript"></script>
-        <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
-        <script src="js/ajax.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/js/ajax.js" type="text/javascript"></script>
 
         <script>
         const gotoNewPage = (pageUrl) => {
@@ -246,7 +225,7 @@ $userWishLists = $WishList->showUserWishes($_SESSION['userid']);
             return false;
         }
         </script>
-        <script src="js/customerSwitchMode.js"></script>
+        <script src="<?= URL ?>/js/customerSwitchMode.js"></script>
 </body>
 
 </html>

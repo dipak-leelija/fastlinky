@@ -34,8 +34,8 @@ $adminData	   = $adminLogin->ShowUserData();
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title><?php echo COMPANY_S?> - Admin List</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="<?php echo ADM_URL?>vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="<?php echo URL?>/plugins/data-table/style.css">
+    <link rel="stylesheet" href="<?= ADM_URL ?>vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="<?= URL ?>/plugins/data-table/style.css" />
 
 
     <style>
@@ -62,18 +62,10 @@ $adminData	   = $adminLogin->ShowUserData();
 
 <body>
     <div class="container-scroller">
-        <?php require_once "partials/_navbar.php"; ?>
-
-        <!-- partial -->
+        <?php require_once "components/_navbar.php"; ?>
         <div class="container-fluid page-body-wrapper">
-            <?php require_once "partials/_settings-panel.php"; ?>
-
-
-            <!-- partial -->
-            <?php require_once "partials/_sidebar.php"; ?>
-            <!-- partial end -->
-
-            <!-- partial -->
+            <?php require_once "components/_settings-panel.php"; ?>
+            <?php require_once "components/_sidebar.php"; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
@@ -162,7 +154,7 @@ $adminData	   = $adminLogin->ShowUserData();
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial footer -->
-                <?php require_once ADM_DIR . 'partials/_footer.php'; ?>
+                <?php require_once ADM_DIR . 'components/_footer.php'; ?>
                 <!-- partial footer end-->
             </div>
             <!-- main-panel ends -->
@@ -171,20 +163,18 @@ $adminData	   = $adminLogin->ShowUserData();
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="<?php echo ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
-    <script src="<?php echo URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
     
     <!-- inject:js -->
-    <script src="<?php echo ADM_URL ?>js/off-canvas.js"></script>
-    <script src="<?php echo ADM_URL ?>js/hoverable-collapse.js"></script>
-    <script src="<?php echo ADM_URL ?>js/template.js"></script>
-    <script src="<?php echo ADM_URL ?>js/settings.js"></script>
-    <script src="<?php echo ADM_URL ?>js/todolist.js"></script>
-
-    <script src="<?php echo URL ?>/plugins/data-table/simple-datatables.js"></script>
-    <script src="<?php echo URL ?>/plugins/tinymce/tinymce.js"></script>
-    <script src="<?php echo URL ?>/plugins/main.js"></script>
-
+    <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
+    <script src="<?= ADM_URL ?>js/hoverable-collapse.js"></script>
+    <script src="<?= ADM_URL ?>js/template.js"></script>
+    <script src="<?= ADM_URL ?>js/settings.js"></script>
+    <script src="<?= ADM_URL ?>js/todolist.js"></script>
+    <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
     <script>
     function deleteUser() {
 

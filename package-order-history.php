@@ -64,7 +64,7 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
     <title><?php echo $packageCat['category_name'].' '.$package['package_name'].' - '.COMPANY_S; ?></title>
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
@@ -73,8 +73,8 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
     <link href="<?php echo URL; ?>/css/my-orders.css" rel='stylesheet' type='text/css' />
     <link href="<?php echo URL; ?>/css/order-list.css" rel='stylesheet' type='text/css' />
     <!--//webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+    <link href="<?= URL ?>/fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet" />
+    <script src="<?= URL ?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
     <style>
     .btn-check:focus+.btn,
     .btn:focus {
@@ -91,10 +91,8 @@ $updates        = $PackageOrder->getPackOrdUpdates($orderId, 'ASC');
 <body>
     <div id="home">
         <!-- header -->
-        <?php  require_once "partials/navbar.php" ?>
+        <?php  require_once "components/navbar.php" ?>
         <!-- //header -->
-
-        <!-- banner -->
         <div class="edit_profile">
             <div class="container-fluid">
                 <div class=" display-table">

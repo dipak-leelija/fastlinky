@@ -1,14 +1,11 @@
 <?php
 session_start();
 require_once("includes/constant.inc.php");
-
 require_once ROOT_DIR . "/_config/dbconnect.php";
-
 require_once ROOT_DIR . "/classes/date.class.php";
 require_once ROOT_DIR . "/classes/customer.class.php";
 require_once ROOT_DIR . "/classes/services.class.php";
 require_once ROOT_DIR . "/classes/feedback.class.php";
-
 require_once ROOT_DIR . "/classes/blog_mst.class.php";
 require_once ROOT_DIR . "/classes/faqs.class.php";
 require_once ROOT_DIR . "/classes/utility.class.php";
@@ -47,7 +44,7 @@ if(isset($_GET['seo_url']))
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
+    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
 
     <title>#1 Outreach & Link Building Services Agency in SEO - <?php echo COMPANY_S; ?></title>
     <meta name="description"
@@ -57,19 +54,19 @@ if(isset($_GET['seo_url']))
 
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
+    <link href="<?= URL ?>/plugins/sweetalert/sweetalert2.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
-    <link href="./plugins/sweetalert/sweetalert2.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/privacy-policy.css" rel='stylesheet' type='text/css' />
-    <link href="css/testimonials.css" rel="stylesheet">
-    <link href="css/clientside-logo.css" rel="stylesheet">
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/privacy-policy.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/testimonials.css" rel="stylesheet" type='text/css' />
+    <link href="<?= URL ?>/css/clientside-logo.css" rel="stylesheet" type='text/css' />
 </head>
 
 <body>
-    <?php require_once "partials/navbar.php"; ?>
+    <?php require_once "components/navbar.php"; ?>
     <section class="privacy-main-banner-section">
         <!-- 1 para------------- Privacy Policy main headline -->
         <div>
@@ -162,11 +159,11 @@ if(isset($_GET['seo_url']))
     </div>
     <!-- =---------------------------------------------------------------------------------------------- -->
     <!-- Footer -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
     <!-- footer -->
-    <script src="js/script.js"></script>
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>/js/script.js"></script>
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>

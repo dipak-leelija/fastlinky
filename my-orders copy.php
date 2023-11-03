@@ -48,50 +48,36 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo URL;?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/plugins/fontawesome-free-6.4.0/css/all.min.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/plugins/fontawesome-free-6.4.0/css/fontawesome.min.css" rel='stylesheet'
         type='text/css' />
-    <!-- <link href="<?php echo URL;?>/plugins/fontawesome-6.1.1/css/all.css" rel='stylesheet' type='text/css' /> -->
     <!-- Custom CSS -->
-
-    <link href="<?php echo URL;?>/css/style.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/my-orders.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/order-list.css" rel='stylesheet' type='text/css' />
-
-
-    <!--//webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-
-
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/my-orders.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/order-list.css" rel='stylesheet' type='text/css' />
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="home">
         <!-- header -->
-        <?php  require_once ROOT_DIR."/partials/navbar.php" ?>
+        <?php  require_once ROOT_DIR."/components/navbar.php" ?>
         <!-- //header -->
-
-        <!-- banner -->
         <div class="edit_profile">
             <div class="container-fluid">
                 <div class=" display-table">
                     <div class="row ">
                         <!--Row start-->
                         <div class="col-md-3 hidden-xs display-table-cell v-align" id="navigation">
-
                             <div class="client_profile_dashboard_left">
                                 <?php include ROOT_DIR."/dashboard-inc.php";?>
                                 <hr class="myhrline">
                             </div>
-
                         </div>
                         <div class="col-md-9 mt-4 ps-md-0 display-table-cell v-align ">
                             <!-- row -->
                             <div class="row">
-
-                                <!-- ========================= -->
                                 <!-- Guest Post Orders  Section-->
                                 <div class="col-lg-6">
                                     <div class=" mb-3">
@@ -163,13 +149,7 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                     }
                                     ?>
                                 </div>
-                                <!-- Package Orders Section End-->
-
-
-
-
-                                <!-- ========================= -->
-                                <!-- Guest Post Orders  Section-->
+                           
                                 <div class="col-lg-6">
                                     <div class=" mb-3">
                                         <h3 class="fw-bold text-center">Guest Post Order :</h3>
@@ -237,12 +217,8 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                                     ?>
                                 </div>
                                 <!-- Guest Post Orders  Section End-->
-
-
                             </div>
                             <!-- row -->
-
-
                         </div>
                         <!--Row end-->
                     </div>
@@ -250,15 +226,15 @@ $packOrders     = $PackageOrder->getPackOrderDetails($cusId, 5);
                 <!-- //end display table-->
             </div>
         </div>
-        <script src="<?php echo URL;?>/plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
-        <script src="<?php echo URL;?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
-        <script src="<?php echo URL;?>/plugins/data-table/simple-datatables.js"></script>
-        <script src="<?php echo URL;?>/plugins/tinymce/tinymce.js"></script>
-        <script src="<?php echo URL;?>/plugins/main.js"></script>
-        <script src="<?php echo URL;?>/plugins/jquery-3.6.0.min.js"></script>
+        <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+        <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+        <script src="<?= URL ?>/plugins/main.js"></script>
+        <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
 
         <!-- //fixed-scroll-nav-js -->
-        <script src="<?php echo URL;?>/js/customerSwitchMode.js"></script>
+        <script src="<?= URL ?>/js/customerSwitchMode.js"></script>
 
 </body>
 

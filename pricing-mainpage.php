@@ -67,27 +67,20 @@ $packages = $GPPackage->packDetailsByCat(1);
 
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <!-- <link href="css/style.css" rel='stylesheet' type='text/css' />  -->
-    <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
-    <link href="css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/testimonials.css">
-    <link rel="stylesheet" href="css/clientside-logo.css">
-
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/guest-post-offer.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/pricing-mainpage.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/testimonials.css" rel="stylesheet" />
+    <link href="<?= URL ?>/css/clientside-logo.css" rel="stylesheet" />
 </head>
 <body>
     <div id="home">
-        <?php require_once "partials/navbar.php"; ?>
+        <?php require_once "components/navbar.php"; ?>
 
         <section class="order-summary-section pb-4">
             <div class="container">
@@ -296,13 +289,13 @@ $packages = $GPPackage->packDetailsByCat(1);
                 </div>
         </section>
         <!-- Footer -->
-        <?php require_once "partials/footer.php"; ?>
+        <?php require_once "components/footer.php"; ?>
     </div>
     <!-- /Footer -->
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/orderNow.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/js/script.js"></script>
+    <script src="<?= URL ?>/js/orderNow.js"></script>
     <script>
     const paypalOrder = () => {
 

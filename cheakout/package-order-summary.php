@@ -84,11 +84,11 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['mob
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- plugins  files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- custom css  -->
-    <link rel="stylesheet" href="<?= URL; ?>/css/payment-summary-style.css">
+    <link rel="stylesheet" href="<?= URL; ?>/css/payment-summary-style.css" />
 </head>
 
 <body>

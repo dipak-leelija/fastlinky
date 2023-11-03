@@ -13,7 +13,7 @@ require_once "constant.inc.php";
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,500;0,600;1,100;1,200&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
 
 
 

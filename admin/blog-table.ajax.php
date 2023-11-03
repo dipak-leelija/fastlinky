@@ -38,8 +38,8 @@ $blogsDtls	   = $blogMst->ShowBlogData();
 <head>
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
 
-    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="../plugins/data-table/style.css">
+    <link rel="stylesheet" href="<?= ADM_URL ?>vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="<?= URL ?>/plugins/data-table/style.css" />
 </head>
 
 <body>
@@ -151,9 +151,9 @@ $blogsDtls	   = $blogMst->ShowBlogData();
     </table>
     <!-- content-wrapper ends -->
 
-    <script src="../plugins/data-table/simple-datatables.js"></script>
-    <script src="../plugins/tinymce/tinymce.js"></script>
-    <script src="../plugins/main.js"></script>
+    <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
 
 </body>
 

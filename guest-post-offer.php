@@ -1,15 +1,11 @@
 <?php
 session_start();
 require_once("includes/constant.inc.php");
-
 require_once("_config/dbconnect.php");
-
 require_once("classes/date.class.php");
 require_once("classes/error.class.php");
 require_once("classes/search.class.php");
 require_once("classes/customer.class.php");
-
-
 require_once "classes/gp-offer.class.php";
 require_once("classes/utility.class.php");
 require_once("classes/utilityMesg.class.php");
@@ -35,37 +31,17 @@ $faqs		    = new faqs();
 // $gp				  = new Gporder();
 
 ######################################################################################################################
-
 $typeM		= $utility->returnGetVar('typeM','');
 
 //user id
 
 $cusId		= $utility->returnSess('userid', 0);
 
-
-
-
-
-
-
 if(isset($_GET['seo_url'])){
 
 	$seo_url			  		= $_GET['seo_url'];
 
 }
-
-?>
-<?php
-
-/*
-
-define('WP_USE_THEMES', false);
-
-require('blog/wp-load.php');
-
-query_posts('showposts=3');
-
-*/
 
 ?>
 <!DOCTYPE HTML>
@@ -84,83 +60,36 @@ query_posts('showposts=3');
         content="Guest Post, Guest Posting,Guest Post Service, blogger outreach, guest posting services, guest posting blogs, fashion blogs, beauty blogs, health blogs, travel blogs, fitness blogs, tech blogs, home improvement blogs, CBD blogs, Casino Blogs" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/guest-post-offer.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/guest-post-offer.css" rel='stylesheet' type='text/css' />
 
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
 </head>
 
 <body data-scrollbar>
-    <?php require_once "partials/navbar.php"; ?>
+    <?php require_once "components/navbar.php"; ?>
     <div class="blogger-banner  banner">
         <h1 class="blogbanner-heading">Our Premium Service in Guest Posting</h1>
         <div class="gp-heading-details-2">
             <p>
-
                 In the last couple of years, we are one of the leading companies in the SEO and Digital
-
                 Marketing Sector. <br> We helped a lot of brands to stand in the market with our professional
-
                 SEO and Guest Posting Services.<br> We worked as a team with the company to catch more leads on the
                 website.
-
-
-
             </p>
-
-
-
         </div>
-
-
-
     </div>
-
-
-
-    <!--Banner Dividor-->
-
-    <?php //include ('quote.php') ?>
-
-    <!--/End of baneer Dividor-->
-
-
-
-
-
-    <!-- ================================================================================================ -->
-
-
-
     <section class="blogger-fourth-section">
-
         <div class="price-table">
-
             <div class="container">
-
-
-
-
-
                 <div class="price-table-box">
-
                     <div class="row mb-3">
-
                         <?php
-
                         $list = $GpOfferList->getGpOfferList();
-
                         foreach($list as $blog){
-
-                    
 
                     echo '<div class="col-md-4 mb-3">
 
@@ -188,207 +117,98 @@ query_posts('showposts=3');
 
                                 </ul>
 
-
-
                                 <a href="guest-post-offer-order.php?data-id='.$blog['id'].'"><button>Order Now</button></a>
-
                                 <!-- <form action="guest-post-offer-order.php" method="post">
-
                                 <button >Order Now</button>
-
                             </form> -->
-
                             <!-- <button type="button" name="package-purchase-btn" id="package-purchase-btn"
-
                                 class="package-purchase-btn">purchase now</button> -->
-
-
-
                             </div>
-
                         </div>';
 
                             }
-
                     ?>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
-
-
-
-
-
-
-    <!-- ================================================================================================ -->
-
-
-
-
-
     <!-- extra details -->
-
     <div class="features-sec">
-
         <div class="features">
-
             <div class="container">
-
                 <div class="row">
-
                     <div class="col-sm-3">
-
                         <p class="features-sec-head-icon">
-
                             <i class="fas fa-chart-line"></i>
-
                         </p>
-
                         <div class="features-sec-all-details">
-
                             <p class="features-sec-head">
-
                                 Real Ranking Sites
-
                             </p>
-
                             <p class="features-sec-details">
-
                                 Manual outreach on 100% real sites ranking in Google
-
                             </p>
-
                         </div>
-
                     </div>
-
-
-
                     <div class="col-sm-3">
-
                         <p class="features-sec-head-icon">
-
                             <i class="fas fa-th"></i>
-
                         </p>
-
                         <div class="features-sec-all-details">
-
                             <p class="features-sec-head">
-
                                 Customize Your Criteria
-
                             </p>
-
                             <p class="features-sec-details">
-
                                 Choose between Domain Authority or Publisher Traffic
-
                             </p>
-
                         </div>
-
                     </div>
-
-
-
                     <div class="col-sm-3">
-
                         <p class="features-sec-head-icon">
-
                             <i class="fas fa-truck"></i>
-
                         </p>
-
                         <div class="features-sec-all-details">
-
                             <p class="features-sec-head">
-
                                 Fast Deliverables
-
                             </p>
-
                             <p class="features-sec-details">
-
                                 7-day turnaround time guaranteed for your Guest Post
-
                             </p>
-
                         </div>
-
                     </div>
-
-
-
                     <div class="col-sm-3">
-
                         <p class="features-sec-head-icon">
-
                             <i class="fas fa-users"></i>
-
                         </p>
-
                         <div class="features-sec-all-details">
-
                             <p class="features-sec-head">
-
                                 Reseller Friendly
-
                             </p>
-
                             <p class="features-sec-details">
-
                                 Reseller friendly white-label reports to share with your clients
-
                             </p>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
     <!-- extra details -->
-
-    <!-- ================================================================================================= -->
+    <!-- ------------------------------------>
     <!-- Frequently Asked Questions starts -->
-    <!-- ================================================================================================ -->
-    <!-- new faq for indexpage -->
-
-    <?php require_once "partials/faqs-new.php"; ?>
-
-    <!-- ================================================================================================= -->
+    <?php require_once "components/faqs-new.php"; ?>
     <!-- Frequently Asked Questions ends -->
-    <!-- ================================================================================================ -->
-
     <!-- --------------------------------------- -->
     <!-- feedback form -->
-    <?php require_once "partials/feedback.php"; ?>
+    <?php require_once "components/feedback.php"; ?>
     <!-- feedback form -->
     <!-- ----------------------------------------------- -->
     <!-- Footer -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
     <!-- footer -->
-    <!-- -------------------------------------- -->
-    <!-- ================================================================================================ -->
-
-
-
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
 
 </html>

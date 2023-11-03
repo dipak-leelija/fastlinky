@@ -50,17 +50,17 @@ $typeM		= $utility->returnGetVar('typeM','');
     <meta name="robots" content="noindex,nofollow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Payment Error - Order can not be processed</title>
-    <link rel="stylesheet" href="<?php echo URL ?>style/ansysoft.css" type="text/css" />
+    <link rel="stylesheet" href="<?= URL ?>/style/ansysoft.css" type="text/css" />
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
     
-    <link rel="stylesheet" href="css/style.css">
+    <link  href="<?= URL ?>/css/style.css" rel="stylesheet" />
 </head>
 <body>
 
     <!-- Start  Header -->
-    <?php require_once 'partials/navbar.php'; ?>
+    <?php require_once 'components/navbar.php'; ?>
     <!-- End  Header -->
 
     <!-- Start  MainWrap -->
@@ -96,7 +96,7 @@ $typeM		= $utility->returnGetVar('typeM','');
     </div>
 
     <!-- Start Foter -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
 
     <!-- End Foter -->
 </body>

@@ -104,29 +104,19 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
         <?php echo $packageCat['category_name'].' '.$package['package_name']; ?> Order Details -
         <?php echo COMPANY_FULL_NAME; ?>
     </title>
-
     <!-- inject:css -->
-    <link rel="stylesheet" href="<?php echo URL ?>/css/order-now.css">
-    <link rel="stylesheet" href="<?php echo ADM_URL ?>css/order-details-style.css">
-
-    <link rel="stylesheet" href="<?php echo URL ?>/plugins/sweetalert/sweetalert2.css">
+    <link rel="stylesheet" href="<?= URL ?>/css/order-now.css" />
+    <link rel="stylesheet" href="<?= ADM_URL ?>css/order-details-style.css" />
+    <link rel="stylesheet" href="<?= URL ?>/plugins/sweetalert/sweetalert2.css" />
 
 </head>
 
 <body>
     <div class="container-scroller">
-        <?php require_once ADM_DIR . "partials/_navbar.php"; ?>
-
-        <!-- partial -->
+        <?php require_once ADM_DIR . "components/_navbar.php"; ?>
         <div class="container-fluid page-body-wrapper">
-            <?php require_once ADM_DIR . "partials/_settings-panel.php"; ?>
-
-
-            <!-- partial -->
-            <?php require_once ADM_DIR . "partials/_sidebar.php"; ?>
-            <!-- partial:../../ -->
-
-            <!-- partial -->
+            <?php require_once ADM_DIR . "components/_settings-panel.php"; ?>
+            <?php require_once ADM_DIR . "components/_sidebar.php"; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="card">
@@ -254,7 +244,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <?php require_once ADM_DIR . 'partials/_package-order-updates.php'; ?>
+                                            <?php require_once ADM_DIR . 'components/_package-order-updates.php'; ?>
 
                                             <!-- <p class="card-title">Updates</p>
                                             <ul class="icon-data-list">
@@ -541,7 +531,7 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
                                 <!-- start of updates  -->
                                 <div class="col-md-4">
-                                    <?php require_once ADM_DIR . 'partials/_package-order-updates.php'; ?>
+                                    <?php require_once ADM_DIR . 'components/_package-order-updates.php'; ?>
                                 </div>
                                 <!-- end of updates  -->
                             </div>
@@ -663,20 +653,17 @@ if ((isset($_GET['btnSearch'])) && ($_GET['btnSearch'] == 'search')) {
 
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="<?php echo ADM_URL; ?>vendors/js/vendor.bundle.base.js"></script>
-    <script src="<?php echo ADM_URL; ?>js/off-canvas.js"></script>
-    <script src="<?php echo ADM_URL; ?>js/hoverable-collapse.js"></script>
-    <script src="<?php echo ADM_URL; ?>js/template.js"></script>
-    <script src="<?php echo ADM_URL; ?>js/settings.js"></script>
-    <script src="<?php echo ADM_URL; ?>js/todolist.js"></script>
-
-    <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
-    <!-- <script src="../plugins/data-table/simple-datatables.js"></script> -->
-    <script src="<?php echo URL; ?>/plugins/tinymce/tinymce.js"></script>
-    <script src="<?php echo URL; ?>/plugins/main.js"></script>
-    <script src="<?php echo URL; ?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
-    <script src="<?php echo URL; ?>/js/ajax.js" type="text/javascript"></script>
-    <script src="<?php echo URL; ?>/js/script.js" type="text/javascript"></script>
+    <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
+    <script src="<?= ADM_URL ?>js/hoverable-collapse.js"></script>
+    <script src="<?= ADM_URL ?>js/template.js"></script>
+    <script src="<?= ADM_URL ?>js/settings.js"></script>
+    <script src="<?= ADM_URL ?>js/todolist.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
+    <script src="<?= URL ?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+    <script src="<?= URL ?>/js/ajax.js" type="text/javascript"></script>
+    <script src="<?= URL ?>/js/script.js" type="text/javascript"></script>
 
 
     <script>

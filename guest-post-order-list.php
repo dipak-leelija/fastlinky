@@ -42,33 +42,22 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
     <title>Guest Post Orders List - <?php echo COMPANY_S; ?></title>
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-    <link href="<?php echo URL;?>/css/my-orders.css" rel='stylesheet' type='text/css' />
-    <link href="css/order-list.css" rel='stylesheet' type='text/css' />
-
-    <!-- Datatable CSS  -->
-    <link rel="stylesheet" href="plugins/data-table/style.css">
-
-
-    <!--//webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-
-
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/my-orders.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/order-list.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/plugins/data-table/style.css" rel="stylesheet" />
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="home">
         <!-- header -->
-        <?php  require_once "partials/navbar.php" ?>
-        <?php //include 'header-user-profile.php'?>
-
+        <?php  require_once "components/navbar.php" ?>
         <!-- //header -->
-        <!-- banner -->
         <div class="edit_profile">
             <div class="container-fluid">
                 <div class=" display-table">
@@ -199,16 +188,16 @@ $myOrders       = $ContentOrder->clientOrders($cusId);
 
             </div>
         </div>
-        <script src="plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
-        <script src="plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
-        <script src="plugins/data-table/simple-datatables.js"></script>
-        <script src="plugins/tinymce/tinymce.js"></script>
-        <script src="plugins/main.js"></script>
-        <script src="plugins/jquery-3.6.0.min.js"></script>
+        <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/plugins/sweetalert/sweetalert2.all.min.js" type="text/javascript"></script>
+        <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+        <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+        <script src="<?= URL ?>/plugins/main.js"></script>
+        <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
 
         <!-- //fixed-scroll-nav-js -->
         <!-- <script src="js/pageplugs/fixedNav.js"></script> -->
-        <script src="js/customerSwitchMode.js"></script>
+        <script src="<?= URL ?>/js/customerSwitchMode.js"></script>
 
         <script>
         // filter_data();

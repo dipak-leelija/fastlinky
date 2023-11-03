@@ -44,30 +44,22 @@ $cusId			= $utility->returnSess('userid', 0);
 <head>
     <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Account is not verified <?php echo COMPANY_S; ?></title>
     <link rel="shortcut icon" href="<?php echo FAVCON_PATH?>" type="image/png" />
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
-
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
-
     <!-- Custom css -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/form.css" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/needs-verification.css">
-
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">    
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
-    <!--//webfonts-->
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/needs-verification.css" rel="stylesheet" />
 </head>
 <body>
     <div id="home">
         <!-- header -->
-        <?php require_once 'partials/navbar.php'; ?>
+        <?php require_once 'components/navbar.php'; ?>
         <!-- //header -->
         <section class="verify-section">
             <div id="main-wrapper" class="">
@@ -91,10 +83,8 @@ $cusId			= $utility->returnSess('userid', 0);
         </section>
     </div>
     <!-- js-->
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
-    <script src="plugins/jquery-3.6.0.min.js"></script>
-
-
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>

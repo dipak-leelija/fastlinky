@@ -11,7 +11,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/partials/fastlinky-head.php" ?>
+    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
 
     <title>Link Building Services for Cannabis & CBD SEO - <?php echo COMPANY_S; ?></title>
     <meta name="description"
@@ -20,23 +20,20 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         content="cannabis seo experts,	cbd seo	,marijuana seo,	cbd seo agency,	CBD Link building, Cannabis Link building,	Cannabis & CBD Link building Service,Cannabis & CBD Link building,	FastLinky, CBD Link Building Services,	cannabis link building services,Cannabis Backlinks, cannabis seo, cannabis seo experts,  cbd seo, cbd seo company" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/cannabis-backlinks.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/cannabis-backlinks.css" rel='stylesheet' type='text/css' />
 
 </head>
 
 <body>
-    <?php require_once "partials/navbar.php"; ?>
-    <!--____________________________________________________________________________________________ -->
+    <?php require_once "components/navbar.php"; ?>
     <!-- Cannabis Backlinks main banner starting -->
     <section class="cannabis-back-banner">
-        <div class="">
             <div class="row m-auto w-100">
-
                 <div class="col-12 col-lg-6 col-md-7 order-2 order-md-1 px-0 px-md-4">
                     <div class="">
                         <h1 class="mlb-starting-main-h1">Link building services for <span>cannabis & CBD </span> website
@@ -59,13 +56,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- end of Cannabis Backlinks main banner -->
-    <!-- --------------------------------------------------------------------------------------------- -->
+    <!-- ------------------------------------------------------------------ -->
     <!-- Cannabis & CBD Link Building Service starts -->
-    <!-- _________________________________________________________________________________________________ -->
-
+    <!----------------------------------------------------------- -->
     <section class="lbs-actually-matters-main">
         <div class="row">
             <div class="col-xl-6 col-md-6 m-auto text-center ">
@@ -90,20 +85,13 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </a>
                 </div>
             </div>
-
-
         </div>
-
     </section>
-
     <!-- Cannabis & CBD Link Building Service ends -->
-    <!-- _________________________________________________________________________________________________ -->
-    <!-- _______________________________________________________________________________________________ -->
+<!-- ---------------------------------------------------- -->
     <!-- Collaboration opportunity-cb start -->
-
     <section class="lbs-actually-matters-main">
         <div class="row">
-
             <div class=" col-xl-6 col-md-6">
                 <h1 class="lbs-actually-matters-main-h1 ">How does fastlinky increase
                     <span>your cannabis and CBD link building services?</span>
@@ -119,7 +107,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <i> As per the CBD market, the cannabis and CBD industry will gain 33.6 billion by 2025. To learn
                         about cannabis in full detail, <b>FastLinky</b> is the best site to know. </i>
                 </p>
-
                 <div class=" text-center text-md-start  mb-4 mb-md-0 mt-3">
                     <a href="#pricing-cards">
                         <button type="button" class="btn srvc-common-btn ">View Pricing</button>
@@ -133,17 +120,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
             </div>
-
         </div>
-
     </section>
     <!-- Collaboration opportunity-cb ends -->
-    <!-- _________________________________________________________________________________________________ -->
+    <!-- --------------------------------------------------- -->
     <!--========= Cannabis Link Building Or Regular Link Building-  Start =========-->
     <section class="cannabis-clb-rlb-section">
         <div class="cannabis-clb-rlb-main-div ">
             <h2>Why Choose “Cannabis Link Building” <strong> is important for CBD niche ? </strong> </h2>
-            <!-- Why is it important to choose “Cannabis Link Building” for the CBD niche? -->
             <ul>
                 <li> <span><i class="fa-solid fa-circle-check"></i></span> It is a large CBD fund, which is growing
                     repeatedly.</li>
@@ -164,13 +148,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
         </div>
     </section>
-
-
-    <!---------- Cannabis Link Building Or Regular Link Building-  End ---------------------->
-    <!-- ____________________________________________________________________________________________ -->
-    <!-- _______________________________________________________________________________________________ -->
+    <!------ Cannabis Link Building Or Regular Link Building-  End ------->
+    <!-- --------------------------------------------------------------------- -->
     <!-- How will Fast Linky Help You To Grow in the CBD business? start -->
-
     <section class="cbd-business-main-section">
         <div class="row">
             <div class="col-xl-6 col-md-6 m-auto text-center">
@@ -190,7 +170,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         Service</b>, you must follow our site. Here you always have the right link to grow your
                     business.
                 </p>
-
                 <ul>
                     <li class="d-flex"> <span> <i class="fa-solid fa-square-check pe-2"></i></span>
                         <p class="mb-0">Whenever you buy links to your cannabis business using our cannabis
@@ -206,41 +185,30 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </li>
 
                 </ul>
-
                 <div class=" text-center text-md-end  mb-4 mb-md-0 ">
                     <a href="#pricing-cards">
                         <button type="button" class="btn srvc-common-btn ">View Pricing</button>
                     </a>
                 </div>
             </div>
-
         </div>
-
     </section>
-    <!-- Collaboration opportunity-cb ends -->
-    <!-- _________________________________________________________________________________________________ -->
-
+    <!-- Collaboration opportunity-cb ends --> 
     <!-- ------------------------------------------------ -->
     <!-- pricing section -->
-    <!-- ------------------------------------------- -->
-
     <section class="mt-sm-5 mt-0">
         <h1 class="text-center pricing-bo-h1 mb-3 px-2">Cannabis backlinks pricing
         </h1>
         <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
             DR, or organic traffic. Below is the pricing for All 3 models.</p>
 
-        <?php require_once "partials/pricing-cards.php"; ?>
+        <?php require_once "components/pricing-cards.php"; ?>
     </section>
-
-    <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
-    <?php require_once "partials/blogs-sites.php"; ?>
-
-    <!-- ================================================================================================ -->
+    <?php require_once "components/blogs-sites.php"; ?>
+    <!-- ------------------------------------------------------------------->
     <!-- Why is Link Building Important for Cannabis Business? start -->
-
     <section class="why-is-lb-important-main pb-0">
         <div class="row">
             <div class="col-xl-6 col-md-6 m-auto text-center">
@@ -266,21 +234,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     Get high-quality backlinks of <b> cannabis and
                         CBD link-building services</b>, this site will always help you to choose the best option.
                 </p>
-
-
             </div>
         </div>
     </section>
     <!-- Why is Link Building Important for Cannabis Business?  ends -->
-    <!-- __________________________________________________________________________________________ -->
-    <!-- __________________________________________________________________________________________ -->
-    <!-- Why is Link Building Important for Cannabis Business? start -->
-
+    <!-- --------------------------------------------------------------- -->
+    <!--  Collaboration opportunity-cb  start -->
     <section class="improve-your-roi-organic-main ">
-
-
         <div class="row ">
-
             <div class=" col-xl-6 col-md-6">
                 <h1 class="why-is-lb-important-main-h1 ">Why is link building major for
                     <span> the cannabis business?</span>
@@ -297,9 +258,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     content from the other site based on the clients' sites. You can enjoy 100% natural traffic. By the
                     way, it is an authentic way to increase your brand.
                 </p>
-
-
-
             </div>
             <div class="col-xl-6 col-md-6 m-auto text-center">
                 <div class="">
@@ -311,10 +269,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- Collaboration opportunity-cb ends -->
-    <!-- __________________________________________________________________________________________ -->
+    <!-- -------------------------------------------------------->
     <!-- Cannabis & CBD Link Building Service starts -->
-    <!-- _________________________________________________________________________________________________ -->
-
+    <!-- ---------------------------------------------->
     <section class="lbs-actually-matters-main">
         <div class="row">
             <div class="col-xl-6 col-md-6 m-auto text-center order-2 order-md-1">
@@ -335,77 +292,38 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <b>Cannabis SEO experts</b> in cannabis production, you may not find a site as good as
                     <b>FastLinky</b>. We are experienced and have worked in the cannabis niche for years.
                 </p>
-
-
                 <div class=" text-center text-md-start  mb-4 mb-md-0 mt-3">
                     <a href="#pricing-cards">
                         <button type="button" class="btn srvc-common-btn ">View Pricing</button>
                     </a>
                 </div>
             </div>
-
-
         </div>
-
     </section>
-
     <!-- Cannabis & CBD Link Building Service ends -->
-    <!-- _________________________________________________________________________________________________ -->
-    <!-- ______________________________________________________________________________________________________ -->
+<!-- ------------------------------------------- -->
     <!-- features-section start -->
-    <?php require_once "partials/features-section.php"; ?>
+    <?php require_once "components/features-section.php"; ?>
     <!-- features-section ends -->
-    <!-- __________________________________________________________________________________________ -->
-
-    <!-- ================================================================================================= -->
+    <!-- ------------------------------------>
     <!-- Frequently Asked Questions starts -->
-    <!-- ================================================================================================ -->
-    <!-- new faq for indexpage -->
-
-    <?php require_once "partials/faqs-new.php"; ?>
-    <!-- ================================================================================================= -->
+    <?php require_once "components/faqs-new.php"; ?>
+    <!-- ----------------------------------------------- -->
     <!-- Frequently Asked Questions ends -->
-    <!-- ================================================================================================ -->
-
-
-    <!-- ================================================================================================ -->
+    <!-- ---------------------------------------------->
     <div class="mt-4">
-        <?php include_once 'partials/seller-action.php'; ?>
+        <?php include_once 'components/seller-action.php'; ?>
     </div>
-    <!-- =---------------------------------------------------------------------------------------------- -->
     <!-- --------------------------------------- -->
     <!-- feedback form -->
-    <?php require_once "partials/feedback.php"; ?>
+    <?php require_once "components/feedback.php"; ?>
     <!-- feedback form -->
     <!-- ----------------------------------------------- -->
     <!-- Footer -->
-    <?php require_once "partials/footer.php"; ?>
+    <?php require_once "components/footer.php"; ?>
     <!-- footer -->
-    <!-- -------------------------------------- -->
 
-    <script src="js/jquery-2.2.3.min.js"></script>
-
-
-
-    <!-- /Footer -->
-    <!-- <script type="text/javascript">
-    $(document).ready(function() {
-        $(".faq-li").click(function() {
-            var icon = $(this).children("i");
-            var notThis = $(".faq-li").not(this);
-            var include = icon.hasClass("fa-circle-plus");
-            $(this).children("i").toggleClass("fa-circle-plus fa-circle-minus");
-            $(this).children(".faq-details").toggle();
-            notThis.children(".faq-details").css("display", "none");
-            notThis.children("i").addClass("fa-circle-plus").remove("fa-circle-minus");
-        })
-    });
-    </script> -->
-
-
-
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-
+    <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
-
 </html>

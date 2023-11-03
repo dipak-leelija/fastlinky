@@ -56,21 +56,21 @@ if (isset($_GET['customer'])) {
     <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
     <title>Send Mail to <?php echo $toName;?> - <?php echo COMPANY_S; ?></title>
 
-    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="../plugins/data-table/style.css">
+    <link rel="stylesheet" href="<?= ADM_URL ?>vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="<?= URL ?>/plugins/data-table/style.css" />
 </head>
 
 <body class="modal-open">
     <div class="container-scroller">
-        <?php require_once "partials/_navbar.php"; ?>
+        <?php require_once "components/_navbar.php"; ?>
 
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
-            <?php require_once "partials/_settings-panel.php"; ?>
+            <?php require_once "components/_settings-panel.php"; ?>
 
 
             <!-- partial -->
-            <?php require_once "partials/_sidebar.php"; ?>
+            <?php require_once "components/_sidebar.php"; ?>
 
             <!-- partial -->
             <div class="main-panel">
@@ -181,28 +181,19 @@ if (isset($_GET['customer'])) {
             </div>
         </div>
     </div>
-
-
     <!-- plugins:js -->
-    <script src="../plugins/jquery-3.6.0.min.js"></script>
-    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= ADM_URL ?>vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- inject:js -->
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/template.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
-
-    <!-- <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script> -->
-    <script src="../plugins/data-table/simple-datatables.js"></script>
-    <script src="../plugins/tinymce/tinymce.js"></script>
-    <script src="../plugins/main.js"></script>
-    <script>
-    // $(document).ready(function() {
-    //     $('#failedToast').toast('show');
-    // })
-    </script>
+    <script src="<?= ADM_URL ?>js/off-canvas.js"></script>
+    <script src="<?= ADM_URL ?>js/hoverable-collapse.js"></script>
+    <script src="<?= ADM_URL ?>js/template.js"></script>
+    <script src="<?= ADM_URL ?>js/settings.js"></script>
+    <script src="<?= ADM_URL ?>js/todolist.js"></script>
+    <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
     <script>
     const sendMail = () => {
         $('#sendingToast').toast('show');

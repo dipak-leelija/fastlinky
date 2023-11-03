@@ -38,15 +38,15 @@ if(isset($_POST['btnLogin'])){
 <head>
 <?php require_once ADM_DIR . "/incs/admin-common-headers.php" ?>
 <title>Administrator Control Panel -  CRM</title>
-<link rel="stylesheet" type="text/css" href="../style/admin/admin-index.css">
-<link rel="stylesheet" type="text/css" href="../style/admin/common.css">
+<link rel="stylesheet" type="text/css" href="<?= URL ?>/style/admin/admin-index.css" />
+<link rel="stylesheet" type="text/css" href="<?= URL ?>/style/admin/common.css" />
 </head>
 
 <body>
 	
     <!-- Header -->
     <div id="header">
-        <img src="../images/logo/logo.png"  alt="<?php echo LOGO_ALT; ?>" id="logo" />
+        <img src="<?= URL ?>/images/logo/logo.png"  alt="<?php echo LOGO_ALT; ?>" id="logo" />
     </div>
     <!-- eof Header -->
     
@@ -73,14 +73,14 @@ if(isset($_POST['btnLogin'])){
             
                 <p align="center">
                 Copyright &copy; <?php echo START_YEAR." - ".END_YEAR; ?>, 
-                <a href="../" title="<?php echo COMPANY_S; ?>"><?php echo URL; ?></a>.
+                <a href="<?= URL ?>/" title="<?php echo COMPANY_S; ?>"><?php echo URL; ?></a>.
 				All Rights Reserved.
                 </p>
         </div>
     </div>
 	<!-- eof Login -->
 
-    <script src="../plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
     <script>
         const fadeInfoBlock = () =>{
             $('.erBlock').fadeOut();

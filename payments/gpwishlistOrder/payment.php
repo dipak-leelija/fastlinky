@@ -140,7 +140,7 @@ $amountinInr = currencyConvert($clientOrderPrice, "USD", "INR");
 
     <div class="rrdiv">
         <h1>Please do not refresh this page!</h1>
-        <h4><span><img src="../../images/icons/loading.gif" alt="loading"></span>Taking you to the payment page.</h4>
+        <h4><span><img src="<?= URL ?>/images/icons/loading.gif" alt="loading"></span>Taking you to the payment page.</h4>
     </div>
 
 

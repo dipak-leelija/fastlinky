@@ -46,26 +46,20 @@ $blogDtls		= $blogMst->ShowUserBlogData($cusDtl[0][2]);
     <link rel="apple-touch-icon" href="<?php echo FAVCON_PATH?>" />
 
     <!-- Plugins Files -->
-    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
+    <link href="<?= URL ?>/plugins/data-table/style.css" rel="stylesheet" />
     <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
 
-    <link rel="stylesheet" href="plugins/data-table/style.css">
-
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <!-- <link href="css/form.css" rel='stylesheet' type='text/css' /> -->
-    <link href="css/dashboard.css" rel='stylesheet' type='text/css' />
-
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Nunito+Sans:400,700,900" rel="stylesheet">
+    <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<?= URL ?>/css/dashboard.css" rel='stylesheet' type='text/css' />
 </head>
+
 <body>
     <div id="home">
         <!-- header -->
-        <?php include 'partials/navbar.php'?>
-
+        <?php include 'components/navbar.php'?>
         <!-- //header -->
-        <!-- banner -->
         <div class="edit_profile" style="overflow: hidden;">
             <div class="container-fluid">
                 <div class=" display-table">
@@ -186,16 +180,12 @@ $blogDtls		= $blogMst->ShowUserBlogData($cusDtl[0][2]);
                 </div>
             </div>
         </div>
-
     </div>
-    <script src="plugins/jquery-3.6.0.min.js"></script>
-
-    <script src="plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-
-    <script src="plugins/data-table/simple-datatables.js"></script>
-    <script src="plugins/tinymce/tinymce.js"></script>
-    <script src="plugins/main.js"></script>
-
+    <script src="<?= URL ?>/plugins/jquery-3.6.0.min.js"></script>
+    <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="<?= URL ?>/plugins/data-table/simple-datatables.js"></script>
+    <script src="<?= URL ?>/plugins/tinymce/tinymce.js"></script>
+    <script src="<?= URL ?>/plugins/main.js"></script>
 </body>
 
 </html>
