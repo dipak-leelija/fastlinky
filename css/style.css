@@ -459,9 +459,6 @@ body::-webkit-scrollbar-thumb {
         padding: 0.5rem 0rem;
     }
 
-    .navbar-brand {
-        width: 40%;
-    }
 
     .navbar-brand img {
         width: 90px;
