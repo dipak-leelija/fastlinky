@@ -269,9 +269,41 @@ footer .thumb-content ::before {
     color: #ffffff;
 }
 
+.whatsapp-float-cover {
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    bottom: 35px;
+    right: 35px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+.whatsapp-float-cover:hover {
+    color: #ffffffd6;
+}
+.whatsapp-float-icon {
+    margin-top: 13.5px;
+}
+
 @media(max-width:767px) {
     .widget-title {
         color: #FDA33B !important;
+    }
+
+    .whatsapp-float-icon {
+        margin-top: 11px;
+    }
+
+    .whatsapp-float-cover {
+        width: 50px;
+        height: 50px;
+        bottom: 25px;
+        right: 25px;
     }
 }
 </style>
@@ -355,7 +387,8 @@ footer .thumb-content ::before {
                                 </div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="<?php echo URL; ?>/privacy-policy">&nbsp;Privacy Policy</a></div>
+                                <div class="thumb-content"><a href="<?php echo URL; ?>/privacy-policy">&nbsp;Privacy
+                                        Policy</a></div>
                             </li>
                             <li>
                                 <div class="thumb-content"><a href="<?php echo URL; ?>">&nbsp;Terms of Use</a></div>
@@ -363,7 +396,7 @@ footer .thumb-content ::before {
                         </ul>
                     </div>
                 </div>
-            
+
 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="widget no-box">
@@ -377,7 +410,8 @@ footer .thumb-content ::before {
                             simply subscribe with your email
                             address.</p>
                         <div class="emailfield-for-outreach">
-                            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="subscriberEmail" placeholder="Email" required>
+                            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                id="subscriberEmail" placeholder="Email" required>
                             <input class="submitbutton ripplelink" type="submit" onclick="saveItem('subscriberEmail')"
                                 value="Subscribe">
                         </div>
@@ -386,12 +420,17 @@ footer .thumb-content ::before {
                 </div>
             </div>
         </div>
-
+        <a href="https://wa.me/9093615636" class="whatsapp-float-cover" target="_blank">
+            <i class="fa-brands fa-whatsapp whatsapp-float-icon"></i>
+        </a>
         <div class="footer-copyright">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <p>©All Rights Reserved 2023 - <a href="<?= URL ?>" class="text-decoration-underline"><?php echo COMPANY_FULL_NAME; ?></a> Powered by <a href="http://www.leelija.com/" target="_blank" class="text-decoration-underline">Leelija.com</a> 
+                        <p>©All Rights Reserved 2023 - <a href="<?= URL ?>"
+                                class="text-decoration-underline"><?php echo COMPANY_FULL_NAME; ?></a> Powered by <a
+                                href="http://www.leelija.com/" target="_blank"
+                                class="text-decoration-underline">Leelija.com</a>
                         </p>
                     </div>
                 </div>
