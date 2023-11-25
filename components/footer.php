@@ -420,7 +420,7 @@ footer .thumb-content ::before {
                 </div>
             </div>
         </div>
-        <a href="https://wa.me/9093615636" class="whatsapp-float-cover" target="_blank">
+        <a href="https://wa.me/+916290101838" class="whatsapp-float-cover" target="_blank">
             <i class="fa-brands fa-whatsapp whatsapp-float-icon"></i>
         </a>
         <div class="footer-copyright">

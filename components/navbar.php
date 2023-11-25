@@ -5,7 +5,7 @@
         <a class="navbar-brand me-0" href="<?php echo URL;?>">
             <img src="<?php echo LOGO_WITH_PATH; ?>" alt="logo" class="pe-md-4">
         </a>
-        <a href="mailto:">
+        <a href="mailto:info@fastlinky.com">
             <div class="text-center emailstyle  m-auto ps-4 ">
                 <?php
                     if($cusId != 0){
