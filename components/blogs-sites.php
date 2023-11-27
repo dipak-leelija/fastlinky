@@ -6,7 +6,7 @@ $blogs = $BlogMst->staticBlogLists(10);
 $blogs = json_decode($blogs);
 ?>
 
-<section class="blogs-sites-table-cards">
+<section class="blogs-sites-table-cards" id="gp-blog-sites">
     <h2 class="text-center">Avilable Guest Posting Sites</h2>
     <p class="text-center">We believe that <b>SEO Guest Posting Services</b> with maintaining high-quality content,
         definitely helps all brands to grow their business. We can assure you that your website will touch the vertex of
