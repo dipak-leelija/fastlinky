@@ -42,9 +42,9 @@ if(isset($_GET['seo_url']))
 <head>
     <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
 
-    <title>#1 Outreach & Link Building Services Agency in SEO - <?php echo COMPANY_S; ?></title>
+    <title>#1 Outreach & Link Building Services Agency in SEO - <?= COMPANY_S; ?></title>
     <meta name="description"
-        content="Fastlinky is the #1 agency for creative high quality link building services and we are experts in SEO and outreach services that will boost your website's performance." />
+        content="Fastlinky is the #1 link building agency for creative high quality link building services and we are experts in SEO and outreach services that will boost your website's performance." />
     <meta name="keywords"
         content="seo services, local seo services, seo company, seo agency, Link Building services agency, link building, backlink building, seo link building, what is a backlink ,link building services, seo link building services, best link building services, back link building services, link building seo services" />
 
@@ -70,7 +70,15 @@ if(isset($_GET['seo_url']))
     <!-- clients-logo -->
     <?php require_once "components/clientssides-logos.php"; ?>
     <!-- clients-logo -->
+     <!-- -------------------------------------------------------->
+    <!-- All set to rank on the first page of Google? start -->
+    <?php require_once "components/index-goolge_rank.inc.php"; ?>
+    <!-- All set to rank on the first page of Google? end -->
     <!-- --------------------------------------------->
+    <!-- How FastLinky Works? starts -->
+    <?php require_once "components/index-how_works.inc.php"; ?>
+    <!-- How FastLinky Works? ends -->
+    <!---------------------------------------------------------->
     <!--  High Authority And High Traffic Websites start -->
     <?php require_once "components/index-ha-ht.inc.php"; ?>
     <!--  High Authority And High Traffic Websites end -->
@@ -86,14 +94,6 @@ if(isset($_GET['seo_url']))
     <!--  services that we provides starts -->
     <?php require_once "components/index-service-provides.inc.php"; ?>
     <!-- services that we provides ends -->
-    <!-- -------------------------------------------------------->
-    <!-- All set to rank on the first page of Google? start -->
-    <?php require_once "components/index-goolge_rank.inc.php"; ?>
-    <!-- All set to rank on the first page of Google? end -->
-    <!---------------------------------------------------------->
-    <!-- How FastLinky Works? starts -->
-    <?php require_once "components/index-how_works.inc.php"; ?>
-    <!-- How FastLinky Works? ends -->
     <!-- ------------------------------------------------------------>
     <!-- Benefits Of Hiring A Skilled Link Building Agency start -->
     <?php require_once "components/index-benefit_hiring.inc.php"; ?>
