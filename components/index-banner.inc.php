@@ -19,7 +19,7 @@
                         </div>
 
                         <div class=" buttonsinfo ">
-                            <button class="btn srvc-common-btn1" onclick="goTo('about')"> Let's Talk &nbsp;&nbsp;<i class="fa-solid fa-headset"></i></button>
+                            <button class="btn srvc-common-btn1" onclick="goTo('about')"> Let's Talk &nbsp;&nbsp;<i class="fa-solid fa-comment"></i></button>
                         </div>
                     </div>
                 </div>
