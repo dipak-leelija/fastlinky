@@ -8,10 +8,8 @@
                         <h1 class="indexpage-starting-main-h1">
                             Get High-Quality Backlinks To Boost Your Website’s Organic Growth
                         </h1>
-                        <p class=" mt-3 mb-4 py-0 py-md-2 indexpage-starting-main-p">FastLinky offers data-driven
-                            strategies
-                            and <strong>SEO link building services</strong> to help international brands grow their ROI
-                            3x faster.
+                        <p class=" mt-3 mb-4 py-0 py-md-2 indexpage-starting-main-p">
+                        We are a Professional link building agency that builds <strong> high quality backlinks </strong> to boost your website's performance
                         </p>
 
                         <div class=" buttonsinfo ">
