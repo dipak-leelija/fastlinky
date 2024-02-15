@@ -60,4 +60,9 @@
             </div>
         </div>
     </div>
+    <div>
+        <div class="buttonsinfo text-center mt-5">
+            <button class="btn srvc-common-btn" onclick="goTo('how-we-work.php')"> How We Work? </button>
+        </div>
+    </div>
 </section>
