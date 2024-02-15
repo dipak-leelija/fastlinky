@@ -62,7 +62,7 @@
     </div>
     <div>
         <div class="buttonsinfo text-center mt-5">
-            <button class="btn srvc-common-btn" onclick="goTo('how-we-work')"> How We Work? </button>
+            <button class="btn srvc-common-btn1" onclick="goTo('how-we-work')"> How We Work? </button>
         </div>
     </div>
 </section>
