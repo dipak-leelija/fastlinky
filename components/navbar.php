@@ -2,8 +2,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark text-light ">
 
     <div class="container-fluid">
-        <a class="navbar-brand d-flex" href="<?php echo URL;?>">
+        <a class="navbar-brand me-0" href="<?php echo URL;?>">
             <img src="<?php echo LOGO_WITH_PATH; ?>" alt="logo" class="pe-md-4">
+        </a>
+        <a href="mailto:info@fastlinky.com">
             <div class="text-center emailstyle  m-auto ps-4 ">
                 <?php
                     if($cusId != 0){
@@ -59,7 +61,7 @@
                 </li>
 
                 <li class="nav-item mynav_item">
-                    <a class="nav-link  li-style"  href="<?php echo URL.'/blog';?>">Blog</a>
+                    <a class="nav-link  li-style" href="<?php echo URL.'/blog';?>">Blog</a>
                 </li>
 
                 <li class="nav-item mynav_item dropdown myiconupdown">
@@ -73,7 +75,7 @@
                         <div class="row producting-divs-main-row">
 
                             <div class="col-lg-4 col-md-6 col-sm-6">
-                               
+
                                 <li><a class="dropdown-item  producting-menues-lis"
                                         href="<?php echo URL;?>/white-label-link-building">WHITE LABEL LINK
                                         BUILDING</a>
@@ -88,7 +90,7 @@
 
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6">
-                               
+
                                 <li><a class="dropdown-item  producting-menues-lis"
                                         href="<?php echo URL;?>/link-insertion-service">LINK
                                         INSERTION SERVICE</a></li>
@@ -102,7 +104,7 @@
                                         BACKLINKS</a></li>
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6">
-                            <li><a class="dropdown-item  producting-menues-lis"
+                                <li><a class="dropdown-item  producting-menues-lis"
                                         href="<?php echo URL;?>/managed-link-building">MANAGED
                                         LINK BUILDING</a></li>
                                 <li>
