@@ -100,7 +100,7 @@
 </section>
 
 <script>
-    var items = document.querySelectorAll('.carousel .carousel-item');
+    var items = document.querySelectorAll('.carousel .carousel-inner .carousel-item');
     items.forEach((e)=>{
         const slide = 4;
         let next = e.nextElementSibling;
