@@ -121,6 +121,9 @@
                     </ul>
                 </li>
                 <li class="nav-item mynav_item">
+                    <a class="nav-link li-style" href="<?php echo URL;?>/how-we-work">How We Work</a>
+                </li>
+                <li class="nav-item mynav_item">
                     <a class="nav-link li-style" href="<?php echo URL;?>/about">About</a>
                 </li>
                 <li class="nav-item mynav_item">
