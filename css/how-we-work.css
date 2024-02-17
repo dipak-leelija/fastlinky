@@ -80,8 +80,10 @@
     object-fit: contain;
 }
 .img-container img{
-    width: 100%;
+    width: 80%;
     object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
 .-translate-y-6 {
     --tw-translate-y: -1.5rem;
@@ -284,8 +286,8 @@
 
     .img-container img{
         width: 50%;
-        margin: 0 auto;
         object-fit: contain;
+        margin: 0 auto;
         display: block;
     }
 }
