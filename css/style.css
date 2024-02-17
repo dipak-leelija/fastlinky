@@ -3780,10 +3780,6 @@ h5 {
         padding: 6px 22px 6px 22px;
     }
 
-    .layoutdiv {
-        flex-wrap: wrap-reverse;
-    }
-
 }
 
 @media (min-width:200px) and (max-width:312px) {
@@ -3841,80 +3837,32 @@ h5 {
 }
 
 /* for layout.php  */
-.imgdiv img {
+/* .imgdiv img {
     width: 80%;
     height: 390px;
     margin-top: -50px;
     border-bottom-left-radius: 35px;
-}
+} */
 
-.layoutbutton {
+/* .layoutbutton {
     background-color: #000;
     color: white;
     padding: 0px 20px;
     border-radius: 16PX;
-}
+} */
 
-.layoutbutton:hover {
-    background: #f76e5b;
-    color: #000;
-    border: none;
-    padding: 0px 20px;
-    border-radius: 16PX;
-}
-
-.layoutdiv {
-    background-image: linear-gradient(120deg, #FDA33B 0%, #FA8273 100%);
-    margin: 0px 90px 0px 90px;
-    border-radius: 35px;
-}
 
 @media screen and (max-width: 768px) {
-    .layoutdiv {
-        display: flex;
-        flex-direction: column-reverse;;
-        align-items:start;
-    }
 
-    .w-50 {
+
+    /* .imgdiv img {
         width: 100%;
-    }
-
-    .imgdiv img {
-        width: 150%;
         height: 280px;
         margin-top: 0;
         border-bottom-left-radius: 37px;
-    }
+    } */
 
-    .mt-4 {
-        margin: 20px 0 20px 50px;
-    }
-    .mt-5{
-        margin-top: -20px;
-    }
 }
 
-/* Adjust margin for mobile  */
-@media only screen and (max-width: 600px) {
-    .layoutdiv {
-        margin: 0 20px;
-        height: 100%;
-    }
-}
-
-/* Adjust margin for tablets */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-    .layoutdiv {
-        margin: 0 50px;
-    }
-}
-
-/* Default margin for larger screens */
-@media only screen and (min-width: 1025px) {
-    .layoutdiv {
-        margin: 0 90px;
-    }
-}
 
 /* blogs sites name da dr showing */
