@@ -99,6 +99,9 @@ if(isset($_GET['seo_url']))
     <?php require_once "components/index-benefit_hiring.inc.php"; ?>
     <!-- Benefits Of Hiring A Skilled Link Building Agency ends -->
     <!---------------------------------------------------------------- -->
+    <!-- layout section  -->
+    <?php require_once "components/layout.php"; ?>
+    <!-- layout section end  -->
     <!-- Frequently Asked Questions starts -->
     <?php require_once "components/faqs-new.php"; ?>
     <!-- Frequently Asked Questions ends -->
