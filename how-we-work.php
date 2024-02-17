@@ -61,7 +61,7 @@ require_once ROOT_DIR."/components/how-we-work.inc.php";
     <main>
         <article>
             <!-- =========================== Header Main Text Area Start =========================== -->
-            <div class="position-relative z-20 bg-white">
+            <div class="position-relative z-20 bg-white mt-3 pt-4">
                 <div class="w-100 py-3">
                     <div class="px-3">
                         <div data-aos="move-up" class="pt-3 pt-sm-4 py-4 text-center">

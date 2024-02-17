@@ -58,6 +58,8 @@ if(isset($_GET['seo_url']))
     <link href="<?= URL ?>/css/index.css" rel='stylesheet' type='text/css' />
     <link href="<?= URL ?>/css/testimonials.css" rel="stylesheet" />
     <link href="<?= URL ?>/css/clientside-logo.css" rel="stylesheet" />
+    <link href="<?= URL ?>/css/lets-talk-section.css" rel="stylesheet" />
+
 </head>
 
 <body>
