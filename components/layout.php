@@ -9,7 +9,7 @@
                 <div class="redactor text-gray-800 w-75">We love talking link building. Let us know about your project and we'll send you a free proposal</div>
             </div>
             <div class="d-flex justify-content-between flex-wrap w-75">
-                <button class="btn layoutbutton fw-bold">👉 Get In Touch</button>
+                <button class="btn border-0 layoutbutton fw-bold">👉 Get In Touch</button>
                 <div class="m-0">
                     <!-- <img src="<?= USER_IMG_PATH .'default-user-icon.png'?>" alt=""> -->
                     <p class="mt-0 p-0 fw-bold">Stewart</p>
