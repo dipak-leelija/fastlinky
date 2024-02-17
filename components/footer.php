@@ -308,7 +308,7 @@ footer .thumb-content ::before {
 }
 </style>
 
-<footer id="footer" class="footer-1">
+<footer id="footer" class="footer-1 position-relative">
     <div class="main-footer widgets-dark typo-light">
         <div class="container">
             <div class="row">
