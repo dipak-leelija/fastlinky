@@ -260,14 +260,17 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                                         </div>
                                     </div>
                                     <div class="col-sm-12 mb-4">
-                                        <div class="d-flex">
+                                        <div class="d-flex ">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheck">
                                             </div>
                                             <p class="mb-3 text-dark fw-bolder fs-6 ">By submitting this form I accept the <a class="text-dark text-decoration-underline" href="">privacy policy</a> of this site</p>
                                         </div>
+                                        <div class="invalidCheck" style="display: none;color:red">
+                                            Please check this box to proceed.
+                                        </div>
                                         <div class="col-sm-12 mb-3 submit-divclass">
-                                            <button type="submit" class="my-buttons-hover bn21 m-0" id="submitButton" disabled>Submit</button>
+                                            <button type="submit" class="my-buttons-hover bn21 m-0" id="submitButton">Submit</button>
                                         </div>
                                     </div>
 
@@ -312,9 +315,20 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
         document.addEventListener("DOMContentLoaded", function() {
             const checkbox = document.getElementById('flexCheck');
             const submitButton = document.getElementById('submitButton');
+            const invalidCheck = document.querySelector('.invalidCheck');
 
             checkbox.addEventListener('change', function() {
                 submitButton.disabled = !this.checked;
+                invalidCheck.style.display = this.checked ? 'none' : 'block';
+            });
+
+            submitButton.addEventListener('click', function(event) {
+                if (!checkbox.checked) {
+                    invalidCheck.style.display = 'block';
+                    event.preventDefault();
+                } else {
+                    invalidCheck.style.display = 'none';
+                }
             });
         });
     </script>
