@@ -89,6 +89,10 @@ if(isset($_GET['seo_url']))
     <?php require_once "components/testimonials.php"; ?>
     <!-- testimonials customers reviews -->
     <!------------------------------------------------->
+    <!-- confused-action start -->
+    <?php require_once "components/confused-action.inc.php"; ?>
+    <!-- confused-action end -->
+    <!------------------------------------------------->
     <!-- Link Building Services that Actually Matters-starts -->
     <?php require_once "components/index-lbs.inc.php"; ?>
     <!-- Link Building Services that Actually Matters-ends -->
