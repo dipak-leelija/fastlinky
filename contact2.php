@@ -152,6 +152,7 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
     <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
     <link href="<?= URL ?>/css/custom.css" rel='stylesheet' type='text/css' />
 </head>
+
 <body>
     <div id="home">
         <!-- header -->
@@ -213,13 +214,7 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                                                 Please Enter your first Name!
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <label class="required-field" for="firstname">First Name</label>
-                                            <input type="text" minlength="4" class="form-control border-0 border-bottom border-dark bg-transparent" id="firstname" name="firstname" required>
-                                            <div class="invalid-feedback">
-                                                Please Enter your first Name!
-                                            </div>
-                                        </div> -->
+
                                     </div>
 
                                     <div class="col-sm-12 mb-5">
@@ -230,13 +225,7 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                                                 Please Enter your Last Name!
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <label for="lastName">Last Name</label>
-                                            <input type="text" minlength="4" class="form-control border-0 border-bottom border-dark bg-transparent" id="lastName" name="lastName" required>
-                                            <div class="invalid-feedback">
-                                                Please Enter your last Name!
-                                            </div>
-                                        </div> -->
+
                                     </div>
 
                                     <div class="col-sm-12 mb-5">
@@ -247,13 +236,7 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                                                 Please enter your email!
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <label class="required-field" for="email">Email</label>
-                                            <input type="email" inputmode="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control border-0 border-bottom border-dark bg-transparent" id="email" name="email" required>
-                                            <div class="invalid-feedback">
-                                                Please enter your email!
-                                            </div>
-                                        </div> -->
+
                                     </div>
 
                                     <div class="col-sm-12 mb-5">
@@ -264,31 +247,17 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                                                 Please enter valid phone Number!
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <label for="phone">Phone Number</label>
-                                            <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" minlength="10" pattern="[0-9]+" maxlength="10" class="form-control border-0 border-bottom border-dark bg-transparent" id="phone" name="phone" required>
-                                            <div class="invalid-feedback">
-                                                Please enter valid phone Number!
-                                            </div>
-                                        </div> -->
+
                                     </div>
 
                                     <div class="col-sm-12 mb-4">
                                         <div class="form-group">
-                                            <!-- <input type="email" inputmode="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control border-0 border-bottom border-dark bg-transparent" id="email" name="email" required> -->
                                             <textarea class="form-control bg-transparent" minlength="10" maxlength="1000" id="message" name="message" rows="2" required></textarea>
                                             <label class="" for="message">How can we help?</label>
                                             <div class="invalid-feedback">
                                                 Please enter your queries!
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <label class="required-field" for="message">How can we help?</label>
-                                            <textarea class="form-control border-0 border-bottom border-dark bg-transparent" minlength="10" maxlength="1000" id="message" name="message" rows="4" required></textarea>
-                                            <div class="invalid-feedback">
-                                                Please enter your queries!
-                                            </div>
-                                        </div> -->
                                     </div>
                                     <div class="col-sm-12 mb-4">
                                         <p class="mb-3 text-dark fw-bolder fs-6 ">By submitting this form I accept the <a class="text-dark text-decoration-underline" href="">privacy policy</a> of this site</p>
