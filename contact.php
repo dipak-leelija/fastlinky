@@ -260,10 +260,12 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                                         </div>
                                     </div>
                                     <div class="col-sm-12 mb-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input border-dark" type="checkbox" value="" id="flexCheck">
+                                        <div class="d-flex">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheck">
+                                            </div>
+                                            <p class="mb-3 text-dark fw-bolder fs-6 ">By submitting this form I accept the <a class="text-dark text-decoration-underline" href="">privacy policy</a> of this site</p>
                                         </div>
-                                        <p class="mb-3 text-dark fw-bolder fs-6 ">By submitting this form I accept the <a class="text-dark text-decoration-underline" href="">privacy policy</a> of this site</p>
                                         <div class="col-sm-12 mb-3 submit-divclass">
                                             <button type="submit" class="my-buttons-hover bn21 m-0" id="submitButton" disabled>Submit</button>
                                         </div>

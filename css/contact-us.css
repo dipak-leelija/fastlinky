@@ -5,10 +5,12 @@ body {
 .contact-us-section {
     margin-top: 1rem;
 }
+
 .form-group {
     position: relative;
     padding-bottom: 0px !important;
 }
+
 .contact-us-section h1 {
     font-size: 3rem;
     color: coral;
@@ -68,7 +70,7 @@ body {
     }
 
     .contact-form__wrapper {
-        padding: 3rem 2rem  !important
+        padding: 3rem 2rem !important
     }
 
     .contact__wrapper {
@@ -79,9 +81,11 @@ body {
 .contact-info__list span.position-absolute {
     left: 0
 }
-.contact-info__wrapper ul{
+
+.contact-info__wrapper ul {
     padding-left: 2rem !important;
 }
+
 .z-index-101 {
     z-index: 101;
 }
@@ -102,12 +106,13 @@ body {
 
 /* submit */
 
-@media(max-width:991px){
-    .submit-divclass{
+@media(max-width:991px) {
+    .submit-divclass {
         text-align: center;
 
     }
 }
+
 .my-buttons-hover {
     width: 160px;
     font-size: 16px;
@@ -186,10 +191,31 @@ body {
     font-size: 14px;
 
 }
+
 .form-group textarea:focus~label,
 .form-group textarea:valid~label {
     margin-top: -18px;
     font-size: 14px;
     margin-bottom: 5px;
 
+}
+
+/* for check box css  */
+.form-check-input {
+    border: 1px solid black;
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+    border: 1px solid black;
+}
+
+.form-check-input:checked {
+    background-color: #ff7f50 !important;
+    border: #ff7f50;
+}
+
+.form-check-input:checked:focus {
+    box-shadow: none;
+    border: #ff7f50;
 }
