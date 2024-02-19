@@ -9,7 +9,7 @@
     border-radius: 35px;
 }
 
-.expert-btn {
+/* .expert-btn {
     background-color: var(--pure-black);
     color: white;
     padding: 8px 16px;
@@ -21,7 +21,7 @@
     background: #f76e5b;
     color: var(--pure-black);
     border: 1px solid var(--pure-black);
-}
+} */
 
 @media (min-width: 576px) {
     .confused-action {
@@ -347,7 +347,7 @@
             <h1 class="fw-bold">Confused?</h1>
             <h2>Let’s talk to our expert</h2>
             <div class="mt-sm-2">
-                <a class="btn expert-btn fw-bold" href="<?= URL ?>/contact">👉 Let's Talk</a>
+                <a class="btn second-btn fw-bold" href="<?= URL ?>/contact">👉 Let's Talk</a>
             </div>
         </div>
     </div>
