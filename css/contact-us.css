@@ -219,3 +219,14 @@ body {
     box-shadow: none;
     border: #ff7f50;
 }
+.was-validated .form-control:invalid:focus{
+    box-shadow: none;
+}
+.was-validated .form-control:valid{
+    box-shadow: none;
+    border-bottom: 1px solid #ff7f50;
+}
+.was-validated .form-control:valid:focus{
+    box-shadow: none;
+    border-bottom: 1px solid #ff7f50;
+}
