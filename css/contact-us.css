@@ -68,7 +68,7 @@ body {
     }
 
     .contact-form__wrapper {
-        padding: 4rem !important
+        padding: 3rem 2rem  !important
     }
 
     .contact__wrapper {
@@ -145,4 +145,63 @@ body {
             #ef9d43,
             #e75516);
     box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+}
+
+/* form design for contact form */
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+}
+
+.form-group input {
+    border: 0;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    color: #fff;
+}
+.form-group textarea{
+    border: 0;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+.form-group input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ff7f50;
+}
+.form-group textarea:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ff7f50;
+}
+
+.form-group input:focus~label,
+.form-group input:valid~label {
+    margin-top: -16px;
+    font-size: 14px;
+
+}
+.form-group textarea:focus~label,
+.form-group textarea:valid~label {
+    margin-top: -18px;
+    font-size: 14px;
+    margin-bottom: 5px;
+
 }
