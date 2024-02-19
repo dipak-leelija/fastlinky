@@ -196,9 +196,10 @@ body {
 .form-group textarea:valid~label {
     margin-top: -18px;
     font-size: 14px;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
 
 }
+
 
 /* for check box css  */
 .form-check-input {
@@ -219,14 +220,17 @@ body {
     box-shadow: none;
     border: #ff7f50;
 }
-.was-validated .form-control:invalid:focus{
+
+.was-validated .form-control:invalid:focus {
     box-shadow: none;
 }
-.was-validated .form-control:valid{
+
+.was-validated .form-control:valid {
     box-shadow: none;
     border-bottom: 1px solid #ff7f50;
 }
-.was-validated .form-control:valid:focus{
+
+.was-validated .form-control:valid:focus {
     box-shadow: none;
     border-bottom: 1px solid #ff7f50;
 }
