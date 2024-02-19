@@ -9,18 +9,18 @@
     border-radius: 35px;
 }
 
-.layoutbutton {
-    background-color: #000;
+.expert-btn {
+    background-color: var(--pure-black);
     color: white;
     padding: 8px 16px;
     border-radius: 16PX;
 }
 
-.layoutbutton:hover,
-.layoutbutton:active {
+.expert-btn:hover,
+.expert-btn:active {
     background: #f76e5b;
-    color: #000;
-    border: none;
+    color: var(--pure-black);
+    border: 1px solid var(--pure-black);
 }
 
 @media (min-width: 576px) {
@@ -49,7 +49,6 @@
 <section class="confused-action py-0">
     <div class="row justify-content-between border border-dark shadow-lg confused-layout mx-auto my-5">
         <div class="col-12 col-sm-5 p-0 confused-left">
-            <!-- <img src="<?= IMG_PATH ?>confused-action.svg" alt=""> -->
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                 y="0px" viewBox="0 0 2000 2000"  xml:space="preserve" class="w-lg-75 d-block mx-auto">
                 <g id="OBJECTS">
@@ -347,8 +346,8 @@
         <div class="col-12 col-sm-7 row g-1 g-sm-0 flex-column justify-content-center mt-0 px-5 py-4">
             <h1 class="fw-bold">Confused?</h1>
             <h2>Let’s talk to our expert</h2>
-            <div class="d-flex justify-content-between flex-wrap">
-                <button class="btn border-0 layoutbutton fw-bold">👉 Let's Talk</button>
+            <div class="mt-sm-2">
+                <a class="btn expert-btn fw-bold" href="<?= URL ?>/contact">👉 Let's Talk</a>
             </div>
         </div>
     </div>
