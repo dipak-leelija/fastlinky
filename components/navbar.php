@@ -5,7 +5,7 @@
         <a class="navbar-brand me-0" href="<?php echo URL;?>">
             <img src="<?php echo LOGO_WITH_PATH; ?>" alt="logo" class="pe-md-4">
         </a>
-        <a href="mailto:info@fastlinky.com">
+        <a class="head-mail-sec" href="mailto:info@fastlinky.com">
             <div class="text-center emailstyle  m-auto ps-4 ">
                 <?php
                     if($cusId != 0){
@@ -18,6 +18,11 @@
             </div>
         </a>
         <div class="right_mbl text-end">
+            <a class="btn second-btn-dark me-3 mobile_login_btn d-lg-none" href="<?php echo URL;?>/contact">
+                <!-- <i class="fa-brands fa-whatsapp pe-2"></i> -->
+                <i class="fa-regular fa-comments pe-1"></i>
+                Let's Talk
+            </a>
             <?php
             if($cusId == 0){
             ?>
@@ -53,9 +58,8 @@
             </button>
         </div>
 
-        <div class="collapse navbar-collapse mt-2 mt-lg-0" style="width: 59%;justify-content: inherit;"
-            id="navbarSupportedContent">
-            <ul class="navbar-nav   mb-2 mb-lg-0 ">
+        <div class="collapse navbar-collapse justify-content-end mt-2 mt-lg-0" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 ">
                 <li class="nav-item mynav_item">
                     <a class="nav-link  li-style" aria-current="page" href="<?php echo URL;?>">Home</a>
                 </li>
@@ -67,7 +71,7 @@
                 <li class="nav-item mynav_item dropdown myiconupdown">
                     <a class="nav-link dropdown d-flex li-style myservicecss" href="#">
                         Services
-                        <i class=" ps-1  fa-solid fa-sort-down nav-drop-sortdown" style="padding-top: 1px;"></i>
+                        <i class=" ps-1  fa-solid fa-sort-down nav-drop-sortdown"></i>
                         <i class="ps-1 fa-solid fa-sort-up nav-drop-sortup"></i>
                     </a>
                     <ul class="dropdown-menu producting-menues mydropdownmenu">
@@ -126,10 +130,14 @@
                 <li class="nav-item mynav_item">
                     <a class="nav-link li-style" href="<?php echo URL;?>/about">About</a>
                 </li>
-                <li class="nav-item mynav_item">
+                <!-- <li class="nav-item mynav_item">
                     <a class="nav-link li-style" href="contact">Contact</a>
-                </li>
+                </li> -->
             </ul>
+            <a class="btn second-btn-dark me-3 desktop-login-btn" href="<?php echo URL;?>/contact">
+                <!-- <i class="fa-brands fa-whatsapp pe-2"></i> -->
+                <i class="fa-regular fa-comments pe-1"></i>Let's Talk
+            </a>
             <?php
             if($cusId == 0){
             ?>

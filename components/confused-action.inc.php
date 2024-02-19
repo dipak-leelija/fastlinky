@@ -301,7 +301,7 @@
             <h1 class="fw-bold">Confused?</h1>
             <h2 class="confused-subhead">Let’s talk to our expert</h2>
             <div class="mt-sm-2">
-                <a class="btn second-btn fw-bold" href="<?= URL ?>/contact">👉 Let's Talk</a>
+                <a class="btn second-btn-dark fw-bold" href="<?= URL ?>/contact">👉 Let's Talk</a>
             </div>
         </div>
     </div>
