@@ -165,7 +165,7 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                 <div class="contact__wrapper  bg-transparent">
                     <div class="row no-gutters m-0">
                         <div class="col-lg-5 contact-info__wrapper order-lg-1">
-                            <h2 class="color--white mb-5">Get in <strong class="h-25 w-25 p-2 rounded" style=" background-color: #ff7f50;">Touch</strong></h2>
+                            <h2 class="color--white mb-5">Get in <strong class="h-25 w-25 p-2 rounded" style=" background-color: #FDA33B;">Touch</strong></h2>
 
                             <ul class="contact-info__list list-style--none position-relative z-index-101">
                                 <a href="mailto:<?php echo CONTACT_MAIL; ?>" style="color:black; font-weight: bold;">
