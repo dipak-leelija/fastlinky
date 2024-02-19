@@ -252,22 +252,24 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
 
                                     <div class="col-sm-12 mb-4">
                                         <div class="form-group">
-                                            <textarea class="form-control bg-transparent" minlength="10" maxlength="1000" id="message" name="message" rows="2" required></textarea>
-                                            <label class="" for="message">How can we help?</label>
-                                            <div class="invalid-feedback">
+                                            <textarea class="form-control bg-transparent" maxlength="1000" id="message" name="message" rows="2" required></textarea>
+                                            <label class="required-field" for="message">How can we help?</label>
+                                            <div class="invalid-feedback" id="invalidLength">
                                                 Please enter your queries!
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 mb-4">
-                                        <div class="d-flex ">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheck">
+                                        <div class="mb-4">
+                                            <div class="d-flex ">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheck">
+                                                </div>
+                                                <p class=" text-dark fw-bolder fs-6 ">By submitting this form I accept the <a class="text-dark text-decoration-underline" href="">privacy policy</a> of this site</p>
                                             </div>
-                                            <p class="mb-3 text-dark fw-bolder fs-6 ">By submitting this form I accept the <a class="text-dark text-decoration-underline" href="">privacy policy</a> of this site</p>
-                                        </div>
-                                        <div class="invalidCheck" style="display: none;color:red">
-                                            Please check this box to proceed.
+                                            <div class="invalidCheck" style="display: none;color:red">
+                                                Please check this box to proceed.
+                                            </div>
                                         </div>
                                         <div class="col-sm-12 mb-3 submit-divclass">
                                             <button type="submit" class="my-buttons-hover bn21 m-0" id="submitButton">Submit</button>
@@ -312,6 +314,7 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                 })
         })()
 
+        // for handling check box 
         document.addEventListener("DOMContentLoaded", function() {
             const checkbox = document.getElementById('flexCheck');
             const submitButton = document.getElementById('submitButton');
@@ -330,6 +333,17 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                     invalidCheck.style.display = 'none';
                 }
             });
+        });
+
+        // for handling textarea and label css effect 
+        document.getElementById('message').addEventListener('input', function() {
+            var message = this.value;
+            var formGroup = this.parentNode;
+            if (message.length < 10) {
+                invalidLength.style.display = 'block';
+            } else {
+                invalidLength.style.display = 'none';
+            }
         });
     </script>
 </body>
