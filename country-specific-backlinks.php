@@ -324,9 +324,16 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- -------------------------------- -->
     <!-- Frequently Asked Questions ends -->
     <!-- ------------------------------------ -->
-    <div class="mt-4">
-        <?php include_once 'components/seller-action.php'; ?>
-    </div>
+    <!-- <div class="mt-4">
+        <?php // include_once 'components/seller-action.php'; ?>
+    </div> -->
+
+    <!----------------------------------------------------- -->
+    <!-- curious section starts -->
+    <?php require_once "components/curious-section.inc.php"; ?>
+    <!-- curious section ended -->
+    <!-- -------------------------------------------------- -->
+    
     <!-- --------------------------------------- -->
     <!-- feedback form -->
     <?php require_once "components/feedback.php"; ?>
