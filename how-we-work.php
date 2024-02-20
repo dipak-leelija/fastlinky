@@ -46,6 +46,8 @@ require_once ROOT_DIR."/components/how-we-work.inc.php";
     <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
     <link href="<?= URL ?>/css/custom.css" rel='stylesheet' type='text/css' />
     <link href="<?= URL ?>/css/how-we-work.css" rel="stylesheet">
+    <link href="<?= URL ?>/css/lets-talk-section.css" rel="stylesheet" />
+
 
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
@@ -90,7 +92,7 @@ require_once ROOT_DIR."/components/how-we-work.inc.php";
             <div x-data="enterView">
                 <div class="position-relative z-10 pt-4">
 
-                <?php // echo IMG_PATH ?>
+                    <?php // echo IMG_PATH ?>
                     <!-- 1st sec start  -->
                     <?php eachStep('<strong>Planning</strong> and Analysis', 'Ready for the achievement', IMG_PATH.'Planning-and-Analysis.png', array('a complete audit of links and content', 'Competitor analysing', 'Analysis of the anchor text and target page')); ?>
                     <!-- 1st sec end  -->
@@ -131,19 +133,44 @@ require_once ROOT_DIR."/components/how-we-work.inc.php";
                     <div class="px-4">
                         <div class="d-flex">
                             <div class="col-md-5 col-xl-6">
-                            <div class="main-line w-0.5 h-screen pointer-events-none transform -translate-x-1">
-                                <div class="h-100"></div>
-                                <div class="position-absolute top-0 start-0 w-0.5 h-1/2"></div>
+                                <div class="main-line w-0.5 h-screen pointer-events-none transform -translate-x-1">
+                                    <div class="h-100"></div>
+                                    <div class="position-absolute top-0 start-0 w-0.5 h-1/2"></div>
+                                </div>
                             </div>
+                            <div class="col-7 col-xl-6"></div>
+
                         </div>
-                        <div class="col-7 col-xl-6"></div>
-                        
                     </div>
-                </div>
                 </div>
             </div>
         </article>
     </main>
+    <!---------------------------------------------------------------- -->
+    <!-- curious section starts -->
+    <?php // require_once "components/curious-section.inc.php"; ?>
+    <section class="lets-talk-section py-0" style="z-index: 999; background: var(--pure-white);">
+        <div class="row justify-content-between layoutdiv h-100">
+            <div class="col-12 col-md-4 p-0 order-2 order-md-1 imgdiv">
+                <img src="https://optimise2.assets-servd.host/obedient-zorilla/production/images/Universal-cool-graphics/footer-3D.png?w=1600&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1653141251&s=c1bdfa6eac6fcf827bfa2426c2dc5630"
+                    alt="">
+            </div>
+            <div class="col-12 col-md-8 d-flex flex-column justify-content-center order-1 order-md-2 mt-0 px-5 py-4">
+                <h1 class="fw-bold">Curious? <br> Let’s talk link building</h1>
+                <div class="max-w-lg mb-4">
+                    <div class="redactor text-gray-800">We love talking link building. Let us know about your project
+                        and we'll send you a free proposal</div>
+                </div>
+                <div class="d-flex justify-content-between flex-wrap">
+                    <button class="btn border-0 layoutbutton fw-bold">Get In Touch <i
+                            class="fa-regular fa-comment-dots ps-2"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- curious section ended -->
+    <!---------------------------------------------------------------- -->
+
     <!-- Footer -->
     <?php require_once "components/footer.php"; ?>
     <!-- /Footer -->
