@@ -80,6 +80,10 @@ if(isset($_GET['seo_url']))
     <!-- How FastLinky Works? starts -->
     <?php require_once "components/index-how_works.inc.php"; ?>
     <!-- How FastLinky Works? ends -->
+    <!------------------------------------------------->
+    <!-- confused-action start -->
+    <?php require_once "components/confused-action.inc.php"; ?>
+    <!-- confused-action end -->
     <!---------------------------------------------------------->
     <!--  High Authority And High Traffic Websites start -->
     <?php require_once "components/index-ha-ht.inc.php"; ?>
@@ -88,10 +92,6 @@ if(isset($_GET['seo_url']))
     <!-- testimonials customers reviews -->
     <?php require_once "components/testimonials.php"; ?>
     <!-- testimonials customers reviews -->
-    <!------------------------------------------------->
-    <!-- confused-action start -->
-    <?php require_once "components/confused-action.inc.php"; ?>
-    <!-- confused-action end -->
     <!------------------------------------------------->
     <!-- Link Building Services that Actually Matters-starts -->
     <?php require_once "components/index-lbs.inc.php"; ?>
