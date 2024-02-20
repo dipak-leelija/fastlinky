@@ -10,6 +10,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
 <!DOCTYPE HTML>
 <html lang="zxx">
+
 <head>
     <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
 
@@ -30,6 +31,20 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
 <body>
     <?php require_once "components/navbar.php"; ?>
+    <!------------------------------------------------->
+    <section class="mt-5">
+        <h1 class="text-center pricing-bo-h1 mb-3 mt-5">White Label Link Building Pricing
+        </h1>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
+
+        <?php require_once "components/pricing-cards.php"; ?>
+    </section>
+    <!------------------------------------------------->
+    <!-- confused-action start -->
+    <?php require_once "components/confused-action.inc.php"; ?>
+    <!-- confused-action end -->
+    <!------------------------------------------------->
     <section class="white_lebel_link_banner">
         <div class="row">
             <div class="d-flex flex-column justify-content-center col-md-6 order-2 order-md-1  px-0 px-md-4">
@@ -471,18 +486,6 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     </section>
     <!-- How Can We Guard Your Clients?-section end -->
     <!-- ------------------------------------------------ -->
-    <!-- pricing section -->
-
-    <section class="mt-5">
-        <h1 class="text-center pricing-bo-h1 mb-3 mt-5">White Label Link Building Pricing
-        </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
-            DR, or organic traffic. Below is the pricing for All 3 models.</p>
-
-        <?php require_once "components/pricing-cards.php"; ?>
-    </section>
-
-    <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <?php require_once "components/blogs-sites.php"; ?>
     <!-- ------------------------------------------- -->
@@ -900,7 +903,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </a>
             </div>
         </div>
-    </section> 
+    </section>
     <!-- features-section start -->
     <?php require_once "components/features-section.php"; ?>
     <!-- features-section ends -->

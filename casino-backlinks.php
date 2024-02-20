@@ -30,6 +30,22 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
 <body>
     <?php require_once "components/navbar.php"; ?>
+    <!-- ------------------------------------------------ -->
+    <!-- pricing section -->
+    <section class="my-sm-5 my-2 ">
+        <h1 class="text-center pricing-bo-h1 mb-3">Casino Backlinks Pricing
+        </h1>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
+
+        <?php require_once "components/pricing-cards.php"; ?>
+    </section>
+    <!-- pricing section ends -->
+    <!------------------------------------------------->
+    <!-- confused-action start -->
+    <?php require_once "components/confused-action.inc.php"; ?>
+    <!-- confused-action end -->
+    <!------------------------------------------------->
     <!-- starting of Casino Backlinks main banner  -->
     <section class="casino-banner-section">
         <div class="casino-sizing-div">
@@ -166,17 +182,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- What Are Casino Backlinks? end -->
-    <!-- ------------------------------------------------ -->
-    <!-- pricing section -->
-    <section class="my-sm-5 my-2 ">
-        <h1 class="text-center pricing-bo-h1 mb-3">Casino Backlinks Pricing
-        </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
-            DR, or organic traffic. Below is the pricing for All 3 models.</p>
-
-        <?php require_once "components/pricing-cards.php"; ?>
-    </section>
-    <!-- pricing section ends -->
+    
     <!-- ------------------------------------------- -->
     <?php require_once "components/blogs-sites.php"; ?>
     <!-- ------------------------------ -->

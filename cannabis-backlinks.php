@@ -31,31 +31,47 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
 <body>
     <?php require_once "components/navbar.php"; ?>
+    <!-- ------------------------------------------------ -->
+    <!-- pricing section -->
+    <section class="mt-sm-5 mt-0">
+        <h1 class="text-center pricing-bo-h1 mb-3 px-2">Cannabis backlinks pricing
+        </h1>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
+
+        <?php require_once "components/pricing-cards.php"; ?>
+    </section>
+    <!-- pricing section ends -->
+    <!------------------------------------------------->
+    <!-- confused-action start -->
+    <?php require_once "components/confused-action.inc.php"; ?>
+    <!-- confused-action end -->
+    <!------------------------------------------------->
     <!-- Cannabis Backlinks main banner starting -->
     <section class="cannabis-back-banner">
-            <div class="row m-auto w-100">
-                <div class="col-12 col-lg-6 col-md-7 order-2 order-md-1 px-0 px-md-4">
-                    <div class="">
-                        <h1 class="mlb-starting-main-h1">Link building services for <span>cannabis & CBD </span> website
-                            SEO</h1>
-                        <p class=" mt-2 mb-4 py-0 py-md-2 mlb-starting-main-p">Rank top on the SERP, manage certified
-                            traffic to your website, get powerful backlinks for <b>cannabis and CBD link-building
-                                services</b> ,
-                            and attention to our website. We promote effective <b>CBD link-building services</b> .
-                        </p>
-                        <div class=" text-center text-md-start  mb-4 mb-md-0 mt-3">
-                            <a href="#pricing-cards">
-                                <button type="button" class="btn srvc-common-btn ">Get Started</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6 col-md-5 order-1 order-md-2 px-2 p-md-0 mt-3 mt-md-0">
-                    <div class="">
-                        <img src="./images/freepik-img/cannabis-banner.png" class="w-100" alt="">
+        <div class="row m-auto w-100">
+            <div class="col-12 col-lg-6 col-md-7 order-2 order-md-1 px-0 px-md-4">
+                <div class="">
+                    <h1 class="mlb-starting-main-h1">Link building services for <span>cannabis & CBD </span> website
+                        SEO</h1>
+                    <p class=" mt-2 mb-4 py-0 py-md-2 mlb-starting-main-p">Rank top on the SERP, manage certified
+                        traffic to your website, get powerful backlinks for <b>cannabis and CBD link-building
+                            services</b> ,
+                        and attention to our website. We promote effective <b>CBD link-building services</b> .
+                    </p>
+                    <div class=" text-center text-md-start  mb-4 mb-md-0 mt-3">
+                        <a href="#pricing-cards">
+                            <button type="button" class="btn srvc-common-btn ">Get Started</button>
+                        </a>
                     </div>
                 </div>
             </div>
+            <div class="col-12 col-lg-6 col-md-5 order-1 order-md-2 px-2 p-md-0 mt-3 mt-md-0">
+                <div class="">
+                    <img src="./images/freepik-img/cannabis-banner.png" class="w-100" alt="">
+                </div>
+            </div>
+        </div>
     </section>
     <!-- end of Cannabis Backlinks main banner -->
     <!-- ------------------------------------------------------------------ -->
@@ -88,7 +104,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- Cannabis & CBD Link Building Service ends -->
-<!-- ---------------------------------------------------- -->
+    <!-- ---------------------------------------------------- -->
     <!-- Collaboration opportunity-cb start -->
     <section class="lbs-actually-matters-main">
         <div class="row">
@@ -193,18 +209,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
         </div>
     </section>
-    <!-- Collaboration opportunity-cb ends --> 
-    <!-- ------------------------------------------------ -->
-    <!-- pricing section -->
-    <section class="mt-sm-5 mt-0">
-        <h1 class="text-center pricing-bo-h1 mb-3 px-2">Cannabis backlinks pricing
-        </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
-            DR, or organic traffic. Below is the pricing for All 3 models.</p>
-
-        <?php require_once "components/pricing-cards.php"; ?>
-    </section>
-    <!-- pricing section ends -->
+    <!-- Collaboration opportunity-cb ends -->
     <!-- ------------------------------------------- -->
     <?php require_once "components/blogs-sites.php"; ?>
     <!-- ------------------------------------------------------------------->
@@ -301,7 +306,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- Cannabis & CBD Link Building Service ends -->
-<!-- ------------------------------------------- -->
+    <!-- ------------------------------------------- -->
     <!-- features-section start -->
     <?php require_once "components/features-section.php"; ?>
     <!-- features-section ends -->
@@ -326,4 +331,5 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
     <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
 </body>
+
 </html>
