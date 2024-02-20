@@ -22,7 +22,7 @@
 
 @media (min-width: 576px) {
     .confused-action {
-        padding: 3rem !important;
+        padding: 0 3rem !important;
     }
 }
 
@@ -40,7 +40,7 @@
 
 @media (min-width: 1200px) {
     .confused-action {
-        padding: 3rem 5rem !important;
+        padding: 0 5rem !important;
     }
 
     .confused-left svg{
@@ -57,7 +57,7 @@
 </style>
 
 <section class="confused-action py-0">
-    <div class="row justify-content-between border border-dark shadow-lg confused-layout mx-auto my-5">
+    <div class="row justify-content-between border border-dark shadow-lg confused-layout mx-auto my-0">
         <div class="col-12 col-sm-5 p-0 confused-left">
             <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1656 1419">
                 <style>
