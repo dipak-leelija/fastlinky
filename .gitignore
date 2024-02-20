@@ -11,3 +11,6 @@ testing-sample.php
 
 # local backup files
 x-contact.php
+
+#none shareable
+credentials.txt

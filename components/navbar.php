@@ -18,16 +18,15 @@
             </div>
         </a>
         <div class="right_mbl text-end">
-            <a class="btn second-btn-dark me-3 mobile_login_btn d-lg-none" href="<?php echo URL;?>/contact">
-                <!-- <i class="fa-brands fa-whatsapp pe-2"></i> -->
-                <i class="fa-regular fa-comments pe-1"></i>
+            <a class="second-btn-dark me-3 d-lg-none" href="<?php echo URL;?>/contact">
+                <i class="fa-regular fa-comments d-none d-md-sm-block pe-1"></i>
                 Let's Talk
             </a>
             <?php
             if($cusId == 0){
             ?>
-            <a href="<?php echo URL;?>/login" class="btn login-btn mobile_login_btn">
-                <i class="pe-2 fa-solid fa-user-lock fa-fade"
+            <a href="<?php echo URL;?>/login" class="login-btn d-lg-none">
+                <i class="fa-solid fa-user-lock fa-fade d-none d-md-sm-block pe-2"
                     style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6;color: darkgreen;"></i>Login
             </a>
             <?php
@@ -130,18 +129,14 @@
                 <li class="nav-item mynav_item">
                     <a class="nav-link li-style" href="<?php echo URL;?>/about">About</a>
                 </li>
-                <!-- <li class="nav-item mynav_item">
-                    <a class="nav-link li-style" href="contact">Contact</a>
-                </li> -->
             </ul>
-            <a class="btn second-btn-dark me-3 desktop-login-btn" href="<?php echo URL;?>/contact">
-                <!-- <i class="fa-brands fa-whatsapp pe-2"></i> -->
+            <a class="btn second-btn-dark me-3 d-none d-lg-inline-flex" href="<?php echo URL;?>/contact">
                 <i class="fa-regular fa-comments pe-1"></i>Let's Talk
             </a>
             <?php
             if($cusId == 0){
             ?>
-            <a class="login-btn desktop-login-btn" href="<?php echo URL;?>/login">
+            <a class="login-btn d-none d-lg-inline-flex" href="<?php echo URL;?>/login">
                 <i class="pe-2 fa-solid fa-user-lock fa-fade"
                     style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6;color: darkgreen;"></i>
                 Login</a>
@@ -149,7 +144,7 @@
             }else {
             ?>
 
-            <li class="nav-item mynav_item dropdown dashboaard_button desktop-login-btn">
+            <li class="nav-item mynav_item dropdown dashboaard_button d-none d-lg-inline-flex">
                 <button class=" dropdown  login-btn external-styling ">My Account <i class="bi bi-chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu external-drop-menu">

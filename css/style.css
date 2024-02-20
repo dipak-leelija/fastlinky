@@ -1,107 +1,4 @@
-@font-face {
-    font-family: "Satoshi-BlackItalic";
-    src: url("../fonts/Satoshi-BlackItalic.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Satoshi-Variable";
-    src: url("../fonts/Satoshi/fonts/Satoshi-Variable.woff2") format("woff2"), url("../fonts/Satoshi/fonts/Satoshi-Variable.woff") format("woff"), url("../fonts/Satoshi/fonts/Satoshi-Variable.ttf") format("truetype");
-    font-weight: 300 900;
-    font-display: swap;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Satoshi-BlackItalic";
-    src: url("../fonts/Satoshi/fonts/Satoshi-BlackItalic.woff2") format("woff2"), url("../fonts/Satoshi/fonts/Satoshi-BlackItalic.woff") format("woff"), url("../fonts/Satoshi/fonts/Satoshi-BlackItalic.ttf") format("truetype");
-    font-weight: 900;
-    font-display: swap;
-    font-style: italic;
-}
-
-:root {
-    --mustard: #FDA33B;
-    --pure-white: #FFFFFF;
-    --custom-blue: #407BFF;
-    --text-blue: #407BFF;
-    --dark-blue: #407BFF;
-    --btn-bg-blue: #EBF4FE;
-    --black: #383a50;
-    --pure-green: #00FF00;
-    --pink: #FF0833;
-    --red: #dc3545;
-    --pure-black: #000000;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-    font-family: "Satoshi-Variable";
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    width: 100%;
-    height: 100vh;
-    padding-top: 3.6rem !important;
-}
-
-body a {
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-    text-decoration: none;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-    background: #407BFF !important;
-
-}
-
-html {
-    scrollbar-width: thin;
-    scrollbar-color: #407BFF rgba(128, 128, 128, 0.23);
-    scroll-behavior: smooth !important;
-}
-
-html:-webkit-scrollbar {
-    width: 0.5rem;
-    box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.671) !important;
-}
-
-body #home {
-    padding-top: 3rem !important;
-}
-
-/* =====================================SCROLLBAR DESIGN ==================================== */
-
-/* width */
-body::-webkit-scrollbar {
-    width: 0.5rem;
-    opacity: 1;
-    overflow-y: auto;
-}
-
-/* Track */
-body::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.671) !important;
-    border-radius: 2px;
-}
-
-/* Handle */
-
-body::-webkit-scrollbar-thumb {
-    background: #407BFF !important;
-    /* border-radius: 0.2rem; */
-    border-radius: 2px;
-    opacity: 1;
-}
-
-/* Handle on hover */
-/* ================================= SCROLLBAR DESIGN   ends ====================================== */
-
+@import 'buttons.css';
 /*--------------------------------------------------------------
   # Navigation Menu
   --------------------------------------------------------------*/
@@ -165,24 +62,6 @@ body::-webkit-scrollbar-thumb {
 .dropdown-item:focus {
     color: #1e2125;
     background-color: white;
-}
-
-.login-btn {
-    background-image: linear-gradient(120deg, var(--mustard) 0%, #FA8273 100%);
-    border: none;
-    border-radius: 8px;
-    color: var(--pure-white);
-    display: inline-flex;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1;
-    padding: 0.5em 1em;
-    text-decoration: none;
-}
-
-.login-btn:hover {
-    color: var(--pure-white);
-    background-image: linear-gradient(120deg, #FA8273 0%, var(--mustard) 100%);
 }
 
 .producting-menues {
@@ -294,16 +173,12 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-.navbar .second-btn-dark{
+/* .navbar .second-btn-dark{
     width: 8rem !important;
-}
-.desktop-login-btn {
-    display: none;
-}
+} */
 
-.mobile_login_btn {
-    display: none;
-}
+
+
 
 .li-style {
     color: #14213d;
@@ -438,11 +313,6 @@ body::-webkit-scrollbar-thumb {
         width: 28rem;
     }
 
-    .mobile_login_btn {
-        display: inline-block;
-        font-size: 12px;
-    }
-
     .dashboaard_button {
         padding-bottom: 0rem !important;
     }
@@ -469,11 +339,6 @@ body::-webkit-scrollbar-thumb {
         padding: 0.5rem 0rem;
     }
 
-
-    .navbar-brand img {
-        width: 90px;
-    }
-
     .emailstyle {
         display: none;
     }
@@ -485,21 +350,12 @@ body::-webkit-scrollbar-thumb {
         display: flex;
     }
 
-    .mobile_login_btn {
-        font-size: 13px;
-        /* width: 90px; */
-    }
-
     .navbar-toggler {
         margin-left: 0.4rem;
     }
 }
 
 @media (min-width: 325px) {
-    .navbar-brand img {
-        width: 120px;
-    }
-
     .emailstyle {
         display: none;
     }
@@ -510,11 +366,6 @@ body::-webkit-scrollbar-thumb {
         align-items: center;
         display: flex;
     }
-
-    .mobile_login_btn {
-        width: auto;
-    }
-
     .navbar-toggler {
         margin-left: 0.8rem;
     }
@@ -533,11 +384,19 @@ body::-webkit-scrollbar-thumb {
         width: 1.8em;
     }
 
-    .mobile_login_btn {
-        font-size: 14px;
+}
+@media (max-width: 767px) {
+    .navbar-brand{
+        width: 25%;
+
+    }
+    .navbar-brand img{
+        width: 100px;
+    }
+    .right_mbl {
+        width: 75%;
     }
 }
-
 @media (min-width: 768px) {
     .navbar {
         padding: 0.745rem 1.2rem;
@@ -565,17 +424,6 @@ body::-webkit-scrollbar-thumb {
 
     .navbar-nav {
         padding: 1rem;
-    }
-}
-
-@media (min-width: 992px) {
-
-    .desktop-login-btn {
-        display: inline-flex;
-    }
-
-    .mobile_login_btn {
-        display: none;
     }
 }
 
@@ -3763,25 +3611,6 @@ h5 {
     padding: 13px 40px 13px 40px;
 }
 
-
-.second-btn-dark {
-    background-color: var(--pure-black);
-    border: 1px solid var(--pure-black);
-    border-radius: 8px;
-    color: var(--pure-white);
-    display: inline-flex;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1;
-    padding: 0.5em 1em;
-    text-decoration: none;
-}
-
-.second-btn-dark:hover,
-.second-btn-dark:active {
-    background: #ffffff00;
-    color: var(--pure-black);
-}
 .srvc-common-btn1:hover {
     color: white !important;
     background-image: linear-gradient(120deg, #FA8273 0%, var(--mustard) 100%);

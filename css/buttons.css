@@ -1,0 +1,125 @@
+@import 'main.css';
+:root{
+    --fl-btn-fs: 16px;
+    --fl-btn-padding-x: 0.5em;
+    --fl-btn-padding-y: 1em;
+
+}
+.login-btn {
+    background-image: linear-gradient(120deg, var(--mustard) 0%, #FA8273 100%);
+    border: none;
+    border-radius: 8px;
+    color: var(--pure-white);
+    display: inline-flex;
+    font-size: var(--fl-btn-fs);
+    font-weight: 600;
+    line-height: 1;
+    padding: var(--fl-btn-padding-x) var(--fl-btn-padding-y);
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+    white-space: nowrap;
+
+}
+
+.login-btn:hover {
+    color: var(--pure-white);
+    background-image: linear-gradient(120deg, #FA8273 0%, var(--mustard) 100%);
+}
+
+.second-btn-dark {
+    background-color: var(--pure-black);
+    border: 1px solid var(--pure-black);
+    border-radius: 8px;
+    color: var(--pure-white);
+    display: inline-flex;
+    font-size: var(--fl-btn-fs);
+    font-weight: 600;
+    line-height: 1;
+    padding: var(--fl-btn-padding-x) var(--fl-btn-padding-y);
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+    white-space: nowrap;
+
+
+    /* background-color: var(--pure-black);
+    border-radius: 8px;
+    color: var(--pure-white);
+    font-size: var(--fl-btn-fs);
+    padding: var(--fl-btn-padding-y) var(--fl-btn-padding-x);
+    display: inline-block;
+    box-sizing: border-box;
+    appearance: none;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-width: 0;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    will-change: transform; */
+}
+
+.second-btn-dark:hover{
+    transform: translateY(-2px);
+    color: var(--pure-black);    
+}
+
+.second-btn-dark:hover, .second-btn-dark:active {
+    background: #ffffff00;
+    color: var(--pure-black);
+    transform: translateY(0);
+}
+
+  
+.button-28:active {
+    box-shadow: none;
+}
+@media (min-width: 250px) {
+}
+
+@media (min-width: 325px) {
+
+    .login-btn {
+        width: auto;
+    }
+}
+
+@media (min-width: 576px) {
+}
+
+@media (max-width: 991px) {
+}
+
+@media (min-width: 992px) {
+
+    .mobile_login_btn {
+        display: none;
+    }
+}
+
+
+
+
+
+/* ==================================================== */
+/* CSS */
+
+.button-28:disabled {
+  pointer-events: none;
+}
+
