@@ -14,7 +14,7 @@
                         aria-label="Slide 4"></button>
                 </div>
                 <!-- ======================= Carousel inner Start ======================= -->
-                <div class="carousel-inner">
+                <div class="carousel-inner carotestihight">
                     <!-- =============== Review One =============== -->
                     <div class="carousel-item active slider">
                         <h4 class="what-others-say-bo-ci-h4">"FastLinky is the best SEO agency. I sincerely value our business partnership with the Fastlinky Team over the past year. They have benefited us in website design and development for our website’s organic growth."</h4>

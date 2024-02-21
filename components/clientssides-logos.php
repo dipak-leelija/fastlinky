@@ -48,9 +48,9 @@
             <h2 class="px-3 px-md-0 h2text">Our clients earned brand mentions from <strong>publications like...</strong></h2>
         </div>
         <div id="carouselExampleAutoplaying" class="carousel slide carouselLogo" data-bs-ride="carousel">
-            <div class=" carousel-inner">
-                <div class="d-flex">
-                    <div class=" carousel-item active col-sm-6 col-md-3">
+            <div class=" carousel-inner carulogohight">
+                <div class="d-flex ">
+                    <div class=" carousel-item item active col-sm-6 col-md-3">
                         <img src="images/clients-logos/cc1.png" class="img-responsive" alt="">
                     </div>
                     <div class=" carousel-item  col-sm-6 col-md-3">

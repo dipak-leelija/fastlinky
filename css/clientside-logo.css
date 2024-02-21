@@ -42,8 +42,9 @@
     border: 1px solid;
     border-color: #f3f3f3;
 }
+
 .img-responsive {
-    padding:1rem;
+    padding: 1rem;
     /* width: 100%;
     height: 100%; */
     width: 200px;
@@ -56,7 +57,7 @@
     /* mix-blend-mode: difference; */
 }
 
-.img-responsive:hover  {
+.img-responsive:hover {
     background: var(--mustard);
 
 }
@@ -82,32 +83,71 @@
 }
 
 /* for carousel  */
-.carouselLogo{
-    background-color:transparent;
-}
-.carousel-inner{
-    height: 200px;
-     width:75%;
+.carouselLogo {
+    background-color: transparent;
 }
 
-@media screen and (max-width: 768px) {
-    .clientsides-item{
+.carulogohight {
+    height: 200px;
+    width: 65%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 915px) {
+    .clientsides-item {
         padding: 2rem 0rem 2rem;
     }
-    .h2text{
+
+    .h2text {
         padding-bottom: 1px;
     }
-    .carousel-inner{
+
+    .carulogohight {
         height: 130px;
-         width:100%;
+        width: 100%;
+        margin-left: 4px;
     }
-    .carousel-item img{
+
+    .img-responsive {
         height: 150px;
-        width: 150px;
+        width: 160px;
     }
 }
 
-/* header button responsive for ipad  */
+/* For iPad */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .clientsides-item {
+        padding: 2rem 0rem 2rem;
+    }
 
+    .h2text {
+        padding-bottom: 1px;
+    }
+
+    .carulogohight {
+        height: 140px;
+        width: 75%;
+        margin-left: 110px;
+    }
+
+    .img-responsive {
+        height: 160px;
+        width: 160px;
+    }
 }
+
+@media screen and (min-width:  1024px) and (max-width:1366px) {
+    .carulogohight {
+        height: 140px;
+        width: 65%;
+        margin-left: 245px;
+    }
+
+    .img-responsive {
+        height: 160px;
+        width: 160px;
+    }
+}
+
+
+

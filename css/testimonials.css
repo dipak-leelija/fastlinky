@@ -61,7 +61,7 @@
     height: inherit !important;
 	width: 100% !important;
 }
-.carousel-inner {
+.carotestihight {
 	position: relative;
 	width: 48rem;
 	text-align: center;
@@ -75,7 +75,11 @@
 	margin-top: 0rem;
 
 }
-
+@media screen and (max-width: 768px) {
+	.carotestihight{
+		height: 210px;
+	}
+}
 @media  (max-width: 992px) {
 	.containerslider {
 		padding: 0 !important;
