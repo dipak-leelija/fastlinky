@@ -139,8 +139,10 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
     <?php require_once ROOT_DIR . "/components/fastlinky-head.php" ?>
 
     <title><?php echo COMPANY_S; ?> Global Support - Contact Us </title>
-    <meta name="description" content="LeeLija staff always available for your support. Our technical and SEO staffs always online, Leelija team provided free support for every one." />
-    <meta name="keywords" content="contact for SEO, contact for web development, support for on page SEO, support for technical SEO, contact for guest post" />
+    <meta name="description"
+        content="LeeLija staff always available for your support. Our technical and SEO staffs always online, Leelija team provided free support for every one." />
+    <meta name="keywords"
+        content="contact for SEO, contact for web development, support for on page SEO, support for technical SEO, contact for guest post" />
 
     <!-- Plugins Files -->
     <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
@@ -151,6 +153,7 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
     <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
     <link href="<?= URL ?>/css/form.css" rel='stylesheet' type='text/css' />
     <link href="<?= URL ?>/css/custom.css" rel='stylesheet' type='text/css' />
+
 </head>
 
 <body>
@@ -165,7 +168,8 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                 <div class="contact__wrapper  bg-transparent">
                     <div class="row no-gutters m-0">
                         <div class="col-lg-5 contact-info__wrapper order-lg-1">
-                            <h2 class="color--white mb-5">Get in <strong class="h-25 w-25 p-2 rounded" style=" background-color: #FDA33B;">Touch</strong></h2>
+                            <h2 class="color--white mb-5">Get in <strong class="h-25 w-25 p-2 rounded"
+                                    style=" background-color: #FDA33B;">Touch</strong></h2>
 
                             <ul class="contact-info__list list-style--none position-relative z-index-101">
                                 <a href="mailto:<?php echo CONTACT_MAIL; ?>" style="color:black; font-weight: bold;">
@@ -186,7 +190,9 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                                     <br>Kolkata, West Bengal, India
                                     <br>Pincode- 700124
                                     <div class="mt-3">
-                                        <a href="https://goo.gl/maps/AKCsxmTbJcdta2YKA" target="_blank" class="text-link link--right-icon text-dark">Get directions <i class="link__icon fa fa-directions"></i></a>
+                                        <a href="https://goo.gl/maps/AKCsxmTbJcdta2YKA" target="_blank"
+                                            class="text-link link--right-icon text-dark">Get directions <i
+                                                class="link__icon fa fa-directions"></i></a>
                                     </div>
                                 </li>
                             </ul>
@@ -195,12 +201,13 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                             <?php
                             if ($errMsg != '') {
                             ?>
-                                <div>
-                                    <div class="alert <?= $alertMsg ?> alert-dismissible fade show" role="alert">
-                                        <strong><?= $errMsg ?></strong>
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
+                            <div>
+                                <div class="alert <?= $alertMsg ?> alert-dismissible fade show" role="alert">
+                                    <strong><?= $errMsg ?></strong>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
                                 </div>
+                            </div>
                             <?php
                             }
                             ?>
@@ -208,7 +215,8 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                                 <div class="row">
                                     <div class="col-sm-12 mb-5">
                                         <div class="form-group ">
-                                            <input type="text" minlength="4" class="form-control bg-transparent" id="firstname" name="firstname" required>
+                                            <input type="text" minlength="4" class="form-control bg-transparent"
+                                                id="firstname" name="firstname" required>
                                             <label class="required-field " for="firstname">First Name</label>
                                             <div class="invalid-feedback">
                                                 Please Enter your first Name!
@@ -219,7 +227,8 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
 
                                     <div class="col-sm-12 mb-5">
                                         <div class="form-group">
-                                            <input type="text" minlength="4" class="form-control bg-transparent" id="lastName" name="lastName" required>
+                                            <input type="text" minlength="4" class="form-control bg-transparent"
+                                                id="lastName" name="lastName" required>
                                             <label class="required-field " for="lastName">Last Name</label>
                                             <div class="invalid-feedback">
                                                 Please Enter your Last Name!
@@ -230,7 +239,9 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
 
                                     <div class="col-sm-12 mb-5">
                                         <div class="form-group">
-                                            <input type="email" inputmode="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control bg-transparent" id="email" name="email" required>
+                                            <input type="email" inputmode="email"
+                                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                                class="form-control bg-transparent" id="email" name="email" required>
                                             <label class="required-field " for="email">Email</label>
                                             <div class="invalid-feedback">
                                                 Please enter your email!
@@ -241,7 +252,10 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
 
                                     <div class="col-sm-12 mb-5">
                                         <div class="form-group">
-                                            <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" minlength="10" pattern="[0-9]+" maxlength="10" class="form-control bg-transparent" id="phone" name="phone" required>
+                                            <input type="text"
+                                                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                                minlength="10" pattern="[0-9]+" maxlength="10"
+                                                class="form-control bg-transparent" id="phone" name="phone" required>
                                             <label class="" for="phone">Phone Number</label>
                                             <div class="invalid-feedback">
                                                 Please enter valid phone Number!
@@ -252,7 +266,8 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
 
                                     <div class="col-sm-12 mb-4">
                                         <div class="form-group">
-                                            <textarea class="form-control bg-transparent" maxlength="1000" id="message" name="message" rows="2" required></textarea>
+                                            <textarea class="form-control bg-transparent" maxlength="1000" id="message"
+                                                name="message" rows="2" required></textarea>
                                             <label class="required-field" for="message">How can we help?</label>
                                             <div class="invalid-feedback" id="invalidLength">
                                                 Please enter your queries!
@@ -263,16 +278,20 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                                         <div class="mb-4">
                                             <div class="d-flex ">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheck">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheck">
                                                 </div>
-                                                <p class=" text-dark fw-bolder fs-6 ">By submitting this form I accept the <a class="text-dark text-decoration-underline" href="">privacy policy</a> of this site</p>
+                                                <p class=" text-dark fw-bolder fs-6 ">By submitting this form I accept
+                                                    the <a class="text-dark text-decoration-underline" href="">privacy
+                                                        policy</a> of this site</p>
                                             </div>
                                             <div class="invalidCheck" style="display: none;color:red">
                                                 Please check this box to proceed.
                                             </div>
                                         </div>
                                         <div class="col-sm-12 mb-3 submit-divclass">
-                                            <button type="submit" class="my-buttons-hover bn21 m-0" id="submitButton">Submit</button>
+                                            <button type="submit" class="my-buttons-hover bn21 m-0"
+                                                id="submitButton">Submit</button>
                                         </div>
                                     </div>
 
@@ -284,6 +303,13 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
                 </div>
             </div>
         </section>
+
+        <!---------------------------------------------------------------- -->
+        <!-- curious section starts -->
+        <?php require_once "components/curious-section.inc.php"; ?>
+        <!-- curious section ended -->
+        <!---------------------------------------------------------------- -->
+
         <!-- Footer -->
         <?php require_once "components/footer.php"; ?>
         <!-- /Footer -->
@@ -293,58 +319,58 @@ if (isset($_POST['firstname']) && isset($_POST['lastName']) && isset($_POST['ema
     <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
     <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function() {
-            'use strict'
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+        'use strict'
 
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.querySelectorAll('.needs-validation')
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
 
-            // Loop over them and prevent submission
-            Array.prototype.slice.call(forms)
-                .forEach(function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
-                        }
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
 
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-        })()
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
 
-        // for handling check box 
-        document.addEventListener("DOMContentLoaded", function() {
-            const checkbox = document.getElementById('flexCheck');
-            const submitButton = document.getElementById('submitButton');
-            const invalidCheck = document.querySelector('.invalidCheck');
+    // for handling check box 
+    document.addEventListener("DOMContentLoaded", function() {
+        const checkbox = document.getElementById('flexCheck');
+        const submitButton = document.getElementById('submitButton');
+        const invalidCheck = document.querySelector('.invalidCheck');
 
-            checkbox.addEventListener('change', function() {
-                submitButton.disabled = !this.checked;
-                invalidCheck.style.display = this.checked ? 'none' : 'block';
-            });
-
-            submitButton.addEventListener('click', function(event) {
-                if (!checkbox.checked) {
-                    invalidCheck.style.display = 'block';
-                    event.preventDefault();
-                } else {
-                    invalidCheck.style.display = 'none';
-                }
-            });
+        checkbox.addEventListener('change', function() {
+            submitButton.disabled = !this.checked;
+            invalidCheck.style.display = this.checked ? 'none' : 'block';
         });
 
-        // for handling textarea and label css effect 
-        document.getElementById('message').addEventListener('input', function() {
-            var message = this.value;
-            var formGroup = this.parentNode;
-            if (message.length < 10) {
-                invalidLength.style.display = 'block';
+        submitButton.addEventListener('click', function(event) {
+            if (!checkbox.checked) {
+                invalidCheck.style.display = 'block';
+                event.preventDefault();
             } else {
-                invalidLength.style.display = 'none';
+                invalidCheck.style.display = 'none';
             }
         });
+    });
+
+    // for handling textarea and label css effect 
+    document.getElementById('message').addEventListener('input', function() {
+        var message = this.value;
+        var formGroup = this.parentNode;
+        if (message.length < 10) {
+            invalidLength.style.display = 'block';
+        } else {
+            invalidLength.style.display = 'none';
+        }
+    });
     </script>
 </body>
 

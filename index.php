@@ -58,7 +58,6 @@ if(isset($_GET['seo_url']))
     <link href="<?= URL ?>/css/index.css" rel='stylesheet' type='text/css' />
     <link href="<?= URL ?>/css/testimonials.css" rel="stylesheet" />
     <link href="<?= URL ?>/css/clientside-logo.css" rel="stylesheet" />
-    <link href="<?= URL ?>/css/lets-talk-section.css" rel="stylesheet" />
 
 </head>
 
@@ -72,7 +71,7 @@ if(isset($_GET['seo_url']))
     <!-- clients-logo -->
     <?php require_once "components/clientssides-logos.php"; ?>
     <!-- clients-logo -->
-     <!-- -------------------------------------------------------->
+    <!-- -------------------------------------------------------->
     <!-- All set to rank on the first page of Google? start -->
     <?php require_once "components/index-goolge_rank.inc.php"; ?>
     <!-- All set to rank on the first page of Google? end -->
@@ -80,6 +79,10 @@ if(isset($_GET['seo_url']))
     <!-- How FastLinky Works? starts -->
     <?php require_once "components/index-how_works.inc.php"; ?>
     <!-- How FastLinky Works? ends -->
+    <!------------------------------------------------->
+    <!-- confused-action start -->
+    <?php require_once "components/confused-action.inc.php"; ?>
+    <!-- confused-action end -->
     <!---------------------------------------------------------->
     <!--  High Authority And High Traffic Websites start -->
     <?php require_once "components/index-ha-ht.inc.php"; ?>
@@ -88,10 +91,6 @@ if(isset($_GET['seo_url']))
     <!-- testimonials customers reviews -->
     <?php require_once "components/testimonials.php"; ?>
     <!-- testimonials customers reviews -->
-    <!------------------------------------------------->
-    <!-- confused-action start -->
-    <?php require_once "components/confused-action.inc.php"; ?>
-    <!-- confused-action end -->
     <!------------------------------------------------->
     <!-- Link Building Services that Actually Matters-starts -->
     <?php require_once "components/index-lbs.inc.php"; ?>
@@ -105,21 +104,22 @@ if(isset($_GET['seo_url']))
     <?php require_once "components/index-benefit_hiring.inc.php"; ?>
     <!-- Benefits Of Hiring A Skilled Link Building Agency ends -->
     <!---------------------------------------------------------------- -->
-    <!-- layout section  -->
-    <?php require_once "components/layout.php"; ?>
-    <!-- layout section end  -->
     <!-- Frequently Asked Questions starts -->
     <?php require_once "components/faqs-new.php"; ?>
     <!-- Frequently Asked Questions ends -->
     <!-- ------------------------------------------------->
     <!-- actionpage starts -->
-    <?php require_once "components/index-actionpage.inc.php"; ?>
+    <?php // require_once "components/index-actionpage.inc.php"; ?>
     <!-- actionpage ends -->
     <!-- --------------------------------------- -->
     <!-- feedback form -->
-    <?php require_once "components/feedback.php"; ?>
+    <?php  require_once "components/feedback.php"; ?>
     <!-- feedback form -->
     <!-- ----------------------------------------------- -->
+    <!-- curious section starts -->
+    <?php require_once "components/curious-section.inc.php"; ?>
+    <!-- curious section ended -->
+    <!---------------------------------------------------------------- -->
     <!-- Footer -->
     <?php require_once "components/footer.php"; ?>
     <!-- footer -->

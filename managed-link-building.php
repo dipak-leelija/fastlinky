@@ -29,6 +29,22 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
 <body>
     <?php require_once "components/navbar.php"; ?>
+    <!-- ------------------------------------------------>
+    <!-- pricing section -->
+    <section class="mt-5">
+        <h1 class="text-center pricing-bo-h1 mb-3 px-2">Link Building Pricing
+        </h1>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
+
+        <?php require_once "components/pricing-cards.php"; ?>
+    </section>
+    <!-- pricing section ends -->
+    <!------------------------------------------------->
+    <!-- confused-action start -->
+    <?php require_once "components/confused-action.inc.php"; ?>
+    <!-- confused-action end -->
+    <!------------------------------------------------->
     <!-- starting of managed-link-building main banner -->
     <section class="managed-link-building-main-banner">
         <div class="row ">
@@ -163,17 +179,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- Why Does Your Brand Need Link Buildings? end -->
-    <!-- ------------------------------------------------>
-    <!-- pricing section -->
-    <section class="mt-5">
-        <h1 class="text-center pricing-bo-h1 mb-3 px-2">Link Building Pricing
-        </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
-            DR, or organic traffic. Below is the pricing for All 3 models.</p>
-
-        <?php require_once "components/pricing-cards.php"; ?>
-    </section>
-    <!-- pricing section ends -->
+    
     <!-- ------------------------------------------- -->
     <?php require_once "components/blogs-sites.php"; ?>
     <!-- Service For Link Building That Is Genuinely Important! starts -->
@@ -565,9 +571,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <?php require_once "components/faqs-new.php"; ?>
     <!-- Frequently Asked Questions ends -->
     <!------------------------------------------------------- -->
-    <div class="mt-4">
-        <?php include('components/seller-action.php') ?>
-    </div>
+    <!-- <div class="mt-4">
+        <?php // include('components/seller-action.php') ?>
+    </div> -->
+    <!----------------------------------------------------- -->
+    <!-- curious section starts -->
+    <?php require_once "components/curious-section.inc.php"; ?>
+    <!-- curious section ended -->
+    <!-- -------------------------------------------------- -->
     <!-- --------------------------------------- -->
     <!-- feedback form -->
     <?php require_once "components/feedback.php"; ?>

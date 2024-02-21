@@ -30,6 +30,20 @@ benefits of high domain authority website, domain authority rank" />
 
 <body data-scrollbar>
     <?php require_once "components/navbar.php"; ?>
+    <!-- ------------------------------------------------ -->
+    <section class="mt-5">
+        <h1 class="text-center pricing-bo-h1 mb-3 px-2 mt-5">High Authority Backlinks Pricing
+        </h1>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
+
+        <?php require_once "components/pricing-cards.php"; ?>
+    </section>
+    <!------------------------------------------------->
+    <!-- confused-action start -->
+    <?php require_once "components/confused-action.inc.php"; ?>
+    <!-- confused-action end -->
+    <!------------------------------------------------->
     <!-- High Authority Backlinks main banner starting -->
     <section class="managed-link-building-main-banner">
         <div class="row ">
@@ -175,16 +189,6 @@ benefits of high domain authority website, domain authority rank" />
     <!-- ------------------------------------------------ -->
     <!-- pricing section -->
     <!-- ------------------------------------------- -->
-
-    <section class="mt-5">
-        <h1 class="text-center pricing-bo-h1 mb-3 px-2 mt-5">High Authority Backlinks Pricing
-        </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
-            DR, or organic traffic. Below is the pricing for All 3 models.</p>
-
-        <?php require_once "components/pricing-cards.php"; ?>
-    </section>
-    <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
     <?php require_once "components/blogs-sites.php"; ?>
@@ -530,10 +534,15 @@ benefits of high domain authority website, domain authority rank" />
     <?php require_once "components/faqs-new.php"; ?>
     <!-- Frequently Asked Questions ends -->
     <!-- ================================================================================================ -->
-    <div class="mt-4">
-        <?php include_once 'components/seller-action.php'; ?>
-    </div>
+    <!-- <div class="mt-4">
+        <?php // include_once 'components/seller-action.php'; ?>
+    </div> -->
     <!-- --------------------------------------- -->
+    <!----------------------------------------------------- -->
+    <!-- curious section starts -->
+    <?php require_once "components/curious-section.inc.php"; ?>
+    <!-- curious section ended -->
+    <!-- -------------------------------------------------- -->
     <!-- feedback form -->
     <?php require_once "components/feedback.php"; ?>
     <!-- feedback form -->

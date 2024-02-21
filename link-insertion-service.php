@@ -30,6 +30,20 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
 <body>
     <?php require_once "components/navbar.php"; ?>
+     <!-- ------------------------------------------- -->
+     <section class="mt-5">
+        <h1 class="text-center pricing-bo-h1 mb-3 mt-5">Niche Edits Pricing
+        </h1>
+        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
+            DR, or organic traffic. Below is the pricing for All 3 models.</p>
+
+        <?php  require_once "components/pricing-cards.php"; ?>
+    </section>
+    <!------------------------------------------------->
+    <!-- confused-action start -->
+    <?php require_once "components/confused-action.inc.php"; ?>
+    <!-- confused-action end -->
+    <!------------------------------------------------->
     <!-- Link Insertion Services main banner starting -->
     <section class="managed-link-building-main-banner">
         <div class="container mlb-main-cntainer">
@@ -150,15 +164,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- testimonials customers reviews -->
     <!-- ------------------------------------------------ -->
     <!-- pricing section -->
-    <!-- ------------------------------------------- -->
-    <section class="mt-5">
-        <h1 class="text-center pricing-bo-h1 mb-3 mt-5">Niche Edits Pricing
-        </h1>
-        <p class="text-center pricing-bo-p1 mb-3">We offer blogger outreach links categorised as per DA,
-            DR, or organic traffic. Below is the pricing for All 3 models.</p>
-
-        <?php  require_once "components/pricing-cards.php"; ?>
-    </section>
+   
     <!-- ------------------------------------------------ -->
     <!-- pricing section ends -->
     <!-- ------------------------------------------- -->
@@ -307,9 +313,16 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <?php require_once "components/faqs-new.php"; ?>
     <!-- Frequently Asked Questions ends -->
     <!-- --------------------------------------->
-    <div class="mt-4">
-        <?php include_once 'components/seller-action.php'; ?>
-    </div>
+    <!-- <div class="mt-4">
+        <?php // include_once 'components/seller-action.php'; ?>
+    </div> -->
+
+    <!----------------------------------------------------- -->
+    <!-- curious section starts -->
+    <?php require_once "components/curious-section.inc.php"; ?>
+    <!-- curious section ended -->
+    <!-- -------------------------------------------------- -->
+    
     <!-- --------------------------------------- -->
     <!-- feedback form -->
     <?php require_once "components/feedback.php"; ?>

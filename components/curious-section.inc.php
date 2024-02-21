@@ -9,12 +9,7 @@
                 <div class="redactor text-gray-800">We love talking link building. Let us know about your project and we'll send you a free proposal</div>
             </div>
             <div class="d-flex justify-content-between flex-wrap">
-                <button class="btn border-0 layoutbutton fw-bold">👉 Get In Touch</button>
-                <!-- <div class="m-0"> -->
-                    <!-- <img src="<?= USER_IMG_PATH .'default-user-icon.png'?>" alt=""> -->
-                    <!-- <p class="mt-0 p-0 fw-bold">Stewart</p> -->
-                    <!-- <p class="mb-0 p-0">Chief Link Building Strategist</p> -->
-                <!-- </div> -->
+                <button class="btn border-0 layoutbutton fw-bold">Get In Touch <i class="fa-regular fa-comment-dots ps-2"></i></button>
             </div>
         </div>
     </div>

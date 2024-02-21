@@ -45,6 +45,7 @@ $cusId		= $utility->returnSess('userid', 0);
     <!-- Custom CSS -->
     <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
     <link href="<?= URL ?>/css/about-us.css" rel='stylesheet' type='text/css' />
+
 </head>
 
 <body>
@@ -469,17 +470,22 @@ $cusId		= $utility->returnSess('userid', 0);
             <!--end row-->
         </div>
     </section>
+    <!-- ----------------------------------------------- -->
+    <!-- curious section starts -->
+    <?php require_once "components/curious-section.inc.php"; ?>
+    <!-- curious section ended -->
+    <!---------------------------------------------------------------- -->
     <!-- ..................................................... -->
     <!-- Our features section ends -->
     <!-- ..................................................... -->
     <!-- get started wrok with us  starts -->
     <!-- ............................. -->
-    <section class="get-started-section">
+    <!-- <section class="get-started-section">
         <h2 class="text-center ">For Best Outreach Services</h2>
         <div class="my-a-btn-div">
             <a class="my-a-btn" href="register.php">Register Now</a>
         </div>
-    </section>
+    </section> -->
     <!-- ..................................................... -->
     <!-- get started wrok with us ends -->
     <!-- ............................. -->
