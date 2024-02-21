@@ -89,3 +89,25 @@
     height: 200px;
      width:75%;
 }
+
+@media screen and (max-width: 768px) {
+    .clientsides-item{
+        padding: 2rem 0rem 2rem;
+    }
+    .h2text{
+        padding-bottom: 1px;
+    }
+    .carousel-inner{
+        height: 130px;
+         width:100%;
+    }
+    .carousel-item img{
+        height: 150px;
+        width: 150px;
+    }
+}
+
+/* header button responsive for ipad  */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+}

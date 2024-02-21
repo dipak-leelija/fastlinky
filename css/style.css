@@ -3763,7 +3763,6 @@ h5 {
     padding: 13px 40px 13px 40px;
 }
 
-
 .second-btn-dark {
     background-color: var(--pure-black);
     border: 1px solid var(--pure-black);
@@ -3803,7 +3802,11 @@ h5 {
     }
 
 }
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .btnrespipad{
+        padding: 13px 12px;
+    }
+}
 @media (min-width:200px) and (max-width:312px) {
     .indexpage-starting-main-h1 {
         font-size: 1.55rem;

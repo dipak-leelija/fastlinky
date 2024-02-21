@@ -12,14 +12,14 @@
                         to boost your website's performance
                     </p>
 
-                    <div class="d-flex" style="column-gap: 10px;">
+                    <div class="d-flex indbanerbtn" style="column-gap: 10px;">
                         <div class=" buttonsinfo ">
-                            <button class="btn srvc-common-btn" onclick="goTo('customer-packages')"> Get Started
+                            <button class="btn srvc-common-btn btnrespipad" onclick="goTo('customer-packages')"> Get Started
                                 Now</button>
                         </div>
 
                         <div class=" buttonsinfo ">
-                            <button class="btn srvc-common-btn1" onclick="goTo('about')"> Let's Talk &nbsp;&nbsp;<i class="fa-solid fa-comment-dots"></i></button>
+                            <button class="btn srvc-common-btn1 btnrespipad" onclick="goTo('about')"> Let's Talk &nbsp;&nbsp;<i class="fa-solid fa-comment-dots"></i></button>
                         </div>
                     </div>
                 </div>

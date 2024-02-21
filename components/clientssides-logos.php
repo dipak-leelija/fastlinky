@@ -45,7 +45,7 @@
 <section class="clientsides-item" id="clientslogo">
     <div class="containering">
         <div>
-            <h2 class="px-3 px-md-0">Our clients earned brand mentions from <strong>publications like...</strong></h2>
+            <h2 class="px-3 px-md-0 h2text">Our clients earned brand mentions from <strong>publications like...</strong></h2>
         </div>
         <div id="carouselExampleAutoplaying" class="carousel slide carouselLogo" data-bs-ride="carousel">
             <div class=" carousel-inner">
@@ -90,7 +90,7 @@
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true">
-                <i class="fa-solid fa-arrow-right-long iconbutton"></i>
+                    <i class="fa-solid fa-arrow-right-long iconbutton"></i>
                 </span>
                 <span class="visually-hidden">Next</span>
             </button>
@@ -101,11 +101,11 @@
 
 <script>
     var items = document.querySelectorAll('.carousel .carousel-inner .carousel-item');
-    items.forEach((e)=>{
+    items.forEach((e) => {
         const slide = 4;
         let next = e.nextElementSibling;
-        for(var i=0;i<slide;i++){
-            if(!next){
+        for (var i = 0; i < slide; i++) {
+            if (!next) {
                 next = items[0]
             }
             let clonechild = next.cloneNode(true);
