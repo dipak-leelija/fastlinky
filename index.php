@@ -153,7 +153,7 @@ if (isset($_GET['seo_url'])) {
             breakpoints: {
             // When window width is >= 576px (for mobile devices)
             280: {
-                slidesPerView: 2,
+                slidesPerView: 3,
             },
             // When window width is >= 768px (for iPad)
             768: {
