@@ -42,41 +42,42 @@
 
 
 
-<section class="clientsides-item" id="clientslogo">
+<!-- <section class="clientsides-item" id="clientslogo">
     <div class="containering">
         <div>
-            <h2 class="px-3 px-md-0 h2text">Our clients earned brand mentions from <strong>publications like...</strong></h2>
+            <h2 class="px-3 px-md-0 headingtext">Our clients earned brand mentions from <strong>publications like...</strong></h2>
         </div>
         <div id="carouselExampleAutoplaying" class="carousel slide carouselLogo" data-bs-ride="carousel">
             <div class=" carousel-inner carulogohight">
-                <div class="d-flex ">
-                    <div class=" carousel-item item active col-sm-6 col-md-3">
+                <div class="d-flex justif-content-center align-item-center w-100">
+
+                    <div class=" carousel-item item active col-sm-6 col-md-3" >
                         <img src="images/clients-logos/cc1.png" class="img-responsive" alt="">
                     </div>
-                    <div class=" carousel-item  col-sm-6 col-md-3">
+                    <div class=" carousel-item  col-sm-6 col-md-3" >
                         <img src="images/clients-logos/icademy1.png" class="img-responsive " alt="">
                     </div>
 
-                    <div class=" carousel-item  col-sm-6 col-md-3">
+                    <div class=" carousel-item  col-sm-6 col-md-3" >
                         <img src="images/clients-logos/specscart3.png " class="img-responsive " alt="">
                     </div>
-                    <div class=" carousel-item  col-sm-6 col-md-3">
+                    <div class=" carousel-item  col-sm-6 col-md-3" >
                         <img src="images/clients-logos/ISB3.png" class="img-responsive " alt="">
                     </div>
 
-                    <div class=" carousel-item col-sm-6 col-md-3">
+                    <div class=" carousel-item col-sm-6 col-md-3" >
                         <img src="images/clients-logos/cs1.png" class="img-responsive " alt="">
                     </div>
 
-                    <div class=" carousel-item  col-sm-6 col-md-3">
+                    <div class=" carousel-item  col-sm-6 col-md-3" >
                         <img src="images/clients-logos/khatabook3.png" class="img-responsive " alt="">
                     </div>
 
-                    <div class=" carousel-item col-sm-6 col-md-3 ">
+                    <div class=" carousel-item col-sm-6 col-md-3 " >
                         <img src="images/clients-logos/namecheap1.png" class="img-responsive " alt="">
                     </div>
 
-                    <div class=" carousel-item  col-sm-6 col-md-3 ">
+                    <div class=" carousel-item  col-sm-6 col-md-3 " >
                         <img src="images/clients-logos/recovery3.png" class="img-responsive " alt="">
                     </div>
                 </div>
@@ -102,7 +103,7 @@
 <script>
     var items = document.querySelectorAll('.carousel .carousel-inner .carousel-item');
     items.forEach((e) => {
-        const slide = 4;
+        const slide = 8;
         let next = e.nextElementSibling;
         for (var i = 0; i < slide; i++) {
             if (!next) {
@@ -113,4 +114,29 @@
             next = next.nextElementSibling
         }
     })
-</script>
+</script> -->
+
+
+
+<section class="clientsides-item" id="clientslogo">
+    <div class="containering">
+        <div>
+            <h2 class="px-3 px-md-0 headingtext">Our clients earned brand mentions from <strong>publications like...</strong></h2>
+        </div>
+        <div class="swiper mySwiper mt-5">
+            <div class="swiper-wrapper align-item-center"  style="width: 186px;">
+                <div class="swiper-slide" style="width: 186px;margin-left:1px;"><img src="images/clients-logos/cc1.png" class="img-responsive" alt=""></div>
+                <div class="swiper-slide" style="width: 186px;margin-left:1px;"> <img src="images/clients-logos/icademy1.png" class="img-responsive" alt=""></div>
+                <div class="swiper-slide" style="width: 186px;margin-left:1px;"><img src="images/clients-logos/specscart3.png " class="img-responsive" alt=""></div>
+                <div class="swiper-slide" style="width: 186px;margin-left:1px;"> <img src="images/clients-logos/ISB3.png" class="img-responsive" alt=""></div>
+                <div class="swiper-slide" style="width: 186px;margin-left:1px;"><img src="images/clients-logos/cs1.png" class="img-responsive" alt=""></div>
+                <div class="swiper-slide" style="width: 186px;margin-left:1px;"> <img src="images/clients-logos/khatabook3.png" class="img-responsive" alt=""></div>
+                <div class="swiper-slide" style="width: 186px;margin-left:1px;"><img src="images/clients-logos/namecheap1.png" class="img-responsive" alt=""></div>
+                <div class="swiper-slide" style="width: 186px;margin-left:1px;"><img src="images/clients-logos/recovery3.png" class="img-responsive" alt=""></div>
+            </div>
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
+            <!-- <div class="swiper-pagination"></div> -->
+        </div>
+    </div>
+</section>
