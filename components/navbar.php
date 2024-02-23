@@ -166,7 +166,7 @@
 
     if (!isClickInsideButton) {
         button.classList.remove("active");
-        button.focus(); // Remove focus
+        button.blur(); // Remove focus
     }
 });
 </script>
