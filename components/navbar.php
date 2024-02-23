@@ -45,15 +45,15 @@
             }
             ?>
             <!-- mobile-menu -->
-            <button id="navbar-toggler" class="navbar-toggler mobile-menu border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span></span>
+            <button id="navbartoggler" class="navbar-toggler mobile-menu border-0 shadow-none " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="top-bar"></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
 
-        <div class="collapse navbar-collapse justify-content-end mt-2 mt-lg-0" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0 ">
+        <div class="collapse  navbar-collapse justify-content-end mt-2 mt-lg-0" id="navbarSupportedContent">
+            <ul class="navbar-nav mt-4 mb-lg-0 ">
                 <li class="nav-item mynav_item">
                     <a class="nav-link  li-style" aria-current="page" href="<?php echo URL; ?>">Home</a>
                 </li>
@@ -146,3 +146,27 @@
     </div>
 </nav>
 <!-- </header> -->
+
+<script>
+ document.getElementById("navbartoggler").addEventListener("click", function(event) {
+        var button = this;
+        if (button.classList.contains("active")) {
+            button.classList.remove("active");
+            button.blur(); // Remove focus
+        } else {
+            button.classList.add("active");
+            button.focus();
+        }
+        event.stopPropagation();
+    });
+
+    document.documentElement.addEventListener("click", function(event) {
+    var button = document.getElementById("navbartoggler");
+    var isClickInsideButton = button.contains(event.target);
+
+    if (!isClickInsideButton) {
+        button.classList.add("active");
+        button.focus(); // Remove focus
+    }
+});
+</script>
