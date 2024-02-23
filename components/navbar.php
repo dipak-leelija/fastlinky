@@ -160,7 +160,7 @@
         event.stopPropagation();
     });
 
-    document.documentElement.addEventListener("click", function(event) {
+    document.body.addEventListener("click", function(event) {
     var button = document.getElementById("navbartoggler");
     var isClickInsideButton = button.contains(event.target);
 
