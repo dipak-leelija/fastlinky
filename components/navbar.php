@@ -165,7 +165,7 @@
     var isClickInsideButton = button.contains(event.target);
 
     if (!isClickInsideButton) {
-        button.classList.add("active");
+        button.classList.remove("active");
         button.focus(); // Remove focus
     }
 });
