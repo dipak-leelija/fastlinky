@@ -3606,8 +3606,6 @@ h5 {
 .srvc-common-btn1 {
     font-size: 20px;
     font-weight: 500;
-    /* color: #FFF; */
-    /* background-image: linear-gradient(120deg, var(--mustard) 0%, #FA8273 100%); */
     border: 1px solid #F7A546 !important;
     border-radius: 50px 50px 50px 50px;
     padding: 13px 40px 13px 40px;
