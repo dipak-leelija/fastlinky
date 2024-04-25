@@ -2,6 +2,34 @@
 @import './lets-talk-section.css';
 @import './navbar.css';
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    text-transform: capitalize !important;
+    color: var(--black);
+}
+
+h2{
+    font-weight: 600;
+}
+
+h3{
+    font-weight: 500;
+}
+
+
+h3 span,
+h2 span {
+    color: var(--mustard);
+}
+
+@media (min-width:200px) and (max-width:312px){}
+@media (min-width:350px) and (max-width:425px){}
+@media(max-width:575px){}
+@media (max-width:1199px){}
+
 /* NAVIGATION BAR */
 .dark-blue-color {
     color: var(--custom-blue);
@@ -2857,10 +2885,9 @@ form.pack-form textarea {
     margin-bottom: 1rem;
 }
 
-.index-faq-section h1 {
+.faq-question {
     text-align: center;
-    margin-bottom: 4rem;
-    font-weight: 600;
+    font-weight: 400;
     font-family: Helvetica, Poppins !important;
 }
 
@@ -2972,17 +2999,9 @@ form.pack-form textarea {
 }
 
 @media (max-width:575px) {
-    .index-faq-section h1 {
+    .faq-question {
         font-size: 1.8rem;
     }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    text-transform: capitalize !important;
 }
 
 @media (min-width: 1300px) {
@@ -3196,7 +3215,7 @@ h5 {
         font-size: 1.55rem;
     }
 
-    .index-faq-section h1 {
+    .faq-question {
         font-size: 1.4rem;
     }
 

@@ -1,6 +1,6 @@
 <section class="our-secret-delivering-main-sec pt-2">
     <div>
-        <h2 class=" text-center mt-4 my-3 our-secret-d-h2">How <span> FastLinky works?</span></h2>
+        <h2 class=" text-center mt-4 my-3">How <span> FastLinky works?</span></h2>
     </div>
     <p class="service-index-p text-md-center">
         We work for manual outreach <b>link building services</b> to gain a number of trustworthy and
@@ -14,7 +14,7 @@
                     <div class="pb-3 ">
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                     </div>
-                    <h4 class="how-fonts-h4 ">Analyze And Plan</h4>
+                    <h3>Analyze And Plan</h3>
                     <p class="">
                         We carry out an overall analysis of your website and create a quick development path for
                         it. At FastLinky, we create a fantastic <b>link building </b> plan just for you using
@@ -26,7 +26,7 @@
                     <div class="pb-3 ">
                         <img src="./images/dummy-img/real-bo-ul-li-2.png" alt="">
                     </div>
-                    <h4 class="how-fonts-h4  ">Customized Outreach Strategy</h4>
+                    <h3>Customized Outreach Strategy</h3>
                     <p class="">
                         Team FastLinky searches for outstanding websites that are appropriate to the requirement
                         of one of our clients. Next, we develop our <b>custom outreach services</b> . To achieve
@@ -38,7 +38,7 @@
                     <div class="pb-3">
                         <img src="./images/dummy-img/real-bo-ul-li-3.png" alt="">
                     </div>
-                    <h4 class="how-fonts-h4  ">Creating High-Quality Backlinks</h4>
+                    <h3>Creating High-Quality Backlinks</h3>
                     <p class="">
                         Our goal is to obtain high-authority backlinks for our customers. We develop a strong
                         backlink profile for our clients using various <b>whitehat link building services</b> ,
@@ -51,7 +51,7 @@
                     <div class="pb-3">
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                     </div>
-                    <h4 class="how-fonts-h4 ">Help You Outrank Your Competitors</h4>
+                    <h3>Help You Outrank Your Competitors</h3>
                     <p class="">
                         We put more priority on quality. In order to deliver excellent results and grow your
                         company, our <b>Link Building services agency</b> is completely ready with client

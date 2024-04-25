@@ -14,7 +14,7 @@
                         <div class=" pb-3 ">
                             <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                         </div>
-                        <h4 class="how-fonts-h4 ">Increase Company Awareness</h4>
+                        <h3>Increase Company Awareness</h3>
                         <p class="">
                             By linking to guest posts, our <b>link building services agency</b> will increase the
                             visibility of your website. Therefore, brand recognition will give your business an
@@ -28,7 +28,7 @@
                         <div class=" pb-3 ">
                             <img src="./images/dummy-img/real-bo-ul-li-2.png" alt="">
                         </div>
-                        <h4 class="how-fonts-h4  ">Build Connections</h4>
+                        <h3>Build Connections</h3>
                         <p class="">
                             Our <b>SEO agency</b> must contact other leading companies in order to build
                             high-quality
@@ -44,7 +44,7 @@
                         <div class=" pb-3">
                             <img src="./images/dummy-img/real-bo-ul-li-3.png" alt="">
                         </div>
-                        <h4 class="how-fonts-h4  ">Better And High-Quality Content </h4>
+                        <h3>Better And High-Quality Content </h3>
                         <p class="">
                             Your readers will always appreciate high-quality content, which is one of the key
                             benefits of <b>link building</b> . Yes, FastLinky will help in creating informative and
@@ -59,7 +59,7 @@
                         <div class=" pb-3">
                             <img src="./images/dummy-img/real-bo-ul-li-1.png" alt="">
                         </div>
-                        <h4 class="how-fonts-h4  ">Cost Savings</h4>
+                        <h3>Cost Savings</h3>
                         <p class="">
                             If you rarely prefer <b>link building services</b> or need them for particular
                             campaigns, our

@@ -12,7 +12,7 @@
                         to boost your website's performance
                     </p>
 
-                    <div class="d-flex indbanerbtn" style="column-gap: 10px;">
+                    <div class="d-flex justify-content-center justify-content-md-start indbanerbtn" style="column-gap: 10px;">
                         <div class=" buttonsinfo ">
                             <button class="btn srvc-common-btn btnrespipad" onclick="goTo('customer-packages')"> Get Started
                                 Now</button>

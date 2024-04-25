@@ -14,6 +14,10 @@
     display: block;
     margin: auto;
 }
+
+.confused-subhead{
+    font-size: xx-large;
+}
 @media (max-width: 992px) {
     .confused-subhead{
         font-size: calc(1.325rem + -0.0vw);
@@ -298,8 +302,8 @@
             </svg>
         </div>
         <div class="col-12 col-sm-7 row g-1 g-sm-0 flex-column justify-content-center mt-0 px-5 px-sm-3 px-lg-2 py-4">
-            <h1 class="fw-bold">Confused?</h1>
-            <h2 class="confused-subhead">Let’s talk to our expert</h2>
+            <div class="h1 fw-bold">Confused?</div>
+            <div class="confused-subhead">Let’s talk to our expert</div>
             <div class="mt-sm-2">
                 <a class="btn second-btn-dark fw-bold" href="<?= URL ?>/contact">Let's Talk<i class="fa-regular fa-comment-dots ps-2"></i></a>
             </div>

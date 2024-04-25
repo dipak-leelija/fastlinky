@@ -1,9 +1,9 @@
 <section class="lbs-actually-matters-main">
             <div class="row">
                 <div class=" col-xl-5 col-md-5">
-                    <h1 class="sec_heading mb-3">
+                    <h2 class="sec_heading mb-3">
                         What Makes Us <br><span>A Reliable Link Building Provider?</span>
-                    </h1>
+                    </h2>
                     <p class="service-index-p text-md-start">
                         Our specialty is link development. We work to gather backlinks for you that are typically
                         impossible to acquire through standard <b>SEO services</b> while keeping <b>domain authority</b>
@@ -21,7 +21,7 @@
                                 <div class=" pb-3 ">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" style="width: 75px;" alt="">
                                 </div>
-                                <h4 class="how-fonts-h4 ">Services For Fully Customized Link Building</h4>
+                                <h3>Services For Fully Customized Link Building</h3>
                                 <p class="">
                                     Clients are most important. We take that carefully, and all of our work is driven by
                                     the selection and guidance of our clients. For the utmost, our team carefully places
@@ -34,7 +34,7 @@
                                 <div class=" pb-3 ">
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" style="width: 75px;" alt="">
                                 </div>
-                                <h4 class="how-fonts-h4 ">Increased Readership</h4>
+                                <h3>Increased Readership</h3>
                                 <p class="">
                                     Get relevant niche-driven traffic and enjoy <b>high domain authority backlinks</b>
                                     that
@@ -47,7 +47,7 @@
                                 <div class=" pb-3 ">
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" style="width: 75px;" alt="">
                                 </div>
-                                <h4 class="how-fonts-h4 ">Perfect Reliable Outcomes</h4>
+                                <h3>Perfect Reliable Outcomes</h3>
                                 <p class="">
                                     Since we provide every service locally, organization and communication are excellent
                                     and progress quickly. There's no need to repeat yourself to us! We take care of
@@ -60,7 +60,7 @@
                                 <div class=" pb-3 ">
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" style="width: 75px;" alt="">
                                 </div>
-                                <h4 class="how-fonts-h4 ">Business Expertise</h4>
+                                <h3>Business Expertise</h3>
                                 <p class="">
                                     We now have more than ten years of business experience. We have a group of
                                     professionals working together to develop a database of publishers, produce

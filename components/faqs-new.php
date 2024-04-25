@@ -14,8 +14,8 @@ $allQuestions = $faqs->getfaqqu($pageName);
 ?>
 
 <section class=" index-faq-section">
-    <p class="faq-small-text">FAQs</p>
-    <h1>Frequently asked link building questions</h1>
+    <div class="faq-small-text">FAQs</div>
+    <h2 class="text-center mb-5">Frequently asked link building questions</h2>
     <div class="row">
         <div class="col-md-7">
             <div class="accordion accordion-flush faq-acc-flush pe-1" id="accordionFlushExample">
@@ -30,15 +30,15 @@ $allQuestions = $faqs->getfaqqu($pageName);
                 
                 
                     echo '<div class="accordion-item faq-acc-item">
-                            <h2 class="accordion-header" id="flush-heading'.$id.'">
+                            <a href="#'.$ques.'" class="faq-question accordion-header" id="'.$ques.'">
                                 <button class="accordion-button faq-acc-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-'.$id.'" aria-expanded="false"
                                     aria-controls="flush-'.$id.'">
                                     '.$ques.'
                                 </button>
-                            </h2>
+                            </a>
                             <div id="flush-'.$id.'" class="accordion-collapse collapse"
-                                aria-labelledby="flush-heading'.$id.'" data-bs-parent="#accordionFlushExample">
+                                aria-labelledby="'.$ques.'" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body faq-acc-body">'.$ans.'</div>
                             </div>
                         </div>';
