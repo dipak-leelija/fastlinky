@@ -49,7 +49,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row">
             <div class="d-flex flex-column justify-content-center col-md-6 order-2 order-md-1  px-0 px-md-4">
                 <div class="bo-wrap">
-                    <h1 class="blogout-main-h1">White Label Link Building Services </h1>
+                    <h2 class="fs-1 fw-bolder">White Label Link Building Services </h2>
                     <p class=" mt-3 mb-4 py-0 py-md-2 white-lebel-main-p">FastLinky collaborates with many company
                         leaders as a background partner in <b>white label link building</b> to bring outcomes to our
                         prominent clients.
@@ -109,10 +109,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div>
-                    <h1 class="trustworthy-white-lebel-text-h1">A Reliable Method For Creating Links <span> For You And
+                    <h2 class="trustworthy-white-lebel-text-h1">A Reliable Method For Creating Links <span> For You And
                             Your
                             Clients</span>
-                    </h1>
+                    </h2>
                 </div>
                 <div>
                     <div class="py-4">
@@ -186,7 +186,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="works-for-you-bo-section py-0">
         <div class="">
             <div>
-                <h2 class=" text-center mt-4 my-3 works-bo-h2">Why Choose Fastlinky To White Label Backlinks <span>
+                <h2 class=" text-center mt-4 my-3 fw-bold">Why Choose Fastlinky To White Label Backlinks <span>
                         For Your Agency?</span></h2>
             </div>
             <div class="works-f-u-main-card-div">
@@ -198,7 +198,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4  py-2">Results Operated:</h4>
+                            <h3 class="h4 py-2">Results Operated:</h3>
                             <p class="lbp-texting">
                                 Because we enjoy what we do and are results, we won't tie you down to longer
                                 contracts. We're dedicated to creating links and trust by proving our value and
@@ -216,7 +216,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 py-2">Use The Best Practices:</h4>
+                            <h3 class="h4 py-2">Use The Best Practices:</h3>
                             <p class="lbp-texting">
                                 In order to impress your clients, we handle your clients as if they were our own,
                                 only using the greatest procedures and quality controls. We work hard so that you
@@ -233,7 +233,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 py-2">Complete Transparency: </h4>
+                            <h3 class="h4 py-2">Complete Transparency: </h3>
                             <p class="lbp-texting">
                                 Real-time, white label link building friendly progress reports are accessible
                                 around-the-clock. For each individual client, we customize our services to meet your
@@ -248,7 +248,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 py-2">Totally Controlled Process:</h4>
+                            <h3 class="h4 py-2">Totally Controlled Process:</h3>
                             <p class="lbp-texting">
                                 With a completely controlled work process and a private account manager, our
                                 procedure allows you to have as little or as much engagement in it as you like. Get
@@ -263,7 +263,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 py-2">Cost Limitation:</h4>
+                            <h3 class="h4 py-2">Cost Limitation:</h3>
                             <p class="lbp-texting">
                                 We'll give you the cost basis you need to increase your profitability. There are no
                                 restrictions on scale, quality, or size. We will beat or match all other prices.
@@ -280,7 +280,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4  py-2">Great Experience:</h4>
+                            <h3 class="h4  py-2">Great Experience:</h3>
                             <p class="lbp-texting">
                                 We can assure you our effort,dedications and relentless work going to match your
                                 expectations.We have over 100,000 publishers, thousands of satisfied customers, and
@@ -297,7 +297,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- ------------------------------------------------------ -->
     <!--  How Does It Work?-section start -->
     <section class="trustwhite-section">
-        <h1 class="work-procedure-white-lebel-text-h1 wp-building2">How Does It Work? </h1>
+        <h2 class="text-center mb-5">How Does <span> It Work? </span></h2>
         <div class="row">
             <div class="col-lg-6 col-md-6  m-auto">
                 <div class="text-center">
@@ -368,7 +368,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- -------------------------------------------------------------------->
     <!-- How Can We Guard Your Clients?-section start -->
     <section class="trustwhite-section mb-0">
-        <h1 class="work-procedure-white-lebel-text-h1">How Can We Guard Your Clients?</span> </h1>
+        <h2 class="text-center mb-5">How Can We Guard <span>Your Clients?</span> </h2>
         <div class="row">
             <div class="col-lg-6 col-md-6 ">
                 <div>
@@ -491,7 +491,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- ------------------------------------------- -->
     <!-- What We Can Deliver?-section start -->
     <section class="trustwhite-section my-1">
-        <h1 class="work-procedure-white-lebel-text-h1 mb-4">What We Can Deliver?</h1>
+        <h2 class="mb-4 text-center">What We Can Deliver?</h2>
         <div class="row">
             <div class="col-lg-6 col-md-6  m-auto">
                 <div>
@@ -559,8 +559,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row">
             <div class="col-lg-6 col-md-6 ">
                 <div>
-                    <h1 class="trustworthy-white-lebel-text-h1">Benefits Of <span>White Hat Link Building Service</span>
-                    </h1>
+                    <h2 class="trustworthy-white-lebel-text-h1">Benefits Of <span>White Hat Link Building Service</span>
+                    </h2>
                 </div>
                 <div>
                     <div class="py-4">
@@ -589,7 +589,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </div>
                         </div>
                         <div class="real-bo-secondcol-div1">
-                            <div class=" px-3 trustworthy-img-div">
+                            <div class="px-3 trustworthy-img-div">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
@@ -602,18 +602,18 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </div>
                         </div>
                         <div class="real-bo-secondcol-div1 mb-3">
-                            <div class=" px-3 trustworthy-img-div">
+                            <div class="px-3 trustworthy-img-div">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <div class=" lbp-texting"> <b>Scalability:</b>
+                            <div class="lbp-texting"> <b>Scalability:</b>
                                 You may carry out as many link-building initiatives as you want with <b>white label link
                                     building</b> . Also, it makes handling unforeseen consumer requests easier.
                             </div>
                         </div>
                         <div class="real-bo-secondcol-div1">
 
-                            <div class=" px-3 trustworthy-img-div">
+                            <div class="px-3 trustworthy-img-div">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
@@ -646,7 +646,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="works-for-you-bo-section py-3" style="background-color: #f9fafc;">
         <div class="custom-cntainr">
             <div>
-                <h2 class=" text-center mt-4 my-3 works-bo-h2">Why Can Fast Linky Give You <span>
+                <h2 class="h1 text-center fw-bold mt-4 my-3">Why Can Fast Linky Give You <span>
                         That Top Level?</span></h2>
             </div>
             <div class="works-f-u-main-card-div">
@@ -657,8 +657,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 py-2">Managers With A Specialized
-                                Role:</h4>
+                            <h3 class="h4 py-2">Managers With A Specialized
+                                Role:</h3>
                             <p class="lbp-texting">
                                 When you make your investment. We designate a committed manager to oversee. As a
                                 result, you received your delivery on time or earlier and a prompt answer.
@@ -673,7 +673,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 py-2">Superior Keyword Research: </h4>
+                            <h3 class="h4 py-2">Superior Keyword Research: </h3>
                             <p class="lbp-texting">
                                 Our experienced staff identifies the top-ranking and trending keywords for you. </p>
 
@@ -688,7 +688,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 py-2">Zero Spam Service: </h4>
+                            <h3 class="h4 py-2">Zero Spam Service: </h3>
                             <p class="lbp-texting">
                                 Our staff abstains from using PBNs and never violates the spam policy. Our original
                                 content attracts readers and is well-liked. </p>
@@ -703,7 +703,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 py-2">Existing Link Analysis: </h4>
+                            <h3 class="h4 py-2">Existing Link Analysis: </h3>
                             <p class="lbp-texting">
                                 We make sure that no backlinks are ever replicated for our clients. Also, our
                                 skilled staff carefully examines the client's link profile before conducting
@@ -720,7 +720,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 py-2">Native Professionals: </h4>
+                            <h3 class="h4 py-2">Native Professionals: </h3>
                             <p class="lbp-texting">
                                 Our PR specialists and content writers are from the US and the UK, respectively.
                                 that the authenticity of the material is never compromised.
@@ -737,8 +737,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4 py-2">Huge Database Of Real
-                                Influencers:</h4>
+                            <h3 class="h4 py-2">Huge Database Of Real
+                                Influencers:</h3>
                             <p class="lbp-texting">
                                 We work with more than a thousand genuine bloggers and influencers from every
                                 sector. As a result, you'll experience adequate traffic.</p>
@@ -755,7 +755,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- Why Are We Unique In This Category?-section start -->
 
     <section class="trustwhite-section">
-        <h1 class="work-procedure-white-lebel-text-h1">Why Are We Unique In This Category? </h1>
+        <h2 class="h1 text-center fw-bold">Why Are We <span> Unique </span> In This <span>Category</span>? </h2>
         <div class="row">
             <div class="col-lg-6 col-md-6 d-flex flex-column justify-content-center">
                 <div class="py-4">
@@ -824,10 +824,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="trustwhite-section my-2">
         <div class="row">
             <div>
-                <h1 class="trustworthy-white-lebel-text-h1 text-center">Things To Consider Before Selecting <span>A
+                <h2 class="trustworthy-white-lebel-text-h1 text-center fw-bold">Things To Consider Before Selecting <span>A
                         White Label
                         Link Building Service</span>
-                </h1>
+                </h2>
             </div>
             <div class="col-lg-6 col-md-6 m-auto">
                 <div class="text-center">

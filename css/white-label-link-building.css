@@ -13,7 +13,7 @@
     }
 }
 
-.blogout-main-h1 {
+/* .blogout-main-h1 {
     font-family: "Helvetica", "Satoshi-Variable";
     font-size: 3.8rem;
     font-weight: 700;
@@ -21,7 +21,7 @@
     color: var(--black);
     word-spacing: 0.1em;
     stroke: #000;
-}
+} */
 
 .white-lebel-main-p {
     font-weight: 400;
@@ -77,11 +77,6 @@
     }
 }
 
-@media (min-width:250px) and (max-width:425px) {
-    .work-procedure-white-lebel-text-h1 {
-        font-size: 1.7rem !important;
-    }
-}
 
 /* trustworthy-white-lebel-section end */
 /* ________________________________________________________________________________________________________ */
@@ -89,13 +84,6 @@
 
 /*  Our Work Procedure-section start */
 
-
-.work-procedure-white-lebel-text-h1 {
-    text-align: center;
-    font-size: 2.7rem;
-    color: var(--mustard);
-    margin-bottom: 3rem;
-}
 
 /* Our Work Procedure-section  end */
 /* ____________________________________________________________________________________________________________ */
@@ -106,15 +94,6 @@
 
 .works-for-you-bo-section {
     padding: 5rem;
-}
-
-.works-bo-h2 {
-    font-weight: 600;
-    color: var(--black);
-}
-
-.works-bo-h2 span {
-    color: var(--mustard);
 }
 
 .works-bo-p1 {
@@ -192,10 +171,10 @@
         padding: 0rem 1rem;
     }
 
-    .blogout-main-h1 {
+    /* .blogout-main-h1 {
         font-size: 2.3rem;
         font-weight: 500;
-    }
+    } */
 
     .trustwhite-section {
         margin: 5rem 1rem !important;
@@ -210,10 +189,10 @@
     .white_lebel_link_banner {
         padding: 3rem 1rem 0rem;
     }
-    .blogout-main-h1 {
+    /* .blogout-main-h1 {
         text-align: center;
         margin-top: .7rem;
-    }
+    } */
 
     /* .white-lebel-main-p {
         text-align: center;
@@ -221,10 +200,6 @@
     } */
 
     .trustworthy-white-lebel-text-h1 {
-        text-align: center;
-    }
-
-    .work-procedure-white-lebel-text-h1 {
         text-align: center;
     }
 }
@@ -241,9 +216,9 @@
 }
 
 @media (max-width:600px) {
-    .blogout-main-h1 {
+    /* .blogout-main-h1 {
         font-size: 2rem;
-    }
+    } */
 
     .pricing-bo-p1 {
         padding: .8rem;
@@ -269,9 +244,9 @@
 }
 
 @media (min-width:200px) and (max-width:312px) {
-    .blogout-main-h1 {
+    /* .blogout-main-h1 {
         font-size: 1.4rem;
-    }
+    } */
 
     .trustworthy-white-lebel-text-h1 {
         font-size: 1.53rem !important;
@@ -294,23 +269,15 @@
     }
 }
 
-@media (min-width:313px) and (max-width:399px) {
+/* @media (min-width:313px) and (max-width:399px) {
     .blogout-main-h1 {
         font-size: 1.7rem;
     }
-}
+} */
 
 @media (min-width:250px) and (max-width:450px) {
     .trustwhite-section {
         margin: 1rem 1rem 0rem !important;
-    }
-
-    .work-procedure-white-lebel-text-h1 {
-        margin-bottom: 0rem;
-    }
-
-    .works-f-u-main-card-div {
-        margin-top: 1rem !important;
     }
 
     .works-for-you-bo-section {
@@ -332,9 +299,5 @@
 
     .lbp-texting {
         text-align: justify;
-    }
-
-    .wp-building2 {
-        margin-bottom: 3rem !important;
     }
 }
