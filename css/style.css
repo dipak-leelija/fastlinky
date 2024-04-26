@@ -1,13 +1,15 @@
 @import 'buttons.css';
 @import './lets-talk-section.css';
 @import './navbar.css';
+@import './_common-sections.css';
+
 
 h1,
 h2,
 h3,
 h4,
 h5 {
-    /* font-family: "Helvetica", "Satoshi-Variable"; */
+    font-family: "Helvetica", "Satoshi-Variable";
     text-transform: capitalize !important;
     color: var(--black);
 }

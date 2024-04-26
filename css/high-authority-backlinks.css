@@ -22,20 +22,9 @@
     align-items: start;
 }
 
-.mlb-wrapping h2 {
-    color: var(--mustard);
-    font-weight: 500;
-    line-height: 1.2;
-    font-size: 1.1rem;
-    /* margin: 3rem 0rem; */
-}
-
 .mlb-starting-main-h1 {
-    font-family: "Helvetica", "Satoshi-Variable";
     font-size: 3.3rem;
-    font-weight: 600;
     line-height: 1.2em;
-    color: var(--black);
     word-spacing: 0.1em;
     stroke: #000;
 }
@@ -73,12 +62,8 @@
     margin-bottom: 2rem;
     font-weight: 500;
     line-height: 1.2;
-    color: var(--black) ;
 }
 
-.lbs-actually-matters-main-h1 span {
-    color:var(--mustard) ;
-}
 
 .lbs-actually-matters-main p {
     text-align: left;
@@ -154,7 +139,7 @@
     padding: 6rem;
 }
 
-.how-it-works-main-section h1 {
+.how-it-works-main-section h2{
     text-align: center;
     margin: 0 0 3rem 0;
     font-size: 36px;
@@ -171,11 +156,6 @@
 
 .how-it-works-main-card-div {
     text-align: center;
-}
-
-.how-it-works-main-card-div h4 {
-    font-size: 1.94rem;
-    font-weight: 600;
 }
 
 .how-it-works-main-card-div span {
@@ -202,14 +182,11 @@
     font-size: 1.2rem;
 }
 
-.advantages-of-using-bos-section h3 {
+.advantages-of-using-bos-section h2 {
     color:var(--black);
     font-size: 33px;
     font-weight: 600;
     margin-bottom: 2rem;
-}
-.advantages-of-using-bos-section h3 span{
-    color: var(--mustard);
 }
 
 .advantages-of-using-bos-section ul {
@@ -233,16 +210,6 @@
 
 .works-for-you-bo-section {
     padding: 5rem;
-}
-
-.works-bo-h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--black);
-}
-
-.works-bo-h2 span {
-    color: var(--mustard);
 }
 
 .works-bo-p1 {
@@ -299,7 +266,6 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
     }
     .mlb-starting-main-h1 {
         font-size: 2.7rem;
-        font-weight: 600;
     }
     .how-it-works-main-section {
         padding: 4rem 2rem !important;
@@ -321,7 +287,6 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
     }
     .mlb-starting-main-h1 {
         font-size: 2.3rem;
-        font-weight: 500;
     }
     .mlb-starting-main-p {
         font-weight: 400;
@@ -401,18 +366,14 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
     .advantages-of-using-bos-section ul {
         padding-left: 2rem;
     }
-    .advantages-of-using-bos-section h3 {
+    .advantages-of-using-bos-section h2 {
         text-align: center;
     }
 }
 
 @media (max-width:600px) {
-    .works-bo-h2 {
-        font-size: 2.1rem;
-    }
     .mlb-starting-main-h1 {
         font-size: 2rem;
-        font-weight: 600;
     }
     .high-autority-placement-div {
         padding: 7rem 2rem;
@@ -426,7 +387,7 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
     .lbs-actually-matters-main {
         padding: 1rem !important;
     }
-    .how-it-works-main-section h1 {
+    .how-it-works-main-section h2 {
         margin: 0 !important;
     }
     .how-it-works-main-section {
@@ -465,22 +426,19 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
     .lbs-actually-matters-main-h1 {
         font-size: 1.6rem !important;
     }
-    .how-it-works-main-section h1 {
+    .how-it-works-main-section h2 {
         font-size: 25px !important;
     }
     .pricing-bo-h1 {
         font-size: 1.7rem !important;
     }
-    .advantages-of-using-bos-section h3 {
+    .advantages-of-using-bos-section h2 {
         font-size: 23px;
-    }
-    .works-bo-h2 {
-        font-size: 1.8rem;
     }
 }
 
 @media (min-width:313px) and (max-width:399px) {
-    .advantages-of-using-bos-section h3 {
+    .advantages-of-using-bos-section h2 {
         font-size: 25.5px;
     }
 }
@@ -494,9 +452,6 @@ box-shadow: 0 30px 40px 0 rgb(238 238 238 / 13%);
 @media (min-width:250px) and (max-width:451px) {
     .mlb-starting-main-p {
         font-size: 1.1rem !important;
-    }
-    .how-it-works-main-card-div h4 {
-        font-size: 1.5rem;
     }
     .high-autority-placement-div ul {
         font-size: 19px;
