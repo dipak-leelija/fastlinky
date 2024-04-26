@@ -55,7 +55,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-12 col-lg-6 col-md-7  px-2 px-md-4">
                 <div class="">
-                    <h1 class="country-specific-banner-h1">Country-Specific Backlinks</h1>
+                    <h2 class="country-specific-banner-h1">Country-Specific Backlinks</h1>
                     <p class=" mt-3 mb-4 py-0 py-md-2 country-specific-banner-p">Get a huge audience and improve the
                         online visibility of your website with our specialized country specific backlinks services. If
                         you are looking for links from some specific country then you are in the right place as our
@@ -78,8 +78,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row ">
             <div class="col-lg-6 col-md-6">
                 <div>
-                    <h1 class="mb-4">benefit of Buying <br> <span>country specific backlinks from FastLinky</span>
-                    </h1>
+                    <h2 class="mb-4 fw-normal">benefit of Buying <br> <span>country specific backlinks from FastLinky</span>
+                    </h2>
                 </div>
                 <div class="">
                     <p>
@@ -117,7 +117,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- ------------------------------------------------------------ -->
     <!-- Why Country-Specific Link Buildings? starts -->
     <section class="why-country-specific-link-section">
-        <h2>Why Choose Country Specific Backlinks?</h2>
+        <h2 class="h1 fw-bold mb-5 text-center">Why Choose <span> Country Specific </span> Backlinks?</h2>
         <p class="why-country-specific-link-section-p mb-4">To obtain a high-quality backlink that will improve your
             Google ranking, you must purchase links from
             reliable sources. One website that provides services like "buy quality backlinks Australia" or "buy high
@@ -128,7 +128,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class=" img-country-div">
                         <img src="./images/dummy-img/country-specific-hover-1.webp" class="w-100" alt="">
                     </div>
-                    <h4>More Expansive Business Space</h4>
+                    <h3 class="h4"><span>More Expansive Business Space</span></h3>
                     <p>You can increase your search engine ranking and expose your brand to a new international market
                         of real buyers</p>
                 </div>
@@ -138,7 +138,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="img-country-div">
                         <img src="./images/dummy-img/country-specific-hover-2.webp" class="w-100" alt="">
                     </div>
-                    <h4>Worldwide Presence</h4>
+                    <h3 class="h4"><span>Worldwide Presence</span></h3>
                     <p>
                         Get your company website to the top of search engine results.</p>
                 </div>
@@ -148,7 +148,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="img-country-div">
                         <img src="./images/dummy-img/country-specific-hover-3.webp" class="w-100" alt="">
                     </div>
-                    <h4>Multilingual Content Publication</h4>
+                    <h3 class="h4"><span>Multilingual Content Publication</span></h3>
                     <p>Our outreach blogging specialist creates international content to help clients to do diverse
                         business across the world. </p>
                 </div>
@@ -162,9 +162,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- --------------------------------------------------->
     <section class="how-itsworks-casino-section">
         <div class="how-itsworks-main-div-casino">
-            <h1>
-                How <strong>Does It Work</strong>
-            </h1>
+            <h2 class="h1">How <strong><span>Does It Work</span></strong></h2>
             <p>
                 It is a common fact that link-building is the most important part of a successful SEO campaign. On the
                 other hand, developing links relevant to a particular country takes it a step further when it comes to
@@ -280,8 +278,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row ">
             <div class="col-lg-6 col-md-6">
                 <div>
-                    <h1 class="mb-4">Use Fastlinky To Buy<br> <span> Quality Backlinks In Australia</span>
-                    </h1>
+                    <h2 class="fw-normal mb-4">Use Fastlinky To Buy<br> <span> Quality Backlinks In Australia</span>
+                    </h2>
                 </div>
                 <div class="">
                     <p>

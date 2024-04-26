@@ -48,26 +48,12 @@
     margin: 5rem;
 }
 
-.reach-your-audience-globally-section h1 {
-    color:  var(--black);
-    font-size: 2.3rem;
-    font-weight: 500;
-}
-.reach-your-audience-globally-section h1 span{
-    color: var(--mustard);
-}
 .reach-your-audience-globally-section p {
     text-align: left;
     color: var(--black);
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.5em;
-}
-
-@media (min-width:350px) and (max-width:425px) {
-    .reach-your-audience-globally-section h1 {
-        font-size: 1.5rem !important;
-    }
 }
 
 /* --------------------------------------------------------------------------------------------- */
@@ -81,12 +67,6 @@
     padding: 3rem 6rem;
 }
 
-.why-country-specific-link-section h2 {
-    color:  var(--mustard);
-    font-weight: 500;
-    text-align: center;
-    margin-bottom: 2rem;
-}
 .why-country-specific-link-section-p{
     color: #1c244b;
     font-weight: 400;
@@ -166,16 +146,6 @@
     text-align: center;
 }
 
-.how-itsworks-main-div-casino h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    color:  var(--black);
-}
-
-.how-itsworks-main-div-casino strong {
-    color:  var(--mustard);
-}
-
 .how-itsworks-main-div-casino p {
     text-align: justify;
     color: #3f4450;
@@ -200,11 +170,6 @@
 /* __________________________________________________________________________________________________ */
 .country-specific-international-section {
     padding: 5rem;
-}
-
-.country-specific-international-section-h2 span {
-    color:  var(--mustard);
-    font-weight: 600;
 }
 
 .lbp-texting {
@@ -248,10 +213,6 @@
 /* ____________________________________________________ */
 
 @media (max-width:1199px) {
-    .reach-your-audience-globally-section h1 {
-        font-size: 1.9rem !important;
-    }
-
     .country-specific-international-section {
         padding: 3rem !important;
     }
@@ -311,7 +272,7 @@
         margin: 3rem 1rem 0 !important;
     }
 
-    .reach-your-audience-globally-section h1 {
+    .reach-your-audience-globally-section h2 {
         text-align: center;
     }
 
@@ -321,9 +282,6 @@
 
     .img-country-div {
         min-height: 200px;
-    }
-    .how-itsworks-main-div-casino h1 {
-        font-size: 2rem;
     }
     .how-itsworks-main-div-casino h3{
         text-align: center;
@@ -348,9 +306,6 @@
 }
 
 @media (max-width:600px) {
-    .why-country-specific-link-section h2 {
-        margin: 0 !important;
-    }
 
     .why-country-specific-link-section {
         padding: 4rem 2rem !important;
@@ -397,14 +352,6 @@
 }
 
 @media (min-width:200px) and (max-width:312px) {
-    .reach-your-audience-globally-section h1 {
-        font-size: 1.33rem !important;
-        font-weight: 500;
-    }
-
-    .why-country-specific-link-section h2 {
-        font-size: 1.4rem;
-    }
 
     .country-specific-international-section-h2 {
         font-size: 1.6rem !important;
