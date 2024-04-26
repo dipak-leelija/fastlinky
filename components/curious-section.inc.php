@@ -9,7 +9,7 @@
                 <div class="redactor text-gray-800">We love talking link building. Let us know about your project and we'll send you a free proposal</div>
             </div>
             <div class="d-flex justify-content-between flex-wrap">
-                <button class="btn border-0 layoutbutton fw-bold">Get In Touch <i class="fa-regular fa-comment-dots ps-2"></i></button>
+                <button class="btn border-0 layoutbutton fw-bold" onclick="goTo('contact')">Get In Touch <i class="fa-regular fa-comment-dots ps-2"></i></button>
             </div>
         </div>
     </div>

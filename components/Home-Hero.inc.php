@@ -14,12 +14,11 @@
 
                     <div class="d-flex justify-content-center justify-content-md-start indbanerbtn" style="column-gap: 10px;">
                         <div class=" buttonsinfo ">
-                            <button class="btn srvc-common-btn btnrespipad" onclick="goTo('customer-packages')"> Get Started
-                                Now</button>
+                            <button class="btn srvc-common-btn btnrespipad" onclick="goTo('customer-packages')">Access Database</button>
                         </div>
 
                         <div class=" buttonsinfo ">
-                            <button class="btn srvc-common-btn1 btnrespipad" onclick="goTo('about')"> Let's Talk &nbsp;&nbsp;<i class="fa-solid fa-comment-dots"></i></button>
+                            <button class="btn srvc-common-btn1 btnrespipad" onclick="goTo('contact')">Let's Talk &nbsp;&nbsp;<i class="fa-solid fa-comment-dots"></i></button>
                         </div>
                     </div>
                 </div>

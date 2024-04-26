@@ -62,13 +62,13 @@ if (isset($_GET['seo_url'])) {
 <body>
     <?php require_once "components/navbar.php"; ?>
     <!--------------------------------------------------->
-    <!-- index banner start -->
-    <?php require_once "components/index-banner.inc.php"; ?>
-    <!-- index banner end -->
+    <!-- Hero Banner Start -->
+    <?php require_once "components/Home-Hero.inc.php"; ?>
+    <!-- Hero Banner End -->
     <!-- ------------------------------------------------------- -->
-    <!-- clients-logo -->
-    <?php require_once "components/clientssides-logos.php"; ?>
-    <!-- clients-logo -->
+    <!-- Clients Slides Start -->
+    <?php require_once "components/Clients-Slides.inc.php"; ?>
+    <!-- Clients Slides End -->
     <!-- -------------------------------------------------------->
     <!-- All set to rank on the first page of Google? start -->
     <?php require_once "components/index-goolge_rank.inc.php"; ?>
@@ -123,11 +123,6 @@ if (isset($_GET['seo_url'])) {
     <?php require_once "components/footer.php"; ?>
     <!-- footer -->
     <!-- -------------------------------------- -->
-    <script>
-        const goTo = (url) => {
-            location.href = url;
-        }
-    </script>
     <script src="<?= URL ?>/js/script.js"></script>
     <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
     <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
