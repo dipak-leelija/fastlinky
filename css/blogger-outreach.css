@@ -25,16 +25,7 @@
     text-align: start;
 }
 
-.blogout-main-h1 {
-    font-family: "Helvetica", "Satoshi-Variable";
-    font-size: 3.8rem;
-    font-weight: 700;
-    line-height: 1.2em;
-    color: var(--black);
-}
-.blogout-main-h1 span{
-    color: var(--mustard);
-}
+
 .blogout-main-p {
     font-weight: 500;
     text-align: left;
@@ -51,15 +42,6 @@
     margin: 5rem;
 }
 
-
-.real-bo-text-h1 {
-    font-size: 2.48rem;
-    color: var(--black);
-}
-
-.real-bo-text-h1 span {
-    color: var(--mustard);
-}
 
 .real-bo-secondcol-div1 {
     display: flex;
@@ -83,17 +65,6 @@
     text-align: center;
 }
 
-@media (min-width:350px) and (max-width:425px) {
-    .real-bo-text-h1 {
-        font-size: 1.5rem !important;
-    }
-}
-
-@media (min-width:250px) and (max-width:425px) {
-    .amazing-bo-text-h1 {
-        font-size: 1.7rem !important;
-    }
-}
 
 /* blogger outreach real-bo-section end */
 /* __________________________________________________________________________________________________ */
@@ -105,16 +76,6 @@
     object-fit: cover;
 }
 
-
-
-.amazing-bo-text-h1 {
-    font-size: 2rem;
-    color: var(--black);
-}
-
-.amazing-bo-text-h1 span {
-    color: var(--mustard);
-}
 
 /* amazing blogger outreach section end */
 /* _________________________________________________________________________________________________ */
@@ -142,15 +103,6 @@
     font-weight: 400;
     text-align: center;
     margin-top: 2rem;
-}
-
-.works-bo-h2 {
-    font-weight: 600;
-    color: var(--black);
-}
-
-.works-bo-h2 span {
-    color: var(--mustard);
 }
 
 .works-bo-p1 {
@@ -196,22 +148,8 @@
     padding: 3rem 4rem;
 }
 
-.advantages-of-using-bos-section h3 {
-    color: var(--black);
-    font-family: Poppins, Poppins;
-    font-size: 33px;
-    font-weight: 600;
-    margin-bottom: 2rem;
-}
-
-.advantages-of-using-bos-section h3 span {
-    color: var(--mustard);
-}
-
 .advantages-of-using-bos-section ul {
     text-align: left;
-    color: #1c244b;
-    font-family: Poppins, Poppins;
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 2em;
@@ -229,17 +167,6 @@
 /* ____________________________________________________ */
 
 @media (max-width:1199px) {
-
-
-    .blogout-main-h1 {
-        font-size: 2.818rem;
-        font-weight: 600;
-
-    }
-
-    .real-bo-text-h1 {
-        font-size: 1.9rem !important;
-    }
 
     .pricing-bo-h1 {
         font-size: 3.2rem !important;
@@ -269,28 +196,12 @@
         padding: 4rem 1rem 0rem;
     }
 
-    .blogout-main-h1 {
-        text-align: center;
-
-    }
     .real-bo-section {
         margin: 3rem 1rem 1rem !important;
     }
 
-    .real-bo-text-h1 {
-        text-align: center;
-    }
-
-    .amazing-bo-text-h1 {
-        text-align: center;
-    }
-
     .advantages-of-using-bos-section ul {
         padding-left: 2rem;
-    }
-
-    .advantages-of-using-bos-section h3 {
-        text-align: center;
     }
 }
 
@@ -320,11 +231,6 @@
         font-size: 2em !important;
     }
 
-
-    .blogout-main-h1 {
-        font-size: 2rem;
-
-    }
     .pricing-bo-p1 {
         padding: .8rem;
     }
@@ -357,15 +263,8 @@
 }
 
 @media (min-width:200px) and (max-width:312px) {
-    .blogout-main-h1 {
-        font-size: 1.6rem;
-    }
     .real-bo-secondcol-div1 {
         font-size: 1.1rem;
-    }
-    .real-bo-text-h1 {
-        font-size: 1.53rem !important;
-        font-weight: 500;
     }
 
     .blogout-main-p {
@@ -375,26 +274,8 @@
     .pricing-bo-h1 {
         font-size: 1.7rem !important;
     }
-
-    .how-fonts-h4 {
-        font-size: 1.19rem;
-        font-weight: 700 !important;
-    }
-
-    .advantages-of-using-bos-section h3 {
-        font-size: 23px;
-    }
 }
 
-@media (min-width:313px) and (max-width:399px) {
-    .blogout-main-h1 {
-        font-size: 1.7rem;
-    }
-
-    .advantages-of-using-bos-section h3 {
-        font-size: 25.5px;
-    }
-}
 
 @media (min-width:250px) and (max-width:450px) {
     .how-its-wrok-bo-main-div {

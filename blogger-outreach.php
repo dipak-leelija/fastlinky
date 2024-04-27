@@ -27,6 +27,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <link href="<?= URL ?>/css/blogger-outreach.css" rel='stylesheet' type='text/css' />
     <link href="<?= URL ?>/css/testimonials.css" rel="stylesheet" />
     <link href="<?= URL ?>/css/clientside-logo.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 <body>
     <?php require_once "components/navbar.php"; ?>
@@ -52,8 +55,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 <div class="row w-100 m-auto">
                     <div class="col-md-6  px-0 px-md-3">
                         <div class="bo-wrap">
-                            <h1 class="blogout-main-h1">
-                                Genuine <span>Blogger Outreach</span> Services </h1>
+                            <h2 class="large-heading">
+                                Genuine <span>Blogger Outreach</span> Services </h2>
                             <p class=" mt-3 mb-4 py-0 py-md-2 blogout-main-p">FastLinky uses a manual
                                 <b>blogger outreach service</b> to introduce your company to actual bloggers in your
                                 niche to provide excellent
@@ -86,9 +89,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class=" col-md-6 order-1 order-md-2">
                 <div>
-                    <h1 class="real-bo-text-h1 mb-3">Crafting Quality Backlinks <br> <span>to Enhance Domain
+                    <h2 class="mb-3">Crafting Quality Backlinks <br> <span>to Enhance Domain
                             Authority</span>
-                    </h1>
+                    </h2>
                 </div>
                 <div>
                     <p>Along with domain authority, our links evaluate past link performance, domain score, and
@@ -112,7 +115,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-lg-6 col-md-6 real-bo-col-first px-0">
                 <div class="">
                     <div>
-                        <h1 class="real-bo-text-h1">Real Contributors, Real Links, <span>And Real Outcomes</span> </h1>
+                        <h2 class="real-bo-text-h1">Real Contributors, Real Links, <span>And Real Outcomes</span> </h2>
                     </div>
                     <div>
                         <div class="py-4">
@@ -172,8 +175,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="custom-cntainr">
             <div class="how-its-wrok-bo-main-div">
                 <div>
-                    <h1 class=" text-center mt-4 my-3 works-bo-h2">Why Use Fastlinky Blogger Outreach Service <span>For
-                            Your Business?</span></h1>
+                    <h2 class="question-heading text-center mt-4 my-3">Why Use Fastlinky Blogger Outreach Service <span>For
+                            Your Business?</span></h2>
                 </div>
                 <div class="works-f-u-main-card-div">
                     <div class="row w-100 m-auto">
@@ -183,7 +186,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
-                                <h4 class="how-fonts-h4  py-2">Relevance, Authority, And Influence Links</h4>
+                                <h3 class="question-sub-heading py-2">Relevance, Authority, And Influence Links</h3>
                                 <p class="">
                                     Links that are relevant, authoritative, and influential are necessary if you want to
                                     rank highly on search engines.For this, you should use the best <b>custom outreach
@@ -197,7 +200,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
-                                <h4 class="how-fonts-h4  py-2">Customized Outreach Plan For Your Website</h4>
+                                <h3 class="question-sub-heading  py-2">Customized Outreach Plan For Your Website</h3>
                                 <p class="">
                                     We base your website's niche on our outreach plan. Before implementing the plan, our
                                     outreach specialists seek out high-quality websites with higher DA that are
@@ -211,7 +214,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
-                                <h4 class="how-fonts-h4  py-2">No Duplication</h4>
+                                <h3 class="question-sub-heading py-2">No Duplication</h3>
                                 <p class="">
                                     To ensure that there are no duplicate orders on partner domains, we keep track of
                                     every order you place.
@@ -224,7 +227,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
-                                <h4 class="how-fonts-h4  py-2">Domain Authority</h4>
+                                <h3 class="question-sub-heading py-2">Domain Authority</h3>
                                 <p class="">
                                     We maintain our outreach primarily to domains that have continuously high domain
                                     authority in order to get you the finest stats for your site.</p>
@@ -236,7 +239,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
-                                <h4 class="how-fonts-h4  py-2">Native Content</h4>
+                                <h3 class="question-sub-heading py-2">Native Content</h3>
                                 <p class="">
                                     You hire smart authors to compose your content using your native language. Before
                                     creating interesting content, factors like brand beliefs and other factors are
@@ -250,7 +253,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
-                                <h4 class="how-fonts-h4  py-2">Reasonable Prices</h4>
+                                <h3 class="question-sub-heading py-2">Reasonable Prices</h3>
                                 <p class="">
                                     We are able to provide exceptional SEO services with highly competitive pricing
                                     thanks to our SEO experience. </p>
@@ -276,8 +279,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-lg-6 col-md-6 real-bo-col-first p-0">
                 <div class="">
                     <div>
-                        <h1 class="amazing-bo-text-h1">Excellent Content + Superb Placements <span> = Incredible
-                                Outcomes</span> </h1>
+                        <h2>Excellent Content <span> + </span> Superb Placements <span> = </span> Incredible
+                        <span>Outcomes</span> </h1>
                         <div class="mt-3">
                             <p class="real-bo-text-p mb-3 text-md-start">Our link-building strategy goes beyond just
                                 considering Domain Authority. We take into account a variety of measures that are
@@ -340,7 +343,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="works-for-you-bo-section py-0">
         <div class="custom-cntainr">
             <div>
-                <h2 class=" text-center mt-4 my-3 works-bo-h2">How Does Blogger Outreach Service <span> Improve Your
+                <h2 class="question-heading text-center mt-4 my-3">How Does Blogger Outreach Service <span> Improve Your
                         Brand?</span></h2>
             </div>
             <div class="works-f-u-main-card-div">
@@ -351,7 +354,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4  py-2">Businesses</h4>
+                            <h3 class="question-sub-heading py-2">Businesses</h3>
                             <p class="">
                                 Keep in mind that improving your company website's search results is no easy feat.
                                 You're going to have a tough time doing this. Allow our blogger outreach agency's
@@ -366,7 +369,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4  py-2">Resellers</h4>
+                            <h3 class="question-sub-heading py-2">Resellers</h3>
                             <p class="">
                                 If you're an SEO reseller having trouble locating quality links for your clients, our
                                 blogger service is your go-to resource. We are not just masters in link-building, we
@@ -380,7 +383,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                     alt="">
                             </div>
-                            <h4 class="how-fonts-h4  py-2">Marketing Partners</h4>
+                            <h3 class="question-sub-heading py-2">Marketing Partners</h3>
                             <p class="">
                                 The majority of individuals are unsure of how to improve affiliate sites using an SEO
                                 strategy that is result-based. The simplest solution is to obtain enough high-quality
@@ -400,7 +403,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-lg-6 col-md-6 real-bo-col-first">
                 <div class="">
                     <div>
-                        <h1 class="real-bo-text-h1 mb-5">Blogger Outreach <span>Agency</span> </h1>
+                        <h2 class="mb-4">Blogger Outreach <span>Agency</span> </h2>
                     </div>
                     <p class="real-bo-text-p text-md-start mb-5">Being a reputable <b>blogger outreach agency</b> , our
                         distinctive strategy has helped our clients' websites secure content from blogs that link to
@@ -425,7 +428,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- real-blogger-outreach-section end -->
     <!-- -------------------------------------------------------------- -->
     <!-- clients-logo -->
-    <?php require_once "components/clientssides-logos.php"; ?>
+    <?php require_once "components/Clients-Slides.inc.php"; ?>
     <!-- clients-logo -->
     <!------------------------------------->
     <!-- testimonials customers reviews -->
@@ -438,8 +441,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="custom-cntainr">
             <div class="how-its-wrok-bo-main-div">
                 <div>
-                    <h1 class=" text-center mt-4 my-3 works-bo-h2">How Does <span>The FastLinky Blogger Outreach Service
-                        </span>Work?</h1>
+                    <h2 class="question-heading text-center mt-4 my-3">How Does <span>The FastLinky Blogger Outreach Service
+                        </span>Work?</h2>
                 </div>
                 <p class="fbos-p">
                     Our best blogger outreach services actively connect with admin,genuine publishers and relevant
@@ -454,7 +457,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
-                                <h4 class="how-fonts-h4  py-2">The Best Prospects To Pursue:</h4>
+                                <h3 class="question-sub-heading py-2">The Best Prospects To Pursue:</h3>
                                 <p class="">
                                     Our outreach link-building <b>blogger service </b> chooses the most advantageous
                                     ways to drive relevant traffic to your website. We make sure you receive the best
@@ -468,7 +471,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
-                                <h4 class="how-fonts-h4  py-2">Dealing With The Outreach:</h4>
+                                <h3 class="question-sub-heading py-2">Dealing With The Outreach:</h3>
                                 <p class="">
                                     We aim to create permanent links for you with selected admin,publishers that are
                                     well-established in your domain.We relieve you of such a load, despite the fact that
@@ -481,7 +484,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
-                                <h4 class="how-fonts-h4  py-2">Generate Ideas And Make Recommendations:</h4>
+                                <h3 class="question-sub-heading py-2">Generate Ideas And Make Recommendations:</h3>
                                 <p class="">
                                     Once blogs are selected by our outreach expert teams, we actively come up with
                                     creative content ideas, recommend them to the authors of those blogs, and keep you
@@ -495,7 +498,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
-                                <h4 class="how-fonts-h4  py-2">Content Production And Promotion:</h4>
+                                <h3 class="question-sub-heading py-2">Content Production And Promotion:</h3>
                                 <p class="">
                                     Our staff of talented writers crafts editorially in-depth guest pieces that aren't
                                     intended to be promotional and can be seamlessly incorporated into any production.
@@ -509,7 +512,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
-                                <h4 class="how-fonts-h4  py-2">Custom Outreach Services:</h4>
+                                <h3 class="question-sub-heading py-2">Custom Outreach Services:</h3>
                                 <p class="">
                                     We offer custom outreach services for clients with genre-specific conditions to get
                                     links to blogs that support their tasks and vision.
@@ -522,7 +525,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                                     <img src="./images/dummy-img/real-bo-ul-li-3.png" class="real-bo-second-ul-li-img"
                                         alt="">
                                 </div>
-                                <h4 class="how-fonts-h4  py-2">White-Labeled Solutions: </h4>
+                                <h3 class="question-sub-heading py-2">White-Labeled Solutions: </h3>
                                 <p class="">
                                     Our <b>blogger outreach agency</b> fills large orders for your customers while still
                                     paying attention to quality and deadlines. You receive reports that are
@@ -540,7 +543,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- Why Choose Fast Linky WebSolution For Casino Link Building Services? starts -->
     <section class="advantages-of-using-bos-section">
         <div>
-            <h3 class="text-center">Advantages Of Using Our <span>Blogger Outreach Service</span> </h3>
+            <h2 class="text-center mb-5">Advantages Of Using Our <span>Blogger Outreach Service</span> </h2>
             <ul>
                 <li> <b>Extremely Affordable :</b> <br>
                     Use the best blogger outreach services to expand your customers and save money
@@ -651,7 +654,45 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- footer -->
     <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
     <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            loop: true,
+            // pagination: {
+            //     el: ".swiper-pagination",
+            //     clickable: true,
+            // },
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+            // When window width is >= 576px (for mobile devices)
+            280: {
+                slidesPerView: 3,
+            },
+            // When window width is >= 768px (for iPad)
+            768: {
+                slidesPerView: 3,
+            },
+            // When window width is >= 992px
+            992: {
+                slidesPerView: 4,
+            },
+            // When window width is >= 1200px
+            1200: {
+                slidesPerView: 5,
+            },
+        },
+        });
+    </script>
 </body>
 
 </html>
