@@ -27,6 +27,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <link href="<?= URL ?>/css/guest-posting.css" rel='stylesheet' type='text/css' />
     <link href="<?= URL ?>/css/testimonials.css" rel="stylesheet" />
     <link href="<?= URL ?>/css/clientside-logo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -52,7 +54,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row w-100 m-auto">
             <div class=" col-md-6 order-2 order-md-1 px-0 px-md-3">
                 <div class="">
-                    <h1 class="high-quality-gp-heading-main">High quality <span>guest posting </span> service </h1>
+                    <h2 class="large-heading">High quality <span>guest posting </span> service </h2>
                     <p class="  mb-3 py-0  high-quality-gp-main-p">Effective backlinks and content links
                         that raise the organic growth of your website.
                     </p> 
@@ -95,8 +97,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 ">
-                <h1 class=" best-blogs-best-result-main-h1 ">Best Blogs, <span>Best Results</span>
-                </h1>
+                <h2 class="h1 mt-3">Best Blogs, <span>Best Results</span></h2>
                 <div class="">
                     <p class="best-blogs-best-result-main-p mb-3">
                         FastLinky will provide you with a write option to select from. We will give you the essential
@@ -133,14 +134,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <?php require_once "components/blogs-sites.php"; ?>
     <!-- ----------------------------------------------- -->
     <!-- clients-logo -->
-    <?php require_once "components/clientssides-logos.php"; ?>
+    <?php require_once "components/Clients-Slides.inc.php"; ?>
     <!-- clients-logo -->
     <!-- ------------------------------------------ -->
     <!-- Who Can Take Advantage Of This Service? starts -->
     <section class="who-can-take-section">
         <div class="">
             <div>
-                <h2 class=" text-center mt-4 my-3 who-advantages-main-h2"> <span> Who Can Take Advantage Of This </span>
+                <h2 class=" text-center mt-4 my-3 question-heading"> <span> Who Can Take Advantage Of This </span>
                     Service?</h2>
             </div>
             <div class="who-takes-adv-main mt-5">
@@ -150,7 +151,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 ">Online Business</h4>
+                            <h3 class="question-sub-heading fw-semibold text-center">Online Business</h3>
                             <p class="">
                                 Visibility is the only goal for any business that wants to thrive online. We can help
                                 you to improve your business in the SERP and get you high-quality backlinks. </p>
@@ -161,7 +162,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">SEO Service </h4>
+                            <h3 class="question-sub-heading fw-semibold text-center">SEO Service </h3>
                             <p class="">
                                 You can get the 100% white-label report that is provided by us. You will get full
                                 support from FastLinky for all your useful information shown in the SERP. </p>
@@ -172,7 +173,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <div class="text-center pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Associate Vendors</h4>
+                            <h3 class="question-sub-heading fw-semibold text-center">Associate Vendors</h3>
                             <p class="">
                                 We know you have already opted for <b>guest posting sites</b> from other platforms but
                                 give us
@@ -188,7 +189,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <!-- How Does Our FastLinky’s Guest Posting Service Work? starts -->
         <div class="howdoes-itwork-sec">
             <div>
-                <h2 class=" text-center mt-4 my-3 who-advantages-main-h2">How Does Our FastLinky’s <span> Guest Posting
+                <h2 class="question-heading text-center mt-4 my-3">How Does Our FastLinky’s <span> Guest Posting
                         Service
                         Work? </span>
                 </h2>
@@ -200,18 +201,18 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 ">Place Your Order Details </h4>
+                            <h3 class="question-sub-heading fw-semibold text-center">Place Your Order Details </h3>
                             <p class="">
                                 We discuss all the details and then find a suitable placement. You could share the
                                 target URL with instructions. We provide you with a suitable content copy. </p>
                         </div>
                     </div>
                     <div class="col-md-4 col-xl-4">
-                        <div class="who-take-card">
+                        <div class="who-take-card fw-semibold text-center">
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Content Writing </h4>
+                            <h3 class="question-sub-heading">Content Writing </h3>
                             <p class="">
                                 Once the placement is decided, our content writers design an effective content copy. We
                                 create content that readers find rich and valuable. </p>
@@ -222,7 +223,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <div class="text-center pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">White Label Link Building</h4>
+                            <h3 class="question-sub-heading fw-semibold text-center">White Label Link Building</h3>
                             <p class="">
                                 White-label report is major for link building. When we see that our post passes the
                                 necessary quality checks then we share it in the form of a white-label report for
@@ -240,9 +241,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="work-to-improve-vision-main-sec">
         <div class="row">
             <div class=" col-xl-6 col-md-6">
-                <h1 class="work-vision-h1 mb-3">
-                    We work to <br> <span>improve your vision </span>
-                </h1>
+                <h2 class="mb-3">We work to <br> <span>improve your vision </span></h2>
                 <p>
                     Our website is well known for its digital goodness. Our staff has gone through a lot of trouble
                     and hard work, and we are hoping that our <b>guest posting services</b> will be invaluable to
@@ -295,7 +294,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- Why Should You Choose FastLinky? starts -->
     <section class="why-choose-fastlinky-sec">
         <div>
-            <h2>Why Should You Choose <strong>FastLinky?</strong> </h2>
+            <h2 class="question-heading">Why Should You Choose <strong>FastLinky?</strong> </h2>
             <div>
                 <ul>
                     <li> ➔ We Always Provide You A Creative Content. We make sure that all of our clients get natural
@@ -431,6 +430,45 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- footer -->
     <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
     <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            loop: true,
+            // pagination: {
+            //     el: ".swiper-pagination",
+            //     clickable: true,
+            // },
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+            // When window width is >= 576px (for mobile devices)
+            280: {
+                slidesPerView: 3,
+            },
+            // When window width is >= 768px (for iPad)
+            768: {
+                slidesPerView: 3,
+            },
+            // When window width is >= 992px
+            992: {
+                slidesPerView: 4,
+            },
+            // When window width is >= 1200px
+            1200: {
+                slidesPerView: 5,
+            },
+        },
+        });
+    </script>
 </body>
 
 </html>

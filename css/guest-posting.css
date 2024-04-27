@@ -15,16 +15,6 @@
         background-position: inherit;
     }
 }
-.high-quality-gp-heading-main span{
-    color: var(--mustard);
-}
-.high-quality-gp-heading-main {
-    font-family: "Helvetica", "Satoshi-Variable";
-    font-size: 3.7rem;
-    font-weight: 700;
-    line-height: 1.2em;
-    color: var(--black);
-}
 
 .high-quality-gp-main-p {
     font-weight: 400;
@@ -69,16 +59,6 @@
     margin: 5rem;
 }
 
-.best-blogs-best-result-main-h1 {
-    margin-bottom: 3rem;
-    font-size: 2.48rem;
-    color: var(--black);
-    text-align: start;
-}
-
-.best-blogs-best-result-main-h1 span {
-    color: var(--mustard);
-}
 .best-blogs-best-result-main-p {
     font-size: 1.2rem;
     font-weight: 400;
@@ -87,12 +67,6 @@
     align-items: center;
 }
 
-@media (min-width:350px) and (max-width:425px) {
-    .best-blogs-best-result-main-h1 {
-        font-size: 1.5rem !important;
-    }
-
-}
 /* ___________________________________________________________________________________ */
 /* best-blogs-best-result-section end */
 /* --------------------------------------------------------------------------- */
@@ -179,14 +153,7 @@
 .howdoes-itwork-sec{
     margin: 7rem 0 0;
 }
-.who-advantages-main-h2 {
-    font-weight: 600;
-    color: var(--black);
-}
 
-.who-advantages-main-h2 span {
-    color: var(--mustard);
-}
 .who-take-card {
     padding:2.5rem 1.5rem;
     background: #fff;
@@ -202,13 +169,6 @@
 .who-take-card:hover {
     box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
     -webkit-box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
-}
-
-.who-take-card h4 {
-    text-align: center;
-    color: var(--black);
-    font-size: 22px;
-    font-weight: 700;
 }
 
 .who-take-card p {
@@ -323,18 +283,8 @@
         padding: 3rem !important;
     }
 
-    .high-quality-gp-heading-main {
-        font-size: 2.8rem;
-        font-weight: 600;
-    }
-
     .who-can-take-section {
         padding: 4rem !important;
-    }
-
-    .best-blogs-best-result-main-h1 {
-        font-size: 2.4rem !important;
-        margin-bottom: 1rem !important;
     }
 
     .pricing-bo-h1 {
@@ -355,9 +305,6 @@
     .best-blogs-best-result-section {
         margin: 5rem 1rem !important;
     }
-    .work-vision-h1 {
-        font-size: 1.8rem;
-    }
 
     .who-can-take-section {
         padding: 2rem !important;
@@ -372,27 +319,14 @@
     .external-css-fr-size {
         width: 100%;
     }
- 
-    .high-quality-gp-heading-main {
-        text-align: center;
-
-    }
     .high-quality-gp-main-p {
         text-align: center;
         justify-content: center;
     }
 
-    .best-blogs-best-result-main-h1 {
-        text-align: center;
-    }
-
     .work-vision-h1 {
         font-size: 2.3rem !important;
         text-align: center;
-    }
-    .high-quality-gp-heading-main {
-        font-size: 2.3rem;
-        font-weight: 500;
     }
 }
 
@@ -426,9 +360,6 @@
     }
     .definition-gp-section {
         padding: 0rem 1rem;
-    }
-    .high-quality-gp-heading-main {
-        font-size: 2rem;
     }
     .pricing-bo-p1 {
         padding: .8rem;
@@ -488,11 +419,6 @@
         font-size: 1.6rem !important;
     }
 
-    .best-blogs-best-result-main-h1 {
-        font-size: 1.53rem !important;
-        font-weight: 500;
-    }
-
     .high-quality-gp-main-p {
         font-size: 1.2rem !important;
     }
@@ -505,13 +431,6 @@
         font-size: 1.19rem;
         font-weight: 700 !important;
     }
-}
-
-@media (min-width:313px) and (max-width:399px) {
-    .high-quality-gp-heading-main {
-        font-size: 1.7rem;
-    }
-
 }
 
 @media (min-width:353px) and (max-width:420px) {
