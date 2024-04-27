@@ -50,7 +50,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="row mlb-main-start-row">
                 <div class="col-12 col-lg-6 col-md-6  px-0 px-md-2">
                     <div class="mlb-wrapping">
-                        <h1 class="mlb-starting-main-h1">Link <span>insertion</span> service</h1>
+                        <h2 class="large-heading">Link <span>insertion</span> service</h2>
                         <p class=" mt-2 mb-3  mlb-starting-main-p"><b>Link insertion</b> is a unique way to
                             make a positive impact on your backlink profile and increase your SERP ranking.
                         </p>
@@ -94,9 +94,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
             </div>
             <div class=" col-xl-6 col-md-6 order-md-2 order-1">
-                <h1 class="lbs-actually-matters-main-h1 mb-3">
-                    <span> Benefits Of </span>Our Link Insertion Service
-                </h1>
+                <h2 class="h1 fw-semibold mb-3">
+                    <span> Benefits </span>Of Our <span>Link Insertion</span> Service
+                </h2>
                 <div class="actually-card-div1">
                     <div class="  actually-card-inn-img-div">
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="insertion-page-second-ul-li-img"
@@ -171,7 +171,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <?php require_once "components/blogs-sites.php"; ?>
     <!-- How It Works-section starts -->
     <section class="how-it-works-main-section">
-        <h1>How Does <span> Our Link Insertion Service Works?</span></h1>
+        <h2 class="question-heading text-center">How Does <span> Our Link Insertion Service Works?</span></h2>
         <div class="text-center py-4">
             <img src="./images/dummy-img/link-inserting-123img.png" class="how-it-works-1st-img" alt="">
         </div>
@@ -181,7 +181,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="img-country-div">
                         <img src="./images/dummy-img/link-insertion-service-howitwork1.png" class="w-100" alt="">
                     </div>
-                    <h4>Real <span>Blog Post</span> </h4>
+                    <h3 class="question-sub-heading text-center fw-semibold">Real <span>Blog Post</span> </h3>
                     <p>
                         Choose anchor text in your <b>niche edit service</b>. At Fastlinky we search for real blog posts
                         on real websites to connect with site owners to get you suitable link placement on these posts.
@@ -193,7 +193,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="img-country-div">
                         <img src="./images/dummy-img/link-insertion-service-howitwork3.png" class="w-100" alt="">
                     </div>
-                    <h4>Valid <span>Report</span> </h4>
+                    <h3 class="question-sub-heading text-center fw-semibold">Valid <span>Report</span> </h3>
                     <p>
                         You can get a valid report of every single <b>niche edit service</b> that we secure for you from
                         within
@@ -205,7 +205,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="img-country-div">
                         <img src="./images/dummy-img/link-insertion-service-howitwork2.png" class="w-100" alt="">
                     </div>
-                    <h4>Beneficial <span>Content</span> </h4>
+                    <h3 class="question-sub-heading text-center fw-semibold">Beneficial <span>Content</span> </h3>
                     <p>
                         Our professional team strives to improve these blog posts perfectly. They ensure that your link
                         is naturally included in the content.</p>
@@ -217,7 +217,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="who-can-take-section">
         <div class="">
             <div>
-                <h2 class=" text-center mt-4 my-3 who-advantages-main-h2">Why You Choose FastLinky <span> For Link
+                <h2 class="question-heading text-center mt-4 my-3">Why You Choose FastLinky <span> For Link
                         Insertion Service? </span>
                 </h2>
             </div>
@@ -228,7 +228,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 ">Skilled writers</h4>
+                            <h3 class="h3-points text-center">Skilled writers</h3>
                             <p class="">
                                 We have a team of professional writers. They create quality content that improves the
                                 importance of existing posts. They ensure that the link seems completely natural and the
@@ -240,7 +240,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <div class="text-center pb-3 ">
                                 <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 ">Originality</h4>
+                            <h3 class="h3-points text-center">Originality</h3>
                             <p class="">
                                 We will always help you to choose the right opportunity. The reason we achieve more
                                 success is that we always connect with choosy bloggers. </p>
@@ -251,7 +251,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <div class="text-center pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">SEO Purposes </h4>
+                            <h3 class="h3-points text-center">SEO Purposes </h3>
                             <p class="">
                                 We always create links that are valuable for SEO, and we carefully check all sites to
                                 confirm that they just exist to sell links.
@@ -263,7 +263,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <div class="text-center pb-3">
                                 <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Contextual Link Building </h4>
+                            <h3 class="h3-points text-center">Contextual Link Building </h3>
                             <p class="">
                                 A <b>contextual link</b> is a rich link to your web page content, we serve relevant
                                 links that increase your premium URL power. We can recognize the highest ranking and
@@ -281,10 +281,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="lbs-actually-matters-main">
         <div class="row">
             <div class=" col-xl-6 col-md-6 m-auto">
-                <h1 class="lbs-actually-matters-main-h1 mb-3">
-                    How Does
-                    <span> link insertion Boost SEO? </span>
-                </h1>
+                <h2 class="section-heading mb-3">How Does<span> link insertion Boost SEO? </span></h2>
                 <p>
                     When you add suitable links on your website to existing content on other websites, it is called
                     <b>link insertion</b>. <b>Link insertion </b> is a backlink from another page to your page that

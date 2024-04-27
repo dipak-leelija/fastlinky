@@ -41,14 +41,6 @@
     color: var(--mustard);
 }
 
-.mlb-starting-main-h1 {
-    font-family: "Helvetica", "Satoshi-Variable";
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1.2em;
-    color: var(--black);
-}
-
 .mlb-starting-main-p {
     font-weight: 500;
     text-align: left;
@@ -98,15 +90,6 @@
 .lbs-actually-matters-main {
     /* background: #f7f7f7; */
     padding: 5rem;
-}
-
-.lbs-actually-matters-main-h1 {
-    color: var(--black);
-}
-
-.lbs-actually-matters-main-h1 span {
-    color: var(--mustard);
-    font-weight: 600;
 }
 
 .lbs-actually-matters-main p {
@@ -185,17 +168,6 @@
     background: #cd852b0f;
 }
 
-.how-it-works-main-section h1 {
-    text-align: center;
-    margin: 0 0 3rem 0;
-    font-size: 36px;
-    font-weight: 600;
-    color: var(--black);
-}
-
-.how-it-works-main-section span {
-    color: var(--mustard);
-}
 
 .img-country-div {
     margin: auto;
@@ -208,20 +180,6 @@
     object-fit: contain;
 }
 
-.how-it-works-main-card-div {
-    text-align: center;
-}
-
-.how-it-works-main-card-div h4 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: var(--black);
-}
-
-.how-it-works-main-card-div span {
-    color: var(--mustard);
-
-}
 
 .how-it-works-main-card-div p {
     font-weight: 400;
@@ -237,15 +195,6 @@
     padding: 4rem 6rem 2rem;
 }
 
-.who-advantages-main-h2 {
-    font-weight: 600;
-    color: var(--black);
-}
-
-.who-advantages-main-h2 span {
-    color: var(--mustard);
-}
-
 .who-take-card {
     padding: 2.5rem 1.5rem 1rem;
     border: none;
@@ -258,13 +207,6 @@
     background-image: url('../images/dummy-img/card-hover-bg-image.png');
     background-position: top right;
     background-repeat: no-repeat;
-}
-
-.who-take-card h4 {
-    text-align: center;
-    color: var(--black);
-    font-size: 20px;
-    font-weight: 700;
 }
 
 .who-take-card p {
@@ -310,11 +252,6 @@
         padding: 3rem !important;
     }
 
-    .mlb-starting-main-h1 {
-        font-size: 2.8rem;
-        font-weight: 600;
-    }
-
     .how-it-works-main-section {
         padding: 4rem 2rem !important;
     }
@@ -331,11 +268,6 @@
 @media (max-width:991px) {
     .who-can-take-section {
         padding: 2rem !important;
-    }
-
-    .mlb-starting-main-h1 {
-        font-size: 2.3rem;
-        font-weight: 500;
     }
 
     .lbs-actually-matters-main-h1 {
@@ -368,10 +300,6 @@
         justify-content: center !important;
     }
 
-    .mlb-starting-main-h1 {
-        text-align: center;
-    }
-
     .mlb-starting-main-p {
         text-align: center;
         justify-content: center;
@@ -402,17 +330,8 @@
         padding: 1rem !important;
     }
 
-    .how-it-works-main-section h1 {
-        margin: 0 !important;
-        font-size: 29px !important;
-    }
-
     .how-it-works-main-section {
         padding: 4rem 2rem !important;
-    }
-
-    .mlb-starting-main-h1 {
-        font-size: 2rem;
     }
 
     .mlb-wrapping {
@@ -473,10 +392,6 @@
         font-size: 1.6rem !important;
     }
 
-    .how-it-works-main-section h1 {
-        font-size: 23px !important;
-    }
-
     .mlb-starting-main-p {
         font-size: 1.2rem !important;
         font-weight: 400;
@@ -490,13 +405,6 @@
         width: 253px !important;
 
     }
-}
-
-@media (min-width:313px) and (max-width:399px) {
-    .mlb-starting-main-h1 {
-        font-size: 1.7rem;
-    }
-
 }
 
 @media (min-width:353px) and (max-width:420px) {
