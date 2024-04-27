@@ -2,29 +2,29 @@
 require_once __DIR__ . "/includes/common-service-class-functions.inc.php";
 $packages = $GPPackage->packDetailsByCat(1);
 $packCat  = $GPPackage->packCatById(1);
-require_once ROOT_DIR."/includes/package-submission.inc.php";
+require_once ROOT_DIR . "/includes/package-submission.inc.php";
 ?>
 
 <!DOCTYPE HTML>
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
+    <?php require_once ROOT_DIR . "/components/fastlinky-head.php" ?>
 
     <title>Top Managed Link Building And Guest posting Services In 2023 - <?php echo COMPANY_S; ?></title>
-    <meta name="description"
-        content="Fastlinky, the best link-building company promotes your website's rankings through monthly managed link-building service and proper analysis of link management." />
-    <meta name="keywords"
-        content="managed link building, monthly link building service, monthly backlink building service, backlink management, link management, link building management, link building packages, whitehat link building services, best link building company," />
+    <meta name="description" content="Fastlinky, the best link-building company promotes your website's rankings through monthly managed link-building service and proper analysis of link management." />
+    <meta name="keywords" content="managed link building, monthly link building service, monthly backlink building service, backlink management, link management, link building management, link building packages, whitehat link building services, best link building company," />
     <!-- Plugins Files -->
     <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
-    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+    <?php require_once ROOT_DIR . '/plugins/font-awesome/fontawesome.php' ?>
 
     <!-- Custom CSS -->
     <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
     <link href="<?= URL ?>/css/managed-link-building.css" rel='stylesheet' type='text/css' />
     <link href="<?= URL ?>/css/testimonials.css" rel="stylesheet" type='text/css' />
     <link href="<?= URL ?>/css/clientside-logo.css" rel="stylesheet" type='text/css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -50,7 +50,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row ">
             <div class="col-md-6 order-2 order-md-1 px-0 px-md-3">
                 <div class="mlb-wrapping">
-                    <h1 class="mlb-starting-main-h1">Managed <span>Link Building</span> Services </h1>
+                    <h2 class="large-heading">Managed <span>Link Building</span> Services </h2>
                     <p class=" mt-2 mb-md-0 mb-3 py-0 py-md-2 mlb-starting-main-p">Get high-quality backlinks to boost
                         your
                         website’s visibility and authority on search results.At FastLinky, our outreach specialists
@@ -97,8 +97,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6 a-brand-need-link-main-col-1">
                 <div class="a-brand-need-link-main-div">
-                    <h1 class="text-center a-brand-need-link-main-h1 mb-3"> <span> Result-Driven </span>Approach
-                    </h1>
+                    <h2 class="h1 text-center mb-3"> <span> Result-Driven </span>Approach</h2>
                 </div>
                 <div>
                     <div class="mt-2">
@@ -131,33 +130,29 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="a-brand-need-link-section mt-0">
         <div class="row  ">
             <div class="a-brand-need-link-main-div">
-                <h1 class="text-center a-brand-need-link-main-h1 ">Why does <span> Your Brand Need </span> link
+                <h2 class="text-center question-heading mt-4 mb-3">Why does <span> Your Brand Need </span> link
                     buildings?
-                </h1>
+                </h2>
             </div>
             <div class="col-lg-6 col-md-6 a-brand-need-link-main-col-1">
                 <div class="">
                     <div>
                         <div class="mt-5">
                             <ul>
-                                <li class="square-box-p"> <span class="sq-pen-css"><i
-                                            class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
+                                <li class="square-box-p"> <span class="sq-pen-css"><i class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
                                     Google uses sophisticated algorithms. Therefore, backlinks are still a key factor in
                                     identifying the keyword for which website is trending.
                                 </li>
-                                <li class="square-box-p"> <span class="sq-pen-css"><i
-                                            class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
+                                <li class="square-box-p"> <span class="sq-pen-css"><i class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
                                     Link building management is an essential part of SEO services. Depending on your
                                     link, Google may be informed that your website has resources for high-quality
                                     content.
                                 </li>
-                                <li class="square-box-p"> <span class="sq-pen-css"><i
-                                            class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
+                                <li class="square-box-p"> <span class="sq-pen-css"><i class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
                                     Additionally, there is a good chance that your website will rank higher if it has
                                     more backlinks.
                                 </li>
-                                <li class="square-box-p"> <span class="sq-pen-css"> <i
-                                            class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
+                                <li class="square-box-p"> <span class="sq-pen-css"> <i class="fa-solid fa-spa fa-beat-fade css-beats"></i></span>
                                     In fact, if your site gained more backlinks, the value of your site will
                                     automatically increase. The backlinks give Google another sign that your website is
                                     reputable and reliable.
@@ -179,18 +174,18 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- Why Does Your Brand Need Link Buildings? end -->
-    
+
     <!-- ------------------------------------------- -->
     <?php require_once "components/blogs-sites.php"; ?>
     <!-- Service For Link Building That Is Genuinely Important! starts -->
     <section class="lbs-actually-matters-main">
         <div class="row">
+            <h2 class="mb-3 text-center">
+                Service For Link Building <span>That Is Genuinely Important! </span>
+            </h2>
             <div class=" col-xl-6 col-md-6">
-                <h1 class="lbs-actually-matters-main-h1 mb-3">
-                    Service For Link Building <br> <span>That Is Genuinely Important! </span>
-                </h1>
 
-                <div class="actually-card-div1">
+                <div class="icon-points-section">
                     <div class="  actually-card-inn-img-div">
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
@@ -202,7 +197,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         reputable domains. s.
                     </div>
                 </div>
-                <div class="actually-card-div1">
+                <div class="icon-points-section">
                     <div class="  actually-card-inn-img-div">
                         <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
@@ -217,7 +212,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
 
             </div>
             <div class="col-xl-6 col-md-6">
-                <div class="actually-card-div1 ">
+                <div class="icon-points-section ">
                     <div class="  actually-card-inn-img-div">
                         <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
@@ -229,7 +224,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         with. We do not believe in creating content only for links.
                     </div>
                 </div>
-                <div class="actually-card-div1">
+                <div class="icon-points-section">
                     <div class="  actually-card-inn-img-div">
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
@@ -241,13 +236,13 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         improved ROI, and SERP progress.
                     </div>
                 </div>
-                <div class=" mt-5 ">
-                    <a href="#pricing-cards">
-                        <button type="button" class="btn srvc-common-btn  w-100 ">Get
-                            Your
-                            Links Now</button>
-                    </a>
-                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#pricing-cards">
+                    <button type="button" class="btn srvc-common-btn">Get
+                        Your
+                        Links Now</button>
+                </a>
             </div>
         </div>
     </section>
@@ -257,7 +252,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="our-secret-delivering-main-sec pt-0">
         <div class="">
             <div>
-                <h2 class=" text-center mt-4 my-3 our-secret-d-h2"> <span> We Employ An Efficient And </span> Open
+                <h2 class="question-heading text-center mt-4 my-3"> <span> We Employ An Efficient And </span> Open
                     Link-Building Strategy
                 </h2>
             </div>
@@ -266,10 +261,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 my-2">
                         <div class="our-secret-delivering-main-card h-100">
                             <div class="pb-3 ">
-                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 ">Opportunities For Prospective Links</h4>
+                            <h3 class="question-sub-heading">Opportunities For Prospective Links</h3>
                             <p class="">
                                 We have a huge collection of authorized bloggers' websites that are directly connected
                                 with us. After placing the order, we get in touch with them to discuss how to improve
@@ -279,10 +273,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 my-2">
                         <div class="our-secret-delivering-main-card h-100">
                             <div class="pb-3 ">
-                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Provide Editorial Content</h4>
+                            <h3 class="question-sub-heading">Provide Editorial Content</h3>
                             <p class="">
                                 Our skilled employees do research on your website to provide original content for your
                                 brand. Therefore, editorial content helps you increase readers and visitors to your
@@ -292,10 +285,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 my-2">
                         <div class="our-secret-delivering-main-card h-100">
                             <div class="pb-3">
-                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Publication Of The Content</h4>
+                            <h3 class="question-sub-heading">Publication Of The Content</h3>
                             <p class="">
                                 We maintain contact with manually approached bloggers and talk to them until the article
                                 is posted with a do-follow link. Also, we keep in touch with the bloggers to make any
@@ -305,10 +297,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 my-2">
                         <div class="our-secret-delivering-main-card h-100">
                             <div class="pb-3">
-                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Reporting And Tracking</h4>
+                            <h3 class="question-sub-heading">Reporting And Tracking</h3>
                             <p class="">
                                 We offer a SERP tracking dashboard and whitehat link building services. You can access
                                 the link we published for you in the report, and the dashboard will allow you to assess
@@ -322,7 +313,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- We Employ An Efficient And Open Link-Building Strategy ends -->
     <!-- ------------------------------------------------------- -->
     <!-- clients-logo -->
-    <?php require_once "components/clientssides-logos.php"; ?>
+    <?php require_once "components/Clients-Slides.inc.php"; ?>
     <!-- clients-logo -->
     <!--------------------------------------------->
     <!-- Providing Unique Results To Top Brands -->
@@ -330,7 +321,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="our-secret-delivering-main-sec pb-5">
         <div class="">
             <div>
-                <h2 class=" text-center mt-4 my-3 our-secret-d-h2">Providing Unique Results <span>To Top Brands</span>
+                <h2 class="question-heading text-center mt-4 my-3">Providing <span> Unique Results </span> To <span>Top Brands</span>
                 </h2>
                 <p class="our-secret-d-p py-md-3">
                     At FastLinky, we offer trustworthy whitehat link building services. We provide relevant backlinks
@@ -342,10 +333,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 col-xl-3 my-2">
                         <div class="our-secret-delivering-main-card2 h-100">
                             <div class="pb-3 ">
-                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
                             </div>
-                            <h4 class="how-fonts-h4 ">Target Market</h4>
+                            <h3 class="question-sub-heading">Target Market</h3>
                             <p class="">
                                 Customer satisfaction is our top goal. After you placed an order, we assigned a
                                 specialized specialist to your account. </p>
@@ -354,10 +344,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 col-xl-3 my-2">
                         <div class="our-secret-delivering-main-card2 h-100">
                             <div class="pb-3 ">
-                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Increase SERP</h4>
+                            <h3 class="question-sub-heading">Increase SERP</h3>
                             <p class="">
                                 Our strategy is fairly obvious. We build high-quality links for increased website
                                 traffic. </p>
@@ -366,10 +355,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="col-md-6 col-xl-3 my-2">
                         <div class="our-secret-delivering-main-card2 h-100">
                             <div class="pb-3">
-                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Preferred Campaigns</h4>
+                            <h3 class="question-sub-heading">Preferred Campaigns</h3>
                             <p class="">
                                 We plan, design, and work together on specific link-building industries that are highly
                                 valuable to the business. </p>
@@ -379,10 +367,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <div class="our-secret-delivering-main-card2 h-100">
 
                             <div class="pb-3">
-                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img"
-                                    alt="">
+                                <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
                             </div>
-                            <h4 class="how-fonts-h4  ">Get Money</h4>
+                            <h3 class="question-sub-heading">Get Money</h3>
                             <p class="">
                                 Backlinks from editorial and industry-relevant websites always increase search engine
                                 rankings to boost website traffic. </p>
@@ -400,7 +387,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- ------------------------------------------------ -->
     <!-- Why fastlinky?-section start -->
     <section class="why-choose-fastlinky-mains mb-0">
-        <h1 class="why-fastlinky-h1">Why Choose Fastlinky?</span> </h1>
+        <h2 class="h1 fw-bold text-center">Why Choose <span>Fastlinky</span>? </h2>
         <div class="row  ">
             <div class="col-lg-6 col-md-6  m-auto ">
                 <div class="">
@@ -415,8 +402,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         <div class="py-4">
                             <div class="why-fastlinky-main-for-card">
                                 <div class="  actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-3.png"
-                                        class="managed-page-second-ul-li-img" alt="">
+                                    <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img" alt="">
                                 </div>
                                 <div class="text-center text-md-start  "><b>Guarantee Of Satisfaction :</b> <br>
                                     It is important to us that you are satisfied with the service we offer. And don't
@@ -425,8 +411,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </div>
                             <div class="why-fastlinky-main-for-card">
                                 <div class=" actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-1.png"
-                                        class="managed-page-second-ul-li-img" alt="">
+                                    <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
                                 </div>
                                 <div class="text-center text-md-start "><b>Responsible Account Manager :</b> <br>
                                     We have a responsible account manager to handle all your inquiries with commitment
@@ -436,8 +421,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <div class="why-fastlinky-main-for-card">
 
                                 <div class=" actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-2.png"
-                                        class="managed-page-second-ul-li-img" alt="">
+                                    <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img" alt="">
                                 </div>
                                 <div class="text-center text-md-start "><b>Handy Dashboard :</b> <br>
                                     Place new orders, renew existing ones, and check the progress of existing orders all
@@ -446,8 +430,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </div>
                             <div class="why-fastlinky-main-for-card">
                                 <div class=" actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-3.png"
-                                        class="managed-page-second-ul-li-img" alt="">
+                                    <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img" alt="">
                                 </div>
                                 <div class="text-center text-md-start "><b>Creating Content Internally :</b> <br>
                                     We use unique content that was created internally by skilled writers. Quality is
@@ -457,8 +440,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </div>
                             <div class="why-fastlinky-main-for-card">
                                 <div class=" actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-1.png"
-                                        class="managed-page-second-ul-li-img" alt="">
+                                    <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
                                 </div>
                                 <div class="text-center text-md-start "> <b>Huge Database Of Important Websites :</b>
                                     <br>
@@ -469,8 +451,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             </div>
                             <div class="why-fastlinky-main-for-card">
                                 <div class=" actually-card-inn-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-2.png"
-                                        class="managed-page-second-ul-li-img" alt="">
+                                    <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img" alt="">
                                 </div>
                                 <div class="text-center text-md-start "><b>Nothing Duplicate :</b> <br>
                                     As we begin working on the project, we use the latest techniques to analyze your
@@ -496,11 +477,11 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!--  What Makes Us A Dependable Supplier? starts -->
     <section class="lbs-actually-matters-main">
         <div class="row">
-            <h1 class="lbs-actually-matters-main-h1 textttting mb-3">
+            <h2 class="question-heading text-center mb-3">
                 What Makes Us <span>A Dependable Supplier?</span>
-            </h1>
-            <div class=" col-xl-6 col-md-6">
-                <div class="actually-card-div1 mb-4 mt-5">
+            </h2>
+            <div class="col-xl-6 col-md-6">
+                <div class="icon-points-section mb-4">
                     <div class="  actually-card-inn-img-div">
                         <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
@@ -511,7 +492,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         high-quality link profiles from popular websites, we assist many proprietors.
                     </div>
                 </div>
-                <div class="actually-card-div1 mb-4">
+            </div>
+            <div class="col-xl-6 col-md-6">
+                <div class="icon-points-section mb-4">
                     <div class="  actually-card-inn-img-div">
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
@@ -523,7 +506,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
             </div>
             <div class="col-xl-6 col-md-6">
-                <div class="actually-card-div1">
+                <div class="icon-points-section">
                     <div class="  actually-card-inn-img-div">
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
@@ -533,7 +516,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         of your website.
                     </div>
                 </div>
-                <div class="actually-card-div1">
+            </div>
+            <div class="col-xl-6 col-md-6">
+
+                <div class="icon-points-section">
                     <div class="  actually-card-inn-img-div">
                         <img src="./images/dummy-img/real-bo-ul-li-2.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
@@ -542,7 +528,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                         after finishing the entire project and releasing content on your behalf.
                     </div>
                 </div>
-                <div class="actually-card-div1">
+            </div>
+            <div class="col-xl-6 col-md-6">
+
+                <div class="icon-points-section">
                     <div class="  actually-card-inn-img-div">
                         <img src="./images/dummy-img/real-bo-ul-li-3.png" class="managed-page-second-ul-li-img" alt="">
                     </div>
@@ -572,7 +561,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- Frequently Asked Questions ends -->
     <!------------------------------------------------------- -->
     <!-- <div class="mt-4">
-        <?php // include('components/seller-action.php') ?>
+        <?php // include('components/seller-action.php') 
+        ?>
     </div> -->
     <!----------------------------------------------------- -->
     <!-- curious section starts -->
@@ -590,6 +580,45 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- -------------------------------------- -->
     <script src="<?= URL ?>/js/jquery-2.2.3.min.js"></script>
     <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            loop: true,
+            // pagination: {
+            //     el: ".swiper-pagination",
+            //     clickable: true,
+            // },
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                // When window width is >= 576px (for mobile devices)
+                280: {
+                    slidesPerView: 3,
+                },
+                // When window width is >= 768px (for iPad)
+                768: {
+                    slidesPerView: 3,
+                },
+                // When window width is >= 992px
+                992: {
+                    slidesPerView: 4,
+                },
+                // When window width is >= 1200px
+                1200: {
+                    slidesPerView: 5,
+                },
+            },
+        });
+    </script>
 </body>
 
 </html>

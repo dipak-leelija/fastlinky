@@ -29,16 +29,6 @@
     color: var(--mustard);
 }
 
-.mlb-starting-main-h1 {
-    font-family: "Helvetica", "Satoshi-Variable";
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1.2em;
-    color: var(--black);
-    word-spacing: 0.1em;
-    stroke: #000;
-}
-
 .mlb-starting-main-p {
     font-weight: 500;
     text-align: left;
@@ -154,15 +144,6 @@
     padding: 5rem;
 }
 
-.lbs-actually-matters-main-h1 {
-    color: var(--black);
-}
-
-.lbs-actually-matters-main-h1 span {
-    color: var(--mustard);
-    font-weight: 600;
-}
-
 .lbp-texting {
     text-align: start;
     color: #747880;
@@ -188,27 +169,6 @@
     padding-left: 1rem;
 }
 
-.actually-card-div1 {
-    display: flex;
-    padding: 2.5rem 1.5rem;
-    border-radius: unset;
-    border: none;
-    min-height: 200px;
-
-}
-
-.actually-card-div1:hover {
-    transition: all .9s ease;
-    box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
-    background-image: url('../images/dummy-img/card-hover-bg-image.png');
-    background-position: top right;
-    background-repeat: no-repeat;
-}
-
-.textttting {
-    text-align: end;
-}
-
 .external-css-fr-size {
     width: 50%;
 }
@@ -220,12 +180,6 @@
     margin: 5rem;
 }
 
-.why-fastlinky-h1 {
-    text-align: center;
-    font-size: 2.7rem;
-    color: var(--mustard);
-    /* margin-bottom: 5rem; */
-}
 
 .why-fastlinky-main-for-card {
     display: flex;
@@ -263,15 +217,6 @@
 
 .our-secret-delivering-main-sec {
     padding: 7rem;
-}
-
-.our-secret-d-h2 {
-    font-weight: 600;
-    color: var(--black);
-}
-
-.our-secret-d-h2 span {
-    color: var(--mustard);
 }
 
 .our-secret-d-p {
@@ -371,11 +316,6 @@
         padding: 3rem !important;
     }
 
-    .mlb-starting-main-h1 {
-        font-size: 2.8rem;
-        font-weight: 600;
-    }
-
     .our-secret-delivering-main-sec {
         padding: 4rem !important;
     }
@@ -405,10 +345,6 @@
      
     } */
 
-    .lbs-actually-matters-main-h1 {
-        font-size: 1.8rem;
-    }
-
     .our-secret-delivering-main-sec {
         padding: 2rem !important;
     }
@@ -431,12 +367,6 @@
         margin-bottom: 0rem !important;
     }
 
-    .mlb-starting-main-h1 {
-        font-size: 2.3rem;
-        font-weight: 600;
-        text-align: center;
-    }
-
     .mlb-starting-main-p {
         text-align: center;
         justify-content: center;
@@ -451,11 +381,6 @@
     }
 
     .a-brand-need-link-main-h1 {
-        text-align: center;
-    }
-
-    .lbs-actually-matters-main-h1 {
-        font-size: 2.3rem !important;
         text-align: center;
     }
 
@@ -477,11 +402,6 @@
 @media (max-width:600px) {
     h3.stat-title {
         font-size: 2em !important;
-    }
-
-    .mlb-starting-main-h1 {
-        font-size: 2rem;
-        font-weight: 500;
     }
 
     .mlb-wrapping {
@@ -506,13 +426,6 @@
     .our-secret-delivering-main-sec {
         padding: 1rem !important;
     }
-}
-
-@media (min-width:313px) and (max-width:399px) {
-    .mlb-starting-main-h1 {
-        font-size: 1.7rem;
-    }
-
 }
 
 @media (min-width:250px) and (max-width:451px) {
@@ -565,19 +478,6 @@
 
     }
 
-    .lbs-actually-matters-main-h1 {
-        font-size: 1.9rem !important;
-        text-align: center;
-    }
-
-    .actually-card-div1 {
-        display: inline-block !important;
-        padding: 1.5rem 1rem !important;
-        border-radius: unset;
-        border: none;
-        min-height: 200px;
-    }
-
     .actually-card-inn-img-div {
         padding-right: 0rem !important;
         padding-left: 0rem !important;
@@ -589,14 +489,8 @@
     .lbp-texting {
         font-size: 1.1rem;
     }
-    .mlb-starting-main-h1 {
-        font-size: 1.79rem;
-    }
     .square-box-p {
         font-size: 1.1rem;
-    }
-    .lbs-actually-matters-main-h1 {
-        font-size: 1.6rem !important;
     }
 
     .managed-link-btn {
@@ -616,15 +510,6 @@
         font-size: 1.6rem !important;
     }
 
-    .how-fonts-h4 {
-        font-size: 1.19rem;
-        font-weight: 700 !important;
-    }
-
-    .why-fastlinky-h1 {
-        font-size: 1.48rem !important;
-        font-weight: 500;
-    }
     .lbp-texting b {
         font-size: 19px;
     }
@@ -633,10 +518,6 @@
     }
 }
 @media (max-width:500px) {
-    .actually-card-div1:hover {
-        background-size: contain;
-    }
-
     .our-secret-delivering-main-card2:hover {
         background-size: contain;
     }

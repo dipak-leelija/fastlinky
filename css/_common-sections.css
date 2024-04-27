@@ -11,23 +11,36 @@
   font-weight: 700;
   line-height: 1.2em;
 }
-.section-heading{
-
+.section-heading {
 }
-.question-heading{
-    font-size: calc(1.5rem + 0.9vw); 
-}
-
-.question-sub-heading{
-    /* font-size: 1.75rem; */
-    font-size: calc(0.8rem + 0.9vw);
-
+.question-heading {
+  font-size: calc(1.5rem + 0.9vw);
 }
 
-.h3-points{
-    color: var(--black);
-    font-size: 20px;
-    font-weight: 700;
+.question-sub-heading {
+  font-size: calc(0.8rem + 0.9vw);
+}
+
+.h3-points {
+  color: var(--black);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.icon-points-section {
+  display: flex;
+  padding: 2.5rem 1.5rem;
+  border-radius: unset;
+  border: none;
+  min-height: 200px;
+}
+
+.icon-points-section:hover {
+  transition: all 0.9s ease;
+  box-shadow: 0 15px 40px 2px rgb(18 21 154 / 15%);
+  background-image: url("../images/dummy-img/card-hover-bg-image.png");
+  background-position: top right;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 1199px) {
@@ -56,8 +69,24 @@
   }
 }
 
+@media (max-width: 500px) {
+  .icon-points-section:hover {
+    background-size: contain;
+  }
+}
+
+
 @media (min-width: 313px) and (max-width: 399px) {
   .large-heading {
     font-size: 1.7rem;
+  }
+}
+@media (min-width: 250px) and (max-width: 451px) {
+  .icon-points-section {
+    display: inline-block !important;
+    padding: 1.5rem 1rem !important;
+    border-radius: unset;
+    border: none;
+    min-height: 200px;
   }
 }
