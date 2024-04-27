@@ -52,8 +52,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row m-auto w-100">
             <div class="col-12 col-lg-6 col-md-7 order-2 order-md-1 px-0 px-md-4">
                 <div class="">
-                    <h1 class="mlb-starting-main-h1">Link building services for <span>cannabis & CBD </span> website
-                        SEO</h1>
+                    <h2 class="large-heading">Link building services for <span>cannabis & CBD </span> website
+                        SEO</h2>
                     <p class=" mt-2 mb-4 py-0 py-md-2 mlb-starting-main-p">Rank top on the SERP, manage certified
                         traffic to your website, get powerful backlinks for <b>cannabis and CBD link-building
                             services</b> ,
@@ -87,9 +87,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
             </div>
             <div class=" col-xl-6 col-md-6 ">
-                <h1 class="cannabis-cbd-service-h1 ">Cannabis & CBD <br>
+                <h2 class="cannabis-cbd-service-h1 ">Cannabis & CBD <br>
                     <span>link building service</span>
-                </h1>
+                </h2>
                 <p class="mb-5">With an enlarged number of hemp businesses and connected products, <b>Cannabis</b> is
                     the
                     fastest growing business in highly competitive, all over the world. </p>
@@ -109,9 +109,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="lbs-actually-matters-main">
         <div class="row">
             <div class=" col-xl-6 col-md-6">
-                <h1 class="lbs-actually-matters-main-h1 ">How does fastlinky increase
+                <h2 class="lbs-actually-matters-main-h1 ">How does fastlinky increase
                     <span>your cannabis and CBD link building services?</span>
-                </h1>
+                </h2>
                 <p>To know about <b>Cannabis and CBD Link Building Services</b> , first, we should know about CBD
                     meaning, which
                     means cannabidiol, it is a chemical that is found in the Sativa plant, the other name of cannabis
@@ -177,9 +177,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
             </div>
             <div class=" col-xl-6 col-md-6">
-                <h1 class="cbd-business-main-section-h1 ">How does fastlinky boosts your business
+                <h2 class="cbd-business-main-section-h1 ">How does fastlinky boosts your business
                     <strong>to the top?</strong>
-                </h1>
+                </h2>
                 <p>
                     If you want to know why <b>FastLinky</b> is one of the best site to know about the <b>CBD Link
                         Building
@@ -223,10 +223,10 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     </div>
                 </div>
             </div>
-            <div class=" col-xl-6 col-md-6">
-                <h1 class="why-is-lb-important-main-h1 ">Why is fastlinky best for
+            <div class="col-xl-6 col-md-6">
+                <h2 class="why-is-lb-important-main-h1 ">Why is fastlinky best for
                     <span>cannabis link building services?</span>
-                </h1>
+                </h2>
                 <p>
                     To upgrade your opportunity of increasing the traffic to your website, you can achieve the help of
                     cannabis link-building services, like our site <b>FastLinky</b>. </p>
@@ -248,9 +248,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <section class="improve-your-roi-organic-main ">
         <div class="row ">
             <div class=" col-xl-6 col-md-6">
-                <h1 class="why-is-lb-important-main-h1 ">Why is link building major for
+                <h2 class="why-is-lb-important-main-h1 ">Why is link building major for
                     <span> the cannabis business?</span>
-                </h1>
+                </h2>
                 <p>
                     Link building is highly effective and a major part of the cannabis industry. Link building is one of
                     the effective ways to increase your online visibility.
@@ -287,9 +287,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                 </div>
             </div>
             <div class=" col-xl-6 col-md-6 order-1 order-md-2">
-                <h1 class="cannabis-cbd-service-h1 ">
+                <h2 class="cannabis-cbd-service-h1 ">
                     <span>CBD SEO company </span>
-                </h1>
+                </h2>
                 <p class="mb-5">A <b>CBD SEO Company</b> can support you to smash the marketing noise and improve your
                     customer base like Coalition Technologies. It is a vital support service. Coalition Technologies has
                     experts in web design, PPC advertising, digital marketing, development, etc. This is the agency to

@@ -15,15 +15,6 @@
     }
 }
 
-.mlb-starting-main-h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1.2em;
-    color: var(--black);
-}
-.mlb-starting-main-h1 span{
-    color: var(--mustard);
-}
 .mlb-starting-main-p {
     font-weight: 400;
     text-align: left;
@@ -311,11 +302,6 @@
         padding: 5rem 3rem;
     }
 
-    .mlb-starting-main-h1 {
-        font-size: 2.8rem;
-        font-weight: 600;
-    }
-
     .how-it-works-1st-img {
         width: 771px !important;
     }
@@ -332,9 +318,6 @@
 @media (max-width:991px) {
     .cannabis-back-banner {
         padding: 7rem 1.5rem;
-    }
-    .mlb-starting-main-h1 {
-        font-weight: 500;
     }
 
     .mlb-starting-main-p {
@@ -413,10 +396,6 @@
         margin-top: 0rem !important;
         margin-bottom: 0rem !important;
     }
-    .mlb-starting-main-h1 {
-        padding-top: 3rem !important;
-        text-align: center;
-    }
     .lbs-actually-matters-main-h1 {
         font-size: 2.3rem !important;
         text-align: center;
@@ -438,10 +417,6 @@
 }
 
 @media (max-width:600px) {
-    .mlb-starting-main-h1 {
-        font-size: 2rem;
-        font-weight: 500;
-    }
 
     .cannabis-clb-rlb-main-div {
         padding: 7rem 2rem;
@@ -485,13 +460,6 @@
 }
 
 @media (min-width:200px) and (max-width:321px) {
-    .mlb-starting-main-h1 {
-        font-size: 1.4rem !important;
-        font-weight: 600;
-    }
-    h1  {
-        font-size: 1.6rem !important;
-    }
     .cbd-business-main-section-h1 {
         font-size: 1.6rem;
     }
@@ -511,13 +479,6 @@
         font-size: 1.6rem !important;
     }
 
-
-}
-
-@media (min-width:313px) and (max-width:399px) {
-    /* .mlb-starting-main-h1 {
-        font-size: 1.7rem;
-    } */
 
 }
 
