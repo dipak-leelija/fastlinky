@@ -324,7 +324,7 @@ footer .thumb-content ::before {
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="widget no-box">
-                        <h5 class="widget-title">Services<span></span></h5>
+                        <div class="h5 widget-title">Services<span></span></div>
                         <ul class="thumbnail-widget">
                             <li>
                                 <div class="thumb-content"><a href="managed-link-building">&nbsp;Managed Link
@@ -374,7 +374,7 @@ footer .thumb-content ::before {
 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="widget no-box">
-                        <h5 class="widget-title">Quick Links<span></span></h5>
+                        <div class="h5 widget-title">Quick Links<span></span></div>
                         <ul class="thumbnail-widget">
                             <li>
                                 <div class="thumb-content"><a href="<?php echo URL; ?>">&nbsp;Home</a></div>
@@ -400,7 +400,7 @@ footer .thumb-content ::before {
 
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="widget no-box">
-                        <h5 class="widget-title">Contact Us<span></span></h5>
+                        <div class="h5 widget-title">Contact Us<span></span></div>
                         <div class="widget no-box">
                             <a href="<?php echo FB_LINK; ?>"> <i class=" socialsymbols fa fa-facebook"> </i> </a>
                             <a href="<?php echo TWITTER_LINK; ?>"> <i class="socialsymbols fa fa-twitter"> </i> </a>
