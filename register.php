@@ -187,8 +187,8 @@ Ready website for business, High Quality website sales, High quality blogs sales
                                 <div class="col-lg-7">
                                     <div class="reg-div-below-card ">
                                         <div class="mb-3 mt-2">
-                                            <h3 class="h4 font-weight-bold text-theme reg-heading">
-                                                Join With Fastlinky</h3>
+                                            <h1 class="h4 font-weight-bold text-theme reg-heading">
+                                                Join With Fastlinky</h1>
                                             <?php if ($errorMsg != '') { ?>
                                             <div class="alert-dismissible fade <?=$alertProp;?>" role="alert">
                                                 <strong>Sorry!</strong> <?= $errorMsg; ?>

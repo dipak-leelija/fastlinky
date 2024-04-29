@@ -132,9 +132,9 @@ if(isset($_POST['btnLogin'])){
                                             </div>
                                         </div>
                                         <div class="mb-2">
-                                            <h3 class="h4 font-weight-bold text-theme">Login</h3>
+                                            <h1 class="h4 font-weight-bold text-theme">Login</h1>
                                         </div>
-                                        <h6 class="h5 mb-4">Welcome back!</h6>
+                                        <h2 class="h5 mb-4">Welcome back!</h2>
 
                                         <form role="form" class="form-horizontal-login needs-validation"
                                             action="<?= $_SERVER['PHP_SELF'] ?>" name="formContactform" method="POST"
