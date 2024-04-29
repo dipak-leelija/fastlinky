@@ -156,7 +156,7 @@ require_once ROOT_DIR."/components/how-we-work.inc.php";
                     alt="">
             </div>
             <div class="col-12 col-md-8 d-flex flex-column justify-content-center order-1 order-md-2 mt-0 px-5 py-4">
-                <h1 class="fw-bold">Curious? <br> Let’s talk link building</h1>
+                <div class="h1 fw-bold">Curious? <br> Let’s talk link building</div>
                 <div class="max-w-lg mb-4">
                     <div class="redactor text-gray-800">We love talking link building. Let us know about your project
                         and we'll send you a free proposal</div>
@@ -179,96 +179,6 @@ require_once ROOT_DIR."/components/how-we-work.inc.php";
     <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.js"></script>
     <script src="<?= URL ?>/plugins/bootstrap-5.2.0/js/bootstrap.bundle.min.js"></script>
     <script src="<?= URL ?>/js/how-we-work.js"></script>
-    <!-- <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-            crossorigin="anonymous"></script> -->
-    <script>
-    /*
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('enterView', () => ({
-            init() {
-                enterView({
-                    selector: '.js-scroll-block',
-                    offset: 0.4,
-                    enter: function(el) {
-                        el.classList.add('opacity-100');
-                        el.classList.remove('opacity-20');
-                    },
-                    exit: function(el) {
-                        el.classList.add('opacity-20');
-                        el.classList.remove('opacity-100');
-                    },
-                });
-
-                enterView({
-                    selector: '.js-scroll-dot',
-                    offset: 0.4,
-                    enter: function(el) {
-                        el.classList.add('bg-primary-500');
-                        el.classList.remove('bg-gray-200');
-                    },
-                    exit: function(el) {
-                        el.classList.add('bg-gray-200');
-                        el.classList.remove('bg-primary-500');
-                    },
-                });
-            }
-        }))
-    });
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('global', () => ({
-            dropdown: false,
-            dropdownMobile: false,
-            offCanvas: false,
-            scrolling: false,
-            scrollPosition: 0,
-            scrollDirection: 'up',
-            darkHeader: false,
-            init() {
-                let inviewSections = document.getElementsByClassName('js-inview-section');
-                let inviewSectionsTwo = document.getElementsByClassName('js-inview-section-2');
-                let _self = this;
-                let elementWatcher = scrollMonitor.create(inviewSections);
-                elementWatcher
-                    .enterViewport(
-                        function(data) {
-                            _self.darkHeader = true;
-                        }
-                    );
-                elementWatcher
-                    .exitViewport(
-                        function(data) {
-                            _self.darkHeader = false;
-                        }
-                    );
-                let elementWatcherTwo = scrollMonitor.create(inviewSectionsTwo);
-                elementWatcherTwo
-                    .enterViewport(
-                        function(data) {
-                            _self.darkHeader = true;
-                        }
-                    );
-                elementWatcherTwo
-                    .exitViewport(
-                        function(data) {
-                            _self.darkHeader = false;
-                        }
-                    );
-            }
-        }))
-    });
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('app', () => ({
-            viewportHeightPx: null,
-            viewportHeight() {
-                this.viewportHeightPx = window.innerHeight * 0.01;
-                document.documentElement.style.setProperty('--vh', `${this.viewportHeightPx}px`);
-            }
-        }))
-    });
-    */
-    </script>
 </body>
 
 </html>
