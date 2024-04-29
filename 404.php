@@ -57,6 +57,7 @@ if (isset($_GET['seo_url'])) {
     <link href="<?= URL ?>/css/index.css" rel='stylesheet' type='text/css' />
     <link href="<?= URL ?>/css/testimonials.css" rel="stylesheet" />
     <link href="<?= URL ?>/css/clientside-logo.css" rel="stylesheet" />
+    <link href="<?= URL ?>/css/404.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
@@ -65,7 +66,7 @@ if (isset($_GET['seo_url'])) {
     <?php require_once "components/navbar.php"; ?>
     <!--------------------------------------------------->
 
-    <div class='d-flex justify-content-center align-items-center error'>
+    <div class='d-flex justify-content-center align-items-center mt-5 error '>
             <img src="images/error.svg" alt="">
     </div>
     <!-- Footer -->

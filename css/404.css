@@ -1,0 +1,7 @@
+.error {
+   width: 100%;
+   aspect-ratio: 1/1;
+}
+.error img{
+    width: 50%;
+}
