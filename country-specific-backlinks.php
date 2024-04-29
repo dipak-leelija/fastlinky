@@ -55,7 +55,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-12 col-lg-6 col-md-7  px-2 px-md-4">
                 <div class="">
-                    <h2 class="country-specific-banner-h1">Country-Specific Backlinks</h1>
+                    <h2 class="country-specific-banner-h1">Country-Specific Backlinks</h2>
                     <p class=" mt-3 mb-4 py-0 py-md-2 country-specific-banner-p">Get a huge audience and improve the
                         online visibility of your website with our specialized country specific backlinks services. If
                         you are looking for links from some specific country then you are in the right place as our
