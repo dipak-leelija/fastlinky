@@ -19,24 +19,6 @@
     text-align: center;
 }
 
-.casino-sizing-div h1 {
-    color: var(--black);
-    margin: 0 0 14px;
-    font-family: "Helvetica", "Satoshi-Variable";
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1.15625em;
-}
-
-.casino-sizing-div span {
-    color: var(--mustard);
-}
-
-.casino-sizing-div h1 :hover {
-    color: var(--black) !important;
-    transition: all .6s ease;
-    -webkit-transition: .6s;
-}
 
 .casino-sizing-div p {
     color: var(--black);
@@ -56,15 +38,6 @@
     margin: 5rem;
 }
 
-.challenges-casino-section h1 {
-    font-size: 2rem;
-    color: var(--black);
-}
-
-.challenges-casino-section h1 span {
-    color: var(--mustard);
-}
-
 .real-bo-secondcol-div1 {
     display: flex;
     text-align: center;
@@ -72,11 +45,6 @@
     padding: .5rem 0;
 }
 
-@media (min-width:350px) and (max-width:425px) {
-    .challenges-casino-section h1 {
-        font-size: 1.5rem !important;
-    }
-}
 
 /* -------------------------------------------------------------------------------------------- */
 /* Challenges Of Casino Backlinks-section end */
@@ -133,31 +101,12 @@
     padding: 6rem;
     text-align: center;
 }
-
-.how-itsworks-main-div-casino h1 {
-    font-size: 2rem;
-    text-align: center;
-    color: var(--black);
-}
-
-.how-itsworks-main-div-casino strong {
-    color: var(--mustard);
-}
-
 .how-itsworks-main-div-casino p {
     text-align: center;
     color: var(--black);
     font-weight: 400;
     font-size: 1rem;
     margin: 1rem 0 3rem;
-}
-
-.how-itsworks-main-div-casino h3 {
-    color: var(--mustard);
-    font-size: 24px;
-    font-weight: 400;
-    text-shadow: 0 0 0 rgb(0 0 0 / 30%);
-    margin: 1rem 0;
 }
 
 /* --------------------------------------------------------------------------------------- */
@@ -170,46 +119,15 @@
     padding: 5rem 4rem;
 }
 
-.benifits-online-gaming-casino-section h3 {
-    color: var(--black);
-    font-size: 1.97rem;
-    font-weight: 600;
-}
-
-.benifits-online-gaming-casino-section h4 {
-    text-align: left;
-    color: var(--black);
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2em;
-    text-decoration: underline;
-    font-style: italic;
-}
 
 b {
     font-weight: 600;
-}
-
-.benifits-online-gaming-casino-section p {
-    text-align: left;
-    color: var(--black);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 2em;
 }
 
 /* If My Casino Website Really Needs Link-Building Services? */
 
 .casino-building-services-maindiv {
     padding: 7rem 7rem 0;
-}
-
-.casino-building-services-maindiv h1 {
-    text-align: center;
-    color: var(--black);
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
 }
 
 .casino-building-services-maindiv span {
@@ -233,13 +151,6 @@ b {
 /* __________________________________________________________________________________________________ */
 .why-choose-leelija-casino-section {
     padding: 3rem 4rem;
-}
-
-.why-choose-leelija-casino-section h3 {
-    color: var(--black);
-    font-size: 33px;
-    font-weight: 600;
-    margin-bottom: 2rem;
 }
 
 .why-choose-leelija-casino-section ul {
@@ -266,10 +177,6 @@ b {
     .casino-sizing-div {
         padding: 7rem 11rem;
         text-align: center;
-    }
-
-    .challenges-casino-section h1 {
-        font-size: 1.9rem !important;
     }
 
     .pricing-bo-h1 {
@@ -305,29 +212,6 @@ b {
         padding-left: 2rem;
     }
 
-    .casino-sizing-div h1 {
-        font-size: 3rem;
-    }
-
-    .benifits-online-gaming-casino-section h4 {
-        font-size: 1.3rem;
-        font-weight: 700;
-        font-style: normal;
-        line-height: 1.4;
-    }
-
-    .challenges-casino-section h1 {
-        text-align: center;
-    }
-
-    .benifits-online-gaming-casino-section h3 {
-        text-align: center;
-    }
-
-    .why-choose-leelija-casino-section h3 {
-        text-align: center;
-    }
-
     .casino-building-services-maindiv {
         padding: 7rem 0rem 0;
         /* background: azure; */
@@ -338,10 +222,6 @@ b {
     .casino-sizing-div {
         padding: 4rem 2rem;
         text-align: center;
-    }
-
-    .casino-sizing-div h1 {
-        font-size: 2.5rem;
     }
 
     .pricing-bo-p1 {
@@ -381,35 +261,8 @@ b {
 
 @media (min-width:200px) and (max-width:312px) {
 
-
-    .challenges-casino-section h1 {
-        font-size: 1.7rem !important;
-        font-weight: 500;
-    }
-
     .pricing-bo-h1 {
         font-size: 1.7rem !important;
-    }
-
-    .benifits-online-gaming-casino-section h3 {
-        font-size: 23px;
-    }
-
-    .why-choose-leelija-casino-section h3 {
-        font-size: 23px;
-    }
-    .how-itsworks-main-div-casino h1 {
-        font-size: 1.7rem;
-    }
-}
-
-@media (min-width:313px) and (max-width:399px) {
-    .benifits-online-gaming-casino-section h3 {
-        font-size: 25.5px;
-    }
-
-    .why-choose-leelija-casino-section h3 {
-        font-size: 25.5px;
     }
 }
 
@@ -441,10 +294,6 @@ b {
         text-align: center;
     }
 
-    .casino-sizing-div h1 {
-        font-size: 1.8rem;
-    }
-
     .real-bo-secondcol-div1 {
         display: inline-block !important;
         text-align: center;
@@ -456,10 +305,6 @@ b {
     .trustworthy-img-div {
         text-align: center;
         margin: 1rem 0;
-    }
-
-    .casino-building-services-maindiv h1 {
-        font-size: 1.5rem;
     }
 
     .challenges-casino-section {

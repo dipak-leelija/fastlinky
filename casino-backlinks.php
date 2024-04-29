@@ -4,23 +4,21 @@ require_once __DIR__ . "/includes/common-service-class-functions.inc.php";
 $packages = $GPPackage->packDetailsByCat(5);
 $packCat  = $GPPackage->packCatById(5);
 
-require_once ROOT_DIR."/includes/package-submission.inc.php";
+require_once ROOT_DIR . "/includes/package-submission.inc.php";
 
 ?>
 <!DOCTYPE HTML>
 <html lang="zxx">
 
 <head>
-    <?php require_once ROOT_DIR."/components/fastlinky-head.php" ?>
+    <?php require_once ROOT_DIR . "/components/fastlinky-head.php" ?>
 
     <title>Buy Backlinks and Link Building Service for Gambling, Casino & Betting SEO - <?php echo COMPANY_S; ?></title>
-    <meta name="description"
-        content="Fastlinky provides quality Link Building Service for casino, gambling, igaming, and betting SEO and help you increase ranking and boost your traffic." />
-    <meta name="keywords"
-        content="buy casino backlinks cheapbuy casino website,buy casino backlinks,igaming link building,gambling link,gambling seo agency,casino backlinks,gambling seo,sports gambling links, Online Gaming Link Building,Online Gaming And Casino Link Building" />
+    <meta name="description" content="Fastlinky provides quality Link Building Service for casino, gambling, igaming, and betting SEO and help you increase ranking and boost your traffic." />
+    <meta name="keywords" content="buy casino backlinks cheapbuy casino website,buy casino backlinks,igaming link building,gambling link,gambling seo agency,casino backlinks,gambling seo,sports gambling links, Online Gaming Link Building,Online Gaming And Casino Link Building" />
     <!-- Plugins Files -->
     <link href="<?= URL ?>/plugins/bootstrap-5.2.0/css/bootstrap.css" rel="stylesheet" />
-    <?php require_once ROOT_DIR.'/plugins/font-awesome/fontawesome.php'?>
+    <?php require_once ROOT_DIR . '/plugins/font-awesome/fontawesome.php' ?>
 
     <!-- Custom CSS -->
     <link href="<?= URL ?>/css/style.css" rel='stylesheet' type='text/css' />
@@ -49,7 +47,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- starting of Casino Backlinks main banner  -->
     <section class="casino-banner-section">
         <div class="casino-sizing-div">
-            <h1 class=""> Link Building & Quality Backlinks <br> <span>For igaming & Casino</span></h1>
+            <h2 class="large-heading"> Link Building & Quality Backlinks <br> <span>For igaming & Casino</span></h2>
             <p class=" ">Work with Online Gambling And Casino Link Building Specialists to gain a commercial advantage.
             </p>
             <div class=" mt-2 mt-md-5">
@@ -67,15 +65,13 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             <div class="col-lg-6 col-md-6 order-2 order-md-1">
                 <div class="">
                     <div>
-                        <h1 class="">The Challenges <br> <span>Casino Backlinks</span>
-                        </h1>
+                        <h2 class="fw-normal">The Challenges <br> <span>Casino Backlinks</span></h2>
                     </div>
                     <div>
                         <div class="py-4">
                             <div class="real-bo-secondcol-div1">
                                 <div class="pe-3 trustworthy-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img"
-                                        alt="">
+                                    <img src="./images/dummy-img/real-bo-ul-li-1.png" class="real-bo-second-ul-li-img" alt="">
                                 </div>
                                 <div class="text-start lbp-texting"> <b>High Competitive Domain </b>
                                     High Competition Consider the casino industry's level of competition. Hence, a plan
@@ -86,8 +82,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                             <div class="real-bo-secondcol-div1">
 
                                 <div class="pe-3 trustworthy-img-div">
-                                    <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img"
-                                        alt="">
+                                    <img src="./images/dummy-img/real-bo-ul-li-2.png" class="real-bo-second-ul-li-img" alt="">
                                 </div>
                                 <div class="text-start lbp-texting"> <b>Link Building</b>
                                     In the gaming industry, link development is extremely difficult because so many
@@ -126,8 +121,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6">
                 <div>
-                    <h1 class="mb-5">Link Building For <br> <span>Casino Websites</span>
-                    </h1>
+                    <h2 class="mb-4">Link Building For <span>Casino Websites</span>
+                    </h2>
                 </div>
                 <div class="linkbuilding-casino">
                     <p>
@@ -158,8 +153,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         <div class="row ">
             <div class="col-lg-6 col-md-6">
                 <div>
-                    <h1 class="mb-5">What Are <br> <span>Casino Backlinks?</span>
-                    </h1>
+                    <h2 class="mb-4">What Are <br> <span>Casino Backlinks?</span>
+                    </h2>
                 </div>
                 <div class="linkbuilding-casino">
                     <p>
@@ -182,16 +177,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
         </div>
     </section>
     <!-- What Are Casino Backlinks? end -->
-    
+
     <!-- ------------------------------------------- -->
     <?php require_once "components/blogs-sites.php"; ?>
     <!-- ------------------------------ -->
     <!-- how it works section starts -->
     <section class="how-itsworks-casino-section">
         <div class="how-itsworks-main-div-casino">
-            <h1>
-                How <strong>Does It Work</strong>
-            </h1>
+            <h2 class="question-heading">How <span>Does It Work</span>?</h2>
             <p>
                 Link building for online casinos and gaming sites is all about balancing value with insufficient volume.
                 You need to collaborate with experts to help you rank in the competitive market. However, the basics of
@@ -202,7 +195,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="">
                         <img src="./images/dummy-img/real-bo-ul-li-2.png" class="" alt="">
                     </div>
-                    <h3>Manual Outreach</h3>
+                    <h3 class="question-sub-heading mt-4">Manual Outreach</h3>
                     <div class="">
                         We manage manual outreach to niche-relevant to obtain high-quality backlinks for your website.
                         We work together with these websites to publish our original content so that the proper
@@ -214,7 +207,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="">
                         <img src="./images/dummy-img/real-bo-ul-li-1.png" class="" alt="">
                     </div>
-                    <h3>Content Creation </h3>
+                    <h3 class="question-sub-heading mt-4">Content Creation </h3>
                     <div class="">
                         Our skilled writers can provide outstanding, informative, and interesting content that is also
                         specific to the requirements of companies. Before publication, the content is created to follow
@@ -229,7 +222,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     <div class="">
                         <img src="./images/dummy-img/real-bo-ul-li-3.png" class="" alt="">
                     </div>
-                    <h3>Monitoring Results</h3>
+                    <h3 class="question-sub-heading mt-4">Monitoring Results</h3>
                     <div class="">
                         The results are the most important part of any marketing strategy. We deliver fast, accurate
                         information while regularly monitoring the performance of each campaign. So, clients can observe
@@ -245,17 +238,17 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- Benefits Of Igaming Link Building starts -->
     <section class="benifits-online-gaming-casino-section">
         <div>
-            <h3>Benefits Of Igaming Link Building</h3>
+            <h2 class="question-heading">Benefits Of <span>Igaming Link Building</span></h2>
         </div>
         <div>
-            <h4>Maintaining Links</h4>
+            <h3 class="question-sub-heading"><u><i> Maintaining Links</i></u></h3>
             <p><b>igaming link building</b> is the process of creating links with specific influencers and target
                 markets. The outreach technique attempts to work with well-known bloggers in your niche to produce
                 high-quality posts together. Getting their approval allows you to reach a larger audience in the sector.
             </p>
         </div>
         <div>
-            <h4>Increased Inbound Traffic</h4>
+            <h3 class="question-sub-heading"><u><i>Increased Inbound Traffic</i></u></h3>
             <p>Your site will be linked to appropriate websites by our well-managed link-building system. And this will
                 help you drive organic traffic to your page.
                 After establishing a reliable connection to your reputable website, you can expect a consistent stream
@@ -265,7 +258,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </p>
         </div>
         <div>
-            <h4>Enhanced Reputation</h4>
+            <h3 class="question-sub-heading"><u><i>Enhanced Reputation</i></u></h3>
             <p>A well-managed SEO link-building plan is important for the growth of your business, especially in today's
                 highly competitive market. To increase your brand awareness you need to link your brand with a reputable
                 website. Our writing is to provide information to your target audience, thereby increasing your
@@ -273,14 +266,14 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </p>
         </div>
         <div>
-            <h4>Boost Your Search Engine Rankings</h4>
+            <h3 class="question-sub-heading"><u><i>Boost Your Search Engine Rankings</i></u></h3>
             <p>One of your SEO strategy's top priorities should be to rank highly for your target keywords. Because
                 genuine website traffic is usually recognized to have a higher success rate than sponsored traffic. Our
                 relevant, high-trust <b>casino backlinks</b> can boost ranking more quickly than a PBN.
             </p>
         </div>
         <div>
-            <h4>Stay Ahead Of The Competition</h4>
+            <h3 class="question-sub-heading"><u><i>Stay Ahead Of The Competition</i></u></h3>
             <p>Whether you are a new website to the business or a major contributor, our gambling SEO agency can assist
                 build organic ranks with a customized plan. You will generate greater sales and revenues if you're a
                 prominent leader.
@@ -299,8 +292,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
             </div>
             <div class="col-lg-6 col-md-6">
                 <div>
-                    <h1 class="mb-3">Use FastLinky <br> <span>To Buy Casino Backlinks</span>
-                    </h1>
+                    <h2 class="h1 fw-bolder mb-3">Use FastLinky <br> <span>To Buy Casino Backlinks</span>
+                    </h2>
                 </div>
                 <div class="linkbuilding-casino">
                     <p>
@@ -330,7 +323,7 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- Why Choose Fast Linky WebSolution For Casino Link Building Services? starts -->
     <section class="why-choose-leelija-casino-section">
         <div>
-            <h3>Basics Of Online Gaming And Casino Link Building</h3>
+            <h2>Basics Of <span> Online Gaming </span> and <span> Casino Link Building</span></h2>
             <ul>
                 <li> <b>How Ethical Are Casino Backlinks?</b> <br>
                     All hyperlinks we create for casino niche websites are generally regarded as white hat links. Even
@@ -348,8 +341,9 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
                     gaming links. For additional information on how to use the link types, please see the brand pages.
                     Genuine anchor links to your homepage are always a good idea when in doubt.</li>
             </ul>
+
             <div class="casino-building-services-maindiv">
-                <h1>If My Casino Website Really <br> <span><i>Needs Link-Building Services?</i> </span></h1>
+                <h2 class="h1 fw-bold text-center">If My Casino Website Really <br> <span><i>Needs Link-Building Services?</i> </span></h2>
                 <p>
                     Yes, undoubtedly, you need it. It is your online presence. Moreover, this is the best way to stay
                     ahead of your competitor. However, you need to invest in a professional online gaming link-building
@@ -364,31 +358,21 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- --------------------------------------------------------- -->
     <!-- Benefits Of Igaming Link Building starts -->
     <section class="benifits-online-gaming-casino-section">
-        <div>
-            <h3>Why Choose Fastlinky For Online Gaming And Casino Link Building Services?</h3>
-        </div>
-        <p>You need to think about a team that has the appropriate level of experience because the industry is so
+        <h2 class="question-heading">Why Choose Fastlinky For Online Gaming And Casino Link Building Services?</h2>
+        <p class="small-para mb-3">You need to think about a team that has the appropriate level of experience because the industry is so
             competitive and online <b>gambling links</b> are particularly challenging to get.</p>
         <div>
-            <h4>Reliable Partners :</h4>
-            <p>FastLinky has a large selection of bloggers and web publishers in our database.
-            </p>
-        </div>
-        <div>
-            <h4>Experienced Link-Building Teams :</h4>
-            <p>We have more than ten years of experience in this field developing white hat linkages. We can appreciate
-                and take opportunities quickly.
+            <h3 class="h4 mb-0">Reliable Partners :</h3>
+            <p class="small-para mb-3">FastLinky has a large selection of bloggers and web publishers in our database.</p>
 
-            </p>
-        </div>
-        <div>
-            <h4>Quality Foreign Writers :</h4>
-            <p>we have in-house writers. Nothing is outsourced. We work quickly and precisely.
-            </p>
-        </div>
-        <div>
-            <h4>Finally Tuned Process :</h4>
-            <p> Companies that build links for gambling and casino websites need to follow a certain procedure and have
+            <h3 class="h4 mb-0">Experienced Link-Building Teams :</h3>
+            <p class="small-para mb-3">We have more than ten years of experience in this field developing white hat linkages. We can appreciate and take opportunities quickly.</p>
+
+            <h3 class="h4 mb-0">Quality Foreign Writers :</h3>
+            <p class="small-para mb-3">we have in-house writers. Nothing is outsourced. We work quickly and precisely.</p>
+
+            <h3 class="h4 mb-0">Finally Tuned Process :</h3>
+            <p class="small-para mb-3"> Companies that build links for gambling and casino websites need to follow a certain procedure and have
                 specialized skills. And we have covered it completely.
             </p>
         </div>
@@ -404,7 +388,8 @@ require_once ROOT_DIR."/includes/package-submission.inc.php";
     <!-- Frequently Asked Questions ends -->
     <!------------------------------------------->
     <!-- <div class="mt-4">
-        <?php // include_once 'components/seller-action.php'; ?>
+        <?php // include_once 'components/seller-action.php'; 
+        ?>
     </div> -->
     <!----------------------------------------------------- -->
     <!-- curious section starts -->
