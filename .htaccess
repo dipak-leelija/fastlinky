@@ -13,3 +13,6 @@ RewriteRule ^(.*)$ https://fastlinky.com/$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [NC,L]
+
+# Redirect 404 error pages to 404.php
+ErrorDocument 404 /404.php
